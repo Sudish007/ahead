@@ -1,0 +1,2 @@
+# Fixtures are byte-exact captures of real HTTP responses; never CRLF-convert them.
+tests/fixtures/** -text

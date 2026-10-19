@@ -27,7 +27,7 @@ Abstract: Calibrating expensive engineering simulators requires tuning model par
       <dc:rights>http://creativecommons.org/licenses/by-nc-nd/4.0/</dc:rights>
       <dc:creator>Ruo-Qian Wang</dc:creator>
     </item>
-    <item>
+<item>
       <title>Trust but Verify: Designing Region-Inhomogeneous Forward Dynamics for Discrete Diffusion</title>
       <link>https://arxiv.org/abs/2610.22380</link>
       <description>arXiv:2610.22380v1 Announce Type: new 
@@ -39,7 +39,7 @@ Abstract: Continuous diffusion treats the forward process as a design space; dis
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Gunmay Jhingran</dc:creator>
     </item>
-    <item>
+<item>
       <title>Binding-Specific Relearning Savings for Test-Time Continual Learning</title>
       <link>https://arxiv.org/abs/2610.22381</link>
       <description>arXiv:2610.22381v1 Announce Type: new 
@@ -52,7 +52,7 @@ Abstract: When a fact becomes harder to elicit from a language model, has the mo
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Zhe Zhou</dc:creator>
     </item>
-    <item>
+<item>
       <title>CGDT-CESN: Correlation-Guided and Dynamics-Trained Clustered Echo State Network for Multivariate Time-Series Prediction</title>
       <link>https://arxiv.org/abs/2610.22430</link>
       <description>arXiv:2610.22430v1 Announce Type: new 
@@ -65,7 +65,7 @@ Abstract: Accurate prediction of multivariate time series requires models that s
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Hariharan Srinivasan, Masoom Bhargava, Sayan Gupta</dc:creator>
     </item>
-    <item>
+<item>
       <title>BOLT: Multi-Bottleneck Bound-Guided Learning for Flexible Job-Shop Scheduling with Time Lags and Resource-Coupled Transport</title>
       <link>https://arxiv.org/abs/2610.22433</link>
       <description>arXiv:2610.22433v1 Announce Type: new 
@@ -78,7 +78,7 @@ Abstract: Flexible job-shop scheduling becomes resource-coupled when a scarce ve
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Ziheng Zhang, Wei Zhang, Yunyi Zhao, Zuming Liu, Wei Zhou, Boon Ping Gan</dc:creator>
     </item>
-    <item>
+<item>
       <title>TRACE: Transformer Residual Activation Codebook Encoding for Communication-efficient Distributed Edge Inference</title>
       <link>https://arxiv.org/abs/2610.22435</link>
       <description>arXiv:2610.22435v1 Announce Type: new 
@@ -92,7 +92,7 @@ Abstract: Distributed Transformer inference across co-located edge devices is fu
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Muhammad Azlan Qazi, Alexandros Iosifidis, Qi Zhang</dc:creator>
     </item>
-    <item>
+<item>
       <title>Generative adversarial networks with Monte Carlo dropout uncertainty quantification for structural health monitoring: Fibre Bragg grating data augmentation comparison in Hawk T1A aircraft</title>
       <link>https://arxiv.org/abs/2610.22436</link>
       <description>arXiv:2610.22436v1 Announce Type: new 
@@ -107,7 +107,7 @@ Abstract: The signal generation capabilities of a novel data augmentation framew
       <arxiv:journal_reference>Alvaro Peiro, Marios Impraimakis, Aerospace Science and Technology, Volume 180, Part 5, 2027, Article 114028</arxiv:journal_reference>
       <dc:creator>Alvaro Peiro, Marios Impraimakis</dc:creator>
     </item>
-    <item>
+<item>
       <title>CF-NODE: Counterfactual Spatial Node Intervention for Test-Time Adaptation Under Domain Shift, Evaluated Across Five Diabetic Retinopathy Datasets</title>
       <link>https://arxiv.org/abs/2610.22437</link>
       <description>arXiv:2610.22437v1 Announce Type: new 
@@ -120,7 +120,7 @@ Abstract: Automated fundus-based diabetic retinopathy (DR) grading can substanti
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
       <dc:creator>Sabarish G, Deepak Parashar</dc:creator>
     </item>
-    <item>
+<item>
       <title>Rank Measures of Fine-Tuning Updates Need a Noise Baseline</title>
       <link>https://arxiv.org/abs/2610.22438</link>
       <description>arXiv:2610.22438v1 Announce Type: new 
@@ -132,7 +132,7 @@ Abstract: Studies of what fine-tuning does to a language model often summarise t
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
       <dc:creator>Muhammad Usman Altaf</dc:creator>
     </item>
-    <item>
+<item>
       <title>Sparse Autoencoders Can Induce Local Geometry for Mitigating Catastrophic Forgetting</title>
       <link>https://arxiv.org/abs/2610.22439</link>
       <description>arXiv:2610.22439v1 Announce Type: new 
@@ -145,193 +145,120 @@ Abstract: Catastrophic forgetting remains a challenge in supervised continual le
       <dc:rights>http://creativecommons.org/licenses/by-sa/4.0/</dc:rights>
       <dc:creator>Kamil Faber, Katarzyna Filus, {\L}ukasz Pawela</dc:creator>
     </item>
-    <item>
-      <title>Lean4AgenticRL: Advancing Agentic RL with Verifiable Multi-level Process Rewards</title>
-      <link>https://arxiv.org/abs/2610.22448</link>
-      <description>arXiv:2610.22448v1 Announce Type: new 
-Abstract: Enhancing the agentic capabilities of Large Language Models (LLMs) to tackle complex software engineering (SWE) and general terminal-usage problems is a pressing challenge. Current state-of-the-art LLMs often go through large-scale agentic Reinforcement Learning (RL). However, they mostly rely on high-level outcome rewards, with minimal consideration of low-level toolcall and mid-level workflow-stage rewards, which makes the training less effective. To overcome this limitation, we propose **Lean4AgenticRL**, which, to the best of our knowledge, is the first framework that grounds multi-level process rewards in the unified Lean4 formalization schema for open-ended agentic RL. **Lean4AgenticRL** first builds a *problem-specific workflow* system that balances the agent's own capability and controllability during execution, laying the foundation for further verification. Subsequently, our workflow formalization and multi-level reward annotation methods enable agent behavior verification within a general harness system. It provides multi-level rewards to support more effective agentic RL with the workflow-stage-normalized GRPO algorithm. Using **Lean4AgenticRL**, we train **LAR-9B/27B**, a family of models with enhanced agentic capability. Extensive experiments indicate that our model outperforms the leading model of similar size. **LAR-27B** achieves **77.3%** on TerminalBench-2.1. On average, our models outperform the base model by **9.89%** and surpass the second-best model of comparable size we know by **5.07%**. These results indicate the potential of integrating formal methods in enhancing open-ended agentic RL.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22448v1</guid>
+<item>
+      <title>Property Estimation in Geotechnical Databases Using Labeled Random Finite Sets</title>
+      <link>https://arxiv.org/abs/2410.22659</link>
+      <description>arXiv:2410.22659v1 Announce Type: cross 
+Abstract: The sufficiency of accurate data is a core element in data-centric geotechnics. However, geotechnical datasets are essentially uncertain, whereupon engineers have difficulty with obtaining precise information for making decisions. This challenge is more apparent when the performance of data-driven technologies solely relies on imperfect databases or even when it is sometimes difficult to investigate sites physically. This paper introduces geotechnical property estimation from noisy and incomplete data within the labeled random finite set (LRFS) framework. We leverage the ability of the generalized labeled multi-Bernoulli (GLMB) filter, a fundamental solution for multi-object estimation, to deal with measurement uncertainties from a Bayesian perspective. In particular, this work focuses on the similarity between LRFSs and big indirect data (BID) in geotechnics as those characteristics resemble each other, which enables GLMB filtering to be exploited potentially for data-centric geotechnical engineering. Experiments for numerical study are conducted to evaluate the proposed method using a public clay database.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2410.22659v1</guid>
+      <category>eess.SP</category>
+      <category>cs.CE</category>
       <category>cs.LG</category>
       <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Ruida Wang, Gerald Friedland, Tong Zhang, Chris Kong</dc:creator>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Changbeom Shim, Youngho Kim, Craig Butterworth</dc:creator>
     </item>
-    <item>
-      <title>Progressive Misalignment Can Emerge from Benign Recursive Self-Distillation</title>
-      <link>https://arxiv.org/abs/2610.22467</link>
-      <description>arXiv:2610.22467v1 Announce Type: new 
-Abstract: Training models on their own outputs has attracted widespread attention as a possible route to advance AI capabilities. One prominent approach is self-distillation, where a model is trained to match the token-level predictions it would have produced when given access to additional context, such as a cue, feedback, or instruction. However, the safety properties of this training procedure are poorly understood. In this paper, we present a surprising safety failure of recursive self-distillation, where each self-distilled model becomes the teacher for the next round of training. We observe that when a safe model is recursively self-distilled on its own (safe) generations while receiving an additional non-harmful cue, it becomes increasingly misaligned across a diverse set of harmful queries; we call this Progressive Misalignment. We show this failure mode in both the Qwen3 and Phi-4 model families on SORRY-Bench and StrongREJECT. Progressive misalignment also occurs in a more realistic setup, where the fixed cue is replaced by feedback from a simulated user with benign intent. Using a gradient-based method, we are also able to find benign prompts that lead to progressive misalignment when applying recursive self-distillation, showing that harmful training prompts are not necessary for this failure mode to emerge. We hope our work encourages future investigations of the safety properties of AI systems recursively trained on their own data.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22467v1</guid>
+<item>
+      <title>How language model agents reshape price competition</title>
+      <link>https://arxiv.org/abs/2610.21711</link>
+      <description>arXiv:2610.21711v1 Announce Type: cross 
+Abstract: Repeated Bertrand competition is a stringent benchmark for algorithmic pricing: in homogeneous-goods markets, standard learning procedures typically select the stage-game Nash outcome with prices near marginal cost. We show that LLM pricing agents can escape this benchmark, depending on deployment decisions. LLMs outperform standard online learners through faster adaptation, but this advantage largely disappears against full-information learners. An extracted surrogate algorithm illustrates how LLMs in specific deployments profit from regularly undercutting slower learners. Agents that post one price every period from raw market histories that include rival prices can sustain supracompetitive regimes in self-play. Agents that periodically emit probability distributions from summarized histories of their own profits instead move toward the competitive region in self-play. Markets mixing these interfaces can generate dynamic regimes in which LLMs establish a high-price anchor and regularly undercut it to capture demand. These regimes can keep both competitors' prices above marginal cost. Deployment choices shape these outcomes, shifting the focus from stationary equilibria to dynamic pricing regimes.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.21711v1</guid>
+      <category>cs.GT</category>
       <category>cs.LG</category>
+      <category>cs.MA</category>
+      <category>econ.GN</category>
+      <category>q-fin.EC</category>
+      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
+      <arxiv:announce_type>cross</arxiv:announce_type>
+      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
+      <dc:creator>Martin Bichler, Philip Hierhager, Kassian K\"ock, Fabian Pieroth</dc:creator>
+    </item>
+<item>
+      <title>Encoded but Exposed: Language Embeddings can Reveal More Than They Should in Recommender Systems</title>
+      <link>https://arxiv.org/abs/2610.21713</link>
+      <description>arXiv:2610.21713v1 Announce Type: cross 
+Abstract: Language embeddings are increasingly used in recommenders to represent item content, but their privacy risks remain poorly understood. We study whether item embeddings can reveal item identities when an adversary has access to auxiliary item text from external sources. We show that a simple cosine-similarity attack can recover item identities with high mean reciprocal rank across language models and candidate-set settings on two real-world datasets. Leakage is strongest when the adversary's partial information overlaps with the victim representation, but it also persists through semantic alignment between independently sourced descriptions. We further show that item leakage can propagate to user re-identification from sparse ratings. Finally, we evaluate obfuscated descriptions as a mitigation and find a clear leakage-utility tradeoff.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2610.21713v1</guid>
+      <category>cs.CR</category>
       <category>cs.AI</category>
-      <category>cs.CL</category>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Karim Abdel Sadek, Federico Di Gennaro, Fanny Yang</dc:creator>
-    </item>
-    <item>
-      <title>Generative Value Classifier</title>
-      <link>https://arxiv.org/abs/2610.22497</link>
-      <description>arXiv:2610.22497v1 Announce Type: new 
-Abstract: Q-learning is premised on learning a function to predict the value of a state-action pair, with the goal of using such a function to guide policy improvement. Most approaches learn this function from scratch using scalar or distributional return targets. This discriminative approach leaves another source of supervision for learning representations unused: the actions themselves. Rather than directly predict the return of a state-action pair, we ask the reverse question: how likely is the action under each possible return? This perspective provides a critic whose generative component is a return-conditioned policy, which can share the actor's architecture. Training this policy supervises the critic with every action rather than with returns alone, and a squared-error loss anchors the critic's Q-value to the bootstrapped target. We evaluate our approach on both offline and online RL tasks and show gains over leading discriminative methods, including distributional RL methods.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22497v1</guid>
       <category>cs.LG</category>
       <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
+      <arxiv:announce_type>cross</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Alexander Swerdlow, Perry Dong, Chelsea Finn</dc:creator>
+      <arxiv:journal_reference>3rd Workshop on Evaluating and Applying Recommender Systems with Large Language Models (EARL 2026), co-located with the 35th ACM International Conference on Information and Knowledge Management (CIKM 2026)</arxiv:journal_reference>
+      <dc:creator>Linda Bekov\'a, Rodrigo Alves</dc:creator>
     </item>
-    <item>
-      <title>Predicting Privileged Information Effectiveness for On-Policy Self-Distillation</title>
-      <link>https://arxiv.org/abs/2610.22512</link>
-      <description>arXiv:2610.22512v1 Announce Type: new 
-Abstract: On-policy self-distillation (OPSD) enables large language models (LLMs) to learn from privileged information (PI) without a separate teacher model. However, prior work largely treats PI as a fixed design choice, leaving the effects of its content and construction poorly understood. This challenge is particularly important in multi-turn agentic settings, where trajectories contain actions, observations, and reasoning that can be transformed into PI in many ways. We systematically evaluate 16 PI configurations across three multi-turn agentic benchmarks and three student models that vary in scale and reasoning mode. We find that PI effectiveness depends on its content, generation source, and the student model. Information-dense trajectories and PI produced by more capable generators generally yield larger gains, whereas thinking models benefit less consistently. To assess PI before training, we compare PI utility with two KL-based metrics: sampled-token reverse KL ($D$) and error-step KL contrast ($\Delta d^{-}_{\mathrm{err}}$). The KL-based metrics track post-training performance more consistently than PI utility, which can be distorted by information leakage. Empirically, selecting each task's PI by $\Delta d^{-}_{\mathrm{err}}$ also improves post-training performance over random selection, most when the PI candidates differ widely. Finally, effective PI remains beneficial when combined with GRPO, allowing the combined objective to outperform a strong GRPO baseline. Overall, our results provide practical guidance for constructing and evaluating PI in OPSD training.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22512v1</guid>
-      <category>cs.LG</category>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by-sa/4.0/</dc:rights>
-      <dc:creator>Kaijian Zou, Emiliano Penaloza, MohammadHossein Rezaei, Anisha Gunjal, Mohit Raghavendra, Lu Wang, Yunzhong He, Anas Mahmoud</dc:creator>
-    </item>
-    <item>
-      <title>Learning smooth dynamics via Kinematic Interpolants</title>
-      <link>https://arxiv.org/abs/2610.22519</link>
-      <description>arXiv:2610.22519v1 Announce Type: new 
-Abstract: Inferring dynamics from real-world experimental data is inherently ambiguous, as many plausible dynamical systems can explain the same positional observations at measurement times. For higher fidelity modeling of applications ranging from single-cell RNA to vortex dynamics and even flocking of birds, scientific observables increasingly also include velocity estimates that serve to resolve this issue. However, incorporating this rich information in a scalable manner, free of simulation or unnecessary approximations, has remained a difficult challenge. In this paper, we introduce Kinematic Interpolants (KI), a novel framework that extends the seminal methodology of stochastic interpolants to infer nonlinear dynamics across multiple snapshots in phase space, i.e., observables with position and velocity measurements. Empirically, we demonstrate that across several scientific datasets, KI achieves superior reconstruction of the underlying dynamics compared to existing baselines while requiring only a fraction of the training time.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22519v1</guid>
+<item>
+      <title>Is the Policy Gradient a Gradient?</title>
+      <link>https://arxiv.org/abs/1906.07073</link>
+      <description>arXiv:1906.07073v3 Announce Type: replace 
+Abstract: The policy gradient theorem describes the gradient of the expected discounted return with respect to an agent's policy parameters. However, many policy gradient methods omit the outer discount factor, yielding an update that need not equal the gradient of the discounted objective. Is the resulting update the gradient of another objective? This has been an open question for several years, and this lack of theoretical clarity has led to an abundance of misstatements in the literature. We answer this question for the resulting episode-summed, on-policy update by proving that it need not equal the gradient of any function. Further, we construct a counterexample in which exact expected updates drive the policy toward a deterministic limit that is globally pessimal with respect to both the discounted and undiscounted objectives, while the parameter diverges. We motivate this work by surveying the literature and showing that there remains a widespread misunderstanding regarding discounted policy gradient methods, with errors present even in highly-cited papers published at top conferences.</description>
+      <guid isPermaLink="false">oai:arXiv.org:1906.07073v3</guid>
       <category>cs.LG</category>
       <category>stat.ML</category>
       <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator> Yiheng (Roger),  Jiang, Youssef Marzouk, Avishek Joey Bose, Aram-Alexandre Pooladian</dc:creator>
+      <arxiv:announce_type>replace</arxiv:announce_type>
+      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
+      <dc:creator>Chris Nota, Philip S. Thomas</dc:creator>
     </item>
-    <item>
-      <title>Don't Retrain, Remix: Adaptation of Web Agents using Mixture Hypernetworks</title>
-      <link>https://arxiv.org/abs/2610.22539</link>
-      <description>arXiv:2610.22539v1 Announce Type: new 
-Abstract: The web is not static or uniform. Websites that serve the same purpose can look and navigate very differently. Even within a single site, successive redesigns can change how familiar features are presented and accessed. Humans adapt to this by recognizing familiar interaction patterns and reusing what they already know. We give web agents a similar ability with WebMix, a mixture hypernetwork that adapts them to unseen interfaces by composing previously trained low-rank adapters. WebMix begins with a bank of adapters trained on source interfaces. At deployment, a scout agent explores the target interface and summarizes its observations into a compact manual. A lightweight router uses this manual to predict mixing coefficients over the adapter bank, which combine the existing adapters into a new one for inference. Adapting to a new interface takes only a scouting run and a forward pass, without gradient updates on the target. With Qwen and Llama models, we evaluate domain transfer on TimeWarp and WebArena-Lite-v2, and version transfer on TimeWarp. In all three settings, WebMix matches or outperforms in-context learning and LoRA baselines, often matching the average success of specialists trained directly on those interfaces. On TimeWarp domain transfer, it gains about 8 percentage points on average over the best baseline with both models. These gains do not come at the cost of seen interfaces, where WebMix keeps its lead, and extend to version transfer. Adapting to a new interface can therefore rely on exploration and composition instead of retraining.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22539v1</guid>
+<item>
+      <title>Harnessing Trust in Directed Graphs: Redefining Robustness of Graph Learning</title>
+      <link>https://arxiv.org/abs/2306.02002</link>
+      <description>arXiv:2306.02002v2 Announce Type: replace 
+Abstract: Existing research on robust Graph Neural Networks (GNNs) focuses predominantly on undirected graphs, overlooking the trustworthiness inherent in the link directions of directed graphs. In this work, we analyze the limitations of current approaches from both the attack and defense perspectives and redefine the robustness of GNNs in directed graphs. From the attack side, we introduce a more realistic directed graph attack setting that addresses the shortcomings of existing attacks. From the defense side, we propose a simple yet effective message-passing framework that serves as a plug-in layer to strengthen GNN robustness while avoiding a false sense of robustness. Our findings show that the trust signals encoded in directed graphs can be harnessed to substantially improve the robustness of GNNs. When combined with existing defense strategies, the framework achieves state-of-the-art robust performance alongside strong clean accuracy against both transfer and adaptive attacks. These results point to a novel and promising direction for strengthening the robustness of graph deep learning.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2306.02002v2</guid>
       <category>cs.LG</category>
+      <category>cs.AI</category>
+      <category>cs.CR</category>
       <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
+      <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Md Farhan Ishmam, Minh Pham Dinh, Kenneth Marino</dc:creator>
+      <dc:creator>Zhichao Hou, Xitong Zhang, Wei Wang, Charu C. Aggarwal, Xiaorui Liu</dc:creator>
     </item>
-    <item>
-      <title>On the SPOT: Enhancing Speculative Decoding for Diffusion Language Models via Commit-Order Prediction</title>
-      <link>https://arxiv.org/abs/2610.22543</link>
-      <description>arXiv:2610.22543v1 Announce Type: new 
-Abstract: Diffusion language models (DLMs) promise parallel text generation, but in practice face an unresolved speed-quality trade-off. Exact decoding fills in only one masked position per model pass, while faster multi-token decoding schemes are lossy. Speculative decoding is the standard lossless acceleration for autoregressive models. However, it does not transfer directly to DLMs, which must choose both what to generate and where. We show that this order is the missing piece: the model's own predictions from the previous pass already give the right token at 92-100% of positions, but not which position comes next. Based on this observation, we introduce Speculating Positions Order Trajectory (SPOT), which learns to predict this order. A 0.62M-parameter model reads only the target's output distributions and proposes a tree of candidate continuations, and the target verifies all of them in a single pass by checking whether each equals its own next state. On the verification side, our analysis shows that prior block-diffusion verification approaches either assume $T=0$ or a sequential proposal interface. To support tree-based speculation at any temperature, we propose using coupled-noise match verification for diffusion blocks, following shared-Gumbel-noise coupling approaches. Our comprehensive experiments show that SPOT cuts target passes by up to 6.8x and reaches up to 3.2x the throughput of standard decoding, beating the calibrated and training-free drafting baselines in every task and budget at $T=0$ and $T=1$. In addition, we show that the learned drafter transfers across models, demonstrating successful transfer across six different DLMs. Project page: https://eliezer318.github.io/SPOT-dLLM/</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22543v1</guid>
+<item>
+      <title>LeanTTA: A Backpropagation-Free and Stateless Approach to Quantized Test-Time Adaptation on Edge Devices</title>
+      <link>https://arxiv.org/abs/2503.15889</link>
+      <description>arXiv:2503.15889v2 Announce Type: replace 
+Abstract: While there are many advantages to deploying machine learning models on edge devices, the resource constraints of mobile platforms, the dynamic nature of the environment, and differences between the distribution of training versus in-the-wild data make such deployments challenging. Current test-time adaptation methods are often memory-intensive and not designed to be quantization-compatible or deployed on low-resource devices. To address these challenges, we present LeanTTA, a novel backpropagation-free and stateless framework for quantized test-time adaptation tailored to edge devices. Our approach minimizes computational costs by dynamically updating normalization statistics without backpropagation, which frees LeanTTA from the common pitfall of relying on large batches and historical data, making our method robust to realistic deployment scenarios. Our approach is the first to enable further computational gains by combining partial adaptation with quantized module fusion. We validate our framework across sensor modalities, demonstrating significant improvements over state-of-the-art TTA methods, including a 15.7% error reduction, peak memory usage of only 11.2MB for ResNet18, and fast adaptation within an order-of-magnitude of normal inference speeds on-device. LeanTTA provides a robust solution for achieving the right trade offs between accuracy and system efficiency in edge deployments, addressing the unique challenges posed by limited data and varied operational conditions.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2503.15889v2</guid>
       <category>cs.LG</category>
+      <category>cs.AI</category>
       <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
+      <arxiv:announce_type>replace</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Eliezer Shlomi, Eliron Rahimi, Avi Mendelson, Chaim Baskin</dc:creator>
+      <dc:creator>Cynthia Dong, Hong Jia, Young D. Kwon, Georgios Rizos, Cecilia Mascolo</dc:creator>
     </item>
-    <item>
-      <title>Deterministic Bounds on Accuracy and Stability of Metric-Space Regression and Classification</title>
-      <link>https://arxiv.org/abs/2610.22564</link>
-      <description>arXiv:2610.22564v1 Announce Type: new 
-Abstract: Data-driven approaches often face ambiguity in datasets due to sensor or target noise, insufficient information, and noise in the input data. While best-fit machine learning methods can accommodate such noise through uncertainty estimates, they are prone to overfitting and it is challenging to quantify ambiguity of the relation between inputs and targets. We introduce a geometric framework that quantifies this ambiguity through the average kernel size, computed with data-dependent, i.e. model-independent, feasible sets derived from worst-case input and target noise. The framework provides computable, deterministic, non-asymptotic bounds on the best achievable empirical error and accuracy for a finite, constructed dataset, independent of the predictive model class, and applies to regression and classification with pseudo-metric input spaces and metric target spaces. The ambiguity of the input-target relation implies three consequences: an empirical error floor, an accuracy-stability trade-off, and, under standard probabilistic assumptions, a strictly positive distribution-training error gap when training below the accuracy bounds. Under standard Borel assumptions for Euclidean norms, the distributional analogue of the average kernel size is related to Bayes risk as it reduces to the optimal distribution root-mean-squared error times the square root of two. Experiments spanning tabular regression, image regression and classification datasets yield nontrivial bounds on the best achievable empirical error and accuracy on a constructed dataset, alongside descriptive comparisons with model performance on the original datasets. The bounds provide a computable, model-independent reference scale on the constructed dataset and comparisons with model performance on the original dataset are descriptive.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22564v1</guid>
-      <category>cs.LG</category>
+<item>
+      <title>Accelerated Gradient Methods for Nonconvex Optimization: Escape Trajectories From Strict Saddle Points and Convergence to Local Minima</title>
+      <link>https://arxiv.org/abs/2307.07030</link>
+      <description>arXiv:2307.07030v4 Announce Type: replace-cross 
+Abstract: This paper considers the problem of understanding the behavior of a general class of accelerated gradient methods on smooth nonconvex functions. Motivated by some recent works that have proposed effective algorithms, based on Polyak's heavy ball method and the Nesterov accelerated gradient method, to achieve convergence to a local minimum of nonconvex functions, this work proposes a broad class of Nesterov-type accelerated methods and puts forth a rigorous study of these methods encompassing the escape from saddle points and convergence to local minima through both an asymptotic and a non-asymptotic analysis. In the asymptotic regime, this paper answers an open question of whether Nesterov's accelerated gradient method (NAG) with variable momentum parameter avoids strict saddle points almost surely. This work also develops two metrics of asymptotic rates of convergence and divergence, and evaluates these two metrics for several popular standard accelerated methods such as the NAG and Nesterov's accelerated gradient with constant momentum (NCM) near strict saddle points. In the non-asymptotic regime, this work provides an analysis that leads to the "linear" exit time estimates from strict saddle neighborhoods for trajectories of these accelerated methods as well the necessary conditions for the existence of such trajectories. Finally, this work studies a sub-class of accelerated methods that can converge in convex neighborhoods of nonconvex functions with a near optimal rate to a local minimum and at the same time this sub-class offers superior saddle-escape behavior compared to that of NAG.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2307.07030v4</guid>
       <category>math.OC</category>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Nina Maria Gottschling, Jakob Gawlikowski, Michele Caprio</dc:creator>
-    </item>
-    <item>
-      <title>Coverage Cliffs in Off-Policy Quantile Certification</title>
-      <link>https://arxiv.org/abs/2610.22565</link>
-      <description>arXiv:2610.22565v1 Announce Type: new 
-Abstract: We study when logged contextual-bandit data can certify an upper tail quantile for a policy selected from the same sample. We construct a PAC-Bayes Bernstein lower-confidence envelope for the target cumulative distribution function (CDF), simultaneous over a predeclared threshold grid and all data-dependent posteriors. The resulting procedure, TailCert, uses the envelope's first crossing of level p to return an atom-safe upper confidence bound on the selected posterior's pooled p-quantile (or inconclusive). It can also be used to select a policy under a certified tail constraint. The concentration ingredients are standard; the main theoretical contribution is a matched finite-class certification boundary comparing full logs with their joint weighted CDF indicators at a fixed threshold. On an explicit rare-action class, the required sample size grows linearly with the overlap factor W, logarithmically with policy-search and confidence complexity, and quadratically with the inverse CDF safety margin; the upper and lower bounds agree up to constants in the stated regime. On this class, the CDF reduction hides which actions exceeded the budget; retaining action counts restores the full-log rate. Simulations verify the predicted search-complexity shift, winner's-curse failure of naive reuse, and the power cost of splitting.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22565v1</guid>
       <category>cs.LG</category>
+      <category>cs.SY</category>
+      <category>eess.SY</category>
       <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Pauline Bourigault, Emmanuelle Bourigault</dc:creator>
-    </item>
-    <item>
-      <title>Structure-Aware Spatial Kernels for Gaussian Process Distributed Port-Hamiltonian Systems</title>
-      <link>https://arxiv.org/abs/2610.22575</link>
-      <description>arXiv:2610.22575v1 Announce Type: new 
-Abstract: Gaussian process distributed port-Hamiltonian systems (GP-dPHS) enable data-driven modeling of distributed dynamical systems while preserving their physical structure. However, standard stationary kernels can be inefficient for spatially heterogeneous systems because they neither exploit known input invariances nor reflect structured spatial dependencies. We address this limitation with a structure-aware kernel design that removes irrelevant state coordinates and decouples state and spatial dependencies through a tensor-product covariance. This modular construction allows qualitative knowledge of spatial heterogeneity to be incorporated by selecting an appropriate spatial kernel without requiring an analytical description of the underlying profile. Numerical experiments on a nonlinear string with periodic, smoothly varying, and semi-piecewise stiffness profiles demonstrate that structural decoupling consistently improves reconstruction accuracy, while profile-matched spatial kernels yield substantially larger gains in force-field and trajectory reconstruction.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22575v1</guid>
-      <category>cs.LG</category>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
       <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Tianyi Yang, Thomas Beckers</dc:creator>
+      <arxiv:DOI>10.1007/s10208-026-09745-x</arxiv:DOI>
+      <arxiv:journal_reference>Foundations of Computational Mathematics, April 2026</arxiv:journal_reference>
+      <dc:creator>Rishabh Dixit, Mert Gurbuzbalaban, Waheed U. Bajwa</dc:creator>
     </item>
-    <item>
-      <title>Noise-Robust Forced Alignment for Spontaneous Speech</title>
-      <link>https://arxiv.org/abs/2610.22583</link>
-      <description>arXiv:2610.22583v1 Announce Type: new 
-Abstract: We show that forced aligners degrade on spontaneous, noisy real-world speech, and that fillers, laughter, and disfluencies corrupt word boundaries, impacting many downstream applications. We revisit the classical GMM-HMM aligner with upsampled WavLM features instead of MFCCs, explicit phone units for fillers and non-lexical vocal events trained on verbatim-annotated spontaneous speech, and a discriminative projection fitted on clean and noise-corrupted feature pairs to improve robustness. The pipeline is self-bootstrapped from 149h of curated audio without manual or external boundary targets. On conversational (Buckeye) and disfluent (FluencyBank) speech it reaches word-boundary MAEs of 20.6 and 76.9ms, 19% and 17% lower than the strongest of ten baselines. Catastrophic misalignments (&gt;200ms) are 2.7 times rarer than Montreal Forced Aligners (MFA) best model even after widening MFA's search beam, which we show removes a large pruning artifact from its conversational error; event units halve the error next to laughter, while being meaningfully more robust than existing aligners.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22583v1</guid>
+<item>
+      <title>Multi-Agent Reinforcement Learning-Based UAV Pathfinding for Obstacle Avoidance in Stochastic Environment</title>
+      <link>https://arxiv.org/abs/2310.16659</link>
+      <description>arXiv:2310.16659v3 Announce Type: replace-cross 
+Abstract: Traditional methods plan feasible paths for multiple agents in the stochastic environment. However, the methods' iterations with the changes in the environment result in computation complexities, especially for the decentralized agents without a centralized planner. Although reinforcement learning provides a plausible solution because of the generalization for different environments, it struggles with enormous agent-environment interactions in training. Here, we propose a novel centralized training with decentralized execution method based on multi-agent reinforcement learning, which is improved based on the idea of model predictive control. In our approach, agents communicate only with the centralized planner to make decentralized decisions online in the stochastic environment. Furthermore, considering the communication constraint with the centralized planner, each agent plans feasible paths through the extended observation, which combines information on neighboring agents based on the distance-weighted mean field approach. Inspired by the rolling optimization approach of model predictive control, we conduct multi-step value convergence in multi-agent reinforcement learning to enhance the training efficiency, which reduces the expensive interactions in convergence. Experiment results in both comparison, ablation, and real-robot studies validate the effectiveness and generalization performance of our method.</description>
+      <guid isPermaLink="false">oai:arXiv.org:2310.16659v3</guid>
+      <category>cs.RO</category>
       <category>cs.LG</category>
       <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
+      <arxiv:announce_type>replace-cross</arxiv:announce_type>
       <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Laurin Wagner, Mario Zusag</dc:creator>
+      <dc:creator>Qizhen Wu, Kexin Liu, Lei Chen, Jinhu L\"u</dc:creator>
     </item>
-    <item>
-      <title>Initiating Removal from Operational Symptoms in Federated Vehicular Networks</title>
-      <link>https://arxiv.org/abs/2610.22584</link>
-      <description>arXiv:2610.22584v1 Announce Type: new 
-Abstract: Connected vehicles train a driving model through federated learning (FL) and drive with it, so a faulty contribution often surfaces only as a delayed symptom on the road. Federated unlearning (FU) assumes that a removal request names what to forget. A symptom names no vehicle or round, and aggregation has already spread its cause across the fleet. We propose \underline{A}ggregation-\underline{T}ime \underline{O}perational-evidence \underline{N}eutralization of \underline{E}ffects (\method{}), which makes unlearning a term of the FL aggregation rule. \method{} projects everyday driving errors and reported symptoms onto a subspace spanned by recent global increments. It propagates the surviving effect of every contribution with curvature estimated from these increments and scores all contributions in one backward pass. A two-tier correction suppresses suspected effects in every round and eliminates confirmed ones after a one-round probe. We prove that backward scoring matches forward scoring and that the elimination is exact when training is flat outside the subspace. On three driving datasets, \method{} leaves 43\% to 61\% less residual harm than the strongest baseline in eight of nine settings while staying within 0.36 points of full retraining in utility.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22584v1</guid>
-      <category>cs.LG</category>
-      <category>cs.NI</category>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://arxiv.org/licenses/nonexclusive-distrib/1.0/</dc:rights>
-      <dc:creator>Zihao Ding, Jun Huang, Qiang Duan</dc:creator>
-    </item>
-    <item>
-      <title>Flat Loss, Evolving Features: Grokking in Modular Addition</title>
-      <link>https://arxiv.org/abs/2610.22593</link>
-      <description>arXiv:2610.22593v1 Announce Type: new 
-Abstract: Can a network keep learning while its training cross-entropy stays nearly flat at a positive level? We show that it can. On modular addition, a standard testbed for grokking, ReLU networks trained with supported-Polar hidden updates, normalized output-layer updates and weight decay can keep 100% training accuracy while their hidden features change and held-out accuracy rises from zero to above 90%, at relatively flat training cross-entropy. Correct classification need not minimize cross-entropy, which still depends on prediction confidence. We prove this coexistence for one-hidden-layer networks in two finite-window theorems from constructed initializations: one gives a constant gain in the Fourier fraction of the hidden features, and the other holds at arbitrarily low positive loss, where a readout refitted on the training data generalizes before the network. Experiments from random initialization show the same coexistence on a window fixed in advance, and in deeper networks held-out accuracy also rises over post-hoc windows with a net increase in training cross-entropy. With a last-layer rate set per training fraction and head decay scaled with the prime, deeper networks at p=47 and 61 meet a criterion on post-hoc windows, fixed in advance, in nearly all fresh runs. A one-block transformer trained with the same updates and a slowly decaying output gain keeps every training pair correct at every logged checkpoint while its training cross-entropy rises and its held-out accuracy approaches one; with two blocks this holds through the held-out rise, after which training pairs begin to flip. A plateau in training loss need not be a plateau in learning. Code: https://github.com/akashkumar-d/flat-loss-evolving-features.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22593v1</guid>
-      <category>cs.LG</category>
-      <category>stat.ML</category>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Akash Kumar, Karthik Sankaranarayanan</dc:creator>
-    </item>
-    <item>
-      <title>Diagnosing GNN Failure Modes with Layer-Wise Probe Entropy</title>
-      <link>https://arxiv.org/abs/2610.22595</link>
-      <description>arXiv:2610.22595v1 Announce Type: new 
-Abstract: Graph neural networks (GNNs) are typically evaluated only at their final layer, obscuring how task-relevant information evolves during message passing. We introduce a post-hoc diagnostic that freezes a trained GNN, fits an independent linear probe to each layer, and tracks probe accuracy alongside normalized predictive entropy. Across real and synthetic graph settings, layer-wise probe entropy distinguishes beneficial, neutral, and harmful smoothing, a capability not demonstrated by existing geometric measures. Moreover, by comparing shallow and deep models, we show that the onset of entropy degradation separates the two main GNN failure modes: structural mismatch under heterophily, which appears from the earliest layers even in shallow models, and excessive-depth oversmoothing, which emerges only as propagation depth increases. These results establish probe-entropy trajectories as a tool for analyzing information flow in GNNs and motivate future work on adaptive depth selection and early-exit mechanisms.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22595v1</guid>
-      <category>cs.LG</category>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Shanzi Bao, Mar Gonz\`alez I Catal\`a, Pietro Li\`o</dc:creator>
-    </item>
-    <item>
-      <title>Can LLMs predict the outcomes of machine learning experiments?</title>
-      <link>https://arxiv.org/abs/2610.22599</link>
-      <description>arXiv:2610.22599v1 Announce Type: new 
-Abstract: Recent advances in AI make Recursive Self-Improvement (RSI) increasingly plausible. Large Language Models (LLMs) can already propose, select, and run Machine Learning (ML) experiments. However, the space of possible design choices in ML is vast. An LLM that proposes an experiment needs a reliable intuition of whether it is worth running given the timing constraints of long training runs. In this work, we measure such intuition in current frontier LLMs by evaluating how accurately they predict the impact of self-generated ML experiment ideas before these are put into training runs. To this end, we construct a dataset of 288 LLM-proposed ideas on eight MLE-bench tasks. We then prompt five frontier LLMs (GPT-6 Astra, Claude Opus 5.5, Claude Fable 5.1, Kimi K3, and GLM-5.3) to predict the impact of each idea and compare their predictions with the actual outcomes after training. We report four main findings. First, LLM predictions are substantially better than random chance but far from accurate: even the best model, Claude Opus 5.5, explains only half of the variance in outcomes (R^2 = 0.49). Second, we notice that all tested models systematically underestimate the magnitude of the changes. Third, prediction quality varies widely across tasks. Finally, the choice of the coding harness that actually implements the ideas has little effect on outcomes, and we find no evidence of self-preference. Higher reasoning settings and additional context lead to modest gains. Overall, our results show that current LLMs have useful but limited intuition about which ML ideas will work. We release our dataset to support further study.</description>
-      <guid isPermaLink="false">oai:arXiv.org:2610.22599v1</guid>
-      <category>cs.LG</category>
-      <category>cs.AI</category>
-      <category>cs.CL</category>
-      <pubDate>Mon, 19 Oct 2026 00:00:00 -0400</pubDate>
-      <arxiv:announce_type>new</arxiv:announce_type>
-      <dc:rights>http://creativecommons.org/licenses/by/4.0/</dc:rights>
-      <dc:creator>Ayush Bansal, Aldo Pareja, Sean Klein, Serge Didenko, Artem Lukoianov</dc:creator>
-    </item>
-</channel>
+  </channel>
 </rss>
