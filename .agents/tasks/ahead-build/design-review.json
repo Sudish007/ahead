@@ -1,0 +1,62 @@
+{
+  "verdict": "CHANGES_REQUESTED",
+  "findings": [
+    {
+      "id": 1,
+      "severity": "MEDIUM",
+      "title": "The LLM numeric-validation input is unavailable under the declared digest and function contracts",
+      "where": "design.md sections 5.1, 5.9, 6.3-6.4, 7, 11, and llm.test.js in section 13",
+      "problem": "Section 7 sends and validates entry signals, but the digest-entry shape has no signals field, buildBrief defines no draft-only field, and editorialize(brief, config, fetchImpl) receives no Item lookup. Implementations must either omit supported signal numbers, leak an undeclared digest field, or invent an unstated stripping step.",
+      "fix": "Pass editorialize an explicit factsById/editorialFacts Map derived from final Items, use its signals when building each prompt entry and allowed-number set, and state that the map is never attached to the digest. Test a number supported only by hnPoints and assert signals appear in the request but not the finalized digest."
+    },
+    {
+      "id": 2,
+      "severity": "MEDIUM",
+      "title": "The Hugging Face model-id regex accepts the unsafe double-dot case that tests require rejecting",
+      "where": "design.md section 5.3 hf-models parser, section 11, and json.test.js in section 13",
+      "problem": "The regex ^[A-Za-z0-9][A-Za-z0-9._-]*(?:/[A-Za-z0-9][A-Za-z0-9._-]*)?$ accepts owner/.. and model..name, while the test plan explicitly rejects an id containing ... URL parsing can normalize owner/.. to a different path.",
+      "fix": "Define one isHfModelId helper that enforces the current segment regex, at most one slash, length <= 200, and !id.includes('..'). Use it in parser validation and tests for dot segments, repeated dots, extra slashes, leading punctuation, and a normal owner/model.name id."
+    },
+    {
+      "id": 3,
+      "severity": "MEDIUM",
+      "title": "HF optional-field mappings and the GitHub-stars why operand are not exhaustive",
+      "where": "design.md sections 5.3-5.4, 5.7, 6.3, 11, and JSON/brief tests in section 13",
+      "problem": "HF Papers says to map extra.githubStars and unspecified other optional numeric values; HF Models says to put values in extra without naming exact keys; and the stars clause does not choose signals.ghStars, extra.githubStars, or their maximum. These choices change score, output data, and visible text, and the real fixture exercises the fields.",
+      "fix": "Declare an exhaustive mapping and omissions. One concrete policy is upvotes -> signals.hfUpvotes, paper githubStars -> extra.githubStars, validated githubRepo -> extra.githubRepo, model likes -> signals.hfLikes, downloads -> extra.downloads, and trendingScore -> extra.trendingScore; omit every unlisted field. Define the stars operand as the maximum valid signals.ghStars/extra.githubStars value and test every mapping."
+    },
+    {
+      "id": 4,
+      "severity": "MEDIUM",
+      "title": "The brief has no total rule for primary source, source-name order, or primary family",
+      "where": "design.md sections 6.3-6.4 and brief.test.js in section 13",
+      "problem": "Research/labs sources are said to come first without a total tie rule, {source} is not tied to a source entry, and non-primary family never defines the primary family. Multi-source items can therefore produce different fallback text, also-on clauses, and first-three labels under reasonable implementations.",
+      "fix": "Define one orderedSources comparator using an explicit source category class, then registryIndex and code-point id. Derive sourceIds/sourceNames, primarySource, primaryFamily, {source}, and also-on traversal from that list; exclude families already consumed by an HN clause. Add a mixed research/labs/HN/unknown-source test."
+    },
+    {
+      "id": 5,
+      "severity": "MEDIUM",
+      "title": "Catch up since last visit does not specify whether later same-day refreshes qualify",
+      "where": "design.md sections 8.3-8.4 and the six-hour refresh behavior in sections 1 and 9",
+      "problem": "A digest has both date and generatedAt, while lastVisit is an epoch timestamp. Comparing calendar date omits a digest regenerated after a visit on the same day; comparing generatedAt includes it. Both fit the current phrase dated after lastVisit.",
+      "fix": "Filter index.days by Date.parse(day.generatedAt) > lastVisit, sort by generatedAt descending, and take at most 14. Treat invalid generatedAt as a malformed index entry and test same-day before/after, prior-day, and lastVisit === 0 cases."
+    },
+    {
+      "id": 6,
+      "severity": "NIT",
+      "title": "Configured homepage metadata is promised in the UI but never serialized",
+      "where": "design.md sections 4.1, 5.9, and 8",
+      "problem": "The homepage comment says it is shown on hover or in a source list, but the frontend cannot import sources.config.mjs and neither frontend-facing meta shape includes homepage.",
+      "fix": "Either remove the display promise or add optional validated homepage to meta.sources[id] and define its rendering and schema test."
+    },
+    {
+      "id": 7,
+      "severity": "NIT",
+      "title": "The referenced local static-server template does not define the required Ahead adaptation",
+      "where": "design.md sections 3, 11, and 15, plus ai-batkahi/scripts/serve.mjs",
+      "problem": "The template serves dist under a configured base path and assumes 404.html, while Ahead must serve repository-root files and data and has none of those template files. Request-method, malformed-URI, and root-containment behavior are not specified.",
+      "fix": "Specify localhost-only GET/HEAD root serving, 405/400 handling, decoded-path containment checks, directory index behavior, and a non-file-dependent 404; retain MIME/gzip and add traversal, malformed-percent, HEAD, and missing-file tests."
+    }
+  ],
+  "reviewDoc": "c:\\Users\\sudiskmr\\Downloads\\DomainClassification\\ahead\\.agents\\tasks\\ahead-build\\design-review.md"
+}
