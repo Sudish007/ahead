@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xmlns:media="http://search.yahoo.com/mrss/" xml:lang="en-US">
+  <id>tag:github.com,2008:https://github.com/pytorch/pytorch/releases</id>
+  <link type="text/html" rel="alternate" href="https://github.com/pytorch/pytorch/releases"/>
+  <link type="application/atom+xml" rel="self" href="https://github.com/pytorch/pytorch/releases.atom"/>
+  <title>Release notes from pytorch</title>
+  <updated>2026-10-19T08:00:08Z</updated>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/viable/strict/1792407148</id>
+    <updated>2026-10-19T08:00:08Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1792407148"/>
+    <title>viable/strict/1792407148: [Special] Improve accuracy of erfinv near 1 (#201187)</title>
+    <content type="html">&lt;p&gt;By using erfc instead of erf for the approximation and adding 3rd step of Newton-Raphson approximation for double&lt;/p&gt;
+&lt;p&gt;Apply the same fix to MPS. Metal erfinv never had Newton-Raphson refinement: &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;1711213981&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/101507&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/pytorch/pytorch/pull/101507/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/pull/101507&quot;&gt;#101507&lt;/a&gt; ported the CPU rational approximation but dropped the correction steps (Metal had no erf at the time), leaving it accurate to only ~8e-6 relative (~67 fp32 eps), which was masked by the 1e-4 float32 OpInfo tolerance. CUDA uses the builtin &lt;code&gt;erfinv&lt;/code&gt; and needs no change.&lt;/p&gt;
+&lt;p&gt;Add &lt;code&gt;test_erfinv_near_endpoints&lt;/code&gt; to &lt;code&gt;TestUnaryUfuncs&lt;/code&gt; so it runs on all devices.&lt;/p&gt;
+&lt;p&gt;Fixes &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5883306553&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/201178&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/pytorch/pytorch/issues/201178/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/issues/201178&quot;&gt;#201178&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Authored with the help of Claude Code.&lt;/p&gt;
+&lt;p&gt;Co-Authored-By: Claude Opus 5.5 &lt;a href=&quot;mailto:noreply@anthropic.com&quot;&gt;noreply@anthropic.com&lt;/a&gt;&lt;br&gt;
+Pull Request resolved: &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5885779089&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/201187&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/pytorch/pytorch/pull/201187/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/pull/201187&quot;&gt;#201187&lt;/a&gt;&lt;br&gt;
+Approved by: &lt;a href=&quot;https://github.com/fadara01&quot;&gt;https://github.com/fadara01&lt;/a&gt;, &lt;a href=&quot;https://github.com/Skylion007&quot;&gt;https://github.com/Skylion007&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>malfet</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/2453524?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/viable/strict/1792405765</id>
+    <updated>2026-10-19T07:53:29Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1792405765"/>
+    <title>viable/strict/1792405765: [Test] Port XPU for test_masked.py (#189683)</title>
+    <content type="html">&lt;p&gt;For &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;2018027027&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/114850&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/pytorch/pytorch/issues/114850/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/issues/114850&quot;&gt;#114850&lt;/a&gt;, we will port masked-op test cases to Intel GPU. We could enable Intel GPU with the following methods and try the best to keep the original code styles:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Instantiate device-type tests with XPU enabled via &lt;code&gt;instantiate_device_type_tests()&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add targeted skips with &lt;code&gt;skipOps&lt;/code&gt; for known XPU failures&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;p&gt;Skip test_mask_layout for masked.prod with complex64/complex128 on XPU, where scatter_gather_base_kernel_func is not yet implemented for complex types in the XPU backend. Also adds allow_xpu=True to instantiate_device_type_tests to properly enable XPU test variants.&lt;/p&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Import skipOps and skip from common_device_type and add &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/SkipOps/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/SkipOps&quot;&gt;@SkipOps&lt;/a&gt; on test_mask_layout to skip masked.prod for complex64/complex128 on XPU.&lt;/li&gt;
+&lt;li&gt;Add allow_xpu=True to instantiate_device_type_tests so XPU test variants are properly instantiated and the skips take effect.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Test Plan&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pytest -v test/test_masked.py  &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Pull Request resolved: &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4872740251&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/189683&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/pytorch/pytorch/pull/189683/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/pull/189683&quot;&gt;#189683&lt;/a&gt;&lt;br&gt;
+Approved by: &lt;a href=&quot;https://github.com/guangyey&quot;&gt;https://github.com/guangyey&lt;/a&gt;, &lt;a href=&quot;https://github.com/CuiYifeng&quot;&gt;https://github.com/CuiYifeng&lt;/a&gt;, &lt;a href=&quot;https://github.com/jansel&quot;&gt;https://github.com/jansel&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>libohao1201</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/30426700?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/viable/strict/1792399349</id>
+    <updated>2026-10-19T05:47:16Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1792399349"/>
+    <title>viable/strict/1792399349</title>
+    <content type="html">&lt;p&gt;[xpu][inductor] fix test_benchmark_combo_kernel_emits_real_num_gb by …&lt;/p&gt;</content>
+    <author>
+      <name>orrangetabby17</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/277664133?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/viable/strict/1792395799</id>
+    <updated>2026-10-19T04:45:17Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1792395799"/>
+    <title>viable/strict/1792395799</title>
+    <content type="html">&lt;p&gt;[Testcase Refactoring] Classify error message tests by hardware (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;186522069&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/192&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/pytorch/pytorch/pull/192/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/pull/192&quot;&gt;#192&lt;/a&gt;…&lt;/p&gt;</content>
+    <author>
+      <name>taochong123456</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/29744975?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/viable/strict/1792392884</id>
+    <updated>2026-10-19T03:34:19Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1792392884"/>
+    <title>viable/strict/1792392884: [torchtitan hash update] update the pinned torchtitan hash (#201367)</title>
+    <content type="html">&lt;p&gt;This PR is auto-generated nightly by &lt;a href=&quot;https://github.com/pytorch/pytorch/blob/main/.github/workflows/nightly.yml&quot;&gt;this action&lt;/a&gt;.&lt;br&gt;
+Update the pinned torchtitan hash.&lt;br&gt;
+Pull Request resolved: &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;5915827561&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/201367&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/pytorch/pytorch/pull/201367/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/pull/201367&quot;&gt;#201367&lt;/a&gt;&lt;br&gt;
+Approved by: &lt;a href=&quot;https://github.com/pytorchbot&quot;&gt;https://github.com/pytorchbot&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>pytorchupdatebot</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/133916390?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/viable/strict/1792389209</id>
+    <updated>2026-10-19T03:10:18Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/viable%2Fstrict%2F1792389209"/>
+    <title>viable/strict/1792389209</title>
+    <content type="html">&lt;p&gt;[inductor] flex decoding: check BLOCK_M // GQA heads against the spar…&lt;/p&gt;</content>
+    <author>
+      <name>felipemello1</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/23004953?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/trunk/783802ccc45af57eb9b0712a4b31d1650a6bcb82</id>
+    <updated>2026-10-19T04:45:17Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/trunk%2F783802ccc45af57eb9b0712a4b31d1650a6bcb82"/>
+    <title>trunk/783802ccc45af57eb9b0712a4b31d1650a6bcb82</title>
+    <content type="html">&lt;p&gt;[Testcase Refactoring] Classify error message tests by hardware (&lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;186522069&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/192&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/pytorch/pytorch/pull/192/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/pull/192&quot;&gt;#192&lt;/a&gt;…&lt;/p&gt;</content>
+    <author>
+      <name>taochong123456</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/29744975?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/trunk/277652eef64acabd6d493a9bf28a398a7c22a1dd</id>
+    <updated>2026-10-19T07:53:29Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/trunk%2F277652eef64acabd6d493a9bf28a398a7c22a1dd"/>
+    <title>trunk/277652eef64acabd6d493a9bf28a398a7c22a1dd: [Test] Port XPU for test_masked.py (#189683)</title>
+    <content type="html">&lt;p&gt;For &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;2018027027&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/114850&quot; data-hovercard-type=&quot;issue&quot; data-hovercard-url=&quot;/pytorch/pytorch/issues/114850/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/issues/114850&quot;&gt;#114850&lt;/a&gt;, we will port masked-op test cases to Intel GPU. We could enable Intel GPU with the following methods and try the best to keep the original code styles:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Instantiate device-type tests with XPU enabled via &lt;code&gt;instantiate_device_type_tests()&lt;/code&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Add targeted skips with &lt;code&gt;skipOps&lt;/code&gt; for known XPU failures&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Summary&lt;/h3&gt;
+&lt;p&gt;Skip test_mask_layout for masked.prod with complex64/complex128 on XPU, where scatter_gather_base_kernel_func is not yet implemented for complex types in the XPU backend. Also adds allow_xpu=True to instantiate_device_type_tests to properly enable XPU test variants.&lt;/p&gt;
+&lt;h3&gt;Changes&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;Import skipOps and skip from common_device_type and add &lt;a class=&quot;user-mention notranslate&quot; data-hovercard-type=&quot;user&quot; data-hovercard-url=&quot;/users/SkipOps/hovercard&quot; data-octo-click=&quot;hovercard-link-click&quot; data-octo-dimensions=&quot;link_type:self&quot; href=&quot;https://github.com/SkipOps&quot;&gt;@SkipOps&lt;/a&gt; on test_mask_layout to skip masked.prod for complex64/complex128 on XPU.&lt;/li&gt;
+&lt;li&gt;Add allow_xpu=True to instantiate_device_type_tests so XPU test variants are properly instantiated and the skips take effect.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3&gt;Test Plan&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;pytest -v test/test_masked.py  &lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Pull Request resolved: &lt;a class=&quot;issue-link js-issue-link&quot; data-error-text=&quot;Failed to load title&quot; data-id=&quot;4872740251&quot; data-permission-text=&quot;Title is private&quot; data-url=&quot;https://github.com/pytorch/pytorch/issues/189683&quot; data-hovercard-type=&quot;pull_request&quot; data-hovercard-url=&quot;/pytorch/pytorch/pull/189683/hovercard&quot; href=&quot;https://github.com/pytorch/pytorch/pull/189683&quot;&gt;#189683&lt;/a&gt;&lt;br&gt;
+Approved by: &lt;a href=&quot;https://github.com/guangyey&quot;&gt;https://github.com/guangyey&lt;/a&gt;, &lt;a href=&quot;https://github.com/CuiYifeng&quot;&gt;https://github.com/CuiYifeng&lt;/a&gt;, &lt;a href=&quot;https://github.com/jansel&quot;&gt;https://github.com/jansel&lt;/a&gt;&lt;/p&gt;</content>
+    <author>
+      <name>libohao1201</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/30426700?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/trunk/8536e7e76f312789501509196e281ac0bd3d8287</id>
+    <updated>2026-10-19T08:55:46Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/trunk%2F8536e7e76f312789501509196e281ac0bd3d8287"/>
+    <title>trunk/8536e7e76f312789501509196e281ac0bd3d8287</title>
+    <content type="html">&lt;p&gt;[Test][XPU] Enable XPU device coverage for SymPy tensor interpolation…&lt;/p&gt;</content>
+    <author>
+      <name>gplutop7</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/198200286?s=60&amp;v=4"/>
+  </entry>
+  <entry>
+    <id>tag:github.com,2008:Repository/65600975/trunk/780c30cf047428e017a51d69af18303333b17f09</id>
+    <updated>2026-10-19T03:10:18Z</updated>
+    <link rel="alternate" type="text/html" href="https://github.com/pytorch/pytorch/releases/tag/trunk%2F780c30cf047428e017a51d69af18303333b17f09"/>
+    <title>trunk/780c30cf047428e017a51d69af18303333b17f09</title>
+    <content type="html">&lt;p&gt;[inductor] flex decoding: check BLOCK_M // GQA heads against the spar…&lt;/p&gt;</content>
+    <author>
+      <name>felipemello1</name>
+    </author>
+    <media:thumbnail height="30" width="30" url="https://avatars.githubusercontent.com/u/23004953?s=60&amp;v=4"/>
+  </entry>
+</feed>

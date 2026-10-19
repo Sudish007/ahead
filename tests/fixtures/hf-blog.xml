@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+ <channel>
+  <atom:link href="https://huggingface.co/blog/feed.xml" rel="self" type="application/rss+xml"/>
+  <title>Hugging Face - Blog</title>
+  <link>https://huggingface.co/blog</link>
+  <description>The Hugging Face blog</description>
+  <language>en-US</language>
+  <item>
+   <title>Scaling Indic Pretraining: 2.8 Trillion Tokens and an Open Data Generation Pipeline</title>
+   <pubDate>Fri, 16 Oct 2026 01:44:47 GMT</pubDate>
+   <link>https://huggingface.co/blog/nvidia/scaling-indic-pretraining</link>
+   <guid isPermaLink="false">https://huggingface.co/blog/nvidia/scaling-indic-pretraining</guid>
+  </item>
+  <item>
+   <title>Welcome Beam: a 501B open model you can own, customize, and scale</title>
+   <pubDate>Fri, 16 Oct 2026 00:00:00 GMT</pubDate>
+   <link>https://huggingface.co/blog/reflection-beam</link>
+   <guid isPermaLink="true">https://huggingface.co/blog/reflection-beam</guid>
+  </item>
+  <item>
+   <title>Granite Switch 4.1: Chat, Decisions, and Speech from One Endpoint</title>
+   <pubDate>Thu, 15 Oct 2026 20:34:01 GMT</pubDate>
+   <link>https://huggingface.co/blog/ibm-granite/granite-switch-4-1</link>
+   <guid isPermaLink="false">https://huggingface.co/blog/ibm-granite/granite-switch-4-1</guid>
+  </item>
+  <item>
+   <title>Apertus 1.5 Release Notes</title>
+   <pubDate>Thu, 15 Oct 2026 09:08:45 GMT</pubDate>
+   <link>https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes</link>
+   <guid isPermaLink="false">https://huggingface.co/blog/swiss-ai/apertus-v15-release-notes</guid>
+  </item>
+  <item>
+   <title>Welcome Muse Spark Open: open-weight frontier multimodal mixture-of-experts model from Meta</title>
+   <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+   <link>https://huggingface.co/blog/meta-muse-spark-open</link>
+   <guid isPermaLink="true">https://huggingface.co/blog/meta-muse-spark-open</guid>
+  </item>
+  <item>
+   <title>Welcome FLUX.3 Image Klein in Diffusers</title>
+   <pubDate>Thu, 15 Oct 2026 00:00:00 GMT</pubDate>
+   <link>https://huggingface.co/blog/flux-3</link>
+   <guid isPermaLink="true">https://huggingface.co/blog/flux-3</guid>
+  </item>
+  <item>
+   <title>HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost</title>
+   <pubDate>Wed, 14 Oct 2026 16:12:42 GMT</pubDate>
+   <link>https://huggingface.co/blog/allenai/hiro-acev2</link>
+   <guid isPermaLink="false">https://huggingface.co/blog/allenai/hiro-acev2</guid>
+  </item>
+  <item>
+   <title>Run fast, private agents on-device with LFM2.5-24B-A2B</title>
+   <pubDate>Tue, 13 Oct 2026 17:05:48 GMT</pubDate>
+   <link>https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b</link>
+   <guid isPermaLink="false">https://huggingface.co/blog/LiquidAI/lfm25-24b-a2b</guid>
+  </item>
+  <item>
+   <title>The model that didn&apos;t exist, so you made it yourself</title>
+   <pubDate>Thu, 08 Oct 2026 00:00:00 GMT</pubDate>
+   <link>https://huggingface.co/blog/building-with-ml-intern</link>
+   <guid isPermaLink="true">https://huggingface.co/blog/building-with-ml-intern</guid>
+  </item>
+  <item>
+   <title>Introducing Falcon ASR</title>
+   <pubDate>Wed, 07 Oct 2026 13:21:03 GMT</pubDate>
+   <link>https://huggingface.co/blog/tiiuae/falcon-asr</link>
+   <guid isPermaLink="false">https://huggingface.co/blog/tiiuae/falcon-asr</guid>
+  </item>
+</channel>
+</rss>

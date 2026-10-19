@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://epoch.ai/</id>
+    <title>Epoch AI — Latest</title>
+    <updated>2026-10-16T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <author>
+        <name>Epoch AI</name>
+        <uri>https://epoch.ai/</uri>
+    </author>
+    <link rel="alternate" href="https://epoch.ai/"/>
+    <link rel="self" href="https://epoch.ai/atom.xml"/>
+    <subtitle>The latest work from Epoch AI: research papers, reports, data insights, newsletter issues, and podcast episodes.</subtitle>
+    <entry>
+        <title type="html"><![CDATA[Open-weight models trail closed models in cyber capabilities by 6–7 months]]></title>
+        <id>https://epoch.ai/data-insights/open-closed-cyber-eci-gap</id>
+        <link href="https://epoch.ai/data-insights/open-closed-cyber-eci-gap"/>
+        <updated>2026-10-16T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Z.ai’s GLM-5.3 is the top open-weight model on Epoch’s Cyber ECI, scoring where the closed-weight frontier stood 6–7 months earlier.]]></summary>
+        <author>
+            <name>Jaeho Lee</name>
+        </author>
+        <author>
+            <name>Alexander Barry</name>
+        </author>
+        <category term="Open models"/>
+        <category term="Capabilities"/>
+        <category term="Leading companies"/>
+        <published>2026-10-16T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[AI systems are improving rapidly at Slay the Spire and its sequel]]></title>
+        <id>https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel</id>
+        <link href="https://epoch.ai/publications/ai-systems-are-improving-rapidly-at-slay-the-spire-and-its-sequel"/>
+        <updated>2026-10-14T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Months ago, frontier models could barely beat Slay the Spire. Now they win 90%+ at the easiest setting and up to 20% at the hardest. Results from Epoch AI’s new SpireClimb benchmark.]]></summary>
+        <author>
+            <name>Benjamin Ou</name>
+        </author>
+        <author>
+            <name>Simon Chen</name>
+        </author>
+        <category term="Capabilities"/>
+        <published>2026-10-14T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Can AI automate Epoch?]]></title>
+        <id>https://epoch.ai/publications/can-ai-automate-epoch</id>
+        <link href="https://epoch.ai/publications/can-ai-automate-epoch"/>
+        <updated>2026-10-08T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Frontier models can handle well-defined tasks reliably, but fail in the more open-ended aspects that prevent full work automation. Explore Epoch AI's Automation Reports: realistic, open-ended tasks taken directly from our work, manually graded by our own standards.]]></summary>
+        <author>
+            <name>Kelly Hong</name>
+        </author>
+        <author>
+            <name>Greg Burnham</name>
+        </author>
+        <category term="Capabilities"/>
+        <category term="Adoption and use"/>
+        <published>2026-10-08T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[US adults are no more likely to face cyber incidents than when Claude Fable 5 launched]]></title>
+        <id>https://epoch.ai/data-insights/cyber-incidents-flat-since-fable-5</id>
+        <link href="https://epoch.ai/data-insights/cyber-incidents-flat-since-fable-5"/>
+        <updated>2026-10-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[June and September polls from Epoch AI/Ipsos show no detectable increase in the share of US adults experiencing cyber incidents]]></summary>
+        <author>
+            <name>Caroline Falkman Olsson</name>
+        </author>
+        <author>
+            <name>Yafah Edelman</name>
+        </author>
+        <category term="Capabilities"/>
+        <category term="Adoption and use"/>
+        <published>2026-10-07T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[EBR-bench update]]></title>
+        <id>https://epoch.ai/publications/ebr-bench-update</id>
+        <link href="https://epoch.ai/publications/ebr-bench-update"/>
+        <updated>2026-10-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Updates on EBR-bench, Epoch AI’s benchmark that tests models’ ability to learn from experience. GPT-6 Astra hit a perfect score on over half its EBR-bench attempts by exploiting one overpowered card, which we now ban. Plus multi-agent scaffold results.]]></summary>
+        <author>
+            <name>Benjamin Ou</name>
+        </author>
+        <author>
+            <name>Avery Yen</name>
+        </author>
+        <category term="Capabilities"/>
+        <published>2026-10-07T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Can AI automate AI R&D yet?]]></title>
+        <id>https://epoch.ai/publications/innovationeval</id>
+        <link href="https://epoch.ai/publications/innovationeval"/>
+        <updated>2026-10-07T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Early evidence from InnovationEval: No]]></summary>
+        <author>
+            <name>David Owen</name>
+        </author>
+        <category term="Capabilities"/>
+        <category term="R&amp;D"/>
+        <published>2026-10-07T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[China is more exposed to semiconductor supply-chain disruptions than the US]]></title>
+        <id>https://epoch.ai/publications/china-us-semiconductor-supply-chain-exposure</id>
+        <link href="https://epoch.ai/publications/china-us-semiconductor-supply-chain-exposure"/>
+        <updated>2026-10-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[China is 2.7× as exposed to semiconductor supply shocks as the US, Epoch AI estimates. Epoch traces chips through input-output tables to model the impact of a Taiwan shock and decoupling.]]></summary>
+        <author>
+            <name>Daniel Carey</name>
+        </author>
+        <category term="Chips"/>
+        <category term="Geopolitics"/>
+        <category term="Economic impact"/>
+        <published>2026-10-06T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How do Chinese AI companies make money?]]></title>
+        <id>https://epoch.ai/publications/how-do-chinese-ai-companies-make-money</id>
+        <link href="https://epoch.ai/publications/how-do-chinese-ai-companies-make-money"/>
+        <updated>2026-10-06T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[China's six leading AI firms earn about 10% of OpenAI and Anthropic's combined AI revenue. Epoch AI examines their five revenue streams: consumer apps, model access, enterprise and government solutions, licensing fees, and indirect monetization through cloud and advertising.]]></summary>
+        <author>
+            <name>Cheryl Wu</name>
+        </author>
+        <author>
+            <name>Anson Ho</name>
+        </author>
+        <category term="Leading companies"/>
+        <category term="Finances"/>
+        <category term="Geopolitics"/>
+        <published>2026-10-06T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Coding-agent spending by OpenAI researchers is doubling roughly every month]]></title>
+        <id>https://epoch.ai/data-insights/openai-coding-agent-spending</id>
+        <link href="https://epoch.ai/data-insights/openai-coding-agent-spending"/>
+        <updated>2026-10-05T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[OpenAI researchers’ coding-agent usage, valued at API prices, has recently been doubling roughly every month, according to breakpoint fits.]]></summary>
+        <author>
+            <name>Yafah Edelman</name>
+        </author>
+        <author>
+            <name>Luke Emberson</name>
+        </author>
+        <category term="R&amp;D"/>
+        <category term="Leading companies"/>
+        <category term="Adoption and use"/>
+        <published>2026-10-05T00:00:00.000Z</published>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How many AI agents could run on the AI chips shipped through 2027?]]></title>
+        <id>https://epoch.ai/publications/estimating-the-agent-population</id>
+        <link href="https://epoch.ai/publications/estimating-the-agent-population"/>
+        <updated>2026-10-02T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Memory shipped through 2027 could run 33–171 million concurrent frontier-model agents, or billions using efficient open models. Epoch AI estimates inference capacity from HBM supply, serving benchmarks, and agent-hour costs.]]></summary>
+        <author>
+            <name>Jason Li</name>
+        </author>
+        <category term="Chips"/>
+        <category term="Economic impact"/>
+        <category term="Finances"/>
+        <published>2026-10-02T00:00:00.000Z</published>
+    </entry>
+</feed>

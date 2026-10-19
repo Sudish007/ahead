@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <rss version="2.0">
+    <channel>
+      <title>Ai2 Blog</title>
+      <link>https://allenai.org/blog</link>
+      <description>Latest updates</description>
+      
+      <item>
+        <guid isPermaLink="false">https://allenai.org/blog/hiro-acev2</guid>
+        <title>HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost</title>
+        <link>https://allenai.org/blog/hiro-acev2</link>
+        <pubDate>2026-10-14T00:00:00-08:00</pubDate>
+        <description>
+          <![CDATA[
+            <div style="display: flex; gap: 12px">
+              <div>HiRO-ACEv2 captures extreme rain, wind, and pressure events at 3 km resolution for about 1/300th the cost of X-SHiELD, making detailed global climate simulations more accessible to researchers.</div>
+              <img src="https://www.datocms-assets.com/64837/1791997968-ace-hiro-v2-feature-c-v4.png?w=200" width="200" alt="HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost" />
+            </div>
+          ]]>
+        </description>
+      </item>
+      
+      <item>
+        <guid isPermaLink="false">https://allenai.org/blog/molmo2fish</guid>
+        <title>How Molmo 2’s open release helped an MIT researcher rethink fish tracking</title>
+        <link>https://allenai.org/blog/molmo2fish</link>
+        <pubDate>2026-10-13T00:00:00-08:00</pubDate>
+        <description>
+          <![CDATA[
+            <div style="display: flex; gap: 12px">
+              <div>Molmo 2’s open release helped MIT researcher Kai Van Brunt develop Molmo2Fish, an experimental model that tracks salmon in sonar footage and corrects some tracking errors using everyday language.</div>
+              <img src="https://www.datocms-assets.com/64837/1791919335-adobestock-554340853-1550x810-2026-10-13t18-36-01.png?w=200" width="200" alt="How Molmo 2’s open release helped an MIT researcher rethink fish tracking" />
+            </div>
+          ]]>
+        </description>
+      </item>
+      
+      <item>
+        <guid isPermaLink="false">https://allenai.org/blog/impactful-scheduling</guid>
+        <title>Impactful scheduling for GPU clusters</title>
+        <link>https://allenai.org/blog/impactful-scheduling</link>
+        <pubDate>2026-10-09T00:00:00-08:00</pubDate>
+        <description>
+          <![CDATA[
+            <div style="display: flex; gap: 12px">
+              <div>We explain how Ai2’s new GPU scheduler uses time budgets, fair-share allocation, and time-slicing to prioritize high-impact research, shorten queue waits, and keep GPUs busy.</div>
+              <img src="https://www.datocms-assets.com/64837/1791481523-impactful-scheduling-for-gpu-clusters-google-docs-image-1-1.png?w=200" width="200" alt="Impactful scheduling for GPU clusters" />
+            </div>
+          ]]>
+        </description>
+      </item>
+      
+      <item>
+        <guid isPermaLink="false">https://allenai.org/blog/colm-2026-recap</guid>
+        <title>Ai2 at COLM 2026: Open research, from models to agents for science</title>
+        <link>https://allenai.org/blog/colm-2026-recap</link>
+        <pubDate>2026-10-09T00:00:00-08:00</pubDate>
+        <description>
+          <![CDATA[
+            <div style="display: flex; gap: 12px">
+              <div>Ai2 joined COLM 2026 to share advances in open language models, training infrastructure, and AI for science, including Olmo Hybrid, Asta, and Bolmo, while connecting with the broader research community.</div>
+              <img src="https://www.datocms-assets.com/64837/1791590717-colm-2026-recap-blog-google-docs-image-1.jpg?w=200" width="200" alt="Ai2 at COLM 2026: Open research, from models to agents for science" />
+            </div>
+          ]]>
+        </description>
+      </item>
+      
+      <item>
+        <guid isPermaLink="false">https://allenai.org/blog/bolmo-nature</guid>
+        <title>Now in Nature: Retrofitting language models to operate over bytes</title>
+        <link>https://allenai.org/blog/bolmo-nature</link>
+        <pubDate>2026-10-07T00:00:00-08:00</pubDate>
+        <description>
+          <![CDATA[
+            <div style="display: flex; gap: 12px">
+              <div>The technique behind Bolmo, Ai2’s fully open byte-level language models, is now published in Nature, with new checkpoints showing the approach generalizes beyond Olmo to other model families.</div>
+              <img src="https://www.datocms-assets.com/64837/1791355720-nature-cover-for-release-thumbnail.jpg?w=200" width="200" alt="Now in Nature: Retrofitting language models to operate over bytes" />
+            </div>
+          ]]>
+        </description>
+      </item>
+      
+      <item>
+        <guid isPermaLink="false">https://allenai.org/blog/astabrief</guid>
+        <title>Open-sourcing AstaBrief, the fast report-generation model in Asta</title>
+        <link>https://allenai.org/blog/astabrief</link>
+        <pubDate>2026-10-02T00:00:00-08:00</pubDate>
+        <description>
+          <![CDATA[
+            <div style="display: flex; gap: 12px">
+              <div>We’re releasing AstaBrief, an 8B open-weights model for generating cited scientific reports, available in Asta’s Fast mode or to download and run on your own infrastructure.</div>
+              <img src="https://www.datocms-assets.com/64837/1790891256-asta-report-generation-model-blog-astabrief-google-docs-image-1.png?w=200" width="200" alt="Open-sourcing AstaBrief, the fast report-generation model in Asta" />
+            </div>
+          ]]>
+        </description>
+      </item>
+      
+      <item>
+        <guid isPermaLink="false">https://allenai.org/blog/olmocore3</guid>
+        <title>Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs</title>
+        <link>https://allenai.org/blog/olmocore3</link>
+        <pubDate>2026-10-01T00:00:00-08:00</pubDate>
+        <description>
+          <![CDATA[
+            <div style="display: flex; gap: 12px">
+              <div>Olmo-core 3 introduces a redesigned, fully open training stack for efficiently scaling mixture-of-experts models into the trillion-parameter range.</div>
+              <img src="https://www.datocms-assets.com/64837/1790798606-olmo-core-3-blog-draft-google-docs-image-1.png?w=200" width="200" alt="Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs" />
+            </div>
+          ]]>
+        </description>
+      </item>
+      
+      <item>
+        <guid isPermaLink="false">https://allenai.org/blog/olmo-arena</guid>
+        <title>What a crowdsourced game revealed about steering Olmo 3</title>
+        <link>https://allenai.org/blog/olmo-arena</link>
+        <pubDate>2026-09-17T00:00:00-08:00</pubDate>
+        <description>
+          <![CDATA[
+            <div style="display: flex; gap: 12px">
+              <div>A crowdsourced game built on Olmo 3 showed how people can exploit unexpected model behaviors to stress-test prosocial AI evaluations—and how open access to a model’s internals can help researchers understand why those tests break.</div>
+              <img src="https://www.datocms-assets.com/64837/1789674806-what-a-crowdsourced-game-revealed-about-steering-olmo-3-testimonial-google-do-image-1.png?w=200" width="200" alt="What a crowdsourced game revealed about steering Olmo 3" />
+            </div>
+          ]]>
+        </description>
+      </item>
+</channel>
+</rss>

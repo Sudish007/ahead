@@ -1,0 +1,1292 @@
+[
+ {
+  "paper": {
+   "id": "2610.22306",
+   "authors": [
+    {
+     "_id": "6ad383ba60556d9547d948af",
+     "user": {
+      "_id": "653073e4f4c60acf0cbee20b",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/653073e4f4c60acf0cbee20b/EXQ0NYyfryCLXLFsKBlBg.png",
+      "isPro": false,
+      "fullname": "Girish Kumar Adari",
+      "user": "Asuran9",
+      "type": "user",
+      "name": "Asuran9"
+     },
+     "name": "Girish Kumar Adari",
+     "status": "claimed_verified",
+     "statusLastChangedAt": "2026-10-17T16:45:04.757Z",
+     "hidden": false
+    }
+   ],
+   "publishedAt": "2026-10-15T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "ARC-SORT: Adaptive, Robust, Compensated Multi-Object Tracking with Interacting Multiple Models",
+   "submittedOnDailyBy": {
+    "_id": "653073e4f4c60acf0cbee20b",
+    "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/653073e4f4c60acf0cbee20b/EXQ0NYyfryCLXLFsKBlBg.png",
+    "isPro": false,
+    "fullname": "Girish Kumar Adari",
+    "user": "Asuran9",
+    "type": "user",
+    "name": "Asuran9"
+   },
+   "summary": "Multi-object tracking in sports broadcasts is hard for two reasons: athletes move fast and change direction abruptly, and the camera pans and zooms at the same time. We present ARC-SORT (Adaptive, Robust, Compensated SORT), a tracking-by-detection tracker that trains nothing and runs in real time. Its design rule: the tracker measures its own uncertainty, and that measurement decides how it acts. An Interacting Multiple Model (IMM) Kalman filter gives every track a predictive covariance, and we turn it into a per-track search region: the less reliable the motion prediction, the larger the region in which a detection may match (uncertainty-adaptive Expansion IoU, EIoU). On identical inputs, this continuous coupling is what matters: the same covariance used as a hard Mahalanobis gate hurts at every threshold we swept, and richer covariance summaries add nothing measurable. When two tracks cross, the assignment cost itself reports whether the decision was close. ARC-SORT keeps such pairs under review and applies at most one corrective identity swap once post-crossing appearance evidence shows the first decision was wrong; this adds +1.0 HOTA (higher order tracking accuracy) on both the SportsMOT and DanceTrack test sets at under a millisecond per frame. For players who leave the frame for seconds, motion extrapolation carries no information, so our offline re-identification drops the usual motion gate and links tracklets by appearance alone. ARC-SORT reaches 81.82 HOTA on the SportsMOT test set with the fewest identity switches of the 69 leaderboard entries as of August 2026 and tied-third multi-object tracking accuracy (MOTA, 97.09), and 62.1 HOTA on DanceTrack test with the same association settings. On Deep-EIoU's public detections and embeddings it reaches 80.31 HOTA, +3.1 over Deep-EIoU. It runs at about 50 frames per second on a laptop RTX 3060 GPU. Code will be released.",
+   "upvotes": 0,
+   "discussionId": "6ad383bb60556d9547d948b0",
+   "projectPage": "https://athlitix.github.io/arcsort/",
+   "githubRepo": "https://github.com/Athlitix/arcsort",
+   "githubRepoAddedBy": "user",
+   "ai_summary": "ARC-SORT improves multi-object tracking in sports broadcasts by using adaptive uncertainty-based search regions, corrective identity swaps, and appearance-only re-identification to achieve high accuracy with minimal identity switches.",
+   "ai_keywords": [
+    "Interacting Multiple Model Kalman filter",
+    "predictive covariance",
+    "Expansion IoU",
+    "Mahalanobis gate",
+    "HOTA",
+    "identity swap",
+    "appearance evidence",
+    "offline re-identification",
+    "motion gate",
+    "Deep-EIoU"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "githubStars": 0
+  },
+  "publishedAt": "2026-10-14T20:00:00.000Z",
+  "title": "ARC-SORT: Adaptive, Robust, Compensated Multi-Object Tracking with Interacting Multiple Models",
+  "summary": "Multi-object tracking in sports broadcasts is hard for two reasons: athletes move fast and change direction abruptly, and the camera pans and zooms at the same time. We present ARC-SORT (Adaptive, Robust, Compensated SORT), a tracking-by-detection tracker that trains nothing and runs in real time. Its design rule: the tracker measures its own uncertainty, and that measurement decides how it acts. An Interacting Multiple Model (IMM) Kalman filter gives every track a predictive covariance, and we turn it into a per-track search region: the less reliable the motion prediction, the larger the region in which a detection may match (uncertainty-adaptive Expansion IoU, EIoU). On identical inputs, this continuous coupling is what matters: the same covariance used as a hard Mahalanobis gate hurts at every threshold we swept, and richer covariance summaries add nothing measurable. When two tracks cross, the assignment cost itself reports whether the decision was close. ARC-SORT keeps such pairs under review and applies at most one corrective identity swap once post-crossing appearance evidence shows the first decision was wrong; this adds +1.0 HOTA (higher order tracking accuracy) on both the SportsMOT and DanceTrack test sets at under a millisecond per frame. For players who leave the frame for seconds, motion extrapolation carries no information, so our offline re-identification drops the usual motion gate and links tracklets by appearance alone. ARC-SORT reaches 81.82 HOTA on the SportsMOT test set with the fewest identity switches of the 69 leaderboard entries as of August 2026 and tied-third multi-object tracking accuracy (MOTA, 97.09), and 62.1 HOTA on DanceTrack test with the same association settings. On Deep-EIoU's public detections and embeddings it reaches 80.31 HOTA, +3.1 over Deep-EIoU. It runs at about 50 frames per second on a laptop RTX 3060 GPU. Code will be released.",
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.22306.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "653073e4f4c60acf0cbee20b",
+   "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/653073e4f4c60acf0cbee20b/EXQ0NYyfryCLXLFsKBlBg.png",
+   "fullname": "Girish Kumar Adari",
+   "name": "Asuran9",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 2,
+   "isUserFollowing": false
+  },
+  "isAuthorParticipating": true
+ },
+ {
+  "paper": {
+   "id": "2610.21482",
+   "authors": [
+    {
+     "_id": "6ad5e02e60556d9547d95150",
+     "name": "Noora Al-Emadi",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5e02e60556d9547d95151",
+     "name": "Muhammad Imran",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5e02e60556d9547d95152",
+     "name": "Yin Yang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5e02e60556d9547d95153",
+     "name": "Ingmar Weber",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5e02e60556d9547d95154",
+     "name": "Fabjan Lashi",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5e02e60556d9547d95155",
+     "name": "Gaia Rigodanza",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5e02e60556d9547d95156",
+     "name": "Ivana Hajzmanova",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5e02e60556d9547d95157",
+     "name": "Ferda Ofli",
+     "hidden": false
+    }
+   ],
+   "publishedAt": "2026-10-15T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "AI-Driven Disaster Response and Displacement Monitoring",
+   "submittedOnDailyBy": {
+    "_id": "67866daa69178ec776c38d63",
+    "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/Syye7boyh43c6clx4Q0Ec.png",
+    "isPro": false,
+    "fullname": "Noora Al-Emadi",
+    "user": "nalemadi",
+    "type": "user",
+    "name": "nalemadi"
+   },
+   "summary": "ARTIFICIAL INTELLIGENCE (AI) has demonstrated its potential across a wide range of humanitarian tasks, offering scalable and data-driven solutions to some of the world's most pressing challenges. For instance, in addressing climate change, AI-powered models are being used for faster and more accurate global weather forecasting, control and design of renewable energy, and monitoring deforestation. Machine learning algorithms analyze satellite imagery and socioeconomic data to predict poverty and promote sustainable development. AI has also transformed disaster response and conflict monitoring, providing innovative solutions for assessing damage and urgent needs and tracking displacement.",
+   "upvotes": 1,
+   "discussionId": "6ad5e02e60556d9547d95158",
+   "projectPage": "https://qcai.qcri.org/publications/ai-driven-disaster-response-and-displacement-monitoring",
+   "organization": {
+    "_id": "6ac54ed170696b2326d7e488",
+    "name": "HumAI-DisplacementMonitoring",
+    "fullname": "Humanitarian AI, Displacement Monitoring",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67866daa69178ec776c38d63/5wqJMI8laPtOFs8bvHcRV.png"
+   }
+  },
+  "publishedAt": "2026-10-14T20:00:00.000Z",
+  "title": "AI-Driven Disaster Response and Displacement Monitoring",
+  "summary": "ARTIFICIAL INTELLIGENCE (AI) has demonstrated its potential across a wide range of humanitarian tasks, offering scalable and data-driven solutions to some of the world's most pressing challenges. For instance, in addressing climate change, AI-powered models are being used for faster and more accurate global weather forecasting, control and design of renewable energy, and monitoring deforestation. Machine learning algorithms analyze satellite imagery and socioeconomic data to predict poverty and promote sustainable development. AI has also transformed disaster response and conflict monitoring, providing innovative solutions for assessing damage and urgent needs and tracking displacement.",
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.21482.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "67866daa69178ec776c38d63",
+   "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/no-auth/Syye7boyh43c6clx4Q0Ec.png",
+   "fullname": "Noora Al-Emadi",
+   "name": "nalemadi",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 1,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "6ac54ed170696b2326d7e488",
+   "name": "HumAI-DisplacementMonitoring",
+   "fullname": "Humanitarian AI, Displacement Monitoring",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/67866daa69178ec776c38d63/5wqJMI8laPtOFs8bvHcRV.png"
+  },
+  "isAuthorParticipating": false
+ },
+ {
+  "paper": {
+   "id": "2610.23279",
+   "authors": [
+    {
+     "_id": "6ad5797660556d9547d94e24",
+     "name": "Pei Fu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e25",
+     "name": "Yike Liu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e26",
+     "name": "Yue Sun",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e27",
+     "name": "Hanmo Wang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e28",
+     "name": "Xiuwen Xi",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e29",
+     "name": "Ruoceng Zhang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e2a",
+     "user": {
+      "_id": "664c4c2d37978db71bb2d7b5",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/664c4c2d37978db71bb2d7b5/4o60GexD_Dp81EquoKph0.jpeg",
+      "isPro": false,
+      "fullname": "Shaojie Zhang",
+      "user": "zhshj0110",
+      "type": "user",
+      "name": "zhshj0110"
+     },
+     "name": "Shaojie Zhang",
+     "status": "claimed_verified",
+     "statusLastChangedAt": "2026-10-19T08:45:05.372Z",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e2b",
+     "name": "Chao Jiang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e2c",
+     "name": "Hang Li",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e2d",
+     "name": "Bingrui Liu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e2e",
+     "name": "Zhenbo Luo",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e2f",
+     "name": "Heng Qu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e30",
+     "name": "Changjian Xu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e31",
+     "name": "Ming Xu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5797660556d9547d94e32",
+     "name": "Jian Luan",
+     "hidden": false
+    }
+   ],
+   "mediaUrls": [
+    "https://cdn-uploads.huggingface.co/production/uploads/664c4c2d37978db71bb2d7b5/EobBGeghQkyegPE1RRPpe.mp4"
+   ],
+   "publishedAt": "2026-10-16T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "Xiaomi-Lens-0 Technical Report",
+   "submittedOnDailyBy": {
+    "_id": "664c4c2d37978db71bb2d7b5",
+    "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/664c4c2d37978db71bb2d7b5/4o60GexD_Dp81EquoKph0.jpeg",
+    "isPro": false,
+    "fullname": "Shaojie Zhang",
+    "user": "zhshj0110",
+    "type": "user",
+    "name": "zhshj0110"
+   },
+   "summary": "Multimodal large language models (MLLMs) answer questions about whole images well, yet they still struggle with fine-grained region understanding. A key reason is that text-only supervision never specifies which regions support an answer. To close this gap, we present Xiaomi-Lens-0, a 4B MLLM built on Qwen3.5 that predicts masks from its own visual representations. Specifically, a lightweight decoder combines vision-encoder patch features with visual latents, the language model's mask-token states, so mask supervision reaches the shared backbone without an additional segmentation encoder. Because each latent decodes to a mask, the model can interleave reasoning with region-specific latents and thus think with visual latents, while grounded reasoning traces supervise the regions it visits during chain-of-thought. As a result, across all eight RefCOCO, RefCOCO+, and RefCOCOg splits, Xiaomi-Lens-0 gains 5.6 points on average over Qwen3.5 in referring comprehension and achieves the highest segmentation cIoU among compared models. Moreover, it surpasses Qwen3.5 across all perception benchmarks. Homepage: https://seerray-lab.github.io/Xiaomi-Lens-0{this https URL}",
+   "upvotes": 13,
+   "discussionId": "6ad5797660556d9547d94e33",
+   "projectPage": "https://seerray-lab.github.io/Xiaomi-Lens-0",
+   "githubRepo": "https://github.com/SeerRay-Lab/Xiaomi-Lens-0",
+   "githubRepoAddedBy": "user",
+   "ai_summary": "Xiaomi-Lens-0 is a 4B multimodal model that predicts masks from internal visual representations to improve fine-grained region reasoning and referring comprehension.",
+   "ai_keywords": [
+    "multimodal large language models",
+    "vision-encoder patch features",
+    "visual latents",
+    "mask-token states",
+    "segmentation encoder",
+    "chain-of-thought",
+    "referring comprehension",
+    "segmentation cIoU"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "githubStars": 10,
+   "organization": {
+    "_id": "69fedb8505683e056b9e15b0",
+    "name": "SeerRay-Lab",
+    "fullname": "SeerRay-Lab",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/664c4c2d37978db71bb2d7b5/F5pL5bu_t6Hg6X2x_ihgb.png"
+   }
+  },
+  "publishedAt": "2026-10-15T20:00:00.000Z",
+  "title": "Xiaomi-Lens-0 Technical Report",
+  "summary": "Multimodal large language models (MLLMs) answer questions about whole images well, yet they still struggle with fine-grained region understanding. A key reason is that text-only supervision never specifies which regions support an answer. To close this gap, we present Xiaomi-Lens-0, a 4B MLLM built on Qwen3.5 that predicts masks from its own visual representations. Specifically, a lightweight decoder combines vision-encoder patch features with visual latents, the language model's mask-token states, so mask supervision reaches the shared backbone without an additional segmentation encoder. Because each latent decodes to a mask, the model can interleave reasoning with region-specific latents and thus think with visual latents, while grounded reasoning traces supervise the regions it visits during chain-of-thought. As a result, across all eight RefCOCO, RefCOCO+, and RefCOCOg splits, Xiaomi-Lens-0 gains 5.6 points on average over Qwen3.5 in referring comprehension and achieves the highest segmentation cIoU among compared models. Moreover, it surpasses Qwen3.5 across all perception benchmarks. Homepage: https://seerray-lab.github.io/Xiaomi-Lens-0{this https URL}",
+  "mediaUrls": [
+   "https://cdn-uploads.huggingface.co/production/uploads/664c4c2d37978db71bb2d7b5/EobBGeghQkyegPE1RRPpe.mp4"
+  ],
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.23279.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "664c4c2d37978db71bb2d7b5",
+   "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/664c4c2d37978db71bb2d7b5/4o60GexD_Dp81EquoKph0.jpeg",
+   "fullname": "Shaojie Zhang",
+   "name": "zhshj0110",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 1,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "69fedb8505683e056b9e15b0",
+   "name": "SeerRay-Lab",
+   "fullname": "SeerRay-Lab",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/664c4c2d37978db71bb2d7b5/F5pL5bu_t6Hg6X2x_ihgb.png"
+  },
+  "isAuthorParticipating": true
+ },
+ {
+  "paper": {
+   "id": "2610.23751",
+   "authors": [
+    {
+     "_id": "6ad5d7fd60556d9547d95118",
+     "user": {
+      "_id": "66877d72bec843c681fb4169",
+      "avatarUrl": "/avatars/02165c97f8d97cf04a268d9ea74e6188.svg",
+      "isPro": false,
+      "fullname": "chen houyuan",
+      "user": "houyuanchen",
+      "type": "user",
+      "name": "houyuanchen"
+     },
+     "name": "Houyuan Chen",
+     "status": "claimed_verified",
+     "statusLastChangedAt": "2026-10-19T08:45:05.485Z",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d95119",
+     "name": "Fanzhou Wang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d9511a",
+     "name": "Xiangyu Fan",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d9511b",
+     "name": "Songlin Yang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d9511c",
+     "name": "Zhitao Yang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d9511d",
+     "name": "Lvmin Zhang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d9511e",
+     "name": "Pei Yang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d9511f",
+     "name": "Hao Zhao",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d95120",
+     "name": "Lei Yang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d7fd60556d9547d95121",
+     "name": "Anyi Rao",
+     "hidden": false
+    }
+   ],
+   "publishedAt": "2026-10-16T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "MTEdit: Packed Trajectories Beat Rollouts for Multi-Turn Image Editing",
+   "submittedOnDailyBy": {
+    "_id": "66877d72bec843c681fb4169",
+    "avatarUrl": "/avatars/02165c97f8d97cf04a268d9ea74e6188.svg",
+    "isPro": false,
+    "fullname": "chen houyuan",
+    "user": "houyuanchen",
+    "type": "user",
+    "name": "houyuanchen"
+   },
+   "summary": "Multi-turn image editing aims to modify an image according to a sequence of instructions, making it better aligned with human-AI collaborative creation than single-turn editing. However, constructing high-quality multi-turn training data remains challenging, as conventional sequential rollout accumulates errors and introduces visual-quality drift across editing turns. To address this challenge, we introduce MTEdit, a multi-turn image editing dataset built through a pipeline centered on packed trajectory canvas (PTC) generation. By jointly generating multiple editing states within a unified visual context, this pipeline reduces visual-quality drift across turns. Covering both step-wise and context-aware editing scenarios, MTEdit comprises 500K multi-turn image editing trajectories, with up to 8 turns and an average of 5.38 turns per trajectory, making it one of the most extensive datasets for multi-turn image editing. We further introduce MTEdit-Bench, a benchmark designed to evaluate both scenarios by assessing models' ability to follow editing instructions, maintain content consistency, resist visual-quality drift, and effectively use historical context across turns. Using MTEdit, we fine-tune Qwen-Image-Edit-Causal to obtain Qwen-Image-MTEdit. On MTEdit-Bench, we evaluate a broad range of closed-source and open-source image editing models, including Qwen-Image-MTEdit. Experimental results show that Qwen-Image-MTEdit achieves the best performance among the evaluated open-source models, demonstrating the effectiveness of MTEdit in improving models' multi-turn image editing capabilities.",
+   "upvotes": 2,
+   "discussionId": "6ad5d7fe60556d9547d95122",
+   "ai_summary": "MTEdit is a large-scale multi-turn image editing dataset using packed trajectory canvas generation to reduce visual drift, enabling improved multi-turn editing models evaluated on MTEdit-Bench.",
+   "ai_keywords": [
+    "multi-turn image editing",
+    "packed trajectory canvas",
+    "visual-quality drift",
+    "MTEdit",
+    "MTEdit-Bench",
+    "Qwen-Image-Edit-Causal",
+    "Qwen-Image-MTEdit"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "organization": {
+    "_id": "64f0405f8a4cf3e5e6b38f9c",
+    "name": "sensenova",
+    "fullname": "SenseNova",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/652d06833b5997ed71ce5c46/k66xcOMf4NVbMSFulUjHY.png"
+   }
+  },
+  "publishedAt": "2026-10-15T20:00:00.000Z",
+  "title": "MTEdit: Packed Trajectories Beat Rollouts for Multi-Turn Image Editing",
+  "summary": "Multi-turn image editing aims to modify an image according to a sequence of instructions, making it better aligned with human-AI collaborative creation than single-turn editing. However, constructing high-quality multi-turn training data remains challenging, as conventional sequential rollout accumulates errors and introduces visual-quality drift across editing turns. To address this challenge, we introduce MTEdit, a multi-turn image editing dataset built through a pipeline centered on packed trajectory canvas (PTC) generation. By jointly generating multiple editing states within a unified visual context, this pipeline reduces visual-quality drift across turns. Covering both step-wise and context-aware editing scenarios, MTEdit comprises 500K multi-turn image editing trajectories, with up to 8 turns and an average of 5.38 turns per trajectory, making it one of the most extensive datasets for multi-turn image editing. We further introduce MTEdit-Bench, a benchmark designed to evaluate both scenarios by assessing models' ability to follow editing instructions, maintain content consistency, resist visual-quality drift, and effectively use historical context across turns. Using MTEdit, we fine-tune Qwen-Image-Edit-Causal to obtain Qwen-Image-MTEdit. On MTEdit-Bench, we evaluate a broad range of closed-source and open-source image editing models, including Qwen-Image-MTEdit. Experimental results show that Qwen-Image-MTEdit achieves the best performance among the evaluated open-source models, demonstrating the effectiveness of MTEdit in improving models' multi-turn image editing capabilities.",
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.23751.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "66877d72bec843c681fb4169",
+   "avatarUrl": "/avatars/02165c97f8d97cf04a268d9ea74e6188.svg",
+   "fullname": "chen houyuan",
+   "name": "houyuanchen",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 10,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "64f0405f8a4cf3e5e6b38f9c",
+   "name": "sensenova",
+   "fullname": "SenseNova",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/652d06833b5997ed71ce5c46/k66xcOMf4NVbMSFulUjHY.png"
+  },
+  "isAuthorParticipating": true
+ },
+ {
+  "paper": {
+   "id": "2610.09872",
+   "authors": [
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc1",
+     "name": "Jun Zhao",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc2",
+     "user": {
+      "_id": "68e7353fd148a646e9e52e67",
+      "avatarUrl": "/avatars/bd901e161b31ee35209cc9f3a5d1a62b.svg",
+      "isPro": false,
+      "fullname": "Leiming Fu",
+      "user": "raymondfu1453",
+      "type": "user",
+      "name": "raymondfu1453"
+     },
+     "name": "Leiming Fu",
+     "status": "claimed_verified",
+     "statusLastChangedAt": "2026-10-16T16:45:05.563Z",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc3",
+     "name": "Yanbo Wen",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc4",
+     "name": "Yiding Wang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc5",
+     "name": "Xuantong Liu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc6",
+     "name": "Yang Shu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc7",
+     "name": "Yuyang Lu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc8",
+     "name": "Xuanran Xing",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bc9",
+     "name": "Jingqi Tong",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bca",
+     "name": "Hao Xu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bcb",
+     "name": "Qi Zhang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad227ceb08f07b9dc8b8bcc",
+     "name": "Xuanjing Huang",
+     "hidden": false
+    }
+   ],
+   "mediaUrls": [
+    "https://cdn-uploads.huggingface.co/production/uploads/68e7353fd148a646e9e52e67/aRJdUh3ZJxlvfMnsR_HU8.mp4",
+    "https://cdn-uploads.huggingface.co/production/uploads/68e7353fd148a646e9e52e67/k2Tnj2gHqhPScJr7BkRMk.png"
+   ],
+   "publishedAt": "2026-10-07T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "LiveMACE: Process-Aware Evaluation of LLM Agent Capabilities in Evolving Markets",
+   "submittedOnDailyBy": {
+    "_id": "68e7353fd148a646e9e52e67",
+    "avatarUrl": "/avatars/bd901e161b31ee35209cc9f3a5d1a62b.svg",
+    "isPro": false,
+    "fullname": "Leiming Fu",
+    "user": "raymondfu1453",
+    "type": "user",
+    "name": "raymondfu1453"
+   },
+   "summary": "Evaluating agents by outcomes alone can obscure the capabilities that produce them. This problem is especially pronounced in evolving environments, where outcomes reflect a closed-loop interaction between agent behavior and changing external conditions. We introduce LiveMACEBench, a process-aware benchmark that uses live financial markets as a naturally evolving testbed for persistent LLM agents. Five frontier LLMs operate along continuous trajectories under matched Tool Use, Persistent Memory, Rule Following, and Multi-Agent Collaboration configurations. We evaluate them through both realized outcomes and mechanism-specific diagnostics derived from complete decision traces. Across 30 days of live evaluation, we find a pronounced outcome-capability gap: realized returns often diverge from capability-specific measurements, and similar outcomes can arise from markedly different patterns of mechanism use. Trace-level diagnostics further expose distinct bottlenecks across capabilities, demonstrating that mechanism access, effective mechanism use, and downstream performance are not interchangeable measures of agent capability. LiveMACEBench makes this distinction measurable, turning live markets from a performance leaderboard into a diagnostic environment for agent capability",
+   "upvotes": 88,
+   "discussionId": "6ad227ceb08f07b9dc8b8bcd",
+   "githubRepo": "https://github.com/RaymondVoldemortFu/LiveMACE",
+   "githubRepoAddedBy": "user",
+   "ai_summary": "LiveMACEBench evaluates persistent LLM agents in live financial markets using decision traces to reveal gaps between outcomes and underlying capabilities.",
+   "ai_keywords": [
+    "LiveMACEBench",
+    "LLM agents",
+    "persistent memory",
+    "tool use",
+    "multi-agent collaboration",
+    "mechanism-specific diagnostics",
+    "decision traces",
+    "live financial markets"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "githubStars": 4,
+   "organization": {
+    "_id": "643cb0625fcffe09fb6ca688",
+    "name": "Fudan-University",
+    "fullname": "Fudan University",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6437eca0819f3ab20d162e14/kWv0cGlAhAG3iNWVxowkJ.png"
+   }
+  },
+  "publishedAt": "2026-10-06T20:00:00.000Z",
+  "title": "LiveMACE: Process-Aware Evaluation of LLM Agent Capabilities in Evolving Markets",
+  "summary": "Evaluating agents by outcomes alone can obscure the capabilities that produce them. This problem is especially pronounced in evolving environments, where outcomes reflect a closed-loop interaction between agent behavior and changing external conditions. We introduce LiveMACEBench, a process-aware benchmark that uses live financial markets as a naturally evolving testbed for persistent LLM agents. Five frontier LLMs operate along continuous trajectories under matched Tool Use, Persistent Memory, Rule Following, and Multi-Agent Collaboration configurations. We evaluate them through both realized outcomes and mechanism-specific diagnostics derived from complete decision traces. Across 30 days of live evaluation, we find a pronounced outcome-capability gap: realized returns often diverge from capability-specific measurements, and similar outcomes can arise from markedly different patterns of mechanism use. Trace-level diagnostics further expose distinct bottlenecks across capabilities, demonstrating that mechanism access, effective mechanism use, and downstream performance are not interchangeable measures of agent capability. LiveMACEBench makes this distinction measurable, turning live markets from a performance leaderboard into a diagnostic environment for agent capability",
+  "mediaUrls": [
+   "https://cdn-uploads.huggingface.co/production/uploads/68e7353fd148a646e9e52e67/aRJdUh3ZJxlvfMnsR_HU8.mp4",
+   "https://cdn-uploads.huggingface.co/production/uploads/68e7353fd148a646e9e52e67/k2Tnj2gHqhPScJr7BkRMk.png"
+  ],
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.09872.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "68e7353fd148a646e9e52e67",
+   "avatarUrl": "/avatars/bd901e161b31ee35209cc9f3a5d1a62b.svg",
+   "fullname": "Leiming Fu",
+   "name": "raymondfu1453",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "643cb0625fcffe09fb6ca688",
+   "name": "Fudan-University",
+   "fullname": "Fudan University",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/6437eca0819f3ab20d162e14/kWv0cGlAhAG3iNWVxowkJ.png"
+  },
+  "isAuthorParticipating": true
+ },
+ {
+  "paper": {
+   "id": "2610.23121",
+   "authors": [
+    {
+     "_id": "6ad5d30560556d9547d950f4",
+     "name": "Xuanyu Liu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d30560556d9547d950f5",
+     "name": "Hongyan Feng",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d30560556d9547d950f6",
+     "name": "Miao Pan",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d30560556d9547d950f7",
+     "name": "Sunlai Chen",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d30560556d9547d950f8",
+     "name": "Lizhou Liang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d30560556d9547d950f9",
+     "name": "Bing Sun",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d30560556d9547d950fa",
+     "name": "Wenqi Zhang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5d30560556d9547d950fb",
+     "name": "Xuhong Zhang",
+     "hidden": false
+    }
+   ],
+   "mediaUrls": [
+    "https://cdn-uploads.huggingface.co/production/uploads/6485bd278d14bcd5cdbb7c8d/kJR1iWL0dG3lNbZQDzSBu.mp4"
+   ],
+   "publishedAt": "2026-10-16T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "Scene-Designer: Learning Design Intelligence for Agentic 3D Scene Generation",
+   "submittedOnDailyBy": {
+    "_id": "6485bd278d14bcd5cdbb7c8d",
+    "avatarUrl": "/avatars/1427cf1a72b5db0cb263ad45885cf925.svg",
+    "isPro": false,
+    "fullname": "Wenqi Zhang",
+    "user": "zwq2018",
+    "type": "user",
+    "name": "zwq2018"
+   },
+   "summary": "Generating complete, coherent, and usable 3D indoor scenes from natural language requires strong design intelligence: the ability to design high-quality scenes and critique their quality. However, existing approaches either rely on general-purpose models lacking domain-specific design experience or learn from static scenes. In this work, we introduce Scene-Designer, an agentic framework that learns design intelligence through complementary design and critique experiences. We construct two datasets: Scene-OTA-35K, which provides Observation--Thought--Action supervision for learning scene design and efficient error correction, and Scene-OTC-15K, which provides Observation--Thought--Critic supervision for learning scene quality critique across physical validity, functional correctness, and layout coherence. Based on these experiences, we propose Scene-GRPO, a Critic-guided GRPO framework that improves design decisions and reduces unnecessary trial-and-error corrections. Extensive experiments demonstrate that Scene-Designer achieves superior performance in physical validity, functional correctness, and layout coherence, while the learned Scene-Critic significantly outperforms general-purpose models in scene critique. Moreover, test-time Critic guidance further improves scene generation, showing that the Critic can provide useful guidance beyond training. Additional analysis suggests a trend of mutual enhancement between scene design and critique abilities.",
+   "upvotes": 48,
+   "discussionId": "6ad5d30560556d9547d950fc",
+   "projectPage": "https://zju-omniai.github.io/Scene-Designer/",
+   "githubRepo": "https://github.com/ZJU-OmniAI/Scene-Designer",
+   "githubRepoAddedBy": "user",
+   "githubStars": 12,
+   "organization": {
+    "_id": "696461ab2d94e9a07cdb8efd",
+    "name": "OmniAI-ZJU",
+    "fullname": "ZJU-OmniAI",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65f2595830354d0ee043b25a/eEeRdHlGyJ148JQ6BAJ4O.png"
+   }
+  },
+  "publishedAt": "2026-10-15T20:00:00.000Z",
+  "title": "Scene-Designer: Learning Design Intelligence for Agentic 3D Scene Generation",
+  "summary": "Generating complete, coherent, and usable 3D indoor scenes from natural language requires strong design intelligence: the ability to design high-quality scenes and critique their quality. However, existing approaches either rely on general-purpose models lacking domain-specific design experience or learn from static scenes. In this work, we introduce Scene-Designer, an agentic framework that learns design intelligence through complementary design and critique experiences. We construct two datasets: Scene-OTA-35K, which provides Observation--Thought--Action supervision for learning scene design and efficient error correction, and Scene-OTC-15K, which provides Observation--Thought--Critic supervision for learning scene quality critique across physical validity, functional correctness, and layout coherence. Based on these experiences, we propose Scene-GRPO, a Critic-guided GRPO framework that improves design decisions and reduces unnecessary trial-and-error corrections. Extensive experiments demonstrate that Scene-Designer achieves superior performance in physical validity, functional correctness, and layout coherence, while the learned Scene-Critic significantly outperforms general-purpose models in scene critique. Moreover, test-time Critic guidance further improves scene generation, showing that the Critic can provide useful guidance beyond training. Additional analysis suggests a trend of mutual enhancement between scene design and critique abilities.",
+  "mediaUrls": [
+   "https://cdn-uploads.huggingface.co/production/uploads/6485bd278d14bcd5cdbb7c8d/kJR1iWL0dG3lNbZQDzSBu.mp4"
+  ],
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.23121.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "6485bd278d14bcd5cdbb7c8d",
+   "avatarUrl": "/avatars/1427cf1a72b5db0cb263ad45885cf925.svg",
+   "fullname": "Wenqi Zhang",
+   "name": "zwq2018",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 15,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "696461ab2d94e9a07cdb8efd",
+   "name": "OmniAI-ZJU",
+   "fullname": "ZJU-OmniAI",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/65f2595830354d0ee043b25a/eEeRdHlGyJ148JQ6BAJ4O.png"
+  },
+  "isAuthorParticipating": false
+ },
+ {
+  "paper": {
+   "id": "2610.09221",
+   "authors": [
+    {
+     "_id": "6ac994520ee6ff34004fd375",
+     "user": {
+      "_id": "67e981d8cdd38e64b1e32cc7",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/67e981d8cdd38e64b1e32cc7/3_xnlxBI5FxylgHDblhZd.png",
+      "isPro": false,
+      "fullname": "Felix Fu",
+      "user": "fyxfelixfu",
+      "type": "user",
+      "name": "fyxfelixfu"
+     },
+     "name": "Yuxiang Fu",
+     "status": "claimed_verified",
+     "statusLastChangedAt": "2026-10-12T16:16:38.579Z",
+     "hidden": false
+    },
+    {
+     "_id": "6ac994520ee6ff34004fd376",
+     "name": "Qi Yan",
+     "hidden": false
+    },
+    {
+     "_id": "6ac994520ee6ff34004fd377",
+     "name": "Zike Wu",
+     "hidden": false
+    },
+    {
+     "_id": "6ac994520ee6ff34004fd378",
+     "name": "Yongxing Zhang",
+     "hidden": false
+    },
+    {
+     "_id": "6ac994520ee6ff34004fd379",
+     "name": "Purang Abolmaesumi",
+     "hidden": false
+    },
+    {
+     "_id": "6ac994520ee6ff34004fd37a",
+     "name": "Lele Wang",
+     "hidden": false
+    },
+    {
+     "_id": "6ac994520ee6ff34004fd37b",
+     "name": "Renjie Liao",
+     "hidden": false
+    }
+   ],
+   "publishedAt": "2026-10-06T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "Consistent Distribution Matching for Data-Free Diffusion Distillation",
+   "submittedOnDailyBy": {
+    "_id": "67e981d8cdd38e64b1e32cc7",
+    "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/67e981d8cdd38e64b1e32cc7/3_xnlxBI5FxylgHDblhZd.png",
+    "isPro": false,
+    "fullname": "Felix Fu",
+    "user": "fyxfelixfu",
+    "type": "user",
+    "name": "fyxfelixfu"
+   },
+   "summary": "Flow and diffusion models suffer from slow inference due to computationally expensive numerical integration. Distillation provides a promising way for a student model to learn from a teacher's dynamics, enabling one-step or few-step generation. However, existing methods often depend on curated distillation datasets, costly teacher rollouts, or auxiliary proxy networks, which complicate model training and scaling. In this work, we propose Consistent Distribution Matching, a simulation-free and data-free distillation method for accelerating diffusion and flow models while preserving strong generative capacity. Our key insight is to unify sample generation and score estimation with one student network. Thus, our framework uses only two models, a frozen teacher and a trainable student, and optimizes one objective. We prove that minimizing our objective indicates Wasserstein convergence of the student flow-map pushforwards to the teacher marginals. On ImageNet 256times256, our method attains an FID of 2.04 with a single function evaluation (1-NFE) and a 4-NFE FID of 1.37 within 40 epochs of training, surpassing the state-of-the-art distillation baselines without data. Our code code and model are available at https://consistentdmd.github.io/.",
+   "upvotes": 3,
+   "discussionId": "6ac994520ee6ff34004fd37c",
+   "projectPage": "https://consistentdmd.github.io/",
+   "githubRepo": "https://github.com/felix-yuxiang/CDMD",
+   "githubRepoAddedBy": "user",
+   "ai_summary": "Consistent Distribution Matching accelerates diffusion and flow models via simulation-free, data-free distillation that unifies generation and score estimation, achieving strong one-step and few-step results.",
+   "ai_keywords": [
+    "flow models",
+    "diffusion models",
+    "numerical integration",
+    "distillation",
+    "student model",
+    "teacher dynamics",
+    "Consistent Distribution Matching",
+    "simulation-free distillation",
+    "data-free distillation",
+    "score estimation",
+    "Wasserstein convergence",
+    "flow-map pushforwards",
+    "FID",
+    "NFE"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "githubStars": 6,
+   "organization": {
+    "_id": "65b2b60eade89bc3fac3108a",
+    "name": "vector-institute",
+    "fullname": "Vector Institute",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62f2d5d052ad88c930b7ba5e/_GqWuc2CjKyGsNtHDYKF7.png"
+   }
+  },
+  "publishedAt": "2026-10-05T20:00:00.000Z",
+  "title": "Consistent Distribution Matching for Data-Free Diffusion Distillation",
+  "summary": "Flow and diffusion models suffer from slow inference due to computationally expensive numerical integration. Distillation provides a promising way for a student model to learn from a teacher's dynamics, enabling one-step or few-step generation. However, existing methods often depend on curated distillation datasets, costly teacher rollouts, or auxiliary proxy networks, which complicate model training and scaling. In this work, we propose Consistent Distribution Matching, a simulation-free and data-free distillation method for accelerating diffusion and flow models while preserving strong generative capacity. Our key insight is to unify sample generation and score estimation with one student network. Thus, our framework uses only two models, a frozen teacher and a trainable student, and optimizes one objective. We prove that minimizing our objective indicates Wasserstein convergence of the student flow-map pushforwards to the teacher marginals. On ImageNet 256times256, our method attains an FID of 2.04 with a single function evaluation (1-NFE) and a 4-NFE FID of 1.37 within 40 epochs of training, surpassing the state-of-the-art distillation baselines without data. Our code code and model are available at https://consistentdmd.github.io/.",
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.09221.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "67e981d8cdd38e64b1e32cc7",
+   "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/67e981d8cdd38e64b1e32cc7/3_xnlxBI5FxylgHDblhZd.png",
+   "fullname": "Felix Fu",
+   "name": "fyxfelixfu",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "65b2b60eade89bc3fac3108a",
+   "name": "vector-institute",
+   "fullname": "Vector Institute",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/62f2d5d052ad88c930b7ba5e/_GqWuc2CjKyGsNtHDYKF7.png"
+  },
+  "isAuthorParticipating": true
+ },
+ {
+  "paper": {
+   "id": "2610.22428",
+   "authors": [
+    {
+     "_id": "6ad574ca60556d9547d94ddd",
+     "name": "Sai Kiran Bathula",
+     "hidden": false
+    }
+   ],
+   "publishedAt": "2026-10-15T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "Embeddings Are Overpriced? A Frozen 16 MB Vocabulary for Small and Ternary Language Models",
+   "submittedOnDailyBy": {
+    "_id": "69c600f0ae6dd3d63aa59842",
+    "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/69c600f0ae6dd3d63aa59842/5E1t-B3J4ateSJS41nNMq.png",
+    "isPro": true,
+    "fullname": "Sai kiran",
+    "user": "QLNI",
+    "type": "user",
+    "name": "QLNI"
+   },
+   "summary": "In a small language model the vocabulary is the single largest part. In Gemma 3 270M the embedding table holds 168M of 268M parameters, and because quantisation methods leave the embedding in 16-bit, it is also most of the file once the rest of the model is compressed. We ask what that table actually buys. We replace it with one frozen table of 512-bit codes, 16 MB, with no trainable parameters, derived once from a pretrained embedding by principal-component projection and sign binarisation, and we train the same Gemma-shaped body from scratch on the same 2.05B tokens with and without it. The learned table buys 0.20 nats of validation loss for 2.6 times the trainable parameters, but on LAMBADA, HellaSwag and PIQA the frozen-table model is better or tied; only ARC-Easy favours the learned table. With a ternary BitNet b1.58 body the whole model is a 46 MB file, still ties the float model on LAMBADA and PIQA, and on a laptop CPU generates 615 to 740 tokens per second in 62 MB of memory, five to six times the speed of the float model's 8-bit GGUF in llama.cpp at a seventh of the memory. The frozen table wins by 1.7 to 2.3 nats on rare words, accepts 10,000 new words after training with a 3% cost where the learned table collapses by 43%, and all of it is released with the weights, the data and every evaluation answer.",
+   "upvotes": 5,
+   "discussionId": "6ad574ca60556d9547d94dde",
+   "projectPage": "https://huggingface.co/QLNI/embeddings-are-overpriced",
+   "ai_summary": "Replacing a learned embedding table with a frozen binary code table reduces model size and parameters while maintaining or improving performance on several benchmarks, and enables faster CPU inference with a ternary body.",
+   "ai_keywords": [
+    "embedding table",
+    "principal-component projection",
+    "sign binarisation",
+    "BitNet b1.58",
+    "ternary",
+    "GGUF",
+    "llama.cpp"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small"
+  },
+  "publishedAt": "2026-10-14T20:00:00.000Z",
+  "title": "Embeddings Are Overpriced? A Frozen 16 MB Vocabulary for Small and Ternary Language Models",
+  "summary": "In a small language model the vocabulary is the single largest part. In Gemma 3 270M the embedding table holds 168M of 268M parameters, and because quantisation methods leave the embedding in 16-bit, it is also most of the file once the rest of the model is compressed. We ask what that table actually buys. We replace it with one frozen table of 512-bit codes, 16 MB, with no trainable parameters, derived once from a pretrained embedding by principal-component projection and sign binarisation, and we train the same Gemma-shaped body from scratch on the same 2.05B tokens with and without it. The learned table buys 0.20 nats of validation loss for 2.6 times the trainable parameters, but on LAMBADA, HellaSwag and PIQA the frozen-table model is better or tied; only ARC-Easy favours the learned table. With a ternary BitNet b1.58 body the whole model is a 46 MB file, still ties the float model on LAMBADA and PIQA, and on a laptop CPU generates 615 to 740 tokens per second in 62 MB of memory, five to six times the speed of the float model's 8-bit GGUF in llama.cpp at a seventh of the memory. The frozen table wins by 1.7 to 2.3 nats on rare words, accepts 10,000 new words after training with a 3% cost where the learned table collapses by 43%, and all of it is released with the weights, the data and every evaluation answer.",
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.22428.png",
+  "numComments": 2,
+  "submittedBy": {
+   "_id": "69c600f0ae6dd3d63aa59842",
+   "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/69c600f0ae6dd3d63aa59842/5E1t-B3J4ateSJS41nNMq.png",
+   "fullname": "Sai kiran",
+   "name": "QLNI",
+   "type": "user",
+   "isPro": true,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 10,
+   "isUserFollowing": false
+  },
+  "isAuthorParticipating": false
+ },
+ {
+  "paper": {
+   "id": "2610.23230",
+   "authors": [
+    {
+     "_id": "6ad5b55560556d9547d95043",
+     "name": "Haonan Han",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d95044",
+     "name": "Yukang Lin",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d95045",
+     "name": "Minliang Lin",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d95046",
+     "name": "Haoxian Tan",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d95047",
+     "name": "Jun-Yan He",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d95048",
+     "name": "Rui Yang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d95049",
+     "name": "Zhi-Qi Cheng",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d9504a",
+     "name": "Jie Hu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d9504b",
+     "name": "Guanglu Wan",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b55560556d9547d9504c",
+     "name": "Xiu Li",
+     "hidden": false
+    }
+   ],
+   "publishedAt": "2026-10-16T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "RAP: A Dataset for Paper-to-Poster Generation via Declarative Markup from Human-Crafted Exemplars",
+   "submittedOnDailyBy": {
+    "_id": "66867085636d8845cd498b98",
+    "avatarUrl": "/avatars/d9cabeeca3f0cffff3841c2df3e88c5e.svg",
+    "isPro": true,
+    "fullname": "Vincent Han",
+    "user": "VincentHancoder",
+    "type": "user",
+    "name": "VincentHancoder"
+   },
+   "summary": "Making a conference poster is visual coding in miniature: an entire paper must be compressed onto a single page, which exercises summarization, visual design, and code implementation at once, using nothing beyond the paper itself. Yet benchmarks for this task in the context of visual coding remain scarce: existing resources are small and annotated only with layout boxes, so evaluation must fall back on VLM-as-judge or human checklists rather than objective render-and-compare, and the generation methods they support design layouts from scratch, leaving human-crafted posters unusable as either a retrievable design library or as verified supervision. We introduce RAP (Reconstruct A Poster), a dataset and benchmark for paper-to-poster generation as a visual coding task. RAP contains 25K+ verified paper-poster pairs from various machine learning conferences held between 2022 and 2026, annotated with a three-level content taxonomy, plus a held-out benchmark of 150 test papers each paired with its human poster. A fully automated derendering pipeline turns each poster into styled HTML/CSS of typed, refillable slots, so every sample is a paper-poster-markup triplet verifiable by rendering against the source poster. The corpus serves both inference and training: PosterRAG, a training-free multi-agent pipeline, retrieves an exemplar and refills its slots without touching layout or styling, while an SFT+RL recipe trains a dedicated model from the same triplets. An online demo is available at https://reconstruct-a-poster.github.io/.",
+   "upvotes": 20,
+   "discussionId": "6ad5b55560556d9547d9504d",
+   "projectPage": "https://reconstruct-a-poster.github.io/",
+   "githubRepo": "https://github.com/VincentHancoder/RAP",
+   "githubRepoAddedBy": "user",
+   "ai_summary": "RAP introduces a large-scale dataset and benchmark for generating conference posters from papers as a visual coding task, providing verified paper-poster-markup triplets and both retrieval-based and trained generation methods.",
+   "ai_keywords": [
+    "visual coding",
+    "paper-to-poster generation",
+    "RAP",
+    "PosterRAG",
+    "multi-agent pipeline",
+    "SFT+RL",
+    "derendering",
+    "HTML/CSS",
+    "VLM-as-judge"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "githubStars": 12,
+   "organization": {
+    "_id": "6282108b1c4fdf630c7943a4",
+    "name": "meituan",
+    "fullname": "meituan",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61ac8f8a00d01045fca0ad2f/4TJKRXMsRyZsyi4H3rWsh.jpeg"
+   }
+  },
+  "publishedAt": "2026-10-15T20:00:00.000Z",
+  "title": "RAP: A Dataset for Paper-to-Poster Generation via Declarative Markup from Human-Crafted Exemplars",
+  "summary": "Making a conference poster is visual coding in miniature: an entire paper must be compressed onto a single page, which exercises summarization, visual design, and code implementation at once, using nothing beyond the paper itself. Yet benchmarks for this task in the context of visual coding remain scarce: existing resources are small and annotated only with layout boxes, so evaluation must fall back on VLM-as-judge or human checklists rather than objective render-and-compare, and the generation methods they support design layouts from scratch, leaving human-crafted posters unusable as either a retrievable design library or as verified supervision. We introduce RAP (Reconstruct A Poster), a dataset and benchmark for paper-to-poster generation as a visual coding task. RAP contains 25K+ verified paper-poster pairs from various machine learning conferences held between 2022 and 2026, annotated with a three-level content taxonomy, plus a held-out benchmark of 150 test papers each paired with its human poster. A fully automated derendering pipeline turns each poster into styled HTML/CSS of typed, refillable slots, so every sample is a paper-poster-markup triplet verifiable by rendering against the source poster. The corpus serves both inference and training: PosterRAG, a training-free multi-agent pipeline, retrieves an exemplar and refills its slots without touching layout or styling, while an SFT+RL recipe trains a dedicated model from the same triplets. An online demo is available at https://reconstruct-a-poster.github.io/.",
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.23230.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "66867085636d8845cd498b98",
+   "avatarUrl": "/avatars/d9cabeeca3f0cffff3841c2df3e88c5e.svg",
+   "fullname": "Vincent Han",
+   "name": "VincentHancoder",
+   "type": "user",
+   "isPro": true,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 2,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "6282108b1c4fdf630c7943a4",
+   "name": "meituan",
+   "fullname": "meituan",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/61ac8f8a00d01045fca0ad2f/4TJKRXMsRyZsyi4H3rWsh.jpeg"
+  },
+  "isAuthorParticipating": false
+ },
+ {
+  "paper": {
+   "id": "2610.18082",
+   "authors": [
+    {
+     "_id": "6ad5b62560556d9547d95056",
+     "name": "Xiyang Wu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b62560556d9547d95057",
+     "name": "Zhichao Liu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b62560556d9547d95058",
+     "name": "Shengxin zhang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b62560556d9547d95059",
+     "name": "Zongxia Li",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b62560556d9547d9505a",
+     "name": "Ming Li",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b62560556d9547d9505b",
+     "name": "Tianyi Zhou",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b62560556d9547d9505c",
+     "name": "Dinesh Manocha",
+     "hidden": false
+    }
+   ],
+   "publishedAt": "2026-10-13T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "Failure Recovery via Belief Updates and World Modeling for Long-Horizon Agents",
+   "submittedOnDailyBy": {
+    "_id": "64ea62f918d79efd533c93fe",
+    "avatarUrl": "/avatars/9985a789ce11b788de2cba12adfb72fc.svg",
+    "isPro": true,
+    "fullname": "Xiyang Wu",
+    "user": "wuxiyang",
+    "type": "user",
+    "name": "wuxiyang"
+   },
+   "summary": "Long-horizon agents often struggle to recover from failures whose causes lie several steps earlier, beyond what local reflection or backtracking can resolve. We introduce BELIEFWEAVER, a framework that combines persistent evidence across attempts with prospective reasoning over repair directions. It maintains a relational belief state over frontiers, attempts, observations, and checkpoints. Execution evidence updates related frontier priorities across attempts and rollback, while diagnostic evidence gates execution. An implicit world model (IWM) evaluates repair hypotheses, predicts progress, and identifies relations among frontiers to guide exploration. We further distill these recurring IWM reasoning components into a 9B student through supervised fine-tuning and on-policy distillation (OPD). Across three terminal-based benchmarks, BELIEFWEAVER improves aggregate final score by 5.1 percentage points over native Terminus-2 continuation, with positive trends in exploration efficiency. The distilled 9B student improves final score by 9.8 percentage points over the reported native baseline while reducing estimated teacher API cost by 54.8% relative to the matched teacher. These results show that persistent evidence and prospective reasoning can improve recovery in long-horizon agent tasks while substantially reducing reliance on teacher-model inference.",
+   "upvotes": 4,
+   "discussionId": "6ad5b62660556d9547d9505d",
+   "projectPage": "https://wuxiyang1996.github.io/beliefweaver_page/",
+   "ai_summary": "BELIEFWEAVER improves long-horizon agent recovery by combining persistent evidence with prospective reasoning and distilling reasoning into a smaller model.",
+   "ai_keywords": [
+    "BELIEFWEAVER",
+    "relational belief state",
+    "implicit world model",
+    "repair hypotheses",
+    "supervised fine-tuning",
+    "on-policy distillation",
+    "long-horizon agents"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "organization": {
+    "_id": "681414f0d0347d2d4a6c1671",
+    "name": "IntelligenceLab",
+    "fullname": "Agent Intelligence-Lab 🦞",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/642447e873f7a0d40b30d677/9xHkVd6KAmuJOYbarPfnN.jpeg"
+   }
+  },
+  "publishedAt": "2026-10-12T20:00:00.000Z",
+  "title": "Failure Recovery via Belief Updates and World Modeling for Long-Horizon Agents",
+  "summary": "Long-horizon agents often struggle to recover from failures whose causes lie several steps earlier, beyond what local reflection or backtracking can resolve. We introduce BELIEFWEAVER, a framework that combines persistent evidence across attempts with prospective reasoning over repair directions. It maintains a relational belief state over frontiers, attempts, observations, and checkpoints. Execution evidence updates related frontier priorities across attempts and rollback, while diagnostic evidence gates execution. An implicit world model (IWM) evaluates repair hypotheses, predicts progress, and identifies relations among frontiers to guide exploration. We further distill these recurring IWM reasoning components into a 9B student through supervised fine-tuning and on-policy distillation (OPD). Across three terminal-based benchmarks, BELIEFWEAVER improves aggregate final score by 5.1 percentage points over native Terminus-2 continuation, with positive trends in exploration efficiency. The distilled 9B student improves final score by 9.8 percentage points over the reported native baseline while reducing estimated teacher API cost by 54.8% relative to the matched teacher. These results show that persistent evidence and prospective reasoning can improve recovery in long-horizon agent tasks while substantially reducing reliance on teacher-model inference.",
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.18082.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "64ea62f918d79efd533c93fe",
+   "avatarUrl": "/avatars/9985a789ce11b788de2cba12adfb72fc.svg",
+   "fullname": "Xiyang Wu",
+   "name": "wuxiyang",
+   "type": "user",
+   "isPro": true,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 1,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "681414f0d0347d2d4a6c1671",
+   "name": "IntelligenceLab",
+   "fullname": "Agent Intelligence-Lab 🦞",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/642447e873f7a0d40b30d677/9xHkVd6KAmuJOYbarPfnN.jpeg"
+  },
+  "isAuthorParticipating": false
+ },
+ {
+  "paper": {
+   "id": "2610.14022",
+   "authors": [
+    {
+     "_id": "6ad5b39360556d9547d9503a",
+     "name": "Yingdong Shi",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b39360556d9547d9503b",
+     "name": "Zhihong Li",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b39360556d9547d9503c",
+     "name": "Changming Li",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b39360556d9547d9503d",
+     "name": "Jingyi Yu",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b39360556d9547d9503e",
+     "name": "Quan Li",
+     "hidden": false
+    },
+    {
+     "_id": "6ad5b39360556d9547d9503f",
+     "name": "Kan Ren",
+     "hidden": false
+    }
+   ],
+   "publishedAt": "2026-09-29T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "OPMD: On-Policy Mechanism Distillation Beyond Output Supervision",
+   "submittedOnDailyBy": {
+    "_id": "64794594ae0fa9dc23371eeb",
+    "avatarUrl": "/avatars/ce759abfa065735c15b48b65a0c029fd.svg",
+    "isPro": false,
+    "fullname": "yingdong shi",
+    "user": "jonathanShi",
+    "type": "user",
+    "name": "jonathanShi"
+   },
+   "summary": "On-policy distillation (OPD) improves language-model by supervising a student on prefixes sampled from its own policy, but its supervision remains confined to the output space. Consequently, OPD transfers what a teacher predicts without supervising the intermediate computation that produces those predictions. Simply distilling intermediate representations like representation matching is insufficient since teacher and student representations may differ geometrically, and even well-aligned hidden states need not be usable by the student's subsequent computation. We introduce On-Policy Mechanism Distillation (OPMD), which transfers teacher-derived intermediate computation while explicitly accounting for its compatibility with the student. OPMD first constructs a student-compatible teacher that transforms teacher representations into intermediate states usable by the student's downstream computation, then it internalizes these states from on-policy trajectories. OPMD achieves the highest average accuracy among the evaluated distillation baselines in all three teacher--student settings, and generalizes to multi-teacher distillation and cross-family supervised fine-tuning. Further analyses show that mechanism supervision yields more effective reasoning and meaningfully alters the student's intermediate computation and solution strategies, supporting that it transfers information beyond output supervision alone. Together, these results establish mechanism-level supervision as an effective way to move on-policy distillation beyond output supervision, enabling students to learn inner mechanisms they can use and internalize.",
+   "upvotes": 7,
+   "discussionId": "6ad5b39360556d9547d95040",
+   "ai_summary": "On-Policy Mechanism Distillation improves language model distillation by transferring teacher intermediate computations compatible with the student's architecture, yielding stronger reasoning and internalization.",
+   "ai_keywords": [
+    "on-policy distillation",
+    "mechanism distillation",
+    "representation matching",
+    "hidden states",
+    "intermediate computation",
+    "multi-teacher distillation",
+    "cross-family supervised fine-tuning"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "organization": {
+    "_id": "636d1501ffbe479c979561f3",
+    "name": "ShanghaiTech",
+    "fullname": "ShanghaiTech University",
+    "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1668093297811-636d12455aaed143cd665607.png"
+   }
+  },
+  "publishedAt": "2026-09-28T20:00:00.000Z",
+  "title": "OPMD: On-Policy Mechanism Distillation Beyond Output Supervision",
+  "summary": "On-policy distillation (OPD) improves language-model by supervising a student on prefixes sampled from its own policy, but its supervision remains confined to the output space. Consequently, OPD transfers what a teacher predicts without supervising the intermediate computation that produces those predictions. Simply distilling intermediate representations like representation matching is insufficient since teacher and student representations may differ geometrically, and even well-aligned hidden states need not be usable by the student's subsequent computation. We introduce On-Policy Mechanism Distillation (OPMD), which transfers teacher-derived intermediate computation while explicitly accounting for its compatibility with the student. OPMD first constructs a student-compatible teacher that transforms teacher representations into intermediate states usable by the student's downstream computation, then it internalizes these states from on-policy trajectories. OPMD achieves the highest average accuracy among the evaluated distillation baselines in all three teacher--student settings, and generalizes to multi-teacher distillation and cross-family supervised fine-tuning. Further analyses show that mechanism supervision yields more effective reasoning and meaningfully alters the student's intermediate computation and solution strategies, supporting that it transfers information beyond output supervision alone. Together, these results establish mechanism-level supervision as an effective way to move on-policy distillation beyond output supervision, enabling students to learn inner mechanisms they can use and internalize.",
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.14022.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "64794594ae0fa9dc23371eeb",
+   "avatarUrl": "/avatars/ce759abfa065735c15b48b65a0c029fd.svg",
+   "fullname": "yingdong shi",
+   "name": "jonathanShi",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "followerCount": 2,
+   "isUserFollowing": false
+  },
+  "organization": {
+   "_id": "636d1501ffbe479c979561f3",
+   "name": "ShanghaiTech",
+   "fullname": "ShanghaiTech University",
+   "avatar": "https://cdn-avatars.huggingface.co/v1/production/uploads/1668093297811-636d12455aaed143cd665607.png"
+  },
+  "isAuthorParticipating": false
+ },
+ {
+  "paper": {
+   "id": "2610.22169",
+   "authors": [
+    {
+     "_id": "6ad2a1fd60556d9547d9465e",
+     "user": {
+      "_id": "609a3e431c861aa2e2fd6d73",
+      "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1620721305145-609a3e431c861aa2e2fd6d73.jpeg",
+      "isPro": false,
+      "fullname": "Jian Gu",
+      "user": "jianguda",
+      "type": "user",
+      "name": "jianguda"
+     },
+     "name": "Jian Gu",
+     "status": "claimed_verified",
+     "statusLastChangedAt": "2026-10-17T00:45:04.951Z",
+     "hidden": false
+    },
+    {
+     "_id": "6ad2a1fd60556d9547d9465f",
+     "name": "Hongyu Zhang",
+     "hidden": false
+    },
+    {
+     "_id": "6ad2a1fd60556d9547d94660",
+     "name": "Chunyang Chen",
+     "hidden": false
+    },
+    {
+     "_id": "6ad2a1fd60556d9547d94661",
+     "name": "Aldeida Aleti",
+     "hidden": false
+    }
+   ],
+   "mediaUrls": [
+    "https://cdn-uploads.huggingface.co/production/uploads/609a3e431c861aa2e2fd6d73/VSVR9yuOg5OD4PZy4kMC9.png"
+   ],
+   "publishedAt": "2026-10-15T00:00:00.000Z",
+   "submittedOnDailyAt": "2026-10-19T00:00:00.000Z",
+   "title": "Lexical Reference Frames: Interpreting LM Residual Streams in Native Semantics",
+   "submittedOnDailyBy": {
+    "_id": "609a3e431c861aa2e2fd6d73",
+    "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1620721305145-609a3e431c861aa2e2fd6d73.jpeg",
+    "isPro": false,
+    "fullname": "Jian Gu",
+    "user": "jianguda",
+    "type": "user",
+    "name": "jianguda"
+   },
+   "summary": "The vocabulary of a language model is its native semantics: the embedding and the unembedding fix the meaning of a state at the two ends of the residual stream. Between them, existing methods either reuse a fixed lens or treat the states as a point cloud, and neither reads a state the way the model does. We argue that every hidden state has a native reference frame, induced by the layers that read it next and adaptive to the context. Lexical reference frames approximate it by reading a state through the model's own remaining layers with a stated number of rounds of attention between positions and a typical attention output for the rest, without fitting to the model's output. No lens, with fixed directions per layer, can exceed the square root of the native frame's coherence, 0.30 and 0.35 at mid-depth of SmolLM3-3B and OLMo3-7B, whereas the first-order frame, LexFrame[1], reaches 0.97 and 0.97 and reads a state within 0.16 nats of the model's output. Its coefficients attribute predictions more faithfully than attribution patching, its lexical basis steers a prediction while sparing other tokens, and its confident readings would let an early exit skip 0.45 and 0.42 of the layers, where lenses skip almost none. In this way, lexical reference frames make every hidden state of the model readable, attributable and steerable.",
+   "upvotes": 20,
+   "discussionId": "6ad2a1fd60556d9547d94662",
+   "projectPage": "https://jianguda.github.io/blogs/lexframe/",
+   "githubRepo": "https://github.com/jianguda/lexframe",
+   "githubRepoAddedBy": "user",
+   "ai_summary": "Lexical reference frames interpret hidden states through a model's own remaining layers, enabling accurate attribution, steering, and early layer exit.",
+   "ai_keywords": [
+    "hidden state",
+    "residual stream",
+    "embedding",
+    "unembedding",
+    "cross-attention",
+    "lexical reference frames",
+    "LexFrame",
+    "attribution patching",
+    "early exit"
+   ],
+   "ai_summary_model": "thinkingmachines/Inkling-Small",
+   "githubStars": 1
+  },
+  "publishedAt": "2026-10-14T20:00:00.000Z",
+  "title": "Lexical Reference Frames: Interpreting LM Residual Streams in Native Semantics",
+  "summary": "The vocabulary of a language model is its native semantics: the embedding and the unembedding fix the meaning of a state at the two ends of the residual stream. Between them, existing methods either reuse a fixed lens or treat the states as a point cloud, and neither reads a state the way the model does. We argue that every hidden state has a native reference frame, induced by the layers that read it next and adaptive to the context. Lexical reference frames approximate it by reading a state through the model's own remaining layers with a stated number of rounds of attention between positions and a typical attention output for the rest, without fitting to the model's output. No lens, with fixed directions per layer, can exceed the square root of the native frame's coherence, 0.30 and 0.35 at mid-depth of SmolLM3-3B and OLMo3-7B, whereas the first-order frame, LexFrame[1], reaches 0.97 and 0.97 and reads a state within 0.16 nats of the model's output. Its coefficients attribute predictions more faithfully than attribution patching, its lexical basis steers a prediction while sparing other tokens, and its confident readings would let an early exit skip 0.45 and 0.42 of the layers, where lenses skip almost none. In this way, lexical reference frames make every hidden state of the model readable, attributable and steerable.",
+  "mediaUrls": [
+   "https://cdn-uploads.huggingface.co/production/uploads/609a3e431c861aa2e2fd6d73/VSVR9yuOg5OD4PZy4kMC9.png"
+  ],
+  "thumbnail": "https://cdn-thumbnails.huggingface.co/social-thumbnails/papers/2610.22169.png",
+  "numComments": 1,
+  "submittedBy": {
+   "_id": "609a3e431c861aa2e2fd6d73",
+   "avatarUrl": "https://cdn-avatars.huggingface.co/v1/production/uploads/1620721305145-609a3e431c861aa2e2fd6d73.jpeg",
+   "fullname": "Jian Gu",
+   "name": "jianguda",
+   "type": "user",
+   "isPro": false,
+   "isHf": false,
+   "isHfAdmin": false,
+   "isMod": false,
+   "isUserFollowing": false
+  },
+  "isAuthorParticipating": true
+ }
+]
