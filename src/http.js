@@ -14,7 +14,7 @@ export const ACCEPT = {
   json: 'application/json',
   html: 'text/html',
 };
-const ACCEPT_LANGUAGE = 'en-US,en;q=0.9';
+export const ACCEPT_LANGUAGE = 'en-US,en;q=0.9';
 /** YouTube's feed endpoint: no feed Accept (the runner probe tied every variant at zero, so the plain `*\/*` default stands). */
 const YOUTUBE_ACCEPT = '*/*';
 const MAX_REDIRECTS = 5;

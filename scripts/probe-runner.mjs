@@ -3,18 +3,20 @@
 // Part A: the Cloudflare-403 hosts, once with the Ahead headers and once with browser headers.
 // Part B: the six YouTube channels, 3x per header variant, plus the playlist_id form and the bare host.
 // Plain globalThis.fetch with redirect: 'manual'; sequential with a 300 ms pause (~110 requests, 1-3 min).
-// Imports nothing from src/, writes nothing, always exits 0. Run on the runner with: gh workflow run refresh.yml -f probe=true
-import { readFileSync } from 'node:fs';
+// Only the header constants come from src/http.js (so the browser variant is exactly what the pipeline sends);
+// writes nothing, always exits 0. Run on the runner with: gh workflow run refresh.yml -f probe=true
+import { ACCEPT, ACCEPT_LANGUAGE, BROWSER_USER_AGENT, DEFAULT_USER_AGENT } from '../src/http.js';
 
-const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
+// The pre-browser-headers client (the 03:42Z baseline that was blocked), kept as the control variant.
 const AHEAD = {
-  'user-agent': `Ahead/${pkg.version} (+https://github.com/Sudish007/ahead; personal AI dashboard)`,
+  'user-agent': DEFAULT_USER_AGENT,
   accept: 'application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8',
 };
+// What src/http.js sends to every host except IDENTIFIED_HOSTS.
 const BROWSER = {
-  'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36',
-  accept: 'application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8, */*;q=0.7',
-  'accept-language': 'en-US,en;q=0.9',
+  'user-agent': BROWSER_USER_AGENT,
+  accept: ACCEPT.feed,
+  'accept-language': ACCEPT_LANGUAGE,
 };
 const TIMEOUT_MS = 15_000;
 const PAUSE_MS = 300;
