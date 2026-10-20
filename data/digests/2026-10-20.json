@@ -1,6 +1,6 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T03:38:40.737Z",
+ "generatedAt": "2026-10-20T03:42:54.189Z",
  "wordCount": 558,
  "readingMinutes": 3,
  "overview": null,
@@ -29,7 +29,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 16.45,
+     "score": 16.44,
      "readMinutes": 1
     },
     {
@@ -49,7 +49,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.1
+     "score": 16.09
     },
     {
      "id": "arxiv:2610.23121",
@@ -68,7 +68,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 14.72
+     "score": 14.71
     },
     {
      "id": "arxiv:2610.23279",
@@ -112,7 +112,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 13.72
+     "score": 13.71
     },
     {
      "id": "arxiv:2610.22744",
@@ -173,7 +173,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 11
+     "score": 10.99
     },
     {
      "id": "92c1824269f45469",
@@ -207,7 +207,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 10.07
+     "score": 10.06
     }
    ]
   },
@@ -230,7 +230,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 5.18,
+     "score": 5.17,
      "readMinutes": 1
     },
     {
@@ -313,7 +313,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T13:44:21.000Z",
      "category": "blogs",
-     "score": 3.83,
+     "score": 3.82,
      "readMinutes": 59
     }
    ]
