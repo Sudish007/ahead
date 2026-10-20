@@ -36,10 +36,15 @@ const MAX_RETRY_AFTER_MS = 30_000;
 /** A timeout has already cost LLM_TIMEOUT_MS, so it gets one more try at most (sharing the backoff plan), not three. */
 const MAX_TIMEOUT_RETRIES = 1;
 /**
- * A 429 for a per-day quota (Gemini: `GenerateRequestsPerDayPerProjectPerModel`; OpenAI: "requests per day (RPD)") will not
- * clear within the run, and on Gemini's free tier every attempt counts against that same quota, so it is final.
+ * A 429 gets one retry at most: a per-minute window clears within the backoff, a per-day quota never does within the run,
+ * and on Gemini's free tier every attempt counts against that same quota (gemini-3.6-flash: 20 requests per day; run
+ * 39423321018 spent four of them on one exhausted quota before this rule).
  */
+const MAX_RATE_LIMIT_RETRIES = 1;
+/** A 429 body that names a per-day quota (Gemini quotaId `...PerDay...`; OpenAI "requests per day (RPD)") is final at once. */
 const DAILY_QUOTA_RE = /per.?day|daily|\bRPD\b/i;
+/** Gemini puts its retry hint in the message text ("Please retry in 4.5s") rather than a retry-after header. */
+const RETRY_IN_RE = /retry in (\d+(?:\.\d+)?)\s*s\b/i;
 /**
  * Editorial rewriting needs little deliberation, and on Gemini thinking shares the `max_tokens` cap with the answer, so ask
  * for a small reasoning budget. Providers that do not know the field answer 400 naming it, and the request is retried without.
@@ -106,12 +111,12 @@ async function post(fetchImpl, endpoint, key, body) {
 
 const errorBody = (res) => res.text.slice(0, MAX_ERROR_BODY);
 
-/** `retry-after` in whole seconds -> ms (capped); undefined when absent or not a plain number. */
+/** Provider wait hint in ms (capped): a numeric `retry-after` header, else a "retry in Ns" phrase in the body; else undefined. */
 function retryAfterMs(res) {
   const header = res.headers?.get?.('retry-after');
-  if (header === null || header === undefined || String(header).trim() === '') return undefined;
-  const secs = Number(header);
-  return Number.isFinite(secs) && secs >= 0 ? Math.min(secs * 1000, MAX_RETRY_AFTER_MS) : undefined;
+  let secs = header === null || header === undefined || String(header).trim() === '' ? NaN : Number(header);
+  if (!Number.isFinite(secs)) secs = Number(RETRY_IN_RE.exec(errorBody(res))?.[1]);
+  return Number.isFinite(secs) && secs >= 0 ? Math.min(Math.ceil(secs * 1000), MAX_RETRY_AFTER_MS) : undefined;
 }
 
 /**
@@ -219,6 +224,7 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
   let res;
   let retries = 0; // transient retries taken (compat retries are not counted: they fix the request, not the weather)
   let timeoutRetries = 0;
+  let rateLimitRetries = 0;
   const applied = [];
   const fail = (error, info = {}) => {
     const out = { enabled: true, ok: false, model, error: retries > 0 ? `${error} (${retries + 1} attempts)` : error };
@@ -252,8 +258,12 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
       body = fix.apply(body);
       continue;
     }
-    const dailyQuota = res.status === 429 && DAILY_QUOTA_RE.test(errorBody(res));
-    if (TRANSIENT_STATUSES.has(res.status) && !dailyQuota && retries < RETRY_BACKOFF_MS.length) {
+    let retryable = TRANSIENT_STATUSES.has(res.status) && retries < RETRY_BACKOFF_MS.length;
+    if (retryable && res.status === 429) {
+      retryable = rateLimitRetries < MAX_RATE_LIMIT_RETRIES && !DAILY_QUOTA_RE.test(errorBody(res));
+      if (retryable) rateLimitRetries++;
+    }
+    if (retryable) {
       const wait = retryAfterMs(res) ?? RETRY_BACKOFF_MS[retries];
       retries++;
       await sleep(wait);

@@ -200,19 +200,30 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   assert.equal(calls.length, 2);
   assert.deepEqual(waits, [RETRY_BACKOFF_MS[0]]);
   assert.equal(calls[1].init.body, calls[0].init.body, 'the retried request is identical');
-  // retry-after seconds wins over the plan, capped at 30 s; a non-numeric header falls back to the plan.
+  // retry-after seconds wins over the plan, capped at 30 s; a 503 after the one 429 retry still follows the plan.
   const b2 = brief();
-  const { fetchImpl: f2 } = mockFetch([new Response('slow down', { status: 429, headers: { 'retry-after': '2' } }), new Response('slow down', { status: 429, headers: { 'retry-after': '600' } }), reply({ why: { [b2.digest.itemIds[0]]: 'Fine line.' } })]);
+  const { fetchImpl: f2 } = mockFetch([new Response('slow down', { status: 429, headers: { 'retry-after': '2' } }), new Response('x', { status: 503, headers: { 'retry-after': '600' } }), reply({ why: { [b2.digest.itemIds[0]]: 'Fine line.' } })]);
   const s2 = fakeSleep();
   const r2 = await editorialize(b2, CONFIG, f2, s2.opts);
   assert.equal(r2.ok, true);
   assert.deepEqual(s2.waits, [2000, 30_000]);
+  // A non-numeric header falls back to the plan; Gemini's "Please retry in 4.5s" phrase in the body is used (rounded up to ms).
   const b3 = brief();
-  const { fetchImpl: f3 } = mockFetch([new Response('x', { status: 502, headers: { 'retry-after': 'Wed, 21 Oct 2026 07:28:00 GMT' } }), reply({ why: { [b3.digest.itemIds[0]]: 'Fine line.' } })]);
+  const { fetchImpl: f3 } = mockFetch([new Response('x', { status: 502, headers: { 'retry-after': 'Wed, 21 Oct 2026 07:28:00 GMT' } }), new Response('{"error":{"message":"Resource exhausted. Please retry in 4.5s."}}', { status: 503 }), reply({ why: { [b3.digest.itemIds[0]]: 'Fine line.' } })]);
   const s3 = fakeSleep();
   assert.equal((await editorialize(b3, CONFIG, f3, s3.opts)).ok, true);
-  assert.deepEqual(s3.waits, [RETRY_BACKOFF_MS[0]]);
-  // A per-day quota 429 cannot clear within the run (and each attempt would count against it): no retry, body kept as detail.
+  assert.deepEqual(s3.waits, [RETRY_BACKOFF_MS[0], 4500]);
+  // A 429 is retried once at most (each attempt may count against a daily quota): 429 -> 429 is final after two calls.
+  const b3a = brief();
+  const limited = () => new Response(JSON.stringify({ error: { code: 429, message: 'You exceeded your current quota, please check your plan and billing details. * Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-3.6-flash', status: 'RESOURCE_EXHAUSTED' } }), { status: 429 });
+  const { fetchImpl: f3a, calls: c3a } = mockFetch([limited]);
+  const s3a = fakeSleep();
+  const r3a = await editorialize(b3a, CONFIG, f3a, s3a.opts);
+  assert.equal(r3a.error, 'HTTP 429 (2 attempts)');
+  assert.match(r3a.detail, /limit: 20/);
+  assert.equal(c3a.length, 2);
+  assert.deepEqual(s3a.waits, [RETRY_BACKOFF_MS[0]]);
+  // A 429 that names a per-day quota is final at once, body kept as detail.
   const b3b = brief();
   const quota = JSON.stringify({ error: { code: 429, message: 'You exceeded your current quota. quotaId: GenerateRequestsPerDayPerProjectPerModel-FreeTier, limit: 20', status: 'RESOURCE_EXHAUSTED' } });
   const { fetchImpl: f3b, calls: c3b } = mockFetch([() => new Response(quota, { status: 429 })]);
@@ -222,6 +233,10 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   assert.match(r3b.detail, /PerDay/);
   assert.equal(c3b.length, 1);
   assert.deepEqual(s3b.waits, []);
+  const b3c = brief();
+  const { fetchImpl: f3c, calls: c3c } = mockFetch([() => new Response('Rate limit reached for gpt-4o-mini on requests per day (RPD): Limit 200', { status: 429 })]);
+  assert.equal((await editorialize(b3c, CONFIG, f3c, fakeSleep().opts)).error, 'HTTP 429');
+  assert.equal(c3c.length, 1);
   // Exhausted: RETRY_BACKOFF_MS.length + 1 attempts, the last body as detail, the attempt count in the error, brief untouched.
   const b4 = brief();
   const snapshot = JSON.stringify(b4.digest);
