@@ -1,6 +1,6 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T12:26:29.909Z",
+ "generatedAt": "2026-10-20T12:35:29.581Z",
  "wordCount": 553,
  "readingMinutes": 3,
  "overview": null,
@@ -25,11 +25,11 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "This is crazy good for studying to improve existing custom engines by community like gufo, halogen, strixite, Strata... by learning their secret sauces.",
-     "why": "#1 on HN front page, 693 points, 240 comments; also on Reddit r/LocalLLaMA + r/MachineLearning",
+     "why": "#1 on HN front page, 726 points, 249 comments; also on Reddit r/LocalLLaMA + r/MachineLearning",
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T09:08:54.000Z",
      "category": "news",
-     "score": 18.5
+     "score": 18.55
     },
     {
      "id": "arxiv:2610.26860",
@@ -48,7 +48,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 16.34
+     "score": 16.32
     },
     {
      "id": "arxiv:2610.24087",
@@ -67,7 +67,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.09
+     "score": 16.07
     },
     {
      "id": "370d8453b070a7bf",
@@ -89,7 +89,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 15.82,
+     "score": 15.81,
      "readMinutes": 1
     }
    ]
@@ -115,7 +115,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 15.51
+     "score": 15.49
     },
     {
      "id": "arxiv:2610.26844",
@@ -134,7 +134,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 14.94
+     "score": 14.92
     },
     {
      "id": "arxiv:2610.26834",
@@ -153,7 +153,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 14.69
+     "score": 14.67
     }
    ]
   },
@@ -176,7 +176,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 10.38
+     "score": 10.37
     },
     {
      "id": "92c1824269f45469",
@@ -193,7 +193,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 9.85
+     "score": 9.84
     },
     {
      "id": "f2bc736c0ee71119",
@@ -210,7 +210,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 9.45
+     "score": 9.44
     }
    ]
   },
@@ -233,7 +233,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 4.37,
+     "score": 4.36,
      "readMinutes": 1
     },
     {
@@ -251,7 +251,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T00:00:00.000Z",
      "category": "labs",
-     "score": 3.93
+     "score": 3.92
     }
    ]
   },
@@ -274,7 +274,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T03:50:48.703Z",
      "category": "blogs",
-     "score": 4.24,
+     "score": 4.23,
      "readMinutes": 24
     },
     {
@@ -292,7 +292,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T05:39:38.000Z",
      "category": "blogs",
-     "score": 3.87,
+     "score": 3.86,
      "readMinutes": 11
     }
    ]
@@ -316,7 +316,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:31:37.000Z",
      "category": "blogs",
-     "score": 3.79,
+     "score": 3.78,
      "readMinutes": 25
     }
    ]
