@@ -537,14 +537,22 @@ export function start() {
 
   async function loadCore() {
     S.noData = false;
+    const [metaRes, indexRes] = await Promise.allSettled([
+      fetchJson('data/meta.json', { label: 'data/meta.json' }),
+      fetchJson('data/digests/index.json', { label: 'data/digests/index.json' }),
+    ]);
     try {
-      const [meta, index] = await Promise.all([fetchJson('data/meta.json', { label: 'data/meta.json' }), fetchJson('data/digests/index.json', { label: 'data/digests/index.json' })]);
-      if (!meta || typeof meta !== 'object' || !Array.isArray(index?.days)) throw Object.assign(new Error('data/meta.json or index.json has an unexpected shape'), { file: 'data/meta.json' });
-      S.meta = meta; S.index = index;
+      if (metaRes.status === 'fulfilled' && metaRes.value && typeof metaRes.value === 'object') S.meta = metaRes.value;
       renderHeader();
+      if (metaRes.status === 'rejected') throw metaRes.reason;
+      if (!S.meta) throw Object.assign(new Error('data/meta.json has an unexpected shape'), { file: 'data/meta.json' });
+      if (indexRes.status === 'rejected') throw indexRes.reason;
+      const index = indexRes.value;
+      if (!Array.isArray(index?.days)) throw Object.assign(new Error('data/digests/index.json has an unexpected shape'), { file: 'data/digests/index.json' });
+      S.index = index;
       if (index.days.length) {
         const newest = index.days[0].date;
-        const digest = await fetchJson(`data/digests/${newest}.json`, { label: `data/digests/${newest}.json`, buster: meta.generatedAt });
+        const digest = await fetchJson(`data/digests/${newest}.json`, { label: `data/digests/${newest}.json`, buster: S.meta.generatedAt });
         if (!Array.isArray(digest?.sections)) throw Object.assign(new Error(`data/digests/${newest}.json: missing sections`), { file: `data/digests/${newest}.json` });
         S.digest = digest; digestCache.set(newest, Promise.resolve(digest));
       }

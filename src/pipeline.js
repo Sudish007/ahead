@@ -97,7 +97,8 @@ export async function runSource(source, deps) {
   result.ms = Math.max(0, nowMs() - sourceStartedAtMs);
   const requested = result.requestedUrl ?? source.url;
   delete result.requestedUrl;
-  if (result.finalUrl && result.finalUrl !== requested) {
+  const sameUrl = (a, b) => { try { return new URL(a).href === new URL(b).href; } catch { return a === b; } };
+  if (result.finalUrl && !sameUrl(result.finalUrl, requested)) {
     const note = `redirected to ${result.finalUrl}`;
     result.note = result.note ? `${result.note}; ${note}` : note;
   }
