@@ -86,7 +86,7 @@ test('valid JSON applies overview and why lines within budget; embedded JSON is 
   const overview = words(170);
   const { fetchImpl, calls } = mockFetch([reply(`Here you go:\n${JSON.stringify({ overview, why: { [ids[0]]: 'Matters because 1,200 points shows demand.', [ids[1]]: 'Signals broad interest.' } })}\nthanks`)]);
   const result = await editorialize(b, CONFIG, fetchImpl);
-  assert.deepEqual(noMs(result), { enabled: true, ok: true, model: 'test-model' });
+  assert.deepEqual(noMs(result), { enabled: true, ok: true, model: 'test-model', overview: 'accepted', why: { accepted: 2, rejected: 0 } });
   assert.equal(b.digest.overview.text, overview);
   assert.equal(b.digest.overview.source, 'llm');
   const e0 = b.digest.sections.flatMap((s) => s.entries).find((e) => e.id === ids[0]);
@@ -122,17 +122,46 @@ test('overview boundaries: only 150 and 200 words accepted; invented numbers rej
     const r = await editorialize(b, CONFIG, fetchImpl);
     assert.equal(r.ok, true);
     assert.equal(b.digest.overview !== null, accepted, `${n} words`);
+    assert.equal(r.overview, accepted ? 'accepted' : `rejected: ${n} words`);
+    // The rejected overview is kept (bounded) as detail so a live rejection can be read from meta.json; an accepted one is not.
+    assert.equal(r.detail, accepted ? undefined : excerpt(words(n)));
+    if (!accepted) assert.ok(r.detail.length <= DETAIL_CHARS);
   }
   const b = brief();
   const { fetchImpl } = mockFetch([reply({ overview: `${words(160)} up 90%`, why: { [b.digest.itemIds[0]]: 'Still fine.' } })]);
   const r = await editorialize(b, CONFIG, fetchImpl);
-  assert.deepEqual(noMs(r), { enabled: true, ok: true, model: 'test-model' });
+  assert.deepEqual(noMs(r), { enabled: true, ok: true, model: 'test-model', overview: 'rejected: number 90%', why: { accepted: 1, rejected: 0 }, detail: excerpt(`${words(160)} up 90%`) });
   assert.equal(b.digest.overview, null);
   const b2 = brief();
   const { fetchImpl: f2 } = mockFetch([reply({ overview: `${words(160)} we saw 1,200 points and 33 upvotes`, why: {} })]);
   const r2 = await editorialize(b2, CONFIG, f2);
   assert.equal(r2.ok, true);
+  assert.deepEqual([r2.overview, r2.why], ['accepted', { accepted: 0, rejected: 0 }]);
   assert.ok(b2.digest.overview.text.includes('1,200'), 'overview may reuse any entry number');
+  const b3 = brief();
+  const { fetchImpl: f3 } = mockFetch([reply({ why: { [b3.digest.itemIds[0]]: 'Fine line.' } })]);
+  assert.equal((await editorialize(b3, CONFIG, f3)).overview, 'missing');
+});
+
+test('a number the facts spell with a leading hyphen (LTX-2.5, Qwen3.8-27B) is grounded unsigned too; the reverse is not', async () => {
+  const b = brief();
+  const id = b.digest.itemIds[0];
+  const entry = b.digest.sections.flatMap((s) => s.entries).find((e) => e.id === id);
+  entry.title = 'Lightricks/LTX-2.5 and Qwen3.8-27B land';
+  const { fetchImpl } = mockFetch([reply({ why: { [id]: 'LTX 2.5 and the 27B Qwen 3.8 model ship for local image-to-video work.' } })]);
+  const r = await editorialize(b, CONFIG, fetchImpl);
+  assert.deepEqual(r.why, { accepted: 1, rejected: 0 });
+  assert.equal(entry.whySource, 'llm');
+  const b2 = brief();
+  const id2 = b2.digest.itemIds[0];
+  const e2 = b2.digest.sections.flatMap((s) => s.entries).find((e) => e.id === id2);
+  e2.title = 'Scores 2.5 on the new benchmark';
+  const { fetchImpl: f2 } = mockFetch([reply({ why: { [id2]: 'Scores -2.5 on the new benchmark.' } })]);
+  const r2 = await editorialize(b2, CONFIG, f2);
+  assert.equal(r2.ok, false);
+  assert.equal(r2.error, 'empty');
+  assert.deepEqual(r2.why, { accepted: 0, rejected: 1 });
+  assert.equal(e2.whySource, 'heuristic');
 });
 
 test('why rejections: invented number, cross-entry number, 26 words, unknown id; accepted comma normalization', async () => {
@@ -150,6 +179,8 @@ test('why rejections: invented number, cross-entry number, 26 words, unknown id;
   } })]);
   const r = await editorialize(b, CONFIG, fetchImpl);
   assert.equal(r.ok, true);
+  assert.deepEqual(r.why, { accepted: 1, rejected: 4 });
+  assert.equal(r.overview, 'missing');
   const after = Object.fromEntries(b.digest.sections.flatMap((s) => s.entries).map((e) => [e.id, e]));
   assert.equal(after[newsId].why, before[newsId]); assert.equal(after[newsId].whySource, 'heuristic');
   assert.equal(after[paperId].why, before[paperId]);
@@ -168,11 +199,11 @@ test('failure states: garbage, 500, timeout, nothing accepted -> enabled true ok
     [[new Response('gone', { status: 404 })], 'HTTP 404', 'gone', 1],
     [[Object.assign(new Error('aborted'), { name: 'AbortError' })], 'timeout (2 attempts)', undefined, 2],
     [[new TypeError('fetch failed')], 'network (3 attempts)', undefined, 3],
-    [[reply({ overview: 'short', why: { zzz: 'x' } })], 'empty', '{"overview":"short","why":{"zzz":"x"}}', 1],
+    [[reply({ overview: 'short', why: { zzz: 'x' } })], 'empty', '{"overview":"short","why":{"zzz":"x"}}', 1, { overview: 'rejected: 1 words', why: { accepted: 0, rejected: 1 } }],
     [[new Response(JSON.stringify({ choices: [] }), { status: 200 })], 'empty', '{"choices":[]}', 1],
     [[rawReply({ message: { role: 'assistant', content: null, refusal: 'I cannot help with that.' } })], 'refusal', 'I cannot help with that.', 1],
   ];
-  for (const [responses, error, detail, attempts] of cases) {
+  for (const [responses, error, detail, attempts, acceptance] of cases) {
     const b = brief();
     const snapshot = JSON.stringify(b.digest);
     const { fetchImpl, calls } = mockFetch(responses);
@@ -186,6 +217,7 @@ test('failure states: garbage, 500, timeout, nothing accepted -> enabled true ok
     assert.equal(calls.length, attempts, error);
     assert.ok(!('finishReason' in r) || r.finishReason === 'stop', error);
     assert.ok(!('usage' in r), error);
+    assert.deepEqual([r.overview, r.why], acceptance ? [acceptance.overview, acceptance.why] : [undefined, undefined], error);
     assert.equal(JSON.stringify(b.digest), snapshot, 'heuristic brief untouched');
   }
 });
@@ -196,7 +228,7 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   const { fetchImpl, calls } = mockFetch([unavailable(), reply({ why: { [b.digest.itemIds[0]]: 'Fine line.' } })]);
   const { waits, opts } = fakeSleep();
   const r = await editorialize(b, CONFIG, fetchImpl, opts);
-  assert.deepEqual(noMs(r), { enabled: true, ok: true, model: 'test-model' });
+  assert.deepEqual(noMs(r), { enabled: true, ok: true, model: 'test-model', overview: 'missing', why: { accepted: 1, rejected: 0 } });
   assert.equal(calls.length, 2);
   assert.deepEqual(waits, [RETRY_BACKOFF_MS[0]]);
   assert.equal(calls[1].init.body, calls[0].init.body, 'the retried request is identical');
@@ -256,7 +288,7 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   const { fetchImpl: f5, calls: c5 } = mockFetch([new Response('Unsupported parameter: max_tokens', { status: 400 }), unavailable(), reply({ why: { [b5.digest.itemIds[0]]: 'Fine line.' } })]);
   const s5 = fakeSleep();
   const r5 = await editorialize(b5, CONFIG, f5, s5.opts);
-  assert.deepEqual(noMs(r5), { enabled: true, ok: true, model: 'test-model', compat: ['max_tokens'] });
+  assert.deepEqual(noMs(r5), { enabled: true, ok: true, model: 'test-model', overview: 'missing', why: { accepted: 1, rejected: 0 }, compat: ['max_tokens'] });
   assert.equal(c5.length, 3);
   assert.deepEqual(s5.waits, [RETRY_BACKOFF_MS[0]]);
   assert.equal(c5[2].body.max_completion_tokens, MAX_TOKENS);
@@ -319,7 +351,7 @@ test('never more than MAX_REQUESTS (3) requests per run, whatever mix of compat 
   const b1 = brief();
   const { fetchImpl: f1, calls: c1 } = mockFetch([compat400('max_tokens'), compat400('reasoning_effort'), ok(b1)]);
   const r1 = await editorialize(b1, CONFIG, f1, fakeSleep().opts);
-  assert.deepEqual(noMs(r1), { enabled: true, ok: true, model: 'test-model', compat: ['max_tokens', 'reasoning_effort'] });
+  assert.deepEqual(noMs(r1), { enabled: true, ok: true, model: 'test-model', overview: 'missing', why: { accepted: 1, rejected: 0 }, compat: ['max_tokens', 'reasoning_effort'] });
   assert.equal(c1.length, 3);
   const b2 = brief();
   const { fetchImpl: f2, calls: c2 } = mockFetch([compat400('response_format'), unavailable, ok(b2)]);
@@ -359,7 +391,7 @@ test('null content with reasoning_content -> reasoning only; usage is kept on su
   const b2 = brief();
   const { fetchImpl: f2 } = mockFetch([rawReply({ message: { role: 'assistant', content: JSON.stringify({ why: { [b2.digest.itemIds[0]]: 'Fine line.' } }) }, usage: USAGE })]);
   const r2 = await editorialize(b2, CONFIG, f2);
-  assert.deepEqual(noMs(r2), { enabled: true, ok: true, model: 'test-model', usage: { prompt: 2500, completion: 1200, total: 8192 } });
+  assert.deepEqual(noMs(r2), { enabled: true, ok: true, model: 'test-model', overview: 'missing', why: { accepted: 1, rejected: 0 }, usage: { prompt: 2500, completion: 1200, total: 8192 } });
 });
 
 test('fenced JSON and JSON wrapped in prose (with stray braces) parse; truncated or absent JSON does not', async () => {
@@ -440,13 +472,18 @@ test('detail is bounded to 300 chars and never contains the key, even when the c
   assert.equal(excerpt(null), '');
   assert.equal(describeLlmFailure({ ...r, ms: 7 }), 'invalid JSON; ms=7; detail="Error: your key REDACTED is invalid; see https://www.googleapis.com/v1/x?key=REDACTED&alt=json and REDACTED"');
   assert.equal(describeLlmFailure({ error: 'truncated', finishReason: 'length', usage: { total: 5 }, compat: ['response_format'] }), 'truncated; finish_reason=length; usage={"total":5}; compat=response_format');
+  assert.equal(describeLlmFailure({ ok: true, overview: 'rejected: 143 words', why: { accepted: 15, rejected: 0 }, ms: 3 }), 'ok; overview=rejected: 143 words; why=15/15; ms=3');
 });
 
 test('validateMeta accepts the diagnostic llm fields and bounds them', () => {
   const base = { generatedAt: NOW.toISOString(), durationMs: 1, itemCount: 0, newItemCount: 0, trimmedForSize: 0, sources: {}, okCount: 0, emptyCount: 0, failedCount: 0, sitemapSkipped: {}, sitemapCache: {}, brief: { date: '2026-10-20', wordCount: 0, readingMinutes: 0 }, static: { leaderboards: [], more: [], learn: [] } };
   const withLlm = (llm) => ({ ...base, llm });
   validateMeta(withLlm({ enabled: true, ok: false, model: 'm', error: 'truncated', finishReason: 'length', usage: { prompt: 1, completion: 0, total: 1 }, detail: 'x'.repeat(300) }));
-  validateMeta(withLlm({ enabled: true, ok: true, model: 'm', usage: { total: 10 }, ms: 0, compat: ['max_tokens', 'response_format', 'reasoning_effort'] }));
+  validateMeta(withLlm({ enabled: true, ok: true, model: 'm', usage: { total: 10 }, ms: 0, compat: ['max_tokens', 'response_format', 'reasoning_effort'], overview: 'rejected: 143 words', why: { accepted: 15, rejected: 0 }, detail: 'the rejected overview' }));
+  assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', overview: '' })), /llm\.overview/);
+  assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', overview: 'x'.repeat(81) })), /llm\.overview/);
+  assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', why: { accepted: 1 } })), /llm\.why/);
+  assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', why: { accepted: -1, rejected: 0 } })), /llm\.why/);
   assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', ms: -1 })), /llm\.ms/);
   assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', ms: 1.5 })), /llm\.ms/);
   assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', compat: [] })), /llm\.compat/);

@@ -5,9 +5,9 @@ import { defaultSleep, redactKey } from './http.js';
 export const SYSTEM_PROMPT = [
   'You are the editor of a one-page daily AI brief for an expert reader (researcher, founder, senior engineer).',
   'Using only the facts given in the user message, write:',
-  '1. "overview": one paragraph of 160-190 words (never fewer than 150 or more than 200) of plain English, no hype, naming the 3-5 developments that matter most today and why.',
+  '1. "overview": one paragraph of plain English, 160-190 words long (an overview under 150 or over 200 words is discarded), no hype, naming the 3-5 developments that matter most today and why.',
   '2. "why": an object mapping each entry id to one line of 12-20 words (never more than 25) saying why that entry matters to a researcher or founder.',
-  'Never invent numbers, names, benchmarks, dates or quotes. Use a number only when it appears with the same digits and unit in the facts for that entry; otherwise write the line without numbers. Do not add entries.',
+  'Never invent numbers, names, benchmarks, dates or quotes. Use a number only when it appears with the same digits and unit in the facts for that entry; otherwise write the line without numbers. Copy model names, versions and product ids exactly as the facts spell them (keep their hyphens and dots). Do not add entries.',
   'Reply with a single JSON object of the form { "overview": string, "why": { "<id>": string } } and nothing else: no markdown code fences, no prose before or after the JSON.',
 ].join('\n');
 
@@ -89,7 +89,9 @@ export function resolveLlmConfig(env = {}, { noLlm = false } = {}) {
 
 function allowedSet(entry, section, signals) {
   const set = new Set();
-  const add = (t) => numberTokens(t).forEach((n) => set.add(n));
+  // A `-` glued to a number in the facts is nearly always a hyphen inside an identifier (LTX-2.5, Qwen3.8-27B, GPT-5), so the
+  // unsigned form is grounded too. The reverse (a sign the facts lack) stays rejected.
+  const add = (t) => numberTokens(t).forEach((n) => { set.add(n); if (n.startsWith('-')) set.add(n.slice(1)); });
   add(entry.id); add(section); add(entry.title); add(entry.summary);
   for (const n of entry.sourceNames ?? []) add(n);
   add(JSON.stringify(signals ?? {}));
@@ -199,10 +201,12 @@ function usageOf(json) {
   return Object.keys(out).length ? out : undefined;
 }
 
-/** One-line rendering of a failed result for the run log: `error[; finish_reason=..][; usage=..][; compat=..][; ms=..][; detail=".."]`. */
+/** One-line rendering of a result for the run log: `error[; finish_reason=..][; overview=..][; why=..][; usage=..][; compat=..][; ms=..][; detail=".."]`. */
 export function describeLlmFailure(result) {
-  const parts = [result.error ?? 'failed'];
+  const parts = [result.error ?? (result.ok ? 'ok' : 'failed')];
   if (result.finishReason) parts.push(`finish_reason=${result.finishReason}`);
+  if (result.overview) parts.push(`overview=${result.overview}`);
+  if (result.why) parts.push(`why=${result.why.accepted}/${result.why.accepted + result.why.rejected}`);
   if (result.usage) parts.push(`usage=${JSON.stringify(result.usage)}`);
   if (result.compat?.length) parts.push(`compat=${result.compat.join(',')}`);
   if (Number.isFinite(result.ms)) parts.push(`ms=${result.ms}`);
@@ -237,6 +241,8 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
     const out = { enabled: true, ok: false, model, error: retries > 0 ? `${error} (${retries + 1} attempts)` : error };
     if (nonEmpty(info.finishReason)) out.finishReason = info.finishReason.trim().slice(0, 40);
     if (info.usage) out.usage = info.usage;
+    if (info.overview) out.overview = info.overview;
+    if (info.why) out.why = info.why;
     const detail = excerpt(info.detail, key);
     if (detail) out.detail = detail;
     return withDiagnostics(out);
@@ -301,31 +307,42 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
   let accepted = 0;
   const union = new Set();
   for (const set of allowed.values()) for (const n of set) union.add(n);
+  // Acceptance diagnostics: why the overview was dropped (and its text, bounded) and how many why-lines made it.
+  let overviewStatus = 'missing';
+  let rejectedOverview = '';
   if (typeof parsed.overview === 'string') {
     const text = parsed.overview.trim();
     const words = countWords(text);
-    if (words >= 150 && words <= 200 && numberTokens(text).every((n) => union.has(n))) {
+    const stray = numberTokens(text).find((n) => !union.has(n));
+    if (words < 150 || words > 200) overviewStatus = `rejected: ${words} words`;
+    else if (stray !== undefined) overviewStatus = `rejected: number ${stray}`;
+    else {
       digest.overview = { text, source: 'llm', model };
+      overviewStatus = 'accepted';
       accepted++;
     }
+    if (overviewStatus !== 'accepted') rejectedOverview = text;
   }
+  const why = { accepted: 0, rejected: 0 };
   if (parsed.why && typeof parsed.why === 'object' && !Array.isArray(parsed.why)) {
     const byId = new Map();
     for (const s of digest.sections) for (const e of s.entries) byId.set(e.id, e);
     for (const [id, value] of Object.entries(parsed.why)) {
       const entry = byId.get(id);
-      if (!entry || !allowed.has(id) || typeof value !== 'string') continue;
-      const text = value.trim();
-      if (!text || text.length > 200 || countWords(text) > 25) continue;
-      if (!numberTokens(text).every((n) => allowed.get(id).has(n))) continue;
+      const text = typeof value === 'string' ? value.trim() : '';
+      const ok = entry && allowed.has(id) && text && text.length <= 200 && countWords(text) <= 25 && numberTokens(text).every((n) => allowed.get(id).has(n));
+      if (!ok) { why.rejected++; continue; }
       entry.why = text;
       entry.whySource = 'llm';
+      why.accepted++;
       accepted++;
     }
   }
-  if (accepted === 0) return fail('empty', { finishReason, usage, detail: content });
+  if (accepted === 0) return fail('empty', { finishReason, usage, detail: content, overview: overviewStatus, why });
   enforceBudget(digest, 1100);
-  const result = { enabled: true, ok: true, model };
+  const result = { enabled: true, ok: true, model, overview: overviewStatus, why };
   if (usage) result.usage = usage;
+  const detail = excerpt(rejectedOverview, key);
+  if (detail) result.detail = detail;
   return withDiagnostics(result);
 }

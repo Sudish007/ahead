@@ -303,6 +303,7 @@ export async function run({
   if (llmConfig.eligible) {
     llmResult = await editorialize(brief, llmConfig, fetchImpl);
     if (!llmResult.ok) logger.warn(`LLM editorial layer failed: ${describeLlmFailure(llmResult)}`);
+    else if (llmResult.overview !== 'accepted' || llmResult.why?.rejected) logger.warn(`LLM editorial layer partial: ${describeLlmFailure(llmResult)}`);
   }
   const digest = finalizeDigest(brief.digest);
   digest.llm = { enabled: llmResult.enabled, ok: llmResult.ok };

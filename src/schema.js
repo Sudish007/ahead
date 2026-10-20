@@ -371,6 +371,8 @@ export function validateMeta(meta, registryIds) {
   if ('detail' in meta.llm && !(isNonEmptyString(meta.llm.detail) && meta.llm.detail.length <= 300 && !/[\n\r]/.test(meta.llm.detail))) sfail(`${p}.llm.detail`, 'must be a single line of at most 300 chars');
   if ('usage' in meta.llm && !(isPlainObject(meta.llm.usage) && Object.values(meta.llm.usage).every(isNonNegInt))) sfail(`${p}.llm.usage`, 'must be an object of non-negative integers');
   if ('ms' in meta.llm && !isNonNegInt(meta.llm.ms)) sfail(`${p}.llm.ms`, 'must be a non-negative integer');
+  if ('overview' in meta.llm && !(isNonEmptyString(meta.llm.overview) && meta.llm.overview.length <= 80 && !/[\n\r]/.test(meta.llm.overview))) sfail(`${p}.llm.overview`, 'must be a short status string');
+  if ('why' in meta.llm && !(isPlainObject(meta.llm.why) && isNonNegInt(meta.llm.why.accepted) && isNonNegInt(meta.llm.why.rejected) && Object.keys(meta.llm.why).length === 2)) sfail(`${p}.llm.why`, 'must be { accepted, rejected }');
   if ('compat' in meta.llm && !(Array.isArray(meta.llm.compat) && meta.llm.compat.length > 0 && meta.llm.compat.length <= 3 && meta.llm.compat.every(isNonEmptyString))) sfail(`${p}.llm.compat`, 'must be a non-empty array of strings');
   if (!isPlainObject(meta.brief) || !(typeof meta.brief.date === 'string' && DATE_RE.test(meta.brief.date)) || !isNonNegInt(meta.brief.wordCount) || !isNonNegInt(meta.brief.readingMinutes)) sfail(`${p}.brief`, 'must be { date, wordCount, readingMinutes }');
   if (!isPlainObject(meta.static)) sfail(`${p}.static`, 'must be an object');
