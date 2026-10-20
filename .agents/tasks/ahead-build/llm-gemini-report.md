@@ -134,3 +134,27 @@ All met live as of run 39427891665 (2026-10-20T13:09:31Z): `meta.llm.ok` true, `
 - To check a run: `https://sudish007.github.io/ahead/data/meta.json` -> `llm` (`ok`, `overview`, `why`, `usage`, `ms`; on failure `error`, `finishReason`, `detail`), and `data/digests/<date>.json` -> `overview.text`, `whySource` per entry.
 - `overview: "rejected: N words"` with the text in `detail` means the model missed the 90-260 band (the prompt asks for about 170); `rejected: number X` means it used a number absent from the facts (both leave the heuristic brief's `overview: null`, which the UI simply omits).
 - `HTTP 429` with `limit: 20` in `detail` means a 3.x Flash model's free daily quota is spent; it resets at midnight Pacific (07:00 UTC).
+
+## 2026-10-20 follow-up: overview word band widened
+
+**Issue.** The scheduled run at 2026-10-20T16:21:17Z (run 39456537887) came back `ok: true` with 15/15 why-lines accepted, but `meta.llm.overview` was `"rejected: 138 words"` and the published digest had `overview: null`. The model's paragraph was fine; the validator applied the spec's 150-200 band literally. The earlier 159-word overview had passed only because it happened to land inside it.
+
+**Change** (commit `d99e7b5`, `fix(llm): accept 90-260 word overviews, ask for ~170; reserve 260 words in the brief budget`):
+
+- `src/llm.js`: `OVERVIEW_MIN_WORDS = 90`, `OVERVIEW_MAX_WORDS = 260` (inclusive) replace the literal `150`/`200` in the acceptance check. The `rejected: N words` reason string and every other rule (numbers grounded in the sent facts, single JSON object, no fences) are unchanged. The prompt now asks for "about 170 words (at least 120, at most 220)" instead of "160-190 words (an overview under 150 or over 200 words is discarded)".
+- `src/pipeline.js`: the pre-LLM brief target is `1100 - OVERVIEW_MAX_WORDS` (840, was 880) so the largest accepted overview still fits under the 1,100-word cap without a second trim of the entries.
+- Tests: boundaries moved to 89 (rejected) / 90 / 260 (accepted) / 261 (rejected), with the constants and the prompt phrase asserted; the two budget tests use a 260-word overview and an 840-word pre-LLM target. 260 tests pass locally and on CI (both runs below).
+- README LLM section and plan.md (§8 inputs and terminal bound, §9 prompt and acceptance rule) now say ~170 target / 90-260 accepted.
+
+**Verification.** The push of `d99e7b5` triggered refresh run 39459733980 (green, deployed, data commit `7515d41`). The dispatch requested by the brief, run 39459774657, ran on the same SHA 17 s later: tests and fetch passed, the LLM call succeeded (brief 774 words, no `partial` warning), and it then stopped at the workflow's own "main moved; newer workflow will regenerate data" guard because the push run had already committed its data. That is the designed behaviour for two concurrent runs, not a defect; nothing from it was deployed.
+
+| | before (16:21:17Z, run 39456537887) | after (16:42:58Z, run 39459733980) |
+|---|---|---|
+| `meta.llm.overview` | `"rejected: 138 words"` | `"accepted"` |
+| `meta.llm.why` | `{ accepted: 15, rejected: 0 }` | `{ accepted: 15, rejected: 0 }` |
+| digest `overview` | `null` | 133 words, `source: "llm"`, `model: "gemini-3.5-flash-lite"` |
+| digest `wordCount` / `readingMinutes` | 688 / 4 | 808 / 4 |
+| `whySource: "llm"` | 15 / 15 | 15 / 15 |
+| `usage` / `ms` | 1642 + 738 = 2380 / 20109 | 1640 + 758 = 2398 / 15105 |
+
+Leak check after the run: `meta.json` and `digests/2026-10-20.json` contain no `AIza` and no `Bearer` substring. Note that the accepted 133-word overview would also have been rejected under the old band: Flash-Lite at `reasoning_effort: "low"` tends to write 130-160 words whatever the prompt asks for, so the wider acceptance band is what keeps the overview on the page.
