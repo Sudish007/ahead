@@ -1,7 +1,7 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T03:42:54.189Z",
- "wordCount": 558,
+ "generatedAt": "2026-10-20T03:50:48.703Z",
+ "wordCount": 586,
  "readingMinutes": 3,
  "overview": null,
  "sections": [
@@ -29,7 +29,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 16.44,
+     "score": 16.43,
      "readMinutes": 1
     },
     {
@@ -49,7 +49,26 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.09
+     "score": 16.07
+    },
+    {
+     "id": "arxiv:2610.26844",
+     "title": "AnyGoal: On World Model Generalization Beyond Expert Rollouts",
+     "url": "https://arxiv.org/abs/2610.26844",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "The goal of a world model is to capture the dynamics of an environment. This has the great appeal that it allows agents to plan and simulate a course of actions with the help of a world model.",
+     "why": "9 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
+     "publishedAt": "2026-10-19T00:00:00.000Z",
+     "category": "research",
+     "score": 14.75
     },
     {
      "id": "arxiv:2610.23121",
@@ -68,8 +87,14 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 14.71
-    },
+     "score": 14.7
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
     {
      "id": "arxiv:2610.23279",
      "title": "Xiaomi-Lens-0 Technical Report",
@@ -87,14 +112,8 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 13.93
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
+     "score": 13.91
+    },
     {
      "id": "arxiv:2610.23230",
      "title": "RAP: A Dataset for Paper-to-Poster Generation via Declarative Markup from Human-Crafted Exemplars",
@@ -112,7 +131,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 13.71
+     "score": 13.7
     },
     {
      "id": "arxiv:2610.22744",
@@ -131,26 +150,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T00:00:00.000Z",
      "category": "research",
-     "score": 13.24
-    },
-    {
-     "id": "arxiv:2610.22602",
-     "title": "Stuck on Shuffle: On Attribute-Object Binding in Vision-Language Models",
-     "url": "https://arxiv.org/abs/2610.22602",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Retrieval is a fundamental task in multimodal systems: given an image or text query, the goal is to find the most relevant images or texts in a collection, often using a shared embedding space.",
-     "why": "15 upvotes on HF Papers; also on arXiv cs.CV",
-     "whySource": "heuristic",
-     "publishedAt": "2026-10-15T00:00:00.000Z",
-     "category": "research",
-     "score": 13.07
+     "score": 13.22
     }
    ]
   },
@@ -173,7 +173,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 10.99
+     "score": 10.98
     },
     {
      "id": "92c1824269f45469",
@@ -190,7 +190,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 10.45
+     "score": 10.44
     },
     {
      "id": "f2bc736c0ee71119",
@@ -207,7 +207,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 10.06
+     "score": 10.05
     }
    ]
   },
@@ -230,7 +230,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 5.17,
+     "score": 5.16,
      "readMinutes": 1
     },
     {
@@ -248,7 +248,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-18T16:49:35.513Z",
      "category": "labs",
-     "score": 4.09
+     "score": 4.08
     }
    ]
   },
@@ -256,6 +256,24 @@
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
+    {
+     "id": "58b479d20c57cce8",
+     "title": "How To Use Decision Models for Evals",
+     "url": "https://hamel.dev/blog/posts/decision-model-evals/",
+     "sourceIds": [
+      "hamel"
+     ],
+     "sourceNames": [
+      "Hamel Husain"
+     ],
+     "summary": "Decision models have exploded onto the scene recently, starting with TypeSafe’s Jev, followed by Perplexity’s Decider, Liquid’s d1, Cloudflare’s Clef, and OpenAI’s Decisions API1. These models promise fast, inexpensive classification.",
+     "why": "Hamel Husain, ~24 min read",
+     "whySource": "heuristic",
+     "publishedAt": "2026-10-20T03:50:48.703Z",
+     "category": "blogs",
+     "score": 5,
+     "readMinutes": 24
+    },
     {
      "id": "84d5d1e0eee006ca",
      "title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
@@ -271,9 +289,15 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T05:39:38.000Z",
      "category": "blogs",
-     "score": 4.58,
+     "score": 4.57,
      "readMinutes": 11
-    },
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
     {
      "id": "541b4de5f9084ba9",
      "title": "Import AI 477: In which I tell the IMF the Singularity has begun",
@@ -289,32 +313,8 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:31:37.000Z",
      "category": "blogs",
-     "score": 4.48,
+     "score": 4.47,
      "readMinutes": 25
-    }
-   ]
-  },
-  {
-   "key": "deep-read",
-   "title": "One deep read",
-   "entries": [
-    {
-     "id": "a52dac6303971ae3",
-     "title": "I Can See Everything",
-     "url": "https://thezvi.substack.com/p/i-can-see-everything",
-     "sourceIds": [
-      "zvi"
-     ],
-     "sourceNames": [
-      "Don't Worry About the Vase"
-     ],
-     "summary": "No spoilers!",
-     "why": "Don't Worry About the Vase, ~59 min read",
-     "whySource": "heuristic",
-     "publishedAt": "2026-10-19T13:44:21.000Z",
-     "category": "blogs",
-     "score": 3.82,
-     "readMinutes": 59
     }
    ]
   }
@@ -322,21 +322,21 @@
  "itemIds": [
   "370d8453b070a7bf",
   "arxiv:2610.22791",
+  "arxiv:2610.26844",
   "arxiv:2610.23121",
   "arxiv:2610.23279",
   "arxiv:2610.23230",
   "arxiv:2610.22744",
-  "arxiv:2610.22602",
   "ca26bca182f697df",
   "92c1824269f45469",
   "f2bc736c0ee71119",
   "1dbe22633003a2af",
   "d3ccea06eed40094",
+  "58b479d20c57cce8",
   "84d5d1e0eee006ca",
-  "541b4de5f9084ba9",
-  "a52dac6303971ae3"
+  "541b4de5f9084ba9"
  ],
- "deepReadId": "a52dac6303971ae3",
+ "deepReadId": "541b4de5f9084ba9",
  "llm": {
   "enabled": false,
   "ok": false
