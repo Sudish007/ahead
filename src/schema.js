@@ -367,6 +367,9 @@ export function validateMeta(meta, registryIds) {
   if (!isPlainObject(meta.llm) || typeof meta.llm.enabled !== 'boolean' || typeof meta.llm.ok !== 'boolean') sfail(`${p}.llm`, 'must have boolean enabled/ok');
   if ('model' in meta.llm && !isNonEmptyString(meta.llm.model)) sfail(`${p}.llm.model`, 'must be a non-empty string');
   if ('error' in meta.llm && !isNonEmptyString(meta.llm.error)) sfail(`${p}.llm.error`, 'must be a non-empty string');
+  if ('finishReason' in meta.llm && !(isNonEmptyString(meta.llm.finishReason) && meta.llm.finishReason.length <= 40)) sfail(`${p}.llm.finishReason`, 'must be a short string');
+  if ('detail' in meta.llm && !(isNonEmptyString(meta.llm.detail) && meta.llm.detail.length <= 300 && !/[\n\r]/.test(meta.llm.detail))) sfail(`${p}.llm.detail`, 'must be a single line of at most 300 chars');
+  if ('usage' in meta.llm && !(isPlainObject(meta.llm.usage) && Object.values(meta.llm.usage).every(isNonNegInt))) sfail(`${p}.llm.usage`, 'must be an object of non-negative integers');
   if (!isPlainObject(meta.brief) || !(typeof meta.brief.date === 'string' && DATE_RE.test(meta.brief.date)) || !isNonNegInt(meta.brief.wordCount) || !isNonNegInt(meta.brief.readingMinutes)) sfail(`${p}.brief`, 'must be { date, wordCount, readingMinutes }');
   if (!isPlainObject(meta.static)) sfail(`${p}.static`, 'must be an object');
   for (const k of ['leaderboards', 'more', 'learn']) if (!Array.isArray(meta.static[k])) sfail(`${p}.static.${k}`, 'must be an array');

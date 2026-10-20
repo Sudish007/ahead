@@ -15,7 +15,7 @@ import { parseSitemap } from './parsers/sitemap.js';
 import { applyInvalidations, mergeItems, mergePrevious, stripEphemeral } from './dedup.js';
 import { compareRank, score } from './score.js';
 import { buildBrief, finalizeDigest } from './brief.js';
-import { editorialize, resolveLlmConfig } from './llm.js';
+import { describeLlmFailure, editorialize, resolveLlmConfig } from './llm.js';
 import { createRelayFetch, relayNote, resolveRelay } from './relay.js';
 
 export const SOURCE_BACKSTOP_MS = 45_000;
@@ -302,7 +302,7 @@ export async function run({
   let llmResult = llmConfig.meta;
   if (llmConfig.eligible) {
     llmResult = await editorialize(brief, llmConfig, fetchImpl);
-    if (!llmResult.ok) logger.warn(`LLM editorial layer failed: ${llmResult.error}`);
+    if (!llmResult.ok) logger.warn(`LLM editorial layer failed: ${describeLlmFailure(llmResult)}`);
   }
   const digest = finalizeDigest(brief.digest);
   digest.llm = { enabled: llmResult.enabled, ok: llmResult.ok };
