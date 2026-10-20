@@ -30,8 +30,14 @@ export const DETAIL_CHARS = 300;
  * network errors get a short backoff and another attempt; the first live Gemini run died on exactly one such 503.
  */
 const TRANSIENT_STATUSES = new Set([429, 500, 502, 503, 504]);
-/** Exponential-ish plan: a 503 spike on Gemini usually clears within a couple of minutes; 100 s of waiting fits the 20 min job. */
-export const RETRY_BACKOFF_MS = [10_000, 30_000, 60_000];
+/**
+ * Hard ceiling on HTTP requests per run, counting compatibility and transient retries alike. Free tiers meter requests per
+ * day (Gemini: 20 for the 3.x Flash models, ~500 for Flash-Lite) and count failed ones too, so four scheduled runs a day
+ * must stay well inside the smallest quota: 4 x 3 = 12.
+ */
+export const MAX_REQUESTS = 3;
+/** Backoff before each transient retry; MAX_REQUESTS - 1 entries, so the plan and the ceiling agree. */
+export const RETRY_BACKOFF_MS = [10_000, 30_000];
 const MAX_RETRY_AFTER_MS = 30_000;
 /** A timeout has already cost LLM_TIMEOUT_MS, so it gets one more try at most (sharing the backoff plan), not three. */
 const MAX_TIMEOUT_RETRIES = 1;
@@ -222,7 +228,8 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
   let body = { model, temperature: 0.3, max_tokens: MAX_TOKENS, response_format: { type: 'json_object' }, reasoning_effort: REASONING_EFFORT, messages };
   const startedAt = Date.now();
   let res;
-  let retries = 0; // transient retries taken (compat retries are not counted: they fix the request, not the weather)
+  let requests = 0; // every POST, whatever the reason; never exceeds MAX_REQUESTS
+  let retries = 0; // transient retries taken (compat retries are not counted here: they fix the request, not the weather)
   let timeoutRetries = 0;
   let rateLimitRetries = 0;
   const applied = [];
@@ -240,25 +247,26 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
     return out;
   };
   for (;;) {
+    requests++;
+    const budgetLeft = requests < MAX_REQUESTS && retries < RETRY_BACKOFF_MS.length;
     try {
       res = await post(fetchImpl, endpoint, key, body);
     } catch (err) {
       const timedOut = err?.name === 'AbortError';
-      if (timedOut && timeoutRetries >= MAX_TIMEOUT_RETRIES) return fail('timeout');
-      if (retries >= RETRY_BACKOFF_MS.length) return fail(timedOut ? 'timeout' : 'network');
+      if (!budgetLeft || (timedOut && timeoutRetries >= MAX_TIMEOUT_RETRIES)) return fail(timedOut ? 'timeout' : 'network');
       if (timedOut) timeoutRetries++;
       await sleep(RETRY_BACKOFF_MS[retries++]);
       continue;
     }
     if (res.status === 400) {
       const errText = errorBody(res);
-      const fix = COMPAT_RETRIES.find((r) => !applied.includes(r.name) && r.mentions.test(errText));
+      const fix = requests < MAX_REQUESTS ? COMPAT_RETRIES.find((r) => !applied.includes(r.name) && r.mentions.test(errText)) : undefined;
       if (!fix) return fail('HTTP 400', { detail: errText });
       applied.push(fix.name);
       body = fix.apply(body);
       continue;
     }
-    let retryable = TRANSIENT_STATUSES.has(res.status) && retries < RETRY_BACKOFF_MS.length;
+    let retryable = budgetLeft && TRANSIENT_STATUSES.has(res.status);
     if (retryable && res.status === 429) {
       retryable = rateLimitRetries < MAX_RATE_LIMIT_RETRIES && !DAILY_QUOTA_RE.test(errorBody(res));
       if (retryable) rateLimitRetries++;

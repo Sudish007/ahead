@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { NOW } from './helpers.js';
-import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS, REASONING_EFFORT, LLM_TIMEOUT_MS } from '../src/llm.js';
+import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS, REASONING_EFFORT, LLM_TIMEOUT_MS, MAX_REQUESTS } from '../src/llm.js';
 import { buildBrief, finalizeDigest, countWords } from '../src/brief.js';
 import { buildRegistry } from '../src/registry.js';
 import { validateDigest, validateDigestIndex, validateMeta } from '../src/schema.js';
@@ -163,11 +163,11 @@ test('failure states: garbage, 500, timeout, nothing accepted -> enabled true ok
   const cases = [
     [[reply('not json at all')], 'invalid JSON', 'not json at all', 1],
     [[new Response('{"error":"not json', { status: 200 })], 'invalid JSON', '{"error":"not json', 1],
-    [[() => new Response('err', { status: 500 })], 'HTTP 500 (4 attempts)', 'err', 4],
+    [[() => new Response('err', { status: 500 })], 'HTTP 500 (3 attempts)', 'err', 3],
     [[new Response('nope', { status: 401 })], 'HTTP 401', 'nope', 1],
     [[new Response('gone', { status: 404 })], 'HTTP 404', 'gone', 1],
     [[Object.assign(new Error('aborted'), { name: 'AbortError' })], 'timeout (2 attempts)', undefined, 2],
-    [[new TypeError('fetch failed')], 'network (4 attempts)', undefined, 4],
+    [[new TypeError('fetch failed')], 'network (3 attempts)', undefined, 3],
     [[reply({ overview: 'short', why: { zzz: 'x' } })], 'empty', '{"overview":"short","why":{"zzz":"x"}}', 1],
     [[new Response(JSON.stringify({ choices: [] }), { status: 200 })], 'empty', '{"choices":[]}', 1],
     [[rawReply({ message: { role: 'assistant', content: null, refusal: 'I cannot help with that.' } })], 'refusal', 'I cannot help with that.', 1],
@@ -190,7 +190,7 @@ test('failure states: garbage, 500, timeout, nothing accepted -> enabled true ok
   }
 });
 
-test('transient 429/5xx and network errors retry with backoff (retry-after honoured, capped); the fourth failure is final', async () => {
+test('transient 429/5xx and network errors retry with backoff (retry-after honoured, capped); the third failure is final', async () => {
   const unavailable = () => new Response(JSON.stringify({ error: { code: 503, message: 'This model is currently experiencing high demand.', status: 'UNAVAILABLE' } }), { status: 503 });
   const b = brief();
   const { fetchImpl, calls } = mockFetch([unavailable(), reply({ why: { [b.digest.itemIds[0]]: 'Fine line.' } })]);
@@ -237,17 +237,18 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   const { fetchImpl: f3c, calls: c3c } = mockFetch([() => new Response('Rate limit reached for gpt-4o-mini on requests per day (RPD): Limit 200', { status: 429 })]);
   assert.equal((await editorialize(b3c, CONFIG, f3c, fakeSleep().opts)).error, 'HTTP 429');
   assert.equal(c3c.length, 1);
-  // Exhausted: RETRY_BACKOFF_MS.length + 1 attempts, the last body as detail, the attempt count in the error, brief untouched.
+  // Exhausted: MAX_REQUESTS attempts, the last body as detail, the attempt count in the error, brief untouched.
   const b4 = brief();
   const snapshot = JSON.stringify(b4.digest);
   const { fetchImpl: f4, calls: c4 } = mockFetch([unavailable]);
   const s4 = fakeSleep();
   const r4 = await editorialize(b4, CONFIG, f4, s4.opts);
-  assert.equal(r4.error, `HTTP 503 (${RETRY_BACKOFF_MS.length + 1} attempts)`);
-  assert.equal(r4.error, 'HTTP 503 (4 attempts)');
+  assert.equal(r4.error, `HTTP 503 (${MAX_REQUESTS} attempts)`);
+  assert.equal(r4.error, 'HTTP 503 (3 attempts)');
   assert.match(r4.detail, /high demand/);
-  assert.equal(c4.length, 4);
+  assert.equal(c4.length, 3);
   assert.deepEqual(s4.waits, RETRY_BACKOFF_MS);
+  assert.equal(RETRY_BACKOFF_MS.length, MAX_REQUESTS - 1, 'the backoff plan and the request ceiling agree');
   assert.ok(RETRY_BACKOFF_MS.reduce((a, b) => a + b, 0) <= 120_000, 'total planned waiting stays within two minutes');
   assert.equal(JSON.stringify(b4.digest), snapshot);
   // A compatibility 400 is not an attempt: 400 (max_tokens) -> 503 -> ok is three calls, one wait.
@@ -275,10 +276,55 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   const b8 = brief();
   const { fetchImpl: f8, calls: c8 } = mockFetch([unavailable, abort, unavailable, abort]);
   const s8 = fakeSleep();
-  assert.equal((await editorialize(b8, CONFIG, f8, s8.opts)).error, 'timeout (4 attempts)');
-  assert.equal(c8.length, 4);
+  assert.equal((await editorialize(b8, CONFIG, f8, s8.opts)).error, 'HTTP 503 (3 attempts)');
+  assert.equal(c8.length, 3);
   assert.deepEqual(s8.waits, RETRY_BACKOFF_MS);
   assert.equal(LLM_TIMEOUT_MS, 120_000);
+});
+
+test('never more than MAX_REQUESTS (3) requests per run, whatever mix of compat 400s, 429s, 5xx, timeouts and network errors', async () => {
+  assert.equal(MAX_REQUESTS, 3);
+  const compat400 = (param) => () => new Response(JSON.stringify({ error: { message: `Unsupported parameter: '${param}'`, param } }), { status: 400 });
+  const unavailable = () => new Response('{"error":{"code":503,"status":"UNAVAILABLE"}}', { status: 503 });
+  const limited = () => new Response('{"error":{"code":429,"status":"RESOURCE_EXHAUSTED"}}', { status: 429 });
+  const abort = () => { throw Object.assign(new Error('aborted'), { name: 'AbortError' }); };
+  const network = () => { throw new TypeError('fetch failed'); };
+  const ok = (b) => () => reply({ why: { [b.digest.itemIds[0]]: 'Fine line.' } });
+  // [responses, expected error, expected compat (undefined = none)]
+  const sequences = [
+    [[compat400('max_tokens'), compat400('response_format'), compat400('reasoning_effort'), 'never'], 'HTTP 400', ['max_tokens', 'response_format']],
+    [[compat400('max_tokens'), compat400('response_format'), unavailable, 'never'], 'HTTP 503', ['max_tokens', 'response_format']],
+    [[compat400('max_tokens'), unavailable, unavailable, 'never'], 'HTTP 503 (2 attempts)', ['max_tokens']],
+    [[compat400('reasoning_effort'), limited, limited, 'never'], 'HTTP 429 (2 attempts)', ['reasoning_effort']],
+    [[unavailable, compat400('max_tokens'), unavailable, 'never'], 'HTTP 503 (2 attempts)', ['max_tokens']],
+    [[limited, limited, 'never'], 'HTTP 429 (2 attempts)', undefined],
+    [[unavailable, limited, unavailable, 'never'], 'HTTP 503 (3 attempts)', undefined],
+    [[network, abort, abort, 'never'], 'timeout (3 attempts)', undefined],
+    [[abort, network, network, 'never'], 'network (3 attempts)', undefined],
+    [[network, network, network, 'never'], 'network (3 attempts)', undefined],
+  ];
+  for (const [responses, error, compat] of sequences) {
+    const b = brief();
+    const snapshot = JSON.stringify(b.digest);
+    const { fetchImpl, calls } = mockFetch(responses.map((r) => (r === 'never' ? () => { throw new Error('a fourth request was made'); } : r)));
+    const r = await editorialize(b, CONFIG, fetchImpl, fakeSleep().opts);
+    assert.equal(r.ok, false, error);
+    assert.equal(r.error, error);
+    assert.deepEqual(r.compat, compat, error);
+    assert.ok(calls.length <= MAX_REQUESTS, `${error}: ${calls.length} requests`);
+    assert.equal(calls.length, Math.min(responses.length - 1, MAX_REQUESTS), error);
+    assert.equal(JSON.stringify(b.digest), snapshot, 'heuristic brief untouched');
+  }
+  // Success still fits: two compat fixes then an answer, or one fix and one transient retry then an answer.
+  const b1 = brief();
+  const { fetchImpl: f1, calls: c1 } = mockFetch([compat400('max_tokens'), compat400('reasoning_effort'), ok(b1)]);
+  const r1 = await editorialize(b1, CONFIG, f1, fakeSleep().opts);
+  assert.deepEqual(noMs(r1), { enabled: true, ok: true, model: 'test-model', compat: ['max_tokens', 'reasoning_effort'] });
+  assert.equal(c1.length, 3);
+  const b2 = brief();
+  const { fetchImpl: f2, calls: c2 } = mockFetch([compat400('response_format'), unavailable, ok(b2)]);
+  assert.equal((await editorialize(b2, CONFIG, f2, fakeSleep().opts)).ok, true);
+  assert.equal(c2.length, 3);
 });
 
 test('finish_reason length -> truncated with finishReason, usage and detail, even when a prefix parses', async () => {
@@ -358,16 +404,18 @@ test('400 mentioning response_format retries once without it; a second such 400 
   assert.equal(r2.error, 'HTTP 400');
   assert.match(r2.detail, /response_format is not supported/);
   assert.equal(c2.length, 2);
-  // All fixes may be needed (one 400 each); each applies at most once.
+  // Two fixes may be needed (one 400 each); each applies at most once and the other fields survive.
   const b3 = brief();
-  const { fetchImpl: f3, calls: c3 } = mockFetch([new Response('{"error":"Unsupported parameter: max_tokens"}', { status: 400 }), bad(), new Response(JSON.stringify({ error: { message: "Unsupported parameter: 'reasoning_effort' is not supported with this model.", param: 'reasoning_effort' } }), { status: 400 }), reply({ why: { [b3.digest.itemIds[0]]: 'ok' } })]);
+  const { fetchImpl: f3, calls: c3 } = mockFetch([new Response('{"error":"Unsupported parameter: max_tokens"}', { status: 400 }), new Response(JSON.stringify({ error: { message: "Unsupported parameter: 'reasoning_effort' is not supported with this model.", param: 'reasoning_effort' } }), { status: 400 }), reply({ why: { [b3.digest.itemIds[0]]: 'ok' } })]);
   const r3 = await editorialize(b3, CONFIG, f3);
   assert.equal(r3.ok, true);
-  assert.equal(c3.length, 4);
-  assert.equal(c3[2].body.reasoning_effort, REASONING_EFFORT, 'still present until its own 400');
-  assert.equal(c3[3].body.max_completion_tokens, MAX_TOKENS);
-  assert.ok(!('max_tokens' in c3[3].body) && !('response_format' in c3[3].body) && !('reasoning_effort' in c3[3].body));
-  assert.deepEqual(c3[3].body.messages, c3[0].body.messages, 'messages never change across compat retries');
+  assert.deepEqual(r3.compat, ['max_tokens', 'reasoning_effort']);
+  assert.equal(c3.length, 3);
+  assert.equal(c3[1].body.reasoning_effort, REASONING_EFFORT, 'still present until its own 400');
+  assert.equal(c3[2].body.max_completion_tokens, MAX_TOKENS);
+  assert.deepEqual(c3[2].body.response_format, { type: 'json_object' });
+  assert.ok(!('max_tokens' in c3[2].body) && !('reasoning_effort' in c3[2].body));
+  assert.deepEqual(c3[2].body.messages, c3[0].body.messages, 'messages never change across compat retries');
 });
 
 test('detail is bounded to 300 chars and never contains the key, even when the cut would fall inside it', async () => {
@@ -384,7 +432,7 @@ test('detail is bounded to 300 chars and never contains the key, even when the c
   const b2 = brief();
   const { fetchImpl: f2 } = mockFetch([() => new Response(straddle, { status: 503 })]);
   const r2 = await editorialize(b2, CONFIG, f2, fakeSleep().opts);
-  assert.equal(r2.error, 'HTTP 503 (4 attempts)');
+  assert.equal(r2.error, 'HTTP 503 (3 attempts)');
   assert.equal(r2.detail.length, DETAIL_CHARS);
   assert.ok(!r2.detail.includes('sk-') && !r2.detail.includes('SECRET'), 'scrubbed before the cut, so no fragment of the key survives');
   assert.equal(r2.detail, `${'x'.repeat(DETAIL_CHARS - 4)}REDA`);
