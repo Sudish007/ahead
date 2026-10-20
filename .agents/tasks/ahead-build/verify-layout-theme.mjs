@@ -368,7 +368,10 @@ function contrastInPage(tab) {
     const summary = entry.querySelector('.summary'); add('entry summary (muted) on section card', parse(cs(summary).color), bgOf(summary), 4.5);
     const why = entry.querySelector('.why'); add('why-line on section card', parse(cs(why).color), bgOf(why), 4.5);
     const link = q('.sections .entry .discussion:not([hidden])') ?? q('footer a'); add('accent link on section card', parse(cs(link).color), bgOf(entry), 4.5);
-    const tag = q('.overview .tag'); add('AI-WRITTEN badge text on badge background', parse(cs(tag).color), parse(cs(tag).backgroundColor), 4.5);
+    // The overview (and its badge) is absent when the LLM overview was rejected for the day; fall back to the tokens like the visited/alert pairs below.
+    const tag = q('.overview .tag');
+    if (tag) add('AI-WRITTEN badge text on badge background', parse(cs(tag).color), parse(cs(tag).backgroundColor), 4.5);
+    else add('AI-WRITTEN badge text on badge background (from tokens; no overview in this digest)', token('--tag-fg'), token('--tag-bg'), 4.5);
     const h2 = q('.section h2'); add('section heading on section card', parse(cs(h2).color), bgOf(h2), 4.5);
     const cur = q('[aria-current="true"]'); add('cursor outline on cursor background (3:1)', parse(cs(cur).outlineColor), parse(cs(cur).backgroundColor), 3);
     add('cursor title on cursor background', parse(cs(cur.querySelector('.title')).color), parse(cs(cur).backgroundColor), 4.5);

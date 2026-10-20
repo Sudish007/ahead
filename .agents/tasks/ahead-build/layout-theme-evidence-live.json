@@ -1,0 +1,1062 @@
+{
+  "base": "https://sudish007.github.io/ahead/",
+  "mode": "live",
+  "generatedAt": "2026-10-20T15:44:57.688Z",
+  "chromium": "156.0.8078.4",
+  "widths": {
+    "390": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".sections": 1
+            },
+            "tracks": {
+              ".sections": "358"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 358
+            },
+            "sectionWidths": {
+              "mustKnow": 358,
+              "research": 358
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/live-brief-390-light.png"
+          },
+          "research": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".rows": 1
+            },
+            "tracks": {
+              ".rows": "358"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 358
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "static",
+            "screenshot": "docs/screenshots/live-research-390-light.png"
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".sections": 1
+            },
+            "tracks": {
+              ".sections": "358"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 358
+            },
+            "sectionWidths": {
+              "mustKnow": 358,
+              "research": 358
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/live-brief-390-dark.png"
+          },
+          "research": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".rows": 1
+            },
+            "tracks": {
+              ".rows": "358"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 358
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "static",
+            "screenshot": "docs/screenshots/live-research-390-dark.png"
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    },
+    "2560": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".sections": 4
+            },
+            "tracks": {
+              ".sections": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "sectionWidths": {
+              "mustKnow": 1028,
+              "research": 506
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/live-brief-2560-light.png"
+          },
+          "research": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".rows": 4
+            },
+            "tracks": {
+              ".rows": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/live-research-2560-light.png"
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".sections": 4
+            },
+            "tracks": {
+              ".sections": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "sectionWidths": {
+              "mustKnow": 1028,
+              "research": 506
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/live-brief-2560-dark.png"
+          },
+          "research": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".rows": 4
+            },
+            "tracks": {
+              ".rows": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/live-research-2560-dark.png"
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    }
+  },
+  "theme": {
+    "steps": [
+      {
+        "step": "load (OS dark, nothing stored)",
+        "attr": null,
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: System",
+        "mode": "system",
+        "stored": null,
+        "atBody": null
+      },
+      {
+        "step": "click -> Light",
+        "attr": "light",
+        "canvasBg": "rgb(250, 250, 250)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(17, 17, 17)",
+        "meta": "#fafafa",
+        "scheme": "light",
+        "label": "Theme: Light",
+        "mode": "light",
+        "stored": "\"light\"",
+        "atBody": null
+      },
+      {
+        "step": "click -> Dark",
+        "attr": "dark",
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: Dark",
+        "mode": "dark",
+        "stored": "\"dark\"",
+        "atBody": null
+      },
+      {
+        "step": "click -> System",
+        "attr": null,
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: System",
+        "mode": "system",
+        "stored": "\"system\"",
+        "atBody": null
+      },
+      {
+        "step": "t -> Light",
+        "attr": "light",
+        "canvasBg": "rgb(250, 250, 250)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(17, 17, 17)",
+        "meta": "#fafafa",
+        "scheme": "light",
+        "label": "Theme: Light",
+        "mode": "light",
+        "stored": "\"light\"",
+        "atBody": null
+      },
+      {
+        "step": "reload (light persisted)",
+        "attr": "light",
+        "canvasBg": "rgb(250, 250, 250)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(17, 17, 17)",
+        "meta": "#fafafa",
+        "scheme": "light",
+        "label": "Theme: Light",
+        "mode": "light",
+        "stored": "\"light\"",
+        "atBody": "light"
+      },
+      {
+        "step": "t -> Dark, reload",
+        "attr": "dark",
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: Dark",
+        "mode": "dark",
+        "stored": "\"dark\"",
+        "atBody": "dark"
+      },
+      {
+        "step": "OS light, nothing stored",
+        "attr": null,
+        "canvasBg": "rgb(250, 250, 250)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(17, 17, 17)",
+        "meta": "#fafafa",
+        "scheme": "light",
+        "label": "Theme: System",
+        "mode": "system",
+        "stored": null,
+        "atBody": null
+      },
+      {
+        "step": "OS light, stored dark",
+        "attr": "dark",
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: Dark",
+        "mode": "dark",
+        "stored": "\"dark\"",
+        "atBody": "dark"
+      }
+    ]
+  },
+  "keyboard": {
+    "brief": {
+      "afterJx4": {
+        "index": 4,
+        "count": 15,
+        "url": "https://arxiv.org/abs/2610.22791",
+        "id": "arxiv:2610.22791",
+        "left": 1331.796875,
+        "top": 221.9375,
+        "bottom": 464.609375,
+        "innerHeight": 1200,
+        "firstLeft": 287.796875,
+        "outlineColor": "rgb(122, 183, 255)",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid",
+        "accent": "rgb(122, 183, 255)",
+        "filtersBottom": 0,
+        "isRead": false,
+        "isSaved": false
+      },
+      "opened": "https://arxiv.org/abs/2610.22791"
+    },
+    "research": {
+      "afterJJK": {
+        "index": 1,
+        "count": 100,
+        "url": "https://arxiv.org/abs/2610.26860",
+        "id": "arxiv:2610.26860",
+        "left": 766,
+        "top": 273.875,
+        "bottom": 452,
+        "innerHeight": 1200,
+        "firstLeft": 244,
+        "outlineColor": "rgb(122, 183, 255)",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid",
+        "accent": "rgb(122, 183, 255)",
+        "filtersBottom": 216.9375,
+        "isRead": false,
+        "isSaved": false
+      },
+      "opened": "https://arxiv.org/abs/2610.26860",
+      "stored": {
+        "read": true,
+        "saved": true
+      }
+    },
+    "sticky": {
+      "navTop": 0,
+      "navBottom": 49.625,
+      "filtersTop": 50,
+      "filtersBottom": 106.21875,
+      "navH": "50px",
+      "stickyH": "106px",
+      "scrollY": 2000,
+      "minGapAboveFiltersPx": 7.64
+    }
+  },
+  "contrast": {
+    "light": {
+      "tokens": {
+        "--bg": "#fafafa",
+        "--panel": "#fff",
+        "--chip": "#eee",
+        "--line": "#ddd",
+        "--line-strong": "#767f8a",
+        "--fg": "#111",
+        "--muted": "#555",
+        "--accent": "#0a58ca",
+        "--visited": "#555",
+        "--why": "#7a5200",
+        "--cursor-bg": "#e8f0fe",
+        "--read-opacity": "0.7",
+        "--tag-bg": "#dbe7fb",
+        "--tag-fg": "#1e4a8f",
+        "--ok": "#13633a",
+        "--warn": "#8a5a00",
+        "--bad": "#b42318"
+      },
+      "pairs": [
+        {
+          "name": "body text on page background",
+          "fg": "#111111",
+          "bg": "#fafafa",
+          "ratio": 18.09,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "muted text on page background",
+          "fg": "#555555",
+          "bg": "#fafafa",
+          "ratio": 7.14,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "link (accent) on page background",
+          "fg": "#0a58ca",
+          "bg": "#fafafa",
+          "ratio": 6.17,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "kbd text on page background",
+          "fg": "#555555",
+          "bg": "#fafafa",
+          "ratio": 7.14,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry title on section card",
+          "fg": "#111111",
+          "bg": "#ffffff",
+          "ratio": 18.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry meta (muted) on section card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry summary (muted) on section card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "why-line on section card",
+          "fg": "#7a5200",
+          "bg": "#ffffff",
+          "ratio": 6.92,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "accent link on section card",
+          "fg": "#0a58ca",
+          "bg": "#ffffff",
+          "ratio": 6.44,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "AI-WRITTEN badge text on badge background (from tokens; no overview in this digest)",
+          "fg": "#1e4a8f",
+          "bg": "#dbe7fb",
+          "ratio": 6.92,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "section heading on section card",
+          "fg": "#111111",
+          "bg": "#ffffff",
+          "ratio": 18.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "cursor outline on cursor background (3:1)",
+          "fg": "#0a58ca",
+          "bg": "#e8f0fe",
+          "ratio": 5.62,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "cursor title on cursor background",
+          "fg": "#111111",
+          "bg": "#e8f0fe",
+          "ratio": 16.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "cursor meta (muted) on cursor background",
+          "fg": "#555555",
+          "bg": "#e8f0fe",
+          "ratio": 6.51,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "health dot on its button (3:1)",
+          "fg": "#13633a",
+          "bg": "#eeeeee",
+          "ratio": 6.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "theme button glyph on its button",
+          "fg": "#111111",
+          "bg": "#eeeeee",
+          "ratio": 16.28,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "control border (--line-strong) on page background (3:1)",
+          "fg": "#767f8a",
+          "bg": "#fafafa",
+          "ratio": 3.89,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "selected tab text on chip background",
+          "fg": "#111111",
+          "bg": "#eeeeee",
+          "ratio": 16.28,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "selected tab border on page background (3:1)",
+          "fg": "#767f8a",
+          "bg": "#fafafa",
+          "ratio": 3.89,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "visited title (--visited) on section card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "alert text (--bad) on page background",
+          "fg": "#b42318",
+          "bg": "#fafafa",
+          "ratio": 6.3,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "amber health dot (--warn) on chip background (3:1)",
+          "fg": "#8a5a00",
+          "bg": "#eeeeee",
+          "ratio": 5.11,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "red health dot (--bad) on chip background (3:1)",
+          "fg": "#b42318",
+          "bg": "#eeeeee",
+          "ratio": 5.67,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "green health dot (--ok) on chip background (3:1)",
+          "fg": "#13633a",
+          "bg": "#eeeeee",
+          "ratio": 6.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "card border (--line) on page background (decorative)",
+          "fg": "#dddddd",
+          "bg": "#fafafa",
+          "ratio": 1.3,
+          "min": 1,
+          "pass": true
+        },
+        {
+          "name": "row title on row card",
+          "fg": "#111111",
+          "bg": "#ffffff",
+          "ratio": 18.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row meta (muted) on row card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row summary (muted) on row card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "score pill text on pill background",
+          "fg": "#555555",
+          "bg": "#eeeeee",
+          "ratio": 6.43,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "inline source chip text on chip background",
+          "fg": "#555555",
+          "bg": "#eeeeee",
+          "ratio": 6.43,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row action icon on its button",
+          "fg": "#111111",
+          "bg": "#eeeeee",
+          "ratio": 16.28,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "pressed chip text on accent fill",
+          "fg": "#fafafa",
+          "bg": "#0a58ca",
+          "ratio": 6.17,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "source chip text on chip background",
+          "fg": "#111111",
+          "bg": "#eeeeee",
+          "ratio": 16.28,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "search field border on page background (3:1)",
+          "fg": "#767f8a",
+          "bg": "#fafafa",
+          "ratio": 3.89,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "search text on search field",
+          "fg": "#111111",
+          "bg": "#ffffff",
+          "ratio": 18.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed title (opacity 0.7) on dimmed row card",
+          "fg": "#575757",
+          "bg": "#fefefe",
+          "ratio": 7.15,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed meta (opacity 0.7) on dimmed row card (3:1, de-emphasised)",
+          "fg": "#878787",
+          "bg": "#fefefe",
+          "ratio": 3.57,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed check icon (opacity 0.7) on dimmed button (3:1)",
+          "fg": "#589074",
+          "bg": "#f2f2f2",
+          "ratio": 3.29,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "saved star (--why) on its button",
+          "fg": "#7a5200",
+          "bg": "#eeeeee",
+          "ratio": 5.96,
+          "min": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    "dark": {
+      "tokens": {
+        "--bg": "#0f1115",
+        "--panel": "#161920",
+        "--chip": "#1e222b",
+        "--line": "#262a33",
+        "--line-strong": "#5e6774",
+        "--fg": "#e7e9ee",
+        "--muted": "#9aa3ad",
+        "--accent": "#7ab7ff",
+        "--visited": "#9aa3ad",
+        "--why": "#f0c674",
+        "--cursor-bg": "#1a2130",
+        "--read-opacity": "0.6",
+        "--tag-bg": "#22304a",
+        "--tag-fg": "#a9c7f5",
+        "--ok": "#4ec98a",
+        "--warn": "#f0c674",
+        "--bad": "#ff7b72"
+      },
+      "pairs": [
+        {
+          "name": "body text on page background",
+          "fg": "#e7e9ee",
+          "bg": "#0f1115",
+          "ratio": 15.56,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "muted text on page background",
+          "fg": "#9aa3ad",
+          "bg": "#0f1115",
+          "ratio": 7.39,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "link (accent) on page background",
+          "fg": "#7ab7ff",
+          "bg": "#0f1115",
+          "ratio": 9.04,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "kbd text on page background",
+          "fg": "#9aa3ad",
+          "bg": "#0f1115",
+          "ratio": 7.39,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry title on section card",
+          "fg": "#e7e9ee",
+          "bg": "#161920",
+          "ratio": 14.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry meta (muted) on section card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry summary (muted) on section card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "why-line on section card",
+          "fg": "#f0c674",
+          "bg": "#161920",
+          "ratio": 10.92,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "accent link on section card",
+          "fg": "#7ab7ff",
+          "bg": "#161920",
+          "ratio": 8.41,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "AI-WRITTEN badge text on badge background (from tokens; no overview in this digest)",
+          "fg": "#a9c7f5",
+          "bg": "#22304a",
+          "ratio": 7.66,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "section heading on section card",
+          "fg": "#e7e9ee",
+          "bg": "#161920",
+          "ratio": 14.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "cursor outline on cursor background (3:1)",
+          "fg": "#7ab7ff",
+          "bg": "#1a2130",
+          "ratio": 7.7,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "cursor title on cursor background",
+          "fg": "#e7e9ee",
+          "bg": "#1a2130",
+          "ratio": 13.26,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "cursor meta (muted) on cursor background",
+          "fg": "#9aa3ad",
+          "bg": "#1a2130",
+          "ratio": 6.3,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "health dot on its button (3:1)",
+          "fg": "#4ec98a",
+          "bg": "#1e222b",
+          "ratio": 7.62,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "theme button glyph on its button",
+          "fg": "#e7e9ee",
+          "bg": "#1e222b",
+          "ratio": 13.11,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "control border (--line-strong) on page background (3:1)",
+          "fg": "#5e6774",
+          "bg": "#0f1115",
+          "ratio": 3.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "selected tab text on chip background",
+          "fg": "#e7e9ee",
+          "bg": "#1e222b",
+          "ratio": 13.11,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "selected tab border on page background (3:1)",
+          "fg": "#5e6774",
+          "bg": "#0f1115",
+          "ratio": 3.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "visited title (--visited) on section card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "alert text (--bad) on page background",
+          "fg": "#ff7b72",
+          "bg": "#0f1115",
+          "ratio": 7.49,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "amber health dot (--warn) on chip background (3:1)",
+          "fg": "#f0c674",
+          "bg": "#1e222b",
+          "ratio": 9.88,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "red health dot (--bad) on chip background (3:1)",
+          "fg": "#ff7b72",
+          "bg": "#1e222b",
+          "ratio": 6.31,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "green health dot (--ok) on chip background (3:1)",
+          "fg": "#4ec98a",
+          "bg": "#1e222b",
+          "ratio": 7.62,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "card border (--line) on page background (decorative)",
+          "fg": "#262a33",
+          "bg": "#0f1115",
+          "ratio": 1.32,
+          "min": 1,
+          "pass": true
+        },
+        {
+          "name": "row title on row card",
+          "fg": "#e7e9ee",
+          "bg": "#161920",
+          "ratio": 14.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row meta (muted) on row card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row summary (muted) on row card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "score pill text on pill background",
+          "fg": "#9aa3ad",
+          "bg": "#1e222b",
+          "ratio": 6.23,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "inline source chip text on chip background",
+          "fg": "#9aa3ad",
+          "bg": "#1e222b",
+          "ratio": 6.23,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row action icon on its button",
+          "fg": "#e7e9ee",
+          "bg": "#1e222b",
+          "ratio": 13.11,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "pressed chip text on accent fill",
+          "fg": "#0f1115",
+          "bg": "#7ab7ff",
+          "ratio": 9.04,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "source chip text on chip background",
+          "fg": "#e7e9ee",
+          "bg": "#1e222b",
+          "ratio": 13.11,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "search field border on page background (3:1)",
+          "fg": "#5e6774",
+          "bg": "#0f1115",
+          "ratio": 3.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "search text on search field",
+          "fg": "#e7e9ee",
+          "bg": "#161920",
+          "ratio": 14.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed title (opacity 0.6) on dimmed row card",
+          "fg": "#919397",
+          "bg": "#13161c",
+          "ratio": 5.87,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed meta (opacity 0.6) on dimmed row card (3:1, de-emphasised)",
+          "fg": "#626970",
+          "bg": "#13161c",
+          "ratio": 3.25,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed check icon (opacity 0.6) on dimmed button (3:1)",
+          "fg": "#357f5b",
+          "bg": "#181b22",
+          "ratio": 3.57,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "saved star (--why) on its button",
+          "fg": "#f0c674",
+          "bg": "#1e222b",
+          "ratio": 9.88,
+          "min": 4.5,
+          "pass": true
+        }
+      ]
+    }
+  },
+  "console": {
+    "errors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "failures": []
+}
