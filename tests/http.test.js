@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createHttpClient, HttpError, BodyTooLarge, TimeoutError, errorClass, formatDetail, PACING, ACCEPT, BROWSER_USER_AGENT } from '../src/http.js';
+import { createHttpClient, HttpError, BodyTooLarge, TimeoutError, errorClass, errorSummary, formatDetail, PACING, ACCEPT, BROWSER_USER_AGENT } from '../src/http.js';
 
 /** Fake clock whose sleep() advances time and resolves timers in order. */
 function fakeClock() {
@@ -236,6 +236,30 @@ test('non-2xx responses keep bounded header/body evidence in err.detail; formatD
   assert.equal(formatDetail({}), '');
   assert.equal(formatDetail({ server: 'a\nb\u0007c', body: 'x'.repeat(500) }).length, 400);
   assert.match(formatDetail({ server: 'a\nb\u0007c' }), /^server=abc$/);
+});
+
+test('errorSummary: Cloudflare 403 -> blocked[ from GitHub runner], retried HttpError -> attempts count, otherwise errorClass; all <= 120 chars', () => {
+  const url = 'https://blocked.test/feed';
+  const cf = new HttpError(403, url, undefined, { server: 'cloudflare' });
+  const cases = [
+    [errorSummary(cf), 'blocked: 403 Cloudflare'],
+    [errorSummary(cf, { onRunner: true }), 'blocked from GitHub runner: 403 Cloudflare'],
+    [errorSummary(new HttpError(403, url)), 'HTTP 403'],
+    [errorSummary(Object.assign(new HttpError(404, url), { attempts: 3 })), 'HTTP 404 (3 attempts)'],
+    [errorSummary(Object.assign(new HttpError(500, url), { attempts: 3 }), { onRunner: true }), 'HTTP 500 (3 attempts)'],
+    [errorSummary(Object.assign(new HttpError(503, url), { attempts: 1 })), 'HTTP 503'],
+    [errorSummary(new TimeoutError(url)), 'timeout'],
+    [errorSummary(new TypeError('fetch failed')), 'network'],
+  ];
+  for (const [actual, expected] of cases) {
+    assert.equal(actual, expected);
+    assert.ok(actual.length <= 120 && !/[\n\r]/.test(actual), `"${actual}" fits meta.sources[id].error`);
+  }
+  // Cloudflare detection wins over the attempt count; the server match is case-insensitive
+  const cfRetried = Object.assign(new HttpError(403, url, undefined, { server: 'Cloudflare' }), { attempts: 2 });
+  assert.equal(errorSummary(cfRetried, { onRunner: true }), 'blocked from GitHub runner: 403 Cloudflare');
+  // errorClass itself is unchanged (the arXiv note and other tests pin it)
+  assert.equal(errorClass(cf), 'HTTP 403');
 });
 
 test('browser headers by default, the Ahead UA on identified hosts, */* for YouTube; finalUrl and content type are reported', async () => {

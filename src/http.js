@@ -61,6 +61,18 @@ export function errorClass(err) {
   return 'network';
 }
 
+/**
+ * Short, specific per-source error string (<= 120 chars, one line) for meta.json and the UI health list.
+ * Cloudflare 403 -> 'blocked[ from GitHub runner]: 403 Cloudflare'; retried HttpError -> 'HTTP <status> (<n> attempts)'; else errorClass.
+ */
+export function errorSummary(err, { onRunner = false } = {}) {
+  if (err instanceof HttpError && err.status === 403 && /cloudflare/i.test(err.detail?.server ?? '')) {
+    return onRunner ? 'blocked from GitHub runner: 403 Cloudflare' : 'blocked: 403 Cloudflare';
+  }
+  if (err instanceof HttpError && Number.isInteger(err.attempts) && err.attempts > 1) return `HTTP ${err.status} (${err.attempts} attempts)`;
+  return errorClass(err);
+}
+
 export function defaultSleep(ms) {
   let timer;
   const p = new Promise((resolve) => { timer = setTimeout(resolve, Math.max(0, ms)); });

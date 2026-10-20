@@ -2,7 +2,7 @@
 // retention/caps -> brief (+ optional LLM) -> meta -> validate -> atomic writes.
 import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { ACCEPT, createHttpClient, errorClass, formatDetail, WallClockError } from './http.js';
+import { ACCEPT, createHttpClient, errorSummary, formatDetail, WallClockError } from './http.js';
 import { buildRegistry, codePointCompare, sourceInfo } from './registry.js';
 import { ConfigError, validateConfig, validateDigest, validateDigestIndex, validateItem, validateItemsFile, validateMeta, validateSitemapState } from './schema.js';
 import { toItem } from './normalize.js';
@@ -61,7 +61,7 @@ function pickParser(source) {
 
 /** Generic per-source runner with the 45 s backstop. `source.url` must already be template-expanded. */
 export async function runSource(source, deps) {
-  const { http, now, nowMs = Date.now, logger = defaultLogger } = deps;
+  const { http, now, nowMs = Date.now, logger = defaultLogger, onRunner = false } = deps;
   const sourceStartedAtMs = nowMs();
   const deadlineAt = sourceStartedAtMs + SOURCE_BACKSTOP_MS;
   const accept = acceptFor(source);
@@ -88,7 +88,7 @@ export async function runSource(source, deps) {
   try {
     result = await Promise.race([work, backstop]);
   } catch (err) {
-    result = { status: 'failed', items: [], fetched: 0, kept: 0, error: errorClass(err) };
+    result = { status: 'failed', items: [], fetched: 0, kept: 0, error: errorSummary(err, { onRunner }) };
     if (Number.isInteger(err?.status)) result.httpStatus = err.status;
     const detail = formatDetail(err?.detail);
     if (detail) result.detail = detail;
@@ -181,6 +181,7 @@ export async function run({
   }
   const diagnostic = onlySourceIds !== undefined;
   const http = createHttpClient({ fetchImpl, githubToken: typeof env?.GITHUB_TOKEN === 'string' ? env.GITHUB_TOKEN : '', nowMs });
+  const onRunner = env?.GITHUB_ACTIONS === 'true';
 
   const { previousItems, previousState, digests: previousDigests } = await loadPrevious(dataDir, registry, logger, { withDigests: !diagnostic });
   const previousItemsByCanonicalUrl = new Map(previousItems.map((it) => [it.canonicalUrl, it]));
@@ -198,7 +199,7 @@ export async function run({
         continue;
       }
       raw[k] = await runSource(source, {
-        http, now, nowMs, logger, previousItemsByCanonicalUrl,
+        http, now, nowMs, logger, onRunner, previousItemsByCanonicalUrl,
         previousSitemapSkipped: previousState.sitemapSkipped[source.id] ?? {},
         previousSitemapCache: previousState.sitemapCache[source.id] ?? {},
       });

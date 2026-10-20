@@ -212,19 +212,29 @@ test('diagnostic mode returns selected sources only and never builds a brief or 
   await assert.rejects(runFixture({ dataDir, onlySourceIds: [], dryRun: true }), /non-empty/);
 });
 
-test('a blocked source keeps the short error class and records the response evidence as detail', async () => {
+const CLOUDFLARE_403 = {
+  [urlOf('importai')]: { status: 403, body: '<html><body>Just a moment...</body></html>', contentType: 'text/html', headers: { server: 'cloudflare', 'cf-ray': 'abc-BOM' } },
+};
+
+test('a blocked source gets a short specific error and records the response evidence as detail', async () => {
   const logger = quietLogger();
-  const r = await runFixture({ dataDir: tmp(), logger, onlySourceIds: ['importai'], dryRun: true, overrides: {
-    [urlOf('importai')]: { status: 403, body: '<html><body>Just a moment...</body></html>', contentType: 'text/html', headers: { server: 'cloudflare', 'cf-ray': 'abc-BOM' } },
-  } });
+  const r = await runFixture({ dataDir: tmp(), logger, onlySourceIds: ['importai'], dryRun: true, overrides: CLOUDFLARE_403 });
   assert.equal(r.sourceResults.length, 1);
   const [importai] = r.sourceResults;
   assert.equal(importai.status, 'failed');
-  assert.equal(importai.error, 'HTTP 403');
+  assert.equal(importai.error, 'blocked: 403 Cloudflare');
   assert.equal(importai.httpStatus, 403);
   assert.match(importai.detail, /server=cloudflare/);
   assert.equal(importai.detail, 'server=cloudflare; cf-ray=abc-BOM; content-type=text/html; body="Just a moment..."');
-  assert.ok(logger.sink.some(([lvl, m]) => lvl === 'warn' && m === `importai: HTTP 403 [${importai.detail}]`), 'warn line carries the detail');
+  assert.ok(logger.sink.some(([lvl, m]) => lvl === 'warn' && m === `importai: blocked: 403 Cloudflare [${importai.detail}]`), 'warn line carries the detail');
+});
+
+test('on the Actions runner (GITHUB_ACTIONS=true) a Cloudflare 403 reads "blocked from GitHub runner"', async () => {
+  const r = await runFixture({ dataDir: tmp(), onlySourceIds: ['importai'], dryRun: true, env: { GITHUB_ACTIONS: 'true' }, overrides: CLOUDFLARE_403 });
+  const [importai] = r.sourceResults;
+  assert.equal(importai.status, 'failed');
+  assert.equal(importai.error, 'blocked from GitHub runner: 403 Cloudflare');
+  assert.ok(importai.error.length <= 120);
 });
 
 test('validateMeta rejects a detail over 400 chars or spanning lines', async () => {

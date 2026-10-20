@@ -9,6 +9,7 @@ validateConfig({ sources, linkouts, learn });
 const now = new Date();
 const http = createHttpClient({ fetchImpl: globalThis.fetch, githubToken: process.env.GITHUB_TOKEN ?? '' });
 const quiet = { ...defaultLogger, warn: () => {}, info: () => {} };
+const onRunner = process.env.GITHUB_ACTIONS === 'true';
 const w = Math.max(...sources.map((s) => s.id.length));
 console.log(`${'id'.padEnd(w)} | status | items | ms    | note | finalUrl`);
 let next = 0;
@@ -17,7 +18,7 @@ const worker = async () => {
   while (next < sources.length) {
     const k = next++;
     const source = { ...sources[k], url: expandUrl(sources[k].url, now) };
-    const r = await runSource(source, { http, now, logger: quiet });
+    const r = await runSource(source, { http, now, logger: quiet, onRunner });
     rows[k] = `${source.id.padEnd(w)} | ${String(r.status).padEnd(6)} | ${String(r.kept ?? 0).padEnd(5)} | ${String(r.ms).padEnd(5)} | ${r.error ?? r.note ?? ''} | ${r.finalUrl ?? ''}`;
   }
 };
