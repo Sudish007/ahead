@@ -47,7 +47,8 @@ Safety rules preserved: per-entry number grounding against that entry's facts (r
 | `7bc20f4` | `reasoning_effort: "low"` with its own compat retry |
 | `2b120d6` | 120 s per-attempt timeout covering the body, one timeout retry, `ms`/`compat` diagnostics |
 | `9980d8f` | a 429 naming a per-day quota is final; docs for the timeout; first version of this report |
-| (final, `[skip ci]`) | a 429 is retried once at most; Gemini's "retry in Ns" hint honoured; this report completed |
+| `57e6ebe` (`[skip ci]`) | a 429 is retried once at most; Gemini's "retry in Ns" hint honoured |
+| (next, `[skip ci]`) | this report completed with the last run's result and the quota finding |
 
 ### Tests
 
