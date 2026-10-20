@@ -1,49 +1,48 @@
 {
- "generatedAt": "2026-10-20T03:50:48.703Z",
- "durationMs": 8747,
- "itemCount": 597,
- "newItemCount": 62,
+ "generatedAt": "2026-10-20T04:28:11.856Z",
+ "durationMs": 9229,
+ "itemCount": 823,
+ "newItemCount": 226,
  "trimmedForSize": 0,
  "sources": {
   "arxiv-cs.LG": {
    "name": "arXiv cs.LG",
    "category": "research",
    "status": "ok",
-   "fetched": 391,
+   "fetched": 817,
    "kept": 60,
-   "skipped": 331,
-   "ms": 265,
+   "skipped": 757,
+   "ms": 313,
    "httpStatus": 200
   },
   "arxiv-cs.CL": {
    "name": "arXiv cs.CL",
    "category": "research",
    "status": "ok",
-   "fetched": 226,
+   "fetched": 435,
    "kept": 60,
-   "skipped": 166,
-   "ms": 1050,
+   "skipped": 375,
+   "ms": 1100,
    "httpStatus": 200
   },
   "arxiv-cs.AI": {
    "name": "arXiv cs.AI",
    "category": "research",
    "status": "ok",
-   "fetched": 100,
+   "fetched": 789,
    "kept": 60,
-   "skipped": 40,
-   "ms": 2301,
-   "httpStatus": 200,
-   "note": "api fallback"
+   "skipped": 729,
+   "ms": 2154,
+   "httpStatus": 200
   },
   "arxiv-cs.CV": {
    "name": "arXiv cs.CV",
    "category": "research",
    "status": "ok",
-   "fetched": 201,
+   "fetched": 505,
    "kept": 60,
-   "skipped": 141,
-   "ms": 3046,
+   "skipped": 445,
+   "ms": 3085,
    "httpStatus": 200
   },
   "hf-papers": {
@@ -53,7 +52,7 @@
    "fetched": 100,
    "kept": 60,
    "skipped": 40,
-   "ms": 200,
+   "ms": 325,
    "httpStatus": 200,
    "homepage": "https://huggingface.co/papers"
   },
@@ -61,10 +60,10 @@
    "name": "Hacker News",
    "category": "news",
    "status": "ok",
-   "fetched": 56,
+   "fetched": 58,
    "kept": 15,
-   "skipped": 41,
-   "ms": 391,
+   "skipped": 43,
+   "ms": 417,
    "httpStatus": 200
   },
   "hn-front": {
@@ -72,9 +71,9 @@
    "category": "news",
    "status": "ok",
    "fetched": 30,
-   "kept": 2,
-   "skipped": 28,
-   "ms": 470,
+   "kept": 4,
+   "skipped": 26,
+   "ms": 494,
    "httpStatus": 200
   },
   "reddit": {
@@ -84,7 +83,7 @@
    "fetched": 50,
    "kept": 50,
    "skipped": 0,
-   "ms": 592,
+   "ms": 675,
    "httpStatus": 200
   },
   "openai": {
@@ -94,7 +93,7 @@
    "fetched": 1300,
    "kept": 13,
    "skipped": 1287,
-   "ms": 163,
+   "ms": 184,
    "httpStatus": 200
   },
   "anthropic": {
@@ -104,7 +103,7 @@
    "fetched": 566,
    "kept": 9,
    "skipped": 557,
-   "ms": 162,
+   "ms": 178,
    "httpStatus": 200,
    "homepage": "https://www.anthropic.com/news"
   },
@@ -115,7 +114,7 @@
    "fetched": 100,
    "kept": 5,
    "skipped": 95,
-   "ms": 209,
+   "ms": 161,
    "httpStatus": 200
   },
   "google-research": {
@@ -125,7 +124,7 @@
    "fetched": 100,
    "kept": 4,
    "skipped": 96,
-   "ms": 322,
+   "ms": 300,
    "httpStatus": 200
   },
   "meta-newsroom-ai": {
@@ -135,7 +134,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 131,
+   "ms": 185,
    "httpStatus": 200
   },
   "meta-engineering-ai": {
@@ -145,7 +144,7 @@
    "fetched": 9,
    "kept": 1,
    "skipped": 8,
-   "ms": 101,
+   "ms": 301,
    "httpStatus": 200
   },
   "microsoft-research": {
@@ -155,7 +154,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 786,
+   "ms": 702,
    "httpStatus": 200
   },
   "nvidia-dev": {
@@ -165,7 +164,7 @@
    "fetched": 100,
    "kept": 7,
    "skipped": 93,
-   "ms": 521,
+   "ms": 135,
    "httpStatus": 200
   },
   "hf-blog": {
@@ -175,7 +174,7 @@
    "fetched": 882,
    "kept": 9,
    "skipped": 873,
-   "ms": 77,
+   "ms": 119,
    "httpStatus": 200
   },
   "allenai": {
@@ -185,7 +184,7 @@
    "fetched": 25,
    "kept": 2,
    "skipped": 23,
-   "ms": 294,
+   "ms": 347,
    "httpStatus": 200
   },
   "mistral": {
@@ -195,7 +194,7 @@
    "fetched": 90,
    "kept": 1,
    "skipped": 89,
-   "ms": 120,
+   "ms": 130,
    "httpStatus": 200
   },
   "transformer-circuits": {
@@ -205,7 +204,7 @@
    "fetched": 56,
    "kept": 0,
    "skipped": 56,
-   "ms": 335,
+   "ms": 350,
    "httpStatus": 200
   },
   "lilog": {
@@ -215,7 +214,7 @@
    "fetched": 53,
    "kept": 0,
    "skipped": 53,
-   "ms": 95,
+   "ms": 171,
    "httpStatus": 200
   },
   "interconnects": {
@@ -225,7 +224,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 130,
+   "ms": 155,
    "httpStatus": 200
   },
   "raschka": {
@@ -235,7 +234,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 144,
+   "ms": 276,
    "httpStatus": 200
   },
   "simonw": {
@@ -245,7 +244,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 160,
+   "ms": 180,
    "httpStatus": 200
   },
   "chiphuyen": {
@@ -255,7 +254,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 275,
+   "ms": 453,
    "httpStatus": 200
   },
   "eugeneyan": {
@@ -265,7 +264,7 @@
    "fetched": 212,
    "kept": 0,
    "skipped": 212,
-   "ms": 178,
+   "ms": 149,
    "httpStatus": 200
   },
   "hamel": {
@@ -275,7 +274,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 465,
+   "ms": 425,
    "httpStatus": 200
   },
   "semianalysis": {
@@ -285,7 +284,7 @@
    "fetched": 20,
    "kept": 2,
    "skipped": 18,
-   "ms": 155,
+   "ms": 200,
    "httpStatus": 200
   },
   "importai": {
@@ -295,9 +294,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 94,
+   "ms": 64,
    "httpStatus": 403,
-   "error": "HTTP 403"
+   "error": "HTTP 403",
+   "detail": "server=cloudflare; cf-ray=a4d5464aaa872ed9-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
   },
   "latentspace": {
    "name": "Latent Space",
@@ -306,7 +306,7 @@
    "fetched": 20,
    "kept": 8,
    "skipped": 12,
-   "ms": 198,
+   "ms": 228,
    "httpStatus": 200
   },
   "zvi": {
@@ -316,9 +316,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 62,
+   "ms": 151,
    "httpStatus": 403,
-   "error": "HTTP 403"
+   "error": "HTTP 403",
+   "detail": "server=cloudflare; cf-ray=a4d5464bef9556fd-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
   },
   "thebatch": {
    "name": "The Batch",
@@ -327,9 +328,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 265,
+   "ms": 92,
    "httpStatus": 403,
    "error": "HTTP 403",
+   "detail": "server=cloudflare; cf-ray=a4d5464c0e69b706-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"",
    "homepage": "https://www.deeplearning.ai/the-batch/"
   },
   "oneusefulthing": {
@@ -339,7 +341,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 206,
+   "ms": 166,
    "httpStatus": 200
   },
   "gradient": {
@@ -349,7 +351,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 859,
+   "ms": 537,
    "httpStatus": 200
   },
   "epoch": {
@@ -359,7 +361,7 @@
    "fetched": 50,
    "kept": 2,
    "skipped": 48,
-   "ms": 179,
+   "ms": 336,
    "httpStatus": 200
   },
   "epoch-gradient-updates": {
@@ -369,9 +371,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 60,
+   "ms": 279,
    "httpStatus": 403,
-   "error": "HTTP 403"
+   "error": "HTTP 403",
+   "detail": "server=cloudflare; cf-ray=a4d5464dd95a52af-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
   },
   "alignmentforum": {
    "name": "Alignment Forum",
@@ -380,7 +383,7 @@
    "fetched": 10,
    "kept": 5,
    "skipped": 5,
-   "ms": 311,
+   "ms": 578,
    "httpStatus": 200
   },
   "chinai": {
@@ -390,9 +393,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 68,
+   "ms": 227,
    "httpStatus": 403,
-   "error": "HTTP 403"
+   "error": "HTTP 403",
+   "detail": "server=cloudflare; cf-ray=a4d5464e2da20158-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
   },
   "jalammar": {
    "name": "Jay Alammar (Language Models newsletter)",
@@ -401,7 +405,7 @@
    "fetched": 11,
    "kept": 0,
    "skipped": 11,
-   "ms": 167,
+   "ms": 115,
    "httpStatus": 200
   },
   "karpathy-blog": {
@@ -421,7 +425,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 176,
+   "ms": 233,
    "httpStatus": 200
   },
   "horace": {
@@ -431,7 +435,7 @@
    "fetched": 6,
    "kept": 0,
    "skipped": 6,
-   "ms": 167,
+   "ms": 205,
    "httpStatus": 200,
    "homepage": "https://horace.io"
   },
@@ -442,7 +446,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 1243,
+   "ms": 1465,
    "httpStatus": 200
   },
   "gh-rel-vllm": {
@@ -452,7 +456,7 @@
    "fetched": 10,
    "kept": 6,
    "skipped": 4,
-   "ms": 1123,
+   "ms": 1361,
    "httpStatus": 200
   },
   "gh-rel-transformers": {
@@ -462,7 +466,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 1915,
+   "ms": 1996,
    "httpStatus": 200
   },
   "gh-rel-llamacpp": {
@@ -472,7 +476,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 693,
+   "ms": 916,
    "httpStatus": 200
   },
   "gh-rel-sglang": {
@@ -482,7 +486,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 3243,
+   "ms": 3245,
    "httpStatus": 200
   },
   "gh-rel-unsloth": {
@@ -492,7 +496,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 3003,
+   "ms": 3142,
    "httpStatus": 200
   },
   "gh-rel-trl": {
@@ -502,7 +506,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 1316,
+   "ms": 2080,
    "httpStatus": 200
   },
   "gh-rel-torchtitan": {
@@ -512,7 +516,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 210,
+   "ms": 334,
    "httpStatus": 200
   },
   "gh-trending-llm": {
@@ -522,7 +526,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 880,
+   "ms": 945,
    "httpStatus": 200
   },
   "gh-trending-ml": {
@@ -532,7 +536,7 @@
    "fetched": 30,
    "kept": 0,
    "skipped": 30,
-   "ms": 1664,
+   "ms": 1446,
    "httpStatus": 200
   },
   "gh-trending-agents": {
@@ -542,7 +546,7 @@
    "fetched": 30,
    "kept": 15,
    "skipped": 15,
-   "ms": 2084,
+   "ms": 2188,
    "httpStatus": 200
   },
   "hf-trending": {
@@ -552,7 +556,7 @@
    "fetched": 20,
    "kept": 20,
    "skipped": 0,
-   "ms": 47,
+   "ms": 68,
    "httpStatus": 200
   },
   "pod-dwarkesh": {
@@ -562,9 +566,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 58,
+   "ms": 65,
    "httpStatus": 403,
    "error": "HTTP 403",
+   "detail": "server=cloudflare; cf-ray=a4d5465eede81418-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"",
    "homepage": "https://www.dwarkesh.com"
   },
   "pod-mlst": {
@@ -574,7 +579,7 @@
    "fetched": 271,
    "kept": 0,
    "skipped": 271,
-   "ms": 454,
+   "ms": 169,
    "httpStatus": 200
   },
   "pod-cogrev": {
@@ -584,7 +589,7 @@
    "fetched": 387,
    "kept": 2,
    "skipped": 385,
-   "ms": 499,
+   "ms": 260,
    "httpStatus": 200
   },
   "pod-nopriors": {
@@ -594,7 +599,7 @@
    "fetched": 183,
    "kept": 0,
    "skipped": 183,
-   "ms": 269,
+   "ms": 50,
    "httpStatus": 200
   },
   "yt-karpathy": {
@@ -604,9 +609,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2151,
+   "ms": 2162,
    "httpStatus": 404,
-   "error": "HTTP 404"
+   "error": "HTTP 404",
+   "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
   },
   "yt-yannic": {
    "name": "Yannic Kilcher",
@@ -615,9 +621,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2349,
+   "ms": 2339,
    "httpStatus": 404,
-   "error": "HTTP 404"
+   "error": "HTTP 404",
+   "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
   },
   "yt-aiexplained": {
    "name": "AI Explained",
@@ -626,9 +633,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2185,
+   "ms": 2317,
    "httpStatus": 404,
-   "error": "HTTP 404"
+   "error": "HTTP 404",
+   "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
   },
   "yt-gpumode": {
    "name": "GPU MODE",
@@ -637,9 +645,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2197,
+   "ms": 2257,
    "httpStatus": 404,
-   "error": "HTTP 404"
+   "error": "HTTP 404",
+   "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
   },
   "yt-stanford": {
    "name": "Stanford Online",
@@ -648,9 +657,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2179,
-   "httpStatus": 500,
-   "error": "HTTP 500"
+   "ms": 2449,
+   "httpStatus": 404,
+   "error": "HTTP 404",
+   "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
   },
   "yt-3b1b": {
    "name": "3Blue1Brown",
@@ -659,9 +669,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2159,
+   "ms": 2172,
    "httpStatus": 404,
-   "error": "HTTP 404"
+   "error": "HTTP 404",
+   "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
   }
  },
  "okCount": 35,
@@ -777,7 +788,7 @@
  },
  "brief": {
   "date": "2026-10-20",
-  "wordCount": 586,
+  "wordCount": 579,
   "readingMinutes": 3
  },
  "static": {
