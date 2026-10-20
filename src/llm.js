@@ -29,10 +29,16 @@ const TRANSIENT_STATUSES = new Set([429, 500, 502, 503, 504]);
 /** Exponential-ish plan: a 503 spike on Gemini usually clears within a couple of minutes; 100 s of waiting fits the 20 min job. */
 export const RETRY_BACKOFF_MS = [10_000, 30_000, 60_000];
 const MAX_RETRY_AFTER_MS = 30_000;
+/**
+ * Editorial rewriting needs little deliberation, and on Gemini thinking shares the `max_tokens` cap with the answer, so ask
+ * for a small reasoning budget. Providers that do not know the field answer 400 naming it, and the request is retried without.
+ */
+export const REASONING_EFFORT = 'low';
 /** Request-shape fixes for providers that answer HTTP 400 naming a parameter they do not accept; each applies at most once. */
 const COMPAT_RETRIES = [
   { name: 'max_tokens', mentions: /max_tokens/i, apply: ({ max_tokens, ...rest }) => ({ ...rest, max_completion_tokens: max_tokens }) },
   { name: 'response_format', mentions: /response_format/i, apply: ({ response_format: _omit, ...rest }) => rest },
+  { name: 'reasoning_effort', mentions: /reasoning_effort/i, apply: ({ reasoning_effort: _omit, ...rest }) => rest },
 ];
 
 export function numberTokens(text) {
@@ -201,7 +207,7 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
     }
   }
   const messages = [{ role: 'system', content: SYSTEM_PROMPT }, { role: 'user', content: JSON.stringify(entries) }];
-  let body = { model, temperature: 0.3, max_tokens: MAX_TOKENS, response_format: { type: 'json_object' }, messages };
+  let body = { model, temperature: 0.3, max_tokens: MAX_TOKENS, response_format: { type: 'json_object' }, reasoning_effort: REASONING_EFFORT, messages };
   let res;
   let raw;
   let retries = 0; // transient retries taken (compat retries are not counted: they fix the request, not the weather)

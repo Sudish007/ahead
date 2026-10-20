@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { NOW } from './helpers.js';
-import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS } from '../src/llm.js';
+import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS, REASONING_EFFORT } from '../src/llm.js';
 import { buildBrief, finalizeDigest, countWords } from '../src/brief.js';
 import { buildRegistry } from '../src/registry.js';
 import { validateDigest, validateDigestIndex, validateMeta } from '../src/schema.js';
@@ -94,6 +94,8 @@ test('valid JSON applies overview and why lines within budget; embedded JSON is 
   assert.equal(calls[0].body.model, 'test-model');
   assert.equal(calls[0].body.temperature, 0.3);
   assert.deepEqual(calls[0].body.response_format, { type: 'json_object' });
+  assert.equal(calls[0].body.reasoning_effort, REASONING_EFFORT);
+  assert.equal(REASONING_EFFORT, 'low');
   assert.ok(!calls[0].init.body.includes('SECRET'));
   assert.match(SYSTEM_PROMPT, /single JSON object/);
   assert.match(SYSTEM_PROMPT, /no markdown code fences/);
@@ -312,14 +314,16 @@ test('400 mentioning response_format retries once without it; a second such 400 
   assert.equal(r2.error, 'HTTP 400');
   assert.match(r2.detail, /response_format is not supported/);
   assert.equal(c2.length, 2);
-  // Both fixes may be needed (one 400 each); each applies at most once.
+  // All fixes may be needed (one 400 each); each applies at most once.
   const b3 = brief();
-  const { fetchImpl: f3, calls: c3 } = mockFetch([new Response('{"error":"Unsupported parameter: max_tokens"}', { status: 400 }), bad(), reply({ why: { [b3.digest.itemIds[0]]: 'ok' } })]);
+  const { fetchImpl: f3, calls: c3 } = mockFetch([new Response('{"error":"Unsupported parameter: max_tokens"}', { status: 400 }), bad(), new Response(JSON.stringify({ error: { message: "Unsupported parameter: 'reasoning_effort' is not supported with this model.", param: 'reasoning_effort' } }), { status: 400 }), reply({ why: { [b3.digest.itemIds[0]]: 'ok' } })]);
   const r3 = await editorialize(b3, CONFIG, f3);
   assert.equal(r3.ok, true);
-  assert.equal(c3.length, 3);
-  assert.equal(c3[2].body.max_completion_tokens, MAX_TOKENS);
-  assert.ok(!('max_tokens' in c3[2].body) && !('response_format' in c3[2].body));
+  assert.equal(c3.length, 4);
+  assert.equal(c3[2].body.reasoning_effort, REASONING_EFFORT, 'still present until its own 400');
+  assert.equal(c3[3].body.max_completion_tokens, MAX_TOKENS);
+  assert.ok(!('max_tokens' in c3[3].body) && !('response_format' in c3[3].body) && !('reasoning_effort' in c3[3].body));
+  assert.deepEqual(c3[3].body.messages, c3[0].body.messages, 'messages never change across compat retries');
 });
 
 test('detail is bounded to 300 chars and never contains the key, even when the cut would fall inside it', async () => {
