@@ -127,7 +127,7 @@ Live `meta.json`: `generatedAt 2026-10-20T03:42:54.189Z` (run 39365652341), `okC
 | `fa17400` | data: refresh 2026-10-20T03:39Z [skip ci] (bot, run 39365298984) |
 | `3e7d3df` | docs: Step E deploy verification notes |
 | `2f4a34b` | data: refresh 2026-10-20T03:43Z [skip ci] (bot, run 39365652341) |
-| see below | docs: README provider notes and final verification record (this file) |
+| `88c3be0` | docs: README provider notes and final verification record (this file; pushed to `origin/main`) |
 
 ## Unresolved limitations
 
