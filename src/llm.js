@@ -1,11 +1,18 @@
-// Optional OpenAI-compatible editorial layer: 150-200 word overview + why-lines, validated against the sent facts.
+// Optional OpenAI-compatible editorial layer: ~170-word overview (90-260 accepted) + why-lines, validated against the sent facts.
 import { countWords, enforceBudget } from './brief.js';
 import { defaultSleep, redactKey } from './http.js';
+
+/**
+ * Accepted overview length, inclusive. The prompt asks for about 170 words (120-220); the acceptance band is wider because a
+ * slightly short paragraph is still a good overview, and the live run of 2026-10-20T16:21Z threw away a fine 138-word one.
+ */
+export const OVERVIEW_MIN_WORDS = 90;
+export const OVERVIEW_MAX_WORDS = 260;
 
 export const SYSTEM_PROMPT = [
   'You are the editor of a one-page daily AI brief for an expert reader (researcher, founder, senior engineer).',
   'Using only the facts given in the user message, write:',
-  '1. "overview": one paragraph of plain English, 160-190 words long (an overview under 150 or over 200 words is discarded), no hype, naming the 3-5 developments that matter most today and why.',
+  '1. "overview": one paragraph of plain English, about 170 words (at least 120, at most 220), no hype, naming the 3-5 developments that matter most today and why.',
   '2. "why": an object mapping each entry id to one line of 12-20 words (never more than 25) saying why that entry matters to a researcher or founder.',
   'Never invent numbers, names, benchmarks, dates or quotes. Use a number only when it appears with the same digits and unit in the facts for that entry; otherwise write the line without numbers. Copy model names, versions and product ids exactly as the facts spell them (keep their hyphens and dots). Do not add entries.',
   'Reply with a single JSON object of the form { "overview": string, "why": { "<id>": string } } and nothing else: no markdown code fences, no prose before or after the JSON.',
@@ -314,7 +321,7 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
     const text = parsed.overview.trim();
     const words = countWords(text);
     const stray = numberTokens(text).find((n) => !union.has(n));
-    if (words < 150 || words > 200) overviewStatus = `rejected: ${words} words`;
+    if (words < OVERVIEW_MIN_WORDS || words > OVERVIEW_MAX_WORDS) overviewStatus = `rejected: ${words} words`;
     else if (stray !== undefined) overviewStatus = `rejected: number ${stray}`;
     else {
       digest.overview = { text, source: 'llm', model };

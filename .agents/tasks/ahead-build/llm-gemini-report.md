@@ -132,5 +132,5 @@ All met live as of run 39427891665 (2026-10-20T13:09:31Z): `meta.llm.ok` true, `
 ## Operating notes
 
 - To check a run: `https://sudish007.github.io/ahead/data/meta.json` -> `llm` (`ok`, `overview`, `why`, `usage`, `ms`; on failure `error`, `finishReason`, `detail`), and `data/digests/<date>.json` -> `overview.text`, `whySource` per entry.
-- `overview: "rejected: N words"` with the text in `detail` means the model missed the 150-200 band; `rejected: number X` means it used a number absent from the facts (both leave the heuristic brief's `overview: null`, which the UI simply omits).
+- `overview: "rejected: N words"` with the text in `detail` means the model missed the 90-260 band (the prompt asks for about 170); `rejected: number X` means it used a number absent from the facts (both leave the heuristic brief's `overview: null`, which the UI simply omits).
 - `HTTP 429` with `limit: 20` in `detail` means a 3.x Flash model's free daily quota is spent; it resets at midnight Pacific (07:00 UTC).

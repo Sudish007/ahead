@@ -70,7 +70,7 @@ Required: `id name category type url weight`. Optional: `homepage family maxItem
 
 ## Optional LLM editorial layer
 
-Without a key the brief is fully heuristic. With a key, one request per run rewrites the why-lines and adds a 150-200 word overview (shown with an "AI-written" tag). Every number in the model's output must appear in the facts sent for that entry, or the text is rejected and the heuristic line stays.
+Without a key the brief is fully heuristic. With a key, one request per run rewrites the why-lines and adds an overview of about 170 words (anything from 90 to 260 words is accepted; shown with an "AI-written" tag). Every number in the model's output must appear in the facts sent for that entry, or the text is rejected and the heuristic line stays.
 
 The pipeline speaks the OpenAI chat-completions protocol only (`POST {LLM_BASE_URL}/chat/completions` with `Authorization: Bearer <key>`), so any provider that exposes an OpenAI-compatible endpoint works. Three repository secrets configure it; the workflow passes them to `scripts/fetch.mjs` as environment variables of the same name.
 

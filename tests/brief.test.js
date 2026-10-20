@@ -200,18 +200,19 @@ test('sentence split guards abbreviations; entry summary is 1-2 sentences <= 280
   assert.ok(d2.sections[0].entries[0].summary.length <= 280);
 });
 
-test('word budget: 880 target fits with readingMinutes <= 5; a 200-word overview survives under 1,100; Analysis trims before Must know', () => {
+test('word budget: 840 target fits with readingMinutes <= 5; a 260-word overview survives under 1,100; Analysis trims before Must know', () => {
   const items = synth().map((i) => ({ ...i, summary: `${'Alpha beta gamma delta epsilon zeta eta theta iota kappa lambda mu. '.repeat(8)}`.trim() }));
-  const { digest } = buildBrief(items, [], NOW, { targetWords: 880, registry });
-  assert.ok(digest.wordCount <= 880);
+  const { digest } = buildBrief(items, [], NOW, { targetWords: 840, registry });
+  assert.ok(digest.wordCount <= 840);
   assert.ok(digest.readingMinutes <= 5);
   const analysis = digest.sections.find((s) => s.key === 'analysis').entries;
   const must = digest.sections[0].entries;
   assert.ok(analysis.at(-1).summary.length <= must[0].summary.length, 'analysis trimmed before must-know');
-  digest.overview = { text: Array.from({ length: 200 }, (_, i) => `w${i}`).join(' '), source: 'llm', model: 'm' };
+  digest.overview = { text: Array.from({ length: 260 }, (_, i) => `w${i}`).join(' '), source: 'llm', model: 'm' };
   enforceBudget(digest, 1100);
   finalizeDigest(digest);
   assert.ok(digest.wordCount <= 1100);
+  assert.equal(countWords(digest.overview.text), 260, 'the largest accepted overview fits without trimming it');
   validateDigest(digest);
 });
 
@@ -233,7 +234,7 @@ test('adversarial one-letter tokens: summaries empty, titles/why capped at 12 wo
     e.why = tokens(100);
     e.whySource = 'llm';
   }
-  digest.overview = { text: Array.from({ length: 200 }, (_, i) => `o${i}`).join(' '), source: 'llm', model: 'm' };
+  digest.overview = { text: Array.from({ length: 260 }, (_, i) => `o${i}`).join(' '), source: 'llm', model: 'm' };
   enforceBudget(digest, 1100);
   finalizeDigest(digest);
   const after = digest.sections.flatMap((s) => s.entries);
@@ -243,7 +244,7 @@ test('adversarial one-letter tokens: summaries empty, titles/why capped at 12 wo
   assert.ok(after.every((e) => e.sourceIds.length === 30), 'sourceIds stay complete');
   assert.ok(digest.wordCount <= 1100, `wordCount ${digest.wordCount}`);
   assert.equal(digest.wordCount, countDigestWords(digest));
-  assert.equal(countWords(digest.overview.text), 200, 'the overview is never trimmed');
+  assert.equal(countWords(digest.overview.text), 260, 'the overview is never trimmed');
   digest.overview = null;
   enforceBudget(digest, 880);
   finalizeDigest(digest);

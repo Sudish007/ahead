@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { NOW } from './helpers.js';
-import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS, REASONING_EFFORT, LLM_TIMEOUT_MS, MAX_REQUESTS } from '../src/llm.js';
+import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS, REASONING_EFFORT, LLM_TIMEOUT_MS, MAX_REQUESTS, OVERVIEW_MIN_WORDS, OVERVIEW_MAX_WORDS } from '../src/llm.js';
 import { buildBrief, finalizeDigest, countWords } from '../src/brief.js';
 import { buildRegistry } from '../src/registry.js';
 import { validateDigest, validateDigestIndex, validateMeta } from '../src/schema.js';
@@ -115,8 +115,10 @@ test('valid JSON applies overview and why lines within budget; embedded JSON is 
   validateDigest(b.digest);
 });
 
-test('overview boundaries: only 150 and 200 words accepted; invented numbers reject only the overview', async () => {
-  for (const [n, accepted] of [[149, false], [150, true], [200, true], [201, false]]) {
+test('overview boundaries: 90 and 260 words accepted, 89 and 261 rejected; invented numbers reject only the overview', async () => {
+  assert.deepEqual([OVERVIEW_MIN_WORDS, OVERVIEW_MAX_WORDS], [90, 260]);
+  assert.match(SYSTEM_PROMPT, /about 170 words \(at least 120, at most 220\)/);
+  for (const [n, accepted] of [[89, false], [90, true], [260, true], [261, false]]) {
     const b = brief();
     const { fetchImpl } = mockFetch([reply({ overview: words(n), why: { [b.digest.itemIds[0]]: 'Fine line.' } })]);
     const r = await editorialize(b, CONFIG, fetchImpl);

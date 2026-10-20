@@ -15,7 +15,7 @@ import { parseSitemap } from './parsers/sitemap.js';
 import { applyInvalidations, mergeItems, mergePrevious, stripEphemeral } from './dedup.js';
 import { compareRank, score } from './score.js';
 import { buildBrief, finalizeDigest } from './brief.js';
-import { describeLlmFailure, editorialize, resolveLlmConfig } from './llm.js';
+import { OVERVIEW_MAX_WORDS, describeLlmFailure, editorialize, resolveLlmConfig } from './llm.js';
 import { createRelayFetch, relayNote, resolveRelay } from './relay.js';
 
 export const SOURCE_BACKSTOP_MS = 45_000;
@@ -296,7 +296,8 @@ export async function run({
   // Brief
   const today = generatedAt.slice(0, 10);
   const llmConfig = resolveLlmConfig(env ?? {}, { noLlm });
-  const targetWords = llmConfig.eligible ? 880 : 1100;
+  // With the LLM on, leave room for the largest accepted overview so it never forces a second trim of the entries.
+  const targetWords = llmConfig.eligible ? 1100 - OVERVIEW_MAX_WORDS : 1100;
   const briefInputs = previousDigests.filter((d) => d.date !== today && Date.parse(d.date) >= nowTs - 15 * DAY);
   const brief = buildBrief(items, briefInputs, now, { targetWords, registry });
   let llmResult = llmConfig.meta;
