@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createHttpClient, HttpError, BodyTooLarge, TimeoutError, errorClass, PACING } from '../src/http.js';
+import { createHttpClient, HttpError, BodyTooLarge, TimeoutError, errorClass, formatDetail, PACING } from '../src/http.js';
 
 /** Fake clock whose sleep() advances time and resolves timers in order. */
 function fakeClock() {
@@ -161,6 +161,49 @@ test('a client built without a token ignores process.env.GITHUB_TOKEN', async ()
   } finally {
     if (prev === undefined) delete process.env.GITHUB_TOKEN; else process.env.GITHUB_TOKEN = prev;
   }
+});
+
+test('non-2xx responses keep bounded header/body evidence in err.detail; formatDetail renders one line <= 400 chars', async () => {
+  const clock = fakeClock();
+  const padding = '<p class="x">'.concat('lorem ipsum '.repeat(4), '</p>\n').repeat(40); // ~2.3 KB of markup
+  const html = `<!DOCTYPE html><html><head><title>Just a moment...</title></head><body>${padding}</body></html>`;
+  const fetchImpl = async (url) => {
+    if (url === 'https://blocked.test/feed') {
+      return new Response(html, { status: 403, headers: { server: 'cloudflare', 'cf-ray': 'abc123-BOM', 'cf-mitigated': 'challenge', 'content-type': 'text/html' } });
+    }
+    return new Response('', { status: 404 });
+  };
+  const client = createHttpClient({ fetchImpl, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p = Promise.all([
+    client.fetchText('https://blocked.test/feed').catch((e) => e),
+    client.fetchText('https://gone.test/feed').catch((e) => e),
+  ]);
+  await clock.tick();
+  const [blocked, gone] = await p;
+  assert.ok(blocked instanceof HttpError);
+  assert.equal(errorClass(blocked), 'HTTP 403');
+  assert.equal(blocked.detail.server, 'cloudflare');
+  assert.equal(blocked.detail.cfRay, 'abc123-BOM');
+  assert.equal(blocked.detail.cfMitigated, 'challenge');
+  assert.equal(blocked.detail.contentType, 'text/html');
+  assert.ok(!('location' in blocked.detail));
+  assert.ok(!blocked.detail.body.includes('<'), 'tags stripped');
+  assert.ok(blocked.detail.body.length <= 300, `body ${blocked.detail.body.length} chars`);
+  assert.match(blocked.detail.body, /^Just a moment\.\.\. lorem ipsum/);
+  const line = formatDetail(blocked.detail);
+  assert.ok(!/[\n\r]/.test(line));
+  assert.ok(line.length <= 400, `line ${line.length} chars`);
+  assert.match(line, /^server=cloudflare; cf-ray=abc123-BOM; cf-mitigated=challenge; content-type=text\/html; body="Just a moment/);
+  assert.ok(!JSON.stringify(blocked).includes('user-agent'), 'request headers never recorded');
+  // 404 with an empty body: no body key, formatDetail lists whatever headers exist (undici adds a content-type for string bodies)
+  assert.ok(gone instanceof HttpError);
+  assert.equal(errorClass(gone), 'HTTP 404');
+  assert.ok(!('body' in gone.detail));
+  assert.equal(formatDetail(gone.detail), gone.detail.contentType ? `content-type=${gone.detail.contentType}` : '');
+  assert.equal(formatDetail(undefined), '');
+  assert.equal(formatDetail({}), '');
+  assert.equal(formatDetail({ server: 'a\nb\u0007c', body: 'x'.repeat(500) }).length, 400);
+  assert.match(formatDetail({ server: 'a\nb\u0007c' }), /^server=abc$/);
 });
 
 test('user-agent and accept headers, finalUrl and content type are reported', async () => {

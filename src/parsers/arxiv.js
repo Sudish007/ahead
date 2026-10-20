@@ -1,5 +1,5 @@
 // arXiv source runner: RSS primary with API (Atom) fallback. Owns both requests.
-import { errorClass } from '../http.js';
+import { errorClass, formatDetail } from '../http.js';
 import { cleanText, extractArxivId, parseDate } from '../normalize.js';
 import { decodeFeed, text } from './feed.js';
 import { applySelection } from './common.js';
@@ -91,7 +91,8 @@ export async function fetchArxivSource(source, ctx) {
     const fb = errorClass(fallbackError);
     if (primaryError) {
       ctx.logger?.warn?.(`${source.id}: primary failed (${errorClass(primaryError)}) and api fallback failed (${fb})`);
-      return { status: 'failed', items: [], fetched: 0, kept: 0, error: fb, ...(fallbackError.status ? { httpStatus: fallbackError.status } : {}) };
+      const detail = formatDetail(fallbackError.detail);
+      return { status: 'failed', items: [], fetched: 0, kept: 0, error: fb, ...(fallbackError.status ? { httpStatus: fallbackError.status } : {}), ...(detail ? { detail } : {}) };
     }
     ctx.logger?.warn?.(`${source.id}: valid empty RSS and api fallback failed (${fb})`);
     return { status: 'empty', items: [], fetched: 0, kept: 0, note: 'api fallback failed', httpStatus: res.status, finalUrl: res.finalUrl };

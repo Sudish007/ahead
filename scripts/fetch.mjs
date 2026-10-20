@@ -30,6 +30,7 @@ function printTable(result) {
     const tail = r.error ?? r.note ?? '';
     console.log(`${pad(r.id, w)} | ${pad(r.status, 6)} | ${pad(r.fetched, 7)} | ${pad(r.kept, 4)} | ${pad(r.ms, 5)} | ${tail}`);
   }
+  for (const r of rows) if (r.detail) console.log(`  ${r.id}: ${r.detail}`);
   const ok = rows.filter((r) => r.status === 'ok').length;
   const empty = rows.filter((r) => r.status === 'empty').length;
   const failed = rows.filter((r) => r.status === 'failed').length;

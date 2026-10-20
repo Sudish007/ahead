@@ -212,6 +212,35 @@ test('diagnostic mode returns selected sources only and never builds a brief or 
   await assert.rejects(runFixture({ dataDir, onlySourceIds: [], dryRun: true }), /non-empty/);
 });
 
+test('a blocked source keeps the short error class and records the response evidence as detail', async () => {
+  const logger = quietLogger();
+  const r = await runFixture({ dataDir: tmp(), logger, onlySourceIds: ['importai'], dryRun: true, overrides: {
+    [urlOf('importai')]: { status: 403, body: '<html><body>Just a moment...</body></html>', contentType: 'text/html', headers: { server: 'cloudflare', 'cf-ray': 'abc-BOM' } },
+  } });
+  assert.equal(r.sourceResults.length, 1);
+  const [importai] = r.sourceResults;
+  assert.equal(importai.status, 'failed');
+  assert.equal(importai.error, 'HTTP 403');
+  assert.equal(importai.httpStatus, 403);
+  assert.match(importai.detail, /server=cloudflare/);
+  assert.equal(importai.detail, 'server=cloudflare; cf-ray=abc-BOM; content-type=text/html; body="Just a moment..."');
+  assert.ok(logger.sink.some(([lvl, m]) => lvl === 'warn' && m === `importai: HTTP 403 [${importai.detail}]`), 'warn line carries the detail');
+});
+
+test('validateMeta rejects a detail over 400 chars or spanning lines', async () => {
+  const r = await runFixture({ dataDir: tmp(), dryRun: true });
+  const meta = structuredClone(r.meta);
+  const first = Object.values(meta.sources)[0];
+  first.detail = 'x'.repeat(401);
+  assert.throws(() => validateMeta(meta, registry.keys()), (e) => e.name === 'SchemaError' && /\.detail/.test(e.message));
+  first.detail = 'x'.repeat(400);
+  validateMeta(meta, registry.keys());
+  first.detail = 'a\nb';
+  assert.throws(() => validateMeta(meta, registry.keys()), /\.detail/);
+  first.detail = '';
+  assert.throws(() => validateMeta(meta, registry.keys()), /\.detail/);
+});
+
 test('full-registry dry run validates everything and writes nothing', async () => {
   const dataDir = tmp();
   const r = await runFixture({ dataDir, dryRun: true });

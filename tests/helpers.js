@@ -117,8 +117,9 @@ export function fixtureFetch({ now = NOW, overrides = {}, calls } = {}) {
     const ov = overrides[key];
     if (ov) {
       if (ov.throw) throw ov.throw;
-      if (ov.status !== undefined && ov.body === undefined) return new Response('', { status: ov.status, headers: { 'content-type': 'text/plain' } });
-      return new Response(ov.body ?? '', { status: ov.status ?? 200, headers: { 'content-type': ov.contentType ?? 'application/octet-stream' } });
+      const extra = ov.headers ?? {};
+      if (ov.status !== undefined && ov.body === undefined) return new Response('', { status: ov.status, headers: { 'content-type': 'text/plain', ...extra } });
+      return new Response(ov.body ?? '', { status: ov.status ?? 200, headers: { 'content-type': ov.contentType ?? 'application/octet-stream', ...extra } });
     }
     const accept = headerOf(init, 'accept') ?? '';
     if (/text\/html/.test(accept)) {

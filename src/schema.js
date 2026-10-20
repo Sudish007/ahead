@@ -328,6 +328,7 @@ export function validateMeta(meta, registryIds) {
     if (!(typeof s.ms === 'number' && s.ms >= 0)) sfail(`${sp}.ms`, 'must be a non-negative number');
     if ('httpStatus' in s && !Number.isInteger(s.httpStatus)) sfail(`${sp}.httpStatus`, 'must be an integer');
     if ('error' in s && !(isNonEmptyString(s.error) && s.error.length <= 120 && !/\n/.test(s.error))) sfail(`${sp}.error`, 'must be a short class string');
+    if ('detail' in s && !(isNonEmptyString(s.detail) && s.detail.length <= 400 && !/[\n\r]/.test(s.detail))) sfail(`${sp}.detail`, 'must be a single line of at most 400 chars');
     if ('note' in s && !isNonEmptyString(s.note)) sfail(`${sp}.note`, 'must be a non-empty string');
     if ('homepage' in s && !(typeof s.homepage === 'string' && isHttpUrl(s.homepage))) sfail(`${sp}.homepage`, 'must be an HTTP(S) URL');
     if (s.status === 'failed' && !('error' in s)) sfail(`${sp}.error`, 'is required for failed sources');

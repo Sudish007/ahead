@@ -12,14 +12,20 @@ export const ACCEPT = {
 };
 const MAX_REDIRECTS = 5;
 const RETRY_MIN_REMAINING_MS = 25_000;
+const SNIPPET_BYTES = 4096;
+const DETAIL_BODY_CHARS = 300;
+const DETAIL_LINE_CHARS = 400;
+/** detail key -> response header it was read from (also the label formatDetail prints). */
+const DETAIL_HEADERS = { server: 'server', cfRay: 'cf-ray', cfMitigated: 'cf-mitigated', contentType: 'content-type', location: 'location' };
 
 export class HttpError extends Error {
-  constructor(status, url, retryAfter) {
+  constructor(status, url, retryAfter, detail) {
     super(`HTTP ${status} for ${url}`);
     this.name = 'HttpError';
     this.status = status;
     this.url = url;
     if (retryAfter !== undefined) this.retryAfter = retryAfter;
+    if (detail !== undefined) this.detail = detail;
   }
 }
 export class BodyTooLarge extends Error {
@@ -58,6 +64,50 @@ function parseRetryAfter(value) {
   if (Number.isFinite(secs) && secs >= 0) return secs * 1000;
   const at = Date.parse(value);
   return Number.isFinite(at) ? Math.max(0, at - Date.now()) : undefined;
+}
+
+/** First `maxBytes` of a response body as UTF-8 text; '' on any error (never throws, never leaves the stream open). */
+async function readSnippet(res, maxBytes = SNIPPET_BYTES) {
+  try {
+    if (!res.body || typeof res.body.getReader !== 'function') return '';
+    const reader = res.body.getReader();
+    const chunks = [];
+    let total = 0;
+    while (total < maxBytes) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      chunks.push(Buffer.from(value.buffer, value.byteOffset, value.byteLength));
+      total += value.byteLength;
+    }
+    try { await reader.cancel(); } catch { /* ignore */ }
+    return new TextDecoder('utf-8').decode(Buffer.concat(chunks).subarray(0, maxBytes));
+  } catch {
+    return '';
+  }
+}
+
+/** Response evidence for a failed request: selected headers (each <= 80 chars); absent headers are omitted. */
+function headerDetail(res, keys) {
+  const detail = {};
+  for (const key of keys) {
+    const value = res.headers?.get?.(DETAIL_HEADERS[key]);
+    if (value !== undefined && value !== null && value !== '') detail[key] = String(value).slice(0, 80);
+  }
+  return detail;
+}
+
+/** One-line `key=value; ...` rendering of an HttpError detail for logs, meta.json and the CLI; '' when there is nothing. */
+export function formatDetail(detail) {
+  if (!detail || typeof detail !== 'object') return '';
+  const parts = [];
+  for (const [key, raw] of Object.entries(detail)) {
+    if (raw === undefined || raw === null) continue;
+    // eslint-disable-next-line no-control-regex
+    const value = String(raw).replace(/[\x00-\x1f\x7f]/g, '');
+    if (!value) continue;
+    parts.push(key === 'body' ? `body="${value}"` : `${DETAIL_HEADERS[key] ?? key}=${value}`);
+  }
+  return parts.join('; ').slice(0, DETAIL_LINE_CHARS);
 }
 
 export function createHttpClient({
@@ -143,14 +193,17 @@ export function createHttpClient({
         const status = res.status;
         if ([301, 302, 303, 307, 308].includes(status)) {
           const location = res.headers?.get?.('location');
-          if (!location || hop >= MAX_REDIRECTS) throw new HttpError(status, current);
+          if (!location || hop >= MAX_REDIRECTS) throw new HttpError(status, current, undefined, headerDetail(res, ['location', 'server']));
           try { if (res.body) await res.body.cancel?.(); } catch { /* ignore */ }
           current = new URL(location, current).href;
           continue;
         }
         if (status >= 400) {
-          try { if (res.body) await res.body.cancel?.(); } catch { /* ignore */ }
-          throw new HttpError(status, current, parseRetryAfter(res.headers?.get?.('retry-after')));
+          // Keep evidence of what the server said (block pages, challenge markers); the body is capped at 4 KB read / 300 chars kept.
+          const detail = headerDetail(res, ['server', 'cfRay', 'cfMitigated', 'contentType', 'location']);
+          const body = (await readSnippet(res)).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, DETAIL_BODY_CHARS);
+          if (body) detail.body = body;
+          throw new HttpError(status, current, parseRetryAfter(res.headers?.get?.('retry-after')), detail);
         }
         let text;
         try {

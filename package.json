@@ -11,6 +11,7 @@
     "test": "node --test \"tests/**/*.test.js\"",
     "fetch": "node scripts/fetch.mjs",
     "probe": "node scripts/probe-sources.mjs",
+    "probe:runner": "node scripts/probe-runner.mjs",
     "serve": "node scripts/serve.mjs"
   },
   "dependencies": {

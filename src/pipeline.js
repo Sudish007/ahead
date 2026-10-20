@@ -2,7 +2,7 @@
 // retention/caps -> brief (+ optional LLM) -> meta -> validate -> atomic writes.
 import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { ACCEPT, createHttpClient, errorClass, WallClockError } from './http.js';
+import { ACCEPT, createHttpClient, errorClass, formatDetail, WallClockError } from './http.js';
 import { buildRegistry, codePointCompare, sourceInfo } from './registry.js';
 import { ConfigError, validateConfig, validateDigest, validateDigestIndex, validateItem, validateItemsFile, validateMeta, validateSitemapState } from './schema.js';
 import { toItem } from './normalize.js';
@@ -90,7 +90,9 @@ export async function runSource(source, deps) {
   } catch (err) {
     result = { status: 'failed', items: [], fetched: 0, kept: 0, error: errorClass(err) };
     if (Number.isInteger(err?.status)) result.httpStatus = err.status;
-    logger.warn(`${source.id}: ${result.error}`);
+    const detail = formatDetail(err?.detail);
+    if (detail) result.detail = detail;
+    logger.warn(`${source.id}: ${result.error}${result.detail ? ` [${result.detail}]` : ''}`);
   } finally {
     clearTimeout(timer);
   }
@@ -224,6 +226,7 @@ export async function run({
     if (Number.isInteger(r.httpStatus)) entry.httpStatus = r.httpStatus;
     if (r.note) entry.note = r.note;
     if (r.error) entry.error = r.error;
+    if (typeof r.detail === 'string' && r.detail) entry.detail = r.detail;
     sourceResults.push(entry);
     if (source.type === 'sitemap') {
       if (r.status === 'failed') {

@@ -3,6 +3,11 @@ on:
   schedule:
     - cron: '0 */6 * * *'
   workflow_dispatch:
+    inputs:
+      probe:
+        description: 'Run scripts/probe-runner.mjs before the fetch'
+        type: boolean
+        default: false
   push:
     branches: [main]
     paths-ignore: ['data/**']
@@ -28,6 +33,10 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm test
+      - name: Probe blocked hosts from this runner
+        if: github.event_name == 'workflow_dispatch' && inputs.probe
+        run: node scripts/probe-runner.mjs
+        continue-on-error: true
       - name: Fetch sources and build the brief
         run: node scripts/fetch.mjs
         env:
