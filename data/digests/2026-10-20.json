@@ -1,7 +1,7 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T05:35:46.007Z",
- "wordCount": 586,
+ "generatedAt": "2026-10-20T07:05:46.569Z",
+ "wordCount": 587,
  "readingMinutes": 3,
  "overview": null,
  "sections": [
@@ -22,11 +22,11 @@
       "arXiv cs.AI"
      ],
      "summary": "Multimodal large language models (MLLMs) have made rapid progress on visual reasoning, yet many tasks require evidence that is difficult to obtain through internal reasoning alone: our controlled study on 22 benchmarks shows that simply increasing the inference budget of the…",
-     "why": "45 upvotes on HF Papers; also on arXiv cs.AI",
+     "why": "57 upvotes on HF Papers; also on arXiv cs.AI",
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 16.71
+     "score": 16.84
     },
     {
      "id": "370d8453b070a7bf",
@@ -44,11 +44,11 @@
       "Hacker News"
      ],
      "summary": "State-of-the-art probabilistic forecasting in four sizes (5M–209M params), CPU-efficient, zero-shot ready.",
-     "why": "570 points on HN, 106 comments",
+     "why": "577 points on HN, 107 comments",
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 16.3,
+     "score": 16.2,
      "readMinutes": 1
     },
     {
@@ -64,11 +64,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Can large language model (LLM) agents deliver expert-level operations research (OR) solutions directly from original client materials, without prior expert reformulation?",
-     "why": "21 upvotes on HF Papers; also on arXiv cs.CL",
+     "why": "23 upvotes on HF Papers; also on arXiv cs.CL",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.22
+     "score": 16.12
     },
     {
      "id": "arxiv:2610.22791",
@@ -83,11 +83,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Large language model (LLM) agents have shown promising potential in coding tasks, and their performance is jointly determined by the policy model and the harness that mediates their interaction with the environment.",
-     "why": "29 upvotes on HF Papers; also on arXiv cs.CL",
+     "why": "30 upvotes on HF Papers; also on arXiv cs.CL",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.09
+     "score": 15.93
     }
    ]
   },
@@ -108,11 +108,30 @@
       "arXiv cs.AI"
      ],
      "summary": "The goal of a world model is to capture the dynamics of an environment. This has the great appeal that it allows agents to plan and simulate a course of actions with the help of a world model.",
-     "why": "18 upvotes on HF Papers; also on arXiv cs.AI",
+     "why": "22 upvotes on HF Papers; also on arXiv cs.AI",
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 15.43
+     "score": 15.5
+    },
+    {
+     "id": "arxiv:2610.23986",
+     "title": "BlenderWorld: Benchmarking Visual Agents for 3D Creation from Real-World References",
+     "url": "https://arxiv.org/abs/2610.23986",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Recent advances in multimodal large language models (MLLMs) have enabled them to act as autonomous agents, creating and editing 3D models via code or direct software manipulation.",
+     "why": "8 upvotes on HF Papers; also on arXiv cs.CV",
+     "whySource": "heuristic",
+     "publishedAt": "2026-10-14T00:00:00.000Z",
+     "category": "research",
+     "score": 14.71
     },
     {
      "id": "arxiv:2610.23121",
@@ -131,26 +150,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 14.53
-    },
-    {
-     "id": "arxiv:2610.23279",
-     "title": "Xiaomi-Lens-0 Technical Report",
-     "url": "https://arxiv.org/abs/2610.23279",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Multimodal large language models (MLLMs) answer questions about whole images well, yet they still struggle with fine-grained region understanding. A key reason is that text-only supervision never specifies which regions support an answer.",
-     "why": "28 upvotes on HF Papers; also on arXiv cs.CV",
-     "whySource": "heuristic",
-     "publishedAt": "2026-10-16T00:00:00.000Z",
-     "category": "research",
-     "score": 13.75
+     "score": 14.39
     }
    ]
   },
@@ -173,7 +173,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 10.85
+     "score": 10.74
     },
     {
      "id": "92c1824269f45469",
@@ -190,7 +190,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 10.31
+     "score": 10.2
     },
     {
      "id": "f2bc736c0ee71119",
@@ -207,7 +207,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 9.92
+     "score": 9.81
     }
    ]
   },
@@ -230,7 +230,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 4.99,
+     "score": 4.85,
      "readMinutes": 1
     },
     {
@@ -248,7 +248,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T15:30:37.000Z",
      "category": "labs",
-     "score": 3.81,
+     "score": 3.7,
      "readMinutes": 11
     }
    ]
@@ -272,7 +272,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T03:50:48.703Z",
      "category": "blogs",
-     "score": 4.83,
+     "score": 4.7,
      "readMinutes": 24
     },
     {
@@ -290,7 +290,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T05:39:38.000Z",
      "category": "blogs",
-     "score": 4.42,
+     "score": 4.29,
      "readMinutes": 11
     }
    ]
@@ -314,7 +314,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:31:37.000Z",
      "category": "blogs",
-     "score": 4.32,
+     "score": 4.2,
      "readMinutes": 25
     }
    ]
@@ -326,8 +326,8 @@
   "arxiv:2610.24087",
   "arxiv:2610.22791",
   "arxiv:2610.26844",
+  "arxiv:2610.23986",
   "arxiv:2610.23121",
-  "arxiv:2610.23279",
   "ca26bca182f697df",
   "92c1824269f45469",
   "f2bc736c0ee71119",
