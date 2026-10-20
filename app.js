@@ -45,6 +45,9 @@ export function sanitizeSavedMap(v) {
 }
 export const sanitizeLastVisit = (v) => (validTs(v) ? v : 0);
 export const sanitizeRange = (v) => (v in RANGES ? v : '7d');
+export const sanitizeTheme = (v) => (v === 'light' || v === 'dark' ? v : 'system');
+/** System -> Light -> Dark -> System. */
+export const nextTheme = (t) => (t === 'system' ? 'light' : t === 'light' ? 'dark' : 'system');
 
 export function createStore(storage, warn = () => {}) {
   let memory = null;
@@ -144,6 +147,7 @@ export function start() {
     learn: store.get('ahead:learn', sanitizeLearnMap),
     previousVisit: store.get('ahead:lastVisit', sanitizeLastVisit),
     range: store.get('ahead:range', sanitizeRange),
+    theme: store.get('ahead:theme', sanitizeTheme),
     noData: false,
   };
   store.set('ahead:read', S.read); store.set('ahead:saved', S.saved); store.set('ahead:learn', S.learn); store.set('ahead:range', S.range);
@@ -153,6 +157,36 @@ export function start() {
   const search = $('search');
   const rowTpl = $('row-template');
   const entryTpl = $('entry-template');
+  const nav = doc.querySelector('nav');
+
+  // ----- theme: data-theme on <html> (absent = follow the OS), persisted as 'ahead:theme'; the inline head script applies it before first paint.
+  const THEME_LABELS = { system: 'System', light: 'Light', dark: 'Dark' };
+  const themeBtn = $('theme');
+  const themeMeta = $('theme-color');
+  const darkQuery = window.matchMedia('(prefers-color-scheme: dark)');
+  function applyTheme() {
+    const root = doc.documentElement;
+    if (S.theme === 'system') root.removeAttribute('data-theme'); else root.setAttribute('data-theme', S.theme);
+    themeBtn.dataset.mode = S.theme;
+    const label = `Theme: ${THEME_LABELS[S.theme]}`;
+    themeBtn.setAttribute('aria-label', label); themeBtn.title = `${label} (t)`;
+    const bg = getComputedStyle(root).getPropertyValue('--bg').trim();
+    if (themeMeta && bg) themeMeta.content = bg;
+  }
+  function cycleTheme() { S.theme = nextTheme(S.theme); store.set('ahead:theme', S.theme); applyTheme(); }
+  themeBtn.addEventListener('click', cycleTheme);
+  darkQuery.addEventListener('change', () => { if (S.theme === 'system') applyTheme(); });
+  applyTheme();
+
+  // ----- sticky offsets: the nav (and the filter row on wide screens) cover the top of the viewport; rows scroll into view below them.
+  const wide = window.matchMedia('(min-width: 900px)');
+  function measureSticky() {
+    const navH = nav.offsetHeight;
+    const filtersH = !filters.hidden && wide.matches ? filters.offsetHeight : 0;
+    doc.documentElement.style.setProperty('--nav-h', `${navH}px`);
+    doc.documentElement.style.setProperty('--sticky-h', `${navH + filtersH}px`);
+  }
+  if ('ResizeObserver' in window) { const ro = new ResizeObserver(measureSticky); ro.observe(nav); ro.observe(filters); }
 
   const safeUrl = (u) => (typeof u === 'string' && isHttp(u) ? u : null);
   const setLink = (a, textNode, url, label) => {
@@ -297,7 +331,9 @@ export function start() {
     if (S.savedOnly) {
       const snaps = Object.entries(S.saved).sort((a, b) => b[1].savedAt - a[1].savedAt);
       if (!snaps.length) { panel.appendChild(el('p', 'notice', 'Nothing saved yet. Press s on a row to save it.')); return; }
-      for (const [id, snap] of snaps) panel.appendChild(rowFor({ id, ...snap, sources: [], signals: {} }, { snapshot: true }));
+      const list = el('div', 'rows');
+      for (const [id, snap] of snaps) list.appendChild(rowFor({ id, ...snap, sources: [], signals: {} }, { snapshot: true }));
+      panel.appendChild(list);
       return;
     }
     if (!S.items) {
@@ -315,7 +351,9 @@ export function start() {
     renderChips();
     const list = visibleItems();
     if (!list.length) { panel.appendChild(el('p', 'notice', 'Nothing here for this range and filter.')); return; }
-    for (const it of list.slice(0, S.shown)) panel.appendChild(rowFor(it));
+    const grid = el('div', 'rows');
+    for (const it of list.slice(0, S.shown)) grid.appendChild(rowFor(it));
+    panel.appendChild(grid);
     if (list.length > S.shown) {
       const more = el('button', 'more', `Show ${Math.min(PAGE, list.length - S.shown)} more`); more.type = 'button';
       more.addEventListener('click', () => { S.shown += PAGE; render({ keepCursor: true }); });
@@ -341,15 +379,18 @@ export function start() {
       o.appendChild(el('p', null, digest.overview.text));
       panel.appendChild(o);
     }
+    const grid = el('div', 'sections');
     for (const section of digest.sections ?? []) {
       const sec = el('section', 'section');
+      sec.dataset.key = typeof section.key === 'string' ? section.key : '';
       const h2 = el('h2', null, section.title);
       if (dayLabel) h2.appendChild(el('span', 'day', dayLabel));
       sec.appendChild(h2);
       if (!section.entries?.length) sec.appendChild(el('p', 'notice', 'Nothing new today'));
       else { const ol = el('ol'); for (const e of section.entries) ol.appendChild(entryFor(e)); sec.appendChild(ol); }
-      panel.appendChild(sec);
+      grid.appendChild(sec);
     }
+    panel.appendChild(grid);
   }
   function renderBrief() {
     if (S.noData) { renderNoData(); return; }
@@ -383,6 +424,7 @@ export function start() {
     if (!list) { panel.appendChild(el('p', 'notice', 'The learning list appears once the first refresh has run.')); return; }
     const done = list.filter((e) => S.learn[e.id]).length;
     panel.appendChild(el('p', 'counter', `${done}/${list.length} done`));
+    const groups = el('div', 'learn-groups');
     for (const [kind, title] of [['course', 'Courses'], ['book', 'Books'], ['paper', 'Papers']]) {
       const group = list.filter((e) => e.kind === kind);
       if (!group.length) continue;
@@ -397,8 +439,9 @@ export function start() {
         if (u) { a.href = u; a.target = '_blank'; a.rel = 'noopener noreferrer'; li.appendChild(a); } else li.appendChild(el('span', null, e.title));
         ul.appendChild(li);
       }
-      wrap.appendChild(ul); panel.appendChild(wrap);
+      wrap.appendChild(ul); groups.appendChild(wrap);
     }
+    panel.appendChild(groups);
   }
   const digestCache = new Map();
   function loadDigest(date) {
@@ -472,6 +515,7 @@ export function start() {
     else if (S.tab === 'learn') renderLearn();
     else renderArchive();
     if (!keepCursor) resetCursor(); else moveCursor(0);
+    measureSticky();
   }
   function route() {
     const hash = location.hash.replace(/^#/, '');
@@ -511,6 +555,7 @@ export function start() {
       case 'r': { const row = currentRow(); if (row?.dataset.id) toggleRead(row.dataset.id); break; }
       case 's': { const row = currentRow(); const it = row && itemById(row.dataset.id); if (it) toggleSaved(it); else if (row?.dataset.id && S.saved[row.dataset.id]) toggleSaved({ id: row.dataset.id }); break; }
       case '/': if (!filters.hidden) { search.focus(); e.preventDefault(); } break;
+      case 't': cycleTheme(); break;
       default: break;
     }
   });

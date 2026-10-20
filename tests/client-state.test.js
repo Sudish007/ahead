@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { sanitizeReadMap, sanitizeSavedMap, sanitizeLearnMap, sanitizeLastVisit, sanitizeRange, createStore, selectCatchUpDays, healthStatus, sourceChipHref, signalText, relativeAge } from '../app.js';
+import { sanitizeReadMap, sanitizeSavedMap, sanitizeLearnMap, sanitizeLastVisit, sanitizeRange, sanitizeTheme, nextTheme, createStore, selectCatchUpDays, healthStatus, sourceChipHref, signalText, relativeAge } from '../app.js';
 
 const NOW_MS = Date.parse('2026-10-19T12:00:00Z');
 const isNullProto = (o) => Object.getPrototypeOf(o) === null && Object.keys(o).length === 0;
@@ -52,6 +52,16 @@ test('scalar sanitizers', () => {
   assert.equal(sanitizeRange('7d'), '7d');
   assert.equal(sanitizeRange('1w'), '7d');
   assert.equal(sanitizeRange(null), '7d');
+});
+
+test('theme sanitizer and cycle', () => {
+  assert.equal(sanitizeTheme('light'), 'light');
+  assert.equal(sanitizeTheme('dark'), 'dark');
+  for (const bad of ['system', undefined, null, 'blue', 1, {}, ['light']]) assert.equal(sanitizeTheme(bad), 'system');
+  assert.equal(nextTheme('system'), 'light');
+  assert.equal(nextTheme('light'), 'dark');
+  assert.equal(nextTheme('dark'), 'system');
+  assert.equal(nextTheme('nonsense'), 'system');
 });
 
 test('store: throwing getItem/setItem -> one warning and in-memory fallback that keeps working', () => {

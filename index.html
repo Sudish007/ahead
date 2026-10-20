@@ -3,8 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self' 'sha256-yWrjz1/zOM/G7P7hh4kLtN+/Y0Nejh36/84NtaOa5RU='; connect-src 'self'; base-uri 'none'; form-action 'none'">
 <meta name="color-scheme" content="dark light">
+<meta name="theme-color" id="theme-color" content="#0f1115">
+<script>(function(){var t=null;try{t=JSON.parse(localStorage.getItem('ahead:theme'))}catch(e){}var r=document.documentElement;if(t==='light'||t==='dark'){r.setAttribute('data-theme',t)}else{t=null}var m=document.getElementById('theme-color');if(m){m.content=(t?t==='dark':matchMedia('(prefers-color-scheme: dark)').matches)?'#0f1115':'#fafafa'}})();</script>
 <title>Ahead — AI brief</title>
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="styles.css">
@@ -17,6 +19,7 @@
     <span id="refreshed" class="muted"></span>
     <span id="read-time" class="muted"></span>
     <button id="health" class="health" type="button" aria-expanded="false" aria-controls="health-details" aria-label="Loading" title="Loading"><span class="dot" aria-hidden="true"></span></button>
+    <button id="theme" class="theme" type="button" aria-label="Theme: System" title="Theme: System (t)" data-mode="system"><span class="theme-icon" aria-hidden="true"></span></button>
   </div>
 </header>
 <details id="health-details" class="health-details">
@@ -53,7 +56,7 @@
   <div id="alert" class="alert" role="alert" hidden><span id="alert-text"></span><button id="retry" type="button">Retry</button></div>
   <section id="panel" role="tabpanel" aria-labelledby="tab-brief" tabindex="0"></section>
 </main>
-<footer><span id="source-count"></span> · <a href="https://github.com/Sudish007/ahead" target="_blank" rel="noopener noreferrer">GitHub</a> · keys: <kbd>j</kbd>/<kbd>k</kbd> move, <kbd>o</kbd> open, <kbd>s</kbd> save, <kbd>r</kbd> read, <kbd>/</kbd> search, <kbd>1</kbd>–<kbd>0</kbd> tabs</footer>
+<footer><span id="source-count"></span> · <a href="https://github.com/Sudish007/ahead" target="_blank" rel="noopener noreferrer">GitHub</a> · keys: <kbd>j</kbd>/<kbd>k</kbd> move, <kbd>o</kbd> open, <kbd>s</kbd> save, <kbd>r</kbd> read, <kbd>/</kbd> search, <kbd>t</kbd> theme, <kbd>1</kbd>–<kbd>0</kbd> tabs</footer>
 <template id="row-template">
   <article class="row" tabindex="-1">
     <span class="score"></span>
