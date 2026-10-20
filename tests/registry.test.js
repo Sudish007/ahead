@@ -28,6 +28,10 @@ test('production config validates and contains the 64 baseline ids', () => {
     if ('rankUrl' in s) assert.equal(s.type, 'hn');
     if (s.type === 'github') assert.match(new URL(s.url.replace(/\{\{\w+\}\}/g, 'x')).hostname, /^(api\.)?github\.com$/);
   }
+  // The six Cloudflare-challenged sources go through the ahead-relay Worker; only the sitemap one needs a page prefix.
+  assert.deepEqual(CONFIG.sources.filter((s) => s.viaRelay === true).map((s) => s.id), ['importai', 'zvi', 'thebatch', 'epoch-gradient-updates', 'chinai', 'pod-dwarkesh']);
+  assert.equal(CONFIG.sources.find((s) => s.id === 'thebatch').relayPagePrefix, 'https://www.deeplearning.ai/the-batch/');
+  assert.deepEqual(CONFIG.sources.filter((s) => 'relayPagePrefix' in s).map((s) => s.id), ['thebatch']);
 });
 
 test('every source resolves to an exact fixture or a kind fallback', () => {
@@ -81,6 +85,14 @@ const invalidCases = [
   ['github release malformed repo', { repo: 'nope' }, 'sources[42].repo', 42],
   ['github search without minStars', { minStars: undefined }, 'sources[50].minStars', 50],
   ['github other host', { url: 'https://gitlab.com/x/y/releases.atom' }, 'sources[42].url', 42],
+  ['string viaRelay', { viaRelay: 'yes' }, 'sources[9].viaRelay'],
+  ['viaRelay on json', { viaRelay: true }, 'sources[4].viaRelay', 4],
+  ['viaRelay on hn (template)', { viaRelay: true }, 'sources[5].viaRelay', 5],
+  ['sitemap viaRelay without relayPagePrefix', { viaRelay: true }, 'sources[9].relayPagePrefix'],
+  ['relayPagePrefix on rss', { relayPagePrefix: 'https://x.test/' }, 'sources[8].relayPagePrefix', 8],
+  ['http relayPagePrefix', { viaRelay: true, relayPagePrefix: 'http://x.test/' }, 'sources[9].relayPagePrefix'],
+  ['relayPagePrefix without trailing slash', { viaRelay: true, relayPagePrefix: 'https://x.test/a' }, 'sources[9].relayPagePrefix'],
+  ['relayPagePrefix with query', { viaRelay: true, relayPagePrefix: 'https://x.test/a/?q=1' }, 'sources[9].relayPagePrefix'],
 ];
 
 for (const [name, patch, field, index] of invalidCases) {

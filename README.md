@@ -66,7 +66,7 @@ Add one object literal to `sources` in `sources.config.mjs`:
 { id: 'my-blog', name: 'My Blog', category: 'blogs', type: 'rss', url: 'https://example.com/feed.xml', weight: 5, longForm: true },
 ```
 
-Required: `id name category type url weight`. Optional: `homepage family maxItems maxAgeDays maxBytes longForm`, plus `parser` (json), `fallbackUrl` (arxiv), `rankUrl` (hn), `repo` (github releases), `minStars` (github search), `include`/`exclude` (sitemap, non-global RegExp), `template` (URL with `{{unix24hAgo}}`/`{{date7dAgo}}`). Then run `npm run probe` to see what every URL returns; `npm test` validates the configuration and keeps working for any source covered by an existing parser.
+Required: `id name category type url weight`. Optional: `homepage family maxItems maxAgeDays maxBytes longForm`, plus `parser` (json), `fallbackUrl` (arxiv), `rankUrl` (hn), `repo` (github releases), `minStars` (github search), `include`/`exclude` (sitemap, non-global RegExp), `template` (URL with `{{unix24hAgo}}`/`{{date7dAgo}}`), `viaRelay` (rss/atom/sitemap without `template`: fetch through the `ahead-relay` Cloudflare Worker when it is configured; run `node relay/build-allowlist.mjs` afterwards) and `relayPagePrefix` (sitemap + viaRelay: the `https://.../` prefix its article pages share). Then run `npm run probe` to see what every URL returns; `npm test` validates the configuration and keeps working for any source covered by an existing parser.
 
 ## Optional LLM editorial layer
 

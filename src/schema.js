@@ -44,6 +44,14 @@ function substituteTemplate(url) {
   return url.replace(TEMPLATE_RE, (_, key) => (key === 'unix24hAgo' ? '1700000000' : '2026-01-01'));
 }
 
+/** `https://host/path/` with nothing else: the Worker allows a page URL when its normalized href starts with this string. */
+function isRelayPagePrefix(v) {
+  if (typeof v !== 'string') return false;
+  let u;
+  try { u = new URL(v); } catch { return false; }
+  return u.protocol === 'https:' && !u.username && !u.password && !u.search && !u.hash && u.pathname.endsWith('/') && u.href === v;
+}
+
 // ---------------------------------------------------------------------------
 // Static configuration
 
@@ -69,6 +77,16 @@ function validateSource(s, p, ids) {
   if (!Number.isInteger(s.weight) || s.weight < 1 || s.weight > 10) fail(`${p}.weight`, 'must be an integer from 1 through 10');
   if ('template' in s && typeof s.template !== 'boolean') fail(`${p}.template`, 'must be a boolean');
   if ('longForm' in s && typeof s.longForm !== 'boolean') fail(`${p}.longForm`, 'must be a boolean');
+  // Relay fields feed relay/build-allowlist.mjs: only plain feed/sitemap sources can be relayed (the Worker knows one URL per
+  // id, so templated URLs cannot), and a relayed sitemap needs the page prefix the Worker allows article fetches under.
+  if ('viaRelay' in s && typeof s.viaRelay !== 'boolean') fail(`${p}.viaRelay`, 'must be a boolean');
+  if (s.viaRelay === true && !['rss', 'atom', 'sitemap'].includes(s.type)) fail(`${p}.viaRelay`, 'is allowed only on type rss|atom|sitemap');
+  if (s.viaRelay === true && s.template === true) fail(`${p}.viaRelay`, 'is not allowed with template');
+  if ('relayPagePrefix' in s) {
+    if (s.type !== 'sitemap') fail(`${p}.relayPagePrefix`, 'is allowed only on type sitemap');
+    if (!isRelayPagePrefix(s.relayPagePrefix)) fail(`${p}.relayPagePrefix`, 'must be an https URL ending with / and without credentials, query or fragment');
+  }
+  if (s.type === 'sitemap' && s.viaRelay === true && !('relayPagePrefix' in s)) fail(`${p}.relayPagePrefix`, 'is required for sitemap sources with viaRelay');
   const placeholders = [...s.url.matchAll(TEMPLATE_RE)].map((m) => m[1]);
   if (s.template === true) {
     for (const k of placeholders) if (!TEMPLATE_KEYS.has(k)) fail(`${p}.url`, `uses unknown placeholder {{${k}}}`);

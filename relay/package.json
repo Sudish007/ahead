@@ -1,0 +1,15 @@
+{
+  "name": "ahead-relay",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Cloudflare Worker that relays the six Cloudflare-challenged feeds (five Substack feeds, The Batch sitemap and article pages) for the Ahead pipeline.",
+  "type": "module",
+  "scripts": {
+    "allowlist": "node build-allowlist.mjs",
+    "deploy": "wrangler deploy",
+    "tail": "wrangler tail ahead-relay --format pretty"
+  },
+  "devDependencies": {
+    "wrangler": "4.151.2"
+  }
+}

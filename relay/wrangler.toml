@@ -1,0 +1,19 @@
+# ahead-relay: Cloudflare Worker that relays the six allowlisted feeds for the Ahead pipeline (see README.md here and the
+# "Relay for Cloudflare-blocked feeds" section of the root README). Secrets (RELAY_TOKEN) are set with `wrangler secret put`,
+# never written here.
+name = "ahead-relay"
+main = "src/index.js"
+compatibility_date = "2026-10-01"
+workers_dev = true
+
+[observability]
+enabled = true
+
+# Refresh every allowlisted feed URL (not article pages) every 3 hours, one at a time, 2 s apart.
+[triggers]
+crons = ["0 */3 * * *"]
+
+# Last-good copy per upstream URL: key `v1:<url>`, raw body bytes, metadata { contentType, fetchedAt }, 30-day TTL.
+[[kv_namespaces]]
+binding = "RELAY_CACHE"
+id = "693b4290d7ef4bc7a1d6e9c560b6e585"
