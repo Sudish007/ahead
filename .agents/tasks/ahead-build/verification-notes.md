@@ -194,3 +194,42 @@ Screenshots (`docs/screenshots/`):
 - `fix(http): retry transient YouTube feed 404s once` — `src/http.js`, `tests/http.test.js`
 - `data: live refresh (41 ok, 23 empty, 0 failed; 529 items; 558-word brief)` — `data/**`
 - `docs: Step D browser verification screenshots and notes` — `docs/screenshots/**`, this file
+---
+
+# Verification notes — Step E deploy-verify
+
+2026-10-20 (UTC). GitHub CLI authenticated as `Sudish007`.
+
+## 1. Repo
+
+`gh repo view Sudish007/ahead` returned "Could not resolve to a Repository" and the local clone had no remote, so the repo was created fresh (no fallback name needed):
+
+- **Repo:** https://github.com/Sudish007/ahead (public), created with `gh repo create Sudish007/ahead --public --source . --push`; `origin` now tracks `main`.
+- **Pages:** `gh api -X POST repos/Sudish007/ahead/pages -f build_type=workflow` -> `build_type: workflow`, `html_url: https://sudish007.github.io/ahead/`, `https_enforced: true`.
+
+## 2. Workflow permissions
+
+`.github/workflows/refresh.yml` `refresh` job already had `contents: write` + `pages: write`; added `id-token: write` (commit `4b6690e ci: grant id-token write to refresh job for Pages enablement`). The `deploy` job keeps `pages: write` + `id-token: write`. Recursion guard unchanged: `push` trigger has `paths-ignore: ['data/**']` and the bot commit message carries `[skip ci]`. All pinned action tags (`checkout@v7`, `setup-node@v7`, `configure-pages@v6`, `upload-pages-artifact@v5`, `deploy-pages@v5`) resolve on GitHub.
+
+## 3. First Actions run — green on the first attempt
+
+- **Run id:** 39365298984
+- **URL:** https://github.com/Sudish007/ahead/actions/runs/39365298984
+- Trigger: push of `4b6690e`; created 03:37:48Z, finished 03:39:58Z (2 m 10 s). `conclusion: success`.
+- `refresh` job: checkout, setup-node, `npm ci`, `npm test`, fetch (19.9 s), commit data back to main, stage `_site`, configure-pages, upload-pages-artifact — all green.
+- `deploy` job 118441011292: `deploy-pages@v5` green.
+- Bot commit `fa17400 data: refresh 2026-10-20T03:39Z [skip ci]` landed on `origin/main` and did not trigger a second run. Pulled locally with `git pull --rebase` (fast-forward).
+- Only annotations: the `ubuntu-latest -> Ubuntu 26` migration notice (informational).
+
+## 4. Live URLs
+
+| URL | status | size |
+|---|---|---|
+| https://sudish007.github.io/ahead/ | **HTTP 200** | 5,193 bytes |
+| https://sudish007.github.io/ahead/data/meta.json | **HTTP 200** | 23,931 bytes |
+
+`meta.json` from the live site: `generatedAt = 2026-10-20T03:38:40.737Z` (today's run, inside the 03:37-03:39Z window of run 39365298984), `durationMs 19950`, `itemCount 534`, `newItemCount 5`, `trimmedForSize 0`, `okCount 33`, `emptyCount 19`, `failedCount 12`, `llm { enabled: false, ok: false }` (no `LLM_API_KEY` secret set).
+
+## 5. Observation (not a deploy failure)
+
+From the GitHub-hosted runner, 12 sources fail that succeeded from the local machine in Steps C/D: Substack feeds answer **HTTP 403** (`importai`, `zvi`, `thebatch`, `epoch-gradient-updates`, `chinai`, `pod-dwarkesh`) and the six YouTube channel feeds answer **HTTP 404** even after the one retry added in Step D (`yt-karpathy`, `yt-yannic`, `yt-aiexplained`, `yt-gpumode`, `yt-stanford`, `yt-3b1b`). These look like IP-range blocking of Actions runners by Substack and YouTube. The pipeline handled them as designed (recorded in `meta.sources[*].error`, run exit 0, brief still built with 534 items, health button will read `12 sources failed`). Out of scope for deploy-verify; a follow-up could add a browser-like `User-Agent`/`Accept` header for those hosts or proxy YouTube via Invidious/Piped RSS.
