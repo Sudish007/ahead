@@ -1,0 +1,933 @@
+{
+ "generatedAt": "2026-10-20T02:42:51.706Z",
+ "durationMs": 11346,
+ "itemCount": 517,
+ "newItemCount": 0,
+ "trimmedForSize": 0,
+ "sources": {
+  "arxiv-cs.LG": {
+   "name": "arXiv cs.LG",
+   "category": "research",
+   "status": "ok",
+   "fetched": 391,
+   "kept": 60,
+   "skipped": 331,
+   "ms": 476,
+   "httpStatus": 200
+  },
+  "arxiv-cs.CL": {
+   "name": "arXiv cs.CL",
+   "category": "research",
+   "status": "ok",
+   "fetched": 226,
+   "kept": 60,
+   "skipped": 166,
+   "ms": 1253,
+   "httpStatus": 200
+  },
+  "arxiv-cs.AI": {
+   "name": "arXiv cs.AI",
+   "category": "research",
+   "status": "ok",
+   "fetched": 100,
+   "kept": 60,
+   "skipped": 40,
+   "ms": 2283,
+   "httpStatus": 200,
+   "note": "api fallback"
+  },
+  "arxiv-cs.CV": {
+   "name": "arXiv cs.CV",
+   "category": "research",
+   "status": "ok",
+   "fetched": 201,
+   "kept": 60,
+   "skipped": 141,
+   "ms": 3382,
+   "httpStatus": 200
+  },
+  "hf-papers": {
+   "name": "HF Daily Papers",
+   "category": "research",
+   "status": "ok",
+   "fetched": 100,
+   "kept": 60,
+   "skipped": 40,
+   "ms": 628,
+   "httpStatus": 200,
+   "homepage": "https://huggingface.co/papers"
+  },
+  "hn-top": {
+   "name": "Hacker News",
+   "category": "news",
+   "status": "ok",
+   "fetched": 54,
+   "kept": 14,
+   "skipped": 40,
+   "ms": 943,
+   "httpStatus": 200
+  },
+  "hn-front": {
+   "name": "HN front page",
+   "category": "news",
+   "status": "ok",
+   "fetched": 30,
+   "kept": 4,
+   "skipped": 26,
+   "ms": 1294,
+   "httpStatus": 200
+  },
+  "reddit": {
+   "name": "Reddit r/LocalLLaMA + r/MachineLearning",
+   "category": "news",
+   "status": "ok",
+   "fetched": 50,
+   "kept": 50,
+   "skipped": 0,
+   "ms": 1463,
+   "httpStatus": 200
+  },
+  "openai": {
+   "name": "OpenAI",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 1300,
+   "kept": 13,
+   "skipped": 1287,
+   "ms": 389,
+   "httpStatus": 200
+  },
+  "anthropic": {
+   "name": "Anthropic",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 566,
+   "kept": 9,
+   "skipped": 557,
+   "ms": 694,
+   "httpStatus": 200,
+   "homepage": "https://www.anthropic.com/news"
+  },
+  "deepmind": {
+   "name": "Google DeepMind",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 100,
+   "kept": 5,
+   "skipped": 95,
+   "ms": 337,
+   "httpStatus": 200
+  },
+  "google-research": {
+   "name": "Google Research",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 100,
+   "kept": 4,
+   "skipped": 96,
+   "ms": 872,
+   "httpStatus": 200
+  },
+  "meta-newsroom-ai": {
+   "name": "Meta Newsroom (AI)",
+   "category": "labs",
+   "status": "empty",
+   "fetched": 10,
+   "kept": 0,
+   "skipped": 10,
+   "ms": 188,
+   "httpStatus": 200
+  },
+  "meta-engineering-ai": {
+   "name": "Engineering at Meta (AI)",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 9,
+   "kept": 1,
+   "skipped": 8,
+   "ms": 256,
+   "httpStatus": 200
+  },
+  "microsoft-research": {
+   "name": "Microsoft Research",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 10,
+   "kept": 1,
+   "skipped": 9,
+   "ms": 1580,
+   "httpStatus": 200
+  },
+  "nvidia-dev": {
+   "name": "NVIDIA Technical Blog",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 100,
+   "kept": 7,
+   "skipped": 93,
+   "ms": 1407,
+   "httpStatus": 200
+  },
+  "hf-blog": {
+   "name": "Hugging Face Blog",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 882,
+   "kept": 9,
+   "skipped": 873,
+   "ms": 370,
+   "httpStatus": 200
+  },
+  "allenai": {
+   "name": "Ai2",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 25,
+   "kept": 2,
+   "skipped": 23,
+   "ms": 1285,
+   "httpStatus": 200
+  },
+  "mistral": {
+   "name": "Mistral AI",
+   "category": "labs",
+   "status": "ok",
+   "fetched": 90,
+   "kept": 1,
+   "skipped": 89,
+   "ms": 415,
+   "httpStatus": 200
+  },
+  "transformer-circuits": {
+   "name": "Transformer Circuits",
+   "category": "labs",
+   "status": "empty",
+   "fetched": 56,
+   "kept": 0,
+   "skipped": 56,
+   "ms": 872,
+   "httpStatus": 200
+  },
+  "lilog": {
+   "name": "Lil'Log",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 53,
+   "kept": 0,
+   "skipped": 53,
+   "ms": 416,
+   "httpStatus": 200
+  },
+  "interconnects": {
+   "name": "Interconnects",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 20,
+   "kept": 1,
+   "skipped": 19,
+   "ms": 771,
+   "httpStatus": 200
+  },
+  "raschka": {
+   "name": "Ahead of AI (Raschka)",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 20,
+   "kept": 0,
+   "skipped": 20,
+   "ms": 919,
+   "httpStatus": 200
+  },
+  "simonw": {
+   "name": "Simon Willison",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 30,
+   "kept": 10,
+   "skipped": 20,
+   "ms": 394,
+   "httpStatus": 200
+  },
+  "chiphuyen": {
+   "name": "Chip Huyen",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 10,
+   "kept": 0,
+   "skipped": 10,
+   "ms": 1851,
+   "httpStatus": 200
+  },
+  "eugeneyan": {
+   "name": "Eugene Yan",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 212,
+   "kept": 0,
+   "skipped": 212,
+   "ms": 343,
+   "httpStatus": 200
+  },
+  "hamel": {
+   "name": "Hamel Husain",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 20,
+   "kept": 0,
+   "skipped": 20,
+   "ms": 697,
+   "httpStatus": 200
+  },
+  "semianalysis": {
+   "name": "SemiAnalysis",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 20,
+   "kept": 2,
+   "skipped": 18,
+   "ms": 989,
+   "httpStatus": 200
+  },
+  "importai": {
+   "name": "Import AI",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 20,
+   "kept": 1,
+   "skipped": 19,
+   "ms": 541,
+   "httpStatus": 200
+  },
+  "latentspace": {
+   "name": "Latent Space",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 20,
+   "kept": 8,
+   "skipped": 12,
+   "ms": 485,
+   "httpStatus": 200
+  },
+  "zvi": {
+   "name": "Don't Worry About the Vase",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 20,
+   "kept": 6,
+   "skipped": 14,
+   "ms": 682,
+   "httpStatus": 200
+  },
+  "thebatch": {
+   "name": "The Batch",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 3406,
+   "kept": 6,
+   "skipped": 3400,
+   "ms": 433,
+   "httpStatus": 200,
+   "homepage": "https://www.deeplearning.ai/the-batch/"
+  },
+  "oneusefulthing": {
+   "name": "One Useful Thing",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 20,
+   "kept": 0,
+   "skipped": 20,
+   "ms": 455,
+   "httpStatus": 200
+  },
+  "gradient": {
+   "name": "The Gradient",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 15,
+   "kept": 0,
+   "skipped": 15,
+   "ms": 1445,
+   "httpStatus": 200
+  },
+  "epoch": {
+   "name": "Epoch AI",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 50,
+   "kept": 2,
+   "skipped": 48,
+   "ms": 239,
+   "httpStatus": 200
+  },
+  "epoch-gradient-updates": {
+   "name": "Epoch AI Gradient Updates",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 20,
+   "kept": 0,
+   "skipped": 20,
+   "ms": 433,
+   "httpStatus": 200
+  },
+  "alignmentforum": {
+   "name": "Alignment Forum",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 10,
+   "kept": 5,
+   "skipped": 5,
+   "ms": 190,
+   "httpStatus": 200
+  },
+  "chinai": {
+   "name": "ChinAI",
+   "category": "blogs",
+   "status": "ok",
+   "fetched": 20,
+   "kept": 1,
+   "skipped": 19,
+   "ms": 541,
+   "httpStatus": 200
+  },
+  "jalammar": {
+   "name": "Jay Alammar (Language Models newsletter)",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 11,
+   "kept": 0,
+   "skipped": 11,
+   "ms": 509,
+   "httpStatus": 200
+  },
+  "karpathy-blog": {
+   "name": "Andrej Karpathy (blog)",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 10,
+   "kept": 0,
+   "skipped": 10,
+   "ms": 395,
+   "httpStatus": 200
+  },
+  "karpathy-bearblog": {
+   "name": "Andrej Karpathy (bearblog)",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 10,
+   "kept": 0,
+   "skipped": 10,
+   "ms": 319,
+   "httpStatus": 200
+  },
+  "horace": {
+   "name": "Horace He (Thonking AI)",
+   "category": "blogs",
+   "status": "empty",
+   "fetched": 6,
+   "kept": 0,
+   "skipped": 6,
+   "ms": 237,
+   "httpStatus": 200,
+   "homepage": "https://horace.io"
+  },
+  "gh-rel-pytorch": {
+   "name": "PyTorch releases",
+   "category": "releases",
+   "status": "empty",
+   "fetched": 10,
+   "kept": 0,
+   "skipped": 10,
+   "ms": 1584,
+   "httpStatus": 200
+  },
+  "gh-rel-vllm": {
+   "name": "vLLM releases",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 10,
+   "kept": 6,
+   "skipped": 4,
+   "ms": 1902,
+   "httpStatus": 200
+  },
+  "gh-rel-transformers": {
+   "name": "Transformers releases",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 10,
+   "kept": 3,
+   "skipped": 7,
+   "ms": 2944,
+   "httpStatus": 200
+  },
+  "gh-rel-llamacpp": {
+   "name": "llama.cpp releases",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 10,
+   "kept": 3,
+   "skipped": 7,
+   "ms": 999,
+   "httpStatus": 200
+  },
+  "gh-rel-sglang": {
+   "name": "SGLang releases",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 10,
+   "kept": 1,
+   "skipped": 9,
+   "ms": 5630,
+   "httpStatus": 200
+  },
+  "gh-rel-unsloth": {
+   "name": "Unsloth releases",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 10,
+   "kept": 3,
+   "skipped": 7,
+   "ms": 5022,
+   "httpStatus": 200
+  },
+  "gh-rel-trl": {
+   "name": "TRL releases",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 10,
+   "kept": 1,
+   "skipped": 9,
+   "ms": 2089,
+   "httpStatus": 200
+  },
+  "gh-rel-torchtitan": {
+   "name": "torchtitan releases",
+   "category": "releases",
+   "status": "empty",
+   "fetched": 10,
+   "kept": 0,
+   "skipped": 10,
+   "ms": 563,
+   "httpStatus": 200
+  },
+  "gh-trending-llm": {
+   "name": "GitHub new repos: llm",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 30,
+   "kept": 10,
+   "skipped": 20,
+   "ms": 1068,
+   "httpStatus": 200
+  },
+  "gh-trending-ml": {
+   "name": "GitHub new repos: machine-learning",
+   "category": "releases",
+   "status": "empty",
+   "fetched": 30,
+   "kept": 0,
+   "skipped": 30,
+   "ms": 1943,
+   "httpStatus": 200
+  },
+  "gh-trending-agents": {
+   "name": "GitHub new repos: ai-agents",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 30,
+   "kept": 15,
+   "skipped": 15,
+   "ms": 1995,
+   "httpStatus": 200
+  },
+  "hf-trending": {
+   "name": "HF trending models",
+   "category": "releases",
+   "status": "ok",
+   "fetched": 20,
+   "kept": 20,
+   "skipped": 0,
+   "ms": 287,
+   "httpStatus": 200
+  },
+  "pod-dwarkesh": {
+   "name": "Dwarkesh Podcast",
+   "category": "media",
+   "status": "empty",
+   "fetched": 142,
+   "kept": 0,
+   "skipped": 142,
+   "ms": 309,
+   "httpStatus": 200,
+   "homepage": "https://www.dwarkesh.com"
+  },
+  "pod-mlst": {
+   "name": "Machine Learning Street Talk",
+   "category": "media",
+   "status": "empty",
+   "fetched": 271,
+   "kept": 0,
+   "skipped": 271,
+   "ms": 547,
+   "httpStatus": 200
+  },
+  "pod-cogrev": {
+   "name": "The Cognitive Revolution",
+   "category": "media",
+   "status": "ok",
+   "fetched": 387,
+   "kept": 2,
+   "skipped": 385,
+   "ms": 1245,
+   "httpStatus": 200
+  },
+  "pod-nopriors": {
+   "name": "No Priors",
+   "category": "media",
+   "status": "empty",
+   "fetched": 183,
+   "kept": 0,
+   "skipped": 183,
+   "ms": 702,
+   "httpStatus": 200
+  },
+  "yt-karpathy": {
+   "name": "Andrej Karpathy (YouTube)",
+   "category": "media",
+   "status": "empty",
+   "fetched": 15,
+   "kept": 0,
+   "skipped": 15,
+   "ms": 296,
+   "httpStatus": 200
+  },
+  "yt-yannic": {
+   "name": "Yannic Kilcher",
+   "category": "media",
+   "status": "empty",
+   "fetched": 15,
+   "kept": 0,
+   "skipped": 15,
+   "ms": 385,
+   "httpStatus": 200
+  },
+  "yt-aiexplained": {
+   "name": "AI Explained",
+   "category": "media",
+   "status": "empty",
+   "fetched": 15,
+   "kept": 0,
+   "skipped": 15,
+   "ms": 523,
+   "httpStatus": 200
+  },
+  "yt-gpumode": {
+   "name": "GPU MODE",
+   "category": "media",
+   "status": "ok",
+   "fetched": 15,
+   "kept": 2,
+   "skipped": 13,
+   "ms": 555,
+   "httpStatus": 200
+  },
+  "yt-stanford": {
+   "name": "Stanford Online",
+   "category": "media",
+   "status": "ok",
+   "fetched": 15,
+   "kept": 5,
+   "skipped": 10,
+   "ms": 290,
+   "httpStatus": 200
+  },
+  "yt-3b1b": {
+   "name": "3Blue1Brown",
+   "category": "media",
+   "status": "ok",
+   "fetched": 15,
+   "kept": 1,
+   "skipped": 14,
+   "ms": 448,
+   "httpStatus": 200
+  }
+ },
+ "okCount": 41,
+ "emptyCount": 23,
+ "failedCount": 0,
+ "sitemapSkipped": {
+  "anthropic": {
+   "https://anthropic.com/news/offering-expanded-claude-access-across-all-three-branches-of-government": "2026-10-15T22:05:58.000Z",
+   "https://anthropic.com/engineering/redesigning-source-control": "2026-10-15T18:21:28.000Z",
+   "https://anthropic.com/research/distillation-defenses": "2026-10-13T14:34:43.000Z"
+  },
+  "thebatch": {}
+ },
+ "sitemapCache": {
+  "anthropic": {
+   "https://anthropic.com/research/ai-expectations-gap": {
+    "lastmod": "2026-10-19T20:17:56.000Z",
+    "title": "The AI expectations gap",
+    "summary": "How will AI reshape the economy in the years ahead? What is the core source of disagreement about AI's future impact on the economy? This note presents new survey evidence on these questions.",
+    "publishedAt": "2026-10-16T16:45:00.000Z"
+   },
+   "https://anthropic.com/news/an-update-on-independent-evaluators": {
+    "lastmod": "2026-10-19T13:19:29.000Z",
+    "title": "Anthropic update on independent evaluators",
+    "summary": "Anthropic announces updates to embedding independent evaluators",
+    "publishedAt": "2026-10-15T17:20:00.000Z"
+   },
+   "https://anthropic.com/news/public-benefit-fund": {
+    "lastmod": "2026-10-18T18:05:05.000Z",
+    "title": "Investing in the public benefit",
+    "summary": "We’re committing a portion of Anthropic’s shares to the Anthropic Public Benefit Fund, a new entity with a structure that increases the stake as the company grows.",
+    "publishedAt": "2026-10-18T16:49:35.513Z"
+   },
+   "https://anthropic.com/research/expectations-for-the-future": {
+    "lastmod": "2026-10-17T14:25:22.000Z",
+    "title": "Working at the frontier shapes expectations for the future",
+    "summary": "We’re sharing two reports: the first covers how AI is changing employment inside Anthropic, and the second looks at the gap between how the public and Anthropic employees expect AI to affect work and the economy.",
+    "publishedAt": "2026-10-16T16:21:00.000Z"
+   },
+   "https://anthropic.com/research/employment-at-anthropic": {
+    "lastmod": "2026-10-17T14:24:53.000Z",
+    "title": "How employment is changing at Anthropic",
+    "summary": "How has AI restructured work and employment at Anthropic? As a company at the frontier of AI adoption, Anthropic could be a leading indicator of how AI will shift work organization, hiring, and labor demand across the economy.",
+    "publishedAt": "2026-10-16T16:26:00.000Z"
+   },
+   "https://anthropic.com/research/ecdsa-curve-origins": {
+    "lastmod": "2026-10-17T14:19:47.000Z",
+    "title": "Claude reveals ECDSA curve origins",
+    "summary": "The decades-old mystery of the origins of one of the most popular cryptographic standards has been explained.",
+    "publishedAt": "2026-10-16T17:02:00.000Z"
+   },
+   "https://anthropic.com/research/designing-efficient-quantum-circuits": {
+    "lastmod": "2026-10-17T14:17:25.000Z",
+    "title": "Designing more efficient quantum circuits with Claude",
+    "summary": "Working largely on its own, Claude designed quantum circuits that improve on the best published versions, in some cases by an order of magnitude or more.",
+    "publishedAt": "2026-10-16T17:29:00.000Z"
+   },
+   "https://anthropic.com/news/2026-us-midterms": {
+    "lastmod": "2026-10-14T21:01:13.000Z",
+    "title": "Preparing for the 2026 US midterms",
+    "summary": "Earlier this year, we shared an update on our election safeguards. Here, we outline how we’ve continued to strengthen these safeguards ahead of this year’s US midterms.",
+    "publishedAt": "2026-10-14T18:33:00.000Z"
+   },
+   "https://anthropic.com/news/singapore-office-opening": {
+    "lastmod": "2026-10-14T08:31:43.000Z",
+    "title": "Singapore office and government MOU | Anthropic",
+    "summary": "Anthropic opens its fifth Asia-Pacific office in Singapore and signs an MOU with the government on AI safety, evaluation, and responsible adoption.",
+    "publishedAt": "2026-10-14T08:30:00.000Z"
+   }
+  },
+  "thebatch": {
+   "https://deeplearning.ai/the-batch/data-mixing-minus-the-guesswork": {
+    "lastmod": "2026-10-16T15:15:44.000Z",
+    "title": "Research from the Team Behind CausalMix Offers A Technique to Select Fine-Tuning Examples",
+    "summary": "When you’re building a fine-tuning dataset, finding a mix of subject domains that yields a high-performing model can require expensive trial...",
+    "publishedAt": "2026-10-16T15:15:44.000Z"
+   },
+   "https://deeplearning.ai/the-batch/computers-built-for-local-ai": {
+    "lastmod": "2026-10-16T15:10:27.000Z",
+    "title": "Apple’s Mac mini and Mac Studio Have Competition From Microsoft and Nvidia",
+    "summary": "Developers have warmed to the economics and security of local models, either as an alternative or a complement to the cloud.",
+    "publishedAt": "2026-10-16T15:10:27.000Z"
+   },
+   "https://deeplearning.ai/the-batch/mistrals-skills-match-its-global-appeal": {
+    "lastmod": "2026-10-16T15:05:12.000Z",
+    "title": "Mistral Large 4, the Leading European AI Model, Outperforms All Open Models Outside of China",
+    "summary": "Mistral’s latest model is its largest and most capable, and the most powerful yet released by a European company.",
+    "publishedAt": "2026-10-16T15:05:12.000Z"
+   },
+   "https://deeplearning.ai/the-batch/claude-fills-out-its-model-family": {
+    "lastmod": "2026-10-16T15:00:58.000Z",
+    "title": "Claude Sonnet 5.5 and Haiku 5.5 Give Developers Fast, Highly Capable Alternatives to Opus 5.5",
+    "summary": "Claude Haiku, Anthropic’s fastest and least expensive model gets a long-awaited update.",
+    "publishedAt": "2026-10-16T15:00:58.000Z"
+   },
+   "https://deeplearning.ai/the-batch/formal-verification-meets-unverifiable-judgement": {
+    "lastmod": "2026-10-16T14:30:41.000Z",
+    "title": "Formal Verification Meets Unverifiable Judgement: Don’t Overgeneralize from Progress in Math and Code — The Hardest AI Problems Still Require More Work",
+    "summary": "The gulf between LLM performance on verifiable tasks vs. unverifiable tasks that require judgement is larger than most people realize.",
+    "publishedAt": "2026-10-16T14:30:41.000Z"
+   },
+   "https://deeplearning.ai/the-batch/metas-muse-wonder-rivals-top-models": {
+    "lastmod": "2026-10-14T19:17:00.000Z",
+    "title": "Data Points: Meta’s Muse Wonder rivals top models",
+    "summary": "Microsoft says it will use own chips for Copilot, MAI. Gemini 4 Argon generally available. Python 3.15 is official, Python 3.10 no longer supported.…",
+    "publishedAt": "2026-10-14T19:17:00.000Z"
+   }
+  }
+ },
+ "llm": {
+  "enabled": false,
+  "ok": false
+ },
+ "brief": {
+  "date": "2026-10-20",
+  "wordCount": 560,
+  "readingMinutes": 3
+ },
+ "static": {
+  "leaderboards": [
+   {
+    "name": "LMArena",
+    "url": "https://arena.ai/leaderboard",
+    "blurb": "Crowd-voted pairwise model rankings (text, vision, coding)."
+   },
+   {
+    "name": "Artificial Analysis",
+    "url": "https://artificialanalysis.ai/",
+    "blurb": "Independent quality, speed and price benchmarks across providers."
+   },
+   {
+    "name": "Scale SEAL",
+    "url": "https://labs.scale.com/leaderboard",
+    "blurb": "Private expert-graded evaluations, hard to contaminate."
+   },
+   {
+    "name": "LiveBench",
+    "url": "https://livebench.ai/",
+    "blurb": "Monthly-refreshed, contamination-free benchmark."
+   },
+   {
+    "name": "SWE-bench",
+    "url": "https://www.swebench.com/",
+    "blurb": "Real GitHub issues resolved end to end; the coding-agent yardstick."
+   },
+   {
+    "name": "Epoch AI Benchmarks",
+    "url": "https://epoch.ai/benchmarks",
+    "blurb": "Epoch's independent runs of frontier models on major benchmarks."
+   },
+   {
+    "name": "Open LLM Leaderboard",
+    "url": "https://huggingface.co/spaces/open-llm-leaderboard/open_llm_leaderboard",
+    "blurb": "Hugging Face's open-weights leaderboard (archived, still useful history)."
+   },
+   {
+    "name": "Papers with Code",
+    "url": "https://paperswithcode.co/",
+    "blurb": "Trending papers with code, revived by Hugging Face."
+   }
+  ],
+  "more": [
+   {
+    "name": "alphaXiv",
+    "url": "https://www.alphaxiv.org/explore",
+    "blurb": "Trending arXiv papers with discussion; no public API.",
+    "tab": "research"
+   },
+   {
+    "name": "Meta AI blog",
+    "url": "https://ai.meta.com/blog/",
+    "blurb": "No feed; announcements also reach the Meta Newsroom AI feed.",
+    "tab": "labs"
+   },
+   {
+    "name": "AI News (smol.ai)",
+    "url": "https://news.smol.ai/",
+    "blurb": "Daily issues now arrive as [AINews] posts in the Latent Space feed; the smol.ai RSS stopped on 2026-09-09.",
+    "tab": "blogs"
+   }
+  ],
+  "learn": [
+   {
+    "id": "cs336",
+    "kind": "course",
+    "title": "Stanford CS336: Language Modeling from Scratch",
+    "url": "https://stanford-cs336.github.io/spring2025/"
+   },
+   {
+    "id": "cs224n",
+    "kind": "course",
+    "title": "Stanford CS224N: NLP with Deep Learning",
+    "url": "https://web.stanford.edu/class/cs224n/"
+   },
+   {
+    "id": "cs231n",
+    "kind": "course",
+    "title": "Stanford CS231N: Deep Learning for Computer Vision",
+    "url": "https://cs231n.stanford.edu/"
+   },
+   {
+    "id": "cs285",
+    "kind": "course",
+    "title": "Berkeley CS285: Deep Reinforcement Learning",
+    "url": "https://rail.eecs.berkeley.edu/deeprlcourse/"
+   },
+   {
+    "id": "raschka-llm",
+    "kind": "book",
+    "title": "Build a Large Language Model (From Scratch), Raschka",
+    "url": "https://github.com/rasbt/LLMs-from-scratch"
+   },
+   {
+    "id": "udl",
+    "kind": "book",
+    "title": "Understanding Deep Learning, Prince (free PDF)",
+    "url": "https://udlbook.github.io/udlbook/"
+   },
+   {
+    "id": "hf-courses",
+    "kind": "course",
+    "title": "Hugging Face courses (LLM, Agents, Deep RL, Diffusion)",
+    "url": "https://huggingface.co/learn"
+   },
+   {
+    "id": "zero-to-hero",
+    "kind": "course",
+    "title": "Karpathy: Neural Networks: Zero to Hero",
+    "url": "https://karpathy.ai/zero-to-hero.html"
+   },
+   {
+    "id": "p-attention",
+    "kind": "paper",
+    "title": "Attention Is All You Need (2017)",
+    "url": "https://arxiv.org/abs/1706.03762"
+   },
+   {
+    "id": "p-gpt3",
+    "kind": "paper",
+    "title": "Language Models are Few-Shot Learners, GPT-3 (2020)",
+    "url": "https://arxiv.org/abs/2005.14165"
+   },
+   {
+    "id": "p-instructgpt",
+    "kind": "paper",
+    "title": "Training language models to follow instructions, InstructGPT (2022)",
+    "url": "https://arxiv.org/abs/2203.02155"
+   },
+   {
+    "id": "p-chinchilla",
+    "kind": "paper",
+    "title": "Training Compute-Optimal LLMs, Chinchilla (2022)",
+    "url": "https://arxiv.org/abs/2203.15556"
+   },
+   {
+    "id": "p-llama",
+    "kind": "paper",
+    "title": "LLaMA: Open and Efficient Foundation Language Models (2023)",
+    "url": "https://arxiv.org/abs/2302.13971"
+   },
+   {
+    "id": "p-deepseek-v3",
+    "kind": "paper",
+    "title": "DeepSeek-V3 Technical Report (2024)",
+    "url": "https://arxiv.org/abs/2412.19437"
+   },
+   {
+    "id": "p-deepseek-r1",
+    "kind": "paper",
+    "title": "DeepSeek-R1: Incentivizing Reasoning via RL (2025)",
+    "url": "https://arxiv.org/abs/2501.12948"
+   },
+   {
+    "id": "p-cai",
+    "kind": "paper",
+    "title": "Constitutional AI: Harmlessness from AI Feedback (2022)",
+    "url": "https://arxiv.org/abs/2212.08073"
+   }
+  ]
+ }
+}
