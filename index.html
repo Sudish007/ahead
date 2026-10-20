@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data:; style-src 'self'; script-src 'self'; connect-src 'self'; base-uri 'none'; form-action 'none'">
+<meta name="color-scheme" content="dark light">
+<title>Ahead — AI brief</title>
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="wordmark"><span class="mark">A</span>Ahead</div>
+  <div class="status">
+    <span id="digest-date" class="muted"></span>
+    <span id="refreshed" class="muted"></span>
+    <span id="read-time" class="muted"></span>
+    <button id="health" class="health" type="button" aria-expanded="false" aria-controls="health-details" aria-label="Loading" title="Loading"><span class="dot" aria-hidden="true"></span></button>
+  </div>
+</header>
+<details id="health-details" class="health-details">
+  <summary id="health-summary">Loading</summary>
+  <ul id="health-list" class="health-list"></ul>
+</details>
+<nav aria-label="Sections">
+  <div class="tablist" role="tablist" id="tablist">
+    <button role="tab" id="tab-brief" aria-controls="panel" data-tab="brief" aria-selected="true" type="button"><kbd>1</kbd>Brief</button>
+    <button role="tab" id="tab-research" aria-controls="panel" data-tab="research" aria-selected="false" type="button"><kbd>2</kbd>Research</button>
+    <button role="tab" id="tab-news" aria-controls="panel" data-tab="news" aria-selected="false" type="button"><kbd>3</kbd>News</button>
+    <button role="tab" id="tab-labs" aria-controls="panel" data-tab="labs" aria-selected="false" type="button"><kbd>4</kbd>Labs</button>
+    <button role="tab" id="tab-blogs" aria-controls="panel" data-tab="blogs" aria-selected="false" type="button"><kbd>5</kbd>Blogs</button>
+    <button role="tab" id="tab-releases" aria-controls="panel" data-tab="releases" aria-selected="false" type="button"><kbd>6</kbd>Releases</button>
+    <button role="tab" id="tab-media" aria-controls="panel" data-tab="media" aria-selected="false" type="button"><kbd>7</kbd>Podcasts &amp; Video</button>
+    <button role="tab" id="tab-leaderboards" aria-controls="panel" data-tab="leaderboards" aria-selected="false" type="button"><kbd>8</kbd>Leaderboards</button>
+    <button role="tab" id="tab-learn" aria-controls="panel" data-tab="learn" aria-selected="false" type="button"><kbd>9</kbd>Learn</button>
+    <button role="tab" id="tab-archive" aria-controls="panel" data-tab="archive" aria-selected="false" type="button"><kbd>0</kbd>Archive</button>
+  </div>
+</nav>
+<div id="filters" class="filters" hidden>
+  <div id="chips" class="chips" aria-label="Sources"></div>
+  <div class="filters-right">
+    <button id="saved-chip" class="chip" type="button" aria-pressed="false">Saved</button>
+    <div class="range" role="group" aria-label="Range">
+      <button class="chip" type="button" data-range="24h" aria-pressed="false">24h</button>
+      <button class="chip" type="button" data-range="3d" aria-pressed="false">3d</button>
+      <button class="chip" type="button" data-range="7d" aria-pressed="true">7d</button>
+    </div>
+    <input id="search" type="search" placeholder="Search (/)" aria-label="Search titles and summaries" autocomplete="off">
+  </div>
+</div>
+<main>
+  <div id="alert" class="alert" role="alert" hidden><span id="alert-text"></span><button id="retry" type="button">Retry</button></div>
+  <section id="panel" role="tabpanel" aria-labelledby="tab-brief" tabindex="0"></section>
+</main>
+<footer><span id="source-count"></span> · <a href="https://github.com/Sudish007/ahead" target="_blank" rel="noopener noreferrer">GitHub</a> · keys: <kbd>j</kbd>/<kbd>k</kbd> move, <kbd>o</kbd> open, <kbd>s</kbd> save, <kbd>r</kbd> read, <kbd>/</kbd> search, <kbd>1</kbd>–<kbd>0</kbd> tabs</footer>
+<template id="row-template">
+  <article class="row" tabindex="-1">
+    <span class="score"></span>
+    <div class="body">
+      <div class="headline"><a class="title" target="_blank" rel="noopener noreferrer"></a><span class="title-text" hidden></span></div>
+      <div class="meta"><span class="chips-inline"></span><span class="age"></span><span class="signals"></span><a class="discussion" target="_blank" rel="noopener noreferrer" hidden>discussion</a></div>
+      <p class="summary"></p>
+    </div>
+    <div class="actions">
+      <button class="icon read" type="button" aria-label="Mark read" title="Mark read (r)">✓</button>
+      <button class="icon save" type="button" aria-label="Save" title="Save (s)">☆</button>
+    </div>
+  </article>
+</template>
+<template id="entry-template">
+  <li class="entry" tabindex="-1">
+    <div class="headline"><a class="title" target="_blank" rel="noopener noreferrer"></a><span class="title-text" hidden></span></div>
+    <div class="meta"><span class="sources"></span><span class="age"></span><a class="discussion" target="_blank" rel="noopener noreferrer" hidden>discussion</a></div>
+    <p class="summary"></p>
+    <p class="why"></p>
+  </li>
+</template>
+<script type="module" src="app.js"></script>
+</body>
+</html>
