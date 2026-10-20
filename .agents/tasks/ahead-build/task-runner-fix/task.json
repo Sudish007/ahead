@@ -1,0 +1,7 @@
+{
+  "task_id": "task-runner-fix",
+  "task_description": "Fix the Ahead dashboard sources that fail only when fetched from GitHub Actions runners (6 Cloudflare 403s on Substack/deeplearning.ai, 6 YouTube feed 404/500s) and the arxiv-cs.AI empty result, without API keys, proxies, mirrors or scraping services. Three sequential features: FEAT-001 diagnostics (response evidence in meta.json, runner probe script, workflow probe input), FEAT-002 fixes (browser-like headers, 3-attempt YouTube policy, 15 s arXiv fallback timeout), FEAT-003 short specific error strings for sources still blocked plus README/results. Each feature ends with a real Actions run because local runs do not reproduce the problem. Plan: .agents/tasks/ahead-build/runner-fix-plan.md.",
+  "status": "completed",
+  "feature_order": ["FEAT-001", "FEAT-002", "FEAT-003"],
+  "blocked_reason": null
+}

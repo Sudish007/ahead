@@ -1,0 +1,55 @@
+{
+  "verdict": "APPROVED",
+  "findings": [
+    {
+      "id": 1,
+      "label": "Results file one run stale",
+      "blocking": false,
+      "confidence": "confirmed",
+      "detail": ".agents/tasks/ahead-build/runner-fix-results.md (Counts table, 'Final still-blocked list') and README.md Known limits ('typically 1 of 6'): both describe run 39372229633 (04:57Z, 36/17/11, yt-3b1b through) but the committed data/meta.json is from run 39373776054 (data commit 4a44ef4, 05:14:50Z): 35/17/12, all six yt-* failed, yt-3b1b = 'HTTP 500 (3 attempts)'. Add that run as a row and to the still-blocked list; change the README phrase to '0-1 of 6 in the measured runs'. Every named source and error string otherwise matches meta.json."
+    },
+    {
+      "id": 2,
+      "label": "Error-body read bounded only by the request timeout",
+      "blocking": false,
+      "confidence": "confirmed",
+      "detail": "src/http.js:232 awaits readSnippet(res) on every status >= 400 with no cap of its own; a server that stalls the error body holds the attempt until the AbortController fires at timeoutMs (20 s default), where previously the body was cancelled immediately. Bounded by the existing timeout/backstop and real block pages arrive in 20-69 ms, so low likelihood. Optional: give the snippet read its own 1-2 s budget."
+    },
+    {
+      "id": 3,
+      "label": "Backoff sleep before the deadline check",
+      "blocking": false,
+      "confidence": "confirmed",
+      "detail": "src/http.js:280-281: fetchText sleeps the backoff (2 s / 8 s for YouTube, up to 30 s on a 429 with retry-after) and only then checks that >= 25 s remain; when the check fails the sleep was wasted (e.g. attempt 2 ends at 13 s -> sleep 8 s -> 24 s remain -> give up at 21 s). Pre-existing order preserved in the rewritten loop. Check deadlineAt - nowMs() - wait < RETRY_MIN_REMAINING_MS before sleeping."
+    },
+    {
+      "id": 4,
+      "label": "Cloudflare detail body is mostly CSS",
+      "blocking": false,
+      "confidence": "confirmed",
+      "detail": "src/http.js:232 strips tags with /<[^>]*>/g but keeps <style>/<script> contents, so every Cloudflare detail in data/meta.json reads 'Just a moment... *{box-sizing:border-box;...' and hits the 400-char cap mid-body (closing quote lost). Strip <style>...</style> and <script>...</script> blocks before the tag strip so the 300 body chars carry visible text."
+    },
+    {
+      "id": 5,
+      "label": "Third-party error text is published",
+      "blocking": false,
+      "confidence": "possible",
+      "detail": "detail is written to data/meta.json, which GitHub Pages serves publicly. Cloudflare's 1006/1020 'Access denied' pages print 'Your IP: ...', so a local npm run fetch that gets blocked and whose data/ is committed could publish the operator's home IP (runner IPs are public ranges and harmless; no host currently blocks the home connection). Filter 'Your IP' patterns in once() or mention it in the README detail bullet."
+    },
+    {
+      "id": 6,
+      "label": "arXiv failed path bypasses errorSummary",
+      "blocking": false,
+      "confidence": "confirmed",
+      "detail": "src/parsers/arxiv.js:98 sets error: errorClass(fallbackError), so an arXiv double failure never shows '(n attempts)' or the Cloudflare string every other source would. Plan-sanctioned (errorClass kept for the note); switch to errorSummary(fallbackError, { onRunner }) if consistency matters (ctx would need onRunner)."
+    },
+    {
+      "id": 7,
+      "label": "Untested paths",
+      "blocking": false,
+      "confidence": "confirmed",
+      "detail": "No unit test for: the redirect-exhausted detail ({ location, server }) in src/http.js once(); detail propagation on the arXiv double-failure path (tests/arxiv.test.js asserts status and note only); readSnippet returning '' when the stream errors or the abort fires mid-read; a YouTube third attempt skipped by the deadline guard after the 8 s backoff. Add cases to tests/http.test.js and tests/arxiv.test.js."
+    }
+  ],
+  "reviewDoc": "c:\\Users\\sudiskmr\\Downloads\\DomainClassification\\ahead\\.agents\\tasks\\ahead-build/runner-fix-review.md"
+}
