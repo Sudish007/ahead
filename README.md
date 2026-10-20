@@ -2,7 +2,7 @@
 
 Ahead is a personal AI intelligence dashboard: one static page that pulls 64 sources (arXiv, HF Daily Papers, Hacker News, Reddit, the frontier labs, the deep technical blogs, release feeds, podcasts and YouTube channels), ranks everything, and writes a **5-minute daily brief** you can read in one scroll. It runs on GitHub Actions every six hours and deploys to GitHub Pages. No framework, no server, no database, no API keys required.
 
-Live site: `https://sudish007.github.io/ahead/`
+Live site: https://sudish007.github.io/ahead/ (repo: https://github.com/Sudish007/ahead)
 
 ## How it works
 
@@ -72,25 +72,36 @@ Required: `id name category type url weight`. Optional: `homepage family maxItem
 
 Without a key the brief is fully heuristic. With a key, one request per run rewrites the why-lines and adds a 150-200 word overview (shown with an "AI-written" tag). Every number in the model's output must appear in the facts sent for that entry, or the text is rejected and the heuristic line stays.
 
-| Provider | `LLM_BASE_URL` |
-|---|---|
-| OpenAI (default) | `https://api.openai.com/v1` |
-| Anthropic | `https://api.anthropic.com/v1` |
-| Groq | `https://api.groq.com/openai/v1` |
-| Gemini | `https://generativelanguage.googleapis.com/v1beta/openai` |
-| OpenRouter | `https://openrouter.ai/api/v1` |
+The pipeline speaks the OpenAI chat-completions protocol only (`POST {LLM_BASE_URL}/chat/completions` with `Authorization: Bearer <key>`), so any provider that exposes an OpenAI-compatible endpoint works. Three repository secrets configure it; the workflow passes them to `scripts/fetch.mjs` as environment variables of the same name.
 
-`LLM_MODEL` is always required with a key (a current model id from the provider; a key without a model records `LLM_MODEL unset` and deploys the heuristic brief). The base URL must be `https:` (or `http:` to `localhost`/`127.0.0.1`) with no credentials, query or fragment. If a provider rejects `max_tokens` with HTTP 400, the request is retried once with `max_completion_tokens`.
+| Secret | Meaning |
+|---|---|
+| `LLM_API_KEY` | the provider's key; absent -> heuristic brief, `meta.llm = { enabled: false, ok: false }` |
+| `LLM_BASE_URL` | provider base URL (defaults to OpenAI's when unset) |
+| `LLM_MODEL` | model id; required whenever a key is set |
+
+| Provider | `LLM_BASE_URL` | Notes |
+|---|---|---|
+| OpenAI (default) | `https://api.openai.com/v1` | key from platform.openai.com; e.g. `LLM_MODEL=gpt-4o-mini` |
+| Anthropic | `https://api.anthropic.com/v1` | Anthropic's OpenAI-compatible endpoint: the same `sk-ant-...` key you use for the native Messages API, sent as a Bearer token; use a current Claude model id (e.g. `claude-sonnet-4-5`). The compatibility layer does not support every native Messages feature, but the pipeline only needs plain chat completions |
+| Groq | `https://api.groq.com/openai/v1` | free tier available at console.groq.com; model ids such as `llama-3.3-70b-versatile` |
+| Gemini | `https://generativelanguage.googleapis.com/v1beta/openai` | key from Google AI Studio (free tier); model ids such as `gemini-2.5-flash` |
+| OpenRouter | `https://openrouter.ai/api/v1` | one key, many models; model ids are `vendor/model` (e.g. `anthropic/claude-sonnet-4.5`), some with a `:free` variant |
+
+`LLM_MODEL` is always required with a key (a current model id from the provider; a key without a model records `LLM_MODEL unset` and deploys the heuristic brief). The base URL must be `https:` (or `http:` to `localhost`/`127.0.0.1`) with no credentials, query or fragment. If a provider rejects `max_tokens` with HTTP 400, the request is retried once with `max_completion_tokens`. The request times out after 60 s and any failure leaves the heuristic brief in place; the key never appears in `data/`, logs or error strings.
 
 ```sh
-gh secret set LLM_API_KEY
-gh secret set LLM_BASE_URL
-gh secret set LLM_MODEL
+gh secret set LLM_API_KEY      # paste the key at the prompt
+gh secret set LLM_BASE_URL --body https://api.groq.com/openai/v1
+gh secret set LLM_MODEL --body llama-3.3-70b-versatile
+gh workflow run refresh.yml    # next run picks the secrets up
 ```
+
+Remove `LLM_API_KEY` (`gh secret delete LLM_API_KEY`) to go back to the heuristic brief; nothing else changes.
 
 ## Deployment
 
-`.github/workflows/refresh.yml` runs on a cron (`0 */6 * * *`), on `workflow_dispatch`, and on pushes to `main` that touch anything except `data/`. It runs the tests, runs the pipeline, commits `data/` back with `[skip ci]`, stages `index.html app.js styles.css favicon.svg data/` into `_site/` and deploys that to GitHub Pages. `actions/configure-pages@v6` with `enablement: true` creates the Pages site on the first run, so no Settings change or API call is needed before pushing. Trigger a refresh by hand with:
+`.github/workflows/refresh.yml` runs every 6 hours on a cron (`0 */6 * * *`, i.e. 00:00, 06:00, 12:00 and 18:00 UTC), on `workflow_dispatch`, and on pushes to `main` that touch anything except `data/`. It runs the tests, runs the pipeline, commits `data/` back with `[skip ci]`, stages `index.html app.js styles.css favicon.svg data/` into `_site/` and deploys that to GitHub Pages. `actions/configure-pages@v6` with `enablement: true` creates the Pages site on the first run, so no Settings change or API call is needed before pushing. Trigger a refresh by hand with:
 
 ```sh
 gh workflow run refresh.yml
@@ -123,6 +134,7 @@ npm run serve                              # http://127.0.0.1:8787/ and http://1
 ## Known limits
 
 - Reddit publishes no scores in its feed and may block Actions IPs; the source then reports `failed` and everything else proceeds.
+- From GitHub-hosted runners, the Substack feeds (Import AI, Don't Worry About the Vase, Gradient Updates, ChinAI, Dwarkesh Podcast) and The Batch sitemap answer HTTP 403, and the six YouTube channel feeds answer HTTP 404, so the live site's health button currently reads `12 sources failed` while a local `npm run fetch` gets all 64 sources. The same sources work from a home connection, which points to IP-range blocking. Possible fixes: a browser-like `User-Agent`/`Accept` for those hosts, or an Invidious/Piped RSS mirror for YouTube.
 - The GitHub search API is limited to 10 requests/min unauthenticated; the workflow's `GITHUB_TOKEN` raises that.
 - HN front-page rank comes from `topstories.json`, so a story outside the top 30 shows "on HN front page" without a number.
 - The `[AINews]` roundups stay in the Blogs tab and may reach Must know, but never Analysis or Deep read.
