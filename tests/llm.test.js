@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { NOW } from './helpers.js';
-import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS, REASONING_EFFORT } from '../src/llm.js';
+import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS, REASONING_EFFORT, LLM_TIMEOUT_MS } from '../src/llm.js';
 import { buildBrief, finalizeDigest, countWords } from '../src/brief.js';
 import { buildRegistry } from '../src/registry.js';
 import { validateDigest, validateDigestIndex, validateMeta } from '../src/schema.js';
@@ -37,6 +37,12 @@ const USAGE = { prompt_tokens: 2500, completion_tokens: 1200, total_tokens: 8192
 function fakeSleep() {
   const waits = [];
   return { waits, opts: { sleep: async (ms) => { waits.push(ms); } } };
+}
+/** Every result carries `ms` (elapsed, non-negative integer); strip it so the rest can be compared exactly. */
+function noMs(result) {
+  const { ms, ...rest } = result;
+  assert.ok(Number.isSafeInteger(ms) && ms >= 0, `ms=${ms}`);
+  return rest;
 }
 function mockFetch(responses) {
   const calls = [];
@@ -80,7 +86,7 @@ test('valid JSON applies overview and why lines within budget; embedded JSON is 
   const overview = words(170);
   const { fetchImpl, calls } = mockFetch([reply(`Here you go:\n${JSON.stringify({ overview, why: { [ids[0]]: 'Matters because 1,200 points shows demand.', [ids[1]]: 'Signals broad interest.' } })}\nthanks`)]);
   const result = await editorialize(b, CONFIG, fetchImpl);
-  assert.deepEqual(result, { enabled: true, ok: true, model: 'test-model' });
+  assert.deepEqual(noMs(result), { enabled: true, ok: true, model: 'test-model' });
   assert.equal(b.digest.overview.text, overview);
   assert.equal(b.digest.overview.source, 'llm');
   const e0 = b.digest.sections.flatMap((s) => s.entries).find((e) => e.id === ids[0]);
@@ -120,7 +126,7 @@ test('overview boundaries: only 150 and 200 words accepted; invented numbers rej
   const b = brief();
   const { fetchImpl } = mockFetch([reply({ overview: `${words(160)} up 90%`, why: { [b.digest.itemIds[0]]: 'Still fine.' } })]);
   const r = await editorialize(b, CONFIG, fetchImpl);
-  assert.deepEqual(r, { enabled: true, ok: true, model: 'test-model' });
+  assert.deepEqual(noMs(r), { enabled: true, ok: true, model: 'test-model' });
   assert.equal(b.digest.overview, null);
   const b2 = brief();
   const { fetchImpl: f2 } = mockFetch([reply({ overview: `${words(160)} we saw 1,200 points and 33 upvotes`, why: {} })]);
@@ -160,7 +166,7 @@ test('failure states: garbage, 500, timeout, nothing accepted -> enabled true ok
     [[() => new Response('err', { status: 500 })], 'HTTP 500 (4 attempts)', 'err', 4],
     [[new Response('nope', { status: 401 })], 'HTTP 401', 'nope', 1],
     [[new Response('gone', { status: 404 })], 'HTTP 404', 'gone', 1],
-    [[Object.assign(new Error('aborted'), { name: 'AbortError' })], 'timeout', undefined, 1],
+    [[Object.assign(new Error('aborted'), { name: 'AbortError' })], 'timeout (2 attempts)', undefined, 2],
     [[new TypeError('fetch failed')], 'network (4 attempts)', undefined, 4],
     [[reply({ overview: 'short', why: { zzz: 'x' } })], 'empty', '{"overview":"short","why":{"zzz":"x"}}', 1],
     [[new Response(JSON.stringify({ choices: [] }), { status: 200 })], 'empty', '{"choices":[]}', 1],
@@ -190,7 +196,7 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   const { fetchImpl, calls } = mockFetch([unavailable(), reply({ why: { [b.digest.itemIds[0]]: 'Fine line.' } })]);
   const { waits, opts } = fakeSleep();
   const r = await editorialize(b, CONFIG, fetchImpl, opts);
-  assert.deepEqual(r, { enabled: true, ok: true, model: 'test-model' });
+  assert.deepEqual(noMs(r), { enabled: true, ok: true, model: 'test-model' });
   assert.equal(calls.length, 2);
   assert.deepEqual(waits, [RETRY_BACKOFF_MS[0]]);
   assert.equal(calls[1].init.body, calls[0].init.body, 'the retried request is identical');
@@ -224,17 +230,30 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   const { fetchImpl: f5, calls: c5 } = mockFetch([new Response('Unsupported parameter: max_tokens', { status: 400 }), unavailable(), reply({ why: { [b5.digest.itemIds[0]]: 'Fine line.' } })]);
   const s5 = fakeSleep();
   const r5 = await editorialize(b5, CONFIG, f5, s5.opts);
-  assert.deepEqual(r5, { enabled: true, ok: true, model: 'test-model' });
+  assert.deepEqual(noMs(r5), { enabled: true, ok: true, model: 'test-model', compat: ['max_tokens'] });
   assert.equal(c5.length, 3);
   assert.deepEqual(s5.waits, [RETRY_BACKOFF_MS[0]]);
   assert.equal(c5[2].body.max_completion_tokens, MAX_TOKENS);
-  // A timeout is never retried.
+  // A timeout is retried once at most (it already cost LLM_TIMEOUT_MS): timeout -> timeout is final after two calls.
+  const abort = () => { throw Object.assign(new Error('aborted'), { name: 'AbortError' }); };
   const b6 = brief();
-  const { fetchImpl: f6, calls: c6 } = mockFetch([Object.assign(new Error('aborted'), { name: 'AbortError' })]);
+  const { fetchImpl: f6, calls: c6 } = mockFetch([abort]);
   const s6 = fakeSleep();
-  assert.equal((await editorialize(b6, CONFIG, f6, s6.opts)).error, 'timeout');
-  assert.equal(c6.length, 1);
-  assert.deepEqual(s6.waits, []);
+  assert.equal((await editorialize(b6, CONFIG, f6, s6.opts)).error, 'timeout (2 attempts)');
+  assert.equal(c6.length, 2);
+  assert.deepEqual(s6.waits, [RETRY_BACKOFF_MS[0]]);
+  // timeout -> ok succeeds; 503 -> timeout -> 503 stops at the timeout (one timeout retry, plan position 2).
+  const b7 = brief();
+  const { fetchImpl: f7, calls: c7 } = mockFetch([abort, reply({ why: { [b7.digest.itemIds[0]]: 'Fine line.' } })]);
+  assert.equal((await editorialize(b7, CONFIG, f7, fakeSleep().opts)).ok, true);
+  assert.equal(c7.length, 2);
+  const b8 = brief();
+  const { fetchImpl: f8, calls: c8 } = mockFetch([unavailable, abort, unavailable, abort]);
+  const s8 = fakeSleep();
+  assert.equal((await editorialize(b8, CONFIG, f8, s8.opts)).error, 'timeout (4 attempts)');
+  assert.equal(c8.length, 4);
+  assert.deepEqual(s8.waits, RETRY_BACKOFF_MS);
+  assert.equal(LLM_TIMEOUT_MS, 120_000);
 });
 
 test('finish_reason length -> truncated with finishReason, usage and detail, even when a prefix parses', async () => {
@@ -244,7 +263,7 @@ test('finish_reason length -> truncated with finishReason, usage and detail, eve
   const snapshot = JSON.stringify(b.digest);
   const { fetchImpl } = mockFetch([rawReply({ message: { role: 'assistant', content: cut }, finish_reason: 'length', usage: USAGE })]);
   const r = await editorialize(b, CONFIG, fetchImpl);
-  assert.deepEqual(r, { enabled: true, ok: false, model: 'test-model', error: 'truncated', finishReason: 'length', usage: { prompt: 2500, completion: 1200, total: 8192 }, detail: cut.slice(0, 300) });
+  assert.deepEqual(noMs(r), { enabled: true, ok: false, model: 'test-model', error: 'truncated', finishReason: 'length', usage: { prompt: 2500, completion: 1200, total: 8192 }, detail: cut.slice(0, 300) });
   assert.equal(JSON.stringify(b.digest), snapshot);
   // All tokens spent on reasoning: Gemini omits `content`; a complete object with finish_reason length is still not trusted.
   const b2 = brief();
@@ -265,11 +284,11 @@ test('null content with reasoning_content -> reasoning only; usage is kept on su
   const b = brief();
   const { fetchImpl } = mockFetch([rawReply({ message: { role: 'assistant', content: null, reasoning_content: 'Let me think about\n\n   these entries...' }, finish_reason: 'stop', usage: USAGE })]);
   const r = await editorialize(b, CONFIG, fetchImpl);
-  assert.deepEqual(r, { enabled: true, ok: false, model: 'test-model', error: 'reasoning only', finishReason: 'stop', usage: { prompt: 2500, completion: 1200, total: 8192 }, detail: 'Let me think about these entries...' });
+  assert.deepEqual(noMs(r), { enabled: true, ok: false, model: 'test-model', error: 'reasoning only', finishReason: 'stop', usage: { prompt: 2500, completion: 1200, total: 8192 }, detail: 'Let me think about these entries...' });
   const b2 = brief();
   const { fetchImpl: f2 } = mockFetch([rawReply({ message: { role: 'assistant', content: JSON.stringify({ why: { [b2.digest.itemIds[0]]: 'Fine line.' } }) }, usage: USAGE })]);
   const r2 = await editorialize(b2, CONFIG, f2);
-  assert.deepEqual(r2, { enabled: true, ok: true, model: 'test-model', usage: { prompt: 2500, completion: 1200, total: 8192 } });
+  assert.deepEqual(noMs(r2), { enabled: true, ok: true, model: 'test-model', usage: { prompt: 2500, completion: 1200, total: 8192 } });
 });
 
 test('fenced JSON and JSON wrapped in prose (with stray braces) parse; truncated or absent JSON does not', async () => {
@@ -346,15 +365,19 @@ test('detail is bounded to 300 chars and never contains the key, even when the c
   assert.equal(r2.detail, `${'x'.repeat(DETAIL_CHARS - 4)}REDA`);
   assert.equal(excerpt('  a \u0000b\r\nc  ', ''), 'a b c');
   assert.equal(excerpt(null), '');
-  assert.equal(describeLlmFailure(r), 'invalid JSON; detail="Error: your key REDACTED is invalid; see https://www.googleapis.com/v1/x?key=REDACTED&alt=json and REDACTED"');
-  assert.equal(describeLlmFailure({ error: 'truncated', finishReason: 'length', usage: { total: 5 } }), 'truncated; finish_reason=length; usage={"total":5}');
+  assert.equal(describeLlmFailure({ ...r, ms: 7 }), 'invalid JSON; ms=7; detail="Error: your key REDACTED is invalid; see https://www.googleapis.com/v1/x?key=REDACTED&alt=json and REDACTED"');
+  assert.equal(describeLlmFailure({ error: 'truncated', finishReason: 'length', usage: { total: 5 }, compat: ['response_format'] }), 'truncated; finish_reason=length; usage={"total":5}; compat=response_format');
 });
 
 test('validateMeta accepts the diagnostic llm fields and bounds them', () => {
   const base = { generatedAt: NOW.toISOString(), durationMs: 1, itemCount: 0, newItemCount: 0, trimmedForSize: 0, sources: {}, okCount: 0, emptyCount: 0, failedCount: 0, sitemapSkipped: {}, sitemapCache: {}, brief: { date: '2026-10-20', wordCount: 0, readingMinutes: 0 }, static: { leaderboards: [], more: [], learn: [] } };
   const withLlm = (llm) => ({ ...base, llm });
   validateMeta(withLlm({ enabled: true, ok: false, model: 'm', error: 'truncated', finishReason: 'length', usage: { prompt: 1, completion: 0, total: 1 }, detail: 'x'.repeat(300) }));
-  validateMeta(withLlm({ enabled: true, ok: true, model: 'm', usage: { total: 10 } }));
+  validateMeta(withLlm({ enabled: true, ok: true, model: 'm', usage: { total: 10 }, ms: 0, compat: ['max_tokens', 'response_format', 'reasoning_effort'] }));
+  assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', ms: -1 })), /llm\.ms/);
+  assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', ms: 1.5 })), /llm\.ms/);
+  assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', compat: [] })), /llm\.compat/);
+  assert.throws(() => validateMeta(withLlm({ enabled: true, ok: true, model: 'm', compat: 'max_tokens' })), /llm\.compat/);
   assert.throws(() => validateMeta(withLlm({ enabled: true, ok: false, model: 'm', error: 'e', detail: 'x'.repeat(301) })), /llm\.detail/);
   assert.throws(() => validateMeta(withLlm({ enabled: true, ok: false, model: 'm', error: 'e', detail: 'a\nb' })), /llm\.detail/);
   assert.throws(() => validateMeta(withLlm({ enabled: true, ok: false, model: 'm', error: 'e', detail: '' })), /llm\.detail/);
@@ -376,7 +399,7 @@ test('400 mentioning max_tokens retries once with max_completion_tokens; other 4
   const b2 = brief();
   const { fetchImpl: f2, calls: c2 } = mockFetch([new Response(JSON.stringify({ error: 'bad model' }), { status: 400 })]);
   const r2 = await editorialize(b2, CONFIG, f2);
-  assert.deepEqual(r2, { enabled: true, ok: false, model: 'test-model', error: 'HTTP 400', detail: '{"error":"bad model"}' });
+  assert.deepEqual(noMs(r2), { enabled: true, ok: false, model: 'test-model', error: 'HTTP 400', detail: '{"error":"bad model"}' });
   assert.equal(c2.length, 1);
 });
 

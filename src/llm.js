@@ -12,7 +12,11 @@ export const SYSTEM_PROMPT = [
 ].join('\n');
 
 const NUMBER_RE = /#?[+-]?(?:\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+\.\d+|\d+)(?:%|[kKmMbB]|x)?/g;
-const LLM_TIMEOUT_MS = 60_000;
+/**
+ * Per-attempt timeout. A non-streaming answer arrives only after the model has generated reasoning plus ~1k tokens of JSON,
+ * and a busy Gemini endpoint (run 39420946893, right after a 503 spell) needed more than the original 60 s.
+ */
+export const LLM_TIMEOUT_MS = 120_000;
 const MAX_ERROR_BODY = 16 * 1024;
 /**
  * Output budget. The answer itself is ~1k tokens of JSON, but thinking models (Gemini 3.x Flash on the OpenAI-compatible
@@ -29,6 +33,8 @@ const TRANSIENT_STATUSES = new Set([429, 500, 502, 503, 504]);
 /** Exponential-ish plan: a 503 spike on Gemini usually clears within a couple of minutes; 100 s of waiting fits the 20 min job. */
 export const RETRY_BACKOFF_MS = [10_000, 30_000, 60_000];
 const MAX_RETRY_AFTER_MS = 30_000;
+/** A timeout has already cost LLM_TIMEOUT_MS, so it gets one more try at most (sharing the backoff plan), not three. */
+const MAX_TIMEOUT_RETRIES = 1;
 /**
  * Editorial rewriting needs little deliberation, and on Gemini thinking shares the `max_tokens` cap with the answer, so ask
  * for a small reasoning budget. Providers that do not know the field answer 400 naming it, and the request is retried without.
@@ -74,24 +80,26 @@ function allowedSet(entry, section, signals) {
   return set;
 }
 
+/** One POST; the timeout covers headers and body together (a non-streaming completion arrives only after generation). */
 async function post(fetchImpl, endpoint, key, body) {
   const controller = new AbortController();
   const timer = setTimeout(() => controller.abort(), LLM_TIMEOUT_MS);
   try {
-    return await fetchImpl(endpoint, {
+    const res = await fetchImpl(endpoint, {
       method: 'POST',
       headers: { authorization: `Bearer ${key}`, 'content-type': 'application/json' },
       body: JSON.stringify(body),
       signal: controller.signal,
     });
+    let text = '';
+    try { text = await res.text(); } catch (err) { if (controller.signal.aborted) throw err; }
+    return { status: res.status, headers: res.headers, text };
   } finally {
     clearTimeout(timer);
   }
 }
 
-async function readSome(res) {
-  try { return (await res.text()).slice(0, MAX_ERROR_BODY); } catch { return ''; }
-}
+const errorBody = (res) => res.text.slice(0, MAX_ERROR_BODY);
 
 /** `retry-after` in whole seconds -> ms (capped); undefined when absent or not a plain number. */
 function retryAfterMs(res) {
@@ -175,11 +183,13 @@ function usageOf(json) {
   return Object.keys(out).length ? out : undefined;
 }
 
-/** One-line rendering of a failed result for the run log: `error[; finish_reason=..][; usage=..][; detail=".."]`. */
+/** One-line rendering of a failed result for the run log: `error[; finish_reason=..][; usage=..][; compat=..][; ms=..][; detail=".."]`. */
 export function describeLlmFailure(result) {
   const parts = [result.error ?? 'failed'];
   if (result.finishReason) parts.push(`finish_reason=${result.finishReason}`);
   if (result.usage) parts.push(`usage=${JSON.stringify(result.usage)}`);
+  if (result.compat?.length) parts.push(`compat=${result.compat.join(',')}`);
+  if (Number.isFinite(result.ms)) parts.push(`ms=${result.ms}`);
   if (result.detail) parts.push(`detail="${result.detail}"`);
   return parts.join('; ');
 }
@@ -188,14 +198,6 @@ export function describeLlmFailure(result) {
 export async function editorialize(brief, config, fetchImpl = globalThis.fetch, { sleep = defaultSleep } = {}) {
   const { digest, facts } = brief;
   const { endpoint, key, model } = config;
-  const fail = (error, info = {}) => {
-    const out = { enabled: true, ok: false, model, error };
-    if (nonEmpty(info.finishReason)) out.finishReason = info.finishReason.trim().slice(0, 40);
-    if (info.usage) out.usage = info.usage;
-    const detail = excerpt(info.detail, key);
-    if (detail) out.detail = detail;
-    return out;
-  };
   const entries = [];
   const allowed = new Map();
   for (const section of digest.sections) {
@@ -208,44 +210,53 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
   }
   const messages = [{ role: 'system', content: SYSTEM_PROMPT }, { role: 'user', content: JSON.stringify(entries) }];
   let body = { model, temperature: 0.3, max_tokens: MAX_TOKENS, response_format: { type: 'json_object' }, reasoning_effort: REASONING_EFFORT, messages };
+  const startedAt = Date.now();
   let res;
-  let raw;
   let retries = 0; // transient retries taken (compat retries are not counted: they fix the request, not the weather)
-  const withAttempts = (error) => (retries > 0 ? `${error} (${retries + 1} attempts)` : error);
-  const applied = new Set();
+  let timeoutRetries = 0;
+  const applied = [];
+  const fail = (error, info = {}) => {
+    const out = { enabled: true, ok: false, model, error: retries > 0 ? `${error} (${retries + 1} attempts)` : error };
+    if (nonEmpty(info.finishReason)) out.finishReason = info.finishReason.trim().slice(0, 40);
+    if (info.usage) out.usage = info.usage;
+    const detail = excerpt(info.detail, key);
+    if (detail) out.detail = detail;
+    return withDiagnostics(out);
+  };
+  const withDiagnostics = (out) => {
+    out.ms = Math.max(0, Date.now() - startedAt);
+    if (applied.length) out.compat = [...applied];
+    return out;
+  };
   for (;;) {
     try {
       res = await post(fetchImpl, endpoint, key, body);
     } catch (err) {
-      // A timeout already cost 60 s and says the model is slow, not unavailable; it is not retried.
-      if (err?.name === 'AbortError') return fail(withAttempts('timeout'));
-      if (retries >= RETRY_BACKOFF_MS.length) return fail(withAttempts('network'));
+      const timedOut = err?.name === 'AbortError';
+      if (timedOut && timeoutRetries >= MAX_TIMEOUT_RETRIES) return fail('timeout');
+      if (retries >= RETRY_BACKOFF_MS.length) return fail(timedOut ? 'timeout' : 'network');
+      if (timedOut) timeoutRetries++;
       await sleep(RETRY_BACKOFF_MS[retries++]);
       continue;
     }
     if (res.status === 400) {
-      const errText = await readSome(res);
-      const fix = COMPAT_RETRIES.find((r) => !applied.has(r.name) && r.mentions.test(errText));
+      const errText = errorBody(res);
+      const fix = COMPAT_RETRIES.find((r) => !applied.includes(r.name) && r.mentions.test(errText));
       if (!fix) return fail('HTTP 400', { detail: errText });
-      applied.add(fix.name);
+      applied.push(fix.name);
       body = fix.apply(body);
       continue;
     }
     if (TRANSIENT_STATUSES.has(res.status) && retries < RETRY_BACKOFF_MS.length) {
       const wait = retryAfterMs(res) ?? RETRY_BACKOFF_MS[retries];
       retries++;
-      await readSome(res); // drain the connection before waiting
       await sleep(wait);
       continue;
     }
     break;
   }
-  if (res.status < 200 || res.status >= 300) return fail(withAttempts(`HTTP ${res.status}`), { detail: await readSome(res) });
-  try {
-    raw = await res.text();
-  } catch (err) {
-    return fail(withAttempts(err?.name === 'AbortError' ? 'timeout' : 'network'));
-  }
+  if (res.status < 200 || res.status >= 300) return fail(`HTTP ${res.status}`, { detail: errorBody(res) });
+  const raw = res.text;
   let json;
   try { json = JSON.parse(raw); } catch { return fail('invalid JSON', { detail: raw }); }
   const usage = usageOf(json);
@@ -292,5 +303,5 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
   enforceBudget(digest, 1100);
   const result = { enabled: true, ok: true, model };
   if (usage) result.usage = usage;
-  return result;
+  return withDiagnostics(result);
 }
