@@ -155,11 +155,11 @@ test('failure states: garbage, 500, timeout, nothing accepted -> enabled true ok
   const cases = [
     [[reply('not json at all')], 'invalid JSON', 'not json at all', 1],
     [[new Response('{"error":"not json', { status: 200 })], 'invalid JSON', '{"error":"not json', 1],
-    [[() => new Response('err', { status: 500 })], 'HTTP 500 (3 attempts)', 'err', 3],
+    [[() => new Response('err', { status: 500 })], 'HTTP 500 (4 attempts)', 'err', 4],
     [[new Response('nope', { status: 401 })], 'HTTP 401', 'nope', 1],
     [[new Response('gone', { status: 404 })], 'HTTP 404', 'gone', 1],
     [[Object.assign(new Error('aborted'), { name: 'AbortError' })], 'timeout', undefined, 1],
-    [[new TypeError('fetch failed')], 'network (3 attempts)', undefined, 3],
+    [[new TypeError('fetch failed')], 'network (4 attempts)', undefined, 4],
     [[reply({ overview: 'short', why: { zzz: 'x' } })], 'empty', '{"overview":"short","why":{"zzz":"x"}}', 1],
     [[new Response(JSON.stringify({ choices: [] }), { status: 200 })], 'empty', '{"choices":[]}', 1],
     [[rawReply({ message: { role: 'assistant', content: null, refusal: 'I cannot help with that.' } })], 'refusal', 'I cannot help with that.', 1],
@@ -182,7 +182,7 @@ test('failure states: garbage, 500, timeout, nothing accepted -> enabled true ok
   }
 });
 
-test('transient 429/5xx and network errors retry with backoff (retry-after honoured, capped); the third failure is final', async () => {
+test('transient 429/5xx and network errors retry with backoff (retry-after honoured, capped); the fourth failure is final', async () => {
   const unavailable = () => new Response(JSON.stringify({ error: { code: 503, message: 'This model is currently experiencing high demand.', status: 'UNAVAILABLE' } }), { status: 503 });
   const b = brief();
   const { fetchImpl, calls } = mockFetch([unavailable(), reply({ why: { [b.digest.itemIds[0]]: 'Fine line.' } })]);
@@ -204,16 +204,18 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   const s3 = fakeSleep();
   assert.equal((await editorialize(b3, CONFIG, f3, s3.opts)).ok, true);
   assert.deepEqual(s3.waits, [RETRY_BACKOFF_MS[0]]);
-  // Exhausted: three attempts, the last body as detail, the attempt count in the error, brief untouched.
+  // Exhausted: RETRY_BACKOFF_MS.length + 1 attempts, the last body as detail, the attempt count in the error, brief untouched.
   const b4 = brief();
   const snapshot = JSON.stringify(b4.digest);
   const { fetchImpl: f4, calls: c4 } = mockFetch([unavailable]);
   const s4 = fakeSleep();
   const r4 = await editorialize(b4, CONFIG, f4, s4.opts);
-  assert.equal(r4.error, 'HTTP 503 (3 attempts)');
+  assert.equal(r4.error, `HTTP 503 (${RETRY_BACKOFF_MS.length + 1} attempts)`);
+  assert.equal(r4.error, 'HTTP 503 (4 attempts)');
   assert.match(r4.detail, /high demand/);
-  assert.equal(c4.length, 3);
+  assert.equal(c4.length, 4);
   assert.deepEqual(s4.waits, RETRY_BACKOFF_MS);
+  assert.ok(RETRY_BACKOFF_MS.reduce((a, b) => a + b, 0) <= 120_000, 'total planned waiting stays within two minutes');
   assert.equal(JSON.stringify(b4.digest), snapshot);
   // A compatibility 400 is not an attempt: 400 (max_tokens) -> 503 -> ok is three calls, one wait.
   const b5 = brief();
@@ -334,7 +336,7 @@ test('detail is bounded to 300 chars and never contains the key, even when the c
   const b2 = brief();
   const { fetchImpl: f2 } = mockFetch([() => new Response(straddle, { status: 503 })]);
   const r2 = await editorialize(b2, CONFIG, f2, fakeSleep().opts);
-  assert.equal(r2.error, 'HTTP 503 (3 attempts)');
+  assert.equal(r2.error, 'HTTP 503 (4 attempts)');
   assert.equal(r2.detail.length, DETAIL_CHARS);
   assert.ok(!r2.detail.includes('sk-') && !r2.detail.includes('SECRET'), 'scrubbed before the cut, so no fragment of the key survives');
   assert.equal(r2.detail, `${'x'.repeat(DETAIL_CHARS - 4)}REDA`);

@@ -26,7 +26,8 @@ export const DETAIL_CHARS = 300;
  * network errors get a short backoff and another attempt; the first live Gemini run died on exactly one such 503.
  */
 const TRANSIENT_STATUSES = new Set([429, 500, 502, 503, 504]);
-export const RETRY_BACKOFF_MS = [10_000, 30_000];
+/** Exponential-ish plan: a 503 spike on Gemini usually clears within a couple of minutes; 100 s of waiting fits the 20 min job. */
+export const RETRY_BACKOFF_MS = [10_000, 30_000, 60_000];
 const MAX_RETRY_AFTER_MS = 30_000;
 /** Request-shape fixes for providers that answer HTTP 400 naming a parameter they do not accept; each applies at most once. */
 const COMPAT_RETRIES = [
