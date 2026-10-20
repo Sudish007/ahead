@@ -1,0 +1,34 @@
+{
+  "verdict": "APPROVED",
+  "findings": [
+    {
+      "label": "RELAY_URL with a bare ? or # slips through resolveRelay",
+      "blocking": false,
+      "confidence": "confirmed",
+      "summary": "src/relay.js:21 rejects parsed.search/parsed.hash, but WHATWG sets both to '' for a bare delimiter, so 'https://r.test/?' and 'https://r.test/#' are accepted silently and relayFeedUrl yields 'https://r.test/?/feed/importai'; every relay request then 404s and every viaRelay row reads 'relay: HTTP 404, fell back to direct' without the 'relay disabled:' warning.",
+      "action": "In resolveRelay reject a trimmed RELAY_URL that contains '?' or '#' (or require parsed.href === rawUrl after trailing-slash stripping) so the 'relay disabled:' warn fires; add 'https://r.test/?' and 'https://r.test/#' to the malformed-URL test in tests/relay.test.js."
+    },
+    {
+      "label": "Token visible in Cloudflare request logs and saved tail captures",
+      "blocking": false,
+      "confidence": "likely",
+      "summary": "wrangler tail --format json and Workers Logs ([observability] enabled = true, relay/wrangler.toml:9-10) record event.request.headers for every invocation, which includes x-relay-token; FEAT-001 saved a tail capture to a file to parse it, so that file likely contains the token. Only the Cloudflare account owner can read either, so this is hygiene rather than a leak, but D10's 'never in a log' did not account for it.",
+      "action": "Capture one tail event and check event.request.headers; if x-relay-token is present, delete the FEAT-001 tail capture file, add one sentence to the README secret-hygiene paragraph (README.md:154) that Cloudflare's own request logs show the header to the account owner and tail output must not be saved or shared, and rotate the token if any capture was shared."
+    },
+    {
+      "label": "README footprint arithmetic",
+      "blocking": false,
+      "confidence": "confirmed",
+      "summary": "README.md:152 states '8 cron ticks x 6 fetches plus about 16 relay requests x 4 scheduled runs, i.e. under 100 Worker requests'; 48 + 64 = 112. The 48 cron fetches are subrequests inside 8 cron invocations, so Worker requests are about 72/day.",
+      "action": "Reword the footprint sentence so the stated numbers add up (e.g. '8 cron invocations making 48 upstream subrequests, plus about 64 pipeline requests, i.e. roughly 72 Worker requests/day')."
+    },
+    {
+      "label": "Relay-then-direct timing is reasoned, not tested",
+      "blocking": false,
+      "confidence": "confirmed",
+      "summary": "The D9 comment at src/http.js:290-293 (15 s relay timeout + 20 s direct timeout + 2 s backoff = 37 s, no second direct attempt because 8 s < 25 s remain) has no fakeClock test through runSource; the Worker's 429 worst case (slow first 429 + 2 s + 10 s second attempt exceeding the pipeline's 15 s relay timeout) is also untested.",
+      "action": "Optional: add one pipeline test with fakeClock where the relay times out at 15 s and the direct fetch at 20 s, asserting the direct error has attempts === 1 and the row's ms stays under 45_000."
+    }
+  ],
+  "reviewDoc": "c:\\Users\\sudiskmr\\Downloads\\DomainClassification\\ahead\\.agents\\tasks\\ahead-build/relay-review.md"
+}
