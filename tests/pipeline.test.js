@@ -142,7 +142,7 @@ test('next-day run: newItemCount, sitemap cache reuse, immutable prior digest, n
   const tomorrow = new Date(NOW.getTime() + 24 * 3.6e6);
   const calls2 = [];
   const run2 = await runFixture({ dataDir, now: tomorrow, calls: calls2 });
-  const pages = (calls) => calls.filter((c) => /text\/html/.test(c.init?.headers?.accept ?? '')).length;
+  const pages = (calls) => calls.filter((c) => (c.init?.headers?.accept ?? '').startsWith('text/html')).length;
   assert.ok(pages(calls1) >= 12, `run 1 fetched ${pages(calls1)} pages`);
   assert.ok(pages(calls2) < pages(calls1), `run 2 reused the cache (${pages(calls2)} < ${pages(calls1)})`);
   assert.deepEqual(readFileSync(path.join(dataDir, 'digests/2026-10-19.json')), day1Bytes, 'prior digest untouched');

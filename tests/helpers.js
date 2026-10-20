@@ -122,7 +122,7 @@ export function fixtureFetch({ now = NOW, overrides = {}, calls } = {}) {
       return new Response(ov.body ?? '', { status: ov.status ?? 200, headers: { 'content-type': ov.contentType ?? 'application/octet-stream', ...extra } });
     }
     const accept = headerOf(init, 'accept') ?? '';
-    if (/text\/html/.test(accept)) {
+    if (accept.startsWith('text/html')) {
       return new Response(pageHtml(key), { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
     }
     const fx = map.get(key);

@@ -59,8 +59,11 @@ function apiRecords(records, ctx) {
   return out;
 }
 
+/** The API fallback times out after 15 s so that the client's single retry (2 s backoff) still fits runSource's 45 s backstop. */
+const API_TIMEOUT_MS = 15_000;
+
 async function fetchApi(source, ctx) {
-  const res = await ctx.fetchText(source.fallbackUrl);
+  const res = await ctx.fetchText(source.fallbackUrl, { timeoutMs: API_TIMEOUT_MS });
   const { records } = decodeFeed(res.text);
   const result = applySelection(apiRecords(records, ctx), source, ctx, records.length, 'api fallback');
   result.httpStatus = res.status;
@@ -95,6 +98,6 @@ export async function fetchArxivSource(source, ctx) {
       return { status: 'failed', items: [], fetched: 0, kept: 0, error: fb, ...(fallbackError.status ? { httpStatus: fallbackError.status } : {}), ...(detail ? { detail } : {}) };
     }
     ctx.logger?.warn?.(`${source.id}: valid empty RSS and api fallback failed (${fb})`);
-    return { status: 'empty', items: [], fetched: 0, kept: 0, note: 'api fallback failed', httpStatus: res.status, finalUrl: res.finalUrl };
+    return { status: 'empty', items: [], fetched: 0, kept: 0, note: `api fallback failed (${fb})`, httpStatus: res.status, finalUrl: res.finalUrl };
   }
 }

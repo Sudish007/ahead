@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createHttpClient, HttpError, BodyTooLarge, TimeoutError, errorClass, formatDetail, PACING } from '../src/http.js';
+import { createHttpClient, HttpError, BodyTooLarge, TimeoutError, errorClass, formatDetail, PACING, ACCEPT, BROWSER_USER_AGENT } from '../src/http.js';
 
 /** Fake clock whose sleep() advances time and resolves timers in order. */
 function fakeClock() {
@@ -51,8 +51,10 @@ test('per-host pacing serializes export.arxiv.org at 3 s gaps and leaves other h
   assert.equal(PACING['api.github.com'], 1000);
 });
 
-test('retry matrix: once on 503, none on 403, none for reddit 429, once for youtube 404, skipped near the deadline', async () => {
+test('retry matrix: once on 503, none on 403, none for reddit 429, three youtube attempts at 0/2/10 s, skipped near the deadline', async () => {
   const clock = fakeClock();
+  const YT = 'https://www.youtube.com/feeds/videos.xml?channel_id=UCx';
+  const status = (code) => new Response('', { status: code });
   const mk = (responses) => {
     let i = 0;
     const calls = [];
@@ -66,15 +68,22 @@ test('retry matrix: once on 503, none on 403, none for reddit 429, once for yout
     await clock.tick();
     return { res: await p, calls };
   };
-  let r = await run([new Response('', { status: 503 }), ok('fine')], 'https://a.test/');
+  let r = await run([status(503), ok('fine')], 'https://a.test/');
   assert.equal(r.calls.length, 2); assert.equal(r.res.ok.text, 'fine');
-  r = await run([new Response('', { status: 403 })], 'https://a.test/');
-  assert.equal(r.calls.length, 1); assert.ok(r.res.err instanceof HttpError); assert.equal(errorClass(r.res.err), 'HTTP 403');
-  r = await run([new Response('', { status: 429 }), ok()], 'https://www.reddit.com/r/x.rss');
-  assert.equal(r.calls.length, 1); assert.equal(errorClass(r.res.err), 'HTTP 429');
-  r = await run([new Response('', { status: 404 }), ok('yt')], 'https://www.youtube.com/feeds/videos.xml?channel_id=UCx');
-  assert.equal(r.calls.length, 2, 'youtube 404 is retried once'); assert.equal(r.res.ok.text, 'yt');
-  r = await run([new Response('', { status: 404 })], 'https://a.test/');
+  r = await run([status(503), status(503), status(503)], 'https://a.test/');
+  assert.equal(r.calls.length, 2, 'other hosts keep exactly one retry'); assert.equal(errorClass(r.res.err), 'HTTP 503'); assert.equal(r.res.err.attempts, 2);
+  r = await run([status(403)], 'https://a.test/');
+  assert.equal(r.calls.length, 1); assert.ok(r.res.err instanceof HttpError); assert.equal(errorClass(r.res.err), 'HTTP 403'); assert.equal(r.res.err.attempts, 1);
+  r = await run([status(429), ok()], 'https://www.reddit.com/r/x.rss');
+  assert.equal(r.calls.length, 1); assert.equal(errorClass(r.res.err), 'HTTP 429'); assert.equal(r.res.err.attempts, 1);
+  clock.set(0);
+  r = await run([status(404), status(404), ok('yt')], YT);
+  assert.deepEqual(r.calls, [0, 2000, 10_000], 'youtube gets 3 attempts with 2 s / 8 s backoff'); assert.equal(r.res.ok.text, 'yt');
+  r = await run([status(404), status(404), status(404)], YT);
+  assert.equal(r.calls.length, 3); assert.ok(r.res.err instanceof HttpError); assert.equal(r.res.err.attempts, 3); assert.equal(errorClass(r.res.err), 'HTTP 404');
+  r = await run([status(500), ok('yt2')], YT);
+  assert.equal(r.calls.length, 2, 'youtube 500 recovers on the second attempt'); assert.equal(r.res.ok.text, 'yt2');
+  r = await run([status(404)], 'https://a.test/');
   assert.equal(r.calls.length, 1, '404 elsewhere is not retried'); assert.equal(errorClass(r.res.err), 'HTTP 404');
   r = await run([new TypeError('fetch failed'), ok('recovered')], 'https://a.test/');
   assert.equal(r.calls.length, 2); assert.equal(r.res.ok.text, 'recovered');
@@ -102,6 +111,29 @@ test('two timed-out attempts are bounded by 42 s and the deadline caps the abort
   await clock.tick();
   assert.ok((await p2) instanceof TimeoutError);
   assert.ok(clock.nowMs() <= 7000, `aborted at ${clock.nowMs()}`);
+});
+
+test('a 15 s timeout inside a 45 s deadline gets its retry; the default 20 s timeout does not', async () => {
+  // Documents the arXiv API fallback policy (D4): 15 s + 2 s + 15 s = 32 s < 45 s, with >= 25 s left at the retry check.
+  const clock = fakeClock();
+  let calls = 0;
+  const fetchImpl = (url, { signal }) => new Promise((_, reject) => { calls++; signal.addEventListener('abort', () => reject(Object.assign(new Error('aborted'), { name: 'AbortError' }))); });
+  const client = createHttpClient({ fetchImpl, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p = client.fetchText('https://slow.test/', { timeoutMs: 15_000, deadlineAt: 45_000 }).catch((e) => e);
+  await clock.tick();
+  const err = await p;
+  assert.ok(err instanceof TimeoutError);
+  assert.equal(calls, 2, 'two 15 s attempts fit the 45 s backstop');
+  assert.equal(err.attempts, 2);
+  assert.ok(clock.nowMs() <= 32_500, `finished at ${clock.nowMs()}`);
+  clock.set(0);
+  calls = 0;
+  const p2 = client.fetchText('https://slow.test/', { deadlineAt: 45_000 }).catch((e) => e);
+  await clock.tick();
+  const err2 = await p2;
+  assert.ok(err2 instanceof TimeoutError);
+  assert.equal(calls, 1, 'with the default 20 s timeout only 23 s remain after the backoff, so the retry is skipped');
+  assert.equal(err2.attempts, 1);
 });
 
 test('maxBytes aborts the body stream', async () => {
@@ -206,16 +238,36 @@ test('non-2xx responses keep bounded header/body evidence in err.detail; formatD
   assert.match(formatDetail({ server: 'a\nb\u0007c' }), /^server=abc$/);
 });
 
-test('user-agent and accept headers, finalUrl and content type are reported', async () => {
+test('browser headers by default, the Ahead UA on identified hosts, */* for YouTube; finalUrl and content type are reported', async () => {
   const clock = fakeClock();
-  let headers;
-  const fetchImpl = async (url, init) => { headers = init.headers; return new Response('<rss/>', { status: 200, headers: { 'content-type': 'text/plain' } }); };
+  const seen = {};
+  const fetchImpl = async (url, init) => { seen[url] = init.headers; return new Response('<rss/>', { status: 200, headers: { 'content-type': 'text/plain' } }); };
   const client = createHttpClient({ fetchImpl, sleep: clock.sleep, nowMs: clock.nowMs });
-  const p = client.fetchText('https://mistral.ai/news/rss');
+  const p = Promise.all([
+    client.fetchText('https://mistral.ai/news/rss'),
+    client.fetchText('https://www.reddit.com/r/x.rss'),
+    client.fetchText('https://api.github.com/x'),
+    client.fetchText('https://www.youtube.com/feeds/videos.xml?channel_id=UCx'),
+  ]);
   await clock.tick();
-  const res = await p;
-  assert.match(headers['user-agent'], /^Ahead\/\d+\.\d+\.\d+ \(\+https:\/\/github\.com\/Sudish007\/ahead; personal AI dashboard\)$/);
-  assert.match(headers.accept, /application\/rss\+xml/);
+  const [res] = await p;
+  const feed = seen['https://mistral.ai/news/rss'];
+  assert.equal(feed['user-agent'], BROWSER_USER_AGENT);
+  assert.match(feed['user-agent'], /^Mozilla\/5\.0 \(Windows NT 10\.0; Win64; x64\) .*Chrome\/155\.0\.0\.0 Safari\/537\.36$/);
+  assert.equal(feed.accept, ACCEPT.feed);
+  assert.equal(feed.accept, 'application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8, */*;q=0.7');
+  assert.equal(feed['accept-language'], 'en-US,en;q=0.9');
+  const AHEAD_UA = /^Ahead\/\d+\.\d+\.\d+ \(\+https:\/\/github\.com\/Sudish007\/ahead; personal AI dashboard\)$/;
+  for (const url of ['https://www.reddit.com/r/x.rss', 'https://api.github.com/x']) {
+    assert.match(seen[url]['user-agent'], AHEAD_UA, `${url} identifies itself`);
+    assert.equal(seen[url].accept, ACCEPT.feed, url);
+    assert.equal(seen[url]['accept-language'], 'en-US,en;q=0.9', url);
+  }
+  const yt = seen['https://www.youtube.com/feeds/videos.xml?channel_id=UCx'];
+  assert.equal(yt['user-agent'], BROWSER_USER_AGENT);
+  assert.equal(yt.accept, '*/*', 'probe-chosen YouTube accept (all variants tied at zero)');
+  assert.equal(yt.cookie, undefined, 'no consent cookie: the runner probe saw no consent.youtube.com redirect');
+  assert.equal(yt['accept-language'], 'en-US,en;q=0.9');
   assert.equal(res.contentType, 'text/plain');
   assert.equal(res.finalUrl, 'https://mistral.ai/news/rss');
   assert.equal(res.status, 200);

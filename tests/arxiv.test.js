@@ -11,8 +11,8 @@ function ctxWith(responses, calls = []) {
   return {
     now: NOW,
     logger: { warn: (m) => calls.push(['warn', m]) },
-    fetchText: async (url) => {
-      calls.push(['fetch', url]);
+    fetchText: async (url, opts) => {
+      calls.push(['fetch', url, opts]);
       const r = responses[url];
       if (r === undefined) throw new Error(`unexpected ${url}`);
       if (r instanceof Error) throw r;
@@ -58,7 +58,12 @@ test('valid empty RSS invokes the API fallback', async () => {
   assert.ok(r.items.every((i) => i.extra.via === 'api'));
   assert.equal(r.items[0].extra.primaryCategory, 'cs.CL');
   assert.equal(r.items[0].authors.length, 5);
-  assert.equal(calls.filter((c) => c[0] === 'fetch').length, 2);
+  const fetches = calls.filter((c) => c[0] === 'fetch');
+  assert.equal(fetches.length, 2);
+  assert.equal(fetches[0][1], SOURCE.url);
+  assert.equal(fetches[0][2]?.timeoutMs, undefined, 'the primary RSS request keeps the default timeout');
+  assert.equal(fetches[1][1], SOURCE.fallbackUrl);
+  assert.equal(fetches[1][2].timeoutMs, 15000, 'the API fallback is capped at 15 s so its retry fits the 45 s backstop');
 });
 
 test('primary HTTP failure + valid API -> ok with API counts', async () => {
@@ -83,7 +88,7 @@ test('valid empty RSS + fallback failure -> empty with note', async () => {
   assert.equal(r.status, 'empty');
   assert.equal(r.fetched, 0);
   assert.equal(r.kept, 0);
-  assert.equal(r.note, 'api fallback failed');
+  assert.equal(r.note, 'api fallback failed (network)');
 });
 
 test('all-replace RSS -> empty with nonzero fetched and no fallback call', async () => {

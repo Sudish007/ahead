@@ -1,17 +1,27 @@
-// Run-scoped HTTP client: timeout/deadline, byte cap, one retry, per-host pacing, scoped GitHub token.
+// Run-scoped HTTP client: timeout/deadline, byte cap, bounded retries, per-host pacing, scoped GitHub token.
 import { readFileSync } from 'node:fs';
 
 const pkg = JSON.parse(readFileSync(new URL('../package.json', import.meta.url), 'utf8'));
 export const DEFAULT_USER_AGENT = `Ahead/${pkg.version} (+https://github.com/Sudish007/ahead; personal AI dashboard)`;
+/** Sent to every host except IDENTIFIED_HOSTS (Chrome stable 155, October 2026). */
+export const BROWSER_USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/155.0.0.0 Safari/537.36';
+/** Hosts that ask clients to identify themselves (Reddit penalises browser-UA spoofing; GitHub wants a named client): they keep the Ahead UA. */
+export const IDENTIFIED_HOSTS = new Set(['www.reddit.com', 'api.github.com']);
 
 export const PACING = { 'export.arxiv.org': 3000, 'rss.arxiv.org': 1000, 'api.github.com': 1000 };
 export const ACCEPT = {
-  feed: 'application/rss+xml, application/atom+xml, application/xml, text/xml;q=0.9, */*;q=0.8',
+  feed: 'application/rss+xml, application/atom+xml, application/xml;q=0.9, text/html;q=0.8, */*;q=0.7',
   json: 'application/json',
   html: 'text/html',
 };
+const ACCEPT_LANGUAGE = 'en-US,en;q=0.9';
+/** YouTube's feed endpoint: no feed Accept (the runner probe tied every variant at zero, so the plain `*\/*` default stands). */
+const YOUTUBE_ACCEPT = '*/*';
 const MAX_REDIRECTS = 5;
 const RETRY_MIN_REMAINING_MS = 25_000;
+/** Backoff before each retry; YouTube answers 404/500 transiently for valid channels, so it gets a third attempt. */
+const RETRY_BACKOFF_MS = [2000];
+const YOUTUBE_RETRY_BACKOFF_MS = [2000, 8000];
 const SNIPPET_BYTES = 4096;
 const DETAIL_BODY_CHARS = 300;
 const DETAIL_LINE_CHARS = 400;
@@ -138,8 +148,14 @@ export function createHttpClient({
   }
 
   function headersFor(url, accept) {
-    const headers = { 'user-agent': userAgent, accept: accept ?? ACCEPT.feed };
-    if (new URL(url).hostname === 'api.github.com' && githubToken) {
+    const host = new URL(url).hostname;
+    const headers = {
+      'user-agent': IDENTIFIED_HOSTS.has(host) ? userAgent : BROWSER_USER_AGENT,
+      accept: accept ?? ACCEPT.feed,
+      'accept-language': ACCEPT_LANGUAGE,
+    };
+    if (host === 'www.youtube.com') headers.accept = YOUTUBE_ACCEPT;
+    if (host === 'api.github.com' && githubToken) {
       headers.authorization = `Bearer ${githubToken}`;
       headers.accept = 'application/vnd.github+json';
     }
@@ -221,6 +237,10 @@ export function createHttpClient({
     }
   }
 
+  function retryPlan(host) {
+    return host === 'www.youtube.com' ? YOUTUBE_RETRY_BACKOFF_MS : RETRY_BACKOFF_MS;
+  }
+
   function retryable(err, host) {
     if (host === 'www.reddit.com') return false;
     if (err instanceof BodyTooLarge) return false;
@@ -230,18 +250,24 @@ export function createHttpClient({
     return true; // network errors and timeouts
   }
 
+  /** One attempt plus the host's backoff plan; the error finally thrown carries `attempts` (1 when no retry ran). */
   async function fetchText(url, { timeoutMs = 20_000, maxBytes = 8_000_000, accept, deadlineAt } = {}) {
     const host = new URL(url).hostname;
     const opts = { timeoutMs, maxBytes, accept, deadlineAt };
-    try {
-      return await paced(host, () => once(url, opts));
-    } catch (err) {
-      if (!retryable(err, host)) throw err;
-      let wait = 2000;
-      if (err instanceof HttpError && err.status === 429 && err.retryAfter !== undefined) wait = Math.min(err.retryAfter, 30_000);
-      await sleep(wait);
-      if (deadlineAt !== undefined && deadlineAt - nowMs() < RETRY_MIN_REMAINING_MS) throw err;
-      return paced(host, () => once(url, opts));
+    const plan = retryPlan(host);
+    let attempts = 0;
+    for (;;) {
+      try {
+        attempts++;
+        return await paced(host, () => once(url, opts));
+      } catch (err) {
+        const backoff = plan[attempts - 1];
+        if (backoff === undefined || !retryable(err, host)) { err.attempts = attempts; throw err; }
+        let wait = backoff;
+        if (err instanceof HttpError && err.status === 429 && err.retryAfter !== undefined) wait = Math.min(err.retryAfter, 30_000);
+        await sleep(wait);
+        if (deadlineAt !== undefined && deadlineAt - nowMs() < RETRY_MIN_REMAINING_MS) { err.attempts = attempts; throw err; }
+      }
     }
   }
 
