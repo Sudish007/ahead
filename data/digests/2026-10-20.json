@@ -1,6 +1,6 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T07:05:46.569Z",
+ "generatedAt": "2026-10-20T07:30:35.490Z",
  "wordCount": 587,
  "readingMinutes": 3,
  "overview": null,
@@ -22,11 +22,11 @@
       "arXiv cs.AI"
      ],
      "summary": "Multimodal large language models (MLLMs) have made rapid progress on visual reasoning, yet many tasks require evidence that is difficult to obtain through internal reasoning alone: our controlled study on 22 benchmarks shows that simply increasing the inference budget of the…",
-     "why": "57 upvotes on HF Papers; also on arXiv cs.AI",
+     "why": "59 upvotes on HF Papers; also on arXiv cs.AI",
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 16.84
+     "score": 16.83
     },
     {
      "id": "370d8453b070a7bf",
@@ -44,11 +44,11 @@
       "Hacker News"
      ],
      "summary": "State-of-the-art probabilistic forecasting in four sizes (5M–209M params), CPU-efficient, zero-shot ready.",
-     "why": "577 points on HN, 107 comments",
+     "why": "579 points on HN, 108 comments",
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 16.2,
+     "score": 16.18,
      "readMinutes": 1
     },
     {
@@ -68,7 +68,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.12
+     "score": 16.06
     },
     {
      "id": "arxiv:2610.22791",
@@ -83,11 +83,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Large language model (LLM) agents have shown promising potential in coding tasks, and their performance is jointly determined by the policy model and the harness that mediates their interaction with the environment.",
-     "why": "30 upvotes on HF Papers; also on arXiv cs.CL",
+     "why": "31 upvotes on HF Papers; also on arXiv cs.CL",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 15.93
+     "score": 15.92
     }
    ]
   },
@@ -112,7 +112,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 15.5
+     "score": 15.45
     },
     {
      "id": "arxiv:2610.23986",
@@ -131,7 +131,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-14T00:00:00.000Z",
      "category": "research",
-     "score": 14.71
+     "score": 14.65
     },
     {
      "id": "arxiv:2610.23121",
@@ -150,7 +150,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 14.39
+     "score": 14.35
     }
    ]
   },
@@ -173,7 +173,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 10.74
+     "score": 10.71
     },
     {
      "id": "92c1824269f45469",
@@ -190,7 +190,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 10.2
+     "score": 10.17
     },
     {
      "id": "f2bc736c0ee71119",
@@ -207,7 +207,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 9.81
+     "score": 9.78
     }
    ]
   },
@@ -230,7 +230,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 4.85,
+     "score": 4.81,
      "readMinutes": 1
     },
     {
@@ -248,7 +248,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T15:30:37.000Z",
      "category": "labs",
-     "score": 3.7,
+     "score": 3.67,
      "readMinutes": 11
     }
    ]
@@ -272,7 +272,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T03:50:48.703Z",
      "category": "blogs",
-     "score": 4.7,
+     "score": 4.66,
      "readMinutes": 24
     },
     {
@@ -290,7 +290,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T05:39:38.000Z",
      "category": "blogs",
-     "score": 4.29,
+     "score": 4.26,
      "readMinutes": 11
     }
    ]
@@ -314,7 +314,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:31:37.000Z",
      "category": "blogs",
-     "score": 4.2,
+     "score": 4.16,
      "readMinutes": 25
     }
    ]
