@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { NOW } from './helpers.js';
-import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS } from '../src/llm.js';
+import { resolveLlmConfig, editorialize, numberTokens, parseJsonObject, excerpt, describeLlmFailure, SYSTEM_PROMPT, MAX_TOKENS, DETAIL_CHARS, RETRY_BACKOFF_MS } from '../src/llm.js';
 import { buildBrief, finalizeDigest, countWords } from '../src/brief.js';
 import { buildRegistry } from '../src/registry.js';
 import { validateDigest, validateDigestIndex, validateMeta } from '../src/schema.js';
@@ -33,6 +33,11 @@ const reply = (obj, status = 200) => new Response(JSON.stringify({ choices: [{ m
 const rawReply = ({ message, finish_reason = 'stop', usage }) => new Response(JSON.stringify({ choices: [{ message, finish_reason }], ...(usage ? { usage } : {}) }), { status: 200, headers: { 'content-type': 'application/json' } });
 const FAKE_KEY = 'sk-SECRET';
 const USAGE = { prompt_tokens: 2500, completion_tokens: 1200, total_tokens: 8192 };
+/** Records the backoff waits instead of sleeping. */
+function fakeSleep() {
+  const waits = [];
+  return { waits, opts: { sleep: async (ms) => { waits.push(ms); } } };
+}
 function mockFetch(responses) {
   const calls = [];
   const fetchImpl = async (url, init) => {
@@ -146,32 +151,86 @@ test('why rejections: invented number, cross-entry number, 26 words, unknown id;
 });
 
 test('failure states: garbage, 500, timeout, nothing accepted -> enabled true ok false with error and a bounded detail', async () => {
-  // [responses, error, detail (undefined = no detail key)]
+  // [responses (the last one repeats), error, detail (undefined = no detail key), calls]
   const cases = [
-    [[reply('not json at all')], 'invalid JSON', 'not json at all'],
-    [[new Response('{"error":"not json', { status: 200 })], 'invalid JSON', '{"error":"not json'],
-    [[new Response('err', { status: 500 })], 'HTTP 500', 'err'],
-    [[new Response('nope', { status: 401 })], 'HTTP 401', 'nope'],
-    [[Object.assign(new Error('aborted'), { name: 'AbortError' })], 'timeout', undefined],
-    [[new TypeError('fetch failed')], 'network', undefined],
-    [[reply({ overview: 'short', why: { zzz: 'x' } })], 'empty', '{"overview":"short","why":{"zzz":"x"}}'],
-    [[new Response(JSON.stringify({ choices: [] }), { status: 200 })], 'empty', '{"choices":[]}'],
-    [[rawReply({ message: { role: 'assistant', content: null, refusal: 'I cannot help with that.' } })], 'refusal', 'I cannot help with that.'],
+    [[reply('not json at all')], 'invalid JSON', 'not json at all', 1],
+    [[new Response('{"error":"not json', { status: 200 })], 'invalid JSON', '{"error":"not json', 1],
+    [[() => new Response('err', { status: 500 })], 'HTTP 500 (3 attempts)', 'err', 3],
+    [[new Response('nope', { status: 401 })], 'HTTP 401', 'nope', 1],
+    [[new Response('gone', { status: 404 })], 'HTTP 404', 'gone', 1],
+    [[Object.assign(new Error('aborted'), { name: 'AbortError' })], 'timeout', undefined, 1],
+    [[new TypeError('fetch failed')], 'network (3 attempts)', undefined, 3],
+    [[reply({ overview: 'short', why: { zzz: 'x' } })], 'empty', '{"overview":"short","why":{"zzz":"x"}}', 1],
+    [[new Response(JSON.stringify({ choices: [] }), { status: 200 })], 'empty', '{"choices":[]}', 1],
+    [[rawReply({ message: { role: 'assistant', content: null, refusal: 'I cannot help with that.' } })], 'refusal', 'I cannot help with that.', 1],
   ];
-  for (const [responses, error, detail] of cases) {
+  for (const [responses, error, detail, attempts] of cases) {
     const b = brief();
     const snapshot = JSON.stringify(b.digest);
-    const { fetchImpl } = mockFetch(responses);
-    const r = await editorialize(b, CONFIG, fetchImpl);
+    const { fetchImpl, calls } = mockFetch(responses);
+    const { opts } = fakeSleep();
+    const r = await editorialize(b, CONFIG, fetchImpl, opts);
     assert.equal(r.enabled, true, error);
     assert.equal(r.ok, false, error);
     assert.equal(r.model, 'test-model');
     assert.equal(r.error, error);
     assert.equal(r.detail, detail, error);
+    assert.equal(calls.length, attempts, error);
     assert.ok(!('finishReason' in r) || r.finishReason === 'stop', error);
     assert.ok(!('usage' in r), error);
     assert.equal(JSON.stringify(b.digest), snapshot, 'heuristic brief untouched');
   }
+});
+
+test('transient 429/5xx and network errors retry with backoff (retry-after honoured, capped); the third failure is final', async () => {
+  const unavailable = () => new Response(JSON.stringify({ error: { code: 503, message: 'This model is currently experiencing high demand.', status: 'UNAVAILABLE' } }), { status: 503 });
+  const b = brief();
+  const { fetchImpl, calls } = mockFetch([unavailable(), reply({ why: { [b.digest.itemIds[0]]: 'Fine line.' } })]);
+  const { waits, opts } = fakeSleep();
+  const r = await editorialize(b, CONFIG, fetchImpl, opts);
+  assert.deepEqual(r, { enabled: true, ok: true, model: 'test-model' });
+  assert.equal(calls.length, 2);
+  assert.deepEqual(waits, [RETRY_BACKOFF_MS[0]]);
+  assert.equal(calls[1].init.body, calls[0].init.body, 'the retried request is identical');
+  // retry-after seconds wins over the plan, capped at 30 s; a non-numeric header falls back to the plan.
+  const b2 = brief();
+  const { fetchImpl: f2 } = mockFetch([new Response('slow down', { status: 429, headers: { 'retry-after': '2' } }), new Response('slow down', { status: 429, headers: { 'retry-after': '600' } }), reply({ why: { [b2.digest.itemIds[0]]: 'Fine line.' } })]);
+  const s2 = fakeSleep();
+  const r2 = await editorialize(b2, CONFIG, f2, s2.opts);
+  assert.equal(r2.ok, true);
+  assert.deepEqual(s2.waits, [2000, 30_000]);
+  const b3 = brief();
+  const { fetchImpl: f3 } = mockFetch([new Response('x', { status: 502, headers: { 'retry-after': 'Wed, 21 Oct 2026 07:28:00 GMT' } }), reply({ why: { [b3.digest.itemIds[0]]: 'Fine line.' } })]);
+  const s3 = fakeSleep();
+  assert.equal((await editorialize(b3, CONFIG, f3, s3.opts)).ok, true);
+  assert.deepEqual(s3.waits, [RETRY_BACKOFF_MS[0]]);
+  // Exhausted: three attempts, the last body as detail, the attempt count in the error, brief untouched.
+  const b4 = brief();
+  const snapshot = JSON.stringify(b4.digest);
+  const { fetchImpl: f4, calls: c4 } = mockFetch([unavailable]);
+  const s4 = fakeSleep();
+  const r4 = await editorialize(b4, CONFIG, f4, s4.opts);
+  assert.equal(r4.error, 'HTTP 503 (3 attempts)');
+  assert.match(r4.detail, /high demand/);
+  assert.equal(c4.length, 3);
+  assert.deepEqual(s4.waits, RETRY_BACKOFF_MS);
+  assert.equal(JSON.stringify(b4.digest), snapshot);
+  // A compatibility 400 is not an attempt: 400 (max_tokens) -> 503 -> ok is three calls, one wait.
+  const b5 = brief();
+  const { fetchImpl: f5, calls: c5 } = mockFetch([new Response('Unsupported parameter: max_tokens', { status: 400 }), unavailable(), reply({ why: { [b5.digest.itemIds[0]]: 'Fine line.' } })]);
+  const s5 = fakeSleep();
+  const r5 = await editorialize(b5, CONFIG, f5, s5.opts);
+  assert.deepEqual(r5, { enabled: true, ok: true, model: 'test-model' });
+  assert.equal(c5.length, 3);
+  assert.deepEqual(s5.waits, [RETRY_BACKOFF_MS[0]]);
+  assert.equal(c5[2].body.max_completion_tokens, MAX_TOKENS);
+  // A timeout is never retried.
+  const b6 = brief();
+  const { fetchImpl: f6, calls: c6 } = mockFetch([Object.assign(new Error('aborted'), { name: 'AbortError' })]);
+  const s6 = fakeSleep();
+  assert.equal((await editorialize(b6, CONFIG, f6, s6.opts)).error, 'timeout');
+  assert.equal(c6.length, 1);
+  assert.deepEqual(s6.waits, []);
 });
 
 test('finish_reason length -> truncated with finishReason, usage and detail, even when a prefix parses', async () => {
@@ -273,9 +332,9 @@ test('detail is bounded to 300 chars and never contains the key, even when the c
   assert.ok(!JSON.stringify(r).includes('AIzaFAKE1234'));
   const straddle = `${'x'.repeat(DETAIL_CHARS - 4)}${FAKE_KEY}${'y'.repeat(50)}`;
   const b2 = brief();
-  const { fetchImpl: f2 } = mockFetch([new Response(straddle, { status: 503 })]);
-  const r2 = await editorialize(b2, CONFIG, f2);
-  assert.equal(r2.error, 'HTTP 503');
+  const { fetchImpl: f2 } = mockFetch([() => new Response(straddle, { status: 503 })]);
+  const r2 = await editorialize(b2, CONFIG, f2, fakeSleep().opts);
+  assert.equal(r2.error, 'HTTP 503 (3 attempts)');
   assert.equal(r2.detail.length, DETAIL_CHARS);
   assert.ok(!r2.detail.includes('sk-') && !r2.detail.includes('SECRET'), 'scrubbed before the cut, so no fragment of the key survives');
   assert.equal(r2.detail, `${'x'.repeat(DETAIL_CHARS - 4)}REDA`);

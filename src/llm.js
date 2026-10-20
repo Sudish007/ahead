@@ -1,6 +1,6 @@
 // Optional OpenAI-compatible editorial layer: 150-200 word overview + why-lines, validated against the sent facts.
 import { countWords, enforceBudget } from './brief.js';
-import { redactKey } from './http.js';
+import { defaultSleep, redactKey } from './http.js';
 
 export const SYSTEM_PROMPT = [
   'You are the editor of a one-page daily AI brief for an expert reader (researcher, founder, senior engineer).',
@@ -21,6 +21,13 @@ const MAX_ERROR_BODY = 16 * 1024;
 export const MAX_TOKENS = 8192;
 /** Longest `detail` excerpt recorded in meta.json (published) and the run log. */
 export const DETAIL_CHARS = 300;
+/**
+ * Transient provider answers (Gemini's 503 "model is currently experiencing high demand", rate limits, gateway errors) and
+ * network errors get a short backoff and another attempt; the first live Gemini run died on exactly one such 503.
+ */
+const TRANSIENT_STATUSES = new Set([429, 500, 502, 503, 504]);
+export const RETRY_BACKOFF_MS = [10_000, 30_000];
+const MAX_RETRY_AFTER_MS = 30_000;
 /** Request-shape fixes for providers that answer HTTP 400 naming a parameter they do not accept; each applies at most once. */
 const COMPAT_RETRIES = [
   { name: 'max_tokens', mentions: /max_tokens/i, apply: ({ max_tokens, ...rest }) => ({ ...rest, max_completion_tokens: max_tokens }) },
@@ -77,6 +84,14 @@ async function post(fetchImpl, endpoint, key, body) {
 
 async function readSome(res) {
   try { return (await res.text()).slice(0, MAX_ERROR_BODY); } catch { return ''; }
+}
+
+/** `retry-after` in whole seconds -> ms (capped); undefined when absent or not a plain number. */
+function retryAfterMs(res) {
+  const header = res.headers?.get?.('retry-after');
+  if (header === null || header === undefined || String(header).trim() === '') return undefined;
+  const secs = Number(header);
+  return Number.isFinite(secs) && secs >= 0 ? Math.min(secs * 1000, MAX_RETRY_AFTER_MS) : undefined;
 }
 
 /**
@@ -162,8 +177,8 @@ export function describeLlmFailure(result) {
   return parts.join('; ');
 }
 
-/** Mutates brief.digest with accepted values; returns the result state. */
-export async function editorialize(brief, config, fetchImpl = globalThis.fetch) {
+/** Mutates brief.digest with accepted values; returns the result state. `sleep` is injectable for tests. */
+export async function editorialize(brief, config, fetchImpl = globalThis.fetch, { sleep = defaultSleep } = {}) {
   const { digest, facts } = brief;
   const { endpoint, key, model } = config;
   const fail = (error, info = {}) => {
@@ -188,21 +203,41 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch) 
   let body = { model, temperature: 0.3, max_tokens: MAX_TOKENS, response_format: { type: 'json_object' }, messages };
   let res;
   let raw;
-  try {
-    const applied = new Set();
-    for (;;) {
+  let retries = 0; // transient retries taken (compat retries are not counted: they fix the request, not the weather)
+  const withAttempts = (error) => (retries > 0 ? `${error} (${retries + 1} attempts)` : error);
+  const applied = new Set();
+  for (;;) {
+    try {
       res = await post(fetchImpl, endpoint, key, body);
-      if (res.status !== 400) break;
+    } catch (err) {
+      // A timeout already cost 60 s and says the model is slow, not unavailable; it is not retried.
+      if (err?.name === 'AbortError') return fail(withAttempts('timeout'));
+      if (retries >= RETRY_BACKOFF_MS.length) return fail(withAttempts('network'));
+      await sleep(RETRY_BACKOFF_MS[retries++]);
+      continue;
+    }
+    if (res.status === 400) {
       const errText = await readSome(res);
       const fix = COMPAT_RETRIES.find((r) => !applied.has(r.name) && r.mentions.test(errText));
       if (!fix) return fail('HTTP 400', { detail: errText });
       applied.add(fix.name);
       body = fix.apply(body);
+      continue;
     }
-    if (res.status < 200 || res.status >= 300) return fail(`HTTP ${res.status}`, { detail: await readSome(res) });
+    if (TRANSIENT_STATUSES.has(res.status) && retries < RETRY_BACKOFF_MS.length) {
+      const wait = retryAfterMs(res) ?? RETRY_BACKOFF_MS[retries];
+      retries++;
+      await readSome(res); // drain the connection before waiting
+      await sleep(wait);
+      continue;
+    }
+    break;
+  }
+  if (res.status < 200 || res.status >= 300) return fail(withAttempts(`HTTP ${res.status}`), { detail: await readSome(res) });
+  try {
     raw = await res.text();
   } catch (err) {
-    return fail(err?.name === 'AbortError' ? 'timeout' : 'network');
+    return fail(withAttempts(err?.name === 'AbortError' ? 'timeout' : 'network'));
   }
   let json;
   try { json = JSON.parse(raw); } catch { return fail('invalid JSON', { detail: raw }); }
