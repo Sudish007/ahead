@@ -171,6 +171,8 @@ export function createHttpClient({
   function retryable(err, host) {
     if (host === 'www.reddit.com') return false;
     if (err instanceof BodyTooLarge) return false;
+    // YouTube's feed endpoint answers 404 transiently for valid channels; treat it like a 5xx.
+    if (err instanceof HttpError && err.status === 404 && host === 'www.youtube.com') return true;
     if (err instanceof HttpError) return err.status >= 500 || err.status === 429;
     return true; // network errors and timeouts
   }

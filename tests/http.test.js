@@ -51,7 +51,7 @@ test('per-host pacing serializes export.arxiv.org at 3 s gaps and leaves other h
   assert.equal(PACING['api.github.com'], 1000);
 });
 
-test('retry matrix: once on 503, none on 403, none for reddit 429, skipped near the deadline', async () => {
+test('retry matrix: once on 503, none on 403, none for reddit 429, once for youtube 404, skipped near the deadline', async () => {
   const clock = fakeClock();
   const mk = (responses) => {
     let i = 0;
@@ -72,6 +72,10 @@ test('retry matrix: once on 503, none on 403, none for reddit 429, skipped near 
   assert.equal(r.calls.length, 1); assert.ok(r.res.err instanceof HttpError); assert.equal(errorClass(r.res.err), 'HTTP 403');
   r = await run([new Response('', { status: 429 }), ok()], 'https://www.reddit.com/r/x.rss');
   assert.equal(r.calls.length, 1); assert.equal(errorClass(r.res.err), 'HTTP 429');
+  r = await run([new Response('', { status: 404 }), ok('yt')], 'https://www.youtube.com/feeds/videos.xml?channel_id=UCx');
+  assert.equal(r.calls.length, 2, 'youtube 404 is retried once'); assert.equal(r.res.ok.text, 'yt');
+  r = await run([new Response('', { status: 404 })], 'https://a.test/');
+  assert.equal(r.calls.length, 1, '404 elsewhere is not retried'); assert.equal(errorClass(r.res.err), 'HTTP 404');
   r = await run([new TypeError('fetch failed'), ok('recovered')], 'https://a.test/');
   assert.equal(r.calls.length, 2); assert.equal(r.res.ok.text, 'recovered');
   clock.set(0);
