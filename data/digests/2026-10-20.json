@@ -1,6 +1,6 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T10:47:32.419Z",
+ "generatedAt": "2026-10-20T10:49:25.109Z",
  "wordCount": 584,
  "readingMinutes": 3,
  "overview": null,
@@ -25,11 +25,11 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "This is crazy good for studying to improve existing custom engines by community like gufo, halogen, strixite, Strata... by learning their secret sauces.",
-     "why": "#1 on HN front page, 244 points, 79 comments; also on Reddit r/LocalLLaMA + r/MachineLearning",
+     "why": "#1 on HN front page, 253 points, 83 comments; also on Reddit r/LocalLLaMA + r/MachineLearning",
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T09:08:54.000Z",
      "category": "news",
-     "score": 17.15
+     "score": 17.21
     },
     {
      "id": "arxiv:2610.26860",
@@ -48,7 +48,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 16.48
+     "score": 16.47
     },
     {
      "id": "arxiv:2610.24087",
@@ -67,7 +67,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.11
+     "score": 16.1
     },
     {
      "id": "370d8453b070a7bf",
@@ -111,11 +111,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Large language model (LLM) agents have shown promising potential in coding tasks, and their performance is jointly determined by the policy model and the harness that mediates their interaction with the environment.",
-     "why": "35 upvotes on HF Papers; also on arXiv cs.CL",
+     "why": "36 upvotes on HF Papers; also on arXiv cs.CL",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 15.67
+     "score": 15.7
     },
     {
      "id": "arxiv:2610.26844",
@@ -153,7 +153,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 14.75
+     "score": 14.74
     }
    ]
   },
@@ -210,7 +210,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 9.56
+     "score": 9.55
     }
    ]
   },
