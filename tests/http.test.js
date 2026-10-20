@@ -360,6 +360,152 @@ test('a 403 from the Data API through the client keeps the quota evidence and dr
   assert.ok(err.url.endsWith('key=REDACTED'));
 });
 
+const RELAY = { url: 'https://r.test', token: 'RELAYSECRET' };
+const AHEAD_UA_RE = /^Ahead\/\d+\.\d+\.\d+ \(\+https:\/\/github\.com\/Sudish007\/ahead; personal AI dashboard\)$/;
+
+test('the relay token and the Ahead UA go to the relay host only, are dropped on a cross-host redirect and never sent without a relay', async () => {
+  const clock = fakeClock();
+  const seen = {};
+  const fetchImpl = async (url, init) => {
+    seen[url] = init.headers;
+    if (url === 'https://r.test/go') return new Response('', { status: 302, headers: { location: 'https://evil.test/x' } });
+    return ok('<rss/>', { 'content-type': 'application/xml' });
+  };
+  const client = createHttpClient({ fetchImpl, relay: RELAY, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p = Promise.all([
+    client.fetchText('https://r.test/feed/x'),
+    client.fetchText('https://r.test/page/thebatch?u=https%3A%2F%2Fwww.deeplearning.ai%2Fthe-batch%2Fa', { accept: ACCEPT.html }),
+    client.fetchText('https://other.test/'),
+    client.fetchText('https://r.test/go'),
+  ]);
+  await clock.tick();
+  const [feed, page, , redirected] = await p;
+  assert.equal(seen['https://r.test/feed/x']['x-relay-token'], 'RELAYSECRET');
+  assert.match(seen['https://r.test/feed/x']['user-agent'], AHEAD_UA_RE);
+  assert.equal(seen['https://r.test/feed/x'].accept, ACCEPT.feed);
+  assert.equal(seen['https://r.test/feed/x']['accept-language'], 'en-US,en;q=0.9');
+  assert.equal(seen['https://r.test/page/thebatch?u=https%3A%2F%2Fwww.deeplearning.ai%2Fthe-batch%2Fa']['x-relay-token'], 'RELAYSECRET');
+  assert.equal(seen['https://r.test/page/thebatch?u=https%3A%2F%2Fwww.deeplearning.ai%2Fthe-batch%2Fa'].accept, 'text/html');
+  assert.equal(seen['https://other.test/']['x-relay-token'], undefined);
+  assert.equal(seen['https://other.test/']['user-agent'], BROWSER_USER_AGENT);
+  assert.equal(seen['https://evil.test/x']['x-relay-token'], undefined, 'cross-host redirect must not carry the token');
+  assert.equal(seen['https://evil.test/x']['user-agent'], BROWSER_USER_AGENT);
+  assert.equal(redirected.finalUrl, 'https://evil.test/x');
+  assert.equal(feed.text, '<rss/>');
+  assert.equal(page.status, 200);
+  // Without a relay the header never exists, even for the same host
+  const plainSeen = {};
+  const plain = createHttpClient({ fetchImpl: async (url, init) => { plainSeen[url] = init.headers; return ok(); }, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p2 = plain.fetchText('https://r.test/feed/x');
+  await clock.tick();
+  await p2;
+  assert.equal(plainSeen['https://r.test/feed/x']['x-relay-token'], undefined);
+  assert.equal(plainSeen['https://r.test/feed/x']['user-agent'], BROWSER_USER_AGENT);
+});
+
+test('a relay 401 that echoes the token keeps its evidence with the token scrubbed everywhere and never records sensitive headers', async () => {
+  const clock = fakeClock();
+  const fetchImpl = async () => new Response('{"error":"unauthorized","echo":"RELAYSECRET"}', {
+    status: 401, headers: { server: 'cloudflare', 'x-relay-token': 'RELAYSECRET', authorization: 'Bearer RELAYSECRET', 'content-type': 'application/json' },
+  });
+  const client = createHttpClient({ fetchImpl, relay: RELAY, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p = client.fetchText('https://r.test/feed/x').catch((e) => e);
+  await clock.tick();
+  const err = await p;
+  assert.ok(err instanceof HttpError);
+  assert.equal(err.status, 401);
+  assert.equal(err.attempts, 1);
+  assert.equal(err.url, 'https://r.test/feed/x');
+  assert.equal(err.detail.server, 'cloudflare');
+  assert.equal(err.detail.contentType, 'application/json');
+  assert.ok(!('authorization' in err.detail) && !('xRelayToken' in err.detail));
+  assert.ok(!Object.values(err.detail).some((v) => /relay-token|authorization/i.test(String(v))));
+  assert.equal(err.detail.body, '{"error":"unauthorized","echo":"REDACTED"}');
+  for (const text of [err.message, err.url, JSON.stringify(err), err.stack, formatDetail(err.detail)]) assert.ok(!text.includes('RELAYSECRET'), text);
+  assert.equal(formatDetail(err.detail), 'server=cloudflare; content-type=application/json; body="{"error":"unauthorized","echo":"REDACTED"}"');
+  assert.equal(errorClass(err), 'HTTP 401');
+  assert.equal(errorSummary(err), 'HTTP 401');
+  assert.equal(errorSummary(err, { onRunner: true }), 'HTTP 401', 'a relay 401 is not a Cloudflare block of the source');
+  // A redirect loop error from the relay host scrubs its URL and location too
+  const loop = createHttpClient({ fetchImpl: async (url) => new Response('', { status: 302, headers: { location: `${url}?t=RELAYSECRET` } }), relay: RELAY, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p2 = loop.fetchText('https://r.test/feed/x').catch((e) => e);
+  await clock.tick();
+  const loopErr = await p2;
+  assert.ok(loopErr instanceof HttpError);
+  assert.equal(loopErr.status, 302);
+  assert.ok(!JSON.stringify(loopErr).includes('RELAYSECRET'));
+  assert.match(loopErr.detail.location, /t=REDACTED/);
+});
+
+test('TimeoutError and BodyTooLarge for a relay URL carry REDACTED instead of the token', async () => {
+  const clock = fakeClock();
+  const url = 'https://r.test/feed/x?t=RELAYSECRET';
+  const hang = (u, { signal }) => new Promise((_, reject) => { signal.addEventListener('abort', () => reject(Object.assign(new Error('aborted'), { name: 'AbortError' }))); });
+  const slow = createHttpClient({ fetchImpl: hang, relay: RELAY, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p = slow.fetchText(url, { timeoutMs: 15_000 }).catch((e) => e);
+  await clock.tick();
+  const timeout = await p;
+  assert.ok(timeout instanceof TimeoutError);
+  assert.equal(timeout.message, 'timeout for https://r.test/feed/x?t=REDACTED');
+  assert.equal(timeout.attempts, 1, 'no second attempt against the relay host');
+  assert.equal(clock.nowMs(), 15_000);
+  const stream = async () => new Response(new ReadableStream({ start(c) { for (let i = 0; i < 10; i++) c.enqueue(new Uint8Array(1000)); c.close(); } }), { status: 200 });
+  const big = createHttpClient({ fetchImpl: stream, relay: RELAY, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p2 = big.fetchText(url, { maxBytes: 2500 }).catch((e) => e);
+  await clock.tick();
+  const tooLarge = await p2;
+  assert.ok(tooLarge instanceof BodyTooLarge);
+  assert.equal(tooLarge.message, 'body exceeds 2500 bytes for https://r.test/feed/x?t=REDACTED');
+  for (const e of [timeout, tooLarge]) assert.ok(!JSON.stringify(e).includes('RELAYSECRET') && !e.stack.includes('RELAYSECRET'));
+  // The deadline guard path too
+  clock.set(10_000);
+  const late = await slow.fetchText(url, { deadlineAt: 5000 }).catch((e) => e);
+  assert.ok(late instanceof TimeoutError);
+  assert.equal(late.message, 'timeout for https://r.test/feed/x?t=REDACTED');
+});
+
+test('the relay host gets exactly one attempt (503, 429, network) while other hosts keep their retry', async () => {
+  const clock = fakeClock();
+  const run = async (responses, url) => {
+    let i = 0;
+    const calls = [];
+    const fetchImpl = async () => { calls.push(clock.nowMs()); const r = responses[Math.min(i++, responses.length - 1)]; if (r instanceof Error) throw r; return r; };
+    const client = createHttpClient({ fetchImpl, relay: RELAY, sleep: clock.sleep, nowMs: clock.nowMs });
+    const p = client.fetchText(url).then((r) => ({ ok: r }), (e) => ({ err: e }));
+    await clock.tick();
+    return { res: await p, calls };
+  };
+  let r = await run([new Response('', { status: 503 }), ok()], 'https://r.test/feed/x');
+  assert.equal(r.calls.length, 1); assert.equal(errorClass(r.res.err), 'HTTP 503'); assert.equal(r.res.err.attempts, 1);
+  r = await run([new TypeError('fetch failed'), ok()], 'https://r.test/feed/x');
+  assert.equal(r.calls.length, 1); assert.equal(errorClass(r.res.err), 'network'); assert.equal(r.res.err.attempts, 1);
+  r = await run([new Response('', { status: 429, headers: { 'retry-after': '1' } }), ok()], 'https://r.test/feed/x');
+  assert.equal(r.calls.length, 1); assert.equal(errorClass(r.res.err), 'HTTP 429'); assert.equal(r.res.err.attempts, 1);
+  r = await run([new Response('', { status: 502 }), ok()], 'https://r.test/page/thebatch?u=x');
+  assert.equal(r.calls.length, 1); assert.equal(errorClass(r.res.err), 'HTTP 502');
+  r = await run([new Response('', { status: 503 }), ok('fine')], 'https://a.test/');
+  assert.equal(r.calls.length, 2, 'other hosts keep their retry with a relay configured'); assert.equal(r.res.ok.text, 'fine');
+  r = await run([ok('relayed')], 'https://r.test/feed/x');
+  assert.equal(r.calls.length, 1); assert.equal(r.res.ok.text, 'relayed');
+});
+
+test('every successful result exposes the response headers next to contentType', async () => {
+  const clock = fakeClock();
+  const fetchImpl = async () => ok('<rss/>', { 'content-type': 'application/xml; charset=utf-8', 'x-relay-cache': 'stale', 'x-relay-stale': '2026-10-20T06:00:00.000Z' });
+  for (const relay of [RELAY, null]) {
+    const client = createHttpClient({ fetchImpl, relay, sleep: clock.sleep, nowMs: clock.nowMs });
+    const p = client.fetchText('https://r.test/feed/x');
+    await clock.tick();
+    const res = await p;
+    assert.equal(typeof res.headers.get, 'function');
+    assert.equal(res.headers.get('content-type'), res.contentType);
+    assert.equal(res.contentType, 'application/xml; charset=utf-8');
+    assert.equal(res.headers.get('x-relay-stale'), '2026-10-20T06:00:00.000Z');
+    assert.equal(res.headers.get('x-relay-cache'), 'stale');
+    assert.deepEqual(Object.keys(res).sort(), ['contentType', 'finalUrl', 'headers', 'status', 'text']);
+  }
+});
+
 test('www.googleapis.com gets exactly one attempt: no retry on 503 or a network error', async () => {
   const clock = fakeClock();
   const url = 'https://www.googleapis.com/youtube/v3/playlistItems?x';

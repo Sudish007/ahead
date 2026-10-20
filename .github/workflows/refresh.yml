@@ -45,6 +45,8 @@ jobs:
           LLM_BASE_URL: ${{ secrets.LLM_BASE_URL }}
           LLM_MODEL: ${{ secrets.LLM_MODEL }}
           YOUTUBE_API_KEY: ${{ secrets.YOUTUBE_API_KEY }}
+          RELAY_URL: ${{ secrets.RELAY_URL }}
+          RELAY_TOKEN: ${{ secrets.RELAY_TOKEN }}
       - name: Commit data back to main
         run: |
           git fetch origin main

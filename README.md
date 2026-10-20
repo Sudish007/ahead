@@ -1,6 +1,6 @@
 # Ahead
 
-Ahead is a personal AI intelligence dashboard: one static page that pulls 64 sources (arXiv, HF Daily Papers, Hacker News, Reddit, the frontier labs, the deep technical blogs, release feeds, podcasts and YouTube channels), ranks everything, and writes a **5-minute daily brief** you can read in one scroll. It runs on GitHub Actions every six hours and deploys to GitHub Pages. No framework, no server, no database, no API keys required (an LLM key and a YouTube Data API key are optional).
+Ahead is a personal AI intelligence dashboard: one static page that pulls 64 sources (arXiv, HF Daily Papers, Hacker News, Reddit, the frontier labs, the deep technical blogs, release feeds, podcasts and YouTube channels), ranks everything, and writes a **5-minute daily brief** you can read in one scroll. It runs on GitHub Actions every six hours and deploys to GitHub Pages. No framework, no server, no database, no API keys required (an LLM key, a YouTube Data API key and a small Cloudflare Worker relay are optional).
 
 Live site: https://sudish007.github.io/ahead/ (repo: https://github.com/Sudish007/ahead)
 
@@ -30,12 +30,12 @@ Type `sitemap (publisher has no feed)` means the publisher offers no RSS/Atom fe
 | Labs | OpenAI, Google DeepMind, Google Research, Microsoft Research, NVIDIA Technical Blog, Hugging Face Blog, Ai2, Mistral AI, Transformer Circuits | rss/atom | Mistral serves RSS as `text/plain`; the parser sniffs the body |
 | Labs | Meta Newsroom (AI) + Engineering at Meta (AI) | rss | Meta AI blog has no feed; both feeds share the `meta` family |
 | Labs | Anthropic | sitemap (publisher has no feed) | `/news`, `/research`, `/engineering` pages |
-| Blogs | Lil'Log, Interconnects, Ahead of AI (Raschka), Simon Willison, Chip Huyen, Eugene Yan, Hamel Husain, SemiAnalysis (newsletter), Import AI, Latent Space, Don't Worry About the Vase, One Useful Thing, The Gradient, Epoch AI (atom) + Gradient Updates, Alignment Forum, ChinAI, Jay Alammar (Language Models newsletter), Andrej Karpathy (blog + bearblog), Horace He (Thonking AI) | rss/atom | Latent Space carries the `[AINews]` daily issues and podcast episodes (routed to media by audio enclosure) |
-| Blogs | The Batch | sitemap (publisher has no feed) | `/the-batch/<slug>` articles; issues and tags excluded |
+| Blogs | Lil'Log, Interconnects, Ahead of AI (Raschka), Simon Willison, Chip Huyen, Eugene Yan, Hamel Husain, SemiAnalysis (newsletter), Import AI, Latent Space, Don't Worry About the Vase, One Useful Thing, The Gradient, Epoch AI (atom) + Gradient Updates, Alignment Forum, ChinAI, Jay Alammar (Language Models newsletter), Andrej Karpathy (blog + bearblog), Horace He (Thonking AI) | rss/atom | Latent Space carries the `[AINews]` daily issues and podcast episodes (routed to media by audio enclosure); Import AI, Don't Worry About the Vase, Gradient Updates and ChinAI go through the relay when it is configured |
+| Blogs | The Batch | sitemap (publisher has no feed) | `/the-batch/<slug>` articles; issues and tags excluded; through the relay when configured |
 | Releases | PyTorch, vLLM, Transformers, llama.cpp, SGLang, Unsloth, TRL, torchtitan | github | release Atom feeds; CI tags (`viable/strict/...`) dropped |
 | Releases | GitHub new repos: llm, machine-learning, ai-agents | github | search API, created in the last 7 days, 50+ stars |
 | Releases | HF trending models | json | first-seen date is the run time |
-| Media | Dwarkesh Podcast, Machine Learning Street Talk, The Cognitive Revolution, No Priors | rss | sponsor blocks cut from summaries |
+| Media | Dwarkesh Podcast, Machine Learning Street Talk, The Cognitive Revolution, No Priors | rss | sponsor blocks cut from summaries; Dwarkesh through the relay when configured |
 | Media | Andrej Karpathy, Yannic Kilcher, AI Explained, GPU MODE, Stanford Online, 3Blue1Brown | youtube | with `YOUTUBE_API_KEY`: one Data API `playlistItems` request per channel (no view counts); without it: the public feed with browser-like headers and 3 attempts (2 s / 8 s backoff), which answers 404/500 intermittently; feed view counts feed the score |
 
 Link-outs (no fetch): alphaXiv (Research tab), Meta AI blog (Labs tab), AI News / smol.ai (Blogs tab; its RSS stopped on 2026-09-09 and the issues now arrive as `[AINews]` posts in the Latent Space feed), plus eight leaderboards and a 16-entry learning list in `sources.config.mjs`.
@@ -123,6 +123,43 @@ Quota: `playlistItems.list` costs 1 unit, so a run with 6 channels costs 6 units
 
 Secret hygiene: the key travels only in the request URL. Every URL that reaches an error message, a log line or the `detail` field of `meta.json` is rewritten to `key=REDACTED`, and the key is never written to `data/`. `gh secret delete YOUTUBE_API_KEY --repo Sudish007/ahead` returns to the feed path; an empty secret behaves exactly like an absent one.
 
+## Relay for Cloudflare-blocked feeds
+
+Why: six Cloudflare-fronted sources answer a 403 JS challenge (`cf-mitigated: challenge`) to every request from GitHub-hosted runner IPs while answering 200 from a home connection. A probe on 2026-10-20 showed that a Cloudflare Worker fetching the same URLs is not challenged (126 requests, zero challenges; see `.agents/tasks/ahead-build/relay-probe-results.md`), so the pipeline can fetch them through a Worker we control.
+
+What it is: `relay/` holds the Worker `ahead-relay` (plain JS, `wrangler` is its only dev dependency, deployed to `workers.dev`; `relay/README.md` has the short operator notes). It proxies exactly the URLs in `relay/src/allowlist.json`, generated from the `viaRelay` sources in `sources.config.mjs`: the six feed/sitemap URLs under `GET /feed/<id>` and The Batch article pages under `GET /page/thebatch?u=<encoded URL>` (only URLs starting with `https://www.deeplearning.ai/the-batch/`). Every other path, id, method or URL answers `404 {"error":"not found"}`, and every request must carry the shared-secret header `X-Relay-Token` or it answers `401 {"error":"unauthorized"}`, so it is not an open proxy. The token is never forwarded upstream; upstream requests carry the pipeline's browser-like headers.
+
+How it behaves: a KV namespace (`RELAY_CACHE`) keeps a last-good copy of every URL (raw bytes plus `contentType`/`fetchedAt`, 30-day TTL). A copy younger than 2 h is served as is (`x-relay-cache: hit`); otherwise the Worker fetches upstream with a 10 s timeout and one retry after 2 s on a 429, stores the body and serves it (`miss`); when upstream fails (non-200, `cf-mitigated`, timeout) and a copy exists, the copy is served with `x-relay-cache: stale` and `x-relay-stale: <fetchedAt>`; with no copy it answers `502 {"error":"upstream failed","url":...,"upstreamStatus":<int|null>,"cfMitigated":<string|null>,"reason":"status"|"timeout"|"network"}`. Bodies over 4,000,000 bytes (4 MB; the largest feed is about 2 MB) are passed through but not stored (`bypass`). A cron (`0 */3 * * *`) refreshes the six feed/sitemap copies in id order 2 s apart, so pipeline runs normally hit KV and never reach Substack in a burst. Every response carries `cache-control: no-store` and 200s pass only the upstream `content-type` through.
+
+What the pipeline does: when `RELAY_URL` and `RELAY_TOKEN` are both set (non-blank), `viaRelay` sources are requested from `${RELAY_URL}/feed/<id>` (The Batch pages from `${RELAY_URL}/page/thebatch?u=...`) with the `X-Relay-Token` header and the identifying `Ahead/<version>` UA, one attempt with a 15 s timeout (pages keep their 8 s), then go through the same parsers, age window, dedup and scoring; source ids do not change, so stored items and saved/read state survive. Any relay failure (401, 404, 502, timeout, network) logs `<id>: relay failed (<class>) for feed|page; falling back to direct [...]` and runs the direct fetch exactly as without the relay, so the relay can never make a source worse. `meta.sources.<id>.note` reads `via relay`, `via relay (stale <fetchedAt>)` when the Worker served its last-good copy, or `relay: <class>, fell back to direct` (for example `relay: HTTP 401, fell back to direct`), in which case the row's status and error are the direct fetch's. Sources without `viaRelay`, and every run where either variable is absent or blank, behave byte-for-byte as before (no header, no note). A malformed `RELAY_URL` (not `https:`, or with credentials, query or fragment) logs `relay disabled: ...` once and the run proceeds directly.
+
+Deploy (PowerShell; `$env:CI='true'` and `$env:WRANGLER_SEND_METRICS='false'` keep wrangler from prompting):
+
+```powershell
+cd relay; npm ci
+npx wrangler kv namespace create RELAY_CACHE          # once; put the printed id into relay/wrangler.toml [[kv_namespaces]]
+npx wrangler deploy                                   # prints https://ahead-relay.<subdomain>.workers.dev and the cron trigger
+node -e "const fs=require('fs'),p=require('path'),f=process.argv[1];fs.mkdirSync(p.dirname(f),{recursive:true});fs.writeFileSync(f,require('crypto').randomBytes(32).toString('hex'));console.log('written',fs.statSync(f).size)" "$env:LOCALAPPDATA\ahead\relay-token.txt"
+Get-Content -Raw "$env:LOCALAPPDATA\ahead\relay-token.txt" | npx wrangler secret put RELAY_TOKEN
+Get-Content -Raw "$env:LOCALAPPDATA\ahead\relay-token.txt" | gh secret set RELAY_TOKEN --repo Sudish007/ahead
+gh secret set RELAY_URL --repo Sudish007/ahead --body https://ahead-relay.rishtapatra.workers.dev
+```
+
+The token is 32 random bytes as 64 hex chars and never goes on a command line; piping appends a newline, so both the Worker and the pipeline trim it before comparing or sending. The workflow passes `RELAY_URL` and `RELAY_TOKEN` to the `Fetch sources and build the brief` step only; the test step never sees them. After changing `viaRelay`/`relayPagePrefix` in `sources.config.mjs`, run `node relay/build-allowlist.mjs` and redeploy; `npm test` fails while `relay/src/allowlist.json` is stale.
+
+Rotate the token by running the generator and the two `secret put`/`secret set` lines again; the old token stops working the moment `wrangler secret put` completes, and the next workflow run uses the new one. Disable the relay with `gh secret delete RELAY_TOKEN --repo Sudish007/ahead` (or `RELAY_URL`): the six sources return to direct fetches and today's `blocked from GitHub runner: 403 Cloudflare` error; `npx wrangler delete ahead-relay` (in `relay/`) removes the Worker itself. Observe it with `npx wrangler tail ahead-relay` (one JSON `event: upstream` line per upstream attempt with `status`, `cfRay`, `cfCacheStatus`, `cfMitigated`, `bytes`, `ms`, `attempt`, and one `event: cron` summary per tick).
+
+Free-tier footprint per day: 8 cron ticks x 6 fetches plus about 16 relay requests (6 feeds + up to 10 pages) x 4 scheduled runs, i.e. under 100 Worker requests and under 100 KV writes (48 from the cron, up to 40 for article pages) against 100,000 requests and 1,000 writes; storage is a few MB of 1 GB; one of the five cron triggers; the 2 s gaps are sleeps and cost no CPU time.
+
+Secret hygiene: the token travels only in the `X-Relay-Token` header to the relay host (a redirect to another host drops it). Every URL, header and body snippet that can reach an error message, a log line or the `detail` field of `meta.json` has the token replaced with `REDACTED`, `authorization`/`x-relay-token` response headers are never recorded, and the token is never written to `data/` or the repository. The local copy at `%LOCALAPPDATA%\ahead\relay-token.txt` (outside the repo) is for running `npm run fetch` or `npm run probe` through the relay:
+
+```powershell
+$env:RELAY_URL = 'https://ahead-relay.rishtapatra.workers.dev'; $env:RELAY_TOKEN = (Get-Content -Raw "$env:LOCALAPPDATA\ahead\relay-token.txt").Trim()
+npm run fetch -- --source importai,zvi,chinai,pod-dwarkesh,epoch-gradient-updates,thebatch --dry-run   # six rows with `via relay`
+```
+
+Sources that use it (`viaRelay: true` in `sources.config.mjs`): Import AI (`importai`), Don't Worry About the Vase (`zvi`), ChinAI (`chinai`), Dwarkesh Podcast (`pod-dwarkesh`), Epoch AI Gradient Updates (`epoch-gradient-updates`) and The Batch (`thebatch`, sitemap plus article pages).
+
 ## Deployment
 
 `.github/workflows/refresh.yml` runs every 6 hours on a cron (`0 */6 * * *`, i.e. 00:00, 06:00, 12:00 and 18:00 UTC), on `workflow_dispatch`, and on pushes to `main` that touch anything except `data/`. It runs the tests, runs the pipeline, commits `data/` back with `[skip ci]`, stages `index.html app.js styles.css favicon.svg data/` into `_site/` and deploys that to GitHub Pages. `actions/configure-pages@v6` with `enablement: true` creates the Pages site on the first run, so no Settings change or API call is needed before pushing. Trigger a refresh by hand with:
@@ -146,21 +183,21 @@ npm run probe:runner                       # header-variant matrix for the hosts
 npm run serve                              # http://127.0.0.1:8787/ and http://127.0.0.1:8787/ahead/
 ```
 
-`--source` is rejected without `--dry-run`: a partial run never writes data or calls the LLM. `--now <ISO>` pins the run time; `--no-llm` disables the editorial layer; `--data-dir <path>` redirects output.
+`--source` is rejected without `--dry-run`: a partial run never writes data or calls the LLM. `--now <ISO>` pins the run time; `--no-llm` disables the editorial layer; `--data-dir <path>` redirects output. `npm run fetch` and `npm run probe` fetch the six `viaRelay` sources through the relay when `RELAY_URL` and `RELAY_TOKEN` are both set in the environment (two-line setup in "Relay for Cloudflare-blocked feeds"); otherwise every source is fetched directly.
 
 ## Data files
 
 - `data/items.json` — `{ generatedAt, count, items[] }`, 7 days of items sorted by rank; capped at 3,000 items and 2 MB. Each item: `id` (`arxiv:<id>` or 16 hex of the canonical URL), `title`, `url`, `canonicalUrl`, `sources[{ id, url?, at }]`, `category`, `publishedAt`, `surfacedAt`, `summary`, `score`, `signals`, optional `arxivId authors readMinutes discussionUrl tag extra`.
 - `data/digests/YYYY-MM-DD.json` — one brief per UTC day: `overview`, six `sections[].entries[]`, `itemIds`, `deepReadId`, `wordCount`, `readingMinutes`, `llm`. Only today's file is ever rewritten.
 - `data/digests/index.json` — `{ days: [{ date, generatedAt, wordCount, readingMinutes, entryCount }] }`, newest first.
-- `data/meta.json` — run metadata: per-source `status` (`ok | empty | failed`), `fetched`, `kept`, `skipped`, `ms`, `error`/`note` (youtube sources: `api` when the Data API answered, `api: <class>, fell back to feed` when it did not), `homepage`, and `detail` (failed sources only: response `server`/`cf-ray`/`cf-mitigated`/`content-type`/`location` headers and the first 300 chars of the body, <= 400 chars); `okCount/emptyCount/failedCount`; `newItemCount`; source-scoped `sitemapSkipped`/`sitemapCache` (at most 30 entries each); `llm`; `brief`; and `static` (leaderboards, link-outs, learn list) for the UI.
+- `data/meta.json` — run metadata: per-source `status` (`ok | empty | failed`), `fetched`, `kept`, `skipped`, `ms`, `error`/`note` (youtube sources: `api` when the Data API answered, `api: <class>, fell back to feed` when it did not; relay sources: `via relay`, `via relay (stale <fetchedAt>)` when the Worker served its last-good copy, `relay: <class>, fell back to direct` when the relay failed and the direct fetch ran), `homepage`, and `detail` (failed sources only: response `server`/`cf-ray`/`cf-mitigated`/`content-type`/`location` headers and the first 300 chars of the body, <= 400 chars); `okCount/emptyCount/failedCount`; `newItemCount`; source-scoped `sitemapSkipped`/`sitemapCache` (at most 30 entries each); `llm`; `brief`; and `static` (leaderboards, link-outs, learn list) for the UI.
 
 `fetched` counts decoded records before filtering, `kept` the records that survived parser drops, the age window and the per-source cap; `empty` means the fetch worked but nothing was kept (pytorch's CI-tag feed, weekend arXiv), and only `failed` counts toward the health indicator.
 
 ## Known limits
 
 - Reddit publishes no scores in its feed and may block Actions IPs; the source then reports `failed` and everything else proceeds.
-- Some sources are blocked from GitHub-hosted runners even with browser-like headers (measured on the Actions runs after the header/retry changes). Six Cloudflare-fronted sources answer a 403 JS challenge on every run and report `blocked from GitHub runner: 403 Cloudflare`: Import AI, Don't Worry About the Vase, Gradient Updates, ChinAI, Dwarkesh Podcast (Substack) and The Batch (sitemap). By design no proxy, mirror or scraper is used, so they stay in the registry as `failed` and the health button counts them. The same six feeds answer 200 from a home connection (`npm run fetch` locally), which points to IP-range blocking.
+- Six Cloudflare-fronted sources answer a 403 JS challenge to direct requests from GitHub-hosted runners even with browser-like headers (measured on the Actions runs after the header/retry changes): Import AI, Don't Worry About the Vase, Gradient Updates, ChinAI, Dwarkesh Podcast (Substack) and The Batch (sitemap). The same six URLs answer 200 from a home connection (`npm run fetch` locally), which points to IP-range blocking. Since 2026-10-20 the workflow fetches them through the `ahead-relay` Cloudflare Worker (see "Relay for Cloudflare-blocked feeds"), which proxies only these allowlisted URLs and requires a shared-secret header. Without `RELAY_URL`/`RELAY_TOKEN`, or when the relay itself fails, they fall back to the direct fetch and report `blocked from GitHub runner: 403 Cloudflare` as before.
 - YouTube's public feed endpoint is flaky from every network (locally about 30-50 % of requests succeed) and answers 404/500 for most requests from the runner. Without `YOUTUBE_API_KEY` the six channels (Andrej Karpathy, Yannic Kilcher, AI Explained, GPU MODE, Stanford Online, 3Blue1Brown) usually report `HTTP 404 (3 attempts)` or `HTTP 500 (3 attempts)` there, and which channels get through varies run to run (typically 1 of 6). With the key (see "YouTube Data API key") they are fetched through the YouTube Data API and the feed is only the fallback.
 - The GitHub search API is limited to 10 requests/min unauthenticated; the workflow's `GITHUB_TOKEN` raises that.
 - HN front-page rank comes from `topstories.json`, so a story outside the top 30 shows "on HN front page" without a number.

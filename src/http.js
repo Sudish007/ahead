@@ -27,6 +27,8 @@ const DETAIL_BODY_CHARS = 300;
 const DETAIL_LINE_CHARS = 400;
 /** detail key -> response header it was read from (also the label formatDetail prints). */
 const DETAIL_HEADERS = { server: 'server', cfRay: 'cf-ray', cfMitigated: 'cf-mitigated', contentType: 'content-type', location: 'location' };
+/** Response headers that never reach `detail`, even if DETAIL_HEADERS is one day extended to read them. */
+const SENSITIVE_HEADERS = new Set(['authorization', 'x-relay-token']);
 
 /**
  * Rewrite `key=<value>` to `key=REDACTED` inside every googleapis.com URL found in `text`. The YouTube Data API key travels
@@ -124,12 +126,14 @@ async function readSnippet(res, maxBytes = SNIPPET_BYTES) {
   }
 }
 
-/** Response evidence for a failed request: selected headers (each <= 80 chars); absent headers are omitted. */
-function headerDetail(res, keys) {
+/** Response evidence for a failed request: selected headers (each <= 80 chars after `scrub`); absent headers are omitted. */
+function headerDetail(res, keys, scrub = String) {
   const detail = {};
   for (const key of keys) {
-    const value = res.headers?.get?.(DETAIL_HEADERS[key]);
-    if (value !== undefined && value !== null && value !== '') detail[key] = String(value).slice(0, 80);
+    const name = DETAIL_HEADERS[key];
+    if (!name || SENSITIVE_HEADERS.has(name)) continue;
+    const value = res.headers?.get?.(name);
+    if (value !== undefined && value !== null && value !== '') detail[key] = scrub(String(value)).slice(0, 80);
   }
   return detail;
 }
@@ -149,10 +153,16 @@ export function formatDetail(detail) {
 }
 
 export function createHttpClient({
-  fetchImpl = globalThis.fetch, githubToken = '', sleep = defaultSleep, nowMs = Date.now, userAgent = DEFAULT_USER_AGENT,
+  fetchImpl = globalThis.fetch, githubToken = '', relay = null, sleep = defaultSleep, nowMs = Date.now, userAgent = DEFAULT_USER_AGENT,
 } = {}) {
   const chains = new Map();
   const lastAt = new Map();
+  // The relay Worker (src/relay.js) is the one host that receives the shared-secret header. The token travels only in that
+  // header, so every string that can carry a response or URL into an error (and from there into logs or meta.json) is scrubbed.
+  const relayHost = relay ? new URL(relay.url).hostname : null;
+  const relayToken = relay ? relay.token : '';
+  // Scrubbing runs before any slicing so a cut never leaves part of the token behind.
+  const scrub = (text) => (relayToken ? String(text).split(relayToken).join('REDACTED') : text);
 
   async function paced(host, fn) {
     const gap = PACING[host];
@@ -187,6 +197,12 @@ export function createHttpClient({
       headers.authorization = `Bearer ${githubToken}`;
       headers.accept = 'application/vnd.github+json';
     }
+    // Our own Worker: identify as Ahead and present the shared secret. Headers are rebuilt per redirect hop, so a hop to
+    // another host drops the token (the same mechanism that scopes the GitHub token to api.github.com).
+    if (relayHost && host === relayHost) {
+      headers['user-agent'] = userAgent;
+      headers['x-relay-token'] = relayToken;
+    }
     return headers;
   }
 
@@ -202,20 +218,20 @@ export function createHttpClient({
         if (total > maxBytes) {
           controller.abort();
           try { await reader.cancel(); } catch { /* ignore */ }
-          throw new BodyTooLarge(url, maxBytes);
+          throw new BodyTooLarge(scrub(url), maxBytes);
         }
         chunks.push(value);
       }
       return new TextDecoder('utf-8').decode(Buffer.concat(chunks.map((c) => Buffer.from(c.buffer, c.byteOffset, c.byteLength))));
     }
     const text = await res.text();
-    if (Buffer.byteLength(text) > maxBytes) throw new BodyTooLarge(url, maxBytes);
+    if (Buffer.byteLength(text) > maxBytes) throw new BodyTooLarge(scrub(url), maxBytes);
     return text;
   }
 
   async function once(url, { timeoutMs, maxBytes, accept, deadlineAt }) {
     const startedAt = nowMs();
-    if (deadlineAt !== undefined && deadlineAt <= startedAt) throw new TimeoutError(url);
+    if (deadlineAt !== undefined && deadlineAt <= startedAt) throw new TimeoutError(scrub(url));
     let budget = timeoutMs;
     if (deadlineAt !== undefined) budget = Math.min(budget, deadlineAt - startedAt);
     const controller = new AbortController();
@@ -231,33 +247,34 @@ export function createHttpClient({
         try {
           res = await fetchImpl(current, { method: 'GET', headers, redirect: 'manual', signal: controller.signal });
         } catch (err) {
-          if (timedOut || controller.signal.aborted) throw new TimeoutError(url);
+          if (timedOut || controller.signal.aborted) throw new TimeoutError(scrub(url));
           throw err;
         }
         const status = res.status;
         if ([301, 302, 303, 307, 308].includes(status)) {
           const location = res.headers?.get?.('location');
-          if (!location || hop >= MAX_REDIRECTS) throw new HttpError(status, current, undefined, headerDetail(res, ['location', 'server']));
+          if (!location || hop >= MAX_REDIRECTS) throw new HttpError(status, scrub(current), undefined, headerDetail(res, ['location', 'server'], scrub));
           try { if (res.body) await res.body.cancel?.(); } catch { /* ignore */ }
           current = new URL(location, current).href;
           continue;
         }
         if (status >= 400) {
           // Keep evidence of what the server said (block pages, challenge markers); the body is capped at 4 KB read / 300 chars kept.
-          const detail = headerDetail(res, ['server', 'cfRay', 'cfMitigated', 'contentType', 'location']);
-          const body = (await readSnippet(res)).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, DETAIL_BODY_CHARS);
+          const detail = headerDetail(res, ['server', 'cfRay', 'cfMitigated', 'contentType', 'location'], scrub);
+          const body = scrub(await readSnippet(res)).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim().slice(0, DETAIL_BODY_CHARS);
           if (body) detail.body = body;
-          throw new HttpError(status, current, parseRetryAfter(res.headers?.get?.('retry-after')), detail);
+          throw new HttpError(status, scrub(current), parseRetryAfter(res.headers?.get?.('retry-after')), detail);
         }
         let text;
         try {
           text = await readBody(res, current, maxBytes, controller);
         } catch (err) {
           if (err instanceof BodyTooLarge) throw err;
-          if (timedOut || controller.signal.aborted) throw new TimeoutError(url);
+          if (timedOut || controller.signal.aborted) throw new TimeoutError(scrub(url));
           throw err;
         }
-        return { status, text, finalUrl: res.url || current, contentType: res.headers?.get?.('content-type') ?? '' };
+        // `headers` lets the relay wrapper read x-relay-stale; nothing else in the pipeline looks at it.
+        return { status, text, finalUrl: res.url || current, contentType: res.headers?.get?.('content-type') ?? '', headers: res.headers };
       }
     } finally {
       settled = true;
@@ -270,6 +287,10 @@ export function createHttpClient({
   }
 
   function retryable(err, host) {
+    // The relay Worker already retries upstream (one 429 retry) and serves its stale copy, so a failure from it is final here:
+    // the direct fallback must still fit the 45 s backstop (15 s relay attempt + 20 s direct attempt, and no second direct
+    // attempt since < 25 s remain at that point).
+    if (relayHost && host === relayHost) return false;
     if (host === 'www.reddit.com') return false;
     // The YouTube Data API gets one attempt (8 s timeout): after it fails, the feed fallback's three fast-failing attempts
     // (~10.5 s) must still fit the 45 s source backstop with >= 25 s left at both retry checks. A retry here would cost that.

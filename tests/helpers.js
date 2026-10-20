@@ -123,7 +123,10 @@ export function fixtureFetch({ now = NOW, overrides = {}, calls } = {}) {
     }
     const accept = headerOf(init, 'accept') ?? '';
     if (accept.startsWith('text/html')) {
-      return new Response(pageHtml(key), { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
+      // A relay page request (/page/<id>?u=<encoded article url>) answers the same generated page as the direct request would.
+      let page = key;
+      try { const u = new URL(key).searchParams.get('u'); if (u && /^https?:\/\//.test(u)) page = u; } catch { /* keep the request URL */ }
+      return new Response(pageHtml(page), { status: 200, headers: { 'content-type': 'text/html; charset=utf-8' } });
     }
     const fx = map.get(key);
     if (!fx) throw new Error(`fixtureFetch: unmapped URL ${key}`);

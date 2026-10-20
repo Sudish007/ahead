@@ -16,6 +16,7 @@ import { applyInvalidations, mergeItems, mergePrevious, stripEphemeral } from '.
 import { compareRank, score } from './score.js';
 import { buildBrief, finalizeDigest } from './brief.js';
 import { editorialize, resolveLlmConfig } from './llm.js';
+import { createRelayFetch, relayNote, resolveRelay } from './relay.js';
 
 export const SOURCE_BACKSTOP_MS = 45_000;
 export const RUN_BUDGET_MS = 8 * 60_000;
@@ -68,7 +69,11 @@ export async function runSource(source, deps) {
   const sourceStartedAtMs = nowMs();
   const deadlineAt = sourceStartedAtMs + SOURCE_BACKSTOP_MS;
   const accept = acceptFor(source);
-  const fetchText = (url, opts = {}) => http.fetchText(url, { maxBytes: source.maxBytes ?? 8_000_000, accept, deadlineAt, ...opts });
+  const direct = (url, opts = {}) => http.fetchText(url, { maxBytes: source.maxBytes ?? 8_000_000, accept, deadlineAt, ...opts });
+  // Only `viaRelay` sources go through the Worker, and only when run() resolved RELAY_URL + RELAY_TOKEN; everything else is byte-identical to a direct run.
+  const relay = deps.relay && source.viaRelay === true ? deps.relay : null;
+  const relayState = { primary: null };
+  const fetchText = relay ? createRelayFetch({ source, relay, direct, logger, state: relayState }) : direct;
   const ctx = {
     now, nowMs, fetchText, logger, youtubeApiKey,
     previousItemsByCanonicalUrl: deps.previousItemsByCanonicalUrl ?? new Map(),
@@ -112,6 +117,8 @@ export async function runSource(source, deps) {
   }
   result.ms = Math.max(0, nowMs() - sourceStartedAtMs);
   if (apiNote) result.note = result.note ? `${result.note}; ${apiNote}` : apiNote;
+  const relayNoteText = relayNote(relayState);
+  if (relayNoteText) result.note = result.note ? `${result.note}; ${relayNoteText}` : relayNoteText;
   const requested = result.requestedUrl ?? source.url;
   delete result.requestedUrl;
   const sameUrl = (a, b) => { try { return new URL(a).href === new URL(b).href; } catch { return a === b; } };
@@ -195,7 +202,8 @@ export async function run({
     if (dryRun !== true) throw new ConfigError('a source-filtered run is diagnostic only: pass dryRun: true (--dry-run)');
   }
   const diagnostic = onlySourceIds !== undefined;
-  const http = createHttpClient({ fetchImpl, githubToken: typeof env?.GITHUB_TOKEN === 'string' ? env.GITHUB_TOKEN : '', nowMs });
+  const relay = resolveRelay(env ?? {}, logger);
+  const http = createHttpClient({ fetchImpl, githubToken: typeof env?.GITHUB_TOKEN === 'string' ? env.GITHUB_TOKEN : '', relay, nowMs });
   const onRunner = env?.GITHUB_ACTIONS === 'true';
   const youtubeApiKey = typeof env?.YOUTUBE_API_KEY === 'string' ? env.YOUTUBE_API_KEY : '';
 
@@ -215,7 +223,7 @@ export async function run({
         continue;
       }
       raw[k] = await runSource(source, {
-        http, now, nowMs, logger, onRunner, youtubeApiKey, previousItemsByCanonicalUrl,
+        http, now, nowMs, logger, onRunner, youtubeApiKey, relay, previousItemsByCanonicalUrl,
         previousSitemapSkipped: previousState.sitemapSkipped[source.id] ?? {},
         previousSitemapCache: previousState.sitemapCache[source.id] ?? {},
       });
