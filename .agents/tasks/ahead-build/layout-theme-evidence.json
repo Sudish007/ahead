@@ -1,0 +1,2376 @@
+{
+  "base": "http://127.0.0.1:8787/ahead/",
+  "mode": "local",
+  "generatedAt": "2026-10-20T15:11:54.598Z",
+  "chromium": "156.0.8078.4",
+  "widths": {
+    "360": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".sections": 1
+            },
+            "tracks": {
+              ".sections": "328"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 328
+            },
+            "overview": {
+              "widthPx": 294,
+              "colWidthPx": 339.609,
+              "gapPx": 37.5,
+              "columns": 1,
+              "lineCh": 36.4
+            },
+            "sectionWidths": {
+              "mustKnow": 328,
+              "research": 328
+            },
+            "sectionCount": 6,
+            "entryCount": 15
+          },
+          "research": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".rows": 1
+            },
+            "tracks": {
+              ".rows": "328"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 328
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "static"
+          },
+          "archive": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".archive-list": 1
+            },
+            "tracks": {
+              ".archive-list": "328"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 328
+            },
+            "dayCount": 1
+          },
+          "learn": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".learn-groups": 1
+            },
+            "tracks": {
+              ".learn-groups": "328"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 328
+            },
+            "groupCount": 3
+          },
+          "leaderboards": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".cards": 1
+            },
+            "tracks": {
+              ".cards": "328"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 328
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".sections": 1
+            },
+            "tracks": {
+              ".sections": "328"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 328
+            },
+            "overview": {
+              "widthPx": 294,
+              "colWidthPx": 339.609,
+              "gapPx": 37.5,
+              "columns": 1,
+              "lineCh": 36.4
+            },
+            "sectionWidths": {
+              "mustKnow": 328,
+              "research": 328
+            },
+            "sectionCount": 6,
+            "entryCount": 15
+          },
+          "research": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".rows": 1
+            },
+            "tracks": {
+              ".rows": "328"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 328
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "static"
+          },
+          "archive": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".archive-list": 1
+            },
+            "tracks": {
+              ".archive-list": "328"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 328
+            },
+            "dayCount": 1
+          },
+          "learn": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".learn-groups": 1
+            },
+            "tracks": {
+              ".learn-groups": "328"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 328
+            },
+            "groupCount": 3
+          },
+          "leaderboards": {
+            "scrollWidth": 360,
+            "innerWidth": 360,
+            "rootFontSize": "15px",
+            "bodyWidth": 360,
+            "columns": {
+              ".cards": 1
+            },
+            "tracks": {
+              ".cards": "328"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 328
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    },
+    "390": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".sections": 1
+            },
+            "tracks": {
+              ".sections": "358"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 358
+            },
+            "overview": {
+              "widthPx": 324,
+              "colWidthPx": 339.609,
+              "gapPx": 37.5,
+              "columns": 1,
+              "lineCh": 40.1
+            },
+            "sectionWidths": {
+              "mustKnow": 358,
+              "research": 358
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-390-light.png"
+          },
+          "research": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".rows": 1
+            },
+            "tracks": {
+              ".rows": "358"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 358
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "static",
+            "screenshot": "docs/screenshots/research-390-light.png"
+          },
+          "archive": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".archive-list": 1
+            },
+            "tracks": {
+              ".archive-list": "358"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 358
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-390-light.png"
+          },
+          "learn": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".learn-groups": 1
+            },
+            "tracks": {
+              ".learn-groups": "358"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 358
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-390-light.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".cards": 1
+            },
+            "tracks": {
+              ".cards": "358"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 358
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".sections": 1
+            },
+            "tracks": {
+              ".sections": "358"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 358
+            },
+            "overview": {
+              "widthPx": 324,
+              "colWidthPx": 339.609,
+              "gapPx": 37.5,
+              "columns": 1,
+              "lineCh": 40.1
+            },
+            "sectionWidths": {
+              "mustKnow": 358,
+              "research": 358
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-390-dark.png"
+          },
+          "research": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".rows": 1
+            },
+            "tracks": {
+              ".rows": "358"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 358
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "static",
+            "screenshot": "docs/screenshots/research-390-dark.png"
+          },
+          "archive": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".archive-list": 1
+            },
+            "tracks": {
+              ".archive-list": "358"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 358
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-390-dark.png"
+          },
+          "learn": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".learn-groups": 1
+            },
+            "tracks": {
+              ".learn-groups": "358"
+            },
+            "tablist": {
+              "scrollWidth": 880,
+              "clientWidth": 358
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-390-dark.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 390,
+            "innerWidth": 390,
+            "rootFontSize": "15px",
+            "bodyWidth": 390,
+            "columns": {
+              ".cards": 1
+            },
+            "tracks": {
+              ".cards": "358"
+            },
+            "tablist": {
+              "scrollWidth": 881,
+              "clientWidth": 358
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    },
+    "1024": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".sections": 2
+            },
+            "tracks": {
+              ".sections": "473 473"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "overview": {
+              "widthPx": 929,
+              "colWidthPx": 352.515,
+              "gapPx": 38.93,
+              "columns": 2,
+              "lineCh": 53
+            },
+            "sectionWidths": {
+              "mustKnow": 473.28125,
+              "research": 473.28125
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-1024-light.png"
+          },
+          "research": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".rows": 2
+            },
+            "tracks": {
+              ".rows": "473 473"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/research-1024-light.png"
+          },
+          "archive": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".archive-list": 4
+            },
+            "tracks": {
+              ".archive-list": "230 230 230 230"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-1024-light.png"
+          },
+          "learn": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".learn-groups": 2
+            },
+            "tracks": {
+              ".learn-groups": "473 473"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-1024-light.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".cards": 3
+            },
+            "tracks": {
+              ".cards": "312 312 312"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".sections": 2
+            },
+            "tracks": {
+              ".sections": "473 473"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "overview": {
+              "widthPx": 929,
+              "colWidthPx": 352.515,
+              "gapPx": 38.93,
+              "columns": 2,
+              "lineCh": 53
+            },
+            "sectionWidths": {
+              "mustKnow": 473.28125,
+              "research": 473.28125
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-1024-dark.png"
+          },
+          "research": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".rows": 2
+            },
+            "tracks": {
+              ".rows": "473 473"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/research-1024-dark.png"
+          },
+          "archive": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".archive-list": 4
+            },
+            "tracks": {
+              ".archive-list": "230 230 230 230"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-1024-dark.png"
+          },
+          "learn": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".learn-groups": 2
+            },
+            "tracks": {
+              ".learn-groups": "473 473"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-1024-dark.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 1024,
+            "innerWidth": 1024,
+            "rootFontSize": "15.572px",
+            "bodyWidth": 1024,
+            "columns": {
+              ".cards": 3
+            },
+            "tracks": {
+              ".cards": "312 312 312"
+            },
+            "tablist": {
+              "scrollWidth": 963,
+              "clientWidth": 963
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    },
+    "1440": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".sections": 2
+            },
+            "tracks": {
+              ".sections": "669 669"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "overview": {
+              "widthPx": 1320,
+              "colWidthPx": 380.815,
+              "gapPx": 42.05,
+              "columns": 3,
+              "lineCh": 45.4
+            },
+            "sectionWidths": {
+              "mustKnow": 668.8125,
+              "research": 668.8125
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-1440-light.png"
+          },
+          "research": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".rows": 2
+            },
+            "tracks": {
+              ".rows": "669 669"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/research-1440-light.png"
+          },
+          "archive": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".archive-list": 5
+            },
+            "tracks": {
+              ".archive-list": "260 260 260 260 260"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-1440-light.png"
+          },
+          "learn": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".learn-groups": 3
+            },
+            "tracks": {
+              ".learn-groups": "441 441 441"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-1440-light.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".cards": 3
+            },
+            "tracks": {
+              ".cards": "442 442 442"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".sections": 2
+            },
+            "tracks": {
+              ".sections": "669 669"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "overview": {
+              "widthPx": 1320,
+              "colWidthPx": 380.815,
+              "gapPx": 42.05,
+              "columns": 3,
+              "lineCh": 45.4
+            },
+            "sectionWidths": {
+              "mustKnow": 668.8125,
+              "research": 668.8125
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-1440-dark.png"
+          },
+          "research": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".rows": 2
+            },
+            "tracks": {
+              ".rows": "669 669"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/research-1440-dark.png"
+          },
+          "archive": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".archive-list": 5
+            },
+            "tracks": {
+              ".archive-list": "260 260 260 260 260"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-1440-dark.png"
+          },
+          "learn": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".learn-groups": 3
+            },
+            "tracks": {
+              ".learn-groups": "441 441 441"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-1440-dark.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 1440,
+            "innerWidth": 1440,
+            "rootFontSize": "16.82px",
+            "bodyWidth": 1440,
+            "columns": {
+              ".cards": 3
+            },
+            "tracks": {
+              ".cards": "442 442 442"
+            },
+            "tablist": {
+              "scrollWidth": 1354,
+              "clientWidth": 1354
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    },
+    "1920": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".sections": 3
+            },
+            "tracks": {
+              ".sections": "591 591 591"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "overview": {
+              "widthPx": 1771,
+              "colWidthPx": 407.531,
+              "gapPx": 45,
+              "columns": 3,
+              "lineCh": 57.7
+            },
+            "sectionWidths": {
+              "mustKnow": 1197.875,
+              "research": 590.9375
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-1920-light.png"
+          },
+          "research": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".rows": 3
+            },
+            "tracks": {
+              ".rows": "591 591 591"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/research-1920-light.png"
+          },
+          "archive": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".archive-list": 6
+            },
+            "tracks": {
+              ".archive-list": "289 289 289 289 289 289"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-1920-light.png"
+          },
+          "learn": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".learn-groups": 3
+            },
+            "tracks": {
+              ".learn-groups": "591 591 591 0"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-1920-light.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".cards": 4
+            },
+            "tracks": {
+              ".cards": "441 441 441 441"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".sections": 3
+            },
+            "tracks": {
+              ".sections": "591 591 591"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "overview": {
+              "widthPx": 1771,
+              "colWidthPx": 407.531,
+              "gapPx": 45,
+              "columns": 3,
+              "lineCh": 57.7
+            },
+            "sectionWidths": {
+              "mustKnow": 1197.875,
+              "research": 590.9375
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-1920-dark.png"
+          },
+          "research": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".rows": 3
+            },
+            "tracks": {
+              ".rows": "591 591 591"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/research-1920-dark.png"
+          },
+          "archive": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".archive-list": 6
+            },
+            "tracks": {
+              ".archive-list": "289 289 289 289 289 289"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-1920-dark.png"
+          },
+          "learn": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".learn-groups": 3
+            },
+            "tracks": {
+              ".learn-groups": "591 591 591 0"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-1920-dark.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 1920,
+            "innerWidth": 1920,
+            "rootFontSize": "18px",
+            "bodyWidth": 1920,
+            "columns": {
+              ".cards": 4
+            },
+            "tracks": {
+              ".cards": "441 441 441 441"
+            },
+            "tablist": {
+              "scrollWidth": 1805,
+              "clientWidth": 1805
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    },
+    "2560": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".sections": 4
+            },
+            "tracks": {
+              ".sections": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "overview": {
+              "widthPx": 2038,
+              "colWidthPx": 407.531,
+              "gapPx": 45,
+              "columns": 3,
+              "lineCh": 66.9
+            },
+            "sectionWidths": {
+              "mustKnow": 1028,
+              "research": 506
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-2560-light.png"
+          },
+          "research": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".rows": 4
+            },
+            "tracks": {
+              ".rows": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/research-2560-light.png"
+          },
+          "archive": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".archive-list": 7
+            },
+            "tracks": {
+              ".archive-list": "284 284 284 284 284 284 284"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-2560-light.png"
+          },
+          "learn": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".learn-groups": 3
+            },
+            "tracks": {
+              ".learn-groups": "680 680 680 0 0"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-2560-light.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".cards": 5
+            },
+            "tracks": {
+              ".cards": "403 403 403 403 403"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".sections": 4
+            },
+            "tracks": {
+              ".sections": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "overview": {
+              "widthPx": 2038,
+              "colWidthPx": 407.531,
+              "gapPx": 45,
+              "columns": 3,
+              "lineCh": 66.9
+            },
+            "sectionWidths": {
+              "mustKnow": 1028,
+              "research": 506
+            },
+            "sectionCount": 6,
+            "entryCount": 15,
+            "screenshot": "docs/screenshots/brief-2560-dark.png"
+          },
+          "research": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".rows": 4
+            },
+            "tracks": {
+              ".rows": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky",
+            "screenshot": "docs/screenshots/research-2560-dark.png"
+          },
+          "archive": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".archive-list": 7
+            },
+            "tracks": {
+              ".archive-list": "284 284 284 284 284 284 284"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "dayCount": 1,
+            "screenshot": "docs/screenshots/archive-2560-dark.png"
+          },
+          "learn": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".learn-groups": 3
+            },
+            "tracks": {
+              ".learn-groups": "680 680 680 0 0"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "groupCount": 3,
+            "screenshot": "docs/screenshots/learn-2560-dark.png"
+          },
+          "leaderboards": {
+            "scrollWidth": 2560,
+            "innerWidth": 2560,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".cards": 5
+            },
+            "tracks": {
+              ".cards": "403 403 403 403 403"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    },
+    "3840": {
+      "light": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".sections": 4
+            },
+            "tracks": {
+              ".sections": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "overview": {
+              "widthPx": 2038,
+              "colWidthPx": 407.531,
+              "gapPx": 45,
+              "columns": 3,
+              "lineCh": 66.9
+            },
+            "sectionWidths": {
+              "mustKnow": 1028,
+              "research": 506
+            },
+            "sectionCount": 6,
+            "entryCount": 15
+          },
+          "research": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".rows": 4
+            },
+            "tracks": {
+              ".rows": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky"
+          },
+          "archive": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".archive-list": 7
+            },
+            "tracks": {
+              ".archive-list": "284 284 284 284 284 284 284"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "dayCount": 1
+          },
+          "learn": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".learn-groups": 3
+            },
+            "tracks": {
+              ".learn-groups": "680 680 680 0 0"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "groupCount": 3
+          },
+          "leaderboards": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".cards": 5
+            },
+            "tracks": {
+              ".cards": "403 403 403 403 403"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "light"
+      },
+      "dark": {
+        "tabs": {
+          "brief": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".sections": 4
+            },
+            "tracks": {
+              ".sections": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "overview": {
+              "widthPx": 2038,
+              "colWidthPx": 407.531,
+              "gapPx": 45,
+              "columns": 3,
+              "lineCh": 66.9
+            },
+            "sectionWidths": {
+              "mustKnow": 1028,
+              "research": 506
+            },
+            "sectionCount": 6,
+            "entryCount": 15
+          },
+          "research": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".rows": 4
+            },
+            "tracks": {
+              ".rows": "506 506 506 506"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "rowCount": 100,
+            "chipCount": 5,
+            "filtersPosition": "sticky"
+          },
+          "archive": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".archive-list": 7
+            },
+            "tracks": {
+              ".archive-list": "284 284 284 284 284 284 284"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "dayCount": 1
+          },
+          "learn": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".learn-groups": 3
+            },
+            "tracks": {
+              ".learn-groups": "680 680 680 0 0"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "groupCount": 3
+          },
+          "leaderboards": {
+            "scrollWidth": 3840,
+            "innerWidth": 3840,
+            "rootFontSize": "18px",
+            "bodyWidth": 2200,
+            "columns": {
+              ".cards": 5
+            },
+            "tracks": {
+              ".cards": "403 403 403 403 403"
+            },
+            "tablist": {
+              "scrollWidth": 2072,
+              "clientWidth": 2072
+            },
+            "cardCount": 8
+          }
+        },
+        "themeAtBody": "dark"
+      }
+    }
+  },
+  "theme": {
+    "steps": [
+      {
+        "step": "load (OS dark, nothing stored)",
+        "attr": null,
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: System",
+        "mode": "system",
+        "stored": null,
+        "atBody": null
+      },
+      {
+        "step": "click -> Light",
+        "attr": "light",
+        "canvasBg": "rgb(250, 250, 250)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(17, 17, 17)",
+        "meta": "#fafafa",
+        "scheme": "light",
+        "label": "Theme: Light",
+        "mode": "light",
+        "stored": "\"light\"",
+        "atBody": null
+      },
+      {
+        "step": "click -> Dark",
+        "attr": "dark",
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: Dark",
+        "mode": "dark",
+        "stored": "\"dark\"",
+        "atBody": null
+      },
+      {
+        "step": "click -> System",
+        "attr": null,
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: System",
+        "mode": "system",
+        "stored": "\"system\"",
+        "atBody": null
+      },
+      {
+        "step": "t -> Light",
+        "attr": "light",
+        "canvasBg": "rgb(250, 250, 250)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(17, 17, 17)",
+        "meta": "#fafafa",
+        "scheme": "light",
+        "label": "Theme: Light",
+        "mode": "light",
+        "stored": "\"light\"",
+        "atBody": null
+      },
+      {
+        "step": "reload (light persisted)",
+        "attr": "light",
+        "canvasBg": "rgb(250, 250, 250)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(17, 17, 17)",
+        "meta": "#fafafa",
+        "scheme": "light",
+        "label": "Theme: Light",
+        "mode": "light",
+        "stored": "\"light\"",
+        "atBody": "light"
+      },
+      {
+        "step": "t -> Dark, reload",
+        "attr": "dark",
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: Dark",
+        "mode": "dark",
+        "stored": "\"dark\"",
+        "atBody": "dark"
+      },
+      {
+        "step": "OS light, nothing stored",
+        "attr": null,
+        "canvasBg": "rgb(250, 250, 250)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(17, 17, 17)",
+        "meta": "#fafafa",
+        "scheme": "light",
+        "label": "Theme: System",
+        "mode": "system",
+        "stored": null,
+        "atBody": null
+      },
+      {
+        "step": "OS light, stored dark",
+        "attr": "dark",
+        "canvasBg": "rgb(15, 17, 21)",
+        "bodyBg": "rgba(0, 0, 0, 0)",
+        "bodyColor": "rgb(231, 233, 238)",
+        "meta": "#0f1115",
+        "scheme": "dark",
+        "label": "Theme: Dark",
+        "mode": "dark",
+        "stored": "\"dark\"",
+        "atBody": "dark"
+      }
+    ]
+  },
+  "keyboard": {
+    "brief": {
+      "afterJx4": {
+        "index": 4,
+        "count": 15,
+        "url": "https://arxiv.org/abs/2610.22791",
+        "id": "arxiv:2610.22791",
+        "left": 1331.796875,
+        "top": 452.9375,
+        "bottom": 695.609375,
+        "innerHeight": 1200,
+        "firstLeft": 287.796875,
+        "outlineColor": "rgb(122, 183, 255)",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid",
+        "accent": "rgb(122, 183, 255)",
+        "filtersBottom": 0,
+        "isRead": false,
+        "isSaved": false
+      },
+      "opened": "https://arxiv.org/abs/2610.22791"
+    },
+    "research": {
+      "afterJJK": {
+        "index": 1,
+        "count": 100,
+        "url": "https://arxiv.org/abs/2610.24087",
+        "id": "arxiv:2610.24087",
+        "left": 766,
+        "top": 273.875,
+        "bottom": 452,
+        "innerHeight": 1200,
+        "firstLeft": 244,
+        "outlineColor": "rgb(122, 183, 255)",
+        "outlineWidth": "2px",
+        "outlineStyle": "solid",
+        "accent": "rgb(122, 183, 255)",
+        "filtersBottom": 216.9375,
+        "isRead": false,
+        "isSaved": false
+      },
+      "opened": "https://arxiv.org/abs/2610.24087",
+      "stored": {
+        "read": true,
+        "saved": true
+      }
+    },
+    "sticky": {
+      "navTop": 0,
+      "navBottom": 49.625,
+      "filtersTop": 50,
+      "filtersBottom": 106.21875,
+      "navH": "50px",
+      "stickyH": "106px",
+      "scrollY": 2000,
+      "minGapAboveFiltersPx": 7.64
+    }
+  },
+  "contrast": {
+    "light": {
+      "tokens": {
+        "--bg": "#fafafa",
+        "--panel": "#fff",
+        "--chip": "#eee",
+        "--line": "#ddd",
+        "--line-strong": "#767f8a",
+        "--fg": "#111",
+        "--muted": "#555",
+        "--accent": "#0a58ca",
+        "--visited": "#555",
+        "--why": "#7a5200",
+        "--cursor-bg": "#e8f0fe",
+        "--read-opacity": "0.7",
+        "--tag-bg": "#dbe7fb",
+        "--tag-fg": "#1e4a8f",
+        "--ok": "#13633a",
+        "--warn": "#8a5a00",
+        "--bad": "#b42318"
+      },
+      "pairs": [
+        {
+          "name": "body text on page background",
+          "fg": "#111111",
+          "bg": "#fafafa",
+          "ratio": 18.09,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "muted text on page background",
+          "fg": "#555555",
+          "bg": "#fafafa",
+          "ratio": 7.14,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "link (accent) on page background",
+          "fg": "#0a58ca",
+          "bg": "#fafafa",
+          "ratio": 6.17,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "kbd text on page background",
+          "fg": "#555555",
+          "bg": "#fafafa",
+          "ratio": 7.14,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry title on section card",
+          "fg": "#111111",
+          "bg": "#ffffff",
+          "ratio": 18.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry meta (muted) on section card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry summary (muted) on section card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "why-line on section card",
+          "fg": "#7a5200",
+          "bg": "#ffffff",
+          "ratio": 6.92,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "accent link on section card",
+          "fg": "#0a58ca",
+          "bg": "#ffffff",
+          "ratio": 6.44,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "AI-WRITTEN badge text on badge background",
+          "fg": "#1e4a8f",
+          "bg": "#dbe7fb",
+          "ratio": 6.92,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "section heading on section card",
+          "fg": "#111111",
+          "bg": "#ffffff",
+          "ratio": 18.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "cursor outline on cursor background (3:1)",
+          "fg": "#0a58ca",
+          "bg": "#e8f0fe",
+          "ratio": 5.62,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "cursor title on cursor background",
+          "fg": "#111111",
+          "bg": "#e8f0fe",
+          "ratio": 16.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "cursor meta (muted) on cursor background",
+          "fg": "#555555",
+          "bg": "#e8f0fe",
+          "ratio": 6.51,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "health dot on its button (3:1)",
+          "fg": "#13633a",
+          "bg": "#eeeeee",
+          "ratio": 6.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "theme button glyph on its button",
+          "fg": "#111111",
+          "bg": "#eeeeee",
+          "ratio": 16.28,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "control border (--line-strong) on page background (3:1)",
+          "fg": "#767f8a",
+          "bg": "#fafafa",
+          "ratio": 3.89,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "selected tab text on chip background",
+          "fg": "#111111",
+          "bg": "#eeeeee",
+          "ratio": 16.28,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "selected tab border on page background (3:1)",
+          "fg": "#767f8a",
+          "bg": "#fafafa",
+          "ratio": 3.89,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "visited title (--visited) on section card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "alert text (--bad) on page background",
+          "fg": "#b42318",
+          "bg": "#fafafa",
+          "ratio": 6.3,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "amber health dot (--warn) on chip background (3:1)",
+          "fg": "#8a5a00",
+          "bg": "#eeeeee",
+          "ratio": 5.11,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "red health dot (--bad) on chip background (3:1)",
+          "fg": "#b42318",
+          "bg": "#eeeeee",
+          "ratio": 5.67,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "green health dot (--ok) on chip background (3:1)",
+          "fg": "#13633a",
+          "bg": "#eeeeee",
+          "ratio": 6.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "card border (--line) on page background (decorative)",
+          "fg": "#dddddd",
+          "bg": "#fafafa",
+          "ratio": 1.3,
+          "min": 1,
+          "pass": true
+        },
+        {
+          "name": "row title on row card",
+          "fg": "#111111",
+          "bg": "#ffffff",
+          "ratio": 18.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row meta (muted) on row card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row summary (muted) on row card",
+          "fg": "#555555",
+          "bg": "#ffffff",
+          "ratio": 7.46,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "score pill text on pill background",
+          "fg": "#555555",
+          "bg": "#eeeeee",
+          "ratio": 6.43,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "inline source chip text on chip background",
+          "fg": "#555555",
+          "bg": "#eeeeee",
+          "ratio": 6.43,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row action icon on its button",
+          "fg": "#111111",
+          "bg": "#eeeeee",
+          "ratio": 16.28,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "pressed chip text on accent fill",
+          "fg": "#fafafa",
+          "bg": "#0a58ca",
+          "ratio": 6.17,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "source chip text on chip background",
+          "fg": "#111111",
+          "bg": "#eeeeee",
+          "ratio": 16.28,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "search field border on page background (3:1)",
+          "fg": "#767f8a",
+          "bg": "#fafafa",
+          "ratio": 3.89,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "search text on search field",
+          "fg": "#111111",
+          "bg": "#ffffff",
+          "ratio": 18.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed title (opacity 0.7) on dimmed row card",
+          "fg": "#575757",
+          "bg": "#fefefe",
+          "ratio": 7.15,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed meta (opacity 0.7) on dimmed row card (3:1, de-emphasised)",
+          "fg": "#878787",
+          "bg": "#fefefe",
+          "ratio": 3.57,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed check icon (opacity 0.7) on dimmed button (3:1)",
+          "fg": "#589074",
+          "bg": "#f2f2f2",
+          "ratio": 3.29,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "saved star (--why) on its button",
+          "fg": "#7a5200",
+          "bg": "#eeeeee",
+          "ratio": 5.96,
+          "min": 4.5,
+          "pass": true
+        }
+      ]
+    },
+    "dark": {
+      "tokens": {
+        "--bg": "#0f1115",
+        "--panel": "#161920",
+        "--chip": "#1e222b",
+        "--line": "#262a33",
+        "--line-strong": "#5e6774",
+        "--fg": "#e7e9ee",
+        "--muted": "#9aa3ad",
+        "--accent": "#7ab7ff",
+        "--visited": "#9aa3ad",
+        "--why": "#f0c674",
+        "--cursor-bg": "#1a2130",
+        "--read-opacity": "0.6",
+        "--tag-bg": "#22304a",
+        "--tag-fg": "#a9c7f5",
+        "--ok": "#4ec98a",
+        "--warn": "#f0c674",
+        "--bad": "#ff7b72"
+      },
+      "pairs": [
+        {
+          "name": "body text on page background",
+          "fg": "#e7e9ee",
+          "bg": "#0f1115",
+          "ratio": 15.56,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "muted text on page background",
+          "fg": "#9aa3ad",
+          "bg": "#0f1115",
+          "ratio": 7.39,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "link (accent) on page background",
+          "fg": "#7ab7ff",
+          "bg": "#0f1115",
+          "ratio": 9.04,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "kbd text on page background",
+          "fg": "#9aa3ad",
+          "bg": "#0f1115",
+          "ratio": 7.39,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry title on section card",
+          "fg": "#e7e9ee",
+          "bg": "#161920",
+          "ratio": 14.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry meta (muted) on section card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "entry summary (muted) on section card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "why-line on section card",
+          "fg": "#f0c674",
+          "bg": "#161920",
+          "ratio": 10.92,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "accent link on section card",
+          "fg": "#7ab7ff",
+          "bg": "#161920",
+          "ratio": 8.41,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "AI-WRITTEN badge text on badge background",
+          "fg": "#a9c7f5",
+          "bg": "#22304a",
+          "ratio": 7.66,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "section heading on section card",
+          "fg": "#e7e9ee",
+          "bg": "#161920",
+          "ratio": 14.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "cursor outline on cursor background (3:1)",
+          "fg": "#7ab7ff",
+          "bg": "#1a2130",
+          "ratio": 7.7,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "cursor title on cursor background",
+          "fg": "#e7e9ee",
+          "bg": "#1a2130",
+          "ratio": 13.26,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "cursor meta (muted) on cursor background",
+          "fg": "#9aa3ad",
+          "bg": "#1a2130",
+          "ratio": 6.3,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "health dot on its button (3:1)",
+          "fg": "#4ec98a",
+          "bg": "#1e222b",
+          "ratio": 7.62,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "theme button glyph on its button",
+          "fg": "#e7e9ee",
+          "bg": "#1e222b",
+          "ratio": 13.11,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "control border (--line-strong) on page background (3:1)",
+          "fg": "#5e6774",
+          "bg": "#0f1115",
+          "ratio": 3.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "selected tab text on chip background",
+          "fg": "#e7e9ee",
+          "bg": "#1e222b",
+          "ratio": 13.11,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "selected tab border on page background (3:1)",
+          "fg": "#5e6774",
+          "bg": "#0f1115",
+          "ratio": 3.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "visited title (--visited) on section card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "alert text (--bad) on page background",
+          "fg": "#ff7b72",
+          "bg": "#0f1115",
+          "ratio": 7.49,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "amber health dot (--warn) on chip background (3:1)",
+          "fg": "#f0c674",
+          "bg": "#1e222b",
+          "ratio": 9.88,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "red health dot (--bad) on chip background (3:1)",
+          "fg": "#ff7b72",
+          "bg": "#1e222b",
+          "ratio": 6.31,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "green health dot (--ok) on chip background (3:1)",
+          "fg": "#4ec98a",
+          "bg": "#1e222b",
+          "ratio": 7.62,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "card border (--line) on page background (decorative)",
+          "fg": "#262a33",
+          "bg": "#0f1115",
+          "ratio": 1.32,
+          "min": 1,
+          "pass": true
+        },
+        {
+          "name": "row title on row card",
+          "fg": "#e7e9ee",
+          "bg": "#161920",
+          "ratio": 14.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row meta (muted) on row card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row summary (muted) on row card",
+          "fg": "#9aa3ad",
+          "bg": "#161920",
+          "ratio": 6.88,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "score pill text on pill background",
+          "fg": "#9aa3ad",
+          "bg": "#1e222b",
+          "ratio": 6.23,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "inline source chip text on chip background",
+          "fg": "#9aa3ad",
+          "bg": "#1e222b",
+          "ratio": 6.23,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "row action icon on its button",
+          "fg": "#e7e9ee",
+          "bg": "#1e222b",
+          "ratio": 13.11,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "pressed chip text on accent fill",
+          "fg": "#0f1115",
+          "bg": "#7ab7ff",
+          "ratio": 9.04,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "source chip text on chip background",
+          "fg": "#e7e9ee",
+          "bg": "#1e222b",
+          "ratio": 13.11,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "search field border on page background (3:1)",
+          "fg": "#5e6774",
+          "bg": "#0f1115",
+          "ratio": 3.3,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "search text on search field",
+          "fg": "#e7e9ee",
+          "bg": "#161920",
+          "ratio": 14.48,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed title (opacity 0.6) on dimmed row card",
+          "fg": "#919397",
+          "bg": "#13161c",
+          "ratio": 5.87,
+          "min": 4.5,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed meta (opacity 0.6) on dimmed row card (3:1, de-emphasised)",
+          "fg": "#626970",
+          "bg": "#13161c",
+          "ratio": 3.25,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "read-dimmed check icon (opacity 0.6) on dimmed button (3:1)",
+          "fg": "#357f5b",
+          "bg": "#181b22",
+          "ratio": 3.57,
+          "min": 3,
+          "pass": true
+        },
+        {
+          "name": "saved star (--why) on its button",
+          "fg": "#f0c674",
+          "bg": "#1e222b",
+          "ratio": 9.88,
+          "min": 4.5,
+          "pass": true
+        }
+      ]
+    }
+  },
+  "console": {
+    "errors": [],
+    "pageErrors": [],
+    "failedRequests": [],
+    "badResponses": []
+  },
+  "failures": []
+}
