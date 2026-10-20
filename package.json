@@ -10,9 +10,10 @@
   "scripts": {
     "test": "node --test \"tests/**/*.test.js\"",
     "fetch": "node scripts/fetch.mjs",
+    "probe": "node scripts/probe-sources.mjs",
     "serve": "node scripts/serve.mjs"
   },
-  "devDependencies": {
+  "dependencies": {
     "fast-xml-parser": "5.11.2"
   }
 }
