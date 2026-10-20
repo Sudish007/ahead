@@ -1,6 +1,6 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T04:30:36.914Z",
+ "generatedAt": "2026-10-20T04:46:16.095Z",
  "wordCount": 579,
  "readingMinutes": 3,
  "overview": null,
@@ -25,11 +25,11 @@
       "Hacker News"
      ],
      "summary": "State-of-the-art probabilistic forecasting in four sizes (5M–209M params), CPU-efficient, zero-shot ready.",
-     "why": "565 points on HN, 105 comments",
+     "why": "566 points on HN, 105 comments",
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 16.38,
+     "score": 16.36,
      "readMinutes": 1
     },
     {
@@ -49,26 +49,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.24
-    },
-    {
-     "id": "arxiv:2610.22791",
-     "title": "Self-Evolving Coding Agents via Harness-Policy Optimization",
-     "url": "https://arxiv.org/abs/2610.22791",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "Large language model (LLM) agents have shown promising potential in coding tasks, and their performance is jointly determined by the policy model and the harness that mediates their interaction with the environment.",
-     "why": "27 upvotes on HF Papers; also on arXiv cs.CL",
-     "whySource": "heuristic",
-     "publishedAt": "2026-10-16T00:00:00.000Z",
-     "category": "research",
-     "score": 16.14
+     "score": 16.2
     },
     {
      "id": "arxiv:2610.26860",
@@ -83,11 +64,30 @@
       "arXiv cs.AI"
      ],
      "summary": "Multimodal large language models (MLLMs) have made rapid progress on visual reasoning, yet many tasks require evidence that is difficult to obtain through internal reasoning alone: our controlled study on 22 benchmarks shows that simply increasing the inference budget of the…",
-     "why": "19 upvotes on HF Papers; also on arXiv cs.AI",
+     "why": "28 upvotes on HF Papers; also on arXiv cs.AI",
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 15.66
+     "score": 16.16
+    },
+    {
+     "id": "arxiv:2610.22791",
+     "title": "Self-Evolving Coding Agents via Harness-Policy Optimization",
+     "url": "https://arxiv.org/abs/2610.22791",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Large language model (LLM) agents have shown promising potential in coding tasks, and their performance is jointly determined by the policy model and the harness that mediates their interaction with the environment.",
+     "why": "28 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
+     "publishedAt": "2026-10-16T00:00:00.000Z",
+     "category": "research",
+     "score": 16.16
     }
    ]
   },
@@ -108,11 +108,11 @@
       "arXiv cs.AI"
      ],
      "summary": "The goal of a world model is to capture the dynamics of an environment. This has the great appeal that it allows agents to plan and simulate a course of actions with the help of a world model.",
-     "why": "15 upvotes on HF Papers; also on arXiv cs.AI",
+     "why": "16 upvotes on HF Papers; also on arXiv cs.AI",
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 15.33
+     "score": 15.39
     },
     {
      "id": "arxiv:2610.23121",
@@ -131,7 +131,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 14.63
+     "score": 14.61
     },
     {
      "id": "arxiv:2610.23279",
@@ -150,7 +150,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 13.85
+     "score": 13.82
     }
    ]
   },
@@ -173,7 +173,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 10.93
+     "score": 10.91
     },
     {
      "id": "92c1824269f45469",
@@ -190,7 +190,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 10.39
+     "score": 10.37
     },
     {
      "id": "f2bc736c0ee71119",
@@ -207,7 +207,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 10
+     "score": 9.98
     }
    ]
   },
@@ -230,7 +230,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 5.09,
+     "score": 5.07,
      "readMinutes": 1
     },
     {
@@ -248,7 +248,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-18T16:49:35.513Z",
      "category": "labs",
-     "score": 4.02
+     "score": 4
     }
    ]
   },
@@ -271,7 +271,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T03:50:48.703Z",
      "category": "blogs",
-     "score": 4.94,
+     "score": 4.91,
      "readMinutes": 24
     },
     {
@@ -289,7 +289,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T05:39:38.000Z",
      "category": "blogs",
-     "score": 4.51,
+     "score": 4.49,
      "readMinutes": 11
     }
    ]
@@ -313,7 +313,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:31:37.000Z",
      "category": "blogs",
-     "score": 4.41,
+     "score": 4.39,
      "readMinutes": 25
     }
    ]
@@ -322,8 +322,8 @@
  "itemIds": [
   "370d8453b070a7bf",
   "arxiv:2610.24087",
-  "arxiv:2610.22791",
   "arxiv:2610.26860",
+  "arxiv:2610.22791",
   "arxiv:2610.26844",
   "arxiv:2610.23121",
   "arxiv:2610.23279",
