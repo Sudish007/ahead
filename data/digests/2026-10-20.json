@@ -1,7 +1,7 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T02:42:51.706Z",
- "wordCount": 560,
+ "generatedAt": "2026-10-20T03:31:40.537Z",
+ "wordCount": 558,
  "readingMinutes": 3,
  "overview": null,
  "sections": [
@@ -25,11 +25,11 @@
       "Hacker News"
      ],
      "summary": "State-of-the-art probabilistic forecasting in four sizes (5M–209M params), CPU-efficient, zero-shot ready.",
-     "why": "on HN front page, 561 points, 104 comments",
+     "why": "563 points on HN, 105 comments",
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 16.51,
+     "score": 16.46,
      "readMinutes": 1
     },
     {
@@ -45,11 +45,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Large language model (LLM) agents have shown promising potential in coding tasks, and their performance is jointly determined by the policy model and the harness that mediates their interaction with the environment.",
-     "why": "9 upvotes on HF Papers; also on arXiv cs.CL",
+     "why": "23 upvotes on HF Papers; also on arXiv cs.CL",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 14.91
+     "score": 16.06
     },
     {
      "id": "arxiv:2610.23121",
@@ -68,7 +68,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 14.81
+     "score": 14.73
     },
     {
      "id": "arxiv:2610.23279",
@@ -83,11 +83,11 @@
       "arXiv cs.CV"
      ],
      "summary": "Multimodal large language models (MLLMs) answer questions about whole images well, yet they still struggle with fine-grained region understanding. A key reason is that text-only supervision never specifies which regions support an answer.",
-     "why": "27 upvotes on HF Papers; also on arXiv cs.CV",
+     "why": "28 upvotes on HF Papers; also on arXiv cs.CV",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 13.97
+     "score": 13.94
     }
    ]
   },
@@ -108,11 +108,11 @@
       "arXiv cs.CV"
      ],
      "summary": "Making a conference poster is visual coding in miniature: an entire paper must be compressed onto a single page, which exercises summarization, visual design, and code implementation at once, using nothing beyond the paper itself.…",
-     "why": "23 upvotes on HF Papers; also on arXiv cs.CV",
+     "why": "24 upvotes on HF Papers; also on arXiv cs.CV",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 13.75
+     "score": 13.73
     },
     {
      "id": "arxiv:2610.22744",
@@ -131,7 +131,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T00:00:00.000Z",
      "category": "research",
-     "score": 13.34
+     "score": 13.26
     },
     {
      "id": "arxiv:2610.22602",
@@ -150,7 +150,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T00:00:00.000Z",
      "category": "research",
-     "score": 13.17
+     "score": 13.09
     }
    ]
   },
@@ -173,7 +173,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 11.07
+     "score": 11
     },
     {
      "id": "92c1824269f45469",
@@ -190,24 +190,24 @@
      "whySource": "heuristic",
      "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 10.52
+     "score": 10.46
     },
     {
-     "id": "b7884da985bf42b8",
-     "title": "baidu/Unlimited-OCR",
-     "url": "https://huggingface.co/baidu/Unlimited-OCR",
+     "id": "f2bc736c0ee71119",
+     "title": "facebook/sam3",
+     "url": "https://huggingface.co/facebook/sam3",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-text · transformers · 4,823 likes · 1,799,825 downloads",
-     "why": "4.8k likes on Hugging Face",
+     "summary": "mask-generation · transformers · 4,703 likes · 1,902,371 downloads",
+     "why": "4.7k likes on Hugging Face",
      "whySource": "heuristic",
-     "publishedAt": "2026-06-19T09:40:33.000Z",
+     "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 10.12
+     "score": 10.07
     }
    ]
   },
@@ -230,7 +230,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 5.27,
+     "score": 5.19,
      "readMinutes": 1
     },
     {
@@ -248,7 +248,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-18T16:49:35.513Z",
      "category": "labs",
-     "score": 4.17
+     "score": 4.1
     }
    ]
   },
@@ -271,7 +271,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T05:39:38.000Z",
      "category": "blogs",
-     "score": 4.67,
+     "score": 4.59,
      "readMinutes": 11
     },
     {
@@ -289,7 +289,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:31:37.000Z",
      "category": "blogs",
-     "score": 4.57,
+     "score": 4.49,
      "readMinutes": 25
     }
    ]
@@ -313,7 +313,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T13:44:21.000Z",
      "category": "blogs",
-     "score": 3.89,
+     "score": 3.83,
      "readMinutes": 59
     }
    ]
@@ -329,7 +329,7 @@
   "arxiv:2610.22602",
   "ca26bca182f697df",
   "92c1824269f45469",
-  "b7884da985bf42b8",
+  "f2bc736c0ee71119",
   "1dbe22633003a2af",
   "d3ccea06eed40094",
   "84d5d1e0eee006ca",
