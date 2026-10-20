@@ -1,0 +1,129 @@
+# Ahead
+
+Ahead is a personal AI intelligence dashboard: one static page that pulls 64 sources (arXiv, HF Daily Papers, Hacker News, Reddit, the frontier labs, the deep technical blogs, release feeds, podcasts and YouTube channels), ranks everything, and writes a **5-minute daily brief** you can read in one scroll. It runs on GitHub Actions every six hours and deploys to GitHub Pages. No framework, no server, no database, no API keys required.
+
+Live site: `https://sudish007.github.io/ahead/`
+
+## How it works
+
+```
+sources.config.mjs ──▶ scripts/fetch.mjs ──▶ src/pipeline.js
+                                              fetch 64 sources (6 workers, 45 s per source, 8 min per run)
+                                              normalize → dedup (canonical URL / arXiv id) → merge with the previous run
+                                              score → retention (7 days) → data/items.json
+                                              build the brief → data/digests/YYYY-MM-DD.json, index.json, meta.json
+index.html + app.js + styles.css ◀── GitHub Pages serves the repo's static files + data/
+```
+
+The pipeline is plain Node 24 ESM with one dependency (`fast-xml-parser`). The frontend is one ES module, one stylesheet and a CSP that forbids inline code.
+
+## Sources
+
+Type `sitemap (publisher has no feed)` means the publisher offers no RSS/Atom feed, so Ahead reads its `sitemap.xml` and the `og:*` tags of the newest pages.
+
+| Category | Source | Type | Notes |
+|---|---|---|---|
+| Research | arXiv cs.LG, cs.CL, cs.AI, cs.CV | arxiv | RSS announcements; API fallback when the RSS is empty (weekends) |
+| Research | HF Daily Papers | json | upvotes feed the score |
+| News | Hacker News (24 h, 30+ points), HN front page | hn | AI keyword/host filter; front-page rank from `topstories.json` |
+| News | Reddit r/LocalLLaMA + r/MachineLearning | reddit | one multireddit request per run; may fail from Actions IPs |
+| Labs | OpenAI, Google DeepMind, Google Research, Microsoft Research, NVIDIA Technical Blog, Hugging Face Blog, Ai2, Mistral AI, Transformer Circuits | rss/atom | Mistral serves RSS as `text/plain`; the parser sniffs the body |
+| Labs | Meta Newsroom (AI) + Engineering at Meta (AI) | rss | Meta AI blog has no feed; both feeds share the `meta` family |
+| Labs | Anthropic | sitemap (publisher has no feed) | `/news`, `/research`, `/engineering` pages |
+| Blogs | Lil'Log, Interconnects, Ahead of AI (Raschka), Simon Willison, Chip Huyen, Eugene Yan, Hamel Husain, SemiAnalysis (newsletter), Import AI, Latent Space, Don't Worry About the Vase, One Useful Thing, The Gradient, Epoch AI (atom) + Gradient Updates, Alignment Forum, ChinAI, Jay Alammar (Language Models newsletter), Andrej Karpathy (blog + bearblog), Horace He (Thonking AI) | rss/atom | Latent Space carries the `[AINews]` daily issues and podcast episodes (routed to media by audio enclosure) |
+| Blogs | The Batch | sitemap (publisher has no feed) | `/the-batch/<slug>` articles; issues and tags excluded |
+| Releases | PyTorch, vLLM, Transformers, llama.cpp, SGLang, Unsloth, TRL, torchtitan | github | release Atom feeds; CI tags (`viable/strict/...`) dropped |
+| Releases | GitHub new repos: llm, machine-learning, ai-agents | github | search API, created in the last 7 days, 50+ stars |
+| Releases | HF trending models | json | first-seen date is the run time |
+| Media | Dwarkesh Podcast, Machine Learning Street Talk, The Cognitive Revolution, No Priors | rss | sponsor blocks cut from summaries |
+| Media | Andrej Karpathy, Yannic Kilcher, AI Explained, GPU MODE, Stanford Online, 3Blue1Brown | youtube | view counts feed the score |
+
+Link-outs (no fetch): alphaXiv (Research tab), Meta AI blog (Labs tab), AI News / smol.ai (Blogs tab; its RSS stopped on 2026-09-09 and the issues now arrive as `[AINews]` posts in the Latent Space feed), plus eight leaderboards and a 16-entry learning list in `sources.config.mjs`.
+
+## Ranking
+
+```
+ageHours = max(0, (now - surfacedAt) / 3.6e6)
+decay    = 0.5 ** (ageHours / 36)                       # half-life 36 h
+W        = max source weight (1..10) across the item's sources
+E        = 1.0*log2(1+hfUpvotes) + 0.6*log2(1+hnPoints) + 0.4*log2(1+hnComments)
+         + 0.5*log2(1+ghStars) + 0.5*log2(1+redditScore) + 0.5*log2(1+hfLikes) + 0.15*log2(1+ytViews)
+X        = 4 * min(3, distinctFamilies - 1)             # cross-source bonus, max 12
+score    = round2(W * decay + E + X)
+```
+
+Only the source weight decays. Worked example (also a unit test): an HN-only story with 500 points / 200 comments, 2 h old, weight 5 scores **13.25**; a paper on arXiv + HF Papers (30 upvotes) + HN (40 points / 10 comments), 20 h old, scores **23.00** and wins despite less raw engagement. Ties are settled by surfaced time, then title and id in code-point order, so output is byte-deterministic.
+
+## The brief
+
+Six sections, filled in order from items surfaced in the last 36 h (72 h when fewer than 20 remain): Must know (4), Research (3), Releases & tools (3), From the labs (2), Analysis worth reading (2, long-form first), One deep read (1, from the last 7 days). Nothing repeats across days: the ids of the two previous digests are excluded, and the last 14 deep reads are never repeated. Each entry has a title, a one-to-two-sentence summary and a heuristic "why" line built only from stored facts (`#4 on HN front page, 435 points`; `30 upvotes on HF Papers; also on arXiv cs.LG`; `1,234 stars in 3 days`). The whole brief is capped at **1,100 words** (about 5 minutes at 220 wpm) by a deterministic budget that trims summaries, drops entries, then caps titles, why-lines and source labels. Past days are frozen; only today's digest is regenerated during the day.
+
+## Adding a source
+
+Add one object literal to `sources` in `sources.config.mjs`:
+
+```js
+{ id: 'my-blog', name: 'My Blog', category: 'blogs', type: 'rss', url: 'https://example.com/feed.xml', weight: 5, longForm: true },
+```
+
+Required: `id name category type url weight`. Optional: `homepage family maxItems maxAgeDays maxBytes longForm`, plus `parser` (json), `fallbackUrl` (arxiv), `rankUrl` (hn), `repo` (github releases), `minStars` (github search), `include`/`exclude` (sitemap, non-global RegExp), `template` (URL with `{{unix24hAgo}}`/`{{date7dAgo}}`). Then run `npm run probe` to see what every URL returns; `npm test` validates the configuration and keeps working for any source covered by an existing parser.
+
+## Optional LLM editorial layer
+
+Without a key the brief is fully heuristic. With a key, one request per run rewrites the why-lines and adds a 150-200 word overview (shown with an "AI-written" tag). Every number in the model's output must appear in the facts sent for that entry, or the text is rejected and the heuristic line stays.
+
+| Provider | `LLM_BASE_URL` |
+|---|---|
+| OpenAI (default) | `https://api.openai.com/v1` |
+| Anthropic | `https://api.anthropic.com/v1` |
+| Groq | `https://api.groq.com/openai/v1` |
+| Gemini | `https://generativelanguage.googleapis.com/v1beta/openai` |
+| OpenRouter | `https://openrouter.ai/api/v1` |
+
+`LLM_MODEL` is always required with a key (a current model id from the provider; a key without a model records `LLM_MODEL unset` and deploys the heuristic brief). The base URL must be `https:` (or `http:` to `localhost`/`127.0.0.1`) with no credentials, query or fragment. If a provider rejects `max_tokens` with HTTP 400, the request is retried once with `max_completion_tokens`.
+
+```sh
+gh secret set LLM_API_KEY
+gh secret set LLM_BASE_URL
+gh secret set LLM_MODEL
+```
+
+## Deployment
+
+`.github/workflows/refresh.yml` runs on a cron (`0 */6 * * *`), on `workflow_dispatch`, and on pushes to `main` that touch anything except `data/`. It runs the tests, runs the pipeline, commits `data/` back with `[skip ci]`, stages `index.html app.js styles.css favicon.svg data/` into `_site/` and deploys that to GitHub Pages. `actions/configure-pages@v6` with `enablement: true` creates the Pages site on the first run, so no Settings change or API call is needed before pushing. Trigger a refresh by hand with:
+
+```sh
+gh workflow run refresh.yml
+```
+
+GitHub's cron can lag by 10-30 minutes; the header shows "refreshed N min ago" so that is visible rather than alarming. Four data commits a day add roughly 30-60 MB per year to the repository.
+
+## Local commands
+
+```sh
+npm ci
+npm test                                   # offline, fixture-driven (node --test)
+npm run fetch -- --source hn-top,hf-papers --dry-run   # diagnose selected parsers; never writes
+npm run fetch                              # live run, writes data/
+npm run probe                              # one row per source: status | items | ms | note | finalUrl
+npm run serve                              # http://127.0.0.1:8787/ and http://127.0.0.1:8787/ahead/
+```
+
+`--source` is rejected without `--dry-run`: a partial run never writes data or calls the LLM. `--now <ISO>` pins the run time; `--no-llm` disables the editorial layer; `--data-dir <path>` redirects output.
+
+## Data files
+
+- `data/items.json` — `{ generatedAt, count, items[] }`, 7 days of items sorted by rank; capped at 3,000 items and 2 MB. Each item: `id` (`arxiv:<id>` or 16 hex of the canonical URL), `title`, `url`, `canonicalUrl`, `sources[{ id, url?, at }]`, `category`, `publishedAt`, `surfacedAt`, `summary`, `score`, `signals`, optional `arxivId authors readMinutes discussionUrl tag extra`.
+- `data/digests/YYYY-MM-DD.json` — one brief per UTC day: `overview`, six `sections[].entries[]`, `itemIds`, `deepReadId`, `wordCount`, `readingMinutes`, `llm`. Only today's file is ever rewritten.
+- `data/digests/index.json` — `{ days: [{ date, generatedAt, wordCount, readingMinutes, entryCount }] }`, newest first.
+- `data/meta.json` — run metadata: per-source `status` (`ok | empty | failed`), `fetched`, `kept`, `skipped`, `ms`, `error`/`note`, `homepage`; `okCount/emptyCount/failedCount`; `newItemCount`; source-scoped `sitemapSkipped`/`sitemapCache` (at most 30 entries each); `llm`; `brief`; and `static` (leaderboards, link-outs, learn list) for the UI.
+
+`fetched` counts decoded records before filtering, `kept` the records that survived parser drops, the age window and the per-source cap; `empty` means the fetch worked but nothing was kept (pytorch's CI-tag feed, weekend arXiv), and only `failed` counts toward the health indicator.
+
+## Known limits
+
+- Reddit publishes no scores in its feed and may block Actions IPs; the source then reports `failed` and everything else proceeds.
+- The GitHub search API is limited to 10 requests/min unauthenticated; the workflow's `GITHUB_TOKEN` raises that.
+- HN front-page rank comes from `topstories.json`, so a story outside the top 30 shows "on HN front page" without a number.
+- The `[AINews]` roundups stay in the Blogs tab and may reach Must know, but never Analysis or Deep read.
+- The repository grows with every data commit; squashing history is out of scope.
