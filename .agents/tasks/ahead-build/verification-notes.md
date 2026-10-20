@@ -126,3 +126,71 @@ UI checked with Playwright 1.64 (reused from `../hoshlab/node_modules`, not adde
 7. **`serve.mjs` rejects raw `..` segments** (404) before URL normalization so `/../package.json` is never 200, as the plan's test requires; browsers never send such a path.
 8. **`pipeline.js` loads every digest file** for the index and passes those within the last 15 days (excluding today's own file) to `buildBrief`; corrupt digest files are skipped with a warning and omitted from the index.
 9. **Playwright** was used from the sibling project for verification only and is not a dependency of this repo.
+
+---
+
+# Verification notes — Step D browser-verify
+
+Repo `ahead` on `main`, Node v24.16.0, Windows, 2026-10-20 (UTC). Network on.
+
+## 1. Live fetch (`node scripts/fetch.mjs`)
+
+Four runs, exit 0 every time. Runs 1-3 each showed one or two transient failures: `yt-yannic` HTTP 404 (runs 1, 3), `yt-aiexplained` HTTP 404 (run 3), `reddit` HTTP 429 (run 2, back-to-back run). A direct probe of the YouTube feed endpoint returned 500/500/200 for the same channel id within seconds, so the 404s are upstream flakiness, not a bad channel id (PowerShell and the fourth run both got 200 with 15 entries).
+
+**Fix** (`src/http.js`, `tests/http.test.js`): `retryable()` now treats a 404 from `www.youtube.com` like a 5xx and retries once; 404 from any other host is still not retried. The retry-matrix test asserts both cases.
+
+Run 4 (committed data): `ok 41 · empty 23 · failed 0 · items 529 · brief 558 words`. `meta.json`: `okCount 41, emptyCount 23, failedCount 0, itemCount 529`. `items.json` 462,103 bytes.
+
+Distinct sources in `data/items.json`: **41** (>= 25). Per-source item counts:
+
+| source | items | source | items | source | items |
+|---|---|---|---|---|---|
+| alignmentforum | 5 | gh-rel-vllm | 6 | nvidia-dev | 7 |
+| allenai | 2 | gh-trending-agents | 15 | openai | 13 |
+| anthropic | 9 | gh-trending-llm | 10 | pod-cogrev | 2 |
+| arxiv-cs.AI | 60 | google-research | 4 | reddit | 52 |
+| arxiv-cs.CL | 60 | hf-blog | 9 | semianalysis | 2 |
+| arxiv-cs.CV | 60 | hf-papers | 69 | simonw | 10 |
+| arxiv-cs.LG | 60 | hf-trending | 21 | thebatch | 6 |
+| chinai | 1 | hn-front | 4 | yt-3b1b | 1 |
+| deepmind | 5 | hn-top | 14 | yt-gpumode | 2 |
+| epoch | 2 | importai | 1 | yt-stanford | 5 |
+| gh-rel-llamacpp | 3 | interconnects | 1 | zvi | 6 |
+| gh-rel-sglang | 1 | latentspace | 8 | | |
+| gh-rel-transformers | 3 | meta-engineering-ai | 1 | | |
+| gh-rel-trl | 1 | microsoft-research | 1 | | |
+| gh-rel-unsloth | 3 | mistral | 1 | | |
+
+(Counts exceed `kept` where an item carries more than one source, e.g. hf-papers 69 vs kept 60.)
+
+Brief `data/digests/2026-10-20.json`: all six sections populated — Must know 4, Research 3, Releases & tools 3, From the labs 2, Analysis worth reading 2, One deep read 1 (15 entries). `wordCount 558`, `readingMinutes 3`, under the 1,100-word cap.
+
+## 2. `npm test`
+
+177 pass, 0 fail, 0 skipped, ~45 s (run twice: before and after the `http.js` fix).
+
+## 3. Browser (Playwright 1.64.0 from `../hoshlab/node_modules`, Chromium headless, `http://localhost:8787/ahead/` via `scripts/serve.mjs`)
+
+Driver script kept outside the repo (`../hoshlab/tmp-ahead-verify.mjs`, deleted after the run); Playwright is still not a dependency here. 19 checks, 0 failed, run twice (once against the run-3 data with `1 source failed` in the health button, once against the clean run-4 data showing `All sources OK`; screenshots below are from the second run).
+
+Checks:
+- Brief: six `h2` sections in order (Must know, Research, Releases & tools, From the labs, Analysis worth reading, One deep read); each section has >= 1 `.entry` (4/3/3/2/2/1); 15 entries total.
+- Research: 100 rows render after lazy `items.json` load.
+- Archive: lists `2026-10-20`, shows `Nothing to catch up on`.
+- Learn: 16 checkboxes.
+- 390 px: no horizontal overflow on Brief, Research, Archive, Learn (`scrollWidth <= clientWidth`).
+- **Console:** 0 console errors, 0 uncaught page errors, 0 failed or >= 400 requests across all pages/tabs/viewports.
+- **Keyboard:** on Brief, `j` sets `aria-current="true"` on exactly one row and advances 1 -> 2, `k` returns to 1; `o` opened the current entry's `data-url` (`https://arxiv.org/abs/2610.22791`) in a new page and the popup URL matched. On Research, `j`/`j`/`k` lands on index 1.
+
+Screenshots (`docs/screenshots/`):
+- `brief-1440.png`, `brief-390.png` (full page)
+- `research-1440.png`, `research-390.png`
+- `archive-1440.png`, `archive-390.png`
+- `learn-1440.png`, `learn-390.png` (full page)
+- `brief-light-1440.png` (unchanged from Step C)
+
+## 4. Commits
+
+- `fix(http): retry transient YouTube feed 404s once` — `src/http.js`, `tests/http.test.js`
+- `data: live refresh (41 ok, 23 empty, 0 failed; 529 items; 558-word brief)` — `data/**`
+- `docs: Step D browser verification screenshots and notes` — `docs/screenshots/**`, this file
