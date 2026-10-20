@@ -1,6 +1,6 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T11:32:27.051Z",
+ "generatedAt": "2026-10-20T11:42:59.870Z",
  "wordCount": 553,
  "readingMinutes": 3,
  "overview": null,
@@ -25,11 +25,11 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "This is crazy good for studying to improve existing custom engines by community like gufo, halogen, strixite, Strata... by learning their secret sauces.",
-     "why": "#1 on HN front page, 452 points, 153 comments; also on Reddit r/LocalLLaMA + r/MachineLearning",
+     "why": "#1 on HN front page, 498 points, 173 comments; also on Reddit r/LocalLLaMA + r/MachineLearning",
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T09:08:54.000Z",
      "category": "news",
-     "score": 17.98
+     "score": 18.11
     },
     {
      "id": "arxiv:2610.26860",
@@ -48,7 +48,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 16.45
+     "score": 16.43
     },
     {
      "id": "arxiv:2610.24087",
@@ -63,11 +63,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Can large language model (LLM) agents deliver expert-level operations research (OR) solutions directly from original client materials, without prior expert reformulation?",
-     "why": "35 upvotes on HF Papers; also on arXiv cs.CL",
+     "why": "37 upvotes on HF Papers; also on arXiv cs.CL",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 16.09
+     "score": 16.14
     },
     {
      "id": "370d8453b070a7bf",
@@ -89,7 +89,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 15.89,
+     "score": 15.87,
      "readMinutes": 1
     }
    ]
@@ -115,7 +115,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 15.62
+     "score": 15.59
     },
     {
      "id": "arxiv:2610.26844",
@@ -134,7 +134,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 14.99
+     "score": 14.97
     },
     {
      "id": "arxiv:2610.26834",
@@ -153,7 +153,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 14.8
+     "score": 14.78
     }
    ]
   },
@@ -176,7 +176,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 10.44
+     "score": 10.43
     },
     {
      "id": "92c1824269f45469",
@@ -193,7 +193,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 9.9
+     "score": 9.89
     },
     {
      "id": "f2bc736c0ee71119",
@@ -210,7 +210,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 9.51
+     "score": 9.5
     }
    ]
   },
@@ -233,7 +233,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 4.45,
+     "score": 4.43,
      "readMinutes": 1
     },
     {
@@ -251,7 +251,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T00:00:00.000Z",
      "category": "labs",
-     "score": 4
+     "score": 3.99
     }
    ]
   },
@@ -274,7 +274,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T03:50:48.703Z",
      "category": "blogs",
-     "score": 4.31,
+     "score": 4.3,
      "readMinutes": 24
     },
     {
@@ -292,7 +292,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T05:39:38.000Z",
      "category": "blogs",
-     "score": 3.94,
+     "score": 3.92,
      "readMinutes": 11
     }
    ]
@@ -316,7 +316,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:31:37.000Z",
      "category": "blogs",
-     "score": 3.85,
+     "score": 3.84,
      "readMinutes": 25
     }
    ]
