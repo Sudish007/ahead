@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-10-20T04:28:11.856Z",
- "durationMs": 9229,
+ "generatedAt": "2026-10-20T04:30:36.914Z",
+ "durationMs": 8689,
  "itemCount": 823,
- "newItemCount": 226,
+ "newItemCount": 0,
  "trimmedForSize": 0,
  "sources": {
   "arxiv-cs.LG": {
@@ -12,7 +12,7 @@
    "fetched": 817,
    "kept": 60,
    "skipped": 757,
-   "ms": 313,
+   "ms": 425,
    "httpStatus": 200
   },
   "arxiv-cs.CL": {
@@ -22,7 +22,7 @@
    "fetched": 435,
    "kept": 60,
    "skipped": 375,
-   "ms": 1100,
+   "ms": 1122,
    "httpStatus": 200
   },
   "arxiv-cs.AI": {
@@ -32,7 +32,7 @@
    "fetched": 789,
    "kept": 60,
    "skipped": 729,
-   "ms": 2154,
+   "ms": 2130,
    "httpStatus": 200
   },
   "arxiv-cs.CV": {
@@ -42,7 +42,7 @@
    "fetched": 505,
    "kept": 60,
    "skipped": 445,
-   "ms": 3085,
+   "ms": 3095,
    "httpStatus": 200
   },
   "hf-papers": {
@@ -52,7 +52,7 @@
    "fetched": 100,
    "kept": 60,
    "skipped": 40,
-   "ms": 325,
+   "ms": 232,
    "httpStatus": 200,
    "homepage": "https://huggingface.co/papers"
   },
@@ -63,7 +63,7 @@
    "fetched": 58,
    "kept": 15,
    "skipped": 43,
-   "ms": 417,
+   "ms": 1182,
    "httpStatus": 200
   },
   "hn-front": {
@@ -73,7 +73,7 @@
    "fetched": 30,
    "kept": 4,
    "skipped": 26,
-   "ms": 494,
+   "ms": 322,
    "httpStatus": 200
   },
   "reddit": {
@@ -83,7 +83,7 @@
    "fetched": 50,
    "kept": 50,
    "skipped": 0,
-   "ms": 675,
+   "ms": 2568,
    "httpStatus": 200
   },
   "openai": {
@@ -93,7 +93,7 @@
    "fetched": 1300,
    "kept": 13,
    "skipped": 1287,
-   "ms": 184,
+   "ms": 151,
    "httpStatus": 200
   },
   "anthropic": {
@@ -103,7 +103,7 @@
    "fetched": 566,
    "kept": 9,
    "skipped": 557,
-   "ms": 178,
+   "ms": 123,
    "httpStatus": 200,
    "homepage": "https://www.anthropic.com/news"
   },
@@ -114,7 +114,7 @@
    "fetched": 100,
    "kept": 5,
    "skipped": 95,
-   "ms": 161,
+   "ms": 227,
    "httpStatus": 200
   },
   "google-research": {
@@ -124,7 +124,7 @@
    "fetched": 100,
    "kept": 4,
    "skipped": 96,
-   "ms": 300,
+   "ms": 199,
    "httpStatus": 200
   },
   "meta-newsroom-ai": {
@@ -134,7 +134,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 185,
+   "ms": 67,
    "httpStatus": 200
   },
   "meta-engineering-ai": {
@@ -144,7 +144,7 @@
    "fetched": 9,
    "kept": 1,
    "skipped": 8,
-   "ms": 301,
+   "ms": 76,
    "httpStatus": 200
   },
   "microsoft-research": {
@@ -154,7 +154,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 702,
+   "ms": 777,
    "httpStatus": 200
   },
   "nvidia-dev": {
@@ -164,7 +164,7 @@
    "fetched": 100,
    "kept": 7,
    "skipped": 93,
-   "ms": 135,
+   "ms": 141,
    "httpStatus": 200
   },
   "hf-blog": {
@@ -174,7 +174,7 @@
    "fetched": 882,
    "kept": 9,
    "skipped": 873,
-   "ms": 119,
+   "ms": 58,
    "httpStatus": 200
   },
   "allenai": {
@@ -184,7 +184,7 @@
    "fetched": 25,
    "kept": 2,
    "skipped": 23,
-   "ms": 347,
+   "ms": 462,
    "httpStatus": 200
   },
   "mistral": {
@@ -194,7 +194,7 @@
    "fetched": 90,
    "kept": 1,
    "skipped": 89,
-   "ms": 130,
+   "ms": 69,
    "httpStatus": 200
   },
   "transformer-circuits": {
@@ -204,7 +204,7 @@
    "fetched": 56,
    "kept": 0,
    "skipped": 56,
-   "ms": 350,
+   "ms": 253,
    "httpStatus": 200
   },
   "lilog": {
@@ -214,7 +214,7 @@
    "fetched": 53,
    "kept": 0,
    "skipped": 53,
-   "ms": 171,
+   "ms": 93,
    "httpStatus": 200
   },
   "interconnects": {
@@ -224,7 +224,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 155,
+   "ms": 95,
    "httpStatus": 200
   },
   "raschka": {
@@ -234,7 +234,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 276,
+   "ms": 165,
    "httpStatus": 200
   },
   "simonw": {
@@ -244,7 +244,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 180,
+   "ms": 106,
    "httpStatus": 200
   },
   "chiphuyen": {
@@ -254,7 +254,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 453,
+   "ms": 185,
    "httpStatus": 200
   },
   "eugeneyan": {
@@ -264,7 +264,7 @@
    "fetched": 212,
    "kept": 0,
    "skipped": 212,
-   "ms": 149,
+   "ms": 220,
    "httpStatus": 200
   },
   "hamel": {
@@ -274,7 +274,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 425,
+   "ms": 194,
    "httpStatus": 200
   },
   "semianalysis": {
@@ -284,7 +284,7 @@
    "fetched": 20,
    "kept": 2,
    "skipped": 18,
-   "ms": 200,
+   "ms": 164,
    "httpStatus": 200
   },
   "importai": {
@@ -294,10 +294,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 64,
+   "ms": 36,
    "httpStatus": 403,
    "error": "HTTP 403",
-   "detail": "server=cloudflare; cf-ray=a4d5464aaa872ed9-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
+   "detail": "server=cloudflare; cf-ray=a4d549d66f94dfc2-IAD; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
   },
   "latentspace": {
    "name": "Latent Space",
@@ -306,7 +306,7 @@
    "fetched": 20,
    "kept": 8,
    "skipped": 12,
-   "ms": 228,
+   "ms": 153,
    "httpStatus": 200
   },
   "zvi": {
@@ -316,10 +316,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 151,
+   "ms": 31,
    "httpStatus": 403,
    "error": "HTTP 403",
-   "detail": "server=cloudflare; cf-ray=a4d5464bef9556fd-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
+   "detail": "server=cloudflare; cf-ray=a4d549d6ae38c960-IAD; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
   },
   "thebatch": {
    "name": "The Batch",
@@ -328,10 +328,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 92,
+   "ms": 31,
    "httpStatus": 403,
    "error": "HTTP 403",
-   "detail": "server=cloudflare; cf-ray=a4d5464c0e69b706-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"",
+   "detail": "server=cloudflare; cf-ray=a4d549d6be56c93c-IAD; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"",
    "homepage": "https://www.deeplearning.ai/the-batch/"
   },
   "oneusefulthing": {
@@ -341,7 +341,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 166,
+   "ms": 136,
    "httpStatus": 200
   },
   "gradient": {
@@ -351,7 +351,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 537,
+   "ms": 712,
    "httpStatus": 200
   },
   "epoch": {
@@ -361,7 +361,7 @@
    "fetched": 50,
    "kept": 2,
    "skipped": 48,
-   "ms": 336,
+   "ms": 120,
    "httpStatus": 200
   },
   "epoch-gradient-updates": {
@@ -371,10 +371,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 279,
+   "ms": 38,
    "httpStatus": 403,
    "error": "HTTP 403",
-   "detail": "server=cloudflare; cf-ray=a4d5464dd95a52af-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
+   "detail": "server=cloudflare; cf-ray=a4d549d7ac1dd6ec-IAD; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
   },
   "alignmentforum": {
    "name": "Alignment Forum",
@@ -383,7 +383,7 @@
    "fetched": 10,
    "kept": 5,
    "skipped": 5,
-   "ms": 578,
+   "ms": 344,
    "httpStatus": 200
   },
   "chinai": {
@@ -393,10 +393,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 227,
+   "ms": 81,
    "httpStatus": 403,
    "error": "HTTP 403",
-   "detail": "server=cloudflare; cf-ray=a4d5464e2da20158-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
+   "detail": "server=cloudflare; cf-ray=a4d549d828543eac-IAD; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\""
   },
   "jalammar": {
    "name": "Jay Alammar (Language Models newsletter)",
@@ -405,7 +405,7 @@
    "fetched": 11,
    "kept": 0,
    "skipped": 11,
-   "ms": 115,
+   "ms": 161,
    "httpStatus": 200
   },
   "karpathy-blog": {
@@ -415,7 +415,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 140,
+   "ms": 104,
    "httpStatus": 200
   },
   "karpathy-bearblog": {
@@ -425,7 +425,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 233,
+   "ms": 85,
    "httpStatus": 200
   },
   "horace": {
@@ -435,7 +435,7 @@
    "fetched": 6,
    "kept": 0,
    "skipped": 6,
-   "ms": 205,
+   "ms": 93,
    "httpStatus": 200,
    "homepage": "https://horace.io"
   },
@@ -446,7 +446,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 1465,
+   "ms": 1419,
    "httpStatus": 200
   },
   "gh-rel-vllm": {
@@ -456,7 +456,7 @@
    "fetched": 10,
    "kept": 6,
    "skipped": 4,
-   "ms": 1361,
+   "ms": 841,
    "httpStatus": 200
   },
   "gh-rel-transformers": {
@@ -466,7 +466,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 1996,
+   "ms": 1513,
    "httpStatus": 200
   },
   "gh-rel-llamacpp": {
@@ -476,7 +476,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 916,
+   "ms": 604,
    "httpStatus": 200
   },
   "gh-rel-sglang": {
@@ -486,7 +486,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 3245,
+   "ms": 2602,
    "httpStatus": 200
   },
   "gh-rel-unsloth": {
@@ -496,7 +496,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 3142,
+   "ms": 2416,
    "httpStatus": 200
   },
   "gh-rel-trl": {
@@ -506,7 +506,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 2080,
+   "ms": 1079,
    "httpStatus": 200
   },
   "gh-rel-torchtitan": {
@@ -516,7 +516,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 334,
+   "ms": 221,
    "httpStatus": 200
   },
   "gh-trending-llm": {
@@ -526,7 +526,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 945,
+   "ms": 693,
    "httpStatus": 200
   },
   "gh-trending-ml": {
@@ -536,7 +536,7 @@
    "fetched": 30,
    "kept": 0,
    "skipped": 30,
-   "ms": 1446,
+   "ms": 1548,
    "httpStatus": 200
   },
   "gh-trending-agents": {
@@ -546,7 +546,7 @@
    "fetched": 30,
    "kept": 15,
    "skipped": 15,
-   "ms": 2188,
+   "ms": 2282,
    "httpStatus": 200
   },
   "hf-trending": {
@@ -556,7 +556,7 @@
    "fetched": 20,
    "kept": 20,
    "skipped": 0,
-   "ms": 68,
+   "ms": 17,
    "httpStatus": 200
   },
   "pod-dwarkesh": {
@@ -566,10 +566,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 65,
+   "ms": 18,
    "httpStatus": 403,
    "error": "HTTP 403",
-   "detail": "server=cloudflare; cf-ray=a4d5465eede81418-LAX; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"",
+   "detail": "server=cloudflare; cf-ray=a4d549e4e85fc4a7-IAD; cf-mitigated=challenge; content-type=text/html; charset=UTF-8; body=\"Just a moment... *{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"",
    "homepage": "https://www.dwarkesh.com"
   },
   "pod-mlst": {
@@ -579,7 +579,7 @@
    "fetched": 271,
    "kept": 0,
    "skipped": 271,
-   "ms": 169,
+   "ms": 222,
    "httpStatus": 200
   },
   "pod-cogrev": {
@@ -589,7 +589,7 @@
    "fetched": 387,
    "kept": 2,
    "skipped": 385,
-   "ms": 260,
+   "ms": 483,
    "httpStatus": 200
   },
   "pod-nopriors": {
@@ -599,7 +599,7 @@
    "fetched": 183,
    "kept": 0,
    "skipped": 183,
-   "ms": 50,
+   "ms": 159,
    "httpStatus": 200
   },
   "yt-karpathy": {
@@ -609,7 +609,7 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2162,
+   "ms": 2218,
    "httpStatus": 404,
    "error": "HTTP 404",
    "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
@@ -621,7 +621,7 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2339,
+   "ms": 2199,
    "httpStatus": 404,
    "error": "HTTP 404",
    "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
@@ -633,7 +633,7 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2317,
+   "ms": 2113,
    "httpStatus": 404,
    "error": "HTTP 404",
    "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
@@ -645,7 +645,7 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2257,
+   "ms": 2125,
    "httpStatus": 404,
    "error": "HTTP 404",
    "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
@@ -657,7 +657,7 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2449,
+   "ms": 2089,
    "httpStatus": 404,
    "error": "HTTP 404",
    "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
@@ -669,7 +669,7 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 2172,
+   "ms": 2108,
    "httpStatus": 404,
    "error": "HTTP 404",
    "detail": "server=YouTube RSS Feeds server; content-type=text/html; charset=UTF-8; body=\"Error 404 (Not Found)!!1 *{margin:0;padding:0}html,code{font:15px/22px arial,sans-serif}html{background:#fff;color:#222;padding:15px}body{margin:7% auto 0;max-width:390px;min-height:180px;padding:30px 0 15px}* > body{background:url(//www.google.com/images/errors/robot.png) 100% 5px no-repeat;padding\""
