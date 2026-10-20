@@ -1,7 +1,7 @@
 {
  "date": "2026-10-20",
- "generatedAt": "2026-10-20T07:30:35.490Z",
- "wordCount": 587,
+ "generatedAt": "2026-10-20T07:40:46.561Z",
+ "wordCount": 582,
  "readingMinutes": 3,
  "overview": null,
  "sections": [
@@ -26,7 +26,26 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 16.83
+     "score": 16.81
+    },
+    {
+     "id": "arxiv:2610.24087",
+     "title": "OR-License: Evaluating LLM Agents as Real-World Operations Research Practitioners",
+     "url": "https://arxiv.org/abs/2610.24087",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Can large language model (LLM) agents deliver expert-level operations research (OR) solutions directly from original client materials, without prior expert reformulation?",
+     "why": "26 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
+     "publishedAt": "2026-10-16T00:00:00.000Z",
+     "category": "research",
+     "score": 16.21
     },
     {
      "id": "370d8453b070a7bf",
@@ -44,31 +63,12 @@
       "Hacker News"
      ],
      "summary": "State-of-the-art probabilistic forecasting in four sizes (5M–209M params), CPU-efficient, zero-shot ready.",
-     "why": "579 points on HN, 108 comments",
+     "why": "580 points on HN, 108 comments",
      "whySource": "heuristic",
      "publishedAt": "2026-10-15T12:00:00.000Z",
      "category": "labs",
-     "score": 16.18,
+     "score": 16.17,
      "readMinutes": 1
-    },
-    {
-     "id": "arxiv:2610.24087",
-     "title": "OR-License: Evaluating LLM Agents as Real-World Operations Research Practitioners",
-     "url": "https://arxiv.org/abs/2610.24087",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "Can large language model (LLM) agents deliver expert-level operations research (OR) solutions directly from original client materials, without prior expert reformulation?",
-     "why": "23 upvotes on HF Papers; also on arXiv cs.CL",
-     "whySource": "heuristic",
-     "publishedAt": "2026-10-16T00:00:00.000Z",
-     "category": "research",
-     "score": 16.06
     },
     {
      "id": "arxiv:2610.22791",
@@ -83,11 +83,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Large language model (LLM) agents have shown promising potential in coding tasks, and their performance is jointly determined by the policy model and the harness that mediates their interaction with the environment.",
-     "why": "31 upvotes on HF Papers; also on arXiv cs.CL",
+     "why": "32 upvotes on HF Papers; also on arXiv cs.CL",
      "whySource": "heuristic",
      "publishedAt": "2026-10-16T00:00:00.000Z",
      "category": "research",
-     "score": 15.92
+     "score": 15.94
     }
    ]
   },
@@ -112,7 +112,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 15.45
+     "score": 15.42
     },
     {
      "id": "arxiv:2610.23986",
@@ -131,26 +131,26 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-14T00:00:00.000Z",
      "category": "research",
-     "score": 14.65
+     "score": 14.62
     },
     {
-     "id": "arxiv:2610.23121",
-     "title": "Scene-Designer: Learning Design Intelligence for Agentic 3D Scene Generation",
-     "url": "https://arxiv.org/abs/2610.23121",
+     "id": "arxiv:2610.26834",
+     "title": "Kronecker Delta Rule for Long Context Linear Attention",
+     "url": "https://arxiv.org/abs/2610.26834",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.CV"
+      "arxiv-cs.AI"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.CV"
+      "arXiv cs.AI"
      ],
-     "summary": "Generating complete, coherent, and usable 3D indoor scenes from natural language requires strong design intelligence: the ability to design high-quality scenes and critique their quality.",
-     "why": "49 upvotes on HF Papers; also on arXiv cs.CV",
+     "summary": "We propose KronLSTM, a linear attention architecture based on the Kronecker Delta Rule, a novel update rule for associative matrix memories.",
+     "why": "12 upvotes on HF Papers; also on arXiv cs.AI",
      "whySource": "heuristic",
-     "publishedAt": "2026-10-16T00:00:00.000Z",
+     "publishedAt": "2026-10-19T00:00:00.000Z",
      "category": "research",
-     "score": 14.35
+     "score": 14.6
     }
    ]
   },
@@ -173,7 +173,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 10.71
+     "score": 10.7
     },
     {
      "id": "92c1824269f45469",
@@ -190,7 +190,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 10.17
+     "score": 10.16
     },
     {
      "id": "f2bc736c0ee71119",
@@ -207,7 +207,7 @@
      "whySource": "heuristic",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 9.78
+     "score": 9.77
     }
    ]
   },
@@ -230,7 +230,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:00:00.000Z",
      "category": "labs",
-     "score": 4.81,
+     "score": 4.79,
      "readMinutes": 1
     },
     {
@@ -248,7 +248,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T15:30:37.000Z",
      "category": "labs",
-     "score": 3.67,
+     "score": 3.66,
      "readMinutes": 11
     }
    ]
@@ -272,7 +272,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-20T03:50:48.703Z",
      "category": "blogs",
-     "score": 4.66,
+     "score": 4.64,
      "readMinutes": 24
     },
     {
@@ -290,7 +290,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T05:39:38.000Z",
      "category": "blogs",
-     "score": 4.26,
+     "score": 4.24,
      "readMinutes": 11
     }
    ]
@@ -314,7 +314,7 @@
      "whySource": "heuristic",
      "publishedAt": "2026-10-19T12:31:37.000Z",
      "category": "blogs",
-     "score": 4.16,
+     "score": 4.15,
      "readMinutes": 25
     }
    ]
@@ -322,12 +322,12 @@
  ],
  "itemIds": [
   "arxiv:2610.26860",
-  "370d8453b070a7bf",
   "arxiv:2610.24087",
+  "370d8453b070a7bf",
   "arxiv:2610.22791",
   "arxiv:2610.26844",
   "arxiv:2610.23986",
-  "arxiv:2610.23121",
+  "arxiv:2610.26834",
   "ca26bca182f697df",
   "92c1824269f45469",
   "f2bc736c0ee71119",
