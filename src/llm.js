@@ -36,6 +36,11 @@ const MAX_RETRY_AFTER_MS = 30_000;
 /** A timeout has already cost LLM_TIMEOUT_MS, so it gets one more try at most (sharing the backoff plan), not three. */
 const MAX_TIMEOUT_RETRIES = 1;
 /**
+ * A 429 for a per-day quota (Gemini: `GenerateRequestsPerDayPerProjectPerModel`; OpenAI: "requests per day (RPD)") will not
+ * clear within the run, and on Gemini's free tier every attempt counts against that same quota, so it is final.
+ */
+const DAILY_QUOTA_RE = /per.?day|daily|\bRPD\b/i;
+/**
  * Editorial rewriting needs little deliberation, and on Gemini thinking shares the `max_tokens` cap with the answer, so ask
  * for a small reasoning budget. Providers that do not know the field answer 400 naming it, and the request is retried without.
  */
@@ -247,7 +252,8 @@ export async function editorialize(brief, config, fetchImpl = globalThis.fetch, 
       body = fix.apply(body);
       continue;
     }
-    if (TRANSIENT_STATUSES.has(res.status) && retries < RETRY_BACKOFF_MS.length) {
+    const dailyQuota = res.status === 429 && DAILY_QUOTA_RE.test(errorBody(res));
+    if (TRANSIENT_STATUSES.has(res.status) && !dailyQuota && retries < RETRY_BACKOFF_MS.length) {
       const wait = retryAfterMs(res) ?? RETRY_BACKOFF_MS[retries];
       retries++;
       await sleep(wait);

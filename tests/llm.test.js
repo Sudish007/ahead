@@ -212,6 +212,16 @@ test('transient 429/5xx and network errors retry with backoff (retry-after honou
   const s3 = fakeSleep();
   assert.equal((await editorialize(b3, CONFIG, f3, s3.opts)).ok, true);
   assert.deepEqual(s3.waits, [RETRY_BACKOFF_MS[0]]);
+  // A per-day quota 429 cannot clear within the run (and each attempt would count against it): no retry, body kept as detail.
+  const b3b = brief();
+  const quota = JSON.stringify({ error: { code: 429, message: 'You exceeded your current quota. quotaId: GenerateRequestsPerDayPerProjectPerModel-FreeTier, limit: 20', status: 'RESOURCE_EXHAUSTED' } });
+  const { fetchImpl: f3b, calls: c3b } = mockFetch([() => new Response(quota, { status: 429 })]);
+  const s3b = fakeSleep();
+  const r3b = await editorialize(b3b, CONFIG, f3b, s3b.opts);
+  assert.equal(r3b.error, 'HTTP 429');
+  assert.match(r3b.detail, /PerDay/);
+  assert.equal(c3b.length, 1);
+  assert.deepEqual(s3b.waits, []);
   // Exhausted: RETRY_BACKOFF_MS.length + 1 attempts, the last body as detail, the attempt count in the error, brief untouched.
   const b4 = brief();
   const snapshot = JSON.stringify(b4.digest);
