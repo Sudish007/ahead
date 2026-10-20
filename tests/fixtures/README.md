@@ -31,6 +31,7 @@ Real responses captured by the design-phase source probe on 2026-10-19 (see .age
 | gh-search-ml.json | gh-search-ml.json | 5 | GitHub search API repositories, all under the 50-star floor (stars 24..11; minStars 50 keeps 0 -> status empty) |
 | hf-trending-models.json | hf-trending-models.json | all | HF models sorted by trendingScore |
 | youtube-gpumode.xml | yt-gpumode.xml | 6 | YouTube channel Atom: yt:videoId, media:group, media:statistics |
+| youtube-playlistitems.json | synthesized (no capture: needs a key) | 6 | YouTube Data API v3 playlistItems shape built from the six youtube-gpumode.xml videos (same ids, titles, dates, descriptions); item 4 has an empty description, item 5 has no contentDetails.videoPublishedAt |
 | podcast-cognitive-revolution.xml | pod-cogrev.xml | 5 | Megaphone podcast RSS: plain description, itunes tags |
 | podcast-mlst-anchor.xml | pod-mlst.xml | 5 | Anchor podcast RSS: CDATA HTML descriptions |
 | google-research.xml | google-research-rss.xml | 8 | Google Research RSS |

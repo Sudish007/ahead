@@ -1,6 +1,6 @@
 # Ahead
 
-Ahead is a personal AI intelligence dashboard: one static page that pulls 64 sources (arXiv, HF Daily Papers, Hacker News, Reddit, the frontier labs, the deep technical blogs, release feeds, podcasts and YouTube channels), ranks everything, and writes a **5-minute daily brief** you can read in one scroll. It runs on GitHub Actions every six hours and deploys to GitHub Pages. No framework, no server, no database, no API keys required.
+Ahead is a personal AI intelligence dashboard: one static page that pulls 64 sources (arXiv, HF Daily Papers, Hacker News, Reddit, the frontier labs, the deep technical blogs, release feeds, podcasts and YouTube channels), ranks everything, and writes a **5-minute daily brief** you can read in one scroll. It runs on GitHub Actions every six hours and deploys to GitHub Pages. No framework, no server, no database, no API keys required (an LLM key and a YouTube Data API key are optional).
 
 Live site: https://sudish007.github.io/ahead/ (repo: https://github.com/Sudish007/ahead)
 
@@ -36,7 +36,7 @@ Type `sitemap (publisher has no feed)` means the publisher offers no RSS/Atom fe
 | Releases | GitHub new repos: llm, machine-learning, ai-agents | github | search API, created in the last 7 days, 50+ stars |
 | Releases | HF trending models | json | first-seen date is the run time |
 | Media | Dwarkesh Podcast, Machine Learning Street Talk, The Cognitive Revolution, No Priors | rss | sponsor blocks cut from summaries |
-| Media | Andrej Karpathy, Yannic Kilcher, AI Explained, GPU MODE, Stanford Online, 3Blue1Brown | youtube | view counts feed the score; browser-like headers; 3 attempts (2 s / 8 s backoff); feed endpoint answers 404/500 intermittently |
+| Media | Andrej Karpathy, Yannic Kilcher, AI Explained, GPU MODE, Stanford Online, 3Blue1Brown | youtube | with `YOUTUBE_API_KEY`: one Data API `playlistItems` request per channel (no view counts); without it: the public feed with browser-like headers and 3 attempts (2 s / 8 s backoff), which answers 404/500 intermittently; feed view counts feed the score |
 
 Link-outs (no fetch): alphaXiv (Research tab), Meta AI blog (Labs tab), AI News / smol.ai (Blogs tab; its RSS stopped on 2026-09-09 and the issues now arrive as `[AINews]` posts in the Latent Space feed), plus eight leaderboards and a 16-entry learning list in `sources.config.mjs`.
 
@@ -99,6 +99,30 @@ gh workflow run refresh.yml    # next run picks the secrets up
 
 Remove `LLM_API_KEY` (`gh secret delete LLM_API_KEY`) to go back to the heuristic brief; nothing else changes.
 
+## YouTube Data API key (optional)
+
+Without a key the six YouTube channels are read from the public feed endpoint (`youtube.com/feeds/videos.xml`), which answers 404/500 for most requests from GitHub-hosted runners, so the channels usually report `HTTP 404 (3 attempts)` there. With a key the pipeline reads each channel through the YouTube Data API v3 instead and only falls back to the feed when the API call fails.
+
+Setup:
+
+1. [Google Cloud Console](https://console.cloud.google.com/) -> create or pick a project.
+2. APIs & Services -> Library -> enable **YouTube Data API v3**.
+3. APIs & Services -> Credentials -> Create credentials -> **API key**. Edit the key -> API restrictions -> restrict it to **YouTube Data API v3** (the key is only ever sent to `www.googleapis.com`).
+4. Store it as a repository secret and trigger a run:
+
+```sh
+gh secret set YOUTUBE_API_KEY --repo Sudish007/ahead   # paste the key at the prompt
+gh workflow run refresh.yml                            # next run picks it up
+```
+
+(Or GitHub -> Settings -> Secrets and variables -> Actions -> New repository secret `YOUTUBE_API_KEY`.) The workflow passes the secret to `scripts/fetch.mjs` as the `YOUTUBE_API_KEY` environment variable of the `Fetch sources and build the brief` step only; the test step never sees it.
+
+What the pipeline does with it: one `GET https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=15&playlistId=UU…` per channel per run, where the uploads playlist id is the channel id from `sources.config.mjs` with its leading `UC` replaced by `UU` (no second id list). The request has an 8 s timeout and no retry. Items map to the same shape the feed produces (title, `watch?v=` URL, publish time, cleaned description with sponsor blocks cut, channel name as author) and go through the same normalization, age window, dedup and scoring, so `data/items.json` keeps its shape and the source ids stay the same; saved/read state in the browser survives the switch. The API carries no view counts, so the `N views` why-line and the `0.15*log2(1+ytViews)` score term apply only to feed-fetched items; counts stored from earlier feed runs are kept. `meta.sources.<id>.note` reads `api` when the API answered and `api: HTTP 403, fell back to feed` (or another error class) when it did not; in that case the feed path runs exactly as without a key, so a failing API never makes a source worse.
+
+Quota: `playlistItems.list` costs 1 unit, so a run with 6 channels costs 6 units; the 4 scheduled runs a day use about 24 of the default 10,000 daily units, and every push or manual dispatch adds 6 more. The quota resets at midnight Pacific time.
+
+Secret hygiene: the key travels only in the request URL. Every URL that reaches an error message, a log line or the `detail` field of `meta.json` is rewritten to `key=REDACTED`, and the key is never written to `data/`. `gh secret delete YOUTUBE_API_KEY --repo Sudish007/ahead` returns to the feed path; an empty secret behaves exactly like an absent one.
+
 ## Deployment
 
 `.github/workflows/refresh.yml` runs every 6 hours on a cron (`0 */6 * * *`, i.e. 00:00, 06:00, 12:00 and 18:00 UTC), on `workflow_dispatch`, and on pushes to `main` that touch anything except `data/`. It runs the tests, runs the pipeline, commits `data/` back with `[skip ci]`, stages `index.html app.js styles.css favicon.svg data/` into `_site/` and deploys that to GitHub Pages. `actions/configure-pages@v6` with `enablement: true` creates the Pages site on the first run, so no Settings change or API call is needed before pushing. Trigger a refresh by hand with:
@@ -129,14 +153,15 @@ npm run serve                              # http://127.0.0.1:8787/ and http://1
 - `data/items.json` — `{ generatedAt, count, items[] }`, 7 days of items sorted by rank; capped at 3,000 items and 2 MB. Each item: `id` (`arxiv:<id>` or 16 hex of the canonical URL), `title`, `url`, `canonicalUrl`, `sources[{ id, url?, at }]`, `category`, `publishedAt`, `surfacedAt`, `summary`, `score`, `signals`, optional `arxivId authors readMinutes discussionUrl tag extra`.
 - `data/digests/YYYY-MM-DD.json` — one brief per UTC day: `overview`, six `sections[].entries[]`, `itemIds`, `deepReadId`, `wordCount`, `readingMinutes`, `llm`. Only today's file is ever rewritten.
 - `data/digests/index.json` — `{ days: [{ date, generatedAt, wordCount, readingMinutes, entryCount }] }`, newest first.
-- `data/meta.json` — run metadata: per-source `status` (`ok | empty | failed`), `fetched`, `kept`, `skipped`, `ms`, `error`/`note`, `homepage`, and `detail` (failed sources only: response `server`/`cf-ray`/`cf-mitigated`/`content-type`/`location` headers and the first 300 chars of the body, <= 400 chars); `okCount/emptyCount/failedCount`; `newItemCount`; source-scoped `sitemapSkipped`/`sitemapCache` (at most 30 entries each); `llm`; `brief`; and `static` (leaderboards, link-outs, learn list) for the UI.
+- `data/meta.json` — run metadata: per-source `status` (`ok | empty | failed`), `fetched`, `kept`, `skipped`, `ms`, `error`/`note` (youtube sources: `api` when the Data API answered, `api: <class>, fell back to feed` when it did not), `homepage`, and `detail` (failed sources only: response `server`/`cf-ray`/`cf-mitigated`/`content-type`/`location` headers and the first 300 chars of the body, <= 400 chars); `okCount/emptyCount/failedCount`; `newItemCount`; source-scoped `sitemapSkipped`/`sitemapCache` (at most 30 entries each); `llm`; `brief`; and `static` (leaderboards, link-outs, learn list) for the UI.
 
 `fetched` counts decoded records before filtering, `kept` the records that survived parser drops, the age window and the per-source cap; `empty` means the fetch worked but nothing was kept (pytorch's CI-tag feed, weekend arXiv), and only `failed` counts toward the health indicator.
 
 ## Known limits
 
 - Reddit publishes no scores in its feed and may block Actions IPs; the source then reports `failed` and everything else proceeds.
-- Some sources are blocked from GitHub-hosted runners even with browser-like headers (measured on the Actions runs after the header/retry changes). Six Cloudflare-fronted sources answer a 403 JS challenge on every run and report `blocked from GitHub runner: 403 Cloudflare`: Import AI, Don't Worry About the Vase, Gradient Updates, ChinAI, Dwarkesh Podcast (Substack) and The Batch (sitemap). The six YouTube channel feeds (Andrej Karpathy, Yannic Kilcher, AI Explained, GPU MODE, Stanford Online, 3Blue1Brown) answer 404/500 for most requests from the runner; a channel that still fails after the third attempt reports `HTTP 404 (3 attempts)` or `HTTP 500 (3 attempts)`, and which channels get through varies run to run (typically 1 of 6). By design no proxy, mirror, scraper or API key is used, so these sources stay in the registry as `failed` and the health button counts them. The six Cloudflare-fronted feeds answer 200 from a home connection (`npm run fetch` locally), which points to IP-range blocking; YouTube's feed endpoint is flaky from every network (locally about 30-50 % of requests succeed) and worse from the runner.
+- Some sources are blocked from GitHub-hosted runners even with browser-like headers (measured on the Actions runs after the header/retry changes). Six Cloudflare-fronted sources answer a 403 JS challenge on every run and report `blocked from GitHub runner: 403 Cloudflare`: Import AI, Don't Worry About the Vase, Gradient Updates, ChinAI, Dwarkesh Podcast (Substack) and The Batch (sitemap). By design no proxy, mirror or scraper is used, so they stay in the registry as `failed` and the health button counts them. The same six feeds answer 200 from a home connection (`npm run fetch` locally), which points to IP-range blocking.
+- YouTube's public feed endpoint is flaky from every network (locally about 30-50 % of requests succeed) and answers 404/500 for most requests from the runner. Without `YOUTUBE_API_KEY` the six channels (Andrej Karpathy, Yannic Kilcher, AI Explained, GPU MODE, Stanford Online, 3Blue1Brown) usually report `HTTP 404 (3 attempts)` or `HTTP 500 (3 attempts)` there, and which channels get through varies run to run (typically 1 of 6). With the key (see "YouTube Data API key") they are fetched through the YouTube Data API and the feed is only the fallback.
 - The GitHub search API is limited to 10 requests/min unauthenticated; the workflow's `GITHUB_TOKEN` raises that.
 - HN front-page rank comes from `topstories.json`, so a story outside the top 30 shows "on HN front page" without a number.
 - The `[AINews]` roundups stay in the Blogs tab and may reach Must know, but never Analysis or Deep read.

@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { createHttpClient, HttpError, BodyTooLarge, TimeoutError, errorClass, errorSummary, formatDetail, PACING, ACCEPT, BROWSER_USER_AGENT } from '../src/http.js';
+import { createHttpClient, HttpError, BodyTooLarge, TimeoutError, errorClass, errorSummary, formatDetail, redactKey, PACING, ACCEPT, BROWSER_USER_AGENT } from '../src/http.js';
 
 /** Fake clock whose sleep() advances time and resolves timers in order. */
 function fakeClock() {
@@ -295,4 +295,91 @@ test('browser headers by default, the Ahead UA on identified hosts, */* for YouT
   assert.equal(res.contentType, 'text/plain');
   assert.equal(res.finalUrl, 'https://mistral.ai/news/rss');
   assert.equal(res.status, 200);
+});
+
+const KEY = 'AIzaSECRET';
+const API_URL = `https://www.googleapis.com/youtube/v3/playlistItems?part=snippet,contentDetails&maxResults=15&playlistId=UUJgIbYl6C5no72a0NUAPcTA&key=${KEY}`;
+const API_URL_REDACTED = API_URL.replace(KEY, 'REDACTED');
+
+test('redactKey rewrites key=<value> inside googleapis.com URLs only', () => {
+  assert.equal(redactKey(API_URL), API_URL_REDACTED);
+  assert.ok(API_URL_REDACTED.endsWith('&key=REDACTED'));
+  assert.equal(redactKey(`https://www.googleapis.com/x?key=${KEY}&part=snippet`), 'https://www.googleapis.com/x?key=REDACTED&part=snippet');
+  assert.equal(redactKey(`one ${API_URL} two https://www.googleapis.com/y?key=${KEY} three`), `one ${API_URL_REDACTED} two https://www.googleapis.com/y?key=REDACTED three`);
+  assert.equal(redactKey('https://example.test/feed?key=abc'), 'https://example.test/feed?key=abc', 'other hosts are left alone');
+  assert.equal(redactKey('HTTP 403 for https://a.test/feed'), 'HTTP 403 for https://a.test/feed');
+  assert.equal(redactKey('plain text without a url'), 'plain text without a url');
+});
+
+test('HttpError, TimeoutError and BodyTooLarge never carry the API key in message, url, detail or JSON', () => {
+  const err = new HttpError(403, API_URL, undefined, { location: `https://www.googleapis.com/r?key=${KEY}`, body: `see https://www.googleapis.com/y?key=${KEY}`, server: 'ESF' });
+  assert.equal(err.message, `HTTP 403 for ${API_URL_REDACTED}`);
+  assert.equal(err.url, API_URL_REDACTED);
+  assert.equal(err.detail.location, 'https://www.googleapis.com/r?key=REDACTED');
+  assert.equal(err.detail.body, 'see https://www.googleapis.com/y?key=REDACTED');
+  assert.equal(err.detail.server, 'ESF');
+  assert.ok(!JSON.stringify(err).includes(KEY));
+  assert.ok(!err.stack.includes(KEY));
+  const line = formatDetail(err.detail);
+  assert.ok(!line.includes(KEY));
+  assert.match(line, /location=https:\/\/www\.googleapis\.com\/r\?key=REDACTED/);
+  assert.ok(!formatDetail({ location: `https://www.googleapis.com/r?key=${KEY}` }).includes(KEY), 'formatDetail redacts a raw detail object too');
+  const timeout = new TimeoutError(API_URL);
+  assert.ok(timeout.message.includes('key=REDACTED') && !timeout.message.includes(KEY));
+  const big = new BodyTooLarge(API_URL, 10);
+  assert.ok(big.message.includes('key=REDACTED') && !big.message.includes(KEY));
+  assert.equal(errorClass(err), 'HTTP 403');
+  assert.equal(errorSummary(err), 'HTTP 403');
+  assert.equal(errorClass(timeout), 'timeout');
+  assert.equal(errorClass(big), 'body too large');
+  // Plain URLs are untouched
+  const plain = new HttpError(404, 'https://a.test/feed');
+  assert.equal(plain.message, 'HTTP 404 for https://a.test/feed');
+  assert.equal(plain.url, 'https://a.test/feed');
+});
+
+test('a 403 from the Data API through the client keeps the quota evidence and drops the key', async () => {
+  const clock = fakeClock();
+  const body = '{"error":{"code":403,"message":"quota","errors":[{"reason":"quotaExceeded"}]}}';
+  const fetchImpl = async (url) => {
+    assert.equal(url, API_URL, 'the request itself carries the key');
+    return new Response(body, { status: 403, headers: { 'content-type': 'application/json' } });
+  };
+  const client = createHttpClient({ fetchImpl, sleep: clock.sleep, nowMs: clock.nowMs });
+  const p = client.fetchText(API_URL, { accept: ACCEPT.json, timeoutMs: 8000 }).catch((e) => e);
+  await clock.tick();
+  const err = await p;
+  assert.ok(err instanceof HttpError);
+  assert.equal(err.status, 403);
+  assert.equal(err.attempts, 1);
+  assert.match(err.detail.body, /quotaExceeded/);
+  assert.ok(!err.message.includes(KEY));
+  assert.ok(!err.url.includes(KEY));
+  assert.ok(!formatDetail(err.detail).includes(KEY));
+  assert.ok(!JSON.stringify(err).includes(KEY));
+  assert.ok(err.url.endsWith('key=REDACTED'));
+});
+
+test('www.googleapis.com gets exactly one attempt: no retry on 503 or a network error', async () => {
+  const clock = fakeClock();
+  const url = 'https://www.googleapis.com/youtube/v3/playlistItems?x';
+  const run = async (responses) => {
+    let i = 0;
+    const calls = [];
+    const fetchImpl = async () => { calls.push(clock.nowMs()); const r = responses[Math.min(i++, responses.length - 1)]; if (r instanceof Error) throw r; return r; };
+    const client = createHttpClient({ fetchImpl, sleep: clock.sleep, nowMs: clock.nowMs });
+    const p = client.fetchText(url).then((r) => ({ ok: r }), (e) => ({ err: e }));
+    await clock.tick();
+    return { res: await p, calls };
+  };
+  let r = await run([new Response('', { status: 503 }), ok()]);
+  assert.equal(r.calls.length, 1);
+  assert.equal(errorClass(r.res.err), 'HTTP 503');
+  assert.equal(r.res.err.attempts, 1);
+  r = await run([new TypeError('fetch failed'), ok()]);
+  assert.equal(r.calls.length, 1);
+  assert.equal(errorClass(r.res.err), 'network');
+  r = await run([ok('fine')]);
+  assert.equal(r.calls.length, 1);
+  assert.equal(r.res.ok.text, 'fine');
 });

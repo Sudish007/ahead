@@ -18,7 +18,7 @@ const worker = async () => {
   while (next < sources.length) {
     const k = next++;
     const source = { ...sources[k], url: expandUrl(sources[k].url, now) };
-    const r = await runSource(source, { http, now, logger: quiet, onRunner });
+    const r = await runSource(source, { http, now, logger: quiet, onRunner, youtubeApiKey: process.env.YOUTUBE_API_KEY ?? '' });
     rows[k] = `${source.id.padEnd(w)} | ${String(r.status).padEnd(6)} | ${String(r.kept ?? 0).padEnd(5)} | ${String(r.ms).padEnd(5)} | ${r.error ?? r.note ?? ''} | ${r.finalUrl ?? ''}`;
   }
 };

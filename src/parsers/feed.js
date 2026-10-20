@@ -119,6 +119,13 @@ function entryAuthors(e) {
   return out.slice(0, 5);
 }
 
+/** Media summaries stop before the first `Sponsors:` block (podcast and YouTube descriptions list sponsors after the synopsis). */
+export function stripSponsors(text) {
+  const s = String(text ?? '');
+  const m = SPONSORS_RE.exec(s);
+  return m ? s.slice(0, m.index).trim() : s;
+}
+
 function summaryFields(e, isMedia) {
   const candidates = [];
   for (const path of SUMMARY_FIELDS) {
@@ -131,11 +138,7 @@ function summaryFields(e, isMedia) {
   const bodyLength = candidates.reduce((m, c) => Math.max(m, c.length), 0);
   let summaryText = '';
   for (const c of candidates) {
-    let t = c;
-    if (isMedia) {
-      const m = SPONSORS_RE.exec(t);
-      if (m) t = t.slice(0, m.index).trim();
-    }
+    const t = isMedia ? stripSponsors(c) : c;
     if (t) { summaryText = t; break; }
   }
   return { summaryText, bodyLength };

@@ -2,12 +2,13 @@
 // retention/caps -> brief (+ optional LLM) -> meta -> validate -> atomic writes.
 import { mkdir, readdir, readFile, rename, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
-import { ACCEPT, createHttpClient, errorSummary, formatDetail, WallClockError } from './http.js';
+import { ACCEPT, createHttpClient, errorClass, errorSummary, formatDetail, redactKey, WallClockError } from './http.js';
 import { buildRegistry, codePointCompare, sourceInfo } from './registry.js';
 import { ConfigError, validateConfig, validateDigest, validateDigestIndex, validateItem, validateItemsFile, validateMeta, validateSitemapState } from './schema.js';
 import { toItem } from './normalize.js';
 import { parseFeed } from './parsers/feed.js';
 import { fetchArxivSource } from './parsers/arxiv.js';
+import { fetchYoutubeApi } from './parsers/youtube.js';
 import { parseGithubSearch, parseHfModels, parseHfPapers, parseHn } from './parsers/json.js';
 import { parseReddit } from './parsers/reddit.js';
 import { parseSitemap } from './parsers/sitemap.js';
@@ -62,12 +63,14 @@ function pickParser(source) {
 /** Generic per-source runner with the 45 s backstop. `source.url` must already be template-expanded. */
 export async function runSource(source, deps) {
   const { http, now, nowMs = Date.now, logger = defaultLogger, onRunner = false } = deps;
+  // An empty or whitespace YOUTUBE_API_KEY (an unset repository secret renders as '') behaves exactly like an absent one.
+  const youtubeApiKey = typeof deps.youtubeApiKey === 'string' ? deps.youtubeApiKey.trim() : '';
   const sourceStartedAtMs = nowMs();
   const deadlineAt = sourceStartedAtMs + SOURCE_BACKSTOP_MS;
   const accept = acceptFor(source);
   const fetchText = (url, opts = {}) => http.fetchText(url, { maxBytes: source.maxBytes ?? 8_000_000, accept, deadlineAt, ...opts });
   const ctx = {
-    now, nowMs, fetchText, logger,
+    now, nowMs, fetchText, logger, youtubeApiKey,
     previousItemsByCanonicalUrl: deps.previousItemsByCanonicalUrl ?? new Map(),
     previousSitemapSkipped: deps.previousSitemapSkipped ?? {},
     previousSitemapCache: deps.previousSitemapCache ?? {},
@@ -75,8 +78,19 @@ export async function runSource(source, deps) {
   };
   let timer;
   const backstop = new Promise((_, reject) => { timer = setTimeout(() => reject(new WallClockError('wall clock')), SOURCE_BACKSTOP_MS); });
+  let apiNote;
   const work = (async () => {
     if (source.type === 'arxiv') return fetchArxivSource(source, ctx);
+    if (source.type === 'youtube' && youtubeApiKey) {
+      try {
+        return await fetchYoutubeApi(source, ctx);
+      } catch (err) {
+        // A failing API must never make a source worse than today: note it and run the feed path exactly as before.
+        apiNote = `api: ${errorClass(err)}, fell back to feed`;
+        const detail = formatDetail(err?.detail);
+        logger.warn(`${source.id}: youtube api failed (${errorClass(err)}); falling back to feed${detail ? ` [${detail}]` : ''}`);
+      }
+    }
     const res = await fetchText(source.url);
     const result = await pickParser(source)(res.text, source, ctx);
     result.httpStatus = res.status;
@@ -97,11 +111,12 @@ export async function runSource(source, deps) {
     clearTimeout(timer);
   }
   result.ms = Math.max(0, nowMs() - sourceStartedAtMs);
+  if (apiNote) result.note = result.note ? `${result.note}; ${apiNote}` : apiNote;
   const requested = result.requestedUrl ?? source.url;
   delete result.requestedUrl;
   const sameUrl = (a, b) => { try { return new URL(a).href === new URL(b).href; } catch { return a === b; } };
   if (result.finalUrl && !sameUrl(result.finalUrl, requested)) {
-    const note = `redirected to ${result.finalUrl}`;
+    const note = `redirected to ${redactKey(result.finalUrl)}`;
     result.note = result.note ? `${result.note}; ${note}` : note;
   }
   return result;
@@ -182,6 +197,7 @@ export async function run({
   const diagnostic = onlySourceIds !== undefined;
   const http = createHttpClient({ fetchImpl, githubToken: typeof env?.GITHUB_TOKEN === 'string' ? env.GITHUB_TOKEN : '', nowMs });
   const onRunner = env?.GITHUB_ACTIONS === 'true';
+  const youtubeApiKey = typeof env?.YOUTUBE_API_KEY === 'string' ? env.YOUTUBE_API_KEY : '';
 
   const { previousItems, previousState, digests: previousDigests } = await loadPrevious(dataDir, registry, logger, { withDigests: !diagnostic });
   const previousItemsByCanonicalUrl = new Map(previousItems.map((it) => [it.canonicalUrl, it]));
@@ -199,7 +215,7 @@ export async function run({
         continue;
       }
       raw[k] = await runSource(source, {
-        http, now, nowMs, logger, onRunner, previousItemsByCanonicalUrl,
+        http, now, nowMs, logger, onRunner, youtubeApiKey, previousItemsByCanonicalUrl,
         previousSitemapSkipped: previousState.sitemapSkipped[source.id] ?? {},
         previousSitemapCache: previousState.sitemapCache[source.id] ?? {},
       });

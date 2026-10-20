@@ -28,21 +28,37 @@ const DETAIL_LINE_CHARS = 400;
 /** detail key -> response header it was read from (also the label formatDetail prints). */
 const DETAIL_HEADERS = { server: 'server', cfRay: 'cf-ray', cfMitigated: 'cf-mitigated', contentType: 'content-type', location: 'location' };
 
+/**
+ * Rewrite `key=<value>` to `key=REDACTED` inside every googleapis.com URL found in `text`. The YouTube Data API key travels
+ * only in the request URL, so this is applied to every string that can carry a URL into a message, log line or meta.json.
+ */
+export function redactKey(text) {
+  return String(text).replace(/(googleapis\.com\/[^\s"'<>]*?[?&]key=)[^&\s"'<>]*/gi, '$1REDACTED');
+}
+
+function redactDetail(detail) {
+  if (!detail || typeof detail !== 'object') return detail;
+  const out = {};
+  for (const [key, value] of Object.entries(detail)) out[key] = typeof value === 'string' ? redactKey(value) : value;
+  return out;
+}
+
 export class HttpError extends Error {
   constructor(status, url, retryAfter, detail) {
-    super(`HTTP ${status} for ${url}`);
+    const safeUrl = redactKey(url);
+    super(`HTTP ${status} for ${safeUrl}`);
     this.name = 'HttpError';
     this.status = status;
-    this.url = url;
+    this.url = safeUrl;
     if (retryAfter !== undefined) this.retryAfter = retryAfter;
-    if (detail !== undefined) this.detail = detail;
+    if (detail !== undefined) this.detail = redactDetail(detail);
   }
 }
 export class BodyTooLarge extends Error {
-  constructor(url, maxBytes) { super(`body exceeds ${maxBytes} bytes for ${url}`); this.name = 'BodyTooLarge'; }
+  constructor(url, maxBytes) { super(`body exceeds ${maxBytes} bytes for ${redactKey(url)}`); this.name = 'BodyTooLarge'; }
 }
 export class TimeoutError extends Error {
-  constructor(url) { super(`timeout for ${url}`); this.name = 'TimeoutError'; }
+  constructor(url) { super(`timeout for ${redactKey(url)}`); this.name = 'TimeoutError'; }
 }
 export class ParseError extends Error {
   constructor(kind) { super(`parse error: ${kind}`); this.name = 'ParseError'; this.kind = kind; }
@@ -125,7 +141,7 @@ export function formatDetail(detail) {
   for (const [key, raw] of Object.entries(detail)) {
     if (raw === undefined || raw === null) continue;
     // eslint-disable-next-line no-control-regex
-    const value = String(raw).replace(/[\x00-\x1f\x7f]/g, '');
+    const value = redactKey(raw).replace(/[\x00-\x1f\x7f]/g, '');
     if (!value) continue;
     parts.push(key === 'body' ? `body="${value}"` : `${DETAIL_HEADERS[key] ?? key}=${value}`);
   }
@@ -255,6 +271,9 @@ export function createHttpClient({
 
   function retryable(err, host) {
     if (host === 'www.reddit.com') return false;
+    // The YouTube Data API gets one attempt (8 s timeout): after it fails, the feed fallback's three fast-failing attempts
+    // (~10.5 s) must still fit the 45 s source backstop with >= 25 s left at both retry checks. A retry here would cost that.
+    if (host === 'www.googleapis.com') return false;
     if (err instanceof BodyTooLarge) return false;
     // YouTube's feed endpoint answers 404 transiently for valid channels; treat it like a 5xx.
     if (err instanceof HttpError && err.status === 404 && host === 'www.youtube.com') return true;

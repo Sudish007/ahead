@@ -15,7 +15,7 @@ function runCli(args, env = {}) {
   const callsFile = path.join(tmp(), 'calls.txt');
   const r = spawnSync(process.execPath, ['--import', PRELOAD, FETCH, ...args], {
     cwd: ROOT, encoding: 'utf8', timeout: 120_000,
-    env: { ...process.env, AHEAD_TEST_CALLS: callsFile, LLM_API_KEY: '', LLM_MODEL: '', ...env },
+    env: { ...process.env, AHEAD_TEST_CALLS: callsFile, LLM_API_KEY: '', LLM_MODEL: '', YOUTUBE_API_KEY: '', ...env },
   });
   const calls = existsSync(callsFile) ? readFileSync(callsFile, 'utf8').split('\n').filter(Boolean) : [];
   return { ...r, calls };

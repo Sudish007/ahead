@@ -1,0 +1,196 @@
+{
+  "kind": "youtube#playlistItemListResponse",
+  "etag": "synthetic-from-youtube-gpumode.xml",
+  "nextPageToken": "EAAaBlBUOkNBVQ",
+  "items": [
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "synthetic-ECZPAzT6VgQ",
+      "id": "VVVKZ0liWWw2QzVubzcyYTBOVUFQY1RBLkVDWlBBelQ2VmdR",
+      "snippet": {
+        "publishedAt": "2026-10-17T07:05:21Z",
+        "channelId": "UCJgIbYl6C5no72a0NUAPcTA",
+        "title": "GSQ-RCO: Better Non-Uniform GGUF Quantization",
+        "description": "Michael Helcig (student at ETH, collaborating with ISTA DASLab) and Rush Tabesh (PhD candidate at ISTA DASLab) will talk about GSQ and RCO, two complementary methods for accurate low-bit LLM quantization. GSQ uses Gumbel-Softmax sampling to improve quantization, while RCO uses Riemannian optimization to allocate precision across a model under a fixed size budget. The talk will cover the ideas behind both methods, why they work so well together, and practical lessons from building the GSQ-RCO models released on Hugging Face.\n\nGSQ-RCO GGUF collection:\nhttps://huggingface.co/collections/ISTA-DASLab/gsq-rco-gguf\n\nQwen3.8-27B GSQ-RCO GGUF:\nhttps://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ECZPAzT6VgQ/default.jpg",
+            "width": 120,
+            "height": 90
+          }
+        },
+        "channelTitle": "GPU MODE",
+        "playlistId": "UUJgIbYl6C5no72a0NUAPcTA",
+        "position": 0,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "ECZPAzT6VgQ"
+        },
+        "videoOwnerChannelTitle": "GPU MODE",
+        "videoOwnerChannelId": "UCJgIbYl6C5no72a0NUAPcTA"
+      },
+      "contentDetails": {
+        "videoId": "ECZPAzT6VgQ",
+        "videoPublishedAt": "2026-10-17T07:05:21Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "synthetic-ISaPeJeXJnY",
+      "id": "VVVKZ0liWWw2QzVubzcyYTBOVUFQY1RBLklTYVBlSmVYSm5Z",
+      "snippet": {
+        "publishedAt": "2026-10-16T19:05:09Z",
+        "channelId": "UCJgIbYl6C5no72a0NUAPcTA",
+        "title": "Lecture 118: GSQ-RCO: Better Non-Uniform GGUF Quantization",
+        "description": "Michael Helcig (student at ETH, collaborating with ISTA DASLab) and Rush Tabesh (PhD candidate at ISTA DASLab) will talk about GSQ and RCO, two complementary methods for accurate low-bit LLM quantization. GSQ uses Gumbel-Softmax sampling to improve quantization, while RCO uses Riemannian optimization to allocate precision across a model under a fixed size budget. The talk will cover the ideas behind both methods, why they work so well together, and practical lessons from building the GSQ-RCO models released on Hugging Face.\n\nGSQ-RCO GGUF collection:\nhttps://huggingface.co/collections/ISTA-DASLab/gsq-rco-gguf\n\nQwen3.8-27B GSQ-RCO GGUF:\nhttps://huggingface.co/ISTA-DASLab/Qwen3.8-27B-GSQ-RCO-GGUF",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ISaPeJeXJnY/default.jpg",
+            "width": 120,
+            "height": 90
+          }
+        },
+        "channelTitle": "GPU MODE",
+        "playlistId": "UUJgIbYl6C5no72a0NUAPcTA",
+        "position": 1,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "ISaPeJeXJnY"
+        },
+        "videoOwnerChannelTitle": "GPU MODE",
+        "videoOwnerChannelId": "UCJgIbYl6C5no72a0NUAPcTA"
+      },
+      "contentDetails": {
+        "videoId": "ISaPeJeXJnY",
+        "videoPublishedAt": "2026-10-16T19:05:09Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "synthetic-EKf0cPYq4e4",
+      "id": "VVVKZ0liWWw2QzVubzcyYTBOVUFQY1RBLkVLZjBjUFlxNGU0",
+      "snippet": {
+        "publishedAt": "2026-10-10T07:04:00Z",
+        "channelId": "UCJgIbYl6C5no72a0NUAPcTA",
+        "title": "Building a GPU Compiler from Scratch: Lowering PyTorch Graphs to CUDA via Multi-Level IRs",
+        "description": "Abstract: Dmitry Trifonov demystifies ML compilers by showing how PyTorch layers become efficient GPU kernels through progressive IR lowering. Perfect if you plan to participate in the upcoming riftstack.ai hackathon or want a gentle, hands-on introduction to modern GPU compiler technology.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/EKf0cPYq4e4/default.jpg",
+            "width": 120,
+            "height": 90
+          }
+        },
+        "channelTitle": "GPU MODE",
+        "playlistId": "UUJgIbYl6C5no72a0NUAPcTA",
+        "position": 2,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "EKf0cPYq4e4"
+        },
+        "videoOwnerChannelTitle": "GPU MODE",
+        "videoOwnerChannelId": "UCJgIbYl6C5no72a0NUAPcTA"
+      },
+      "contentDetails": {
+        "videoId": "EKf0cPYq4e4",
+        "videoPublishedAt": "2026-10-10T07:04:00Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "synthetic-KK6TWf4Pp6A",
+      "id": "VVVKZ0liWWw2QzVubzcyYTBOVUFQY1RBLktLNlRXZjRQcDZB",
+      "snippet": {
+        "publishedAt": "2026-10-09T19:01:06Z",
+        "channelId": "UCJgIbYl6C5no72a0NUAPcTA",
+        "title": "Lecture 117:Building a GPU Compiler from Scratch",
+        "description": "Abstract: Dmitry Trifonov demystifies ML compilers by showing how PyTorch layers become efficient GPU kernels through progressive IR lowering. Perfect if you plan to participate in the upcoming riftstack.ai hackathon or want a gentle, hands-on introduction to modern GPU compiler technology.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/KK6TWf4Pp6A/default.jpg",
+            "width": 120,
+            "height": 90
+          }
+        },
+        "channelTitle": "GPU MODE",
+        "playlistId": "UUJgIbYl6C5no72a0NUAPcTA",
+        "position": 3,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "KK6TWf4Pp6A"
+        },
+        "videoOwnerChannelTitle": "GPU MODE",
+        "videoOwnerChannelId": "UCJgIbYl6C5no72a0NUAPcTA"
+      },
+      "contentDetails": {
+        "videoId": "KK6TWf4Pp6A",
+        "videoPublishedAt": "2026-10-09T19:01:06Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "synthetic-UuLKzcd8edQ",
+      "id": "VVVKZ0liWWw2QzVubzcyYTBOVUFQY1RBLlV1TEt6Y2Q4ZWRR",
+      "snippet": {
+        "publishedAt": "2026-09-28T21:13:11Z",
+        "channelId": "UCJgIbYl6C5no72a0NUAPcTA",
+        "title": "Mercury: Multi GPU operator optimization",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/UuLKzcd8edQ/default.jpg",
+            "width": 120,
+            "height": 90
+          }
+        },
+        "channelTitle": "GPU MODE",
+        "playlistId": "UUJgIbYl6C5no72a0NUAPcTA",
+        "position": 4,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "UuLKzcd8edQ"
+        },
+        "videoOwnerChannelTitle": "GPU MODE",
+        "videoOwnerChannelId": "UCJgIbYl6C5no72a0NUAPcTA"
+      },
+      "contentDetails": {
+        "videoId": "UuLKzcd8edQ",
+        "videoPublishedAt": "2026-09-28T21:13:11Z"
+      }
+    },
+    {
+      "kind": "youtube#playlistItem",
+      "etag": "synthetic-IxyeS8WvX-E",
+      "id": "VVVKZ0liWWw2QzVubzcyYTBOVUFQY1RBLkl4eWVTOFd2WC1F",
+      "snippet": {
+        "publishedAt": "2026-09-18T18:42:32Z",
+        "channelId": "UCJgIbYl6C5no72a0NUAPcTA",
+        "title": "GPU Kernel Formal Verification",
+        "description": "GPU MODE talk by Jubi Taneja: GPU Kernel Formal Verification.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IxyeS8WvX-E/default.jpg",
+            "width": 120,
+            "height": 90
+          }
+        },
+        "channelTitle": "GPU MODE",
+        "playlistId": "UUJgIbYl6C5no72a0NUAPcTA",
+        "position": 5,
+        "resourceId": {
+          "kind": "youtube#video",
+          "videoId": "IxyeS8WvX-E"
+        },
+        "videoOwnerChannelTitle": "GPU MODE",
+        "videoOwnerChannelId": "UCJgIbYl6C5no72a0NUAPcTA"
+      },
+      "contentDetails": {
+        "videoId": "IxyeS8WvX-E"
+      }
+    }
+  ],
+  "pageInfo": {
+    "totalResults": 126,
+    "resultsPerPage": 15
+  }
+}
