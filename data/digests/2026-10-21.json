@@ -1,0 +1,340 @@
+{
+ "date": "2026-10-21",
+ "generatedAt": "2026-10-21T03:17:23.242Z",
+ "wordCount": 772,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's developments showcase notable progress across world models, agent architectures, and deployment infrastructure. In AI research and modeling, AnyGoal explores world model generalization beyond expert rollouts, while BlenderWorld benchmarks visual agents for 3D creation from real-world references. Additionally, the Kronecker Delta Rule introduces KronLSTM for long context linear attention, and ECHO proposes efficient causal self-recursion beyond auxiliary multi-token prediction. Scaled systems and agentic capabilities advance with Sage-A1.5, a Mixture-of-Experts agentic model designed for long-horizon execution and scientific exploration. In open releases and tooling, baidu/Unlimited-OCR and abenzerps/Qwen-Image-2.1-Uncensored-Quantized emerge alongside git-ai, a Git tool designed for AI agents. Finally, industry developments feature Anthropic examining distillation attack prevention, ChatGPT Work streamlining enterprise workflows, and SemiAnalysis projecting substantial datacenter acceleration.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "arxiv:2610.26844",
+     "title": "AnyGoal: On World Model Generalization Beyond Expert Rollouts",
+     "url": "https://arxiv.org/abs/2610.26844",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "The goal of a world model is to capture the dynamics of an environment. This has the great appeal that it allows agents to plan and simulate a course of actions with the help of a world model.",
+     "why": "Advances world model generalization to improve agent planning and simulation capabilities beyond expert rollouts.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-19T00:00:00.000Z",
+     "category": "research",
+     "score": 13.68
+    },
+    {
+     "id": "arxiv:2610.23986",
+     "title": "BlenderWorld: Benchmarking Visual Agents for 3D Creation from Real-World References",
+     "url": "https://arxiv.org/abs/2610.23986",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Recent advances in multimodal large language models (MLLMs) have enabled them to act as autonomous agents, creating and editing 3D models via code or direct software manipulation.",
+     "why": "Provides a new benchmark for evaluating visual agents creating 3D models from real-world references.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-14T00:00:00.000Z",
+     "category": "research",
+     "score": 13.63
+    },
+    {
+     "id": "arxiv:2610.26834",
+     "title": "Kronecker Delta Rule for Long Context Linear Attention",
+     "url": "https://arxiv.org/abs/2610.26834",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "We propose KronLSTM, a linear attention architecture based on the Kronecker Delta Rule, a novel update rule for associative matrix memories.",
+     "why": "Introduces a novel update rule for associative matrix memories to enable long context linear attention.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-19T00:00:00.000Z",
+     "category": "research",
+     "score": 13.59
+    },
+    {
+     "id": "arxiv:2610.26848",
+     "title": "Where is Physical RSI capability from? An Observational Scaling Law of LLM-as-policy",
+     "url": "https://arxiv.org/abs/2610.26848",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "In this paper, we systematically investigate the mechanisms, scaling behavior, and generalization of physical Recursive self-improvement.",
+     "why": "Systematically investigates the mechanisms, scaling behavior, and generalization of physical recursive self-improvement.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-19T00:00:00.000Z",
+     "category": "research",
+     "score": 12.9
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2610.26802",
+     "title": "Scaling Parameter-Efficient Fine-Tuning for Brain Encoding",
+     "url": "https://arxiv.org/abs/2610.26802",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Brain encoding models aim to predict neural responses to stimuli. The most widely used approach fits readouts from frozen pretrained backbones.",
+     "why": "Scales parameter-efficient fine-tuning methods to improve brain encoding models predicting neural responses.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-19T00:00:00.000Z",
+     "category": "research",
+     "score": 12.59
+    },
+    {
+     "id": "arxiv:2610.24766",
+     "title": "ECHO: Efficient Causal Self-Recursion Beyond Auxiliary Multi-Token Prediction",
+     "url": "https://arxiv.org/abs/2610.24766",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Existing Multi-token prediction (MTP) methods are auxiliary by design: the multi-horizon loss mostly trains modules attached to the backbone, and each added horizon costs another module and another pass. We propose Efficient Causal Self-Recursion (ECHO), which removes both costs.",
+     "why": "Removes auxiliary costs by proposing efficient causal self-recursion beyond traditional multi-token prediction methods.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-17T00:00:00.000Z",
+     "category": "research",
+     "score": 12.57
+    },
+    {
+     "id": "arxiv:2610.28578",
+     "title": "Sage-A1.5: From Long-Horizon Execution to Scientific Exploration with Capability Composition",
+     "url": "https://arxiv.org/abs/2610.28578",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "In this report, we introduce Sage-A1.5, a 35B Mixture-of-Experts agentic model that builds on A1 to advance long-horizon problem solving through adaptive capability composition.",
+     "why": "Advances long-horizon problem solving and scientific exploration through adaptive capability composition in a Mixture-of-Experts model.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-20T00:00:00.000Z",
+     "category": "research",
+     "score": 12.37
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "b7884da985bf42b8",
+     "title": "baidu/Unlimited-OCR",
+     "url": "https://huggingface.co/baidu/Unlimited-OCR",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-text · transformers · 4,823 likes · 1,799,825 downloads",
+     "why": "Offers an image-text-to-text transformer model for advanced optical character recognition tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-06-19T09:40:33.000Z",
+     "category": "releases",
+     "score": 8.61
+    },
+    {
+     "id": "afc305b6db5c414f",
+     "title": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+     "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "text-to-image · gguf · 4,638 likes · 2,739,572 downloads",
+     "why": "Provides a quantized uncensored text-to-image model variant for local deployment workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-09-20T15:51:13.000Z",
+     "category": "releases",
+     "score": 8.59
+    },
+    {
+     "id": "914b3fedd5958504",
+     "title": "feder-cr/git-ai",
+     "url": "https://github.com/feder-cr/git-ai",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "Git designed for AI agents. · Go",
+     "why": "Delivers a specialized version control system designed specifically to support AI agent workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-15T13:12:02.000Z",
+     "category": "releases",
+     "score": 8.27
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "9d6c5adf9cccc953",
+     "title": "Detecting and preventing distillation attacks",
+     "url": "https://www.anthropic.com/news/detecting-and-preventing-distillation-attacks",
+     "sourceIds": [
+      "anthropic"
+     ],
+     "sourceNames": [
+      "Anthropic"
+     ],
+     "summary": "",
+     "why": "Addresses critical security challenges by focusing on detecting and preventing model distillation attacks.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-20T03:29:07.000Z",
+     "category": "labs",
+     "score": 5.06
+    },
+    {
+     "id": "1725d137aa3debc0",
+     "title": "Franchisee reconciles cash in 94% less time with ChatGPT Work",
+     "url": "https://openai.com/index/ted-taylor-restaurant",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "An independent Schlotzsky’s and Cinnabon franchisee cut menu repricing time by 95% and built a workflow that could free up $100K in cash flow.",
+     "why": "Demonstrates enterprise productivity gains and automated workflow efficiency using ChatGPT Work tools.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-20T10:00:00.000Z",
+     "category": "labs",
+     "score": 5.02,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "9bfc155b7c598074",
+     "title": "Anthropic Does Not Understand Why Its Draft Bill Was Unacceptable and Troubling",
+     "url": "https://thezvi.substack.com/p/anthropic-does-not-understand-why",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Anthony Cimino offered the closest thing to an official response we have seen on the leaked Anthropic draft bill I covered on Saturday.",
+     "why": "Discusses industry policy responses surrounding leaked legislative draft proposals and governance concerns.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-20T23:03:05.000Z",
+     "category": "blogs",
+     "score": 4.61,
+     "readMinutes": 26
+    },
+    {
+     "id": "3107c79aa9b1eabb",
+     "title": "30 Months on the Exponential (in Charts)",
+     "url": "https://www.oneusefulthing.org/p/30-months-on-the-exponential-in-charts",
+     "sourceIds": [
+      "oneusefulthing"
+     ],
+     "sourceNames": [
+      "One Useful Thing"
+     ],
+     "summary": "My new book is out today... what happened since the last one",
+     "why": "Examines exponential technological progress and historical trends through updated charts and analysis.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-20T15:57:59.000Z",
+     "category": "blogs",
+     "score": 3.22,
+     "readMinutes": 7
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "84d5d1e0eee006ca",
+     "title": "Datacenters 2027: The Year of Acceleration, +50GW in a Single Year",
+     "url": "https://newsletter.semianalysis.com/p/datacenters-2027-the-year-of-acceleration",
+     "sourceIds": [
+      "semianalysis"
+     ],
+     "sourceNames": [
+      "SemiAnalysis"
+     ],
+     "summary": "60GW Under Construction, SemiAnalysis Leading Indicators, 1.3T of Lease Contracts Signed YTD, The Shortage Could Move to Chips",
+     "why": "Analyzes infrastructure expansion, lease contracts, and capacity constraints shaping future datacenter acceleration.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-19T05:39:38.000Z",
+     "category": "blogs",
+     "score": 2.91,
+     "readMinutes": 11
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "arxiv:2610.26844",
+  "arxiv:2610.23986",
+  "arxiv:2610.26834",
+  "arxiv:2610.26848",
+  "arxiv:2610.26802",
+  "arxiv:2610.24766",
+  "arxiv:2610.28578",
+  "b7884da985bf42b8",
+  "afc305b6db5c414f",
+  "914b3fedd5958504",
+  "9d6c5adf9cccc953",
+  "1725d137aa3debc0",
+  "9bfc155b7c598074",
+  "3107c79aa9b1eabb",
+  "84d5d1e0eee006ca"
+ ],
+ "deepReadId": "84d5d1e0eee006ca",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
