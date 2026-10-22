@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-10-22T11:09:36.665Z",
- "durationMs": 9936,
- "itemCount": 1440,
- "newItemCount": 273,
+ "generatedAt": "2026-10-22T16:37:51.742Z",
+ "durationMs": 33046,
+ "itemCount": 1438,
+ "newItemCount": 41,
  "trimmedForSize": 0,
  "sources": {
   "arxiv-cs.LG": {
@@ -12,7 +12,7 @@
    "fetched": 379,
    "kept": 60,
    "skipped": 319,
-   "ms": 235,
+   "ms": 421,
    "httpStatus": 200
   },
   "arxiv-cs.CL": {
@@ -22,7 +22,7 @@
    "fetched": 221,
    "kept": 60,
    "skipped": 161,
-   "ms": 1096,
+   "ms": 1077,
    "httpStatus": 200
   },
   "arxiv-cs.AI": {
@@ -32,7 +32,7 @@
    "fetched": 370,
    "kept": 60,
    "skipped": 310,
-   "ms": 2105,
+   "ms": 2090,
    "httpStatus": 200
   },
   "arxiv-cs.CV": {
@@ -42,7 +42,7 @@
    "fetched": 212,
    "kept": 60,
    "skipped": 152,
-   "ms": 3084,
+   "ms": 3074,
    "httpStatus": 200
   },
   "hf-papers": {
@@ -52,7 +52,7 @@
    "fetched": 100,
    "kept": 60,
    "skipped": 40,
-   "ms": 256,
+   "ms": 222,
    "httpStatus": 200,
    "homepage": "https://huggingface.co/papers"
   },
@@ -60,10 +60,10 @@
    "name": "Hacker News",
    "category": "news",
    "status": "ok",
-   "fetched": 73,
-   "kept": 16,
-   "skipped": 57,
-   "ms": 684,
+   "fetched": 60,
+   "kept": 9,
+   "skipped": 51,
+   "ms": 318,
    "httpStatus": 200
   },
   "hn-front": {
@@ -71,9 +71,9 @@
    "category": "news",
    "status": "ok",
    "fetched": 30,
-   "kept": 6,
-   "skipped": 24,
-   "ms": 708,
+   "kept": 2,
+   "skipped": 28,
+   "ms": 485,
    "httpStatus": 200
   },
   "reddit": {
@@ -83,17 +83,17 @@
    "fetched": 50,
    "kept": 50,
    "skipped": 0,
-   "ms": 790,
+   "ms": 715,
    "httpStatus": 200
   },
   "openai": {
    "name": "OpenAI",
    "category": "labs",
    "status": "ok",
-   "fetched": 1312,
-   "kept": 18,
-   "skipped": 1294,
-   "ms": 162,
+   "fetched": 1314,
+   "kept": 19,
+   "skipped": 1295,
+   "ms": 163,
    "httpStatus": 200
   },
   "anthropic": {
@@ -103,7 +103,7 @@
    "fetched": 570,
    "kept": 8,
    "skipped": 562,
-   "ms": 234,
+   "ms": 141,
    "httpStatus": 200,
    "homepage": "https://www.anthropic.com/news"
   },
@@ -114,7 +114,7 @@
    "fetched": 100,
    "kept": 1,
    "skipped": 99,
-   "ms": 222,
+   "ms": 530,
    "httpStatus": 200
   },
   "google-research": {
@@ -124,7 +124,7 @@
    "fetched": 100,
    "kept": 2,
    "skipped": 98,
-   "ms": 295,
+   "ms": 310,
    "httpStatus": 200
   },
   "meta-newsroom-ai": {
@@ -134,7 +134,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 106,
+   "ms": 119,
    "httpStatus": 200
   },
   "meta-engineering-ai": {
@@ -144,7 +144,7 @@
    "fetched": 9,
    "kept": 1,
    "skipped": 8,
-   "ms": 156,
+   "ms": 126,
    "httpStatus": 200
   },
   "microsoft-research": {
@@ -154,7 +154,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 735,
+   "ms": 599,
    "httpStatus": 200
   },
   "nvidia-dev": {
@@ -162,9 +162,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 100,
-   "kept": 9,
-   "skipped": 91,
-   "ms": 128,
+   "kept": 10,
+   "skipped": 90,
+   "ms": 336,
    "httpStatus": 200
   },
   "hf-blog": {
@@ -174,7 +174,7 @@
    "fetched": 888,
    "kept": 11,
    "skipped": 877,
-   "ms": 113,
+   "ms": 83,
    "httpStatus": 200
   },
   "allenai": {
@@ -182,9 +182,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 25,
-   "kept": 1,
-   "skipped": 24,
-   "ms": 359,
+   "kept": 3,
+   "skipped": 22,
+   "ms": 401,
    "httpStatus": 200
   },
   "mistral": {
@@ -192,9 +192,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 92,
-   "kept": 3,
-   "skipped": 89,
-   "ms": 114,
+   "kept": 2,
+   "skipped": 90,
+   "ms": 122,
    "httpStatus": 200
   },
   "transformer-circuits": {
@@ -204,7 +204,7 @@
    "fetched": 56,
    "kept": 0,
    "skipped": 56,
-   "ms": 116,
+   "ms": 330,
    "httpStatus": 200
   },
   "lilog": {
@@ -214,7 +214,7 @@
    "fetched": 53,
    "kept": 0,
    "skipped": 53,
-   "ms": 26,
+   "ms": 108,
    "httpStatus": 200
   },
   "interconnects": {
@@ -224,7 +224,7 @@
    "fetched": 20,
    "kept": 2,
    "skipped": 18,
-   "ms": 70,
+   "ms": 164,
    "httpStatus": 200
   },
   "raschka": {
@@ -234,7 +234,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 159,
+   "ms": 177,
    "httpStatus": 200
   },
   "simonw": {
@@ -244,7 +244,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 53,
+   "ms": 216,
    "httpStatus": 200
   },
   "chiphuyen": {
@@ -254,7 +254,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 522,
+   "ms": 415,
    "httpStatus": 200
   },
   "eugeneyan": {
@@ -264,7 +264,7 @@
    "fetched": 212,
    "kept": 0,
    "skipped": 212,
-   "ms": 73,
+   "ms": 217,
    "httpStatus": 200
   },
   "hamel": {
@@ -274,7 +274,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 224,
+   "ms": 286,
    "httpStatus": 200
   },
   "semianalysis": {
@@ -284,7 +284,7 @@
    "fetched": 20,
    "kept": 3,
    "skipped": 17,
-   "ms": 156,
+   "ms": 144,
    "httpStatus": 200
   },
   "importai": {
@@ -294,7 +294,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 329,
+   "ms": 437,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -303,9 +303,9 @@
    "category": "blogs",
    "status": "ok",
    "fetched": 20,
-   "kept": 8,
-   "skipped": 12,
-   "ms": 75,
+   "kept": 9,
+   "skipped": 11,
+   "ms": 273,
    "httpStatus": 200
   },
   "zvi": {
@@ -313,9 +313,9 @@
    "category": "blogs",
    "status": "ok",
    "fetched": 20,
-   "kept": 6,
-   "skipped": 14,
-   "ms": 453,
+   "kept": 5,
+   "skipped": 15,
+   "ms": 840,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -326,7 +326,7 @@
    "fetched": 3407,
    "kept": 5,
    "skipped": 3402,
-   "ms": 343,
+   "ms": 456,
    "httpStatus": 200,
    "note": "via relay",
    "homepage": "https://www.deeplearning.ai/the-batch/"
@@ -338,7 +338,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 353,
+   "ms": 246,
    "httpStatus": 200
   },
   "gradient": {
@@ -348,7 +348,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 364,
+   "ms": 574,
    "httpStatus": 200
   },
   "epoch": {
@@ -358,7 +358,7 @@
    "fetched": 50,
    "kept": 1,
    "skipped": 49,
-   "ms": 255,
+   "ms": 296,
    "httpStatus": 200
   },
   "epoch-gradient-updates": {
@@ -368,7 +368,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 308,
+   "ms": 272,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -379,7 +379,7 @@
    "fetched": 10,
    "kept": 5,
    "skipped": 5,
-   "ms": 306,
+   "ms": 350,
    "httpStatus": 200
   },
   "chinai": {
@@ -389,7 +389,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 244,
+   "ms": 288,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -400,7 +400,7 @@
    "fetched": 11,
    "kept": 0,
    "skipped": 11,
-   "ms": 133,
+   "ms": 144,
    "httpStatus": 200
   },
   "karpathy-blog": {
@@ -410,7 +410,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 98,
+   "ms": 192,
    "httpStatus": 200
   },
   "karpathy-bearblog": {
@@ -420,7 +420,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 127,
+   "ms": 258,
    "httpStatus": 200
   },
   "horace": {
@@ -430,7 +430,7 @@
    "fetched": 6,
    "kept": 0,
    "skipped": 6,
-   "ms": 49,
+   "ms": 268,
    "httpStatus": 200,
    "homepage": "https://horace.io"
   },
@@ -441,7 +441,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 1410,
+   "ms": 2044,
    "httpStatus": 200
   },
   "gh-rel-vllm": {
@@ -451,7 +451,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 1343,
+   "ms": 1032,
    "httpStatus": 200
   },
   "gh-rel-transformers": {
@@ -461,7 +461,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 2148,
+   "ms": 1466,
    "httpStatus": 200
   },
   "gh-rel-llamacpp": {
@@ -471,7 +471,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 813,
+   "ms": 1005,
    "httpStatus": 200
   },
   "gh-rel-sglang": {
@@ -481,7 +481,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 3774,
+   "ms": 2994,
    "httpStatus": 200
   },
   "gh-rel-unsloth": {
@@ -491,7 +491,7 @@
    "fetched": 10,
    "kept": 2,
    "skipped": 8,
-   "ms": 2533,
+   "ms": 3048,
    "httpStatus": 200
   },
   "gh-rel-trl": {
@@ -501,7 +501,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 1392,
+   "ms": 1179,
    "httpStatus": 200
   },
   "gh-rel-torchtitan": {
@@ -511,7 +511,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 222,
+   "ms": 229,
    "httpStatus": 200
   },
   "gh-trending-llm": {
@@ -519,9 +519,9 @@
    "category": "releases",
    "status": "ok",
    "fetched": 30,
-   "kept": 11,
-   "skipped": 19,
-   "ms": 885,
+   "kept": 10,
+   "skipped": 20,
+   "ms": 913,
    "httpStatus": 200
   },
   "gh-trending-ml": {
@@ -531,7 +531,7 @@
    "fetched": 30,
    "kept": 0,
    "skipped": 30,
-   "ms": 1816,
+   "ms": 2112,
    "httpStatus": 200
   },
   "gh-trending-agents": {
@@ -539,9 +539,9 @@
    "category": "releases",
    "status": "ok",
    "fetched": 30,
-   "kept": 9,
-   "skipped": 21,
-   "ms": 2199,
+   "kept": 10,
+   "skipped": 20,
+   "ms": 2434,
    "httpStatus": 200
   },
   "hf-trending": {
@@ -551,7 +551,7 @@
    "fetched": 20,
    "kept": 20,
    "skipped": 0,
-   "ms": 74,
+   "ms": 52,
    "httpStatus": 200
   },
   "pod-dwarkesh": {
@@ -561,7 +561,7 @@
    "fetched": 142,
    "kept": 0,
    "skipped": 142,
-   "ms": 306,
+   "ms": 387,
    "httpStatus": 200,
    "note": "via relay",
    "homepage": "https://www.dwarkesh.com"
@@ -573,7 +573,7 @@
    "fetched": 271,
    "kept": 0,
    "skipped": 271,
-   "ms": 130,
+   "ms": 210,
    "httpStatus": 200
   },
   "pod-cogrev": {
@@ -583,7 +583,7 @@
    "fetched": 388,
    "kept": 2,
    "skipped": 386,
-   "ms": 277,
+   "ms": 628,
    "httpStatus": 200
   },
   "pod-nopriors": {
@@ -593,7 +593,7 @@
    "fetched": 184,
    "kept": 0,
    "skipped": 184,
-   "ms": 204,
+   "ms": 280,
    "httpStatus": 200
   },
   "yt-karpathy": {
@@ -603,7 +603,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 237,
+   "ms": 187,
    "httpStatus": 200,
    "note": "api"
   },
@@ -614,7 +614,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 192,
+   "ms": 211,
    "httpStatus": 200,
    "note": "api"
   },
@@ -625,7 +625,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 160,
+   "ms": 161,
    "httpStatus": 200,
    "note": "api"
   },
@@ -636,7 +636,7 @@
    "fetched": 15,
    "kept": 2,
    "skipped": 13,
-   "ms": 179,
+   "ms": 263,
    "httpStatus": 200,
    "note": "api"
   },
@@ -647,7 +647,7 @@
    "fetched": 15,
    "kept": 5,
    "skipped": 10,
-   "ms": 537,
+   "ms": 164,
    "httpStatus": 200,
    "note": "api"
   },
@@ -658,7 +658,7 @@
    "fetched": 15,
    "kept": 1,
    "skipped": 14,
-   "ms": 105,
+   "ms": 156,
    "httpStatus": 200,
    "note": "api"
   }
@@ -799,16 +799,16 @@
    "rejected": 0
   },
   "usage": {
-   "prompt": 1563,
-   "completion": 747,
-   "total": 2310
+   "prompt": 1580,
+   "completion": 677,
+   "total": 2257
   },
-  "ms": 2809
+  "ms": 25568
  },
  "brief": {
   "date": "2026-10-22",
-  "wordCount": 899,
-  "readingMinutes": 5
+  "wordCount": 821,
+  "readingMinutes": 4
  },
  "static": {
   "leaderboards": [
