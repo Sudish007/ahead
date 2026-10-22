@@ -1,7 +1,7 @@
 {
- "generatedAt": "2026-10-22T16:37:51.742Z",
- "durationMs": 33046,
- "itemCount": 1438,
+ "generatedAt": "2026-10-22T21:11:49.664Z",
+ "durationMs": 9345,
+ "itemCount": 1457,
  "newItemCount": 41,
  "trimmedForSize": 0,
  "sources": {
@@ -12,7 +12,7 @@
    "fetched": 379,
    "kept": 60,
    "skipped": 319,
-   "ms": 421,
+   "ms": 313,
    "httpStatus": 200
   },
   "arxiv-cs.CL": {
@@ -22,7 +22,7 @@
    "fetched": 221,
    "kept": 60,
    "skipped": 161,
-   "ms": 1077,
+   "ms": 1087,
    "httpStatus": 200
   },
   "arxiv-cs.AI": {
@@ -32,7 +32,7 @@
    "fetched": 370,
    "kept": 60,
    "skipped": 310,
-   "ms": 2090,
+   "ms": 2140,
    "httpStatus": 200
   },
   "arxiv-cs.CV": {
@@ -42,7 +42,7 @@
    "fetched": 212,
    "kept": 60,
    "skipped": 152,
-   "ms": 3074,
+   "ms": 3083,
    "httpStatus": 200
   },
   "hf-papers": {
@@ -52,7 +52,7 @@
    "fetched": 100,
    "kept": 60,
    "skipped": 40,
-   "ms": 222,
+   "ms": 700,
    "httpStatus": 200,
    "homepage": "https://huggingface.co/papers"
   },
@@ -60,10 +60,10 @@
    "name": "Hacker News",
    "category": "news",
    "status": "ok",
-   "fetched": 60,
-   "kept": 9,
-   "skipped": 51,
-   "ms": 318,
+   "fetched": 50,
+   "kept": 10,
+   "skipped": 40,
+   "ms": 289,
    "httpStatus": 200
   },
   "hn-front": {
@@ -71,9 +71,9 @@
    "category": "news",
    "status": "ok",
    "fetched": 30,
-   "kept": 2,
-   "skipped": 28,
-   "ms": 485,
+   "kept": 7,
+   "skipped": 23,
+   "ms": 389,
    "httpStatus": 200
   },
   "reddit": {
@@ -83,27 +83,27 @@
    "fetched": 50,
    "kept": 50,
    "skipped": 0,
-   "ms": 715,
+   "ms": 617,
    "httpStatus": 200
   },
   "openai": {
    "name": "OpenAI",
    "category": "labs",
    "status": "ok",
-   "fetched": 1314,
+   "fetched": 1315,
    "kept": 19,
-   "skipped": 1295,
-   "ms": 163,
+   "skipped": 1296,
+   "ms": 193,
    "httpStatus": 200
   },
   "anthropic": {
    "name": "Anthropic",
    "category": "labs",
    "status": "ok",
-   "fetched": 570,
+   "fetched": 571,
    "kept": 8,
-   "skipped": 562,
-   "ms": 141,
+   "skipped": 563,
+   "ms": 345,
    "httpStatus": 200,
    "homepage": "https://www.anthropic.com/news"
   },
@@ -114,7 +114,7 @@
    "fetched": 100,
    "kept": 1,
    "skipped": 99,
-   "ms": 530,
+   "ms": 345,
    "httpStatus": 200
   },
   "google-research": {
@@ -124,7 +124,7 @@
    "fetched": 100,
    "kept": 2,
    "skipped": 98,
-   "ms": 310,
+   "ms": 172,
    "httpStatus": 200
   },
   "meta-newsroom-ai": {
@@ -134,7 +134,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 119,
+   "ms": 101,
    "httpStatus": 200
   },
   "meta-engineering-ai": {
@@ -144,7 +144,7 @@
    "fetched": 9,
    "kept": 1,
    "skipped": 8,
-   "ms": 126,
+   "ms": 72,
    "httpStatus": 200
   },
   "microsoft-research": {
@@ -154,7 +154,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 599,
+   "ms": 512,
    "httpStatus": 200
   },
   "nvidia-dev": {
@@ -162,9 +162,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 100,
-   "kept": 10,
-   "skipped": 90,
-   "ms": 336,
+   "kept": 9,
+   "skipped": 91,
+   "ms": 200,
    "httpStatus": 200
   },
   "hf-blog": {
@@ -174,7 +174,7 @@
    "fetched": 888,
    "kept": 11,
    "skipped": 877,
-   "ms": 83,
+   "ms": 66,
    "httpStatus": 200
   },
   "allenai": {
@@ -184,7 +184,7 @@
    "fetched": 25,
    "kept": 3,
    "skipped": 22,
-   "ms": 401,
+   "ms": 209,
    "httpStatus": 200
   },
   "mistral": {
@@ -194,7 +194,7 @@
    "fetched": 92,
    "kept": 2,
    "skipped": 90,
-   "ms": 122,
+   "ms": 80,
    "httpStatus": 200
   },
   "transformer-circuits": {
@@ -204,7 +204,7 @@
    "fetched": 56,
    "kept": 0,
    "skipped": 56,
-   "ms": 330,
+   "ms": 49,
    "httpStatus": 200
   },
   "lilog": {
@@ -214,7 +214,7 @@
    "fetched": 53,
    "kept": 0,
    "skipped": 53,
-   "ms": 108,
+   "ms": 54,
    "httpStatus": 200
   },
   "interconnects": {
@@ -224,7 +224,7 @@
    "fetched": 20,
    "kept": 2,
    "skipped": 18,
-   "ms": 164,
+   "ms": 63,
    "httpStatus": 200
   },
   "raschka": {
@@ -234,7 +234,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 177,
+   "ms": 214,
    "httpStatus": 200
   },
   "simonw": {
@@ -244,7 +244,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 216,
+   "ms": 130,
    "httpStatus": 200
   },
   "chiphuyen": {
@@ -254,7 +254,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 415,
+   "ms": 243,
    "httpStatus": 200
   },
   "eugeneyan": {
@@ -264,7 +264,7 @@
    "fetched": 212,
    "kept": 0,
    "skipped": 212,
-   "ms": 217,
+   "ms": 156,
    "httpStatus": 200
   },
   "hamel": {
@@ -274,7 +274,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 286,
+   "ms": 81,
    "httpStatus": 200
   },
   "semianalysis": {
@@ -282,9 +282,9 @@
    "category": "blogs",
    "status": "ok",
    "fetched": 20,
-   "kept": 3,
-   "skipped": 17,
-   "ms": 144,
+   "kept": 2,
+   "skipped": 18,
+   "ms": 180,
    "httpStatus": 200
   },
   "importai": {
@@ -294,7 +294,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 437,
+   "ms": 329,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -303,9 +303,9 @@
    "category": "blogs",
    "status": "ok",
    "fetched": 20,
-   "kept": 9,
-   "skipped": 11,
-   "ms": 273,
+   "kept": 10,
+   "skipped": 10,
+   "ms": 158,
    "httpStatus": 200
   },
   "zvi": {
@@ -313,9 +313,9 @@
    "category": "blogs",
    "status": "ok",
    "fetched": 20,
-   "kept": 5,
-   "skipped": 15,
-   "ms": 840,
+   "kept": 6,
+   "skipped": 14,
+   "ms": 605,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -326,7 +326,7 @@
    "fetched": 3407,
    "kept": 5,
    "skipped": 3402,
-   "ms": 456,
+   "ms": 290,
    "httpStatus": 200,
    "note": "via relay",
    "homepage": "https://www.deeplearning.ai/the-batch/"
@@ -338,7 +338,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 246,
+   "ms": 110,
    "httpStatus": 200
   },
   "gradient": {
@@ -348,7 +348,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 574,
+   "ms": 616,
    "httpStatus": 200
   },
   "epoch": {
@@ -358,7 +358,7 @@
    "fetched": 50,
    "kept": 1,
    "skipped": 49,
-   "ms": 296,
+   "ms": 140,
    "httpStatus": 200
   },
   "epoch-gradient-updates": {
@@ -368,7 +368,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 272,
+   "ms": 279,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -379,7 +379,7 @@
    "fetched": 10,
    "kept": 5,
    "skipped": 5,
-   "ms": 350,
+   "ms": 455,
    "httpStatus": 200
   },
   "chinai": {
@@ -389,7 +389,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 288,
+   "ms": 251,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -400,7 +400,7 @@
    "fetched": 11,
    "kept": 0,
    "skipped": 11,
-   "ms": 144,
+   "ms": 67,
    "httpStatus": 200
   },
   "karpathy-blog": {
@@ -410,7 +410,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 192,
+   "ms": 171,
    "httpStatus": 200
   },
   "karpathy-bearblog": {
@@ -420,7 +420,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 258,
+   "ms": 226,
    "httpStatus": 200
   },
   "horace": {
@@ -430,7 +430,7 @@
    "fetched": 6,
    "kept": 0,
    "skipped": 6,
-   "ms": 268,
+   "ms": 207,
    "httpStatus": 200,
    "homepage": "https://horace.io"
   },
@@ -441,7 +441,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 2044,
+   "ms": 1687,
    "httpStatus": 200
   },
   "gh-rel-vllm": {
@@ -451,7 +451,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 1032,
+   "ms": 973,
    "httpStatus": 200
   },
   "gh-rel-transformers": {
@@ -459,9 +459,9 @@
    "category": "releases",
    "status": "ok",
    "fetched": 10,
-   "kept": 3,
-   "skipped": 7,
-   "ms": 1466,
+   "kept": 2,
+   "skipped": 8,
+   "ms": 1348,
    "httpStatus": 200
   },
   "gh-rel-llamacpp": {
@@ -471,7 +471,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 1005,
+   "ms": 1245,
    "httpStatus": 200
   },
   "gh-rel-sglang": {
@@ -481,7 +481,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 2994,
+   "ms": 2903,
    "httpStatus": 200
   },
   "gh-rel-unsloth": {
@@ -491,7 +491,7 @@
    "fetched": 10,
    "kept": 2,
    "skipped": 8,
-   "ms": 3048,
+   "ms": 2108,
    "httpStatus": 200
   },
   "gh-rel-trl": {
@@ -501,7 +501,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 1179,
+   "ms": 1024,
    "httpStatus": 200
   },
   "gh-rel-torchtitan": {
@@ -511,7 +511,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 229,
+   "ms": 216,
    "httpStatus": 200
   },
   "gh-trending-llm": {
@@ -521,7 +521,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 913,
+   "ms": 939,
    "httpStatus": 200
   },
   "gh-trending-ml": {
@@ -531,7 +531,7 @@
    "fetched": 30,
    "kept": 0,
    "skipped": 30,
-   "ms": 2112,
+   "ms": 2048,
    "httpStatus": 200
   },
   "gh-trending-agents": {
@@ -539,9 +539,9 @@
    "category": "releases",
    "status": "ok",
    "fetched": 30,
-   "kept": 10,
-   "skipped": 20,
-   "ms": 2434,
+   "kept": 11,
+   "skipped": 19,
+   "ms": 2602,
    "httpStatus": 200
   },
   "hf-trending": {
@@ -551,17 +551,17 @@
    "fetched": 20,
    "kept": 20,
    "skipped": 0,
-   "ms": 52,
+   "ms": 16,
    "httpStatus": 200
   },
   "pod-dwarkesh": {
    "name": "Dwarkesh Podcast",
    "category": "media",
-   "status": "empty",
-   "fetched": 142,
-   "kept": 0,
+   "status": "ok",
+   "fetched": 143,
+   "kept": 1,
    "skipped": 142,
-   "ms": 387,
+   "ms": 324,
    "httpStatus": 200,
    "note": "via relay",
    "homepage": "https://www.dwarkesh.com"
@@ -573,7 +573,7 @@
    "fetched": 271,
    "kept": 0,
    "skipped": 271,
-   "ms": 210,
+   "ms": 171,
    "httpStatus": 200
   },
   "pod-cogrev": {
@@ -583,7 +583,7 @@
    "fetched": 388,
    "kept": 2,
    "skipped": 386,
-   "ms": 628,
+   "ms": 495,
    "httpStatus": 200
   },
   "pod-nopriors": {
@@ -593,7 +593,7 @@
    "fetched": 184,
    "kept": 0,
    "skipped": 184,
-   "ms": 280,
+   "ms": 179,
    "httpStatus": 200
   },
   "yt-karpathy": {
@@ -603,7 +603,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 187,
+   "ms": 241,
    "httpStatus": 200,
    "note": "api"
   },
@@ -614,7 +614,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 211,
+   "ms": 197,
    "httpStatus": 200,
    "note": "api"
   },
@@ -625,7 +625,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 161,
+   "ms": 264,
    "httpStatus": 200,
    "note": "api"
   },
@@ -636,7 +636,7 @@
    "fetched": 15,
    "kept": 2,
    "skipped": 13,
-   "ms": 263,
+   "ms": 131,
    "httpStatus": 200,
    "note": "api"
   },
@@ -647,7 +647,7 @@
    "fetched": 15,
    "kept": 5,
    "skipped": 10,
-   "ms": 164,
+   "ms": 837,
    "httpStatus": 200,
    "note": "api"
   },
@@ -658,13 +658,13 @@
    "fetched": 15,
    "kept": 1,
    "skipped": 14,
-   "ms": 156,
+   "ms": 86,
    "httpStatus": 200,
    "note": "api"
   }
  },
- "okCount": 43,
- "emptyCount": 21,
+ "okCount": 44,
+ "emptyCount": 20,
  "failedCount": 0,
  "sitemapSkipped": {
   "anthropic": {
@@ -701,6 +701,12 @@
  },
  "sitemapCache": {
   "anthropic": {
+   "https://anthropic.com/news/donating-agent-skills-to-the-agentic-ai-foundation": {
+    "lastmod": "2026-10-22T17:48:51.000Z",
+    "title": "Donating Agent Skills to the Agentic AI Foundation",
+    "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+    "publishedAt": "2026-10-22T00:00:00.000Z"
+   },
    "https://anthropic.com/news/christopher-stubbs-joins-long-term-benefit-trust": {
     "lastmod": "2026-10-21T18:22:03.000Z",
     "title": "Physicist Christopher Stubbs joins Anthropic's Long-Term Benefit Trust",
@@ -799,15 +805,15 @@
    "rejected": 0
   },
   "usage": {
-   "prompt": 1580,
-   "completion": 677,
-   "total": 2257
+   "prompt": 1561,
+   "completion": 680,
+   "total": 2241
   },
-  "ms": 25568
+  "ms": 2399
  },
  "brief": {
   "date": "2026-10-22",
-  "wordCount": 821,
+  "wordCount": 768,
   "readingMinutes": 4
  },
  "static": {
