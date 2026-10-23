@@ -1,10 +1,10 @@
 {
  "date": "2026-10-23",
- "generatedAt": "2026-10-23T03:21:17.524Z",
+ "generatedAt": "2026-10-23T11:00:16.867Z",
  "wordCount": 869,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's developments highlight significant advances across software verification, agent tooling, and interactive generation models. Claude successfully proved security properties in the compiled code of 123 open-source libraries, discovering long-hidden bugs and demonstrating that formal software verification is becoming feasible at a much larger scale. In streaming video generation, StreamEval addresses the growing need to evaluate interactive models designed for real-time user engagement. Meanwhile, researchers are tackling budget-aware feature adaptation in diffusion models through Policy-Mask, and exploring the limits of frontier coding agents in scientific ML tasks. In the release and open-source ecosystem, new tools like the Zafer-Liu/claude-super-sidebar and hassan-algo/open-sesame introduce enhanced visual interfaces and web-pentest skills for Claude Code, while Anthropic announced the donation of Agent Skills to the Agentic AI Foundation to keep them open and vendor-neutral.",
+  "text": "Recent developments in artificial intelligence highlight major leaps across software verification, cinematic video generation, and agentic foundation models. Claude has demonstrated that large language models can formally prove security properties and uncover long-standing bugs across numerous open-source libraries, scaling formal verification significantly. In video generation, factor-aware predictive learning addresses the complex demands of temporal inference and precise control over actions, scenes, and characters. Meanwhile, new sparse Mixture-of-Experts architectures like IQuest-Q1 are pushing foundation capabilities forward for agentic command-line interface systems. Additional progress includes budget-aware adaptation techniques for extracting signals from diffusion models, novel hierarchical language modeling strategies combining continuous semantic compression with discrete generation, and open releases such as fine-tuned agentic models designed for long-horizon scientific problem solving. Together, these advances reflect a continuous maturation in reasoning, generation quality, and practical developer tooling.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -29,11 +29,49 @@
       "Hacker News"
      ],
      "summary": "Claude formally proved security properties in the compiled code of 123 open-source libraries. Along the way, it found bugs that had eluded detection for years.",
-     "why": "Proves security properties across compiled code libraries at scale, finding bugs that previously eluded detection.",
+     "why": "Claude successfully proved security properties and found deep bugs across open-source libraries.",
      "whySource": "llm",
      "publishedAt": "2026-10-22T00:00:00.000Z",
      "category": "labs",
-     "score": 18.34
+     "score": 18.5
+    },
+    {
+     "id": "arxiv:2610.30926",
+     "title": "Making MLLM Latents Matter: Factor-Aware Predictive Learning for Cinematic Video Generation",
+     "url": "https://arxiv.org/abs/2610.30926",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Cinematic video generation requires both temporal inference from limited inputs (i.e., sparse rather than frame-by-frame guidance) and factor-aware control of character, scene, action, and camera.",
+     "why": "Factor-aware predictive learning enables precise temporal and structural control in cinematic video generation.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T08:43:48.000Z",
+     "category": "research",
+     "score": 18.28
+    },
+    {
+     "id": "arxiv:2610.30949",
+     "title": "IQuest-Q1: Advancing Foundation Capabilities for Agentic CLI Systems",
+     "url": "https://arxiv.org/abs/2610.30949",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "We present IQuest-Q1, a sparse Mixture-of-Experts (MoE) agentic foundation model with 320B total parameters (15B activated).…",
+     "why": "IQuest-Q1 introduces a sparse Mixture-of-Experts architecture designed for agentic CLI systems.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "category": "research",
+     "score": 16.31
     },
     {
      "id": "arxiv:2610.28889",
@@ -48,48 +86,11 @@
       "arXiv cs.CV"
      ],
      "summary": "Selecting intermediate features from a frozen diffusion model for discriminative tasks is non-trivial because the useful signal is distributed across the denoising trajectory, network depth, and channels.",
-     "why": "Addresses the challenge of selecting useful intermediate features across trajectories and depths for discriminative tasks.",
+     "why": "Policy-Mask provides budget-aware feature adaptation from diffusion models to discriminative tasks.",
      "whySource": "llm",
      "publishedAt": "2026-10-20T00:00:00.000Z",
      "category": "research",
-     "score": 16.2
-    },
-    {
-     "id": "arxiv:2610.28402",
-     "title": "StreamEval: Evaluating Interactive Streaming Video Generation Models",
-     "url": "https://arxiv.org/abs/2610.28402",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "As streaming video generation advances, enabling real-time interaction with generated video is becoming increasingly important.",
-     "why": "Provides evaluation methods for streaming video generation models designed for real-time user interaction.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-20T00:00:00.000Z",
-     "category": "research",
-     "score": 13.26
-    },
-    {
-     "id": "e528ef46221b117b",
-     "title": "Every AI model has the same \"controversial\" take on humans",
-     "url": "https://www.modelcompare.ai/blog/ai-models-controversial-take-on-humans",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50197313",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Examines shared patterns in how different artificial intelligence models articulate controversial perspectives on humans.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-22T16:08:00.000Z",
-     "category": "news",
-     "score": 13.03
+     "score": 15.56
     }
    ]
   },
@@ -98,47 +99,9 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2610.28763",
-     "title": "Automating ML for Science: Can Frontier Agents Climb Scientific Hills in the Wild?",
-     "url": "https://arxiv.org/abs/2610.28763",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "Frontier coding agents are increasingly framed as end-to-end automated researchers, and ML for science offers a demanding test of that promise: improving a scientific model often requires domain insight beyond routine ML engineering.",
-     "why": "Tests whether frontier coding agents can autonomously climb scientific hills requiring domain-specific insights.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-20T00:00:00.000Z",
-     "category": "research",
-     "score": 12.91
-    },
-    {
-     "id": "arxiv:2610.29317",
-     "title": "SpatialBrain: Spatial Intelligence Growing from Experience",
-     "url": "https://arxiv.org/abs/2610.29317",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "Spatial reasoning requires more than access to geometric tools: a reasoner must decide when direct observation is sufficient and when to reconstruct, measure, or change reference frames.",
-     "why": "Explores how spatial intelligence systems determine when to use direct observation versus geometric tools.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-21T00:00:00.000Z",
-     "category": "research",
-     "score": 12.8
-    },
-    {
-     "id": "arxiv:2610.27592",
-     "title": "Real In, Real Out: What If We Only Use Real Data for Scene Text Editing?",
-     "url": "https://arxiv.org/abs/2610.27592",
+     "id": "arxiv:2610.23987",
+     "title": "What Generation Knows: Unlocking Fine-Grained Understanding in Unified Multimodal Models",
+     "url": "https://arxiv.org/abs/2610.23987",
      "sourceIds": [
       "hf-papers",
       "arxiv-cs.CV"
@@ -147,12 +110,50 @@
       "HF Daily Papers",
       "arXiv cs.CV"
      ],
-     "summary": "Aiming to modify textual content while preserving the original style, Scene Text Editing (STE) has significant practical value in many applications. STE typically requires paired images before and after editing for training.",
-     "why": "Investigates scene text editing techniques that rely exclusively on real data rather than paired training sets.",
+     "summary": "Fine-grained visual understanding requires distinguishing subtle differences in local attributes and spatial relations, yet remains challenging for existing vision-language models.",
+     "why": "New unified multimodal approaches tackle fine-grained visual understanding of local attributes.",
      "whySource": "llm",
-     "publishedAt": "2026-10-20T00:00:00.000Z",
+     "publishedAt": "2026-10-14T00:00:00.000Z",
      "category": "research",
-     "score": 12.72
+     "score": 15.17
+    },
+    {
+     "id": "arxiv:2610.31305",
+     "title": "Cola2: Co-Adaptive Hierarchical Language Modeling with Continuous Semantic Compression and Balanced Discrete Generation",
+     "url": "https://arxiv.org/abs/2610.31305",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Hierarchical language generation separates continuous semantic modeling from discrete text realization, but its effectiveness depends on what the latent space compresses and how the discrete generator uses it.",
+     "why": "Cola2 explores co-adaptive hierarchical language modeling with continuous semantic compression.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "category": "research",
+     "score": 14.9
+    },
+    {
+     "id": "arxiv:2610.30866",
+     "title": "Verus-Insight: Towards Explainable Artifact Detection in AI-Generated Videos",
+     "url": "https://arxiv.org/abs/2610.30866",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Recent advances in video generation have made synthetic videos increasingly realistic, placing greater demands on reliable AI-generated video detection.",
+     "why": "Verus-Insight addresses explainable artifact detection in increasingly realistic synthetic videos.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "category": "research",
+     "score": 14.58
     }
    ]
   },
@@ -161,55 +162,58 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "84a5d21948418794",
-     "title": "Zafer-Liu/claude-super-sidebar",
-     "url": "https://github.com/Zafer-Liu/claude-super-sidebar",
+     "id": "f42b672aa8316807",
+     "title": "InternScience/Sage-A1.5 [Finetune of Qwen 3.6 35b-a3b]",
+     "url": "https://huggingface.co/InternScience/Sage-A1.5",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xbi1hj/internsciencesagea15_finetune_of_qwen_36_35ba3b/",
      "sourceIds": [
-      "gh-trending-agents"
+      "reddit",
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: ai-agents"
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
      ],
-     "summary": "A visual sidebar for Claude Code and Codex: agent trees, live status, and conversation task flows. · JavaScript",
-     "why": "Offers a visual sidebar with agent trees and live status for Claude Code and Codex environments.",
+     "summary": "Gguf's: https://huggingface.co/InternScience/Sage-A1.5-Q4_K_M-GGUF https://huggingface.co/InternScience/Sage-A1.5-Q8_0-GGUF \"Sage‑A1.5 is a 35B Mixture‑of‑Experts agentic model based on Qwen3.6-35B-A3B from Shanghai AI Laboratory, built to advance long-horizon scientific problem…",
+     "why": "Sage-A1.5 brings a fine-tuned Mixture-of-Experts model for long-horizon scientific tasks.",
      "whySource": "llm",
-     "publishedAt": "2026-10-20T06:18:04.000Z",
+     "publishedAt": "2026-10-15T08:34:39.000Z",
      "category": "releases",
-     "score": 6.57
+     "score": 11.97
     },
     {
-     "id": "aba537365b1bf230",
-     "title": "reacher-z/Awesome-CUA",
-     "url": "https://github.com/reacher-z/Awesome-CUA",
+     "id": "40ecc58f73adaa6a",
+     "title": "Monopoly0024/simple-reviewer-v1",
+     "url": "https://github.com/Monopoly0024/simple-reviewer-v1",
      "sourceIds": [
       "gh-trending-agents"
      ],
      "sourceNames": [
       "GitHub new repos: ai-agents"
      ],
-     "summary": "Open, source-backed catalog of computer-use agents: reviewed papers, GUI models, datasets, benchmarks, tools, and reusable JSONL/SQLite data. · Python",
-     "why": "Provides an open catalog of computer-use agents, datasets, benchmarks, and reusable data formats.",
+     "summary": "Simple Reviewer: a Codex skill for AI-assisted coding and Vibe Coding. Explain code, visualize workflows, and verify goals with evidence. | 简单的审阅者：协助 AI 编程与 Vibe Coding，解释代码、可视化流程，以证据复核目标。 · Python",
+     "why": "Simple Reviewer acts as a coding skill to help visualize workflows and verify goals.",
      "whySource": "llm",
-     "publishedAt": "2026-10-16T03:46:44.000Z",
+     "publishedAt": "2026-10-21T04:22:59.000Z",
      "category": "releases",
-     "score": 6.4
+     "score": 7.51
     },
     {
-     "id": "ae3c7aa43563d823",
-     "title": "hassan-algo/open-sesame",
-     "url": "https://github.com/hassan-algo/open-sesame",
+     "id": "cd588696c906353c",
+     "title": "rextail-ai/lessloc",
+     "url": "https://github.com/rextail-ai/lessloc",
      "sourceIds": [
-      "gh-trending-agents"
+      "gh-trending-llm"
      ],
      "sourceNames": [
-      "GitHub new repos: ai-agents"
+      "GitHub new repos: llm"
      ],
-     "summary": "🔓 An AI web-pentest skill for Claude Code. Point it at a site you're authorized to test — it maps the attack surface, works through the OWASP WSTG, validates findings, and writes dev + stakeholder reports (PDF). · HTML",
-     "why": "Implements an automated web-pentest skill for Claude Code to map attack surfaces and validate findings.",
+     "summary": "Keeps AI coding agents such as Claude Code, Codex, GitHub Copilot, Gemini CLI and Cursor to the least code that does the job and still works. · JavaScript",
+     "why": "Lessloc restricts coding agents to writing the minimal code required to work.",
      "whySource": "llm",
-     "publishedAt": "2026-10-21T03:31:18.000Z",
+     "publishedAt": "2026-10-19T12:12:04.000Z",
      "category": "releases",
-     "score": 6.21
+     "score": 7.33
     }
    ]
   },
@@ -217,6 +221,24 @@
    "key": "labs",
    "title": "From the labs",
    "entries": [
+    {
+     "id": "1a543055a02f9816",
+     "title": "OpenAI and Poland’s NASK partner to advance AI safety and security",
+     "url": "https://openai.com/index/openai-nask-ai-safety-security-partnership",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "OpenAI and Poland’s NASK are partnering on AI safety, security, and technical research to strengthen safeguards and support a more resilient digital ecosystem.",
+     "why": "OpenAI and NASK partner to advance AI safety and security research in Poland.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T00:00:00.000Z",
+     "category": "labs",
+     "score": 5.66,
+     "readMinutes": 1
+    },
     {
      "id": "f9a9e399ecd4c4fa",
      "title": "Donating Agent Skills to the Agentic AI Foundation",
@@ -228,28 +250,11 @@
       "Anthropic"
      ],
      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-     "why": "Advances vendor-neutral and community-driven safety and research initiatives through open agent skill donations.",
+     "why": "Anthropic is donating agent skills to support an open, vendor-neutral Agentic AI Foundation.",
      "whySource": "llm",
      "publishedAt": "2026-10-22T00:00:00.000Z",
      "category": "labs",
-     "score": 4.72
-    },
-    {
-     "id": "0dc73e009fc04960",
-     "title": "Open call for guest investigators in the life sciences",
-     "url": "https://www.anthropic.com/news/open-call-guest-investigators-life-sciences",
-     "sourceIds": [
-      "anthropic"
-     ],
-     "sourceNames": [
-      "Anthropic"
-     ],
-     "summary": "Today, we’re inviting members of the life sciences community to apply to work with us on special projects.",
-     "why": "Invites external life sciences researchers to collaborate on special projects with the lab.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-22T00:00:00.000Z",
-     "category": "labs",
-     "score": 4.72
+     "score": 4.08
     }
    ]
   },
@@ -268,11 +273,11 @@
       "Simon Willison"
      ],
      "summary": "DE STAAT - FREEDOM (Official Music Video) OK well this is a first for me... at 00:44 in this new music video by Dutch alternative rock band De Staat: The visual effects are credited to Matties Grooten of Fake it or Leave it.",
-     "why": "Highlights novel visual effects credits in a recent alternative rock music video.",
+     "why": "Music video visual effects credit highlights creative uses of synthetic media production workflows.",
      "whySource": "llm",
      "publishedAt": "2026-10-22T19:42:26.000Z",
      "category": "blogs",
-     "score": 3.45,
+     "score": 2.98,
      "readMinutes": 1
     },
     {
@@ -286,11 +291,11 @@
       "Simon Willison"
      ],
      "summary": "Donating Agent Skills to the Agentic AI Foundation News today from Anthropic: We’re committed to keeping Agent Skills open, community-driven, and vendor-neutral.",
-     "why": "Reinforces commitments to keep agent skills open, community-driven, and entirely vendor-neutral.",
+     "why": "Anthropic's donation keeps agent skills open and community-driven through the Agentic AI Foundation.",
      "whySource": "llm",
      "publishedAt": "2026-10-22T18:09:56.000Z",
      "category": "blogs",
-     "score": 3.35,
+     "score": 2.89,
      "readMinutes": 1
     }
    ]
@@ -310,11 +315,11 @@
       "Interconnects"
      ],
      "summary": "Western open models strike back",
-     "why": "Surveys recent open models, new regulatory controls, and emerging artifacts in the ecosystem.",
+     "why": "Interconnects analyzes new open artifacts, Western models, and regulatory controls in the US and China.",
      "whySource": "llm",
      "publishedAt": "2026-10-20T17:04:21.000Z",
      "category": "blogs",
-     "score": 2.28,
+     "score": 1.97,
      "readMinutes": 6
     }
    ]
@@ -322,17 +327,17 @@
  ],
  "itemIds": [
   "6172089eff8b6e8a",
+  "arxiv:2610.30926",
+  "arxiv:2610.30949",
   "arxiv:2610.28889",
-  "arxiv:2610.28402",
-  "e528ef46221b117b",
-  "arxiv:2610.28763",
-  "arxiv:2610.29317",
-  "arxiv:2610.27592",
-  "84a5d21948418794",
-  "aba537365b1bf230",
-  "ae3c7aa43563d823",
+  "arxiv:2610.23987",
+  "arxiv:2610.31305",
+  "arxiv:2610.30866",
+  "f42b672aa8316807",
+  "40ecc58f73adaa6a",
+  "cd588696c906353c",
+  "1a543055a02f9816",
   "f9a9e399ecd4c4fa",
-  "0dc73e009fc04960",
   "d1cc4ab1d566d815",
   "ee487a66d7e4ee85",
   "1c230612a088f9ef"
