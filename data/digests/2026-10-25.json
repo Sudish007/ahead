@@ -1,0 +1,269 @@
+{
+ "date": "2026-10-25",
+ "generatedAt": "2026-10-25T03:10:02.461Z",
+ "wordCount": 597,
+ "readingMinutes": 3,
+ "overview": {
+  "text": "Today's developments highlight a mix of economic impacts, security concerns, and open-source releases across the AI landscape. Discussions emerged regarding whether there are tangible AI payoffs outside the tech sector, alongside concerns about job losses in media, film, and the arts. In security and reliability, a hacker reversed a Samsung TV and found on-board AI listening while an OpenAI account was suspended, and an AI-assisted paper on Z-Library cited a nonexistent TorrentFreak article. Meanwhile, the open-source and developer ecosystem saw several notable releases, including Shaitrish/37studio as an open-source AI alternative to Buffer and Opus Clip, lordon1a/agents.md offering a system prompt for coding agents, and TheLastOxygen/mafdet. NVIDIA published details on scaling TensorRT performance optimization beyond a single build route using the Global Performance Tuner. Additional releases and updates featured battledrones v14: Compass Rose, Simon Willison's Quick Study utilizing Claude Opus 5.5 High, and a deep read examining recent cybersecurity challenges.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "d76a689c9204f1a3",
+     "title": "No signs of AI payoff outside the tech sector",
+     "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50224463",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "This highlights the growing debate over whether tangible economic value is actually reaching industries beyond technology.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T19:47:19.000Z",
+     "category": "news",
+     "score": 14.19
+    },
+    {
+     "id": "1369780d96b395d6",
+     "title": "America has lost 200k of jobs in media, film and the arts. How much is AI?",
+     "url": "https://www.apricitas.io/p/ai-and-the-fall-of-the-creative-class",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50226419",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "This underscores the severe employment contraction hitting creative sectors as automation technologies scale up.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T23:11:54.000Z",
+     "category": "news",
+     "score": 13.2
+    },
+    {
+     "id": "b5c44fe95c1e9005",
+     "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
+     "url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50218633",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "This exposes critical hardware-level security vulnerabilities and unexpected monitoring behaviors in consumer smart devices.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T05:49:57.000Z",
+     "category": "news",
+     "score": 11.86
+    },
+    {
+     "id": "08ab153fd915aa89",
+     "title": "AI-Assisted Paper on Z-Library Cites a TorrentFreak Article That Doesn't Exist",
+     "url": "https://torrentfreak.com/ai-assisted-paper-on-z-library-cites-a-torrentfreak-article-that-doesnt-exist/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50220204",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "This illustrates the persistent hallucination problem in academic writing assisted by generative models.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T11:18:54.000Z",
+     "category": "news",
+     "score": 10.62
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": []
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "46faf8c698db5342",
+     "title": "Shaitrish/37studio",
+     "url": "https://github.com/Shaitrish/37studio",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "Open-source AI alternative to Buffer and Opus Clip: Claude Code makes on-brand videos, posts them to 9 platforms and drafts replies. Self-hosted, your own keys. · Go",
+     "why": "This provides founders with a self-hosted, multi-platform social media automation alternative using custom keys.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T00:26:52.000Z",
+     "category": "releases",
+     "score": 7
+    },
+    {
+     "id": "1ddbc69d60bf4a91",
+     "title": "lordon1a/agents.md",
+     "url": "https://github.com/lordon1a/agents.md",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "A drop-in AGENTS.md system prompt for coding agents: full execution, no hedging, no moralizing, no fade-to-black.",
+     "why": "This offers developers a strict system prompt configuration to prevent coding agents from hedging or moralizing.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T15:09:49.000Z",
+     "category": "releases",
+     "score": 6.89
+    },
+    {
+     "id": "54ecfe2133949dd3",
+     "title": "TheLastOxygen/mafdet",
+     "url": "https://github.com/TheLastOxygen/mafdet",
+     "sourceIds": [
+      "gh-trending-ml"
+     ],
+     "sourceNames": [
+      "GitHub new repos: machine-learning"
+     ],
+     "summary": "You type. It already knows.",
+     "why": "This introduces a predictive machine learning tool designed to anticipate user typing actions instantly.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-21T08:37:56.000Z",
+     "category": "releases",
+     "score": 6.84
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "4dcd06f240ef44ca",
+     "title": "Scaling NVIDIA TensorRT Performance Optimization Beyond a Single Build Route with the Global Performance Tuner, Part 1",
+     "url": "https://developer.nvidia.com/blog/scaling-nvidia-tensorrt-performance-optimization-beyond-a-single-build-route-with-the-global-performance-tuner-part-1/",
+     "sourceIds": [
+      "nvidia-dev"
+     ],
+     "sourceNames": [
+      "NVIDIA Technical Blog"
+     ],
+     "summary": "Deploying a trained neural network involves more than translating each operator into a GPU kernel. It is a compilation problem with many legitimate answers.",
+     "why": "This advances deployment strategies by treating neural network compilation as a multi-route optimization problem.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T17:27:35.000Z",
+     "category": "labs",
+     "score": 2.09,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "6e1fc50fabcdd1bd",
+     "title": "battledrones v14: Compass Rose, a four player map",
+     "url": "https://simonwillison.net/2026/Oct/24/battledrones/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Release: battledrones v14: Compass Rose, a four player map I added four player online mode to Battledrones - previous maps were limited to two.",
+     "why": "This demonstrates expanded multiplayer capabilities for autonomous drone simulation environments.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T03:59:57.000Z",
+     "category": "blogs",
+     "score": 2.56,
+     "readMinutes": 1
+    },
+    {
+     "id": "02a20fdf8ff0273f",
+     "title": "Quick Study",
+     "url": "https://simonwillison.net/2026/Oct/23/quick-study-painter/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Tool: Quick Study Prompt to Claude Opus 5.5 High: Build an artifact where you open a photo and it rapidly (in a few seconds) paints a version of that photo using a canvas element and simulated paintbrush See also my previous experiment getting Claude Fable to simulate a…",
+     "why": "This showcases rapid visual artifact generation using advanced prompting techniques on canvas elements.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T21:35:13.000Z",
+     "category": "blogs",
+     "score": 2.26,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "d0caa91d75384d71",
+     "title": "AI #191: The Hackening Begins",
+     "url": "https://thezvi.substack.com/p/ai-191-the-hackening-begins",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "It was the probably worst day in cybersecurity history.",
+     "why": "This provides crucial expert analysis on emerging cybersecurity threats during a volatile period for digital defense.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T15:13:06.000Z",
+     "category": "blogs",
+     "score": 1.58,
+     "readMinutes": 73
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "d76a689c9204f1a3",
+  "1369780d96b395d6",
+  "b5c44fe95c1e9005",
+  "08ab153fd915aa89",
+  "46faf8c698db5342",
+  "1ddbc69d60bf4a91",
+  "54ecfe2133949dd3",
+  "4dcd06f240ef44ca",
+  "6e1fc50fabcdd1bd",
+  "02a20fdf8ff0273f",
+  "d0caa91d75384d71"
+ ],
+ "deepReadId": "d0caa91d75384d71",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
