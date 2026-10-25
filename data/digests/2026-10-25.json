@@ -1,10 +1,10 @@
 {
  "date": "2026-10-25",
- "generatedAt": "2026-10-25T15:32:50.368Z",
- "wordCount": 504,
+ "generatedAt": "2026-10-25T20:22:47.370Z",
+ "wordCount": 511,
  "readingMinutes": 3,
  "overview": {
-  "text": "Today's AI developments highlight a complex landscape ranging from macroeconomic impact and infrastructure capability to security and software tooling. First, discussions on Hacker News focus on the lack of visible AI payoff outside the tech sector alongside significant job losses in media, film, and the arts, prompting questions about economic transformation. Second, hardware advancements continue as Cerebras deploys trillion-parameter AI models, pushing the boundaries of scale. Third, hardware security and account management came under scrutiny after a hacker reversed a Samsung TV and found on-board AI listening alongside an OpenAI account suspension. Finally, the open-source and release ecosystem advanced with new offerings including the ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF text-generation model, a curated list of tools for enforcing software development standards called mokevnin/dev-quality-gates, and 0xS4N4TG/kinetograph as a programmatic video engine designed for agents.",
+  "text": "Today's developments highlight a mix of empirical findings, economic impact, and open-source model releases. A notable study shows that a ten-year-old convolutional neural network outperforms frontier large language models in skin cancer diagnosis. Meanwhile, discussions around labor market impacts note that America has lost a significant number of jobs in media, film, and the arts, while broader macroeconomic reports find no signs of AI payoff outside the tech sector. In academia, a UC Berkeley math professor sees no point in grading homework due to AI usage. On the release front, the Nanbeige/Nanbeige4.3-33B model arrives, proving stronger than Qwen3.8-27B across benchmarks while laying foundations for upcoming small model distillation pipelines. Additionally, ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF gains traction on Hugging Face, mokevnin/dev-quality-gates curates software standards enforcement tools on GitHub, alignment discussions prepare students for safety debates, and commentary warns of cybersecurity challenges.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,10 +14,10 @@
    "title": "Must know",
    "entries": [
     {
-     "id": "d76a689c9204f1a3",
-     "title": "No signs of AI payoff outside the tech sector",
-     "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50224463",
+     "id": "b83204b7e9c12d9e",
+     "title": "A 10-year-old CNN outperforms frontier LLMs for skin cancer diagnosis",
+     "url": "https://lynchlab.net/llm-skin-cancer",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50233779",
      "sourceIds": [
       "hn-front",
       "hn-top"
@@ -27,11 +27,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Evaluates the broader economic impact and productivity realization of artificial intelligence outside core tech industries.",
+     "why": "A classic CNN beats frontier LLMs in medical imaging, proving older architectures still hold immense value.",
      "whySource": "llm",
-     "publishedAt": "2026-10-24T19:47:19.000Z",
+     "publishedAt": "2026-10-25T17:15:38.000Z",
      "category": "news",
-     "score": 13.33
+     "score": 13.22
     },
     {
      "id": "1369780d96b395d6",
@@ -47,17 +47,17 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Provides crucial data points on labor market shifts affecting media, film, and the arts sectors.",
+     "why": "Examining job losses in creative fields provides crucial data on the actual displacement caused by automation.",
      "whySource": "llm",
      "publishedAt": "2026-10-24T23:11:54.000Z",
      "category": "news",
-     "score": 13.16
+     "score": 12.96
     },
     {
-     "id": "a2637483f507afd7",
-     "title": "Cerebras Deploys Trillion-Parameter AI Models",
-     "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50227356",
+     "id": "d76a689c9204f1a3",
+     "title": "No signs of AI payoff outside the tech sector",
+     "url": "https://www.apollo.com/wealth/insights-news/insights/daily-spark/no-signs-of-ai-payoff-outside-the-tech-sector",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50224463",
      "sourceIds": [
       "hn-front",
       "hn-top"
@@ -67,17 +67,17 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Demonstrates practical scaling capabilities with the deployment of massive trillion-parameter architectures by hardware providers.",
+     "why": "The lack of macroeconomic payoffs outside tech challenges current assumptions about enterprise productivity gains.",
      "whySource": "llm",
-     "publishedAt": "2026-10-25T01:33:49.000Z",
+     "publishedAt": "2026-10-24T19:47:19.000Z",
      "category": "news",
-     "score": 12.02
+     "score": 12.96
     },
     {
-     "id": "b5c44fe95c1e9005",
-     "title": "Hacker reverses Samsung TV, finds on-board AI listening OpenAI account suspended",
-     "url": "https://www.reddit.com/r/antiai/comments/1xdv3e5/hacker_reverse_engineers_his_samsung_tv_and_finds/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50218633",
+     "id": "9fec697fddc7e91f",
+     "title": "AI use leads UC Berkeley math professor to see 'no point' in grading homework",
+     "url": "https://www.dailycal.org/news/campus/academics/ai-use-leads-uc-berkeley-math-professor-to-see-no-point-in-grading-homework/article_bdf1eae2-c08b-491f-b9f1-81a7cea177de.html",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50233304",
      "sourceIds": [
       "hn-front",
       "hn-top"
@@ -87,11 +87,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Exposes unexpected hardware integration risks and account management vulnerabilities found within consumer electronics devices.",
+     "why": "Professors rethinking grading workflows illustrate the immediate disruption AI brings to traditional education and assessment.",
      "whySource": "llm",
-     "publishedAt": "2026-10-24T05:49:57.000Z",
+     "publishedAt": "2026-10-25T16:28:26.000Z",
      "category": "news",
-     "score": 11.02
+     "score": 12.8
     }
    ]
   },
@@ -105,6 +105,26 @@
    "title": "Releases & tools",
    "entries": [
     {
+     "id": "653d82f9a2953196",
+     "title": "Nanbeige/Nanbeige4.3-33B · Hugging Face",
+     "url": "https://huggingface.co/Nanbeige/Nanbeige4.3-33B",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xf0kz4/nanbeigenanbeige4333b_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "Stronger than Qwen3.8-27B across a range of benchmarks. but also lays the necessary foundation to power our upcoming small model distillation pipeline (e.g., for Nanbeige4.3-3B). It'll distilled into their 3B small models, maybe other sizes too.",
+     "why": "This new release offers stronger benchmark performance and sets up an efficient small model distillation pipeline.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T02:49:18.000Z",
+     "category": "releases",
+     "score": 12.13
+    },
+    {
      "id": "0337f1c85ce865c7",
      "title": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF",
      "url": "https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF",
@@ -115,11 +135,11 @@
       "HF trending models"
      ],
      "summary": "text-generation · gguf · 247 likes · 412,392 downloads",
-     "why": "Offers researchers and developers a newly available open-source text-generation model variant for local deployment.",
+     "why": "This quantized model variant provides the community with another accessible option for local text generation tasks.",
      "whySource": "llm",
      "publishedAt": "2026-10-23T09:43:05.000Z",
      "category": "releases",
-     "score": 7.67
+     "score": 7.37
     },
     {
      "id": "8fd782ed6a25d885",
@@ -132,28 +152,11 @@
       "GitHub new repos: ai-agents"
      ],
      "summary": "An opinionated, curated list of tools for enforcing software development standards: one recommended tool per job, with limits. · Python",
-     "why": "Supplies engineers with an opinionated, curated selection of tools to enforce software development standards effectively.",
+     "why": "This curated repository helps developers enforce strict quality gates across automated software engineering agent workflows.",
      "whySource": "llm",
      "publishedAt": "2026-10-23T22:48:28.000Z",
      "category": "releases",
-     "score": 6.92
-    },
-    {
-     "id": "02ac63e67a1ed61e",
-     "title": "0xS4N4TG/kinetograph",
-     "url": "https://github.com/0xS4N4TG/kinetograph",
-     "sourceIds": [
-      "gh-trending-agents"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents"
-     ],
-     "summary": "A blazingly fast programmatic video engine, made for agents. · TypeScript",
-     "why": "Enables programmatic video generation capabilities specifically built for autonomous agent workflows and applications.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-23T05:15:41.000Z",
-     "category": "releases",
-     "score": 6.85
+     "score": 6.67
     }
    ]
   },
@@ -177,30 +180,12 @@
       "Alignment Forum"
      ],
      "summary": "Context: I created this to share before the start of courses I facilitate to provide a refresher on recent events, but also as a hook to draw students into engaging with some of ideas we think about and debate in AI safety early.",
-     "why": "Provides educational context and foundational ideas for engaging students in early AI safety debates.",
+     "why": "Early safety context helps educators hook students into critical debates surrounding artificial intelligence alignment.",
      "whySource": "llm",
      "publishedAt": "2026-10-25T07:52:23.000Z",
      "category": "blogs",
-     "score": 3.45,
+     "score": 3.14,
      "readMinutes": 21
-    },
-    {
-     "id": "6e1fc50fabcdd1bd",
-     "title": "battledrones v14: Compass Rose, a four player map",
-     "url": "https://simonwillison.net/2026/Oct/24/battledrones/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "Release: battledrones v14: Compass Rose, a four player map I added four player online mode to Battledrones - previous maps were limited to two.",
-     "why": "Expands multi-player testing grounds for autonomous drone simulations and agent coordination strategies.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-24T03:59:57.000Z",
-     "category": "blogs",
-     "score": 2.02,
-     "readMinutes": 1
     }
    ]
   },
@@ -219,26 +204,25 @@
       "Don't Worry About the Vase"
      ],
      "summary": "It was the probably worst day in cybersecurity history.",
-     "why": "Analyzes emerging cybersecurity vulnerabilities and threat vectors at the intersection of software and AI.",
+     "why": "Analyzing severe cybersecurity incidents helps researchers anticipate vulnerabilities emerging from automated systems.",
      "whySource": "llm",
      "publishedAt": "2026-10-22T15:13:06.000Z",
      "category": "blogs",
-     "score": 1.24,
+     "score": 1.13,
      "readMinutes": 73
     }
    ]
   }
  ],
  "itemIds": [
-  "d76a689c9204f1a3",
+  "b83204b7e9c12d9e",
   "1369780d96b395d6",
-  "a2637483f507afd7",
-  "b5c44fe95c1e9005",
+  "d76a689c9204f1a3",
+  "9fec697fddc7e91f",
+  "653d82f9a2953196",
   "0337f1c85ce865c7",
   "8fd782ed6a25d885",
-  "02ac63e67a1ed61e",
   "bd20aadf9d5d1453",
-  "6e1fc50fabcdd1bd",
   "d0caa91d75384d71"
  ],
  "deepReadId": "d0caa91d75384d71",
