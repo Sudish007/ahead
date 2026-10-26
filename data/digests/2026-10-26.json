@@ -1,10 +1,10 @@
 {
  "date": "2026-10-26",
- "generatedAt": "2026-10-26T03:10:31.265Z",
- "wordCount": 557,
- "readingMinutes": 3,
+ "generatedAt": "2026-10-26T12:15:03.842Z",
+ "wordCount": 784,
+ "readingMinutes": 4,
  "overview": {
-  "text": "Today's landscape highlights significant shifts across hardware, pricing, and agent capabilities. OpenAI and Anthropic have aggressively reduced their large language model prices by substantial margins, forcing a reevaluation of operational costs for developers. In hardware infrastructure, Cerebras has deployed trillion-parameter AI models, while Amazon's Trainium targets the training domain traditionally dominated by GPUs. Meanwhile, research and application sectors are advancing rapidly with tools like UserArena for benchmarking interactive shopping agents, Omni-Woodpecker addressing cross-modal hallucinations in audio-visual models, and new platforms such as the Runic macOS menu bar app for tracking token usage costs and the Kosmos AI agent management platform.",
+  "text": "Today's key developments span agent evolution, novel model representations, streaming video-language models, and hardware infrastructure updates. First, RSIHub provides a composable framework for agent-evolution methods, helping researchers avoid rebuilding experimental machinery. Second, TWIG introduces tree-structured weights with inherited gates, representing neural network weights as paths of discrete decisions. Third, DirCast tackles live esports directing and commentary using a single streaming video-language model to handle unpredictable real-time broadcasts. Fourth, DraMaze implements a multi-agent pipeline with future-aware memory for microdrama script generation. Finally, analysis on Amazon's Trainium explores its expanding capabilities for model training alongside inference. Together, these releases and research papers offer new tools and paradigms for engineers and founders navigating architecture design, agent orchestration, and efficient hardware deployment.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,81 +14,80 @@
    "title": "Must know",
    "entries": [
     {
-     "id": "240888442444abd5",
-     "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
-     "url": "https://minimaxir.com/2026/10/cheap-llms/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50236102",
+     "id": "arxiv:2610.32253",
+     "title": "RSIHub: A Composable Framework for Agent-Evolution Methods",
+     "url": "https://arxiv.org/abs/2610.32253",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.AI"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.AI"
      ],
-     "summary": "",
-     "why": "Price cuts dramatically alter unit economics and deployment strategies for AI applications and infrastructure founders.",
+     "summary": "Agent-evolution methods use execution feedback to improve prompts, skills, tools, and orchestration, but their implementations often rebuild the same experimental machinery.",
+     "why": "Provides a composable framework that standardizes agent-evolution implementations and avoids redundant experimental machinery.",
      "whySource": "llm",
-     "publishedAt": "2026-10-25T21:11:31.000Z",
-     "category": "news",
-     "score": 12.95
+     "publishedAt": "2026-10-23T00:00:00.000Z",
+     "category": "research",
+     "score": 15.78
     },
     {
-     "id": "arxiv:2610.30932",
-     "title": "UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents",
-     "url": "https://arxiv.org/abs/2610.30932",
+     "id": "arxiv:2610.31931",
+     "title": "Every Weight Is a Path of Shared Discrete Decisions",
+     "url": "https://arxiv.org/abs/2610.31931",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.LG"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.LG"
      ],
-     "summary": "Agentic recommendation pursues shopper goals through sequences of context-dependent decisions.",
-     "why": "Benchmarking interactive shopping agents is essential for evaluating long-horizon recommendation and decision-making capabilities.",
+     "summary": "We introduce TWIG (Tree-structured Weights with Inherited Gates), a representation in which every weight of a neural network is the end of a path of small discrete decisions: a sign, a shift by a power of two, a zero gate, an index into a shared table.",
+     "why": "Represents neural network weights as paths of small discrete decisions to alter underlying architecture structures.",
      "whySource": "llm",
      "publishedAt": "2026-10-22T00:00:00.000Z",
      "category": "research",
-     "score": 11.53
+     "score": 14.82
     },
     {
-     "id": "a2637483f507afd7",
-     "title": "Cerebras Deploys Trillion-Parameter AI Models",
-     "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50227356",
+     "id": "arxiv:2610.31734",
+     "title": "DirCast: Live Esports Directing and Commentary with a Single Streaming Video-Language Model",
+     "url": "https://arxiv.org/abs/2610.31734",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CV"
      ],
-     "summary": "",
-     "why": "Deploying trillion-parameter models on alternative hardware challenges traditional GPU dominance in large-scale machine learning.",
+     "summary": "A live esports broadcast needs a director who chooses which camera goes on air and a caster who talks over that choice, every second and without knowing what comes next.",
+     "why": "Directs and comments on live esports broadcasts in real time using a single streaming video-language model.",
      "whySource": "llm",
-     "publishedAt": "2026-10-25T01:33:49.000Z",
-     "category": "news",
-     "score": 11.46
+     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "category": "research",
+     "score": 14.28
     },
     {
-     "id": "edf1fccf0afb2aaf",
-     "title": "Nikon photography contest winner loses title after scientists spot signs of AI",
-     "url": "https://www.techspot.com/news/114171-nikon-photography-contest-winner-loses-title-after-scientists.html",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50229827",
+     "id": "arxiv:2610.32002",
+     "title": "DraMaze: A Multi-Agent Pipeline with Future-Aware Memory for Diverse Microdrama Script Generation",
+     "url": "https://arxiv.org/abs/2610.32002",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CL"
      ],
-     "summary": "",
-     "why": "Detection challenges in photography highlight growing societal and verification concerns surrounding synthetic media.",
+     "summary": "The rapid growth of microdramas has increased demand for high-quality script production. Long-form microdrama script generation with LLMs requires both diverse plot progression and long-range narrative coherence.",
+     "why": "Combines a multi-agent pipeline and future-aware memory to generate coherent long-form microdrama scripts.",
      "whySource": "llm",
-     "publishedAt": "2026-10-25T09:51:17.000Z",
-     "category": "news",
-     "score": 11.05
+     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "category": "research",
+     "score": 13.99
     }
    ]
   },
@@ -97,55 +96,61 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2610.27103",
-     "title": "Omni-Woodpecker: Hallucination Correction via Evidence-Prior Rebalancing for Omni LLMs",
-     "url": "https://arxiv.org/abs/2610.27103",
+     "id": "arxiv:2610.32770",
+     "title": "On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models",
+     "url": "https://arxiv.org/abs/2610.32770",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.LG"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.LG"
      ],
-     "summary": "Recent Omni LLMs (OLLMs) have demonstrated remarkable capabilities in joint audio-visual reasoning, yet cross-modal hallucinations remain a major challenge.",
-     "why": "Evidence-prior rebalancing provides a concrete method to mitigate cross-modal hallucinations in multi-modal LLMs.",
+     "summary": "On-policy self-distillation enables post-training foundation models without relying on stronger external teachers. However, existing approaches rely on ground-truth question-answer pairs, human-curated problem sets, or other supervised signals.",
+     "why": "Enables data-free self-improvement in foundation models via on-policy self-distillation without external teacher dependencies.",
      "whySource": "llm",
-     "publishedAt": "2026-10-19T00:00:00.000Z",
+     "publishedAt": "2026-10-23T00:00:00.000Z",
      "category": "research",
-     "score": 10.53
+     "score": 13.49
     },
     {
-     "id": "arxiv:2610.31569",
-     "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
-     "url": "https://arxiv.org/abs/2610.31569",
+     "id": "arxiv:2610.32250",
+     "title": "Easy-3Dfy: Object-Level Geometric Composition for Single-Image 3D Scene Construction",
+     "url": "https://arxiv.org/abs/2610.32250",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.CV"
      ],
-     "summary": "Recognizing task completion and failure enables robots to stop upon success and initiate recovery or replanning after failure. Existing methods augment Vision Language Action (VLA) policies with task status signal prediction to support these execution decisions.",
-     "why": "Denoising action and task status signals helps vision language action models handle execution failures robustly.",
+     "summary": "Single-image 3D scene construction is a fundamental problem in 3D vision. Recent methods such as SAM-3Dfy enable end-to-end reconstruction of 3D assets and their scene layouts, but still struggle with fine-grained scene geometry and asset quality.",
+     "why": "Aims to improve fine-grained scene geometry and asset quality in single-image 3D scene construction.",
      "whySource": "llm",
-     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "publishedAt": "2026-10-23T00:00:00.000Z",
      "category": "research",
-     "score": 9.11
+     "score": 12.82
     },
     {
-     "id": "arxiv:2610.31734",
-     "title": "DirCast: Live Esports Directing and Commentary with a Single Streaming Video-Language Model",
-     "url": "https://arxiv.org/abs/2610.31734",
+     "id": "arxiv:2610.32894",
+     "title": "LoCA: Enabling Multi-Modality in Geospatial Location Encoders",
+     "url": "https://arxiv.org/abs/2610.32894",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.LG"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.LG"
      ],
-     "summary": "A live esports broadcast needs a director who chooses which camera goes on air and a caster who talks over that choice, every second and without knowing what comes next.",
-     "why": "Streaming video-language models enable real-time direction and commentary for live esports broadcasts.",
+     "summary": "Location encoders map geographic coordinates to high-dimensional descriptors through contrastive alignment with paired Earth Observation imagery.",
+     "why": "Enables multi-modality in geospatial location encoders using contrastive alignment with Earth Observation imagery.",
      "whySource": "llm",
-     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "publishedAt": "2026-10-23T00:00:00.000Z",
      "category": "research",
-     "score": 8.53
+     "score": 12.32
     }
    ]
   },
@@ -154,43 +159,9 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "aca7f6807e0e916d",
-     "title": "Eljot19/runic",
-     "url": "https://github.com/Eljot19/runic",
-     "sourceIds": [
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm"
-     ],
-     "summary": "Runic macOS Menu Bar App for AI Usage Cost and Token Tracking · HTML",
-     "why": "Tracking token usage and costs locally offers developers better visibility into daily AI operational expenditures.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-22T20:09:30.000Z",
-     "category": "releases",
-     "score": 6.94
-    },
-    {
-     "id": "928562eefa357a85",
-     "title": "Esterfourth/kosmos-agent-platform",
-     "url": "https://github.com/Esterfourth/kosmos-agent-platform",
-     "sourceIds": [
-      "gh-trending-agents"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents"
-     ],
-     "summary": "Kosmos: AI Agent Management Platform for Your Computer and Subscription · HTML",
-     "why": "Agent management platforms streamline the coordination of autonomous tools across local computing environments.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-22T20:09:27.000Z",
-     "category": "releases",
-     "score": 6.94
-    },
-    {
-     "id": "50d53d3d6cc120f4",
-     "title": "KhulekanisiyandaMchunu/llm-trading-arena",
-     "url": "https://github.com/KhulekanisiyandaMchunu/llm-trading-arena",
+     "id": "1aeaf11df659f22a",
+     "title": "Cattmonkey/ChaosIntelligence",
+     "url": "https://github.com/Cattmonkey/ChaosIntelligence",
      "sourceIds": [
       "gh-trending-agents",
       "gh-trending-llm"
@@ -199,12 +170,46 @@
       "GitHub new repos: ai-agents",
       "GitHub new repos: llm"
      ],
-     "summary": "Live trading arena for LLM agents: public reasoning, real market data, virtual capital · JavaScript",
-     "why": "Live trading arenas with public reasoning allow rigorous evaluation of agent performance using real market data.",
+     "summary": "把智能体当函数，把想法写成程序。Agent-native functional language with a CLI, Web IDE, goal-driven bots and live UI. Source-available; no AI training. · Python",
+     "why": "Offers an agent-native functional language with a CLI, Web IDE, goal-driven bots, and live UI.",
      "whySource": "llm",
-     "publishedAt": "2026-10-23T19:33:58.000Z",
+     "publishedAt": "2026-10-23T13:04:31.000Z",
+     "category": "releases",
+     "score": 7.67
+    },
+    {
+     "id": "1b58df640c2a30e9",
+     "title": "jadezane6634-ops/dsh-purge-flash",
+     "url": "https://github.com/jadezane6634-ops/dsh-purge-flash",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "DSH 破甲插件：token 级重试环 + 十片按需叶子（含邻近交付）+ 分级 prefill + 拒答阶梯 L0–L3 + finish_reason 四路分流 + 请求体级整形。零宿主补丁，188 项测试 / 56 条探针。 · JavaScript",
+     "why": "Provides token-level retry loops and routing features as a zero-host patch with extensive test coverage.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T08:59:56.000Z",
      "category": "releases",
      "score": 6.94
+    },
+    {
+     "id": "a4833e99bc183a02",
+     "title": "NerverDevs/nervecenter",
+     "url": "https://github.com/NerverDevs/nervecenter",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "new-api / sub2api 中转站账号管理中心：余额、API Key、用量、倍率、模型比价 | https://nvcenter.cc · TypeScript",
+     "why": "Acts as an account management center for API relay stations covering balances, keys, usage, and model pricing.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T15:07:06.000Z",
+     "category": "releases",
+     "score": 6.93
     }
    ]
   },
@@ -216,7 +221,44 @@
   {
    "key": "analysis",
    "title": "Analysis worth reading",
-   "entries": []
+   "entries": [
+    {
+     "id": "61a2b197e9945d6e",
+     "title": "ChinAI #379: “Chinese AI only makes trash TV?”",
+     "url": "https://chinai.substack.com/p/chinai-379-chinese-ai-can-only-make",
+     "sourceIds": [
+      "chinai"
+     ],
+     "sourceNames": [
+      "ChinAI"
+     ],
+     "summary": "Greetings from a world where…",
+     "why": "Explores commentary surrounding Chinese AI television content production and cultural perceptions.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T11:06:35.000Z",
+     "category": "blogs",
+     "score": 3.91,
+     "readMinutes": 8
+    },
+    {
+     "id": "0186c0f1dfec08d5",
+     "title": "Seam Cutter",
+     "url": "https://simonwillison.net/2026/Oct/25/seam-cutter/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Tool: Seam Cutter I built this weird and very specific cropping tool - it lets you create a horizontal or vertical cut across an image, then slide the two sides relative to each other. Effectively it lets you crop out a section in the middle of an image.",
+     "why": "Offers a specific cropping utility allowing users to slide image sides relative to a horizontal or vertical cut.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T15:10:19.000Z",
+     "category": "blogs",
+     "score": 2.67,
+     "readMinutes": 1
+    }
+   ]
   },
   {
    "key": "deep-read",
@@ -233,27 +275,29 @@
       "SemiAnalysis"
      ],
      "summary": "Trainium Best for Inference? But now good for Training too, Native Trainium PyTorch, High Quality CI, TorchTitan, GPU Impossible Profiler",
-     "why": "Amazon Trainium expanding into model training provides a compelling alternative infrastructure for foundational model development.",
+     "why": "Examines Amazon Trainium expanding its capabilities from inference to high-performance model training.",
      "whySource": "llm",
      "publishedAt": "2026-10-23T19:06:44.000Z",
      "category": "blogs",
-     "score": 2.38,
+     "score": 2,
      "readMinutes": 21
     }
    ]
   }
  ],
  "itemIds": [
-  "240888442444abd5",
-  "arxiv:2610.30932",
-  "a2637483f507afd7",
-  "edf1fccf0afb2aaf",
-  "arxiv:2610.27103",
-  "arxiv:2610.31569",
+  "arxiv:2610.32253",
+  "arxiv:2610.31931",
   "arxiv:2610.31734",
-  "aca7f6807e0e916d",
-  "928562eefa357a85",
-  "50d53d3d6cc120f4",
+  "arxiv:2610.32002",
+  "arxiv:2610.32770",
+  "arxiv:2610.32250",
+  "arxiv:2610.32894",
+  "1aeaf11df659f22a",
+  "1b58df640c2a30e9",
+  "a4833e99bc183a02",
+  "61a2b197e9945d6e",
+  "0186c0f1dfec08d5",
   "061da33d4fee97af"
  ],
  "deepReadId": "061da33d4fee97af",
