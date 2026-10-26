@@ -1,10 +1,10 @@
 {
  "date": "2026-10-26",
- "generatedAt": "2026-10-26T12:15:03.842Z",
- "wordCount": 784,
+ "generatedAt": "2026-10-26T22:17:47.740Z",
+ "wordCount": 736,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's key developments span agent evolution, novel model representations, streaming video-language models, and hardware infrastructure updates. First, RSIHub provides a composable framework for agent-evolution methods, helping researchers avoid rebuilding experimental machinery. Second, TWIG introduces tree-structured weights with inherited gates, representing neural network weights as paths of discrete decisions. Third, DirCast tackles live esports directing and commentary using a single streaming video-language model to handle unpredictable real-time broadcasts. Fourth, DraMaze implements a multi-agent pipeline with future-aware memory for microdrama script generation. Finally, analysis on Amazon's Trainium explores its expanding capabilities for model training alongside inference. Together, these releases and research papers offer new tools and paradigms for engineers and founders navigating architecture design, agent orchestration, and efficient hardware deployment.",
+  "text": "Today's developments showcase significant releases, academic collaborations, and agent frameworks across the artificial intelligence ecosystem. OpenAI introduced GPT-6.1 Terra to bring computer use capabilities to users, while also sharing scientific research model results on complex mathematical and physical conjectures with academic communities. In open-source and model releases, HuggingFaceBio introduced Carbon-X, a decoder-only language model trained jointly on DNA sequences and natural-language text. Additionally, research contributions feature RSIHub, a composable framework designed to streamline agent-evolution methods using execution feedback for prompts, skills, and tools. Finally, community discussions and analysis highlighted emerging data, security applications like CodeRabbit utilizing GPT-6.1 Sol, and new evaluation metrics, offering researchers and founders a comprehensive look at current scaling and deployment trends.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -12,6 +12,100 @@
   {
    "key": "must-know",
    "title": "Must know",
+   "entries": [
+    {
+     "id": "35e334c198740f74",
+     "title": "Introducing GPT-6.1 Terra",
+     "url": "https://openai.com/index/introducing-gpt-6-1-terra",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50248124",
+     "sourceIds": [
+      "openai",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "Bringing fast and capable computer use to everyone",
+     "why": "OpenAI introduced GPT-6.1 Terra to bring fast and capable computer use capabilities to everyone.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T00:00:00.000Z",
+     "category": "labs",
+     "score": 18.89,
+     "readMinutes": 1
+    },
+    {
+     "id": "27779e2e3a96ff05",
+     "title": "Concerning behavior from a popular open-weight AI model",
+     "url": "https://cohere.com/blog/concerning-behaviour-popular-open-weight-ai-model",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50246658",
+     "sourceIds": [
+      "hn-front",
+      "hn-top",
+      "reddit"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
+     ],
+     "summary": "",
+     "why": "Community discussions highlight concerning behavior observed from a popular open-weight artificial intelligence model.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T16:35:44.000Z",
+     "category": "news",
+     "score": 16.64
+    },
+    {
+     "id": "8eb6001a836a6e50",
+     "title": "Working with academic communities to build scientific understanding",
+     "url": "https://openai.com/index/building-scientific-understanding-with-academic-communities",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50251344",
+     "sourceIds": [
+      "openai",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "OpenAI shares model results on the Kakeya conjecture, Exponential Time Hypothesis, and quantum chromodynamics—and how researchers can verify and build on them.",
+     "why": "OpenAI shares model results on complex mathematical conjectures to help researchers verify and build upon them.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T00:00:00.000Z",
+     "category": "labs",
+     "score": 16.18,
+     "readMinutes": 1
+    },
+    {
+     "id": "aaef23617908e375",
+     "title": "Anthropic S-1",
+     "url": "https://www.sec.gov/Archives/edgar/data/2130357/000162828026067168/anthropicpbc-sx1.htm",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50242939",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "The public filing of the Anthropic S-1 attracts substantial community attention and discussion among founders.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T13:04:50.000Z",
+     "category": "news",
+     "score": 15.45
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
    "entries": [
     {
      "id": "arxiv:2610.32253",
@@ -26,11 +120,11 @@
       "arXiv cs.AI"
      ],
      "summary": "Agent-evolution methods use execution feedback to improve prompts, skills, tools, and orchestration, but their implementations often rebuild the same experimental machinery.",
-     "why": "Provides a composable framework that standardizes agent-evolution implementations and avoids redundant experimental machinery.",
+     "why": "RSIHub offers a composable framework to eliminate redundant experimental machinery in agent-evolution research methods.",
      "whySource": "llm",
      "publishedAt": "2026-10-23T00:00:00.000Z",
      "category": "research",
-     "score": 15.78
+     "score": 14.75
     },
     {
      "id": "arxiv:2610.31931",
@@ -45,11 +139,11 @@
       "arXiv cs.LG"
      ],
      "summary": "We introduce TWIG (Tree-structured Weights with Inherited Gates), a representation in which every weight of a neural network is the end of a path of small discrete decisions: a sign, a shift by a power of two, a zero gate, an index into a shared table.",
-     "why": "Represents neural network weights as paths of small discrete decisions to alter underlying architecture structures.",
+     "why": "TWIG represents every neural network weight as a path of small discrete decisions for novel architectures.",
      "whySource": "llm",
      "publishedAt": "2026-10-22T00:00:00.000Z",
      "category": "research",
-     "score": 14.82
+     "score": 13.87
     },
     {
      "id": "arxiv:2610.31734",
@@ -64,93 +158,11 @@
       "arXiv cs.CV"
      ],
      "summary": "A live esports broadcast needs a director who chooses which camera goes on air and a caster who talks over that choice, every second and without knowing what comes next.",
-     "why": "Directs and comments on live esports broadcasts in real time using a single streaming video-language model.",
+     "why": "DirCast demonstrates a single streaming video-language model managing live esports directing and commentary tasks.",
      "whySource": "llm",
      "publishedAt": "2026-10-22T00:00:00.000Z",
      "category": "research",
-     "score": 14.28
-    },
-    {
-     "id": "arxiv:2610.32002",
-     "title": "DraMaze: A Multi-Agent Pipeline with Future-Aware Memory for Diverse Microdrama Script Generation",
-     "url": "https://arxiv.org/abs/2610.32002",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "The rapid growth of microdramas has increased demand for high-quality script production. Long-form microdrama script generation with LLMs requires both diverse plot progression and long-range narrative coherence.",
-     "why": "Combines a multi-agent pipeline and future-aware memory to generate coherent long-form microdrama scripts.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-22T00:00:00.000Z",
-     "category": "research",
-     "score": 13.99
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
-    {
-     "id": "arxiv:2610.32770",
-     "title": "On-Policy Self-Training: Data-Free Self-Improvement in Large Language Models",
-     "url": "https://arxiv.org/abs/2610.32770",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.LG"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.LG"
-     ],
-     "summary": "On-policy self-distillation enables post-training foundation models without relying on stronger external teachers. However, existing approaches rely on ground-truth question-answer pairs, human-curated problem sets, or other supervised signals.",
-     "why": "Enables data-free self-improvement in foundation models via on-policy self-distillation without external teacher dependencies.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-23T00:00:00.000Z",
-     "category": "research",
-     "score": 13.49
-    },
-    {
-     "id": "arxiv:2610.32250",
-     "title": "Easy-3Dfy: Object-Level Geometric Composition for Single-Image 3D Scene Construction",
-     "url": "https://arxiv.org/abs/2610.32250",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Single-image 3D scene construction is a fundamental problem in 3D vision. Recent methods such as SAM-3Dfy enable end-to-end reconstruction of 3D assets and their scene layouts, but still struggle with fine-grained scene geometry and asset quality.",
-     "why": "Aims to improve fine-grained scene geometry and asset quality in single-image 3D scene construction.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-23T00:00:00.000Z",
-     "category": "research",
-     "score": 12.82
-    },
-    {
-     "id": "arxiv:2610.32894",
-     "title": "LoCA: Enabling Multi-Modality in Geospatial Location Encoders",
-     "url": "https://arxiv.org/abs/2610.32894",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.LG"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.LG"
-     ],
-     "summary": "Location encoders map geographic coordinates to high-dimensional descriptors through contrastive alignment with paired Earth Observation imagery.",
-     "why": "Enables multi-modality in geospatial location encoders using contrastive alignment with Earth Observation imagery.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-23T00:00:00.000Z",
-     "category": "research",
-     "score": 12.32
+     "score": 13.71
     }
    ]
   },
@@ -159,68 +171,148 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "1aeaf11df659f22a",
-     "title": "Cattmonkey/ChaosIntelligence",
-     "url": "https://github.com/Cattmonkey/ChaosIntelligence",
+     "id": "a4354fc53bb8471f",
+     "title": "HuggingFaceBio/Carbon-X (DNA understanding and generation, Qwen 3 finetune)",
+     "url": "https://huggingface.co/HuggingFaceBio/Carbon-X",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xcqbsn/huggingfacebiocarbonx_dna_understanding_and/",
      "sourceIds": [
-      "gh-trending-agents",
-      "gh-trending-llm"
+      "reddit",
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: ai-agents",
-      "GitHub new repos: llm"
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
      ],
-     "summary": "把智能体当函数，把想法写成程序。Agent-native functional language with a CLI, Web IDE, goal-driven bots and live UI. Source-available; no AI training. · Python",
-     "why": "Offers an agent-native functional language with a CLI, Web IDE, goal-driven bots, and live UI.",
+     "summary": "Carbon-X is a 14.8B-parameter decoder-only language model trained jointly on DNA sequences and natural-language text.",
+     "why": "Carbon-X is a parameter decoder-only language model trained jointly on DNA sequences and natural-language text.",
      "whySource": "llm",
-     "publishedAt": "2026-10-23T13:04:31.000Z",
+     "publishedAt": "2026-10-21T10:21:04.000Z",
      "category": "releases",
-     "score": 7.67
+     "score": 11.85
     },
     {
-     "id": "1b58df640c2a30e9",
-     "title": "jadezane6634-ops/dsh-purge-flash",
-     "url": "https://github.com/jadezane6634-ops/dsh-purge-flash",
+     "id": "73e1243414bd6b3f",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
      "sourceIds": [
-      "gh-trending-llm"
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: llm"
+      "HF trending models"
      ],
-     "summary": "DSH 破甲插件：token 级重试环 + 十片按需叶子（含邻近交付）+ 分级 prefill + 拒答阶梯 L0–L3 + finish_reason 四路分流 + 请求体级整形。零宿主补丁，188 项测试 / 56 条探针。 · JavaScript",
-     "why": "Provides token-level retry loops and routing features as a zero-host patch with extensive test coverage.",
+     "summary": "image-text-to-text · 2,118 likes · 1,687,633 downloads",
+     "why": "This complex model release provides developers with a heavily customized variant for specialized local deployments.",
      "whySource": "llm",
-     "publishedAt": "2026-10-25T08:59:56.000Z",
+     "publishedAt": "2026-09-01T07:01:09.000Z",
      "category": "releases",
-     "score": 6.94
+     "score": 9.52
     },
     {
-     "id": "a4833e99bc183a02",
-     "title": "NerverDevs/nervecenter",
-     "url": "https://github.com/NerverDevs/nervecenter",
+     "id": "96ce7073bf6cd6e5",
+     "title": "orcarouter/DeepSeek-V4.1-Flash-1017-abliterated-GGUF",
+     "url": "https://huggingface.co/orcarouter/DeepSeek-V4.1-Flash-1017-abliterated-GGUF",
      "sourceIds": [
-      "gh-trending-llm"
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: llm"
+      "HF trending models"
      ],
-     "summary": "new-api / sub2api 中转站账号管理中心：余额、API Key、用量、倍率、模型比价 | https://nvcenter.cc · TypeScript",
-     "why": "Acts as an account management center for API relay stations covering balances, keys, usage, and model pricing.",
+     "summary": "text-generation · gguf · 238 likes · 9,022 downloads",
+     "why": "This abliterated variant offers local deployment options for text-generation workloads using GGUF formats.",
      "whySource": "llm",
-     "publishedAt": "2026-10-23T15:07:06.000Z",
+     "publishedAt": "2026-10-22T04:06:52.000Z",
      "category": "releases",
-     "score": 6.93
+     "score": 7.95
     }
    ]
   },
   {
    "key": "labs",
    "title": "From the labs",
-   "entries": []
+   "entries": [
+    {
+     "id": "7d972df501d01ba1",
+     "title": "GPT-6.1 Sol helps CodeRabbit strengthen security across complex codebases",
+     "url": "https://openai.com/index/gpt-6-1-sol-coderabbit-code-security",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "CodeRabbit uses GPT-6.1 Sol to investigate security risks across complex codebases. Its security agent helps developers review findings and proposed fixes.",
+     "why": "CodeRabbit leverages GPT-6.1 Sol to investigate security risks and assist developers across complex codebases.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T13:45:00.000Z",
+     "category": "labs",
+     "score": 5.94,
+     "readMinutes": 1
+    },
+    {
+     "id": "27334100e818b985",
+     "title": "ChatGPT’s expanding world of work",
+     "url": "https://openai.com/index/chatgpt-expanding-world-of-work",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "Explore OpenAI Signals data on 165 work activities across nearly 100 countries, revealing how people use ChatGPT for work and how usage changes over time.",
+     "why": "OpenAI Signals data reveals how global workforce patterns and work activities evolve with ChatGPT usage.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T10:00:00.000Z",
+     "category": "labs",
+     "score": 5.52,
+     "readMinutes": 1
+    }
+   ]
   },
   {
    "key": "analysis",
    "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "68a3a72cda7cccff",
+     "title": "Import AI 478: Math for alignment; ProgramBench; and Mirendil shows what RSI means",
+     "url": "https://importai.substack.com/p/import-ai-478-math-for-alignment",
+     "sourceIds": [
+      "importai"
+     ],
+     "sourceNames": [
+      "Import AI"
+     ],
+     "summary": "What is “night” to a machine?",
+     "why": "Import AI examines math for alignment, ProgramBench, and recursive self-improvement implications for researchers.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T12:31:52.000Z",
+     "category": "blogs",
+     "score": 4.97,
+     "readMinutes": 14
+    },
+    {
+     "id": "beccc6cd931d912f",
+     "title": "Gemini 4 Argon: The Model and Safety Cards",
+     "url": "https://thezvi.substack.com/p/gemini-4-argon-the-model-and-safety",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Gemini 4’s model card is a compact 14 pages.",
+     "why": "The compact model and safety cards for Gemini 4 Argon provide concise technical and safety specifications.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T12:58:47.000Z",
+     "category": "blogs",
+     "score": 4.18,
+     "readMinutes": 56
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
    "entries": [
     {
      "id": "61a2b197e9945d6e",
@@ -233,74 +325,34 @@
       "ChinAI"
      ],
      "summary": "Greetings from a world where…",
-     "why": "Explores commentary surrounding Chinese AI television content production and cultural perceptions.",
+     "why": "ChinAI explores cultural perceptions and global outputs regarding Chinese artificial intelligence video generation.",
      "whySource": "llm",
      "publishedAt": "2026-10-26T11:06:35.000Z",
      "category": "blogs",
-     "score": 3.91,
+     "score": 3.22,
      "readMinutes": 8
-    },
-    {
-     "id": "0186c0f1dfec08d5",
-     "title": "Seam Cutter",
-     "url": "https://simonwillison.net/2026/Oct/25/seam-cutter/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "Tool: Seam Cutter I built this weird and very specific cropping tool - it lets you create a horizontal or vertical cut across an image, then slide the two sides relative to each other. Effectively it lets you crop out a section in the middle of an image.",
-     "why": "Offers a specific cropping utility allowing users to slide image sides relative to a horizontal or vertical cut.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-25T15:10:19.000Z",
-     "category": "blogs",
-     "score": 2.67,
-     "readMinutes": 1
-    }
-   ]
-  },
-  {
-   "key": "deep-read",
-   "title": "One deep read",
-   "entries": [
-    {
-     "id": "061da33d4fee97af",
-     "title": "Amazon’s Trainium Takes a Strike at the Training King",
-     "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at",
-     "sourceIds": [
-      "semianalysis"
-     ],
-     "sourceNames": [
-      "SemiAnalysis"
-     ],
-     "summary": "Trainium Best for Inference? But now good for Training too, Native Trainium PyTorch, High Quality CI, TorchTitan, GPU Impossible Profiler",
-     "why": "Examines Amazon Trainium expanding its capabilities from inference to high-performance model training.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-23T19:06:44.000Z",
-     "category": "blogs",
-     "score": 2,
-     "readMinutes": 21
     }
    ]
   }
  ],
  "itemIds": [
+  "35e334c198740f74",
+  "27779e2e3a96ff05",
+  "8eb6001a836a6e50",
+  "aaef23617908e375",
   "arxiv:2610.32253",
   "arxiv:2610.31931",
   "arxiv:2610.31734",
-  "arxiv:2610.32002",
-  "arxiv:2610.32770",
-  "arxiv:2610.32250",
-  "arxiv:2610.32894",
-  "1aeaf11df659f22a",
-  "1b58df640c2a30e9",
-  "a4833e99bc183a02",
-  "61a2b197e9945d6e",
-  "0186c0f1dfec08d5",
-  "061da33d4fee97af"
+  "a4354fc53bb8471f",
+  "73e1243414bd6b3f",
+  "96ce7073bf6cd6e5",
+  "7d972df501d01ba1",
+  "27334100e818b985",
+  "68a3a72cda7cccff",
+  "beccc6cd931d912f",
+  "61a2b197e9945d6e"
  ],
- "deepReadId": "061da33d4fee97af",
+ "deepReadId": "61a2b197e9945d6e",
  "llm": {
   "enabled": true,
   "ok": true
