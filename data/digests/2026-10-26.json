@@ -1,0 +1,264 @@
+{
+ "date": "2026-10-26",
+ "generatedAt": "2026-10-26T03:10:31.265Z",
+ "wordCount": 557,
+ "readingMinutes": 3,
+ "overview": {
+  "text": "Today's landscape highlights significant shifts across hardware, pricing, and agent capabilities. OpenAI and Anthropic have aggressively reduced their large language model prices by substantial margins, forcing a reevaluation of operational costs for developers. In hardware infrastructure, Cerebras has deployed trillion-parameter AI models, while Amazon's Trainium targets the training domain traditionally dominated by GPUs. Meanwhile, research and application sectors are advancing rapidly with tools like UserArena for benchmarking interactive shopping agents, Omni-Woodpecker addressing cross-modal hallucinations in audio-visual models, and new platforms such as the Runic macOS menu bar app for tracking token usage costs and the Kosmos AI agent management platform.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "240888442444abd5",
+     "title": "OpenAI and Anthropic cut their LLM prices by up to 80% within a few months. Why?",
+     "url": "https://minimaxir.com/2026/10/cheap-llms/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50236102",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Price cuts dramatically alter unit economics and deployment strategies for AI applications and infrastructure founders.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T21:11:31.000Z",
+     "category": "news",
+     "score": 12.95
+    },
+    {
+     "id": "arxiv:2610.30932",
+     "title": "UserArena: Benchmarking Interactive User Simulation for Long-Horizon Shopping Agents",
+     "url": "https://arxiv.org/abs/2610.30932",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Agentic recommendation pursues shopper goals through sequences of context-dependent decisions.",
+     "why": "Benchmarking interactive shopping agents is essential for evaluating long-horizon recommendation and decision-making capabilities.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "category": "research",
+     "score": 11.53
+    },
+    {
+     "id": "a2637483f507afd7",
+     "title": "Cerebras Deploys Trillion-Parameter AI Models",
+     "url": "https://www.cerebras.ai/blog/how-we-deploy-trillion-parameter-frontier-models-on-cerebras",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50227356",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Deploying trillion-parameter models on alternative hardware challenges traditional GPU dominance in large-scale machine learning.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T01:33:49.000Z",
+     "category": "news",
+     "score": 11.46
+    },
+    {
+     "id": "edf1fccf0afb2aaf",
+     "title": "Nikon photography contest winner loses title after scientists spot signs of AI",
+     "url": "https://www.techspot.com/news/114171-nikon-photography-contest-winner-loses-title-after-scientists.html",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50229827",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Detection challenges in photography highlight growing societal and verification concerns surrounding synthetic media.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T09:51:17.000Z",
+     "category": "news",
+     "score": 11.05
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2610.27103",
+     "title": "Omni-Woodpecker: Hallucination Correction via Evidence-Prior Rebalancing for Omni LLMs",
+     "url": "https://arxiv.org/abs/2610.27103",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Recent Omni LLMs (OLLMs) have demonstrated remarkable capabilities in joint audio-visual reasoning, yet cross-modal hallucinations remain a major challenge.",
+     "why": "Evidence-prior rebalancing provides a concrete method to mitigate cross-modal hallucinations in multi-modal LLMs.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-19T00:00:00.000Z",
+     "category": "research",
+     "score": 10.53
+    },
+    {
+     "id": "arxiv:2610.31569",
+     "title": "Echo: Coupled Action and Task Status Signal Denoising for Vision Language Action Models",
+     "url": "https://arxiv.org/abs/2610.31569",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Recognizing task completion and failure enables robots to stop upon success and initiate recovery or replanning after failure. Existing methods augment Vision Language Action (VLA) policies with task status signal prediction to support these execution decisions.",
+     "why": "Denoising action and task status signals helps vision language action models handle execution failures robustly.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "category": "research",
+     "score": 9.11
+    },
+    {
+     "id": "arxiv:2610.31734",
+     "title": "DirCast: Live Esports Directing and Commentary with a Single Streaming Video-Language Model",
+     "url": "https://arxiv.org/abs/2610.31734",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "A live esports broadcast needs a director who chooses which camera goes on air and a caster who talks over that choice, every second and without knowing what comes next.",
+     "why": "Streaming video-language models enable real-time direction and commentary for live esports broadcasts.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T00:00:00.000Z",
+     "category": "research",
+     "score": 8.53
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "aca7f6807e0e916d",
+     "title": "Eljot19/runic",
+     "url": "https://github.com/Eljot19/runic",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "Runic macOS Menu Bar App for AI Usage Cost and Token Tracking · HTML",
+     "why": "Tracking token usage and costs locally offers developers better visibility into daily AI operational expenditures.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T20:09:30.000Z",
+     "category": "releases",
+     "score": 6.94
+    },
+    {
+     "id": "928562eefa357a85",
+     "title": "Esterfourth/kosmos-agent-platform",
+     "url": "https://github.com/Esterfourth/kosmos-agent-platform",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "Kosmos: AI Agent Management Platform for Your Computer and Subscription · HTML",
+     "why": "Agent management platforms streamline the coordination of autonomous tools across local computing environments.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T20:09:27.000Z",
+     "category": "releases",
+     "score": 6.94
+    },
+    {
+     "id": "50d53d3d6cc120f4",
+     "title": "KhulekanisiyandaMchunu/llm-trading-arena",
+     "url": "https://github.com/KhulekanisiyandaMchunu/llm-trading-arena",
+     "sourceIds": [
+      "gh-trending-agents",
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents",
+      "GitHub new repos: llm"
+     ],
+     "summary": "Live trading arena for LLM agents: public reasoning, real market data, virtual capital · JavaScript",
+     "why": "Live trading arenas with public reasoning allow rigorous evaluation of agent performance using real market data.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T19:33:58.000Z",
+     "category": "releases",
+     "score": 6.94
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": []
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": []
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "061da33d4fee97af",
+     "title": "Amazon’s Trainium Takes a Strike at the Training King",
+     "url": "https://newsletter.semianalysis.com/p/amazons-trainium-takes-a-strike-at",
+     "sourceIds": [
+      "semianalysis"
+     ],
+     "sourceNames": [
+      "SemiAnalysis"
+     ],
+     "summary": "Trainium Best for Inference? But now good for Training too, Native Trainium PyTorch, High Quality CI, TorchTitan, GPU Impossible Profiler",
+     "why": "Amazon Trainium expanding into model training provides a compelling alternative infrastructure for foundational model development.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T19:06:44.000Z",
+     "category": "blogs",
+     "score": 2.38,
+     "readMinutes": 21
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "240888442444abd5",
+  "arxiv:2610.30932",
+  "a2637483f507afd7",
+  "edf1fccf0afb2aaf",
+  "arxiv:2610.27103",
+  "arxiv:2610.31569",
+  "arxiv:2610.31734",
+  "aca7f6807e0e916d",
+  "928562eefa357a85",
+  "50d53d3d6cc120f4",
+  "061da33d4fee97af"
+ ],
+ "deepReadId": "061da33d4fee97af",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
