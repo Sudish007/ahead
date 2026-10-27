@@ -1,10 +1,10 @@
 {
  "date": "2026-10-27",
- "generatedAt": "2026-10-27T11:36:12.631Z",
- "wordCount": 819,
+ "generatedAt": "2026-10-27T17:28:10.990Z",
+ "wordCount": 804,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's key developments highlight significant advancements in AI agents, reasoning models, video generation, and foundational releases. First, tool-use and agent reliability take center stage with Trajectory2Gym analyzing decision-grounded compositional interaction synthesis, and Trial by Trace benchmarking agent harnesses. Second, developers gain practical educational resources through a comprehensive video course on building reasoning models from the ground up using Python and PyTorch. Third, video generation moves forward with WorldCast enabling world-consistent character video generation with large-angle camera control, and World-in-Context advancing interactive video world modeling. Finally, the open-weights and model ecosystem expands notably with KRAFTON releasing Raon-1-mini-preview, a 30B-A4B Mixture-of-Experts language model trained from scratch, alongside major drops like Qwen/Qwen3.8-27B and Lightricks/LTX-2.5, providing researchers and engineers with powerful new assets for local deployment, multimodal tasks, and advanced video workflows.",
+  "text": "Today's developments showcase critical advances across agent reliability, world modeling, and foundational releases. In agent research, Trajectory2Gym re-evaluates tool-use supervision by addressing hidden multi-step dependencies, while Trial by Trace benchmarks agent harnesses to improve failure attribution. In simulation and modeling, Google DeepMind introduced Genie 4 for real-time world simulation, and KRAFTON released Raon-1-mini-preview, a Mixture-of-Experts language model built from scratch. Additionally, developers gained access to comprehensive educational content via a full video course on building reasoning models from the ground up, covering inference-time scaling and reinforcement learning using Python and PyTorch. These updates collectively emphasize a strong industry focus on rigorous evaluation, robust harness design, and advanced architectural scaling for both researchers and practitioners navigating modern AI systems.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -26,11 +26,34 @@
       "arXiv cs.CL"
      ],
      "summary": "Successful tool-use trajectories are not necessarily useful supervision. Even successful interactions may underrepresent multi-step dependencies or contain actions that are unjustified by the information visible to the agent at decision time.",
-     "why": "Critiques naive tool-use supervision by showing successful trajectories often underrepresent multi-step dependencies.",
+     "why": "It highlights why successful tool-use trajectories require better supervision to capture hidden multi-step dependencies accurately.",
      "whySource": "llm",
      "publishedAt": "2026-10-24T00:00:00.000Z",
      "category": "research",
-     "score": 18.89
+     "score": 18.54
+    },
+    {
+     "id": "e960e8891f7d7ad8",
+     "title": "Genie 4: A new generation of world simulation",
+     "url": "https://deepmind.google/blog/genie-4-a-new-generation-of-world-simulation/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50261319",
+     "sourceIds": [
+      "deepmind",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Google DeepMind",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "Genie 4: our new world model unlocking unprecedented realism in real-time simulation.",
+     "why": "It delivers an unprecedented level of realism for real-time simulation using a new world model.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T16:01:38.000Z",
+     "category": "labs",
+     "score": 18.23,
+     "readMinutes": 1
     },
     {
      "id": "arxiv:2610.32285",
@@ -45,11 +68,11 @@
       "arXiv cs.AI"
      ],
      "summary": "LLM agents are increasingly used to solve real-world problems, and their effectiveness depends on both the underlying models and the harnesses that support their operation.",
-     "why": "Provides a vital benchmark for evaluating AI agent harnesses regarding reliability and failure attribution.",
+     "why": "It provides a crucial benchmark for evaluating AI agent harnesses to improve reliability and failure attribution.",
      "whySource": "llm",
      "publishedAt": "2026-10-23T00:00:00.000Z",
      "category": "research",
-     "score": 17.53
+     "score": 17.26
     },
     {
      "id": "da8785cc5779f5c9",
@@ -67,13 +90,19 @@
       "Hacker News"
      ],
      "summary": "Over 11 hours of coding videos on evaluation, inference-time scaling, reinforcement learning, and distillation, with Python and PyTorch.",
-     "why": "Offers extensive practical coding guidance on inference-time scaling, reinforcement learning, and distillation.",
+     "why": "It offers practical coding videos on reasoning models, inference-time scaling, and reinforcement learning.",
      "whySource": "llm",
      "publishedAt": "2026-10-24T11:14:32.000Z",
      "category": "blogs",
-     "score": 16.43,
+     "score": 15.99,
      "readMinutes": 15
-    },
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
     {
      "id": "arxiv:2610.33135",
      "title": "WorldCast: World-Consistent Character Video Generation with Large-Angle Camera Control",
@@ -87,18 +116,31 @@
       "arXiv cs.CV"
      ],
      "summary": "Precise camera control is essential for cinematic character video generation, yet existing methods struggle to follow large-angle trajectories with combined rotation, translation, and radius variation from arbitrary initial azimuths.",
-     "why": "Solves complex camera trajectory challenges for cinematic character video generation with large-angle control.",
+     "why": "It enables cinematic character video generation with large-angle camera control and world consistency.",
      "whySource": "llm",
      "publishedAt": "2026-10-23T00:00:00.000Z",
      "category": "research",
-     "score": 16.3
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
+     "score": 15.6
+    },
+    {
+     "id": "arxiv:2610.33413",
+     "title": "AV-FABLE: Audio-Visual Manipulation Forensics in Long-Form Videos",
+     "url": "https://arxiv.org/abs/2610.33413",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Localized AI manipulations in long-form videos often affect brief events within otherwise authentic content, making video-level classification insufficient for forensic analysis.",
+     "why": "It addresses localized AI manipulation forensics in long-form videos where standard classification falls short.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T00:00:00.000Z",
+     "category": "research",
+     "score": 15.22
+    },
     {
      "id": "arxiv:2610.33512",
      "title": "Eat Your Precision: Precision Objective Mitigates Reward Hacking in Rubric-based RL",
@@ -112,49 +154,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Rubric-based rewards enable effective reinforcement learning on non-verifiable tasks. However, because these rewards are typically defined as a weighted measure of rubric coverage, models are trained primarily to maximize a recall objective.",
-     "why": "Addresses the recall bias in rubric-based reinforcement learning by introducing a precision objective.",
+     "why": "It proposes a precision objective to mitigate reward hacking during rubric-based reinforcement learning.",
      "whySource": "llm",
      "publishedAt": "2026-10-24T00:00:00.000Z",
      "category": "research",
-     "score": 15.43
-    },
-    {
-     "id": "arxiv:2610.33169",
-     "title": "World-in-Context: Interactive Video World Modeling with In-Context Conditioning",
-     "url": "https://arxiv.org/abs/2610.33169",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Interactive video world models require coordinated control over viewing perspectives, character actions, and camera motion.",
-     "why": "Enables coordinated control over viewing perspectives and camera motion in interactive video world models.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-23T00:00:00.000Z",
-     "category": "research",
-     "score": 15.16
-    },
-    {
-     "id": "arxiv:2610.33472",
-     "title": "Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement",
-     "url": "https://arxiv.org/abs/2610.33472",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Learning visual design is essential for prompt enhancement (PE) to turn underspecified user requests into coherent visual specifications for text-to-image (T2I) generation.",
-     "why": "Enhances text-to-image prompt generation by teaching models visual design for coherent specifications.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-24T00:00:00.000Z",
-     "category": "research",
-     "score": 15.08
+     "score": 14.98
     }
    ]
   },
@@ -162,6 +166,26 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
+    {
+     "id": "23f9cacadf78880c",
+     "title": "baidu/Unlimited-OCR-2 · Hugging Face",
+     "url": "https://huggingface.co/baidu/Unlimited-OCR-2",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xgnbtq/baiduunlimitedocr2_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "Release [2026/10/27] 🚀 We release Unlimited OCR 2, achieving unlimited-horizon parsing with SR-SWA.",
+     "why": "It introduces unlimited-horizon parsing capabilities using SR-SWA for advanced document processing.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T03:57:46.000Z",
+     "category": "releases",
+     "score": 11.83
+    },
     {
      "id": "10a77ad2f6863b29",
      "title": "KRAFTON/Raon-1-mini-preview · Hugging Face",
@@ -176,11 +200,11 @@
       "HF trending models"
      ],
      "summary": "Raon-1 mini is a 30B-A4B Mixture-of-Experts (MoE) language model, designed and trained from scratch by KRAFTON AI. It demonstrates strong capabilities in Korean conversation and agentic tasks.",
-     "why": "Introduces a novel 30B-A4B Mixture-of-Experts model trained from scratch with strong Korean and agentic capabilities.",
+     "why": "It provides a new Mixture-of-Experts language model trained from scratch for Korean conversation and agentic tasks.",
      "whySource": "llm",
      "publishedAt": "2026-10-21T00:14:48.000Z",
      "category": "releases",
-     "score": 11.83
+     "score": 11.41
     },
     {
      "id": "ca26bca182f697df",
@@ -193,28 +217,11 @@
       "HF trending models"
      ],
      "summary": "image-text-to-text · transformers · 18,499 likes · 7,522,728 downloads",
-     "why": "Delivers a heavily downloaded image-text-to-text model from the Qwen ecosystem for multimodal pipelines.",
+     "why": "It delivers a popular image-text-to-text model variant with extensive community downloads and usage.",
      "whySource": "llm",
      "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 11.09
-    },
-    {
-     "id": "92c1824269f45469",
-     "title": "Lightricks/LTX-2.5",
-     "url": "https://huggingface.co/Lightricks/LTX-2.5",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "image-to-video · diffusion-single-file · 9,506 likes · 2,163,739 downloads",
-     "why": "Provides developers with an established open single-file diffusion model for image-to-video generation tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-07-23T07:55:24.000Z",
-     "category": "releases",
-     "score": 10.61
+     "score": 10.66
     }
    ]
   },
@@ -223,40 +230,39 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "a9c488820a62ac4a",
-     "title": "Greptile takes bug detection beyond code review with GPT-6 Astra",
-     "url": "https://openai.com/index/greptile-code-review-codex-astra",
+     "id": "c417f8e3d39d0b89",
+     "title": "OpenAI expands partnership with Oracle to bring its apps to ChatGPT",
+     "url": "https://openai.com/index/oracle-apps-in-chatgpt",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "How Greptile uses GPT-6 Astra to test user workflows, Daybreak to strengthen security, and Codex to reduce rework.",
-     "why": "Demonstrates advanced enterprise bug detection and workflow testing using cutting-edge OpenAI models.",
+     "summary": "OpenAI and Oracle are expanding their partnership to bring business applications and AI agents into ChatGPT and power new Oracle offerings.",
+     "why": "It expands enterprise integration by bringing business applications and AI agents directly into ChatGPT.",
      "whySource": "llm",
-     "publishedAt": "2026-10-26T22:00:00.000Z",
+     "publishedAt": "2026-10-27T07:00:00.000Z",
      "category": "labs",
-     "score": 5.39,
+     "score": 5.72,
      "readMinutes": 1
     },
     {
-     "id": "7e73eebe3e909303",
-     "title": "How Fanatics and OpenAI streamline the fan experience",
-     "url": "https://openai.com/index/fanatics-streamline-fan-experience",
+     "id": "1c5b51464767c2ad",
+     "title": "Build specialized multimodal models with LFM3",
+     "url": "https://huggingface.co/blog/LiquidAI/lfm3",
      "sourceIds": [
-      "openai"
+      "hf-blog"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Hugging Face Blog"
      ],
-     "summary": "Fanatics uses OpenAI to help fans complete their game-day outfits with Shop the Look. Testing across roughly 30,000 MLB products showed 10% higher engagement.",
-     "why": "Showcases quantifiable user engagement improvements in retail environments through integrated OpenAI features.",
+     "summary": "",
+     "why": "It enables developers to build specialized multimodal models effectively using new architectural tooling.",
      "whySource": "llm",
-     "publishedAt": "2026-10-26T07:00:00.000Z",
+     "publishedAt": "2026-10-27T17:16:52.000Z",
      "category": "labs",
-     "score": 4.04,
-     "readMinutes": 1
+     "score": 4.98
     }
    ]
   },
@@ -265,40 +271,40 @@
    "title": "Analysis worth reading",
    "entries": [
     {
-     "id": "3e66020cfa4cc99c",
-     "title": "We tried to automate Epoch",
-     "url": "https://epochai.substack.com/p/can-ai-automate-epoch",
+     "id": "f3da086cf64ca157",
+     "title": "Coding From the Himalayas With an Offline AI Agent",
+     "url": "https://latent.space/p/offline-coding/",
      "sourceIds": [
-      "epoch-gradient-updates"
+      "latentspace"
      ],
      "sourceNames": [
-      "Epoch AI Gradient Updates"
+      "Latent Space"
      ],
-     "summary": "Top models complete about two-thirds of our rubric on real work tasks.",
-     "why": "Provides empirical baseline data on how top models perform against rigorous real-world work rubrics.",
+     "summary": "How to set up and run an offline coding agent using OpenCode, Ollama and Qwen.",
+     "why": "It demonstrates practical offline coding agent deployment in remote settings using local open-source tools.",
      "whySource": "llm",
-     "publishedAt": "2026-10-26T16:33:24.000Z",
+     "publishedAt": "2026-10-27T14:41:25.000Z",
      "category": "blogs",
-     "score": 3.46,
-     "readMinutes": 4
+     "score": 4.74,
+     "readMinutes": 13
     },
     {
-     "id": "670bdc25a85edb18",
-     "title": "GPT-6.1 Terra",
-     "url": "https://simonwillison.net/2026/Oct/26/gpt-61-terra/",
+     "id": "784541c0ec7d43db",
+     "title": "Anthropic Versus Anthropic",
+     "url": "https://thezvi.substack.com/p/anthropic-versus-anthropic",
      "sourceIds": [
-      "simonw"
+      "zvi"
      ],
      "sourceNames": [
-      "Simon Willison"
+      "Don't Worry About the Vase"
      ],
-     "summary": "GPT-6.1 Terra It's always interesting to note which aspects of a new model are emphasized in the release announcement.",
-     "why": "Offers expert commentary on the strategic positioning and feature emphases of newly released frontier models.",
+     "summary": "Anthropic is a frustrating company.",
+     "why": "It offers critical industry perspective on the complexities and strategic positioning of Anthropic as an organization.",
      "whySource": "llm",
-     "publishedAt": "2026-10-26T23:53:07.000Z",
+     "publishedAt": "2026-10-27T12:49:20.000Z",
      "category": "blogs",
-     "score": 3.19,
-     "readMinutes": 3
+     "score": 4.57,
+     "readMinutes": 46
     }
    ]
   },
@@ -317,11 +323,11 @@
       "SemiAnalysis"
      ],
      "summary": "Trainium Best for Inference? But now good for Training too, Native Trainium PyTorch, High Quality CI, TorchTitan, GPU Impossible Profiler",
-     "why": "Analyzes hardware shifts in model training architectures and the evolving competitive landscape for accelerators.",
+     "why": "It evaluates Amazon's Trainium capabilities for native PyTorch training and competitive AI chip performance.",
      "whySource": "llm",
      "publishedAt": "2026-10-23T19:06:44.000Z",
      "category": "blogs",
-     "score": 1.27,
+     "score": 1.14,
      "readMinutes": 21
     }
    ]
@@ -329,19 +335,19 @@
  ],
  "itemIds": [
   "arxiv:2610.33568",
+  "e960e8891f7d7ad8",
   "arxiv:2610.32285",
   "da8785cc5779f5c9",
   "arxiv:2610.33135",
+  "arxiv:2610.33413",
   "arxiv:2610.33512",
-  "arxiv:2610.33169",
-  "arxiv:2610.33472",
+  "23f9cacadf78880c",
   "10a77ad2f6863b29",
   "ca26bca182f697df",
-  "92c1824269f45469",
-  "a9c488820a62ac4a",
-  "7e73eebe3e909303",
-  "3e66020cfa4cc99c",
-  "670bdc25a85edb18",
+  "c417f8e3d39d0b89",
+  "1c5b51464767c2ad",
+  "f3da086cf64ca157",
+  "784541c0ec7d43db",
   "061da33d4fee97af"
  ],
  "deepReadId": "061da33d4fee97af",
