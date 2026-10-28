@@ -1,10 +1,10 @@
 {
  "date": "2026-10-28",
- "generatedAt": "2026-10-28T12:06:27.329Z",
- "wordCount": 808,
+ "generatedAt": "2026-10-28T22:10:52.205Z",
+ "wordCount": 737,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's key developments highlight progress across agentic self-improvement, multimodal architectures, and local deployment options. Researchers introduced capability-driven recursive self-improvement frameworks for multimodal agents alongside studies exploring human feedback loops in autonomous post-training. In interactive media and generation, new paradigms emerged for free-form interactive world generation and unified local video stylization. Meanwhile, the open release ecosystem expanded with specialized models like LiquidAI/LFM3-1.7B and OvisOCR3, offering new capabilities for local applications and document parsing tasks. In infrastructure, optimization techniques for Mixture of Experts inference on NVIDIA hardware advanced throughput for large deployments. Finally, enterprise adoption continued to grow as partnerships brought Claude to government agencies, signaling broader deployment integration.",
+  "text": "Today's developments showcase significant progress across multimodal agents, open model releases, and infrastructure optimization. Key highlights include capability-driven recursive self-improvement for multimodal agents through human-guided co-evolution, and free-form interactive world generation models that preserve relevant history and action consequences. In speech and language infrastructure, Nvidia released Nvidia Nemotron 3.5 Transcribe as an open Automatic Speech Recognition model supporting forty languages, alongside Nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB. Other notable releases include LiquidAI launching LiquidAI/LFM3-1.7B built on a new tri-hybrid architecture for local agents, and Lightricks introducing Lightricks/LTX-2.5 for image-to-video diffusion tasks. Additionally, new technical reports detail advancements such as OvisOCR3 for unified document parsing and OCR tasks, and optimization techniques for mixture-of-experts inference on hardware platforms.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -26,11 +26,11 @@
       "arXiv cs.AI"
      ],
      "summary": "Multimodal intelligence can be viewed as human-guided co-evolution between worlds and agents through interaction.",
-     "why": "Advances multimodal agent capabilities through capability-driven recursive self-improvement and human-guided co-evolution.",
+     "why": "Advances multimodal agents through capability-driven recursive self-improvement and human-guided co-evolution.",
      "whySource": "llm",
      "publishedAt": "2026-10-26T00:00:00.000Z",
      "category": "research",
-     "score": 18.09
+     "score": 17.92
     },
     {
      "id": "arxiv:2610.36729",
@@ -45,12 +45,60 @@
       "arXiv cs.CV"
      ],
      "summary": "Interactive world generation requires models to follow successive commands while preserving relevant history and action consequences.",
-     "why": "Enables interactive world generation by following successive commands while preserving relevant history.",
+     "why": "Enables interactive world generation by following successive commands while preserving action history.",
      "whySource": "llm",
      "publishedAt": "2026-10-27T00:00:00.000Z",
      "category": "research",
-     "score": 17.52
+     "score": 16.35
     },
+    {
+     "id": "ec733f799e1aaee3",
+     "title": "Nvidia Nemotron 3.5 Transcribe: open ASR for 40 languages",
+     "url": "https://huggingface.co/blog/nvidia/nemotron-transcribe-granary",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50275128",
+     "sourceIds": [
+      "hn-front",
+      "hf-blog",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hugging Face Blog",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Provides open Automatic Speech Recognition covering forty languages for diverse applications.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T14:58:17.000Z",
+     "category": "labs",
+     "score": 14.83
+    },
+    {
+     "id": "a92d7b7ef0e2da4d",
+     "title": "Gemini 4 Carbon",
+     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-carbon/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50276792",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Represents major discussions regarding Gemini releases within the technical community.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T17:01:23.000Z",
+     "category": "news",
+     "score": 14.74
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
     {
      "id": "arxiv:2610.36456",
      "title": "LociArt: A Unified Paradigm for Free-Style Local Video Stylization",
@@ -64,12 +112,117 @@
       "arXiv cs.CV"
      ],
      "summary": "Video stylization typically transforms entire scenes, while local artistic editing requires precise region--style association, spatial control, and temporal consistency.",
-     "why": "Provides precise region-style association and temporal consistency for free-style local video stylization.",
+     "why": "Introduces precise regional style association and temporal consistency for local video stylization.",
      "whySource": "llm",
      "publishedAt": "2026-10-27T00:00:00.000Z",
      "category": "research",
-     "score": 15.7
+     "score": 14.54
     },
+    {
+     "id": "arxiv:2610.33066",
+     "title": "OvisOCR3 Technical Report",
+     "url": "https://arxiv.org/abs/2610.33066",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "We introduce OvisOCR3, a 0.8B model for a broad range of OCR-related tasks. OvisOCR3 unifies document parsing, general OCR, key information extraction (KIE), document figure captioning, and cross-page table reconstruction in a single model.",
+     "why": "Unifies document parsing, OCR, and table reconstruction into a single compact model.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-20T00:00:00.000Z",
+     "category": "research",
+     "score": 14.08
+    },
+    {
+     "id": "arxiv:2610.34283",
+     "title": "ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence",
+     "url": "https://arxiv.org/abs/2610.34283",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Training a spatial VLM to answer which side an object lies on does not require it to preserve the metric displacement that determines that answer, while supervision for a distance estimate may leave categorical relations largely unconstrained.",
+     "why": "Addresses streaming spatial intelligence limitations regarding metric displacement versus categorical relations.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T00:00:00.000Z",
+     "category": "research",
+     "score": 13.65
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "be21ba74d2567659",
+     "title": "nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB · Hugging Face",
+     "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Bolt-E4B-4GB",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xdiecx/nvidianvidianemotron35bolte4b4gb_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "NVIDIA-Nemotron-3.5-Bolt-E4B-4GB is a small language model (SLM) further post-trained from Gemma-4-E4B-it by NVIDIA.",
+     "why": "Delivers a new small language model post-trained from existing foundation models.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-05T04:26:43.000Z",
+     "category": "releases",
+     "score": 11.87
+    },
+    {
+     "id": "8e0b9acadf5d4ff9",
+     "title": "LiquidAI/LFM3-1.7B · Hugging Face",
+     "url": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xgy8s3/liquidailfm317b_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF from liquidAI: LFM3-1.7B is a text model for local agents and specialized applications, based on our new tri-hybrid architecture.",
+     "why": "Offers a text model utilizing a tri-hybrid architecture tailored for local agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T21:35:42.000Z",
+     "category": "releases",
+     "score": 11.09
+    },
+    {
+     "id": "92c1824269f45469",
+     "title": "Lightricks/LTX-2.5",
+     "url": "https://huggingface.co/Lightricks/LTX-2.5",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-to-video · diffusion-single-file · 9,506 likes · 2,163,739 downloads",
+     "why": "Provides image-to-video diffusion capabilities with extensive community downloads and likes.",
+     "whySource": "llm",
+     "publishedAt": "2026-07-23T07:55:24.000Z",
+     "category": "releases",
+     "score": 8.68
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
     {
      "id": "86f3cc373bd875ee",
      "title": "Expanding our partnership with GSA to bring Claude to all levels of government",
@@ -86,141 +239,12 @@
       "Hacker News"
      ],
      "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
-     "why": "Expands Claude availability across all levels of government through a partnership with GSA.",
+     "why": "Expands government partnerships to deploy reliable and steerable AI systems widely.",
      "whySource": "llm",
      "publishedAt": "2026-10-27T00:00:00.000Z",
      "category": "labs",
-     "score": 15.4
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
-    {
-     "id": "arxiv:2610.33066",
-     "title": "OvisOCR3 Technical Report",
-     "url": "https://arxiv.org/abs/2610.33066",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "We introduce OvisOCR3, a 0.8B model for a broad range of OCR-related tasks. OvisOCR3 unifies document parsing, general OCR, key information extraction (KIE), document figure captioning, and cross-page table reconstruction in a single model.",
-     "why": "Unifies document parsing, OCR, key information extraction, and table reconstruction in a compact model.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-20T00:00:00.000Z",
-     "category": "research",
-     "score": 15.19
+     "score": 14.43
     },
-    {
-     "id": "arxiv:2610.33624",
-     "title": "RSI Arena: Towards Recursive Self-Improvement with Human Feedback",
-     "url": "https://arxiv.org/abs/2610.33624",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "Can AI agents autonomously train useful language models and improve them using feedback from users? We introduce RSI Arena, a two-stage study of autonomous post-training as a step toward recursive self-improvement.",
-     "why": "Investigates autonomous post-training and recursive self-improvement using human feedback for language models.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-24T00:00:00.000Z",
-     "category": "research",
-     "score": 14.42
-    },
-    {
-     "id": "arxiv:2610.36269",
-     "title": "Cross-modal Steering Vectors Exist Across Both Image and Text Generation",
-     "url": "https://arxiv.org/abs/2610.36269",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Are concepts and mechanisms unified across modalities in current AI models, or instead implemented separately for each one?",
-     "why": "Explores whether concepts and mechanisms are unified or implemented separately across image and text generation.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-26T00:00:00.000Z",
-     "category": "research",
-     "score": 14.01
-    }
-   ]
-  },
-  {
-   "key": "releases",
-   "title": "Releases & tools",
-   "entries": [
-    {
-     "id": "8e0b9acadf5d4ff9",
-     "title": "LiquidAI/LFM3-1.7B · Hugging Face",
-     "url": "https://huggingface.co/LiquidAI/LFM3-1.7B",
-     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xgy8s3/liquidailfm317b_hugging_face/",
-     "sourceIds": [
-      "reddit",
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "Reddit r/LocalLLaMA + r/MachineLearning",
-      "HF trending models"
-     ],
-     "summary": "https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF from liquidAI: LFM3-1.7B is a text model for local agents and specialized applications, based on our new tri-hybrid architecture.",
-     "why": "Introduces a tri-hybrid architecture text model tailored for local agents and specialized applications.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-23T21:35:42.000Z",
-     "category": "releases",
-     "score": 11.48
-    },
-    {
-     "id": "92c1824269f45469",
-     "title": "Lightricks/LTX-2.5",
-     "url": "https://huggingface.co/Lightricks/LTX-2.5",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "image-to-video · diffusion-single-file · 9,506 likes · 2,163,739 downloads",
-     "why": "Offers image-to-video capabilities with extensive community downloads and usage on Hugging Face.",
-     "whySource": "llm",
-     "publishedAt": "2026-07-23T07:55:24.000Z",
-     "category": "releases",
-     "score": 9.11
-    },
-    {
-     "id": "afc305b6db5c414f",
-     "title": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
-     "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "text-to-image · gguf · 5,141 likes · 2,201,569 downloads",
-     "why": "Provides an uncensored quantized text-to-image model variant for community experimentation and deployment.",
-     "whySource": "llm",
-     "publishedAt": "2026-09-20T15:51:13.000Z",
-     "category": "releases",
-     "score": 8.67
-    }
-   ]
-  },
-  {
-   "key": "labs",
-   "title": "From the labs",
-   "entries": [
     {
      "id": "b836eb939c37ffa5",
      "title": "3 Ways to Boost MoE Inference on NVIDIA DGX Spark",
@@ -235,29 +259,11 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "Optimization 1: Humming MXFP4 MoE backend Optimization 2: Online FP8 LM head quantization Optimization 3: MTP speculative decoding with NEXTN Configuration TPOT Decode throughput Relative to baseline Baseline 27.71 ms 36.09 tok/s — + Humming MoE backend 25.35 ms 39.45 tok/s…",
-     "why": "Optimizes Mixture of Experts inference performance on NVIDIA DGX Spark hardware configurations.",
+     "why": "Optimizes mixture-of-experts inference performance using specialized hardware acceleration techniques.",
      "whySource": "llm",
      "publishedAt": "2026-10-27T15:00:00.000Z",
      "category": "labs",
-     "score": 7.41,
-     "readMinutes": 1
-    },
-    {
-     "id": "67c6b18b0a76451d",
-     "title": "Legora is building the agentic operating system for legal work",
-     "url": "https://openai.com/index/legora-agentic-operating-system-for-legal-work",
-     "sourceIds": [
-      "openai"
-     ],
-     "sourceNames": [
-      "OpenAI"
-     ],
-     "summary": "See how Legora uses OpenAI models, ChatGPT, and Codex to accelerate legal workflows, expand contract analysis, and free lawyers to focus on higher-value work.",
-     "why": "Accelerates legal workflows and contract analysis using OpenAI models and ChatGPT integrations.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-28T09:30:00.000Z",
-     "category": "labs",
-     "score": 6.66,
+     "score": 6.81,
      "readMinutes": 1
     }
    ]
@@ -267,39 +273,39 @@
    "title": "Analysis worth reading",
    "entries": [
     {
-     "id": "784541c0ec7d43db",
-     "title": "Anthropic Versus Anthropic",
-     "url": "https://thezvi.substack.com/p/anthropic-versus-anthropic",
+     "id": "b3879531c686967a",
+     "title": "Artificial Analysis v5 and the benchmarker's dilemma",
+     "url": "https://www.interconnects.ai/p/artificial-analysis-v5-and-the-benchmarkers",
      "sourceIds": [
-      "zvi"
+      "interconnects"
      ],
      "sourceNames": [
-      "Don't Worry About the Vase"
+      "Interconnects"
      ],
-     "summary": "Anthropic is a frustrating company.",
-     "why": "Examines strategic and operational complexities within Anthropic as an AI safety organization.",
+     "summary": "A sort of review of the benchmarking industry and what's missing.",
+     "why": "Critically examines the current state of benchmarking methodologies and industry practices.",
      "whySource": "llm",
-     "publishedAt": "2026-10-27T12:49:20.000Z",
+     "publishedAt": "2026-10-28T12:58:39.000Z",
      "category": "blogs",
-     "score": 3.19,
-     "readMinutes": 46
+     "score": 5.86,
+     "readMinutes": 11
     },
     {
-     "id": "eb13f93c63b56cbf",
-     "title": "Notes on “We’re in Triage Mode for AI Safety” by Miles Brundage",
-     "url": "https://www.alignmentforum.org/posts/BFyNkWgxucqy6Wcee/notes-on-we-re-in-triage-mode-for-ai-safety-by-miles",
+     "id": "35c84e950b280566",
+     "title": "Can Frontier Models See Past a Decoy? Elorian Tests Visual Reasoning",
+     "url": "https://latent.space/p/elorian/",
      "sourceIds": [
-      "alignmentforum"
+      "latentspace"
      ],
      "sourceNames": [
-      "Alignment Forum"
+      "Latent Space"
      ],
-     "summary": "This reading was previously included Day 2 of the BlueDot Governance course. In the newest version of the BlueDot Governance course, this reading is now optional.",
-     "why": "Discusses triage mode for AI safety in the context of recent governance course updates.",
+     "summary": "A new decoy counting benchmark exposes a gap between seeing and reasoning. Elorian’s Glimpse tries to bridge it by thinking with images.",
+     "why": "Exposes gaps in visual reasoning through decoy benchmarks and image-based thinking approaches.",
      "whySource": "llm",
-     "publishedAt": "2026-10-27T19:11:32.000Z",
+     "publishedAt": "2026-10-28T22:10:52.205Z",
      "category": "blogs",
-     "score": 2.89,
+     "score": 5,
      "readMinutes": 8
     }
    ]
@@ -309,22 +315,22 @@
    "title": "One deep read",
    "entries": [
     {
-     "id": "bd20aadf9d5d1453",
-     "title": "Setting the Scene (Public v1; October 25)",
-     "url": "https://www.alignmentforum.org/posts/dmYP7DS3ERyXGAYe6/setting-the-scene-public-v1-october-25",
+     "id": "ee40d2d91847abd4",
+     "title": "Anthropic Files Its S-1",
+     "url": "https://thezvi.substack.com/p/anthropic-files-its-s-1",
      "sourceIds": [
-      "alignmentforum"
+      "zvi"
      ],
      "sourceNames": [
-      "Alignment Forum"
+      "Don't Worry About the Vase"
      ],
-     "summary": "Context: I created this to share before the start of courses I facilitate to provide a refresher on recent events, but also as a hook to draw students into engaging with some of ideas we think about and debate in AI safety early.",
-     "why": "Provides a refresher on recent events to draw students into AI safety debates.",
+     "summary": "The full text is finally here, so we are giving it the full RTFB of model card treatment.",
+     "why": "Analyzes regulatory and business metrics from recent public filings.",
      "whySource": "llm",
-     "publishedAt": "2026-10-25T07:52:23.000Z",
+     "publishedAt": "2026-10-28T12:10:55.000Z",
      "category": "blogs",
-     "score": 0.92,
-     "readMinutes": 22
+     "score": 4.12,
+     "readMinutes": 66
     }
    ]
   }
@@ -332,21 +338,21 @@
  "itemIds": [
   "arxiv:2610.36077",
   "arxiv:2610.36729",
+  "ec733f799e1aaee3",
+  "a92d7b7ef0e2da4d",
   "arxiv:2610.36456",
-  "86f3cc373bd875ee",
   "arxiv:2610.33066",
-  "arxiv:2610.33624",
-  "arxiv:2610.36269",
+  "arxiv:2610.34283",
+  "be21ba74d2567659",
   "8e0b9acadf5d4ff9",
   "92c1824269f45469",
-  "afc305b6db5c414f",
+  "86f3cc373bd875ee",
   "b836eb939c37ffa5",
-  "67c6b18b0a76451d",
-  "784541c0ec7d43db",
-  "eb13f93c63b56cbf",
-  "bd20aadf9d5d1453"
+  "b3879531c686967a",
+  "35c84e950b280566",
+  "ee40d2d91847abd4"
  ],
- "deepReadId": "bd20aadf9d5d1453",
+ "deepReadId": "ee40d2d91847abd4",
  "llm": {
   "enabled": true,
   "ok": true
