@@ -1,0 +1,348 @@
+{
+ "date": "2026-10-28",
+ "generatedAt": "2026-10-28T03:56:56.239Z",
+ "wordCount": 797,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's key developments span efficient vision models, recursive self-improvement frameworks, and powerful new open releases. OvisOCR3 introduces a unified architecture for diverse document and optical character recognition tasks. RSI Arena explores autonomous post-training as a step toward recursive self-improvement using user feedback. Meanwhile, Qwen-Image-PE focuses on learning visual design to improve text-to-image prompt enhancement. In open-weights and model releases, LiquidAI launched LFM3-1.7B utilizing a tri-hybrid architecture for local agents, while Lightricks released LTX-2.5 for image-to-video generation tasks. Anthropic expanded its partnership with the GSA to bring Claude models to government agencies and showcased internal research models finding critical vulnerabilities in real-world software.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "arxiv:2610.33066",
+     "title": "OvisOCR3 Technical Report",
+     "url": "https://arxiv.org/abs/2610.33066",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "We introduce OvisOCR3, a 0.8B model for a broad range of OCR-related tasks. OvisOCR3 unifies document parsing, general OCR, key information extraction (KIE), document figure captioning, and cross-page table reconstruction in a single model.",
+     "why": "OvisOCR3 unifies multiple document parsing and OCR tasks into a single model.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-20T00:00:00.000Z",
+     "category": "research",
+     "score": 16.06
+    },
+    {
+     "id": "86f3cc373bd875ee",
+     "title": "Expanding our partnership with GSA to bring Claude to all levels of government",
+     "url": "https://www.anthropic.com/news/expanding-partnership-gsa",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50266701",
+     "sourceIds": [
+      "anthropic",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Anthropic",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "Anthropic is an AI safety and research company that's working to build reliable, interpretable, and steerable AI systems.",
+     "why": "Anthropic expanded its partnership with GSA to bring Claude to all levels of government.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T00:00:00.000Z",
+     "category": "labs",
+     "score": 15.95
+    },
+    {
+     "id": "arxiv:2610.33624",
+     "title": "RSI Arena: Towards Recursive Self-Improvement with Human Feedback",
+     "url": "https://arxiv.org/abs/2610.33624",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Can AI agents autonomously train useful language models and improve them using feedback from users? We introduce RSI Arena, a two-stage study of autonomous post-training as a step toward recursive self-improvement.",
+     "why": "RSI Arena studies autonomous post-training as a step toward recursive self-improvement.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T00:00:00.000Z",
+     "category": "research",
+     "score": 14.74
+    },
+    {
+     "id": "arxiv:2610.33472",
+     "title": "Qwen-Image-PE: Learning Visual Design for Text-to-Image Prompt Enhancement",
+     "url": "https://arxiv.org/abs/2610.33472",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Learning visual design is essential for prompt enhancement (PE) to turn underspecified user requests into coherent visual specifications for text-to-image (T2I) generation.",
+     "why": "Qwen-Image-PE learns visual design for text-to-image prompt enhancement.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T00:00:00.000Z",
+     "category": "research",
+     "score": 13.44
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2610.34283",
+     "title": "ChronoReplay: One Answer Interface Is Not Enough for Streaming Spatial Intelligence",
+     "url": "https://arxiv.org/abs/2610.34283",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Training a spatial VLM to answer which side an object lies on does not require it to preserve the metric displacement that determines that answer, while supervision for a distance estimate may leave categorical relations largely unconstrained.",
+     "why": "ChronoReplay addresses limitations in streaming spatial intelligence and metric displacement.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T00:00:00.000Z",
+     "category": "research",
+     "score": 13.3
+    },
+    {
+     "id": "arxiv:2610.33024",
+     "title": "Evolving to Match Capabilities: Improving Harness Self-Evolution via Skill Adaptation",
+     "url": "https://arxiv.org/abs/2610.33024",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "Harness self-evolution offers a practical route for LLM agents to improve from execution experience without updating model parameters. Its effectiveness depends on whether models can successfully act on the guidance provided by their harnesses.",
+     "why": "Evolving to Match Capabilities investigates harness self-evolution from execution experience.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-10T00:00:00.000Z",
+     "category": "research",
+     "score": 13.29
+    },
+    {
+     "id": "arxiv:2610.33169",
+     "title": "World-in-Context: Interactive Video World Modeling with In-Context Conditioning",
+     "url": "https://arxiv.org/abs/2610.33169",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Interactive video world models require coordinated control over viewing perspectives, character actions, and camera motion.",
+     "why": "World-in-Context explores interactive video world modeling with in-context conditioning.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T00:00:00.000Z",
+     "category": "research",
+     "score": 13.29
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "8e0b9acadf5d4ff9",
+     "title": "LiquidAI/LFM3-1.7B · Hugging Face",
+     "url": "https://huggingface.co/LiquidAI/LFM3-1.7B",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xgy8s3/liquidailfm317b_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "https://huggingface.co/LiquidAI/LFM3-1.7B-GGUF from liquidAI: LFM3-1.7B is a text model for local agents and specialized applications, based on our new tri-hybrid architecture.",
+     "why": "LiquidAI launched LFM3-1.7B, a text model for local agents based on a tri-hybrid architecture.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-23T21:35:42.000Z",
+     "category": "releases",
+     "score": 11.86
+    },
+    {
+     "id": "92c1824269f45469",
+     "title": "Lightricks/LTX-2.5",
+     "url": "https://huggingface.co/Lightricks/LTX-2.5",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-to-video · diffusion-single-file · 9,506 likes · 2,163,739 downloads",
+     "why": "Lightricks released LTX-2.5 for image-to-video generation workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-07-23T07:55:24.000Z",
+     "category": "releases",
+     "score": 9.53
+    },
+    {
+     "id": "afc305b6db5c414f",
+     "title": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+     "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "text-to-image · gguf · 5,141 likes · 2,201,569 downloads",
+     "why": "abenzerps released Qwen-Image-2.1-Uncensored-Quantized for text-to-image generation.",
+     "whySource": "llm",
+     "publishedAt": "2026-09-20T15:51:13.000Z",
+     "category": "releases",
+     "score": 9.09
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "1e3ebf94e41ebe19",
+     "title": "Retell uses OpenAI models to help power 100M monthly calls",
+     "url": "https://openai.com/index/retell-ai",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "GPT-6 Astra tops Retell’s voice agent benchmark, while Codex helps it reach a $1.6M annual revenue run rate per employee.",
+     "why": "Retell uses OpenAI models to power millions of monthly calls.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T15:00:00.000Z",
+     "category": "labs",
+     "score": 5.46,
+     "readMinutes": 1
+    },
+    {
+     "id": "03917b725ddac2a4",
+     "title": "Discovering and exploiting vulnerabilities in critical, real-world software with Claude",
+     "url": "https://www.anthropic.com/research/discovering-vulnerabilities-with-claude",
+     "sourceIds": [
+      "anthropic"
+     ],
+     "sourceNames": [
+      "Anthropic"
+     ],
+     "summary": "Over the past few months, we’ve used an unreleased, internal research model to find critical vulnerabilities in some of the world’s most widely used software, such as browsers and operating systems.",
+     "why": "Anthropic used an unreleased internal research model to discover critical real-world software vulnerabilities.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T00:00:00.000Z",
+     "category": "labs",
+     "score": 4.67
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "784541c0ec7d43db",
+     "title": "Anthropic Versus Anthropic",
+     "url": "https://thezvi.substack.com/p/anthropic-versus-anthropic",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Anthropic is a frustrating company.",
+     "why": "Anthropic Versus Anthropic offers critical analysis of the company's trajectory.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T12:49:20.000Z",
+     "category": "blogs",
+     "score": 3.74,
+     "readMinutes": 46
+    },
+    {
+     "id": "eb13f93c63b56cbf",
+     "title": "Notes on “We’re in Triage Mode for AI Safety” by Miles Brundage",
+     "url": "https://www.alignmentforum.org/posts/BFyNkWgxucqy6Wcee/notes-on-we-re-in-triage-mode-for-ai-safety-by-miles",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "This reading was previously included Day 2 of the BlueDot Governance course. In the newest version of the BlueDot Governance course, this reading is now optional.",
+     "why": "Notes on Miles Brundage's triage mode essay discuss current AI safety paradigms.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T19:11:32.000Z",
+     "category": "blogs",
+     "score": 3.38,
+     "readMinutes": 8
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "bd20aadf9d5d1453",
+     "title": "Setting the Scene (Public v1; October 25)",
+     "url": "https://www.alignmentforum.org/posts/dmYP7DS3ERyXGAYe6/setting-the-scene-public-v1-october-25",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "Context: I created this to share before the start of courses I facilitate to provide a refresher on recent events, but also as a hook to draw students into engaging with some of ideas we think about and debate in AI safety early.",
+     "why": "Setting the Scene provides a refresher on recent events and AI safety debates.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T07:52:23.000Z",
+     "category": "blogs",
+     "score": 1.08,
+     "readMinutes": 22
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "arxiv:2610.33066",
+  "86f3cc373bd875ee",
+  "arxiv:2610.33624",
+  "arxiv:2610.33472",
+  "arxiv:2610.34283",
+  "arxiv:2610.33024",
+  "arxiv:2610.33169",
+  "8e0b9acadf5d4ff9",
+  "92c1824269f45469",
+  "afc305b6db5c414f",
+  "1e3ebf94e41ebe19",
+  "03917b725ddac2a4",
+  "784541c0ec7d43db",
+  "eb13f93c63b56cbf",
+  "bd20aadf9d5d1453"
+ ],
+ "deepReadId": "bd20aadf9d5d1453",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
