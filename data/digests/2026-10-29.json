@@ -1,0 +1,346 @@
+{
+ "date": "2026-10-29",
+ "generatedAt": "2026-10-29T04:20:30.095Z",
+ "wordCount": 868,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's key developments span advancements in diffusion language models, agent optimization, and enterprise infrastructure. In reinforcement learning for diffusion language models, new token credit assignment methods improve reasoning performance. Concurrently, long-horizon language model agents benefit from multiscale policy optimization that anchors critic values at turns with finer credit allocation among tokens. Autonomous post-training via RSI Arena explores recursive self-improvement using user feedback. In automated theorem proving, h1 investigates the bitter lesson approach, while Wiener-informed decoding eases velocity learning for pixel-space flow models. Additionally, cross-modal steering vectors reveal unified concepts across image and text generation. Released models such as nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B and tencent/Hy-SimulMT-30B-A3B-FP8 expand capabilities in automatic speech recognition and translation, while new security tools like grim-prompter provide threat modeling for AI coding agents. Finally, Google DeepMind announced Gemini 4 Carbon, and OpenAI expanded its enterprise partnership with ServiceNow, highlighting ongoing commercial and architectural integration.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "arxiv:2610.35201",
+     "title": "DTCA: Denoising Token Credit Assignment for Reinforcement Learning in Diffusion Language Models",
+     "url": "https://arxiv.org/abs/2610.35201",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Diffusion language models (DLMs) generate text through iterative denoising, enabling bidirectional context modeling and parallel token refinement. Recent studies have applied reinforcement learning (RL) to DLMs and improved their reasoning performance.",
+     "why": "Improves reasoning performance in diffusion language models through advanced reinforcement learning and token credit assignment.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T00:00:00.000Z",
+     "category": "research",
+     "score": 15.35
+    },
+    {
+     "id": "9fb777e852af1046",
+     "title": "Kentucky man becomes the first humanist granted religious exemption from AI",
+     "url": "https://religionnews.com/2026/10/26/in-a-first-a-humanist-granted-a-religious-exemption-from-using-ai/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50273396",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Marks a novel legal and social milestone for humanists obtaining religious exemptions from artificial intelligence.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T13:41:30.000Z",
+     "category": "news",
+     "score": 13.38
+    },
+    {
+     "id": "arxiv:2610.35013",
+     "title": "Multiscale Policy Optimization for Long-Horizon LLM Agents",
+     "url": "https://arxiv.org/abs/2610.35013",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Long-horizon LLM agents interact with their environments through complete assistant turns while generating each action token by token. We observe that critic values vary primarily across turns, motivating optimization anchored at turns with finer credit allocation among tokens.",
+     "why": "Enhances long-horizon agent stability by anchoring critic values to turn-based boundaries with fine-grained token credit.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T00:00:00.000Z",
+     "category": "research",
+     "score": 13.19
+    },
+    {
+     "id": "arxiv:2610.33624",
+     "title": "RSI Arena: Towards Recursive Self-Improvement with Human Feedback",
+     "url": "https://arxiv.org/abs/2610.33624",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Can AI agents autonomously train useful language models and improve them using feedback from users? We introduce RSI Arena, a two-stage study of autonomous post-training as a step toward recursive self-improvement.",
+     "why": "Explores autonomous post-training workflows to study recursive self-improvement using direct human feedback.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-24T00:00:00.000Z",
+     "category": "research",
+     "score": 13.03
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2610.35962",
+     "title": "h1: A Taste of the Bitter Lesson in Automated Theorem Proving",
+     "url": "https://arxiv.org/abs/2610.35962",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "While progress in informal mathematics has come largely from scaling the chain-of-thought and agentic reasoning of frontier language models, formal theorem proving has increasingly relied on human-designed workflows around these models, such as planning, decomposition, and…",
+     "why": "Examines automated formal theorem proving by moving past human-designed workflows toward bitter lesson scaling.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-25T00:00:00.000Z",
+     "category": "research",
+     "score": 13.01
+    },
+    {
+     "id": "arxiv:2610.36192",
+     "title": "Beyond the Estimate: Wiener-Informed Decoding for Easier Training of Pixel-Space Flow Models",
+     "url": "https://arxiv.org/abs/2610.36192",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Learning velocity fields directly in pixel space is difficult and slow. We show that coarse second-order image statistics can ease this task: frozen Wiener estimates improve velocity learning, with gains extending beyond the linear predictions they explicitly provide.",
+     "why": "Simplifies velocity field learning in pixel-space flow models by incorporating coarse second-order image statistics.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T00:00:00.000Z",
+     "category": "research",
+     "score": 12.47
+    },
+    {
+     "id": "arxiv:2610.36269",
+     "title": "Cross-modal Steering Vectors Exist Across Both Image and Text Generation",
+     "url": "https://arxiv.org/abs/2610.36269",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Are concepts and mechanisms unified across modalities in current AI models, or instead implemented separately for each one?",
+     "why": "Demonstrates that cross-modal steering vectors exist and operate consistently across both image and text generation.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T00:00:00.000Z",
+     "category": "research",
+     "score": 12.47
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "029f4f6cd7936fd2",
+     "title": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B · Hugging Face",
+     "url": "https://huggingface.co/nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xhqy12/nvidianvidianemotron35transcribe30ba4b_hugging/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "automatic-speech-recognition · nemo · 222 likes · 338 downloads",
+     "why": "Provides a new open model option for automatic speech recognition and audio processing workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-07T22:50:21.000Z",
+     "category": "releases",
+     "score": 11.9
+    },
+    {
+     "id": "535d66fdd9eb2f0b",
+     "title": "tencent/Hy-SimulMT-30B-A3B-FP8",
+     "url": "https://huggingface.co/tencent/Hy-SimulMT-30B-A3B-FP8",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "translation · transformers · 237 likes · 165 downloads",
+     "why": "Delivers an FP8 translation model suitable for high-throughput multilingual enterprise applications.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T07:29:37.000Z",
+     "category": "releases",
+     "score": 7.24
+    },
+    {
+     "id": "68bb847c0aee0fbe",
+     "title": "jmanico/grim-prompter",
+     "url": "https://github.com/jmanico/grim-prompter",
+     "sourceIds": [
+      "gh-trending-llm",
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm",
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "Threat modeling for AI coding agents: point Claude Code, Codex or any agent at your repo and get an evidence-traced threat model. 36 architectures, 29 methods, MIT.",
+     "why": "Offers automated threat modeling and security analysis specifically tailored for modern AI coding agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T12:09:26.000Z",
+     "category": "releases",
+     "score": 7.23
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "3e32bae570ff21ee",
+     "title": "Gemini 4 Carbon: Our next frontier model",
+     "url": "https://deepmind.google/blog/gemini-4-carbon-our-next-frontier-model/",
+     "sourceIds": [
+      "deepmind"
+     ],
+     "sourceNames": [
+      "Google DeepMind"
+     ],
+     "summary": "",
+     "why": "Represents the next generation of frontier model development from Google DeepMind.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T17:00:58.000Z",
+     "category": "labs",
+     "score": 5.63
+    },
+    {
+     "id": "a395c7da350b5086",
+     "title": "OpenAI and ServiceNow expand partnership across enterprise workflows",
+     "url": "https://openai.com/index/openai-servicenow-partnership-expansion",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "OpenAI and ServiceNow expand their partnership to bring OpenAI models and agents into ServiceNow and ServiceNow workflows into ChatGPT and Codex.",
+     "why": "Deepens enterprise integration by embedding advanced AI models directly into core ServiceNow workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T13:15:00.000Z",
+     "category": "labs",
+     "score": 5.23,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "70f2bbbd704a353d",
+     "title": "The October inflection point for vibe game development",
+     "url": "https://simonwillison.net/2026/Oct/28/vibe-game-development/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "I've written before about how November 2025 was an inflection point for coding agents - the point where Opus 4.5 and GPT-5.1 crossed a tipping point that meant their respective coding agents became reliable daily drivers for software engineers.",
+     "why": "Documents the practical inflection point where coding agents become reliable daily drivers for software engineers.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T13:55:15.000Z",
+     "category": "blogs",
+     "score": 3.03,
+     "readMinutes": 14
+    },
+    {
+     "id": "eb13f93c63b56cbf",
+     "title": "Notes on “We’re in Triage Mode for AI Safety” by Miles Brundage",
+     "url": "https://www.alignmentforum.org/posts/BFyNkWgxucqy6Wcee/notes-on-we-re-in-triage-mode-for-ai-safety-by-miles",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "This reading was previously included Day 2 of the BlueDot Governance course. In the newest version of the BlueDot Governance course, this reading is now optional.",
+     "why": "Reflects shifting educational priorities and ongoing debates surrounding AI safety and institutional triage.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T19:11:32.000Z",
+     "category": "blogs",
+     "score": 2.11,
+     "readMinutes": 8
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "784541c0ec7d43db",
+     "title": "Anthropic Versus Anthropic",
+     "url": "https://thezvi.substack.com/p/anthropic-versus-anthropic",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Anthropic is a frustrating company.",
+     "why": "Analyzes the strategic tensions and corporate dynamics shaping Anthropic's trajectory in the artificial intelligence ecosystem.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T12:49:20.000Z",
+     "category": "blogs",
+     "score": 2.34,
+     "readMinutes": 46
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "arxiv:2610.35201",
+  "9fb777e852af1046",
+  "arxiv:2610.35013",
+  "arxiv:2610.33624",
+  "arxiv:2610.35962",
+  "arxiv:2610.36192",
+  "arxiv:2610.36269",
+  "029f4f6cd7936fd2",
+  "535d66fdd9eb2f0b",
+  "68bb847c0aee0fbe",
+  "3e32bae570ff21ee",
+  "a395c7da350b5086",
+  "70f2bbbd704a353d",
+  "eb13f93c63b56cbf",
+  "784541c0ec7d43db"
+ ],
+ "deepReadId": "784541c0ec7d43db",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
