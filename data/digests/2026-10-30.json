@@ -1,10 +1,10 @@
 {
  "date": "2026-10-30",
- "generatedAt": "2026-10-30T04:20:38.392Z",
- "wordCount": 808,
+ "generatedAt": "2026-10-30T12:08:02.533Z",
+ "wordCount": 816,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's landscape highlights critical developments across autonomous systems, agent architectures, security vulnerabilities, and multimodal research. In developer tooling and agent orchestration, discussions focus on Claude Code transmitting background agent transcripts, alongside practical explorations of AI agent swarms in Minecraft and Mindustry, and LLM Voice implementations. Research advancements feature AskStream for proactive video understanding under uncertainty, WeVisCut for long-form video editing agents, VibeGame for prompt-to-game development using self-evolving adversarial agent teams, and IntReal as a benchmark for multimodal interleaved generation. Model releases include XHToken/Spark-X2.6-4B, openbmb/MiniCPM-OCR-1.0, and the on-device Android assistant Mika. Industry applications range from Ropes & Gray collaborating with OpenAI on transactional diligence to Microsoft Research updates. Security analysis reveals that GLM 5.3 can convert published-but-unshipped security fixes into functional exploits. Additionally, educational resources such as a comprehensive video course on building reasoning models from the ground up provide deep technical insights for engineers.",
+  "text": "Today's key developments highlight progress across self-improving multimodal architectures, efficient video and vision generation, agentic environments, and real-world security analysis. In recursive self-improvement, A-RSI introduces adaptive task refresh for zero-data multimodal training. For efficiency, A-RSI and certificate-guided visual routing in diffusion vision-language models target redundant decoding computation. In video and generation, WeVisCut addresses long-form editing from narration, while IntReal provides a benchmark for multimodal interleaved generation. WebAnything advances reproducible training environments for web agents by moving beyond manual mirrors. Meanwhile, analysis from Epoch AI shows GLM 5.3 can transform published security fixes into working exploits, and new releases like facebook/sam3 and XHToken/Spark-X2.6-4B offer updated foundation models for practitioners.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,85 +14,80 @@
    "title": "Must know",
    "entries": [
     {
-     "id": "arxiv:2610.38678",
-     "title": "AskStream: When and What to Ask Proactively under Uncertainty in Streaming Video Understanding",
-     "url": "https://arxiv.org/abs/2610.38678",
+     "id": "arxiv:2610.38568",
+     "title": "A-RSI: Adaptive Task Refresh for Zero-Data Multimodal Self-Improvement",
+     "url": "https://arxiv.org/abs/2610.38568",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.CL",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Recursive self-improvement requires models not only to acquire useful training experience, but also to decide when their current experience has ceased to be useful.",
+     "why": "Provides a zero-data multimodal self-improvement approach addressing when training experience stops being useful.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T00:00:00.000Z",
+     "category": "research",
+     "score": 17.53
+    },
+    {
+     "id": "arxiv:2610.36671",
+     "title": "Look Only When Needed: Certificate-Guided Visual Routing for Efficient Diffusion VLMs",
+     "url": "https://arxiv.org/abs/2610.36671",
+     "sourceIds": [
+      "hf-papers",
       "arxiv-cs.CV"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.CL",
       "arXiv cs.CV"
      ],
-     "summary": "Recent advances in multimodal large language models have increased interest in interaction paradigms for video understanding.",
-     "why": "Proposes proactive questioning paradigms under uncertainty to improve streaming video understanding in multimodal models.",
+     "summary": "Diffusion vision-language models (DVLMs) process their entire input at every denoising step. Since visual tokens make up 89-97% of this input on the benchmarks we study, most of the decoding computation is spent repeatedly processing the same image.",
+     "why": "Addresses redundant decoding computation in diffusion vision-language models via certificate-guided visual routing.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T00:00:00.000Z",
+     "category": "research",
+     "score": 16.56
+    },
+    {
+     "id": "arxiv:2610.38352",
+     "title": "WeVisCut: The Whole Editing Room in One Agent From Narration to Long-Form Video",
+     "url": "https://arxiv.org/abs/2610.38352",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Producing long-form videos from narration requires interdependent decisions that remain coherent across shots. Existing agentic editors often use multi-stage workflows driven by general models, leaving the quality-cost trade-off of compact, task-adapted policies unclear.",
+     "why": "Tackles the quality-cost trade-off of compact policies for long-form video editing from narration.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T00:00:00.000Z",
      "category": "research",
-     "score": 12.94
+     "score": 14.84
     },
     {
-     "id": "815e9f76383a9012",
-     "title": "LLM Voice",
-     "url": "https://martinfowler.com/bliki/LLM-Voice.html",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50290177",
+     "id": "arxiv:2610.38425",
+     "title": "IntReal: A Real-World Dataset and Benchmark for Multimodal Interleaved Generation",
+     "url": "https://arxiv.org/abs/2610.38425",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CV"
      ],
-     "summary": "",
-     "why": "Sparks engineering interest around real-time LLM Voice capabilities and voice-driven agent workflows.",
+     "summary": "Humans routinely consume multimodal content, where textual and visual information is naturally interleaved. Although Unified Multimodal Models (UMMs) can jointly generate text and images, multimodal interleaved generation remains largely underexplored.",
+     "why": "Introduces a dataset and benchmark for underexplored multimodal interleaved generation in unified models.",
      "whySource": "llm",
-     "publishedAt": "2026-10-29T14:57:55.000Z",
-     "category": "news",
-     "score": 12.86
-    },
-    {
-     "id": "5408177e9e746060",
-     "title": "We ran AI agent swarms in Minecraft and Mindustry",
-     "url": "https://labs.ycombinator.com/projects/games/index.html",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50296486",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Demonstrates complex coordination and emergent behaviors of AI agent swarms in simulated game environments.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-29T21:40:28.000Z",
-     "category": "news",
-     "score": 12.39
-    },
-    {
-     "id": "94430ceaa839cbc6",
-     "title": "Claude Code regularly sends each background agent’s transcript to its model",
-     "url": "https://gist.github.com/flamerix-ai/c3905705cc4205e5de3011fa2e74efce",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50284255",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Highlights implementation details regarding how background agent transcripts are managed and transmitted in coding tools.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-29T03:33:42.000Z",
-     "category": "news",
-     "score": 12.32
+     "publishedAt": "2026-10-28T00:00:00.000Z",
+     "category": "research",
+     "score": 14.54
     }
    ]
   },
@@ -101,55 +96,59 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2610.38352",
-     "title": "WeVisCut: The Whole Editing Room in One Agent From Narration to Long-Form Video",
-     "url": "https://arxiv.org/abs/2610.38352",
+     "id": "arxiv:2610.37786",
+     "title": "WebAnything: From the Wild Web to Scalable Agent Environments",
+     "url": "https://arxiv.org/abs/2610.37786",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Web agents require diverse, executable, and resettable website environments for reproducible training and evaluation. Human-assisted mirrors demand per-site engineering, while generative construction can diverge from specified real websites.",
+     "why": "Solves environment construction challenges for reproducible web agent training and evaluation.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T00:00:00.000Z",
+     "category": "research",
+     "score": 14.43
+    },
+    {
+     "id": "arxiv:2610.39633",
+     "title": "Intrinsic Distribution Matching",
+     "url": "https://arxiv.org/abs/2610.39633",
      "sourceIds": [
       "hf-papers"
      ],
      "sourceNames": [
       "HF Daily Papers"
      ],
-     "summary": "Producing long-form videos from narration requires interdependent decisions that remain coherent across shots. Existing agentic editors often use multi-stage workflows driven by general models, leaving the quality-cost trade-off of compact, task-adapted policies unclear.",
-     "why": "Tackles the quality-cost trade-off of compact, task-adapted agentic policies for long-form video production from narration.",
+     "summary": "One-step and few-step text-to-image generation must accurately render the details specified in the prompt despite limited opportunities for refinement.",
+     "why": "Improves detail rendering for one-step and few-step text-to-image generation under limited refinement.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-29T00:00:00.000Z",
+     "category": "research",
+     "score": 14.2
+    },
+    {
+     "id": "arxiv:2610.38342",
+     "title": "Investor's Last Exam: Can AI Agents Do Equity Investment Without Seeing the Future?",
+     "url": "https://arxiv.org/abs/2610.38342",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Financial agents must form forecasts and investment judgments from decision-time evidence, with predictions evaluated against subsequent outcomes.",
+     "why": "Evaluates financial agents on decision-time evidence without relying on future knowledge.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T00:00:00.000Z",
      "category": "research",
-     "score": 10.94
-    },
-    {
-     "id": "arxiv:2610.33106",
-     "title": "VibeGame: Prompt-to-Game Development with AI-Native Engine and Self-Evolving Adversarial Agent Team",
-     "url": "https://arxiv.org/abs/2610.33106",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Large language model agents have enabled software development through natural-language interaction, but extending this paradigm to end-to-end game development remains challenging.",
-     "why": "Extends natural-language software development paradigms to end-to-end game creation via adversarial agent teams.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-22T00:00:00.000Z",
-     "category": "research",
-     "score": 10.82
-    },
-    {
-     "id": "arxiv:2610.38425",
-     "title": "IntReal: A Real-World Dataset and Benchmark for Multimodal Interleaved Generation",
-     "url": "https://arxiv.org/abs/2610.38425",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Humans routinely consume multimodal content, where textual and visual information is naturally interleaved. Although Unified Multimodal Models (UMMs) can jointly generate text and images, multimodal interleaved generation remains largely underexplored.",
-     "why": "Introduces a dataset and benchmark to advance joint textual and visual generation in unified multimodal models.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-28T00:00:00.000Z",
-     "category": "research",
-     "score": 10.53
+     "score": 13.84
     }
    ]
   },
@@ -157,6 +156,23 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
+    {
+     "id": "f2bc736c0ee71119",
+     "title": "facebook/sam3",
+     "url": "https://huggingface.co/facebook/sam3",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "mask-generation · transformers · 5,469 likes · 1,886,656 downloads",
+     "why": "Offers a new mask-generation transformer model release for computer vision tasks.",
+     "whySource": "llm",
+     "publishedAt": "2025-11-07T05:17:48.000Z",
+     "category": "releases",
+     "score": 10.21
+    },
     {
      "id": "37ea901da6ec4d67",
      "title": "XHToken/Spark-X2.6-4B",
@@ -168,11 +184,11 @@
       "HF trending models"
      ],
      "summary": "text-generation · transformers · 911 likes · 10,163 downloads",
-     "why": "Provides a newly released text-generation model for open-source deployment and experimentation.",
+     "why": "Delivers a new text-generation transformer model for downstream application builders.",
      "whySource": "llm",
      "publishedAt": "2026-10-19T03:19:51.000Z",
      "category": "releases",
-     "score": 8.92
+     "score": 8.36
     },
     {
      "id": "ee99048206eebf86",
@@ -185,28 +201,11 @@
       "HF trending models"
      ],
      "summary": "image-text-to-text · 331 likes · 1,597 downloads",
-     "why": "Offers a specialized image-text-to-text model for optical character recognition tasks.",
+     "why": "Provides a new image-text-to-text model for optical character recognition workflows.",
      "whySource": "llm",
      "publishedAt": "2026-10-21T15:51:40.000Z",
      "category": "releases",
-     "score": 8.19
-    },
-    {
-     "id": "789c22d09d8c4e91",
-     "title": "wangzan101/Mika",
-     "url": "https://github.com/wangzan101/Mika",
-     "sourceIds": [
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm"
-     ],
-     "summary": "Mika — 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。An on-device AI agent for Android that operates apps and the web to get things done for you. · Kotlin",
-     "why": "Delivers an on-device Android assistant capable of operating apps and browsing the web.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-29T14:34:07.000Z",
-     "category": "releases",
-     "score": 7.45
+     "score": 7.66
     }
    ]
   },
@@ -225,11 +224,11 @@
       "OpenAI"
      ],
      "summary": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
-     "why": "Shows how legal firms integrate OpenAI models to streamline document review and transactional diligence workflows.",
+     "why": "Highlights practical enterprise legal AI deployment for transactional document diligence.",
      "whySource": "llm",
      "publishedAt": "2026-10-29T07:00:00.000Z",
      "category": "labs",
-     "score": 4.64,
+     "score": 3.99,
      "readMinutes": 1
     },
     {
@@ -243,11 +242,11 @@
       "Microsoft Research"
      ],
      "summary": "Host Sowbhagya Suresh shares some of the latest news and cutting-edge research from across Microsoft—from understanding the challenges facing coding agents to uncovering how people use AI at work and improving extended-range weather forecasting.",
-     "why": "Surfaces cutting-edge insights on coding agents, workplace AI adoption, and weather forecasting challenges.",
+     "why": "Surveys recent research directions from coding agents to extended-range weather forecasting.",
      "whySource": "llm",
      "publishedAt": "2026-10-29T19:19:16.000Z",
      "category": "labs",
-     "score": 4.2,
+     "score": 3.62,
      "readMinutes": 10
     }
    ]
@@ -267,11 +266,11 @@
       "Epoch AI"
      ],
      "summary": "GLM 5.3 turned published-but-unshipped Firefox security fixes into working one-click exploits for six releases, at roughly $1,000 each.",
-     "why": "Demonstrates severe security risks where models rapidly convert unpatched vulnerability disclosures into active exploits.",
+     "why": "Demonstrates security risks where models turn published fixes into working exploits before updates.",
      "whySource": "llm",
      "publishedAt": "2026-10-29T21:40:00.000Z",
      "category": "blogs",
-     "score": 5.28,
+     "score": 4.54,
      "readMinutes": 1
     },
     {
@@ -285,11 +284,11 @@
       "Simon Willison"
      ],
      "summary": "API credits benefit for eligible ChatGPT subscriptions Earlier this month Anthropic announced a generous new benefit for their Max and Team subscriptions: $100, $200, and $500 per month subscribers would get the equivalent quantity of (expiring) credits to use with the Anthropic…",
-     "why": "Tracks competitive changes in developer credit benefits across major subscription tiers.",
+     "why": "Covers subscription API credit updates for eligible developer workflows.",
      "whySource": "llm",
      "publishedAt": "2026-10-29T22:48:29.000Z",
      "category": "blogs",
-     "score": 3.6,
+     "score": 3.09,
      "readMinutes": 1
     }
    ]
@@ -314,27 +313,27 @@
       "Hacker News"
      ],
      "summary": "Over 11 hours of coding videos on evaluation, inference-time scaling, reinforcement learning, and distillation, with Python and PyTorch.",
-     "why": "Offers deep practical education on inference-time scaling, reinforcement learning, and building reasoning models.",
+     "why": "Provides comprehensive video instruction on building reasoning models using Python and PyTorch.",
      "whySource": "llm",
      "publishedAt": "2026-10-24T11:14:32.000Z",
      "category": "blogs",
-     "score": 13.54,
+     "score": 13.38,
      "readMinutes": 15
     }
    ]
   }
  ],
  "itemIds": [
-  "arxiv:2610.38678",
-  "815e9f76383a9012",
-  "5408177e9e746060",
-  "94430ceaa839cbc6",
+  "arxiv:2610.38568",
+  "arxiv:2610.36671",
   "arxiv:2610.38352",
-  "arxiv:2610.33106",
   "arxiv:2610.38425",
+  "arxiv:2610.37786",
+  "arxiv:2610.39633",
+  "arxiv:2610.38342",
+  "f2bc736c0ee71119",
   "37ea901da6ec4d67",
   "ee99048206eebf86",
-  "789c22d09d8c4e91",
   "d948735545c20cf3",
   "1c15fb694b68c398",
   "09174079a1bd1a60",
