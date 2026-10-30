@@ -1,10 +1,10 @@
 {
  "date": "2026-10-30",
- "generatedAt": "2026-10-30T12:08:02.533Z",
- "wordCount": 816,
- "readingMinutes": 4,
+ "generatedAt": "2026-10-30T21:56:27.823Z",
+ "wordCount": 967,
+ "readingMinutes": 5,
  "overview": {
-  "text": "Today's key developments highlight progress across self-improving multimodal architectures, efficient video and vision generation, agentic environments, and real-world security analysis. In recursive self-improvement, A-RSI introduces adaptive task refresh for zero-data multimodal training. For efficiency, A-RSI and certificate-guided visual routing in diffusion vision-language models target redundant decoding computation. In video and generation, WeVisCut addresses long-form editing from narration, while IntReal provides a benchmark for multimodal interleaved generation. WebAnything advances reproducible training environments for web agents by moving beyond manual mirrors. Meanwhile, analysis from Epoch AI shows GLM 5.3 can transform published security fixes into working exploits, and new releases like facebook/sam3 and XHToken/Spark-X2.6-4B offer updated foundation models for practitioners.",
+  "text": "Today's key developments span recursive self-improvement, efficient diffusion architectures, omni-modal parsing, and new AI safety and tooling releases. In recursive self-improvement, A-RSI introduces adaptive task refresh to determine when training experience ceases to be useful. For efficient architectures, Look Only When Needed presents certificate-guided visual routing to reduce redundant decoding computation in diffusion vision-language models. In perception and parsing, Youtu-Parsing-Omni delivers an omni-modal parser converting diverse modalities into structured records grounded in space and time. Meanwhile, research advances explore the Platonic Representation Hypothesis with JEPAs, long-form video editing agents, and real-world benchmarks for multimodal interleaved generation. Releases feature facebook/sam3 alongside new Android deployment tools like jackwener/DSH-Android and wangzan101/Mika. Additionally, OpenAI updated its robots.txt policies for AI training preferences and expanded safety protections, while analysis highlights cyber risks from open models.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -26,11 +26,11 @@
       "arXiv cs.AI"
      ],
      "summary": "Recursive self-improvement requires models not only to acquire useful training experience, but also to decide when their current experience has ceased to be useful.",
-     "why": "Provides a zero-data multimodal self-improvement approach addressing when training experience stops being useful.",
+     "why": "It addresses recursive self-improvement by helping models determine when their current training experience ceases to be useful.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T00:00:00.000Z",
      "category": "research",
-     "score": 17.53
+     "score": 16.95
     },
     {
      "id": "arxiv:2610.36671",
@@ -45,12 +45,58 @@
       "arXiv cs.CV"
      ],
      "summary": "Diffusion vision-language models (DVLMs) process their entire input at every denoising step. Since visual tokens make up 89-97% of this input on the benchmarks we study, most of the decoding computation is spent repeatedly processing the same image.",
-     "why": "Addresses redundant decoding computation in diffusion vision-language models via certificate-guided visual routing.",
+     "why": "It reduces redundant decoding computation in diffusion vision-language models through certificate-guided visual routing.",
      "whySource": "llm",
      "publishedAt": "2026-10-27T00:00:00.000Z",
      "category": "research",
-     "score": 16.56
+     "score": 15.75
     },
+    {
+     "id": "arxiv:2610.39301",
+     "title": "Youtu-Parsing-Omni: One Encoder, One Schema, All Modalities",
+     "url": "https://arxiv.org/abs/2610.39301",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "We present Youtu-Parsing-Omni, an omni-modal parser that converts documents, images, audio, and video into structured records grounded in space and time, providing a perception layer for agents that read, locate, and cite evidence across modalities.",
+     "why": "It provides a unified perception layer that converts documents, images, audio, and video into grounded structured records.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-29T00:00:00.000Z",
+     "category": "research",
+     "score": 14.97
+    },
+    {
+     "id": "arxiv:2610.39302",
+     "title": "Proving and Improving the Platonic Representation Hypothesis with JEPAs",
+     "url": "https://arxiv.org/abs/2610.39302",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI",
+      "arXiv cs.CV"
+     ],
+     "summary": "Whether models trained on different modalities converge to the same representation of the world is central to AI. The Platonic Representation Hypothesis (PRH) conjectures that they do as they scale, but without a proof it offers neither a guarantee nor a recipe.",
+     "why": "It investigates whether models trained on different modalities converge to the same representation using JEPAs.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-29T00:00:00.000Z",
+     "category": "research",
+     "score": 14.89
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
     {
      "id": "arxiv:2610.38352",
      "title": "WeVisCut: The Whole Editing Room in One Agent From Narration to Long-Form Video",
@@ -64,11 +110,11 @@
       "arXiv cs.CV"
      ],
      "summary": "Producing long-form videos from narration requires interdependent decisions that remain coherent across shots. Existing agentic editors often use multi-stage workflows driven by general models, leaving the quality-cost trade-off of compact, task-adapted policies unclear.",
-     "why": "Tackles the quality-cost trade-off of compact policies for long-form video editing from narration.",
+     "why": "It explores compact, task-adapted policies for maintaining narrative coherence across shots in long-form video editing.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T00:00:00.000Z",
      "category": "research",
-     "score": 14.84
+     "score": 13.83
     },
     {
      "id": "arxiv:2610.38425",
@@ -83,18 +129,12 @@
       "arXiv cs.CV"
      ],
      "summary": "Humans routinely consume multimodal content, where textual and visual information is naturally interleaved. Although Unified Multimodal Models (UMMs) can jointly generate text and images, multimodal interleaved generation remains largely underexplored.",
-     "why": "Introduces a dataset and benchmark for underexplored multimodal interleaved generation in unified models.",
+     "why": "It introduces a dataset and benchmark for evaluating interleaved text and image generation in unified multimodal models.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T00:00:00.000Z",
      "category": "research",
-     "score": 14.54
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
+     "score": 13.57
+    },
     {
      "id": "arxiv:2610.37786",
      "title": "WebAnything: From the Wild Web to Scalable Agent Environments",
@@ -108,47 +148,11 @@
       "arXiv cs.AI"
      ],
      "summary": "Web agents require diverse, executable, and resettable website environments for reproducible training and evaluation. Human-assisted mirrors demand per-site engineering, while generative construction can diverge from specified real websites.",
-     "why": "Solves environment construction challenges for reproducible web agent training and evaluation.",
+     "why": "It tackles the need for diverse, executable, and resettable website environments for scalable web agent training.",
      "whySource": "llm",
      "publishedAt": "2026-10-27T00:00:00.000Z",
      "category": "research",
-     "score": 14.43
-    },
-    {
-     "id": "arxiv:2610.39633",
-     "title": "Intrinsic Distribution Matching",
-     "url": "https://arxiv.org/abs/2610.39633",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "One-step and few-step text-to-image generation must accurately render the details specified in the prompt despite limited opportunities for refinement.",
-     "why": "Improves detail rendering for one-step and few-step text-to-image generation under limited refinement.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-29T00:00:00.000Z",
-     "category": "research",
-     "score": 14.2
-    },
-    {
-     "id": "arxiv:2610.38342",
-     "title": "Investor's Last Exam: Can AI Agents Do Equity Investment Without Seeing the Future?",
-     "url": "https://arxiv.org/abs/2610.38342",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "Financial agents must form forecasts and investment judgments from decision-time evidence, with predictions evaluated against subsequent outcomes.",
-     "why": "Evaluates financial agents on decision-time evidence without relying on future knowledge.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-28T00:00:00.000Z",
-     "category": "research",
-     "score": 13.84
+     "score": 13.25
     }
    ]
   },
@@ -167,45 +171,45 @@
       "HF trending models"
      ],
      "summary": "mask-generation · transformers · 5,469 likes · 1,886,656 downloads",
-     "why": "Offers a new mask-generation transformer model release for computer vision tasks.",
+     "why": "It offers mask-generation capabilities via transformers for computer vision tasks.",
      "whySource": "llm",
      "publishedAt": "2025-11-07T05:17:48.000Z",
      "category": "releases",
-     "score": 10.21
+     "score": 9.52
     },
     {
-     "id": "37ea901da6ec4d67",
-     "title": "XHToken/Spark-X2.6-4B",
-     "url": "https://huggingface.co/XHToken/Spark-X2.6-4B",
+     "id": "66fb98a7d4d2e2b1",
+     "title": "jackwener/DSH-Android",
+     "url": "https://github.com/jackwener/DSH-Android",
      "sourceIds": [
-      "hf-trending"
+      "gh-trending-llm"
      ],
      "sourceNames": [
-      "HF trending models"
+      "GitHub new repos: llm"
      ],
-     "summary": "text-generation · transformers · 911 likes · 10,163 downloads",
-     "why": "Delivers a new text-generation transformer model for downstream application builders.",
+     "summary": "免 ROOT 免 Termux，一个 APK 在安卓手机上跑 DeepSeek Harness。引擎内嵌 App 进程 · 读屏操作 App · 改系统设置 · 定时/条件自动化 · 可选 Shizuku · Kotlin",
+     "why": "It enables running DeepSeek Harness directly inside an Android app process without root access.",
      "whySource": "llm",
-     "publishedAt": "2026-10-19T03:19:51.000Z",
+     "publishedAt": "2026-10-27T19:26:12.000Z",
      "category": "releases",
-     "score": 8.36
+     "score": 8.49
     },
     {
-     "id": "ee99048206eebf86",
-     "title": "openbmb/MiniCPM-OCR-1.0",
-     "url": "https://huggingface.co/openbmb/MiniCPM-OCR-1.0",
+     "id": "789c22d09d8c4e91",
+     "title": "wangzan101/Mika",
+     "url": "https://github.com/wangzan101/Mika",
      "sourceIds": [
-      "hf-trending"
+      "gh-trending-llm"
      ],
      "sourceNames": [
-      "HF trending models"
+      "GitHub new repos: llm"
      ],
-     "summary": "image-text-to-text · 331 likes · 1,597 downloads",
-     "why": "Provides a new image-text-to-text model for optical character recognition workflows.",
+     "summary": "Mika — 你手机上的私人 AI 助理，替你操作 App、上网、把事办成。An on-device AI agent for Android that operates apps and the web to get things done for you. · Kotlin",
+     "why": "It provides an on-device AI agent for Android designed to operate apps and the web autonomously.",
      "whySource": "llm",
-     "publishedAt": "2026-10-21T15:51:40.000Z",
+     "publishedAt": "2026-10-29T14:34:07.000Z",
      "category": "releases",
-     "score": 7.66
+     "score": 7.93
     }
    ]
   },
@@ -214,40 +218,40 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "d948735545c20cf3",
-     "title": "How Ropes & Gray is developing AI for transactional diligence",
-     "url": "https://openai.com/index/ropes-gray-ai-diligence",
+     "id": "84abd1857de5dfd9",
+     "title": "Making it easier for websites to express AI training preferences",
+     "url": "https://openai.com/index/helping-websites-express-ai-training-preferences",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "Ropes & Gray is developing AI for transactional diligence with OpenAI. Lawyers review grouped documents, summaries, and reports before advising clients.",
-     "why": "Highlights practical enterprise legal AI deployment for transactional document diligence.",
+     "summary": "OpenAI will honor a shared robots.txt signal to help website operators communicate their AI training preferences to participating providers.",
+     "why": "It offers a shared signal for website operators to communicate AI training preferences to participating providers.",
      "whySource": "llm",
-     "publishedAt": "2026-10-29T07:00:00.000Z",
+     "publishedAt": "2026-10-30T09:30:00.000Z",
      "category": "labs",
-     "score": 3.99,
+     "score": 5.51,
      "readMinutes": 1
     },
     {
-     "id": "1c15fb694b68c398",
-     "title": "Microsoft Research Focus – Edition #97",
-     "url": "https://www.microsoft.com/en-us/research/podcast/microsoft-research-focus-edition-97/",
+     "id": "a86d24c59c826150",
+     "title": "Community safety report and new protections for teens",
+     "url": "https://openai.com/index/community-safety-report-and-new-protections-for-teens",
      "sourceIds": [
-      "microsoft-research"
+      "openai"
      ],
      "sourceNames": [
-      "Microsoft Research"
+      "OpenAI"
      ],
-     "summary": "Host Sowbhagya Suresh shares some of the latest news and cutting-edge research from across Microsoft—from understanding the challenges facing coding agents to uncovering how people use AI at work and improving extended-range weather forecasting.",
-     "why": "Surveys recent research directions from coding agents to extended-range weather forecasting.",
+     "summary": "OpenAI is strengthening violence prevention in ChatGPT with expanded safeguards, earlier interventions, and a new commitment to public safety reporting.",
+     "why": "It strengthens violence prevention and introduces expanded safeguards and safety reporting for teens in ChatGPT.",
      "whySource": "llm",
-     "publishedAt": "2026-10-29T19:19:16.000Z",
+     "publishedAt": "2026-10-30T09:00:00.000Z",
      "category": "labs",
-     "score": 3.62,
-     "readMinutes": 10
+     "score": 5.46,
+     "readMinutes": 1
     }
    ]
   },
@@ -256,40 +260,40 @@
    "title": "Analysis worth reading",
    "entries": [
     {
-     "id": "09174079a1bd1a60",
-     "title": "AI can turn security fixes into working exploits before users receive an update",
-     "url": "https://epoch.ai/publications/open-weight-models-patch-gap",
+     "id": "a39ec51951b1f56f",
+     "title": "Was I wrong about open models & cyber risks?",
+     "url": "https://www.interconnects.ai/p/was-i-wrong-about-open-models-and",
      "sourceIds": [
-      "epoch"
+      "interconnects"
      ],
      "sourceNames": [
-      "Epoch AI"
+      "Interconnects"
      ],
-     "summary": "GLM 5.3 turned published-but-unshipped Firefox security fixes into working one-click exploits for six releases, at roughly $1,000 each.",
-     "why": "Demonstrates security risks where models turn published fixes into working exploits before updates.",
+     "summary": "Last week coined the term “Black October“ after an onslaught of critical vulnerability disclosures, including PHP2Shell and GitLab, signified the moment when the cyber risks of AI models started to materialize.",
+     "why": "It examines how recent vulnerability disclosures signify the materialization of cyber risks from open models.",
      "whySource": "llm",
-     "publishedAt": "2026-10-29T21:40:00.000Z",
+     "publishedAt": "2026-10-30T17:36:56.000Z",
      "category": "blogs",
-     "score": 4.54,
-     "readMinutes": 1
+     "score": 6.44,
+     "readMinutes": 11
     },
     {
-     "id": "88899755dba00e8d",
-     "title": "API credits benefit for eligible ChatGPT subscriptions",
-     "url": "https://simonwillison.net/2026/Oct/29/api-credits/",
+     "id": "fb7da1e5128caa0c",
+     "title": "Childhood and Education #22: Voice Without Exit",
+     "url": "https://thezvi.substack.com/p/childhood-and-education-22-voice",
      "sourceIds": [
-      "simonw"
+      "zvi"
      ],
      "sourceNames": [
-      "Simon Willison"
+      "Don't Worry About the Vase"
      ],
-     "summary": "API credits benefit for eligible ChatGPT subscriptions Earlier this month Anthropic announced a generous new benefit for their Max and Team subscriptions: $100, $200, and $500 per month subscribers would get the equivalent quantity of (expiring) credits to use with the Anthropic…",
-     "why": "Covers subscription API credit updates for eligible developer workflows.",
+     "summary": "Nikole Hannah-Jones wrote a brave self-critical piece in The New York Times, centrally about how she intentionally sent her daughter to a well-funded but failing school, PS 307, in the hopes of using voice to improve it, and how that utterly failed her daughter and failed to…",
+     "why": "It reflects on personal experiences with school integration efforts and institutional failure.",
      "whySource": "llm",
-     "publishedAt": "2026-10-29T22:48:29.000Z",
+     "publishedAt": "2026-10-30T20:25:47.000Z",
      "category": "blogs",
-     "score": 3.09,
-     "readMinutes": 1
+     "score": 4.86,
+     "readMinutes": 39
     }
    ]
   },
@@ -313,11 +317,11 @@
       "Hacker News"
      ],
      "summary": "Over 11 hours of coding videos on evaluation, inference-time scaling, reinforcement learning, and distillation, with Python and PyTorch.",
-     "why": "Provides comprehensive video instruction on building reasoning models using Python and PyTorch.",
+     "why": "It delivers coding resources covering inference-time scaling, reinforcement learning, and reasoning model distillation.",
      "whySource": "llm",
      "publishedAt": "2026-10-24T11:14:32.000Z",
      "category": "blogs",
-     "score": 13.38,
+     "score": 13.2,
      "readMinutes": 15
     }
    ]
@@ -326,18 +330,18 @@
  "itemIds": [
   "arxiv:2610.38568",
   "arxiv:2610.36671",
+  "arxiv:2610.39301",
+  "arxiv:2610.39302",
   "arxiv:2610.38352",
   "arxiv:2610.38425",
   "arxiv:2610.37786",
-  "arxiv:2610.39633",
-  "arxiv:2610.38342",
   "f2bc736c0ee71119",
-  "37ea901da6ec4d67",
-  "ee99048206eebf86",
-  "d948735545c20cf3",
-  "1c15fb694b68c398",
-  "09174079a1bd1a60",
-  "88899755dba00e8d",
+  "66fb98a7d4d2e2b1",
+  "789c22d09d8c4e91",
+  "84abd1857de5dfd9",
+  "a86d24c59c826150",
+  "a39ec51951b1f56f",
+  "fb7da1e5128caa0c",
   "da8785cc5779f5c9"
  ],
  "deepReadId": "da8785cc5779f5c9",
