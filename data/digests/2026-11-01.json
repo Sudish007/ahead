@@ -1,10 +1,10 @@
 {
  "date": "2026-11-01",
- "generatedAt": "2026-11-01T12:40:20.554Z",
- "wordCount": 516,
+ "generatedAt": "2026-11-01T21:42:05.667Z",
+ "wordCount": 492,
  "readingMinutes": 3,
  "overview": {
-  "text": "Today's key developments span commercial restrictions, infrastructure security, application architecture, and emerging threats. Anthropic has blocked users for activities touching the training of larger models, while separately filing its S-1 to prepare for its IPO. In development tooling, ChatGPT and Codex usage limits are now merging, and Parameter Labs detailed an exploit involving ChatGPT's implementation of HTML previews. Meanwhile, researchers demonstrated a novel side-channel attack capable of leaking secrets from air-gap computers by spelling radio signals from RAM. Open source releases introduce new capabilities for builders, including the persona-ai-sdk for TypeScript featuring durable character memory, a bitemporal AI memory system called graphmemory combining Neo4j, PostgreSQL, and Redis, and cheap-ag for scaling Claude usage. Finally, discussions continue around communicating extreme AI risks to senior policymakers in India and analyzing the performance costs associated with JavaScript frameworks.",
+  "text": "Today's key developments highlight significant shifts across infrastructure, policy, and tooling in the artificial intelligence landscape. Anthropic is preparing for its public offering after filing its S-1, while simultaneously facing controversy for blocking users whose activity touches on training larger models. On the release front, new models and utilities emerge, including the DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF weights and Modelflare-ai/AnyModelBot, providing local-first alternatives spanning major model families. Meanwhile, political and infrastructure pressures are mounting as the datacenter backlash turns bipartisan, with a prolonged permit freeze in Texas posing risks to future buildouts. These events collectively underscore how scaling constraints, regulatory scrutiny, and corporate maturation continue to reshape the ecosystem for researchers and founders alike.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,24 +14,26 @@
    "title": "Must know",
    "entries": [
     {
-     "id": "3c488a5d9e8fc9b7",
-     "title": "Anthropic blocks users for anything touching training larger models",
-     "url": "https://twitter.com/jiahaoshao1/status/2116475922190922088",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50319358",
+     "id": "778916995661ca3b",
+     "title": "Show HN: A language model that lives in a boot sector",
+     "url": "https://github.com/kerlenton/bootgpt",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50315782",
      "sourceIds": [
       "hn-front",
-      "hn-top"
+      "hn-top",
+      "gh-trending-ml"
      ],
      "sourceNames": [
       "HN front page",
-      "Hacker News"
+      "Hacker News",
+      "GitHub new repos: machine-learning"
      ],
-     "summary": "",
-     "why": "Highlights tightening platform restrictions on user activities related to training larger models.",
+     "summary": "A language model that lives in a boot sector · Python",
+     "why": "Demonstrates extreme edge optimization by fitting a language model directly inside a boot sector.",
      "whySource": "llm",
-     "publishedAt": "2026-10-31T19:39:19.000Z",
-     "category": "news",
-     "score": 12.6
+     "publishedAt": "2026-10-30T21:28:17.000Z",
+     "category": "releases",
+     "score": 17.79
     },
     {
      "id": "967be99077d13f07",
@@ -47,51 +49,49 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Examines the performance and efficiency impacts of JavaScript frameworks within modern development stacks.",
+     "why": "Highlights the hidden operational and performance costs that modern JavaScript frameworks impose on AI applications.",
      "whySource": "llm",
      "publishedAt": "2026-11-01T06:06:19.000Z",
+     "category": "news",
+     "score": 12.3
+    },
+    {
+     "id": "3c488a5d9e8fc9b7",
+     "title": "Anthropic blocks users for anything touching training larger models",
+     "url": "https://twitter.com/jiahaoshao1/status/2116475922190922088",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50319358",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Signals tightening restrictions by providers that impact researchers training larger models on their platforms.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-31T19:39:19.000Z",
      "category": "news",
      "score": 11.91
     },
     {
-     "id": "4ea2bbfbe1de5d96",
-     "title": "ChatGPT and Codex usage limits merging",
-     "url": "https://help.openai.com/en/articles/20001625-understanding-chatgpt-and-codex-usage-limits",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50320588",
+     "id": "1d387a7e4fac3490",
+     "title": "It wasn't AI that flipped Proton's charge",
+     "url": "https://blog.raed.dev/posts/proton-loser-thinking/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50328488",
      "sourceIds": [
-      "hn-front",
       "hn-top"
      ],
      "sourceNames": [
-      "HN front page",
       "Hacker News"
      ],
      "summary": "",
-     "why": "Reflects shifting product boundaries and resource management between core developer tools.",
+     "why": "Clarifies physical phenomena behind proton charge flips, separating actual hardware physics from AI attribution.",
      "whySource": "llm",
-     "publishedAt": "2026-10-31T21:49:07.000Z",
+     "publishedAt": "2026-11-01T18:53:55.000Z",
      "category": "news",
-     "score": 11.67
-    },
-    {
-     "id": "arxiv:2409.02292",
-     "title": "Leaking Secrets from Air-Gap Computers by Spelling Radio Signals from RAM (2024)",
-     "url": "https://arxiv.org/abs/2409.02292",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50322022",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Demonstrates a sophisticated hardware-level side-channel attack extracting sensitive data via radio signals from RAM.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-01T01:46:29.000Z",
-     "category": "news",
-     "score": 11.21
+     "score": 11.35
     }
    ]
   },
@@ -105,57 +105,55 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "df8ca25721250f37",
-     "title": "tavern-labs-ai/persona-ai-sdk",
-     "url": "https://github.com/tavern-labs-ai/persona-ai-sdk",
+     "id": "0337f1c85ce865c7",
+     "title": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF",
+     "url": "https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-GGUF",
      "sourceIds": [
-      "gh-trending-llm"
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: llm"
+      "HF trending models"
      ],
-     "summary": "Persona AI SDK: default personas, durable character memory, and Bedrock/OpenAI adapters in one package. · TypeScript",
-     "why": "Provides TypeScript developers with default personas, durable character memory, and multi-provider adapters.",
+     "summary": "text-generation · gguf · 534 likes · 2,294,642 downloads",
+     "why": "Provides new quantized model weights for local deployment and efficient text generation workflows.",
      "whySource": "llm",
-     "publishedAt": "2026-10-31T14:29:10.000Z",
+     "publishedAt": "2026-10-23T09:43:05.000Z",
      "category": "releases",
-     "score": 7.2
+     "score": 8.53
     },
     {
-     "id": "4290700ebfe688c1",
-     "title": "gh9ko8y/graphmemory",
-     "url": "https://github.com/gh9ko8y/graphmemory",
+     "id": "7c70a5424510fa20",
+     "title": "modelflare-ai/AnyModelBot",
+     "url": "https://github.com/modelflare-ai/AnyModelBot",
      "sourceIds": [
       "gh-trending-llm"
      ],
      "sourceNames": [
       "GitHub new repos: llm"
      ],
-     "summary": "Bitemporal AI memory system: six-variable decay, time-graded recall, TTL expiry, dedupe, competitive retrieval (Neo4j + PostgreSQL + Redis) · Python",
-     "why": "Offers a bitemporal memory architecture utilizing Neo4j, PostgreSQL, and Redis with time-graded recall.",
+     "summary": "🤖 Open-source, local-first alternative to Grok Bot, OpenAI dots and Claude Duet. Your own AI bots on any model: GPT, Claude, Gemini, Grok, DeepSeek, Kimi, GLM and 70+ more through one Modelflare key.",
+     "why": "Offers a local-first, open-source alternative to proprietary bots supporting numerous major model providers.",
      "whySource": "llm",
-     "publishedAt": "2026-10-30T12:53:31.000Z",
+     "publishedAt": "2026-10-27T08:51:18.000Z",
      "category": "releases",
-     "score": 7.19
+     "score": 8.2
     },
     {
-     "id": "13c6835917281a31",
-     "title": "muaaz9329/cheap-ag",
-     "url": "https://github.com/muaaz9329/cheap-ag",
+     "id": "ca03e77e00827468",
+     "title": "Edge0/Audio8-TTS-Realistic-0.6b",
+     "url": "https://huggingface.co/Edge0/Audio8-TTS-Realistic-0.6b",
      "sourceIds": [
-      "gh-trending-agents",
-      "gh-trending-llm"
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: ai-agents",
-      "GitHub new repos: llm"
+      "HF trending models"
      ],
-     "summary": "50x your Claude usage with cheap-ag. Opus plans, a dirt-cheap model writes every line, and tests decide what ships.",
-     "why": "Aims to scale Claude usage efficiency by routing tasks through cheaper models backed by automated tests.",
+     "summary": "text-to-speech · transformers · 202 likes · 4,613 downloads",
+     "why": "Introduces a new transformer-based text-to-speech model for realistic audio generation tasks.",
      "whySource": "llm",
-     "publishedAt": "2026-10-28T22:26:18.000Z",
+     "publishedAt": "2026-10-14T03:02:49.000Z",
      "category": "releases",
-     "score": 7.13
+     "score": 7.83
     }
    ]
   },
@@ -169,6 +167,24 @@
    "title": "Analysis worth reading",
    "entries": [
     {
+     "id": "cea170ce8ec60a2c",
+     "title": "The Datacenter Backlash Goes Bipartisan: Next Week's Midterms and the 2028 Buildout",
+     "url": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
+     "sourceIds": [
+      "semianalysis"
+     ],
+     "sourceNames": [
+      "SemiAnalysis"
+     ],
+     "summary": "2027 is largely locked in. 2028 is less secure: a prolonged Texas permit freeze is now the biggest single risk to the US buildout, and both parties are running on tighter rules",
+     "why": "Exposes growing bipartisan friction and regulatory risks threatening upcoming US datacenter buildouts.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-01T18:40:45.000Z",
+     "category": "blogs",
+     "score": 6.6,
+     "readMinutes": 14
+    },
+    {
      "id": "9fdaf97205b3d86b",
      "title": "Explaining “AI might obliterate you” to senior policymakers in India",
      "url": "https://www.alignmentforum.org/posts/RHxaRkarGp9snWoKY/explaining-ai-might-obliterate-you-to-senior-policymakers-in",
@@ -179,30 +195,12 @@
       "Alignment Forum"
      ],
      "summary": "I gave a 20-minute talk in Delhi at the NDTV World Summit. The audience consisted of Indian policymakers, executives, and journalists.",
-     "why": "Offers perspective on communicating severe AI risks effectively to senior government policymakers and executives.",
+     "why": "Offers insight into how existential AI risk is communicated to senior government policymakers and executives.",
      "whySource": "llm",
      "publishedAt": "2026-10-31T21:37:22.000Z",
      "category": "blogs",
-     "score": 2.99,
+     "score": 2.52,
      "readMinutes": 22
-    },
-    {
-     "id": "785d4ceb71a807a6",
-     "title": "How We Took Over ChatGPT Accounts",
-     "url": "https://simonwillison.net/2026/Oct/31/how-we-took-over-chatgpt-accounts/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "How We Took Over ChatGPT Accounts Parameter Labs describe an exploit they found against ChatGPT's implementation of the artifacts pattern (OpenAI used to call this \"Canvas\" but it looks like the latest revision is called HTML previews), where interactive custom HTML apps are…",
-     "why": "Exposes security vulnerabilities within interactive custom HTML application features inside conversational interfaces.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-31T23:15:22.000Z",
-     "category": "blogs",
-     "score": 3.09,
-     "readMinutes": 2
     }
    ]
   },
@@ -221,26 +219,26 @@
       "Don't Worry About the Vase"
      ],
      "summary": "Anthropic filed its S-1 this week to prepare for its IPO.",
-     "why": "Signals a major market milestone as the prominent AI lab prepares for its public market debut.",
+     "why": "Marks a major corporate milestone as Anthropic files its S-1 to prepare for an initial public offering.",
      "whySource": "llm",
      "publishedAt": "2026-10-29T13:49:48.000Z",
      "category": "blogs",
-     "score": 1.28,
+     "score": 1.07,
      "readMinutes": 95
     }
    ]
   }
  ],
  "itemIds": [
-  "3c488a5d9e8fc9b7",
+  "778916995661ca3b",
   "967be99077d13f07",
-  "4ea2bbfbe1de5d96",
-  "arxiv:2409.02292",
-  "df8ca25721250f37",
-  "4290700ebfe688c1",
-  "13c6835917281a31",
+  "3c488a5d9e8fc9b7",
+  "1d387a7e4fac3490",
+  "0337f1c85ce865c7",
+  "7c70a5424510fa20",
+  "ca03e77e00827468",
+  "cea170ce8ec60a2c",
   "9fdaf97205b3d86b",
-  "785d4ceb71a807a6",
   "cdc69abaacad15d7"
  ],
  "deepReadId": "cdc69abaacad15d7",
