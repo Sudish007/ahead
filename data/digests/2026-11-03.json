@@ -1,10 +1,10 @@
 {
  "date": "2026-11-03",
- "generatedAt": "2026-11-03T13:37:55.945Z",
- "wordCount": 746,
+ "generatedAt": "2026-11-03T22:54:17.691Z",
+ "wordCount": 724,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's developments showcase significant architectural and scaling strides across the artificial intelligence ecosystem. OpenAI has introduced Pando, a specialized Git-compatible backend designed to handle the massive development scale enabled by Codex. In model architecture and optimization, researchers have introduced methods for converting autoregressive models to diffusion language models efficiently, alongside DecisionRank for on-policy distillation in decision-model rerankers. Omnimodal embeddings are also seeing comprehensive review through a new roadmap detailing their foundational role across modern AI systems. Meanwhile, the open-source community has advanced practical deployment with unquantized or modified releases like the uncensored DeepSeek-V4.1-Flash-1017 running on consumer hardware, and Astra demonstrating weight reading and writing to improve Qwen. These updates collectively highlight a continuous push toward higher efficiency, larger development scaling infrastructure, and enhanced flexibility in both research exploration and practical local deployment.",
+  "text": "Today's developments showcase significant shifts across local model capabilities, infrastructure scaling, and multimodal research. A primary highlight is the emergence of weight-space programming, demonstrated by Qwen 3.8 27B and Astra reading and writing neural network weights directly. In infrastructure and developer tooling, OpenAI introduced Pando to scale Git for Codex workloads, while concerns emerged over Postman auto-installing AI plugins. On the research and release fronts, new approaches like omnimodal embedding surveys, the Library of Layers for adaptive runtime transformer ordering, and DecisionRank distillation aim to optimize model efficiency. Additionally, the release of uncensored DeepSeek-V4.1-Flash-1017 quants highlights ongoing local deployment innovations, complemented by Google Antigravity accelerating cheminformatics workflows and discussions surrounding SpaceX positioning itself as an AI cloud infrastructure giant.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -13,6 +13,31 @@
    "key": "must-know",
    "title": "Must know",
    "entries": [
+    {
+     "id": "b5cba0d011349b3b",
+     "title": "Qwen 3.8 27B on my laptop can interpret model weights, too",
+     "url": "https://simonwillison.net/2026/Nov/3/qwen-can-interpret-model-weights/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50355251",
+     "sourceIds": [
+      "hn-front",
+      "hn-top",
+      "simonw",
+      "reddit"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News",
+      "Simon Willison",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
+     ],
+     "summary": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
+     "why": "Demonstrates that Qwen 3.8 27B can natively interpret neural network weights.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T16:29:48.000Z",
+     "category": "blogs",
+     "score": 21.49,
+     "readMinutes": 8
+    },
     {
      "id": "32b3bf2b225f3d4c",
      "title": "Astra can read and write weights to improve Qwen",
@@ -29,11 +54,11 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "",
-     "why": "Shows how reading and writing model weights can directly improve Qwen performance.",
+     "why": "Shows how Astra reads and writes weights to improve Qwen.",
      "whySource": "llm",
      "publishedAt": "2026-11-02T18:21:28.000Z",
      "category": "news",
-     "score": 18.99
+     "score": 18.3
     },
     {
      "id": "277870ffc8d71544",
@@ -49,13 +74,39 @@
       "Hacker News"
      ],
      "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
-     "why": "Details OpenAI's custom Pando backend built to handle extreme Codex-scale code development.",
+     "why": "Explains how OpenAI built Pando to scale Git for Codex development.",
      "whySource": "llm",
      "publishedAt": "2026-11-02T15:30:00.000Z",
      "category": "labs",
-     "score": 17.08,
+     "score": 16.31,
      "readMinutes": 1
     },
+    {
+     "id": "210b26f029f33a3e",
+     "title": "Postman silently auto-installs AI plugins and attempts to share all API data",
+     "url": "https://github.com/postmanlabs/postman-app-support/issues/14370",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50354960",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Highlights privacy concerns regarding Postman auto-installing AI plugins and sharing data.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T17:22:37.000Z",
+     "category": "news",
+     "score": 14.56
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
     {
      "id": "arxiv:2611.00172",
      "title": "From Fragmentation to Fusion: A Survey and Roadmap for Omnimodal Embeddings",
@@ -69,11 +120,31 @@
       "arXiv cs.CL"
      ],
      "summary": "Embedding models underpin virtually every modern AI system, from search engines to recommendation systems.",
-     "why": "Provides a vital survey and roadmap for omnimodal embeddings underpinning modern AI systems.",
+     "why": "Provides a comprehensive survey and roadmap for omnimodal embeddings in modern AI.",
      "whySource": "llm",
      "publishedAt": "2026-10-30T00:00:00.000Z",
      "category": "research",
-     "score": 15.23
+     "score": 14.19
+    },
+    {
+     "id": "arxiv:2611.03526",
+     "title": "Library of Layers (LoL): Adaptively Ordering Transformer Layers at Runtime",
+     "url": "https://arxiv.org/abs/2611.03526",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xmzo2s/261103526_library_of_layers_lol_adaptively/",
+     "sourceIds": [
+      "hf-papers",
+      "reddit"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
+     ],
+     "summary": "Computer programmers chain together the same reusable computational primitives, for example, conditional statements or loops, but in different orders to implement different algorithms.",
+     "why": "Introduces adaptive ordering of transformer layers at runtime for flexible algorithm implementation.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T17:57:53.000Z",
+     "category": "research",
+     "score": 14.05
     },
     {
      "id": "arxiv:2610.42128",
@@ -88,74 +159,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Decision models target structured tasks by directly predicting choices or scores, avoiding autoregressive decoding latency.",
-     "why": "Introduces DecisionRank to bypass autoregressive decoding latency via on-policy distillation.",
+     "why": "Applies on-policy distillation for decision-model rerankers to avoid autoregressive decoding latency.",
      "whySource": "llm",
      "publishedAt": "2026-10-30T00:00:00.000Z",
      "category": "research",
-     "score": 13.48
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
-    {
-     "id": "arxiv:2610.41574",
-     "title": "BYOD: Build Your Own DLM - Efficient Autoregressive-to-Diffusion Language Model Conversion",
-     "url": "https://arxiv.org/abs/2610.41574",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.LG",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.LG",
-      "arXiv cs.CL"
-     ],
-     "summary": "Unlike autoregressive (AR) models, diffusion language models (DLMs) permit parallel token updates, flexible generation, and bidirectional attention, but leading systems rely on costly pretraining or full-model fine-tuning.",
-     "why": "Presents a method for efficient conversion of autoregressive models into parallelizable diffusion language models.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-30T00:00:00.000Z",
-     "category": "research",
-     "score": 12.96
-    },
-    {
-     "id": "arxiv:2611.00859",
-     "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
-     "url": "https://arxiv.org/abs/2611.00859",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Real-time long-video generation requires continuous output with consistent appearance and natural motion.",
-     "why": "Targets speed-of-light streaming video generation for consistent real-time long-video outputs.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-31T00:00:00.000Z",
-     "category": "research",
-     "score": 12.63
-    },
-    {
-     "id": "arxiv:2610.41296",
-     "title": "Self-Improvement with Auxiliary Rewards: Learning from Verified Traces and Evaluating Transfer",
-     "url": "https://arxiv.org/abs/2610.41296",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "Answer-level rewards cannot distinguish reasoning traces with equally correct outcomes. We study whether auxiliary trajectory preferences improve small-language-model self-improvement and transfer under limited supervision.",
-     "why": "Explores how auxiliary trajectory preferences improve small language model self-improvement and transfer.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-30T00:00:00.000Z",
-     "category": "research",
-     "score": 12.48
+     "score": 13.05
     }
    ]
   },
@@ -177,45 +185,45 @@
       "HF trending models"
      ],
      "summary": "Measured, refusals 85%→0% even in thinking, 3 sizes 12 GB GPU VRAM, 64GB RAM + SSD via Strata Engine We took ISTA-DASLab's GSQ-RCO quants of DeepSeek-V4.1-Flash-1017 (the ones people run in Strata with a 12 GB GPU and the Engram table on SSD) and removed the refusals.",
-     "why": "Demonstrates running an uncensored DeepSeek-V4.1-Flash-1017 variant on limited hardware.",
+     "why": "Brings uncensored DeepSeek-V4.1-Flash-1017 capabilities to local hardware with reduced refusals.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T04:48:45.000Z",
      "category": "releases",
-     "score": 11.95
+     "score": 11.36
     },
     {
-     "id": "d8eae5e477ef95cf",
-     "title": "Balanov/skein",
-     "url": "https://github.com/Balanov/skein",
-     "sourceIds": [
-      "gh-trending-agents"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents"
-     ],
-     "summary": "Fail-closed swarm orchestration with epoch-fenced work and late-completion rejection. · Go",
-     "why": "Offers a fail-closed swarm orchestration tool featuring epoch-fenced work.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-02T23:57:05.000Z",
-     "category": "releases",
-     "score": 8.01
-    },
-    {
-     "id": "bbf2ecda52605a9f",
-     "title": "FusionCow/Sulphur-3",
-     "url": "https://huggingface.co/FusionCow/Sulphur-3",
+     "id": "ca26bca182f697df",
+     "title": "Qwen/Qwen3.8-27B",
+     "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "minimax-h3 · 252 likes · 195 downloads",
-     "why": "Highlights popular trending weights on Hugging Face utilizing minimax-h3.",
+     "summary": "image-text-to-text · transformers · 19,073 likes · 8,014,877 downloads",
+     "why": "Offers Qwen/Qwen3.8-27B as a notable image-text-to-text model on Hugging Face.",
      "whySource": "llm",
-     "publishedAt": "2026-10-31T20:31:01.000Z",
+     "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 7.24
+     "score": 11.11
+    },
+    {
+     "id": "92c1824269f45469",
+     "title": "Lightricks/LTX-2.5",
+     "url": "https://huggingface.co/Lightricks/LTX-2.5",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-to-video · diffusion-single-file · 10,484 likes · 2,488,128 downloads",
+     "why": "Delivers Lightricks/LTX-2.5 for image-to-video diffusion tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-07-23T07:55:24.000Z",
+     "category": "releases",
+     "score": 10.68
     }
    ]
   },
@@ -224,39 +232,39 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "fc87a45dcfbf03d4",
-     "title": "Heimstaden is changing residential real estate management with AI",
-     "url": "https://openai.com/index/heimstaden",
+     "id": "23c4f130369cb972",
+     "title": "Agentic cheminformatics with Google Antigravity",
+     "url": "https://deepmind.google/blog/agentic-cheminformatics-with-google-antigravity/",
      "sourceIds": [
-      "openai"
+      "deepmind"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Google DeepMind"
      ],
-     "summary": "Discover how Heimstaden uses OpenAI’s ChatGPT Enterprise and Codex to transform property management, cut costs, and empower employees across Europe.",
-     "why": "Illustrates real-world property management transformation using ChatGPT Enterprise and Codex.",
+     "summary": "Learn how Google Antigravity and our Cheminformatics Skills accelerate drug discovery workflows, search compounds, and propose novel rigidified macrocycles.",
+     "why": "Accelerates drug discovery and compound search using Google Antigravity and Cheminformatics Skills.",
      "whySource": "llm",
-     "publishedAt": "2026-11-03T08:00:00.000Z",
+     "publishedAt": "2026-11-03T17:01:49.000Z",
      "category": "labs",
-     "score": 6.28,
+     "score": 6.25,
      "readMinutes": 1
     },
     {
-     "id": "0d297090385ad5a7",
-     "title": "Preparing our next security sprint to harden OpenAI",
-     "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
+     "id": "25493a43cba550c7",
+     "title": "Accelerating engineering for the physical world",
+     "url": "https://openai.com/index/accelerating-engineering-for-the-physical-world",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
-     "why": "Outlines defensive hardening efforts using AI during an internal security sprint.",
+     "summary": "Discover how ChatGPT and Codex are helping engineers accelerate CAD, PCB design, simulation, and other workflows across the physical world.",
+     "why": "Demonstrates how ChatGPT and Codex accelerate engineering workflows for physical design.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T18:00:00.000Z",
+     "publishedAt": "2026-11-03T12:00:00.000Z",
      "category": "labs",
-     "score": 4.8,
+     "score": 5.67,
      "readMinutes": 1
     }
    ]
@@ -266,40 +274,40 @@
    "title": "Analysis worth reading",
    "entries": [
     {
-     "id": "c90b220cbc29d50e",
-     "title": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora",
-     "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/",
+     "id": "2c1a8c772c90590d",
+     "title": "Elon Is Doing It Again: SpaceX Will Be The World’s Biggest AI Cloud",
+     "url": "https://newsletter.semianalysis.com/p/elon-is-doing-it-again-spacex-will",
      "sourceIds": [
-      "latentspace"
+      "semianalysis"
      ],
      "sourceNames": [
-      "Latent Space"
+      "SemiAnalysis"
      ],
-     "summary": "Evals without traces, million-cell tabular reviews, and cracks in the billable hour as a business model",
-     "why": "Analyzes legal AI engineering challenges including eval traces and tabular reviews.",
+     "summary": "Making 13GW in 1.5 Years A Reality, Repurposing Rocket Ship Campuses, A Datacenter at TeraFab?",
+     "why": "Explores SpaceX scaling massive AI cloud infrastructure and energy production rapidly.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T23:01:02.000Z",
+     "publishedAt": "2026-11-03T20:44:53.000Z",
      "category": "blogs",
-     "score": 3.77,
-     "readMinutes": 95
+     "score": 6.72,
+     "readMinutes": 12
     },
     {
-     "id": "78c7de64445e517b",
-     "title": "Scott Alexander’s Against SURA Seems Deeply Confused",
-     "url": "https://thezvi.substack.com/p/scott-alexanders-against-sura-seems",
+     "id": "fc27be5660476e76",
+     "title": "OpenAI Updates Its Model Spec",
+     "url": "https://thezvi.substack.com/p/openai-updates-its-model-spec",
      "sourceIds": [
       "zvi"
      ],
      "sourceNames": [
       "Don't Worry About the Vase"
      ],
-     "summary": "If you are helping build something that might kill everyone, maybe stop doing that.",
-     "why": "Critiques AI safety positions regarding existential risk and development practices.",
+     "summary": "The Model Spec is potentially OpenAI’s most important document.",
+     "why": "Updates OpenAI's crucial Model Spec document guiding system behavior.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T21:33:03.000Z",
+     "publishedAt": "2026-11-03T16:48:28.000Z",
      "category": "blogs",
-     "score": 3.67,
-     "readMinutes": 65
+     "score": 4.45,
+     "readMinutes": 29
     }
    ]
   },
@@ -308,44 +316,44 @@
    "title": "One deep read",
    "entries": [
     {
-     "id": "bcd1f7c11a3af564",
-     "title": "Additional Course Context (for AI Safety Fundamentals; unofficial)",
-     "url": "https://www.alignmentforum.org/posts/6qDn6H5XG5Hc6BJFe/additional-course-context-for-ai-safety-fundamentals",
+     "id": "e6de0e3dfbe38146",
+     "title": "Automating subtle emergent misalignment research",
+     "url": "https://www.alignmentforum.org/posts/MuQDLAJyKJPFkw6q9/automating-subtle-emergent-misalignment-research",
      "sourceIds": [
       "alignmentforum"
      ],
      "sourceNames": [
       "Alignment Forum"
      ],
-     "summary": "Context: I created this to share before the start of courses I facilitate to provide a bunch of additional context and frames.",
-     "why": "Provides unofficial contextual framing for AI safety foundational courses.",
+     "summary": "Authors: Oscar Balcells Obeso, Richard Qi, Monte MacDiarmid, Evan Hubinger Abstract Red-teaming by humans is a vital part of model safety testing, but it may struggle to keep up as models improve.",
+     "why": "Addresses the automation of subtle emergent misalignment research for model safety.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T15:02:41.000Z",
+     "publishedAt": "2026-11-03T18:27:53.000Z",
      "category": "blogs",
-     "score": 2.59,
-     "readMinutes": 21
+     "score": 3.67,
+     "readMinutes": 3
     }
    ]
   }
  ],
  "itemIds": [
+  "b5cba0d011349b3b",
   "32b3bf2b225f3d4c",
   "277870ffc8d71544",
+  "210b26f029f33a3e",
   "arxiv:2611.00172",
+  "arxiv:2611.03526",
   "arxiv:2610.42128",
-  "arxiv:2610.41574",
-  "arxiv:2611.00859",
-  "arxiv:2610.41296",
   "222e4fed91b3804a",
-  "d8eae5e477ef95cf",
-  "bbf2ecda52605a9f",
-  "fc87a45dcfbf03d4",
-  "0d297090385ad5a7",
-  "c90b220cbc29d50e",
-  "78c7de64445e517b",
-  "bcd1f7c11a3af564"
+  "ca26bca182f697df",
+  "92c1824269f45469",
+  "23c4f130369cb972",
+  "25493a43cba550c7",
+  "2c1a8c772c90590d",
+  "fc27be5660476e76",
+  "e6de0e3dfbe38146"
  ],
- "deepReadId": "bcd1f7c11a3af564",
+ "deepReadId": "e6de0e3dfbe38146",
  "llm": {
   "enabled": true,
   "ok": true
