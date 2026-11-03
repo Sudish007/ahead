@@ -1,0 +1,347 @@
+{
+ "date": "2026-11-03",
+ "generatedAt": "2026-11-03T00:29:57.148Z",
+ "wordCount": 696,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's developments span model improvements, infrastructure financing, and agent architectures. Astra can read and write weights to improve Qwen, opening new possibilities for model optimization. Meanwhile, Anthropic faces growth flattening alongside discussions about its IPO and public protection concerns, while Oracle files to sell billions in new stock and bonds to finance its artificial intelligence buildout. In research, new approaches emerge across domains, including FrameForge harnessing video foundation models for unified image generation, SketchDirector addressing complex scene sketching via agentic layout reasoning, and REA introducing a routed embodied agent runtime for asynchronous brain-cerebellum control. In software releases, tools like FusionCow/Sulphur-3, peterpoal134/memory-brain, and duyunzhoudyz/dyz-med-paper-skills debut. Finally, labs and analysis discussions focus on scaling Git at OpenAI with Pando, launching the Grid Protectors Program, building artificial intelligence for lawyers, and examining safety fundamentals.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "32b3bf2b225f3d4c",
+     "title": "Astra can read and write weights to improve Qwen",
+     "url": "https://rikiyat.github.io/blog/weight-space-programming/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50341174",
+     "sourceIds": [
+      "hn-front",
+      "hn-top",
+      "reddit"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
+     ],
+     "summary": "",
+     "why": "Shows how reading and writing weights can directly improve underlying model performance for Qwen.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T18:21:28.000Z",
+     "category": "news",
+     "score": 19.56
+    },
+    {
+     "id": "b16270a8eea7cb68",
+     "title": "Anthropic's growth just flattened",
+     "url": "https://www.regenerator1.com/p/anthropics-growth-just-flattened",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50344958",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Highlights recent flattening growth patterns for Anthropic in the competitive landscape.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T22:33:20.000Z",
+     "category": "news",
+     "score": 12.95
+    },
+    {
+     "id": "4d288a711fe3f258",
+     "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
+     "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50344919",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Raises regulatory and public protection questions regarding a potential Anthropic public offering.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T22:30:47.000Z",
+     "category": "news",
+     "score": 12.47
+    },
+    {
+     "id": "c83586ab7058e458",
+     "title": "Oracle files to sell $20B in new stock, bonds to finance AI buildout",
+     "url": "https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50342284",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Illustrates massive capital raising efforts by Oracle to fund ongoing infrastructure expansion.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T19:27:37.000Z",
+     "category": "news",
+     "score": 12.44
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2610.36545",
+     "title": "FrameForge: Harnessing Priors of Video Foundation Models for Unified Image Generation",
+     "url": "https://arxiv.org/abs/2610.36545",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Unified conditional image generation requires a single model to preserve different aspects of a visual input while producing a target image that follows textual guidance.",
+     "why": "Demonstrates leveraging priors of video foundation models for unified conditional image generation tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-27T00:00:00.000Z",
+     "category": "research",
+     "score": 11.81
+    },
+    {
+     "id": "arxiv:2610.41260",
+     "title": "SketchDirector: Complex Scene Sketching via Agentic Layout Reasoning and Detail Refinement",
+     "url": "https://arxiv.org/abs/2610.41260",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Existing sketch generation methods often rely on image guidance and are largely limited to individual objects or simplified scenes, leaving text-guided complex scene sketching underexplored.",
+     "why": "Introduces agentic layout reasoning to tackle text-guided complex scene sketching challenges.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-30T05:05:12.000Z",
+     "category": "research",
+     "score": 10.5
+    },
+    {
+     "id": "arxiv:2610.42053",
+     "title": "REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control",
+     "url": "https://arxiv.org/abs/2610.42053",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Foundation models are becoming remarkably reliable at high-level reasoning, yet they remain too slow and costly to serve as fine-grained controllers. Conversely, fast policies like VLAs and whole-body controllers offer more efficient reflexes, but struggle to generalize.",
+     "why": "Combines high-level reasoning with fast reflexes using an asynchronous brain-cerebellum control architecture.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-30T17:18:13.000Z",
+     "category": "research",
+     "score": 10.48
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "bbf2ecda52605a9f",
+     "title": "FusionCow/Sulphur-3",
+     "url": "https://huggingface.co/FusionCow/Sulphur-3",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "minimax-h3 · 252 likes · 195 downloads",
+     "why": "Provides a new open model release for practitioners tracking trending machine learning repositories.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-31T20:31:01.000Z",
+     "category": "releases",
+     "score": 7.99
+    },
+    {
+     "id": "9e2b0c96b94622b6",
+     "title": "peterpoal134/memory-brain",
+     "url": "https://github.com/peterpoal134/memory-brain",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "给 AstrBot 的可落地 AI 记忆与生活层：五类记忆、混合检索、遗忘治理、情绪边界、自主生活循环。不覆盖人格。 · JavaScript",
+     "why": "Adds modular memory management, retrieval, and autonomous life cycles for AstrBot applications.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T16:08:47.000Z",
+     "category": "releases",
+     "score": 7.42
+    },
+    {
+     "id": "333bc37d954c1d78",
+     "title": "duyunzhoudyz/dyz-med-paper-skills",
+     "url": "https://github.com/duyunzhoudyz/dyz-med-paper-skills",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "医学论文写作与科研助手：面向中国医生和医学研究生的 32 个 Agent Skills，适用于 Claude Code、Codex，覆盖选题、PubMed 文献检索、中英写作、选刊投稿与审稿修回。Medical writing & research skills. · Python",
+     "why": "Offers specialized agent skills tailored for medical writing and research workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-01T14:57:55.000Z",
+     "category": "releases",
+     "score": 7.32
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "277870ffc8d71544",
+     "title": "Scaling Git at OpenAI",
+     "url": "https://openai.com/index/scaling-git-at-openai",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+     "why": "Details how Pando solves Git-compatible version control at the massive scale of Codex development.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T15:30:00.000Z",
+     "category": "labs",
+     "score": 5.89,
+     "readMinutes": 1
+    },
+    {
+     "id": "5d33ed0c66ace544",
+     "title": "Introducing the Grid Protectors Program",
+     "url": "https://openai.com/index/grid-protectors-program",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
+     "why": "Outlines utility partnerships designed to maintain grid reliability and protect consumer electricity costs.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T15:00:00.000Z",
+     "category": "labs",
+     "score": 5.83,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "c90b220cbc29d50e",
+     "title": "Building AI for Lawyers - Jacob Lauritzen, CTO of Legora",
+     "url": "https://latent.space/p/building-ai-for-lawyers-jacob-lauritzen-cto-of-legora/",
+     "sourceIds": [
+      "latentspace"
+     ],
+     "sourceNames": [
+      "Latent Space"
+     ],
+     "summary": "Evals without traces, million-cell tabular reviews, and cracks in the billable hour as a business model",
+     "why": "Explores practical engineering challenges when building legal technology applications and evaluations.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T23:01:02.000Z",
+     "category": "blogs",
+     "score": 4.86,
+     "readMinutes": 95
+    },
+    {
+     "id": "78c7de64445e517b",
+     "title": "Scott Alexander’s Against SURA Seems Deeply Confused",
+     "url": "https://thezvi.substack.com/p/scott-alexanders-against-sura-seems",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "If you are helping build something that might kill everyone, maybe stop doing that.",
+     "why": "Critiques safety perspectives and risk arguments surrounding advanced artificial intelligence development.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T21:33:03.000Z",
+     "category": "blogs",
+     "score": 4.72,
+     "readMinutes": 65
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "bcd1f7c11a3af564",
+     "title": "Additional Course Context (for AI Safety Fundamentals; unofficial)",
+     "url": "https://www.alignmentforum.org/posts/6qDn6H5XG5Hc6BJFe/additional-course-context-for-ai-safety-fundamentals",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "Context: I created this to share before the start of courses I facilitate to provide a bunch of additional context and frames.",
+     "why": "Provides unofficial context and framing for courses focused on artificial intelligence safety fundamentals.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T15:02:41.000Z",
+     "category": "blogs",
+     "score": 3.33,
+     "readMinutes": 21
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "32b3bf2b225f3d4c",
+  "b16270a8eea7cb68",
+  "4d288a711fe3f258",
+  "c83586ab7058e458",
+  "arxiv:2610.36545",
+  "arxiv:2610.41260",
+  "arxiv:2610.42053",
+  "bbf2ecda52605a9f",
+  "9e2b0c96b94622b6",
+  "333bc37d954c1d78",
+  "277870ffc8d71544",
+  "5d33ed0c66ace544",
+  "c90b220cbc29d50e",
+  "78c7de64445e517b",
+  "bcd1f7c11a3af564"
+ ],
+ "deepReadId": "bcd1f7c11a3af564",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
