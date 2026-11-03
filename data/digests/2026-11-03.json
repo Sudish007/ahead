@@ -1,10 +1,10 @@
 {
  "date": "2026-11-03",
- "generatedAt": "2026-11-03T00:29:57.148Z",
- "wordCount": 696,
+ "generatedAt": "2026-11-03T13:37:55.945Z",
+ "wordCount": 746,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's developments span model improvements, infrastructure financing, and agent architectures. Astra can read and write weights to improve Qwen, opening new possibilities for model optimization. Meanwhile, Anthropic faces growth flattening alongside discussions about its IPO and public protection concerns, while Oracle files to sell billions in new stock and bonds to finance its artificial intelligence buildout. In research, new approaches emerge across domains, including FrameForge harnessing video foundation models for unified image generation, SketchDirector addressing complex scene sketching via agentic layout reasoning, and REA introducing a routed embodied agent runtime for asynchronous brain-cerebellum control. In software releases, tools like FusionCow/Sulphur-3, peterpoal134/memory-brain, and duyunzhoudyz/dyz-med-paper-skills debut. Finally, labs and analysis discussions focus on scaling Git at OpenAI with Pando, launching the Grid Protectors Program, building artificial intelligence for lawyers, and examining safety fundamentals.",
+  "text": "Today's developments showcase significant architectural and scaling strides across the artificial intelligence ecosystem. OpenAI has introduced Pando, a specialized Git-compatible backend designed to handle the massive development scale enabled by Codex. In model architecture and optimization, researchers have introduced methods for converting autoregressive models to diffusion language models efficiently, alongside DecisionRank for on-policy distillation in decision-model rerankers. Omnimodal embeddings are also seeing comprehensive review through a new roadmap detailing their foundational role across modern AI systems. Meanwhile, the open-source community has advanced practical deployment with unquantized or modified releases like the uncensored DeepSeek-V4.1-Flash-1017 running on consumer hardware, and Astra demonstrating weight reading and writing to improve Qwen. These updates collectively highlight a continuous push toward higher efficiency, larger development scaling infrastructure, and enhanced flexibility in both research exploration and practical local deployment.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -29,71 +29,70 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "",
-     "why": "Shows how reading and writing weights can directly improve underlying model performance for Qwen.",
+     "why": "Shows how reading and writing model weights can directly improve Qwen performance.",
      "whySource": "llm",
      "publishedAt": "2026-11-02T18:21:28.000Z",
      "category": "news",
-     "score": 19.56
+     "score": 18.99
     },
     {
-     "id": "b16270a8eea7cb68",
-     "title": "Anthropic's growth just flattened",
-     "url": "https://www.regenerator1.com/p/anthropics-growth-just-flattened",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50344958",
+     "id": "277870ffc8d71544",
+     "title": "Scaling Git at OpenAI",
+     "url": "https://openai.com/index/scaling-git-at-openai",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50345924",
      "sourceIds": [
-      "hn-front",
+      "openai",
       "hn-top"
      ],
      "sourceNames": [
-      "HN front page",
+      "OpenAI",
       "Hacker News"
      ],
-     "summary": "",
-     "why": "Highlights recent flattening growth patterns for Anthropic in the competitive landscape.",
+     "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
+     "why": "Details OpenAI's custom Pando backend built to handle extreme Codex-scale code development.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T22:33:20.000Z",
-     "category": "news",
-     "score": 12.95
+     "publishedAt": "2026-11-02T15:30:00.000Z",
+     "category": "labs",
+     "score": 17.08,
+     "readMinutes": 1
     },
     {
-     "id": "4d288a711fe3f258",
-     "title": "The SEC Should Block Anthropic's IPO to Protect the Public",
-     "url": "https://www.techpolicy.press/the-sec-should-block-anthropics-ipo-to-protect-the-public/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50344919",
+     "id": "arxiv:2611.00172",
+     "title": "From Fragmentation to Fusion: A Survey and Roadmap for Omnimodal Embeddings",
+     "url": "https://arxiv.org/abs/2611.00172",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CL"
      ],
-     "summary": "",
-     "why": "Raises regulatory and public protection questions regarding a potential Anthropic public offering.",
+     "summary": "Embedding models underpin virtually every modern AI system, from search engines to recommendation systems.",
+     "why": "Provides a vital survey and roadmap for omnimodal embeddings underpinning modern AI systems.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T22:30:47.000Z",
-     "category": "news",
-     "score": 12.47
+     "publishedAt": "2026-10-30T00:00:00.000Z",
+     "category": "research",
+     "score": 15.23
     },
     {
-     "id": "c83586ab7058e458",
-     "title": "Oracle files to sell $20B in new stock, bonds to finance AI buildout",
-     "url": "https://www.cnbc.com/2026/11/02/oracle-files-to-sell-20-billion-in-new-stock-bonds-to-finance-ai-buildout.html",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50342284",
+     "id": "arxiv:2610.42128",
+     "title": "DecisionRank: On-Policy Distillation for Decision-Model Rerankers",
+     "url": "https://arxiv.org/abs/2610.42128",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CL"
      ],
-     "summary": "",
-     "why": "Illustrates massive capital raising efforts by Oracle to fund ongoing infrastructure expansion.",
+     "summary": "Decision models target structured tasks by directly predicting choices or scores, avoiding autoregressive decoding latency.",
+     "why": "Introduces DecisionRank to bypass autoregressive decoding latency via on-policy distillation.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T19:27:37.000Z",
-     "category": "news",
-     "score": 12.44
+     "publishedAt": "2026-10-30T00:00:00.000Z",
+     "category": "research",
+     "score": 13.48
     }
    ]
   },
@@ -102,57 +101,61 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2610.36545",
-     "title": "FrameForge: Harnessing Priors of Video Foundation Models for Unified Image Generation",
-     "url": "https://arxiv.org/abs/2610.36545",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Unified conditional image generation requires a single model to preserve different aspects of a visual input while producing a target image that follows textual guidance.",
-     "why": "Demonstrates leveraging priors of video foundation models for unified conditional image generation tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-27T00:00:00.000Z",
-     "category": "research",
-     "score": 11.81
-    },
-    {
-     "id": "arxiv:2610.41260",
-     "title": "SketchDirector: Complex Scene Sketching via Agentic Layout Reasoning and Detail Refinement",
-     "url": "https://arxiv.org/abs/2610.41260",
+     "id": "arxiv:2610.41574",
+     "title": "BYOD: Build Your Own DLM - Efficient Autoregressive-to-Diffusion Language Model Conversion",
+     "url": "https://arxiv.org/abs/2610.41574",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.CV"
+      "arxiv-cs.LG",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.CV"
+      "arXiv cs.LG",
+      "arXiv cs.CL"
      ],
-     "summary": "Existing sketch generation methods often rely on image guidance and are largely limited to individual objects or simplified scenes, leaving text-guided complex scene sketching underexplored.",
-     "why": "Introduces agentic layout reasoning to tackle text-guided complex scene sketching challenges.",
+     "summary": "Unlike autoregressive (AR) models, diffusion language models (DLMs) permit parallel token updates, flexible generation, and bidirectional attention, but leading systems rely on costly pretraining or full-model fine-tuning.",
+     "why": "Presents a method for efficient conversion of autoregressive models into parallelizable diffusion language models.",
      "whySource": "llm",
-     "publishedAt": "2026-10-30T05:05:12.000Z",
+     "publishedAt": "2026-10-30T00:00:00.000Z",
      "category": "research",
-     "score": 10.5
+     "score": 12.96
     },
     {
-     "id": "arxiv:2610.42053",
-     "title": "REA: A Routed Embodied Agent Runtime for Asynchronous Brain-Cerebellum Control",
-     "url": "https://arxiv.org/abs/2610.42053",
+     "id": "arxiv:2611.00859",
+     "title": "Wave Forcing: Towards Speed-of-Light Streaming Video Generation",
+     "url": "https://arxiv.org/abs/2611.00859",
      "sourceIds": [
       "hf-papers"
      ],
      "sourceNames": [
       "HF Daily Papers"
      ],
-     "summary": "Foundation models are becoming remarkably reliable at high-level reasoning, yet they remain too slow and costly to serve as fine-grained controllers. Conversely, fast policies like VLAs and whole-body controllers offer more efficient reflexes, but struggle to generalize.",
-     "why": "Combines high-level reasoning with fast reflexes using an asynchronous brain-cerebellum control architecture.",
+     "summary": "Real-time long-video generation requires continuous output with consistent appearance and natural motion.",
+     "why": "Targets speed-of-light streaming video generation for consistent real-time long-video outputs.",
      "whySource": "llm",
-     "publishedAt": "2026-10-30T17:18:13.000Z",
+     "publishedAt": "2026-10-31T00:00:00.000Z",
      "category": "research",
-     "score": 10.48
+     "score": 12.63
+    },
+    {
+     "id": "arxiv:2610.41296",
+     "title": "Self-Improvement with Auxiliary Rewards: Learning from Verified Traces and Evaluating Transfer",
+     "url": "https://arxiv.org/abs/2610.41296",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Answer-level rewards cannot distinguish reasoning traces with equally correct outcomes. We study whether auxiliary trajectory preferences improve small-language-model self-improvement and transfer under limited supervision.",
+     "why": "Explores how auxiliary trajectory preferences improve small language model self-improvement and transfer.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-30T00:00:00.000Z",
+     "category": "research",
+     "score": 12.48
     }
    ]
   },
@@ -160,6 +163,43 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
+    {
+     "id": "222e4fed91b3804a",
+     "title": "Running UNCENSORED DeepSeek-V4.1-Flash-1017 on a 12 Gb VRAM",
+     "url": "https://huggingface.co/AtomicChat/DeepSeek-V4.1-Flash-1017-Uncensored-GSQ-RCO-GGUF",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xm0uy0/running_uncensored_deepseekv41flash1017_on_a_12/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "Measured, refusals 85%→0% even in thinking, 3 sizes 12 GB GPU VRAM, 64GB RAM + SSD via Strata Engine We took ISTA-DASLab's GSQ-RCO quants of DeepSeek-V4.1-Flash-1017 (the ones people run in Strata with a 12 GB GPU and the Engram table on SSD) and removed the refusals.",
+     "why": "Demonstrates running an uncensored DeepSeek-V4.1-Flash-1017 variant on limited hardware.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T04:48:45.000Z",
+     "category": "releases",
+     "score": 11.95
+    },
+    {
+     "id": "d8eae5e477ef95cf",
+     "title": "Balanov/skein",
+     "url": "https://github.com/Balanov/skein",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "Fail-closed swarm orchestration with epoch-fenced work and late-completion rejection. · Go",
+     "why": "Offers a fail-closed swarm orchestration tool featuring epoch-fenced work.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T23:57:05.000Z",
+     "category": "releases",
+     "score": 8.01
+    },
     {
      "id": "bbf2ecda52605a9f",
      "title": "FusionCow/Sulphur-3",
@@ -171,45 +211,11 @@
       "HF trending models"
      ],
      "summary": "minimax-h3 · 252 likes · 195 downloads",
-     "why": "Provides a new open model release for practitioners tracking trending machine learning repositories.",
+     "why": "Highlights popular trending weights on Hugging Face utilizing minimax-h3.",
      "whySource": "llm",
      "publishedAt": "2026-10-31T20:31:01.000Z",
      "category": "releases",
-     "score": 7.99
-    },
-    {
-     "id": "9e2b0c96b94622b6",
-     "title": "peterpoal134/memory-brain",
-     "url": "https://github.com/peterpoal134/memory-brain",
-     "sourceIds": [
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm"
-     ],
-     "summary": "给 AstrBot 的可落地 AI 记忆与生活层：五类记忆、混合检索、遗忘治理、情绪边界、自主生活循环。不覆盖人格。 · JavaScript",
-     "why": "Adds modular memory management, retrieval, and autonomous life cycles for AstrBot applications.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-28T16:08:47.000Z",
-     "category": "releases",
-     "score": 7.42
-    },
-    {
-     "id": "333bc37d954c1d78",
-     "title": "duyunzhoudyz/dyz-med-paper-skills",
-     "url": "https://github.com/duyunzhoudyz/dyz-med-paper-skills",
-     "sourceIds": [
-      "gh-trending-agents"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents"
-     ],
-     "summary": "医学论文写作与科研助手：面向中国医生和医学研究生的 32 个 Agent Skills，适用于 Claude Code、Codex，覆盖选题、PubMed 文献检索、中英写作、选刊投稿与审稿修回。Medical writing & research skills. · Python",
-     "why": "Offers specialized agent skills tailored for medical writing and research workflows.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-01T14:57:55.000Z",
-     "category": "releases",
-     "score": 7.32
+     "score": 7.24
     }
    ]
   },
@@ -218,39 +224,39 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "277870ffc8d71544",
-     "title": "Scaling Git at OpenAI",
-     "url": "https://openai.com/index/scaling-git-at-openai",
+     "id": "fc87a45dcfbf03d4",
+     "title": "Heimstaden is changing residential real estate management with AI",
+     "url": "https://openai.com/index/heimstaden",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "How OpenAI built Pando, a Git-compatible backend designed for the scale of development that Codex makes possible.",
-     "why": "Details how Pando solves Git-compatible version control at the massive scale of Codex development.",
+     "summary": "Discover how Heimstaden uses OpenAI’s ChatGPT Enterprise and Codex to transform property management, cut costs, and empower employees across Europe.",
+     "why": "Illustrates real-world property management transformation using ChatGPT Enterprise and Codex.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T15:30:00.000Z",
+     "publishedAt": "2026-11-03T08:00:00.000Z",
      "category": "labs",
-     "score": 5.89,
+     "score": 6.28,
      "readMinutes": 1
     },
     {
-     "id": "5d33ed0c66ace544",
-     "title": "Introducing the Grid Protectors Program",
-     "url": "https://openai.com/index/grid-protectors-program",
+     "id": "0d297090385ad5a7",
+     "title": "Preparing our next security sprint to harden OpenAI",
+     "url": "https://openai.com/index/preparing-our-next-security-sprint-to-harden-openai",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "OpenAI’s Grid Protectors Program will work with utilities to help future compute campuses support grid reliability and protect consumer electricity costs.",
-     "why": "Outlines utility partnerships designed to maintain grid reliability and protect consumer electricity costs.",
+     "summary": "OpenAI is preparing its next internal security sprint with Cathedral Systems to test and strengthen its defenses using AI.",
+     "why": "Outlines defensive hardening efforts using AI during an internal security sprint.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T15:00:00.000Z",
+     "publishedAt": "2026-11-02T18:00:00.000Z",
      "category": "labs",
-     "score": 5.83,
+     "score": 4.8,
      "readMinutes": 1
     }
    ]
@@ -270,11 +276,11 @@
       "Latent Space"
      ],
      "summary": "Evals without traces, million-cell tabular reviews, and cracks in the billable hour as a business model",
-     "why": "Explores practical engineering challenges when building legal technology applications and evaluations.",
+     "why": "Analyzes legal AI engineering challenges including eval traces and tabular reviews.",
      "whySource": "llm",
      "publishedAt": "2026-11-02T23:01:02.000Z",
      "category": "blogs",
-     "score": 4.86,
+     "score": 3.77,
      "readMinutes": 95
     },
     {
@@ -288,11 +294,11 @@
       "Don't Worry About the Vase"
      ],
      "summary": "If you are helping build something that might kill everyone, maybe stop doing that.",
-     "why": "Critiques safety perspectives and risk arguments surrounding advanced artificial intelligence development.",
+     "why": "Critiques AI safety positions regarding existential risk and development practices.",
      "whySource": "llm",
      "publishedAt": "2026-11-02T21:33:03.000Z",
      "category": "blogs",
-     "score": 4.72,
+     "score": 3.67,
      "readMinutes": 65
     }
    ]
@@ -312,11 +318,11 @@
       "Alignment Forum"
      ],
      "summary": "Context: I created this to share before the start of courses I facilitate to provide a bunch of additional context and frames.",
-     "why": "Provides unofficial context and framing for courses focused on artificial intelligence safety fundamentals.",
+     "why": "Provides unofficial contextual framing for AI safety foundational courses.",
      "whySource": "llm",
      "publishedAt": "2026-11-02T15:02:41.000Z",
      "category": "blogs",
-     "score": 3.33,
+     "score": 2.59,
      "readMinutes": 21
     }
    ]
@@ -324,17 +330,17 @@
  ],
  "itemIds": [
   "32b3bf2b225f3d4c",
-  "b16270a8eea7cb68",
-  "4d288a711fe3f258",
-  "c83586ab7058e458",
-  "arxiv:2610.36545",
-  "arxiv:2610.41260",
-  "arxiv:2610.42053",
-  "bbf2ecda52605a9f",
-  "9e2b0c96b94622b6",
-  "333bc37d954c1d78",
   "277870ffc8d71544",
-  "5d33ed0c66ace544",
+  "arxiv:2611.00172",
+  "arxiv:2610.42128",
+  "arxiv:2610.41574",
+  "arxiv:2611.00859",
+  "arxiv:2610.41296",
+  "222e4fed91b3804a",
+  "d8eae5e477ef95cf",
+  "bbf2ecda52605a9f",
+  "fc87a45dcfbf03d4",
+  "0d297090385ad5a7",
   "c90b220cbc29d50e",
   "78c7de64445e517b",
   "bcd1f7c11a3af564"
