@@ -1,10 +1,10 @@
 {
  "date": "2026-11-04",
- "generatedAt": "2026-11-04T04:48:29.215Z",
- "wordCount": 758,
- "readingMinutes": 4,
+ "generatedAt": "2026-11-04T13:46:41.838Z",
+ "wordCount": 901,
+ "readingMinutes": 5,
  "overview": {
-  "text": "Today's landscape highlights critical shifts across infrastructure, architecture, and agentic systems. US tech giants face mounting pressure as hidden AI debt swells significantly over six months, while datacenter buildouts encounter growing bipartisan political backlash and regulatory hurdles. On the technical front, researchers are advancing computer-use agents with hybrid training recipes combining visual GUI interaction and terminal execution, alongside novel conversion techniques for efficient autoregressive-to-diffusion language model transitions. Additionally, new evaluation frameworks for physical intelligence address reproducibility challenges in robotics, and test-time self-improvement methods enhance vision-language models without external annotations. In the open ecosystem, releases like SenseNova-Loop-9B-Preview and new quantized variants expand options for multimodal and agentic workflows, while enterprise deployments continue to transform property management and security operations.",
+  "text": "Today's AI developments highlight significant progress across agentic systems, multimodal models, and practical enterprise deployments. ToolSpace introduces tool-centric environment synthesis for long-horizon agents composing diverse services into executable workflows, while VidUEU-Agent tackles instruction data scarcity for multimodal understanding and editing tasks. In computer vision, FlowTranslator enables training-free in-image machine translation through flow-based editing, bypassing the need for massive paired training sets. Simultaneously, Recursa addresses how foundation models can tackle unfamiliar domains without relying on large expert-created training datasets. In model releases, SenseNova-Loop-9B-Preview emerges as a new multimodal language model tailored for long-context and agentic workflows handling text and images. Finally, enterprises continue applying frontier models to real-world operations, with companies like Cisco leveraging OpenAI models to enhance enterprise security and defend networks at machine speed.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,25 +14,87 @@
    "title": "Must know",
    "entries": [
     {
-     "id": "2258ac95ca26c0c6",
-     "title": "Google will turn off search for schools that reject AI",
-     "url": "https://www.nytimes.com/2026/11/03/us/google-search-schools-restrict-ai.html",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50353192",
+     "id": "arxiv:2611.05036",
+     "title": "ToolSpace: Scaling Tool-Centric Environment Synthesis for Long-Horizon Agents",
+     "url": "https://arxiv.org/abs/2611.05036",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CL"
      ],
-     "summary": "",
-     "why": "Examines platform-level policy enforcement impacts on educational institutions rejecting AI integration.",
+     "summary": "Large language models are deployed as long-horizon agents that compose diverse tools across MCP services into executable workflows. Existing MCP environment-scaling methods are data-centric: they first synthesize a database and scenario, then derive tools and tasks from them.",
+     "why": "This scales tool-centric environment synthesis for long-horizon agents composing diverse tools across services.",
      "whySource": "llm",
-     "publishedAt": "2026-11-03T15:25:47.000Z",
-     "category": "news",
-     "score": 13.64
+     "publishedAt": "2026-11-03T00:00:00.000Z",
+     "category": "research",
+     "score": 15.76
     },
+    {
+     "id": "arxiv:2611.04418",
+     "title": "VidUEU-Agent: A Data-Curation Agent for Multimodal Understanding, Editing, and Unified Tasks",
+     "url": "https://arxiv.org/abs/2611.04418",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "The advancement of multimodal learning is heavily constrained by the scarcity and high annotation cost of high-quality instruction data.",
+     "why": "It addresses multimodal learning constraints by improving data curation for understanding and editing tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T00:00:00.000Z",
+     "category": "research",
+     "score": 15.28
+    },
+    {
+     "id": "arxiv:2611.04303",
+     "title": "FlowTranslator: Training-Free In-Image Machine Translation with Flow-Based Editing",
+     "url": "https://arxiv.org/abs/2611.04303",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "In-image machine translation (IIMT) replaces text in an image with its translation while preserving the surrounding visual context. Existing task-specific models achieve convincing performance but require massive paired training images before and after translation.",
+     "why": "It enables training-free in-image machine translation while preserving surrounding visual context without paired datasets.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T00:00:00.000Z",
+     "category": "research",
+     "score": 14.08
+    },
+    {
+     "id": "arxiv:2611.04035",
+     "title": "Recursa: Toward Recursively Self-Improving Foundation Model Systems",
+     "url": "https://arxiv.org/abs/2611.04035",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Foundation models in changing environments can encounter unfamiliar domain knowledge that their original training did not cover. However, new domains rarely provide large amounts of expert-created training data or reliable supervisory signals for further training.",
+     "why": "It helps foundation models adapt to unfamiliar domains lacking large amounts of expert training data.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T00:00:00.000Z",
+     "category": "research",
+     "score": 14.08
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
     {
      "id": "arxiv:2610.40747",
      "title": "Mage-VL-Cowork: A Full Training Recipe to Learn Hybrid Computer Use From Evolved Harnesses",
@@ -46,114 +108,47 @@
       "arXiv cs.CL"
      ],
      "summary": "Effective computer-use agents (CUAs) should seamlessly combine visual GUI interaction with code and terminal execution within a single policy.",
-     "why": "Provides a training recipe for computer-use agents combining visual GUI interaction and terminal execution.",
+     "why": "It provides a training recipe to combine visual GUI interaction with code and terminal execution.",
      "whySource": "llm",
      "publishedAt": "2026-10-29T00:00:00.000Z",
      "category": "research",
-     "score": 13.61
+     "score": 13.6
     },
     {
-     "id": "b61b7d0004aa5f86",
-     "title": "The 'Astra can read and write weights to improve Qwen' post is misleading",
-     "url": "https://honnibal.dev/blog/astra-read-write-misleading",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50351111",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Clarifies misconceptions surrounding weight reading and writing capabilities for Qwen models.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-03T12:21:17.000Z",
-     "category": "news",
-     "score": 13.34
-    },
-    {
-     "id": "f7735096343ce811",
-     "title": "US tech giants' hidden AI debt swells 90% to $3.2T in 6 months",
-     "url": "https://asia.nikkei.com/business/technology/artificial-intelligence/us-tech-giants-hidden-ai-debt-swells-90-to-3.2tn-in-6-months",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50358422",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Highlights the rapid growth of hidden financial liabilities tied to major tech AI investments.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-03T21:26:44.000Z",
-     "category": "news",
-     "score": 13.01
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
-    {
-     "id": "arxiv:2610.41574",
-     "title": "BYOD: Build Your Own DLM - Efficient Autoregressive-to-Diffusion Language Model Conversion",
-     "url": "https://arxiv.org/abs/2610.41574",
+     "id": "arxiv:2611.03685",
+     "title": "LOLPlay: Benchmarking Real-Time Visual Agents in League of Legends",
+     "url": "https://arxiv.org/abs/2611.03685",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.LG",
-      "arxiv-cs.CL"
+      "arxiv-cs.AI"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.LG",
-      "arXiv cs.CL"
+      "arXiv cs.AI"
      ],
-     "summary": "Unlike autoregressive (AR) models, diffusion language models (DLMs) permit parallel token updates, flexible generation, and bidirectional attention, but leading systems rely on costly pretraining or full-model fine-tuning.",
-     "why": "Enables efficient conversion of autoregressive models to diffusion language models without costly pretraining.",
+     "summary": "Visual agents need to coordinate reasoning and action while their environment evolves during inference. We introduce LOLPlay, a benchmark in native League of Legends with 36 champion-specific tasks spanning resource management, combat, cooperation, and objectives.",
+     "why": "It introduces a benchmark for evaluating real-time visual agents in dynamic gaming environments.",
      "whySource": "llm",
-     "publishedAt": "2026-10-30T00:00:00.000Z",
+     "publishedAt": "2026-10-25T00:00:00.000Z",
      "category": "research",
-     "score": 11.92
+     "score": 13.56
     },
     {
-     "id": "arxiv:2611.02497",
-     "title": "RoboColosseum: Evaluating Physical Intelligence at Scale In-The-Wild",
-     "url": "https://arxiv.org/abs/2611.02497",
+     "id": "arxiv:2611.05275",
+     "title": "Route Anything: A Study of Model and Policy Routing for General-Purpose AI Systems",
+     "url": "https://arxiv.org/abs/2611.05275",
      "sourceIds": [
       "hf-papers"
      ],
      "sourceNames": [
       "HF Daily Papers"
      ],
-     "summary": "General-purpose robot policies must work across robots, tasks, and environments, yet the variation that makes physical trials informative also makes them difficult to reproduce.",
-     "why": "Addresses reproducibility challenges when evaluating physical intelligence across diverse robotic platforms.",
+     "summary": "Artificial general intelligence (AGI) requires a method that can understand, generate, reason, and act across diverse domains and modalities.",
+     "why": "It studies model and policy routing for general-purpose artificial intelligence systems across modalities.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T00:00:00.000Z",
+     "publishedAt": "2026-11-03T00:00:00.000Z",
      "category": "research",
-     "score": 11.68
-    },
-    {
-     "id": "arxiv:2611.00053",
-     "title": "SIMIT: Self-Improving Vision-Language Models via Imagination at Test-Time",
-     "url": "https://arxiv.org/abs/2611.00053",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "We introduce SIMIT, a test-time self-improvement framework in which a vision-language model creates its own query-specific training data before answering an unlabeled test query. Our goal is to improve performance on a given target test set without annotations or external models.",
-     "why": "Introduces test-time generation of query-specific training data to improve vision-language model performance.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-11T00:00:00.000Z",
-     "category": "research",
-     "score": 11.64
+     "score": 12.6
     }
    ]
   },
@@ -175,11 +170,11 @@
       "HF trending models"
      ],
      "summary": "Overview SenseNova-Loop-9B-Preview is a multimodal language model developed for long-context and agentic workflows. It accepts text and images and generates text for applications that combine document understanding, coding, and interaction with external tools.",
-     "why": "Offers a new multimodal language model tailored for long-context and agentic workflows.",
+     "why": "It offers a new multimodal language model specifically developed for long-context and agentic workflows.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T15:34:40.000Z",
      "category": "releases",
-     "score": 11.87
+     "score": 11.28
     },
     {
      "id": "17573406d78cd521",
@@ -192,28 +187,28 @@
       "HF trending models"
      ],
      "summary": "text-to-image · gguf · 5,624 likes · 2,508,590 downloads",
-     "why": "Provides a quantized text-to-image model variant for localized deployment pipelines.",
+     "why": "It provides a quantized text-to-image model variant for efficient generation tasks.",
      "whySource": "llm",
      "publishedAt": "2026-09-20T15:51:13.000Z",
      "category": "releases",
-     "score": 10.23
+     "score": 9.6
     },
     {
-     "id": "afc305b6db5c414f",
-     "title": "abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
-     "url": "https://huggingface.co/abenzerps/Qwen-Image-2.1-Uncensored-Quantized",
+     "id": "8e0b9acadf5d4ff9",
+     "title": "LiquidAI/LFM3-1.7B",
+     "url": "https://huggingface.co/LiquidAI/LFM3-1.7B",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "text-to-image · gguf · 5,620 likes · 2,508,590 downloads",
-     "why": "Delivers an uncensored quantized variant for text-to-image generation tasks.",
+     "summary": "text-generation · transformers · 1,457 likes · 54,959 downloads",
+     "why": "It delivers a compact text-generation model for transformer-based application pipelines.",
      "whySource": "llm",
-     "publishedAt": "2026-09-20T15:51:13.000Z",
+     "publishedAt": "2026-10-23T21:35:42.000Z",
      "category": "releases",
-     "score": 9.8
+     "score": 9.25
     }
    ]
   },
@@ -232,11 +227,11 @@
       "OpenAI"
      ],
      "summary": "Discover how Heimstaden uses OpenAI’s ChatGPT Enterprise and Codex to transform property management, cut costs, and empower employees across Europe.",
-     "why": "Demonstrates enterprise deployment of language models to transform residential property management.",
+     "why": "It demonstrates how enterprise adoption of chat and code models transforms property management operations.",
      "whySource": "llm",
      "publishedAt": "2026-11-03T08:00:00.000Z",
      "category": "labs",
-     "score": 4.69,
+     "score": 3.95,
      "readMinutes": 1
     },
     {
@@ -250,11 +245,11 @@
       "OpenAI"
      ],
      "summary": "Cisco combines network intelligence with OpenAI models to strengthen enterprise security. Learn how it is building more adaptive defenses.",
-     "why": "Shows how enterprise network intelligence integrates with AI models for adaptive cybersecurity defenses.",
+     "why": "It shows how network intelligence combines with language models to build adaptive enterprise security defenses.",
      "whySource": "llm",
      "publishedAt": "2026-11-03T08:00:00.000Z",
      "category": "labs",
-     "score": 4.69,
+     "score": 3.95,
      "readMinutes": 1
     }
    ]
@@ -262,6 +257,48 @@
   {
    "key": "analysis",
    "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "ddc81bada49c6b1d",
+     "title": "Desiderata for the Theory of Agents",
+     "url": "https://www.alignmentforum.org/posts/sqjti8dxcKSvZJikd/desiderata-for-the-theory-of-agents",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "TLDR: I give informal conceptual desiderata for the theory of agents we need to solve ASI alignment, and show a few examples of how existing theories fall short of these desiderata. A Theory of What?",
+     "why": "It outlines informal conceptual desiderata for the theory of agents needed to solve alignment.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-04T11:25:12.000Z",
+     "category": "blogs",
+     "score": 3.82,
+     "readMinutes": 22
+    },
+    {
+     "id": "46933a36d2603a0b",
+     "title": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube",
+     "url": "https://simonwillison.net/2026/Nov/3/a-sound-that-leaks-your-exact-location/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "I discovered a sound that leaks your exact location (and it's everywhere) - YouTube Genius piece of OSINT by Colsto, who demonstrates how you can take almost imperceptible background noise of planes from a video soundtrack, figure out their Doppler curves, then cross reference…",
+     "why": "It demonstrates an OSINT technique extracting exact locations from ambient audio Doppler curves.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T05:32:25.000Z",
+     "category": "blogs",
+     "score": 2.15,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
    "entries": [
     {
      "id": "c90b220cbc29d50e",
@@ -274,76 +311,34 @@
       "Latent Space"
      ],
      "summary": "Evals without traces, million-cell tabular reviews, and cracks in the billable hour as a business model",
-     "why": "Explores practical evaluation methodologies and business model shifts for legal AI applications.",
+     "why": "It explores practical engineering challenges in building artificial intelligence systems for legal workflows.",
      "whySource": "llm",
      "publishedAt": "2026-11-02T23:01:02.000Z",
      "category": "blogs",
-     "score": 2.82,
+     "score": 2.37,
      "readMinutes": 95
-    },
-    {
-     "id": "78c7de64445e517b",
-     "title": "Scott Alexander’s Against SURA Seems Deeply Confused",
-     "url": "https://thezvi.substack.com/p/scott-alexanders-against-sura-seems",
-     "sourceIds": [
-      "zvi"
-     ],
-     "sourceNames": [
-      "Don't Worry About the Vase"
-     ],
-     "summary": "If you are helping build something that might kill everyone, maybe stop doing that.",
-     "why": "Critiques safety arguments and risk mitigation strategies regarding advanced artificial intelligence development.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-02T21:33:03.000Z",
-     "category": "blogs",
-     "score": 2.74,
-     "readMinutes": 65
-    }
-   ]
-  },
-  {
-   "key": "deep-read",
-   "title": "One deep read",
-   "entries": [
-    {
-     "id": "cea170ce8ec60a2c",
-     "title": "The Datacenter Backlash Goes Bipartisan: Next Week's Midterms and the 2028 Buildout",
-     "url": "https://newsletter.semianalysis.com/p/the-datacenter-backlash-goes-bipartisan",
-     "sourceIds": [
-      "semianalysis"
-     ],
-     "sourceNames": [
-      "SemiAnalysis"
-     ],
-     "summary": "2027 is largely locked in. 2028 is less secure: a prolonged Texas permit freeze is now the biggest single risk to the US buildout, and both parties are running on tighter rules",
-     "why": "Analyzes bipartisan regulatory friction and permitting risks threatening future datacenter buildout pipelines.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-01T18:40:45.000Z",
-     "category": "blogs",
-     "score": 2.29,
-     "readMinutes": 14
     }
    ]
   }
  ],
  "itemIds": [
-  "2258ac95ca26c0c6",
+  "arxiv:2611.05036",
+  "arxiv:2611.04418",
+  "arxiv:2611.04303",
+  "arxiv:2611.04035",
   "arxiv:2610.40747",
-  "b61b7d0004aa5f86",
-  "f7735096343ce811",
-  "arxiv:2610.41574",
-  "arxiv:2611.02497",
-  "arxiv:2611.00053",
+  "arxiv:2611.03685",
+  "arxiv:2611.05275",
   "fed77a35994eb4f6",
   "17573406d78cd521",
-  "afc305b6db5c414f",
+  "8e0b9acadf5d4ff9",
   "fc87a45dcfbf03d4",
   "34e7d62615202d0d",
-  "c90b220cbc29d50e",
-  "78c7de64445e517b",
-  "cea170ce8ec60a2c"
+  "ddc81bada49c6b1d",
+  "46933a36d2603a0b",
+  "c90b220cbc29d50e"
  ],
- "deepReadId": "cea170ce8ec60a2c",
+ "deepReadId": "c90b220cbc29d50e",
  "llm": {
   "enabled": true,
   "ok": true
