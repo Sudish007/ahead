@@ -1,10 +1,10 @@
 {
  "date": "2026-11-06",
- "generatedAt": "2026-11-06T05:03:02.743Z",
- "wordCount": 779,
+ "generatedAt": "2026-11-06T13:44:54.814Z",
+ "wordCount": 854,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's AI developments span efficient evaluation, model architecture, security concerns, and local weight interpretation. Benchmark compression via BestRand offers stable and low-cost evaluation by using small subsets. In research, reasoning trace compaction addresses the high cost of long reasoning steps, while multi-layer indexers improve sparse attention efficiency, and Drex advances foundation decision models. New releases include mistralai/Mistral-Large-4-1T-A52B and Sandflow-ai/sand3d for Python-based modeling. Security and operational reports highlight privacy concerns with Claude Code sending email addresses to websites, allegations regarding deepfake scam ads, and independent assessments of AI R&D acceleration at Anthropic. Additionally, local capabilities grow as models like Qwen 3.8 27B demonstrate the ability to interpret model weights directly on consumer hardware, broadening local analysis workflows for researchers and developers.",
+  "text": "Today's developments showcase significant progress across foundational models, agent training methodologies, and infrastructure evaluation. In vision and multimodal systems, WeLM-Image integrates multimodal understanding with text-to-image generation, editing, and synthesis, while mistralai/Mistral-Large-4-1T-A52B advances image-text-to-text capabilities. For agent development, Harness-S introduces sibling harness learning to improve generalizable agent training, and TIGER-AI-Lab/WebsiteBench enables the evaluation of agents rebuilding websites through browser exploration. Additionally, BestRand addresses benchmark evaluation bottlenecks by offering stable and low-cost benchmark compression, matching full-benchmark results with small subsets. In industry and tooling developments, privacy and security discussions arose after Claude Code sent user email addresses to websites, and local execution gained traction as users ran Qwen 3.8 27B on laptops to interpret model weights. Furthermore, METR published an independent assessment evaluating AI R&D acceleration at Anthropic, highlighting ongoing efforts to measure the impact of artificial intelligence on research workflows.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -13,6 +13,44 @@
    "key": "must-know",
    "title": "Must know",
    "entries": [
+    {
+     "id": "arxiv:2611.07392",
+     "title": "WeLM-Image: A Unified Image Generation Model towards Visual Intelligence",
+     "url": "https://arxiv.org/abs/2611.07392",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "We present WeLM-Image, a unified image foundation model that integrates multimodal understanding into text-to-image generation, instruction-guided editing, and multi-reference synthesis.",
+     "why": "WeLM-Image integrates multimodal understanding into text-to-image generation, instruction editing, and multi-reference synthesis.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-05T00:00:00.000Z",
+     "category": "research",
+     "score": 15.93
+    },
+    {
+     "id": "arxiv:2611.04277",
+     "title": "Harness-S: Learning from Sibling Harnesses for Generalizable Agent Training",
+     "url": "https://arxiv.org/abs/2611.04277",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Harness evolution from a common base exhibits Locality, Complementarity, and Nonstationarity: variants repair different failures, and their utility changes as the policy learns.",
+     "why": "Harness-S leverages sibling harness evolution properties for more generalizable agent training and failure repair.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T00:00:00.000Z",
+     "category": "research",
+     "score": 15.75
+    },
     {
      "id": "arxiv:2611.00883",
      "title": "Random Is Almost Enough? Stable and Low-Cost Benchmark Compression via BestRand",
@@ -26,11 +64,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Benchmark compression reduces the often prohibitive time and cost of model evaluation by evaluating models on a small benchmark subset that closely matches full-benchmark results.",
-     "why": "Reduces the prohibitive time and cost of model evaluation using stable benchmark compression subsets.",
+     "why": "BestRand provides stable and low-cost benchmark compression by evaluating models on small subsets.",
      "whySource": "llm",
      "publishedAt": "2026-10-31T00:00:00.000Z",
      "category": "research",
-     "score": 14.96
+     "score": 15.63
     },
     {
      "id": "199af8aea5b61129",
@@ -46,51 +84,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Highlights critical privacy concerns regarding user data handling in developer tooling.",
+     "why": "Claude Code sends user email addresses to external websites, raising important privacy and security concerns.",
      "whySource": "llm",
      "publishedAt": "2026-11-05T22:17:15.000Z",
      "category": "news",
-     "score": 14.21
-    },
-    {
-     "id": "2bae9b1f767db094",
-     "title": "Cuban: Facebook knowingly runs AI deepfake scam ads; docs say $16B fraud revenue",
-     "url": "https://finance.yahoo.com/technology/ai/articles/mark-cuban-says-facebook-knowingly-213000020.html",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50385870",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Exposes major platform accountability issues and revenue figures surrounding deepfake scam advertisements.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-05T23:09:57.000Z",
-     "category": "news",
-     "score": 12.55
-    },
-    {
-     "id": "80fe724ef6092964",
-     "title": "MCP Explained",
-     "url": "https://mcp-explained.com/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50379249",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Provides essential technical clarity on the Model Context Protocol for modern system architectures.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-05T14:08:35.000Z",
-     "category": "news",
-     "score": 12.11
+     "score": 14.14
     }
    ]
   },
@@ -99,9 +97,26 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.03852",
-     "title": "Why Pay for Long Reasoning When Rewrite Do Trick? Causal Effects of Reasoning History Compaction on Future Generation and Agent Cost",
-     "url": "https://arxiv.org/abs/2611.03852",
+     "id": "arxiv:2611.02075",
+     "title": "Decoupled Predictive Decision Making: A Shared Conditional Predictor for Agents",
+     "url": "https://arxiv.org/abs/2611.02075",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Agent decisions depend on empirical relationships that deployment observations reveal and task descriptions alone may leave unresolved.",
+     "why": "Decoupled predictive decision making uses a shared conditional predictor for resolving agent deployment observations.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-01T00:00:00.000Z",
+     "category": "research",
+     "score": 12.97
+    },
+    {
+     "id": "arxiv:2611.05376",
+     "title": "From Autonomous Agents to Cognitive Symbionts: Toward AI-Augmented Human Intelligence",
+     "url": "https://arxiv.org/abs/2611.05376",
      "sourceIds": [
       "hf-papers",
       "arxiv-cs.CL"
@@ -110,48 +125,31 @@
       "HF Daily Papers",
       "arXiv cs.CL"
      ],
-     "summary": "Reasoning substantially improves language models' ability to solve difficult problems, but long reasoning traces make these gains expensive.",
-     "why": "Addresses the high costs of long reasoning traces through causal effects of history compaction.",
+     "summary": "For a decade, progress in artificial intelligence has been measured by how much a machine can do on its own. Large foundation models now write code and run multistep tasks, and personal agents act on a person's behalf.",
+     "why": "Explores the transition from autonomous agents to cognitive symbionts for augmenting human intelligence.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T00:00:00.000Z",
+     "publishedAt": "2026-11-03T18:59:52.000Z",
      "category": "research",
-     "score": 10.89
+     "score": 12.46
     },
     {
-     "id": "arxiv:2611.07854",
-     "title": "Towards Foundation Decision Models: Drex",
-     "url": "https://arxiv.org/abs/2611.07854",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Autoregressive approaches with large language models, such as long chain-of-thought reasoning, have become the default for new AI applications because they reach higher accuracy on a wide range of tasks.",
-     "why": "Explores foundational decision models designed to achieve higher accuracy across diverse tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-05T00:00:00.000Z",
-     "category": "research",
-     "score": 10.72
-    },
-    {
-     "id": "arxiv:2611.03768",
-     "title": "Multi-layer Indexer: Overlapping Selection and Attention in DeepSeek Sparse Attention",
-     "url": "https://arxiv.org/abs/2611.03768",
+     "id": "arxiv:2611.07613",
+     "title": "Towards Real-Time Full-Waveform LiDAR Transformers via Intensity-Guided Token Reduction and Physics-Aware Augmentation",
+     "url": "https://arxiv.org/abs/2611.07613",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.LG"
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.LG"
+      "arXiv cs.CV"
      ],
-     "summary": "Sparse attention cuts the cost of long-context inference by making the attention matrix sparse: each query attends only a subset of the sequence, chosen by a fixed pattern or, in recent production LLMs, learned per query.",
-     "why": "Cuts long-context inference costs by overlapping selection and attention in sparse attention mechanisms.",
+     "summary": "LiDAR is a critical sensor for autonomous driving and robotics, yet it remains vulnerable to adverse conditions such as fog, rain, transparent objects, and low-reflectance surfaces.",
+     "why": "Advances real-time full-waveform LiDAR transformers using intensity-guided token reduction and physics-aware augmentation.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T00:00:00.000Z",
+     "publishedAt": "2026-11-05T07:56:01.000Z",
      "category": "research",
-     "score": 10.57
+     "score": 12.34
     }
    ]
   },
@@ -169,29 +167,31 @@
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-text · transformers · 1,617 likes · 9,592 downloads",
-     "why": "Introduces a new image-text-to-text transformer model release for advanced multimodal workloads.",
+     "summary": "image-text-to-text · transformers · 1,621 likes · 10,530 downloads",
+     "why": "mistralai/Mistral-Large-4-1T-A52B brings new image-text-to-text capabilities to the open transformers ecosystem.",
      "whySource": "llm",
      "publishedAt": "2026-09-30T18:35:13.000Z",
      "category": "releases",
-     "score": 9.33
+     "score": 8.71
     },
     {
-     "id": "5e2d39846d47a9cc",
-     "title": "Sandflow-ai/sand3d",
-     "url": "https://github.com/Sandflow-ai/sand3d",
+     "id": "7cf8cf602061bba4",
+     "title": "TIGER-AI-Lab/WebsiteBench",
+     "url": "https://github.com/TIGER-AI-Lab/WebsiteBench",
      "sourceIds": [
+      "gh-trending-agents",
       "gh-trending-llm"
      ],
      "sourceNames": [
+      "GitHub new repos: ai-agents",
       "GitHub new repos: llm"
      ],
-     "summary": "3D modeling in Python, built for LLMs. · HTML",
-     "why": "Enables specialized Python-based 3D modeling workflows built specifically for large language models.",
+     "summary": "Can AI agents rebuild websites through browser exploration? · Python",
+     "why": "TIGER-AI-Lab/WebsiteBench tests whether AI agents can successfully rebuild websites through browser exploration.",
      "whySource": "llm",
-     "publishedAt": "2026-11-03T08:23:03.000Z",
+     "publishedAt": "2026-11-04T12:58:50.000Z",
      "category": "releases",
-     "score": 7.29
+     "score": 7.16
     },
     {
      "id": "790a29191dcdd824",
@@ -204,11 +204,11 @@
       "GitHub new repos: llm"
      ],
      "summary": "Türkçe metinlerdeki yapay zeka izlerini (AI slop, translationese, çeviri kokan cümle mimarisi ve TDK hatalarını) temizleyen Agent Skill ve Humanizer paketi. · Python",
-     "why": "Offers an agent skill and humanizer package to clean artificial intelligence traces from Turkish texts.",
+     "why": "yucezerey/turkish-anti-ai-skill cleans artificial intelligence traits and translation errors from Turkish text.",
      "whySource": "llm",
      "publishedAt": "2026-11-05T20:08:28.000Z",
      "category": "releases",
-     "score": 7.21
+     "score": 7.16
     }
    ]
   },
@@ -227,11 +227,11 @@
       "OpenAI"
      ],
      "summary": "Cult.fit is using Codex to help teams across functions build tools, move faster, and change how work gets done.",
-     "why": "Demonstrates practical enterprise adoption of Codex for building internal tools and accelerating operations.",
+     "why": "Cult.fit utilizes Codex to help internal teams build tools, move faster, and alter operational workflows.",
      "whySource": "llm",
      "publishedAt": "2026-11-05T20:00:00.000Z",
      "category": "labs",
-     "score": 5.88,
+     "score": 4.97,
      "readMinutes": 1
     },
     {
@@ -245,11 +245,11 @@
       "OpenAI"
      ],
      "summary": "Australian universities are expanding access to ChatGPT and bringing AI into teaching and learning to prepare students for an AI-enabled workforce.",
-     "why": "Showcases institutional integration of ChatGPT to prepare students for an AI-enabled workforce.",
+     "why": "Australian universities are expanding ChatGPT access to integrate artificial intelligence into teaching and learning.",
      "whySource": "llm",
      "publishedAt": "2026-11-05T17:00:00.000Z",
      "category": "labs",
-     "score": 5.55,
+     "score": 4.69,
      "readMinutes": 1
     }
    ]
@@ -269,11 +269,11 @@
       "Alignment Forum"
      ],
      "summary": "Executive summary From August 12 to October 29, 2026, METR staff performed a high-access evaluation at Anthropic to assess the degree to which AI is accelerating AI R&D.",
-     "why": "Provides independent assessment data regarding how artificial intelligence accelerates internal research and development.",
+     "why": "METR provided an independent assessment evaluating the degree to which artificial intelligence accelerates research at Anthropic.",
      "whySource": "llm",
      "publishedAt": "2026-11-05T19:06:38.000Z",
      "category": "blogs",
-     "score": 3.3,
+     "score": 2.79,
      "readMinutes": 7
     },
     {
@@ -287,11 +287,11 @@
       "Simon Willison"
      ],
      "summary": "The web browser is very, very, very powerful software for applications, and the cost of accessing that power is going down seemingly every day. — Paul Ford, The Web Is More Than Enough Tags: browsers, paul-ford, web-development",
-     "why": "Reflects on the expanding power and decreasing costs of modern web browser applications.",
+     "why": "Paul Ford highlights that web browsers remain powerful application software as access costs continue to decrease.",
      "whySource": "llm",
      "publishedAt": "2026-11-05T17:34:03.000Z",
      "category": "blogs",
-     "score": 3.21,
+     "score": 2.71,
      "readMinutes": 1
     }
    ]
@@ -318,26 +318,26 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "Yesterday's hot paper was Sparks of Weight-Space Programming: LLMs can natively read & write neural network weights by Rikiya Takehi, Jayden Teoh, Alex Zhang, and Omar Khattab.",
-     "why": "Demonstrates local capability for interpreting neural network weights directly on consumer hardware.",
+     "why": "Demonstrates that local models running on laptops can natively read and write neural network weights.",
      "whySource": "llm",
      "publishedAt": "2026-11-03T16:29:48.000Z",
      "category": "blogs",
-     "score": 18.59,
+     "score": 18.29,
      "readMinutes": 8
     }
    ]
   }
  ],
  "itemIds": [
+  "arxiv:2611.07392",
+  "arxiv:2611.04277",
   "arxiv:2611.00883",
   "199af8aea5b61129",
-  "2bae9b1f767db094",
-  "80fe724ef6092964",
-  "arxiv:2611.03852",
-  "arxiv:2611.07854",
-  "arxiv:2611.03768",
+  "arxiv:2611.02075",
+  "arxiv:2611.05376",
+  "arxiv:2611.07613",
   "da867975a5a80708",
-  "5e2d39846d47a9cc",
+  "7cf8cf602061bba4",
   "790a29191dcdd824",
   "bbd492caba72ca54",
   "616c68177b707eae",
