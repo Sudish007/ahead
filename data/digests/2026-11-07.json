@@ -1,10 +1,10 @@
 {
  "date": "2026-11-07",
- "generatedAt": "2026-11-07T04:37:47.520Z",
- "wordCount": 677,
+ "generatedAt": "2026-11-07T12:27:32.646Z",
+ "wordCount": 775,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's artificial intelligence landscape highlights significant shifts across market valuations, developer tools, and foundational research. Notably, Anthropic IPO buyers are seeing valuations as low as 1.1T dollars, while practical concerns emerge as Claude Code sends user email addresses to websites. Concurrently, AI continues to dramatically accelerate its own research capabilities, alongside the introduction of Gemini Omni 1.2 Flash. In research and hardware analysis, new methods target robotic manipulation and LiDAR transformers, while evaluations of Huawei's Horinger data center reveal critical insights into regional compute gaps relative to leading global facilities. These developments collectively underscore an ecosystem rapidly maturing across economic, architectural, and security dimensions.",
+  "text": "Today's key developments highlight significant advancements across agent memory, autonomous systems, research acceleration, and model architectures. Anthropic explored how dreaming helps Claude organize memory and correct mistakes, while MIT researchers built VISTA, an agent harness that keeps images in memory for faster retrieval. In autonomous systems and robotics, researchers introduced LiDAR Transformers utilizing intensity-guided token reduction for challenging weather conditions, alongside ToyBlocks as a controlled world for robot learning and evaluation. Concurrently, AI is dramatically accelerating AI research, and new model releases like Gemini Omni 1.2 Flash and Pika-Labs/Pika-H3-Flex continue to expand capabilities. Market discussions also emerged regarding Anthropic IPO valuations, while analyses examined the economic viability and public perception of current AI products. Additionally, innovative approaches in on-policy distillation and weight space learning for LLMs offer fresh avenues for researchers and engineers pushing the boundaries of machine learning efficiency and capability.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,44 +14,26 @@
    "title": "Must know",
    "entries": [
     {
-     "id": "72c8d5999f2786cc",
-     "title": "Anthropic IPO buyers see valuation as low as $1.1T",
-     "url": "https://www.bloomberg.com/news/articles/2026-11-06/anthropic-ipo-valuation-expectations-pressured-after-ai-rout",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50394906",
+     "id": "9bd43ba4c2466855",
+     "title": "The components of agent memory",
+     "url": "https://www.anthropic.com/research/components-of-agent-memory",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50402212",
      "sourceIds": [
+      "anthropic",
       "hn-front",
       "hn-top"
      ],
      "sourceNames": [
+      "Anthropic",
       "HN front page",
       "Hacker News"
      ],
-     "summary": "",
-     "why": "Provides vital market intelligence on major AI company valuations for founders and investors.",
+     "summary": "For Claude to learn from experience, it has to decide what’s worth remembering before it knows what’s next. Here’s how “dreaming” helps it organize memory and correct mistakes.",
+     "why": "Understanding how dreaming organizes agent memory helps researchers build systems that learn effectively from experience.",
      "whySource": "llm",
-     "publishedAt": "2026-11-06T16:54:36.000Z",
-     "category": "news",
-     "score": 13.21
-    },
-    {
-     "id": "199af8aea5b61129",
-     "title": "Claude Code sends your email address to websites",
-     "url": "https://github.com/anthropics/claude-code/issues/107757",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50385272",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Highlights a critical privacy and security vulnerability in an emerging developer coding tool.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-05T22:17:15.000Z",
-     "category": "news",
-     "score": 13.03
+     "publishedAt": "2026-11-06T00:00:00.000Z",
+     "category": "labs",
+     "score": 16.83
     },
     {
      "id": "5d5ecd5104547f57",
@@ -67,11 +49,31 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Demonstrates how recursive automation is rapidly changing the pace of foundational AI research.",
+     "why": "AI-accelerated AI research represents a compounding loop that dramatically shifts development timelines for engineers.",
      "whySource": "llm",
      "publishedAt": "2026-11-06T20:27:23.000Z",
      "category": "news",
-     "score": 12.87
+     "score": 12.69
+    },
+    {
+     "id": "72c8d5999f2786cc",
+     "title": "Anthropic IPO buyers see valuation as low as $1.1T",
+     "url": "https://www.bloomberg.com/news/articles/2026-11-06/anthropic-ipo-valuation-expectations-pressured-after-ai-rout",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50394906",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Market valuation discussions provide founders and researchers context on capital allocation and sentiment in the AI industry.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-06T16:54:36.000Z",
+     "category": "news",
+     "score": 12.67
     },
     {
      "id": "485654c1f98a7cdc",
@@ -87,11 +89,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Introduces new multimodal capabilities that impact deployment strategies for real-time applications.",
+     "why": "New multimodal model releases offer developers updated performance baselines for production applications.",
      "whySource": "llm",
      "publishedAt": "2026-11-06T13:35:27.000Z",
      "category": "news",
-     "score": 12.57
+     "score": 12.07
     }
    ]
   },
@@ -99,23 +101,6 @@
    "key": "research",
    "title": "Research",
    "entries": [
-    {
-     "id": "arxiv:2611.08373",
-     "title": "SLA: Scaling Spatial-Language-Action Model via Continual Pre-training",
-     "url": "https://arxiv.org/abs/2611.08373",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Reliable robotic manipulation requires both semantic understanding and precise control in three-dimensional space.",
-     "why": "Advances reliable robotic manipulation by combining semantic understanding and precise spatial control.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-05T00:00:00.000Z",
-     "category": "research",
-     "score": 11.28
-    },
     {
      "id": "arxiv:2611.07613",
      "title": "Towards Real-Time Full-Waveform LiDAR Transformers via Intensity-Guided Token Reduction and Physics-Aware Augmentation",
@@ -129,30 +114,45 @@
       "arXiv cs.CV"
      ],
      "summary": "LiDAR is a critical sensor for autonomous driving and robotics, yet it remains vulnerable to adverse conditions such as fog, rain, transparent objects, and low-reflectance surfaces.",
-     "why": "Improves autonomous driving sensor robustness under adverse weather and environmental conditions.",
+     "why": "Intensity-guided token reduction improves robust perception for autonomous driving and robotics in adverse conditions.",
      "whySource": "llm",
      "publishedAt": "2026-11-05T07:56:01.000Z",
      "category": "research",
-     "score": 11.08
+     "score": 10.69
     },
     {
-     "id": "arxiv:2611.04386",
-     "title": "StepX-OPD: Rethinking Multi-Teacher On-Policy Distillation in Diffusion Models",
-     "url": "https://arxiv.org/abs/2611.04386",
+     "id": "arxiv:2611.07241",
+     "title": "$D^2$-OPD: Separating Direction and Distance in Extrapolative On-Policy Distillation",
+     "url": "https://arxiv.org/abs/2611.07241",
      "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
+      "arxiv-cs.LG"
      ],
      "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
+      "arXiv cs.LG"
      ],
-     "summary": "A deployable text-to-image diffusion model must hold several capabilities at once, such as instruction following, text rendering and human preference, and must sample in a few steps.",
-     "why": "Optimizes multi-teacher on-policy distillation for deployable text-to-image diffusion models.",
+     "summary": "On-policy distillation (OPD) trains a student model to match a teacher's next-token distributions on student-generated prefixes. Extrapolative OPD further extends the teacher's log-probability shift relative to a reference policy to construct stronger learning targets.…",
+     "why": "Extrapolative on-policy distillation constructs stronger learning targets to optimize student model training.",
      "whySource": "llm",
-     "publishedAt": "2026-11-03T00:00:00.000Z",
+     "publishedAt": "2026-11-06T05:00:00.000Z",
      "category": "research",
-     "score": 10.61
+     "score": 1.64
+    },
+    {
+     "id": "arxiv:2611.07103",
+     "title": "A Night at the LLM Zoo: Data Conditioned Flow Matching for Generating Pretrained LLM Weights",
+     "url": "https://arxiv.org/abs/2611.07103",
+     "sourceIds": [
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "arXiv cs.LG"
+     ],
+     "summary": "A challenge to Weight Space Learning as it expands from task specific and vision models to Large Language Models (LLMs) is the absence of a well curated and analyzed LLM population.…",
+     "why": "Data conditioned flow matching opens new directions for generating pretrained large language model weights.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-06T05:00:00.000Z",
+     "category": "research",
+     "score": 1.64
     }
    ]
   },
@@ -160,6 +160,23 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
+    {
+     "id": "5137eafbc9498b9f",
+     "title": "xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+     "url": "https://huggingface.co/xtools-at/DeepSeek-V4-Pro-Qwen3.5-9B-UNCENSORED-heretic",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "text-generation · transformers · 277 likes · 1,369 downloads",
+     "why": "Community fine-tunes provide insight into emerging open-weight model variations and practical community adaptations.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-30T10:21:29.000Z",
+     "category": "releases",
+     "score": 8.06
+    },
     {
      "id": "0ae524ee7a4c5e73",
      "title": "Pika-Labs/Pika-H3-Flex",
@@ -170,46 +187,29 @@
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-to-video · diffusers · 496 likes · 986 downloads",
-     "why": "Offers new image-to-video capabilities for developers utilizing trending open diffusers.",
+     "summary": "image-to-video · diffusers · 503 likes · 1,083 downloads",
+     "why": "New image-to-video diffusion releases give developers access to updated generative media capabilities.",
      "whySource": "llm",
      "publishedAt": "2026-10-29T17:08:44.000Z",
      "category": "releases",
-     "score": 8.48
+     "score": 7.93
     },
     {
-     "id": "d8f851d0f37a96c0",
-     "title": "ccore/Qwen3.5-4B-GLB-3D-Coder",
-     "url": "https://huggingface.co/ccore/Qwen3.5-4B-GLB-3D-Coder",
+     "id": "0bd6337427b89b8d",
+     "title": "shanselman/sandbox-mcp",
+     "url": "https://github.com/shanselman/sandbox-mcp",
      "sourceIds": [
-      "hf-trending"
+      "gh-trending-agents"
      ],
      "sourceNames": [
-      "HF trending models"
+      "GitHub new repos: ai-agents"
      ],
-     "summary": "text-generation · 225 likes · 20,256 downloads",
-     "why": "Provides a specialized coding model for text-generation workflows within the open model ecosystem.",
+     "summary": "Fresh, throwaway Windows machines for testing your apps: an MCP server and CLI that automate Windows Sandbox · JavaScript",
+     "why": "Automated Windows Sandbox tools streamline secure app testing and agent execution workflows for engineers.",
      "whySource": "llm",
-     "publishedAt": "2026-11-01T22:30:01.000Z",
+     "publishedAt": "2026-11-06T19:02:14.000Z",
      "category": "releases",
-     "score": 7.91
-    },
-    {
-     "id": "ffb6370ecdf5294b",
-     "title": "phonny40rowle/rag-search",
-     "url": "https://github.com/phonny40rowle/rag-search",
-     "sourceIds": [
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm"
-     ],
-     "summary": "A self-hosted retrieval-augmented search API: web search, content extraction, embeddings, and answer generation. · Python",
-     "why": "Delivers a self-hosted retrieval-augmented search solution for custom Python applications.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-05T14:17:12.000Z",
-     "category": "releases",
-     "score": 6.85
+     "score": 7.53
     }
    ]
   },
@@ -218,38 +218,39 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "7e4582d64f85560e",
-     "title": "Teaching AI to build scientific models",
-     "url": "https://www.anthropic.com/research/teaching-ai-to-build-scientific-models",
+     "id": "b5bcf41c52f066a7",
+     "title": "Design the Muse App, Just for You",
+     "url": "https://about.fb.com/news/2026/11/introducing-spaces-customize-muse-app/",
      "sourceIds": [
-      "anthropic"
+      "meta-newsroom-ai"
      ],
      "sourceNames": [
-      "Anthropic"
+      "Meta Newsroom (AI)"
      ],
-     "summary": "AI for Science grantees Jakob Macke, Daniel Gedon, and Stefan Wahl on how AI is starting to change how scientific models are built and interpreted.",
-     "why": "Explores how artificial intelligence is fundamentally changing scientific model building and interpretation.",
+     "summary": "Today, we're introducing spaces, an interactive way to build a more customized experience in the Muse app. The post Design the Muse App, Just for You appeared first on Meta Newsroom.",
+     "why": "Customizable interactive spaces in consumer apps demonstrate ongoing product-level personalization features.",
      "whySource": "llm",
-     "publishedAt": "2026-11-06T00:00:00.000Z",
+     "publishedAt": "2026-11-06T18:00:58.000Z",
      "category": "labs",
-     "score": 4.61
+     "score": 3.51,
+     "readMinutes": 4
     },
     {
-     "id": "9bd43ba4c2466855",
-     "title": "The components of agent memory",
-     "url": "https://www.anthropic.com/research/components-of-agent-memory",
+     "id": "5a90caffb2c87d2e",
+     "title": "ToyBlocks: A controlled world for robot learning and evaluation",
+     "url": "https://huggingface.co/blog/allenai/toyblocks",
      "sourceIds": [
-      "anthropic"
+      "hf-blog"
      ],
      "sourceNames": [
-      "Anthropic"
+      "Hugging Face Blog"
      ],
-     "summary": "For Claude to learn from experience, it has to decide what’s worth remembering before it knows what’s next. Here’s how “dreaming” helps it organize memory and correct mistakes.",
-     "why": "Examines agent memory architectures and how experience retention improves autonomous system performance.",
+     "summary": "",
+     "why": "Controlled evaluation worlds help researchers standardize and benchmark robot learning algorithms safely.",
      "whySource": "llm",
-     "publishedAt": "2026-11-06T00:00:00.000Z",
+     "publishedAt": "2026-11-06T14:00:48.000Z",
      "category": "labs",
-     "score": 4.61
+     "score": 3.25
     }
    ]
   },
@@ -257,24 +258,6 @@
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
-    {
-     "id": "5ad82ca93483bec3",
-     "title": "What Huawei’s Horinger data center reveals about China’s compute gap",
-     "url": "https://epoch.ai/publications/huawei-horinger-china-compute-gap",
-     "sourceIds": [
-      "epoch"
-     ],
-     "sourceNames": [
-      "Epoch AI"
-     ],
-     "summary": "Huawei’s AI data center in Horinger, Inner Mongolia, uses Ascend chips and has an estimated AI computing capacity that is just 7% that of the world’s largest AI data center, SpaceX’s Colossus 2 in Tennessee.",
-     "why": "Analyzes the hardware and compute capacity gap between Chinese data centers and global leaders.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-06T00:00:00.000Z",
-     "category": "blogs",
-     "score": 3.46,
-     "readMinutes": 1
-    },
     {
      "id": "b7aa5d4fa5c79c45",
      "title": "Quoting Nilay Patel",
@@ -286,12 +269,29 @@
       "Simon Willison"
      ],
      "summary": "The products aren't good enough to sell people on the costs. You cannot tell people that you have to listen to the whine of a data center in their backyard for AI overviews and some of the most hilarious deep fake slop in history.",
-     "why": "Examines commercial viability challenges and public pushback regarding current AI product costs and utility.",
+     "why": "Critical perspectives on product costs and utility highlight user-facing adoption hurdles for founders.",
      "whySource": "llm",
      "publishedAt": "2026-11-06T17:13:12.000Z",
      "category": "blogs",
-     "score": 3.21,
+     "score": 2.76,
      "readMinutes": 2
+    },
+    {
+     "id": "a36910bcb0255218",
+     "title": "MIT Researchers Build VISTA, an Agent Harness That Keeps Images in Memory for Faster Retrieval",
+     "url": "https://www.deeplearning.ai/the-batch/context-engineering-for-images",
+     "sourceIds": [
+      "thebatch"
+     ],
+     "sourceNames": [
+      "The Batch"
+     ],
+     "summary": "Managing an agent’s context by storing all the input text it receives and giving it tools to search the text boosts its performance.",
+     "why": "Efficient image memory management boosts retrieval performance for multimodal agent architectures.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-06T16:15:00.000Z",
+     "category": "blogs",
+     "score": 2.71
     }
    ]
   },
@@ -310,31 +310,31 @@
       "Interconnects"
      ],
      "summary": "Our first open model economy research note for paid subscribers.",
-     "why": "Evaluates the current economic scale and market dynamics of the open-source model ecosystem.",
+     "why": "Analysis of the open model economy helps researchers understand landscape dynamics and adoption trends.",
      "whySource": "llm",
      "publishedAt": "2026-11-04T16:35:44.000Z",
      "category": "blogs",
-     "score": 2.2,
+     "score": 1.9,
      "readMinutes": 3
     }
    ]
   }
  ],
  "itemIds": [
-  "72c8d5999f2786cc",
-  "199af8aea5b61129",
-  "5d5ecd5104547f57",
-  "485654c1f98a7cdc",
-  "arxiv:2611.08373",
-  "arxiv:2611.07613",
-  "arxiv:2611.04386",
-  "0ae524ee7a4c5e73",
-  "d8f851d0f37a96c0",
-  "ffb6370ecdf5294b",
-  "7e4582d64f85560e",
   "9bd43ba4c2466855",
-  "5ad82ca93483bec3",
+  "5d5ecd5104547f57",
+  "72c8d5999f2786cc",
+  "485654c1f98a7cdc",
+  "arxiv:2611.07613",
+  "arxiv:2611.07241",
+  "arxiv:2611.07103",
+  "5137eafbc9498b9f",
+  "0ae524ee7a4c5e73",
+  "0bd6337427b89b8d",
+  "b5bcf41c52f066a7",
+  "5a90caffb2c87d2e",
   "b7aa5d4fa5c79c45",
+  "a36910bcb0255218",
   "10c302fa2b8bfdfe"
  ],
  "deepReadId": "10c302fa2b8bfdfe",
