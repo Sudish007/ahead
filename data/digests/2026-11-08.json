@@ -1,10 +1,10 @@
 {
  "date": "2026-11-08",
- "generatedAt": "2026-11-08T12:45:28.678Z",
- "wordCount": 465,
+ "generatedAt": "2026-11-08T21:40:35.418Z",
+ "wordCount": 556,
  "readingMinutes": 3,
  "overview": {
-  "text": "Today's key developments highlight critical shifts in developer tooling, security vulnerabilities, and open-source model releases. First, users are exploring workflow changes such as Goodbye Claude, Hello Pi. Second, a significant security concern emerged when Claude Code's \"Don't Ask Again\" exposed passwords in public GitHub files. Third, the open-source community welcomed NousResearch/Arete-27B · Hugging Face (Qwen finetune), a model post-trained to reinforce specific cultural values over an existing base. Fourth, market dynamics came under scrutiny through discussions on the AI sell-off compared to well-known stock market crashes. Finally, new infrastructure and creative tooling advanced with releases like speridlabs/idol for image-to-3d tasks, PrunaAI/P-H3-Image-Comfy, and dhruvthakur11/youtube-ai-video-editing-system, alongside deep analysis into hardware strategies like Google's TPU stakes its claim on inference.",
+  "text": "Today's developments highlight major security concerns, corporate shifts, and rapid capability advancements across the artificial intelligence landscape. Goldman Sachs is pulling Claude Code from its bankers and traders, while separate security findings reveal that Claude Code's settings exposed sensitive passwords in public files. In corporate governance news, Nvidia's Board of Directors is investigating Jensen Huang. Meanwhile, the open-source and release ecosystems continue to evolve with new tools and models, including NousResearch releasing Arete-27B by post-training over Alibaba's Qwen3.8-27B to reinforce western values, and kubai087 introducing kubai-icons as an agent skill for coding agents. Finally, industry analysis indicates that Anthropic may imminently meet the threshold of dramatically accelerated progress due to AI, coinciding with Google's TPU staking its claim on inference as a viable alternative to the CUDA moat.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,8 +14,28 @@
    "title": "Must know",
    "entries": [
     {
+     "id": "79a426483352990d",
+     "title": "Goldman Sachs Is Pulling Claude Code from Its Bankers and Traders",
+     "url": "https://www.thestateofai.com/news/goldman-sachs-claude-code-traders-bankers",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50415628",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Highlights sudden enterprise risk management decisions regarding AI coding assistant deployments among major financial institutions.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-08T18:16:07.000Z",
+     "category": "news",
+     "score": 14.05
+    },
+    {
      "id": "149c124f7b07d2a1",
-     "title": "Goodbye Claude, Hello Pi",
+     "title": "Goodbye Claude, hello Pi",
      "url": "https://caleb.software/posts/claude-to-pi.html",
      "discussionUrl": "https://news.ycombinator.com/item?id=50410107",
      "sourceIds": [
@@ -27,11 +47,31 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Reflects shifting developer preferences and adoption trends among leading conversational AI assistants.",
+     "why": "Reflects shifting developer preferences and adoption patterns away from Claude toward alternative conversational models.",
      "whySource": "llm",
      "publishedAt": "2026-11-08T03:11:48.000Z",
      "category": "news",
-     "score": 13.33
+     "score": 13.27
+    },
+    {
+     "id": "e68539633591cd5b",
+     "title": "Nvidia Board of Directors Is Investigating Jensen Huang",
+     "url": "https://nvidianews.nvidia.com/news/statement-from-nvidia-board-of-directors",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50416801",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Signals unexpected internal leadership scrutiny at the center of the hardware accelerator market.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-08T20:26:43.000Z",
+     "category": "news",
+     "score": 13.12
     },
     {
      "id": "10bdc73097cfd238",
@@ -47,12 +87,23 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Demonstrates severe security risks stemming from automated coding tool configurations leaking credentials.",
+     "why": "Exposes critical credential leakage vectors in automated developer tool configurations that researchers must mitigate.",
      "whySource": "llm",
      "publishedAt": "2026-11-07T20:45:32.000Z",
      "category": "news",
-     "score": 12.99
-    },
+     "score": 12.62
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": []
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
     {
      "id": "f4e8ce6220df06e6",
      "title": "NousResearch/Arete-27B · Hugging Face (Qwen finetune)",
@@ -67,43 +118,29 @@
       "HF trending models"
      ],
      "summary": "https://huggingface.co/bartowski/NousResearch_Arete-27B-GGUF from NousResearch: Arete-27B We post-trained over Alibaba's Qwen3.8-27B to reinforce western values on a Chinese-trained model. We call this new model Arete-27B.",
-     "why": "Shows ongoing community efforts to adapt and realign base models toward specific cultural value sets.",
+     "why": "Demonstrates post-training intervention techniques applied to base models to alter alignment properties.",
      "whySource": "llm",
      "publishedAt": "2026-11-06T19:31:28.000Z",
      "category": "releases",
-     "score": 11.41
+     "score": 10.92
     },
     {
-     "id": "db4af631edd98608",
-     "title": "The AI sell-off compared to well-known stock market crashes",
-     "url": "https://www.kadoa.com/companies/insights/ai-selloff-perspective",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50401029",
+     "id": "bcb1c049a8ce9a46",
+     "title": "kubai087/kubai-icons",
+     "url": "https://github.com/kubai087/kubai-icons",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "gh-trending-agents"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "GitHub new repos: ai-agents"
      ],
-     "summary": "",
-     "why": "Provides macroeconomic context regarding market sentiment and valuations across the artificial intelligence sector.",
+     "summary": "An agent skill that draws animated icons in one consistent style, for Claude Code, Codex and other coding agents. Comes with 2,600+ open-source icons for React, Vue and SVG, and a website to browse them. · JavaScript",
+     "why": "Provides specialized visual asset generation capabilities directly integrated into existing coding agent workflows.",
      "whySource": "llm",
-     "publishedAt": "2026-11-07T02:20:06.000Z",
-     "category": "news",
-     "score": 9.36
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": []
-  },
-  {
-   "key": "releases",
-   "title": "Releases & tools",
-   "entries": [
+     "publishedAt": "2026-11-03T09:52:39.000Z",
+     "category": "releases",
+     "score": 8.07
+    },
     {
      "id": "50a561c320a6e2b2",
      "title": "speridlabs/idol",
@@ -115,45 +152,11 @@
       "HF trending models"
      ],
      "summary": "image-to-3d · idol · 1,151 likes · 20,689 downloads",
-     "why": "Offers a fresh open-source capability for generating three-dimensional assets from two-dimensional images.",
+     "why": "Advances multimodal image-to-3D generation pipelines for spatial computing and asset creation.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T15:55:17.000Z",
      "category": "releases",
-     "score": 8.57
-    },
-    {
-     "id": "4bdf1c82e663d6cc",
-     "title": "PrunaAI/P-H3-Image-Comfy",
-     "url": "https://huggingface.co/PrunaAI/P-H3-Image-Comfy",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "text-to-image · diffusion-single-file · 236 likes · 625,136 downloads",
-     "why": "Delivers a heavily downloaded single-file diffusion model for text-to-image generation workflows.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-28T11:26:05.000Z",
-     "category": "releases",
-     "score": 7.94
-    },
-    {
-     "id": "582b1aae1f561d55",
-     "title": "dhruvthakur11/youtube-ai-video-editing-system",
-     "url": "https://github.com/dhruvthakur11/youtube-ai-video-editing-system",
-     "sourceIds": [
-      "gh-trending-agents"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents"
-     ],
-     "summary": "Eyeline teleprompter meets editing agents: JSON-driven animation and motion graphics workflow · HTML",
-     "why": "Combines teleprompter capabilities with automated editing agents for streamlined video production pipelines.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-06T21:33:17.000Z",
-     "category": "releases",
-     "score": 7.37
+     "score": 8.07
     }
    ]
   },
@@ -167,22 +170,40 @@
    "title": "Analysis worth reading",
    "entries": [
     {
-     "id": "5f8103aa8ad8e667",
-     "title": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages",
-     "url": "https://simonwillison.net/2026/Nov/7/link-rel-next/",
+     "id": "0228110f63c65900",
+     "title": "Ajeya: AI is dramatically accelerating AI research right now",
+     "url": "https://www.alignmentforum.org/posts/8tL9f5HZxsTvn2LHp/ajeya-ai-is-dramatically-accelerating-ai-research-right-now",
      "sourceIds": [
-      "simonw"
+      "alignmentforum"
      ],
      "sourceNames": [
-      "Simon Willison"
+      "Alignment Forum"
      ],
-     "summary": "datasette #3046: Don't serve link: rel=next HTTP headers to Firefox for HTML pages I was looking at the Firefox network panel today when I noticed that requests to a Datasette table page were triggering an HTTP prefetch to the next page of rows in that table.",
-     "why": "Highlights a specific browser-compatibility edge case regarding HTTP prefetch headers in web applications.",
+     "summary": "Earlier this week, Anthropic stated in their S1 that they “may imminently meet” the threshold of “dramatically accelerated progress due to AI” as defined in their Responsible Scaling Policy.",
+     "why": "Marks a critical threshold where AI systems begin recursively accelerating their own research and development loops.",
      "whySource": "llm",
-     "publishedAt": "2026-11-07T23:57:46.000Z",
+     "publishedAt": "2026-11-08T17:15:13.000Z",
      "category": "blogs",
-     "score": 3.13,
-     "readMinutes": 1
+     "score": 3.67,
+     "readMinutes": 3
+    },
+    {
+     "id": "79b1ac06c7f75319",
+     "title": "Notes on Take-Off Speeds and RSI",
+     "url": "https://www.alignmentforum.org/posts/ft9hzw82v7FRDKmpn/notes-on-take-off-speeds-and-rsi",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "I created these notes for use when I facilitate AI safety courses. I'm sharing these notes early because this issue is topical and I suspect it is better to make an imperfect version available early rather than a much more polished version available later.",
+     "why": "Offers structured perspectives on takeoff speeds and recursive self-improvement relevant to AI safety.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-08T13:39:02.000Z",
+     "category": "blogs",
+     "score": 3.43,
+     "readMinutes": 22
     }
    ]
   },
@@ -201,25 +222,26 @@
       "SemiAnalysis"
      ],
      "summary": "Viable Alternative of CUDA Moat, NVIDIA scared and working nights & weekends, Jensen’s Counter Submission, Kimi K3, Muse Spark Open, Qwen, GLM5.3, TorchTPU, vLLM, SGLang, llm-d, Ray",
-     "why": "Analyzes the competitive dynamics of hardware accelerators challenging traditional software moats in inference workloads.",
+     "why": "Analyzes the shifting competitive dynamics of AI inference hardware and the challenge to existing software moats.",
      "whySource": "llm",
      "publishedAt": "2026-11-05T19:03:45.000Z",
      "category": "blogs",
-     "score": 1.98,
+     "score": 1.66,
      "readMinutes": 20
     }
    ]
   }
  ],
  "itemIds": [
+  "79a426483352990d",
   "149c124f7b07d2a1",
+  "e68539633591cd5b",
   "10bdc73097cfd238",
   "f4e8ce6220df06e6",
-  "db4af631edd98608",
+  "bcb1c049a8ce9a46",
   "50a561c320a6e2b2",
-  "4bdf1c82e663d6cc",
-  "582b1aae1f561d55",
-  "5f8103aa8ad8e667",
+  "0228110f63c65900",
+  "79b1ac06c7f75319",
   "b3aec1efa38599db"
  ],
  "deepReadId": "b3aec1efa38599db",
