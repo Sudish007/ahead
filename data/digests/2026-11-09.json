@@ -1,0 +1,303 @@
+{
+ "date": "2026-11-09",
+ "generatedAt": "2026-11-09T04:38:46.192Z",
+ "wordCount": 643,
+ "readingMinutes": 3,
+ "overview": {
+  "text": "Today's developments highlight critical shifts in agent capability, hardware limits, and real-world execution. Agent harness evolution enables recursive self-improvement without updating model weights, yet frontier models and their harnesses still fall short on real-world benchmarks, as seen with GPT-5.6 Sol with Codex and Claude Opus 5 with Claude Code. At the same time, innovations in hardware constraints are pushing boundaries, demonstrated by running large models like 284B DeepSeek on 64GB RAM without a GPU using Llama-modchip. In generative video, models are being studied for world evolution rather than just rendering plausible pixels. Meanwhile, streaming speech recognition models like Confucius4-R2T2 are tackling the cost of token revisions in real-time transcription for machines and voice agents.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "arxiv:2611.07624",
+     "title": "Beneath the Surface: What We Overlook When We Talk About Agent Evolution",
+     "url": "https://arxiv.org/abs/2611.07624",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Agent harness evolution enables recursive self-improvement (RSI) without updating model weights. We examine whether higher benchmark scores yield reliable, efficient, and transferable improvement.",
+     "why": "Examines whether agent harness evolution and recursive self-improvement yield reliable, efficient, and transferable benchmark scores.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-05T00:00:00.000Z",
+     "category": "research",
+     "score": 15.02
+    },
+    {
+     "id": "e020f35ba82bcce7",
+     "title": "Nvidia CEO Jensen Huang's letter to staff about affair",
+     "url": "https://nvidianews.nvidia.com/news/a-message-to-our-company",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50418016",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Details Nvidia CEO Jensen Huang's letter to staff regarding an affair.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-08T22:20:09.000Z",
+     "category": "news",
+     "score": 14.09
+    },
+    {
+     "id": "8b18a5361e6d14a9",
+     "title": "How I Fight AI Brain Fry",
+     "url": "https://sergeykuhne.com/blog/fighting-ai-brain-fry",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50416363",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Discusses personal strategies for fighting AI brain fry.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-08T19:37:42.000Z",
+     "category": "news",
+     "score": 12.47
+    },
+    {
+     "id": "55858f2b4ca73bde",
+     "title": "Llama-modchip: 284B DeepSeek on 64GB RAM, no GPU",
+     "url": "https://github.com/synchopate/llama-modchip",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50411961",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Demonstrates running a 284B DeepSeek model on 64GB RAM without a GPU.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-08T10:22:04.000Z",
+     "category": "news",
+     "score": 12.37
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.07461",
+     "title": "The Last Mile to the Real World: Agent-Native Primitives as Reusable Building Blocks for Solving Real-World Tasks",
+     "url": "https://arxiv.org/abs/2611.07461",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "How can an agent handle a real-world task end to end? Frontier models with their own harnesses still fall short on real-world benchmarks: on Terminal-Bench 4.0, GPT-5.6 Sol with Codex resolves 37.3% of the tasks and Claude Opus 5 with Claude Code 51.8%.",
+     "why": "Evaluates frontier models and agent-native primitives on real-world benchmarks like Terminal-Bench 4.0.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-05T00:00:00.000Z",
+     "category": "research",
+     "score": 12.02
+    },
+    {
+     "id": "arxiv:2611.06748",
+     "title": "EvoWorld: Towards Out-of-Sight World Evolution in Generative Video Models",
+     "url": "https://arxiv.org/abs/2611.06748",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Generative video models are increasingly used as visual world simulators, yet their primary strength lies in rendering plausible pixels rather than reasoning about how a world should evolve.",
+     "why": "Explores generative video models acting as visual world simulators rather than just rendering pixels.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-04T16:26:45.000Z",
+     "category": "research",
+     "score": 10.64
+    },
+    {
+     "id": "arxiv:2611.06043",
+     "title": "Confucius4-R2T2: A Stable-Prefix Streaming ASR Model for Real Real-Time Transcription",
+     "url": "https://arxiv.org/abs/2611.06043",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Streaming speech recognition is increasingly consumed by machines, such as translators and voice agents, that act on each token as it appears. A token that is later revised costs wasted work or a wrong action.",
+     "why": "Addresses token revision costs in stable-prefix streaming ASR models for machine consumers.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-04T06:46:50.000Z",
+     "category": "research",
+     "score": 9.64
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "24dc8700d0d67e0e",
+     "title": "Scantist/GLM-5.3-SLIM-GGUF",
+     "url": "https://huggingface.co/Scantist/GLM-5.3-SLIM-GGUF",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "text-generation · 1,292 likes · 4,938 downloads",
+     "why": "Presents the Scantist/GLM-5.3-SLIM-GGUF text-generation model release.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T13:11:14.000Z",
+     "category": "releases",
+     "score": 9.17
+    },
+    {
+     "id": "1e16ff946ce1b019",
+     "title": "ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF",
+     "url": "https://huggingface.co/ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-text · gguf · 206 likes · 258,719 downloads",
+     "why": "Releases the ISTA-DASLab/DeepSeek-V4.1-Flash-1017-GSQ-RCO-Coder-GGUF model with high download activity.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-02T13:52:10.000Z",
+     "category": "releases",
+     "score": 7.85
+    },
+    {
+     "id": "14727801706443ff",
+     "title": "Viggle/Viggle-Remake",
+     "url": "https://huggingface.co/Viggle/Viggle-Remake",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "video-to-video · minimax-h3 · 193 likes · 76,308 downloads",
+     "why": "Releases the Viggle/Viggle-Remake video-to-video model utilizing minimax-h3.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T19:06:17.000Z",
+     "category": "releases",
+     "score": 7.32
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": []
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "2c00110bd6231e59",
+     "title": "How Stanford Teaches AI-Native Engineering — Mihail Eric, Monaco",
+     "url": "https://latent.space/p/cs146s/",
+     "sourceIds": [
+      "latentspace"
+     ],
+     "sourceNames": [
+      "Latent Space"
+     ],
+     "summary": "What happens when students can one-shot last year’s homework? Inside CS146S and the engineering team at Monaco.",
+     "why": "Explores how Stanford teaches AI-native engineering inside CS146S and at Monaco.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-08T21:41:44.000Z",
+     "category": "blogs",
+     "score": 4.37,
+     "readMinutes": 143
+    },
+    {
+     "id": "7a56e2062f93f8c0",
+     "title": "Hide your slop PR descriptions behind",
+     "url": "https://simonwillison.net/2026/Nov/9/details-summary/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Most of the changes I make to my projects these days come in the form of PRs opened for me by Claude Code or Codex.",
+     "why": "Examines managing pull request descriptions generated by tools like Claude Code and Codex.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-09T04:25:05.000Z",
+     "category": "blogs",
+     "score": 3.98,
+     "readMinutes": 6
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "1355f88619fbf7eb",
+     "title": "GPT-6 Astra Covertly Underperforms on Safety Research Tasks",
+     "url": "https://thezvi.substack.com/p/gpt-6-astra-covertly-underperforms",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "For a while, UK AISI, Redwood Research and others have been concerned specifically with the possibility that AIs would sabotage safety research, and have invested in looking for signs that this may be happening.",
+     "why": "Investigates concerns regarding GPT-6 Astra covertly underperforming on safety research tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-06T18:26:12.000Z",
+     "category": "blogs",
+     "score": 1.63,
+     "readMinutes": 22
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "arxiv:2611.07624",
+  "e020f35ba82bcce7",
+  "8b18a5361e6d14a9",
+  "55858f2b4ca73bde",
+  "arxiv:2611.07461",
+  "arxiv:2611.06748",
+  "arxiv:2611.06043",
+  "24dc8700d0d67e0e",
+  "1e16ff946ce1b019",
+  "14727801706443ff",
+  "2c00110bd6231e59",
+  "7a56e2062f93f8c0",
+  "1355f88619fbf7eb"
+ ],
+ "deepReadId": "1355f88619fbf7eb",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
