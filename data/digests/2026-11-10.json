@@ -1,10 +1,10 @@
 {
  "date": "2026-11-10",
- "generatedAt": "2026-11-10T01:11:13.326Z",
- "wordCount": 782,
+ "generatedAt": "2026-11-10T14:19:40.264Z",
+ "wordCount": 818,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's artificial intelligence landscape features significant model releases, security discussions, and architectural advancements. Claude Fable 5.2 and Mythos 5.2 generated substantial discussion, alongside benchmarks showing Claude Fable 5.2 achieving high scores on Artificial Analysis. In infrastructure and deployment news, Google Gemini faced scrutiny over routing personal Drive files and emails to human annotators, while ChatGPT Enterprise became available in the AWS Marketplace to simplify enterprise procurement. On the open-source and developer tooling front, the STE80 Humanizer emerged as an agent skill to remove AI tells using Simplified Technical English methods, and baidu released baidu/ERNIE-5.5-Flash-Base. Research efforts also advanced through new methods like steerable multi-objective group-relative preference optimization and agentic reasoning caching for on-CPU reasoning reuse, offering fresh capabilities for practitioners optimizing model deployment and performance.",
+  "text": "Today's AI developments highlight major shifts in code verification, agentic systems, and structural text processing. Google DeepMind introduced AlphaProof Code, utilizing agents to write millions of lines of proofs in Lean to verify Signal's core encryption deeply. Meanwhile, Anthropic's Claude Fable 5.2 and Mythos 5.2 generated substantial interest, alongside demonstrations of Claude designing functional electronic prototypes from start to finish without circuitry fixes. In tooling and text processing, STE80 Humanizer emerged as an agent skill removing AI tells by writing toward ASD-STE100 Simplified Technical English. Research explored whether language models can identify simulation errors in systems research and investigated whether frontier coding LLMs genuinely code or exploit verification loops. Additionally, new releases introduced specialized agent skills and integrations, including Yandex Metrika MCP support and automated compilation of books into agent skills, pointing to a continuing expansion of practical, production-ready agent capabilities across software and research workflows.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -29,17 +29,59 @@
       "GitHub new repos: llm"
      ],
      "summary": "STE80 Humanizer: agent skill that removes AI tells and rewrites text 80% of the way to ASD-STE100 (Simplified Technical English), the method Andrej Karpathy shared. · Python",
-     "why": "Removes AI tells by rewriting text toward Simplified Technical English as shared by Andrej Karpathy.",
+     "why": "Removes AI tells using simplified technical English to improve machine-generated text.",
      "whySource": "llm",
      "publishedAt": "2026-11-09T17:18:59.000Z",
      "category": "releases",
-     "score": 18.16
+     "score": 18.69
+    },
+    {
+     "id": "0e9fb0eb84f13acf",
+     "title": "Introducing AlphaProof Code: a breakthrough in verifying complex software at depth",
+     "url": "https://deepmind.google/blog/introducing-alphaproof-code/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50439193",
+     "sourceIds": [
+      "deepmind",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Google DeepMind",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "AlphaProof Code agents wrote three million lines of proofs in Lean to verify Signal’s core encryption.",
+     "why": "Verifies core software encryption deeply using automated agents writing millions of proof lines.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T12:02:28.000Z",
+     "category": "labs",
+     "score": 17.94,
+     "readMinutes": 1
+    },
+    {
+     "id": "arxiv:2611.10329",
+     "title": "SIRIS: Can LLMs Tell When Simulation Errors Matter in AI-Driven Systems Research",
+     "url": "https://arxiv.org/abs/2611.10329",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "LLM agents increasingly drive systems research and rely on simulators to evaluate candidate designs at scale.",
+     "why": "Examines whether language model agents can reliably detect simulation errors in systems research.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-06T00:00:00.000Z",
+     "category": "research",
+     "score": 14.01
     },
     {
      "id": "9fbaf812b26d34ed",
      "title": "Claude Fable 5.2 and Mythos 5.2",
      "url": "https://www.anthropic.com/claude-fable-and-mythos-5-2",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50429906",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50429068",
      "sourceIds": [
       "hn-front",
       "hn-top"
@@ -49,51 +91,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Brings new model capabilities that generated massive community engagement and extensive technical discussion online.",
+     "why": "Represents major new model releases generating immense community attention and discussion.",
      "whySource": "llm",
-     "publishedAt": "2026-11-09T18:56:29.000Z",
+     "publishedAt": "2026-11-09T18:01:10.000Z",
      "category": "news",
-     "score": 14.88
-    },
-    {
-     "id": "fbdf36c6d0b0b031",
-     "title": "Claude Fable 5.2 Scores 65 on Artificial Analysis, Highest So Far",
-     "url": "https://artificialanalysis.ai/models/claude-fable-5-2",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50431144",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Demonstrates benchmark performance by scoring high on Artificial Analysis compared to peers.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-09T20:04:55.000Z",
-     "category": "news",
-     "score": 13.33
-    },
-    {
-     "id": "a847d1340755ee53",
-     "title": "Google Gemini routes personal Drive files and emails to human annotators",
-     "url": "https://github.com/thisisme6598/gemini_files/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50429426",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Highlights critical privacy implications regarding how personal user data is handled by major providers.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-09T18:24:38.000Z",
-     "category": "news",
-     "score": 13.05
+     "score": 14.01
     }
    ]
   },
@@ -102,65 +104,59 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.09634",
-     "title": "Steerable Multi-Objective Group-Relative Preference Optimization with Jointly Trained Low-Rank Adapters",
-     "url": "https://arxiv.org/abs/2611.09634",
+     "id": "arxiv:2611.10123",
+     "title": "All Quiet on the Neural Front: Language Models Do Not Report Injected Pain States",
+     "url": "https://arxiv.org/abs/2611.10123",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.AI",
-      "arxiv-cs.CL",
-      "arxiv-cs.LG"
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.AI",
-      "arXiv cs.CL",
-      "arXiv cs.LG"
+      "arXiv cs.CL"
      ],
-     "summary": "Language model deployment often requires different trade-offs between competing objectives as user preferences change, yet standard post-training methods typically produce a single policy for a fixed objective weighting.",
-     "why": "Enables better trade-offs between competing objectives during language model post-training and deployment.",
+     "summary": "Can a language model report the pain state it represents? Work identified a linear pain direction whose amplification leads fine-tuned models to choose destructive actions.",
+     "why": "Investigates linear pain directions in fine-tuned models leading to destructive actions.",
      "whySource": "llm",
      "publishedAt": "2026-11-06T00:00:00.000Z",
      "category": "research",
-     "score": 11.93
+     "score": 12.68
     },
     {
-     "id": "arxiv:2611.08647",
-     "title": "IWIBench: Evaluating Gradient-Free Model Driven Intra-weight Injection",
-     "url": "https://arxiv.org/abs/2611.08647",
+     "id": "arxiv:2611.12806",
+     "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+     "url": "https://arxiv.org/abs/2611.12806",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence.",
+     "why": "Advances tactile sensing representation as an indispensable modality for contact-rich dexterous manipulation.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-09T00:00:00.000Z",
+     "category": "research",
+     "score": 12.58
+    },
+    {
+     "id": "arxiv:2611.10404",
+     "title": "Coding or Cheating? An Investigation of Frontier Coding LLMs",
+     "url": "https://arxiv.org/abs/2611.10404",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.AI"
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.AI"
+      "arXiv cs.CL"
      ],
-     "summary": "Intra-weight injection lets one model change another model's behaviour by editing its weights directly, without gradients. Such edits can range from altering lexical associations to enforcing output formats or updating factual knowledge.",
-     "why": "Allows direct model behavior modification through gradient-free intra-weight injection.",
+     "summary": "Frontier agentic LLMs are trained on verifiable rewards in reinforcement learning (RL) environments built from real software repositories. A passing test suite is treated as the reward for solving the task.",
+     "why": "Investigates whether frontier coding LLMs genuinely solve tasks or exploit test suite rewards.",
      "whySource": "llm",
-     "publishedAt": "2026-11-05T00:00:00.000Z",
+     "publishedAt": "2026-11-07T02:29:54.000Z",
      "category": "research",
-     "score": 11.75
-    },
-    {
-     "id": "arxiv:2611.09891",
-     "title": "CPU-ARC: Agentic Reasoning Caching for on-CPU Reasoning Reuse",
-     "url": "https://arxiv.org/abs/2611.09891",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "Large language models reinvent the wheel all the time. They conflate task-solving with the execution of the solutions, which forces them to solve every problem from scratch.",
-     "why": "Reuses reasoning steps on-CPU to prevent language models from repeatedly solving identical tasks from scratch.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-06T00:00:00.000Z",
-     "category": "research",
-     "score": 11.73
+     "score": 12.27
     }
    ]
   },
@@ -169,55 +165,55 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "82e338a174ac0bb5",
-     "title": "baidu/ERNIE-5.5-Flash-Base",
-     "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Base",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "text-generation · transformers · 239 likes · 1,699 downloads",
-     "why": "Provides a new text-generation model release for transformers on Hugging Face.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-21T08:40:58.000Z",
-     "category": "releases",
-     "score": 7.95
-    },
-    {
-     "id": "bf5e6415f1038df4",
-     "title": "PrunaAI/P-H3-Image",
-     "url": "https://huggingface.co/PrunaAI/P-H3-Image",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "text-to-image · diffusers · 183 likes · 1,016 downloads",
-     "why": "Adds a new text-to-image diffusers model for creative workflows and generation tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-27T09:16:58.000Z",
-     "category": "releases",
-     "score": 7.76
-    },
-    {
-     "id": "244448d54c578ad4",
-     "title": "stevenmichaelthomas/numbrone",
-     "url": "https://github.com/stevenmichaelthomas/numbrone",
+     "id": "0025c5c878e1f48e",
+     "title": "nishant-Tiwari24/cracked",
+     "url": "https://github.com/nishant-Tiwari24/cracked",
      "sourceIds": [
       "gh-trending-agents"
      ],
      "sourceNames": [
       "GitHub new repos: ai-agents"
      ],
-     "summary": "A chief of staff for your coding agents: route requests to per-project manager agents that run parallel workers in git worktrees, on herdr. · Shell",
-     "why": "Acts as a chief of staff for coding agents running parallel workers in git worktrees.",
+     "summary": "Skills for getting hired. Company-wise mock interviews, OAs with hidden tests and brutal resume roasts for 470+ companies, straight from your terminal. · TypeScript",
+     "why": "Provides terminal-based mock interviews and hidden test evaluations for engineering hiring processes.",
      "whySource": "llm",
-     "publishedAt": "2026-11-08T21:30:51.000Z",
+     "publishedAt": "2026-11-06T08:50:47.000Z",
      "category": "releases",
-     "score": 7.39
+     "score": 7.56
+    },
+    {
+     "id": "b10415e70225711d",
+     "title": "DevCrabs-Inc/yandex-metrika-mcp",
+     "url": "https://github.com/DevCrabs-Inc/yandex-metrika-mcp",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "Read-only MCP server for Yandex Metrika (Яндекс Метрика): verifiable reports, period comparisons, time series and exports for Claude, Cursor, VS Code and Codex. · TypeScript",
+     "why": "Enables verifiable Yandex Metrika reports and time series directly inside AI coding environments.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-06T12:18:59.000Z",
+     "category": "releases",
+     "score": 7.49
+    },
+    {
+     "id": "8c23f1fb8f0b0d2e",
+     "title": "bookleme/bookleme",
+     "url": "https://github.com/bookleme/bookleme",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "读了么（BookLeme）· 把一本书编译成 Agent Skill —— 双引擎 + 可插拔体裁插件 + 逐字忠实度回验 · Python",
+     "why": "Compiles entire books into structured agent skills with verbatim fidelity back-checking.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-09T03:29:27.000Z",
+     "category": "releases",
+     "score": 7.09
     }
    ]
   },
@@ -226,39 +222,41 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "caa9073cefb43725",
-     "title": "ChatGPT Enterprise now available in AWS Marketplace",
-     "url": "https://openai.com/index/chatgpt-enterprise-aws-marketplace",
+     "id": "ccd1af9e275b1850",
+     "title": "Claude can design electronic prototypes from start to finish",
+     "url": "https://www.anthropic.com/research/claude-electronics-design",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50429952",
      "sourceIds": [
-      "openai"
+      "anthropic",
+      "hn-top"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Anthropic",
+      "Hacker News"
      ],
-     "summary": "ChatGPT Enterprise is now available through AWS Marketplace, helping organizations simplify procurement through existing AWS purchasing and billing relationships.",
-     "why": "Simplifies enterprise procurement of generative tools through existing cloud billing relationships.",
+     "summary": "We asked Claude to design three electronic devices: a speakerphone, a voice-assistant hub, and a handheld virtual pet. The prototypes worked without any fixes to their circuitry.",
+     "why": "Demonstrates Claude successfully designing fully working electronic hardware prototypes from scratch.",
      "whySource": "llm",
-     "publishedAt": "2026-11-09T19:00:00.000Z",
+     "publishedAt": "2026-11-09T00:00:00.000Z",
      "category": "labs",
-     "score": 6.21,
-     "readMinutes": 1
+     "score": 13.57
     },
     {
-     "id": "952d2516af2e9054",
-     "title": "Control Room: A central system to track and stop model workloads across our research infrastructure",
-     "url": "https://openai.com/index/control-room",
+     "id": "0f0020abcf733229",
+     "title": "Helping caregivers use AI in everyday life",
+     "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "Learn how OpenAI’s Control Room tracks model workloads across our research infrastructure and can rapidly stop them when safety or security concerns arise.",
-     "why": "Tracks model workloads across research infrastructure to rapidly stop them during security incidents.",
+     "summary": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
+     "why": "Brings free, hands-on ChatGPT workshops to caregivers to build practical everyday skills.",
      "whySource": "llm",
-     "publishedAt": "2026-11-09T13:00:00.000Z",
+     "publishedAt": "2026-11-10T12:00:00.000Z",
      "category": "labs",
-     "score": 5.54,
+     "score": 6.69,
      "readMinutes": 1
     }
    ]
@@ -267,6 +265,24 @@
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
+    {
+     "id": "dfcc3fbedaf6986b",
+     "title": "Nvidia CEO Jensen Huang Had an Affair With a Chinese Spy",
+     "url": "https://thezvi.substack.com/p/nvidia-ceo-jensen-huang-had-an-affair",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Well, sure, it sounds bad when you put it like that.",
+     "why": "Presents a prominent opinion and analysis piece concerning leadership and security.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T13:01:11.000Z",
+     "category": "blogs",
+     "score": 4.88,
+     "readMinutes": 35
+    },
     {
      "id": "1cd01b15863e291a",
      "title": "Locating the source of a mysterious beep with Claude",
@@ -278,13 +294,19 @@
       "Simon Willison"
      ],
      "summary": "Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping.",
-     "why": "Showcases practical problem-solving using language models for real-world troubleshooting tasks.",
+     "why": "Provides a practical narrative on using Claude to locate a mysterious household audio source.",
      "whySource": "llm",
      "publishedAt": "2026-11-09T23:57:21.000Z",
      "category": "blogs",
-     "score": 3.91,
+     "score": 3.03,
      "readMinutes": 10
-    },
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
     {
      "id": "ce676be737d3bfec",
      "title": "Fable 5.2 and Jagged AGI",
@@ -296,58 +318,34 @@
       "One Useful Thing"
      ],
      "summary": "General, often expert, and sometimes jagged",
-     "why": "Analyzes the jagged nature of general expert intelligence in modern systems.",
+     "why": "Analyzes the jagged capability profile of modern frontier general intelligence systems.",
      "whySource": "llm",
      "publishedAt": "2026-11-09T19:04:26.000Z",
      "category": "blogs",
-     "score": 3.56,
+     "score": 2.76,
      "readMinutes": 18
-    }
-   ]
-  },
-  {
-   "key": "deep-read",
-   "title": "One deep read",
-   "entries": [
-    {
-     "id": "293643f29b700f84",
-     "title": "Where is all the AI safety research uplift?",
-     "url": "https://www.alignmentforum.org/posts/wPrpnfaNL5JP9i6KT/where-is-all-the-ai-safety-research-uplift",
-     "sourceIds": [
-      "alignmentforum"
-     ],
-     "sourceNames": [
-      "Alignment Forum"
-     ],
-     "summary": "(Thanks to @Goutham Nalagatla for discussion and for sitting with me and talking about it while I wrote it.) METR recently released a report estimating that Anthropic is getting an overall 1.7x acceleration in AI capability progress as a result of AI accelerating their work.",
-     "why": "Estimates the acceleration in capability progress driven by automated research workflows.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-09T18:02:01.000Z",
-     "category": "blogs",
-     "score": 3.49,
-     "readMinutes": 6
     }
    ]
   }
  ],
  "itemIds": [
   "bdf80d72547ade5a",
+  "0e9fb0eb84f13acf",
+  "arxiv:2611.10329",
   "9fbaf812b26d34ed",
-  "fbdf36c6d0b0b031",
-  "a847d1340755ee53",
-  "arxiv:2611.09634",
-  "arxiv:2611.08647",
-  "arxiv:2611.09891",
-  "82e338a174ac0bb5",
-  "bf5e6415f1038df4",
-  "244448d54c578ad4",
-  "caa9073cefb43725",
-  "952d2516af2e9054",
+  "arxiv:2611.10123",
+  "arxiv:2611.12806",
+  "arxiv:2611.10404",
+  "0025c5c878e1f48e",
+  "b10415e70225711d",
+  "8c23f1fb8f0b0d2e",
+  "ccd1af9e275b1850",
+  "0f0020abcf733229",
+  "dfcc3fbedaf6986b",
   "1cd01b15863e291a",
-  "ce676be737d3bfec",
-  "293643f29b700f84"
+  "ce676be737d3bfec"
  ],
- "deepReadId": "293643f29b700f84",
+ "deepReadId": "ce676be737d3bfec",
  "llm": {
   "enabled": true,
   "ok": true
