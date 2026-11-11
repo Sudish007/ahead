@@ -1,10 +1,10 @@
 {
  "date": "2026-11-11",
- "generatedAt": "2026-11-11T04:41:34.158Z",
- "wordCount": 769,
- "readingMinutes": 4,
+ "generatedAt": "2026-11-11T13:32:20.088Z",
+ "wordCount": 894,
+ "readingMinutes": 5,
  "overview": {
-  "text": "Today's key developments highlight significant commercial and research shifts across the artificial intelligence landscape. Anthropic has launched the roadshow for its proposed initial public offering of Class A common stock. Concurrently, OpenAI introduced Businesses in ChatGPT to help manage business information and published new research with Upwork on AI effects on freelance work, showing shifting demand and larger budgets for AI projects. In research, new papers explore discrete codes as general-purpose visual representations through dNaViT and heterogeneous tactile representations for dexterous manipulation. Additionally, open-source releases continue to advance, with models like speridlabs/idol gaining traction on Hugging Face while operating efficiently on consumer hardware.",
+  "text": "Today's key developments span major financial moves, ecosystem shifts, and novel security concerns across the artificial intelligence landscape. Anthropic has launched the roadshow for its proposed initial public offering of Class A common stock. Meanwhile, OpenAI introduced Businesses in ChatGPT to help companies manage business information and turn interest into action, alongside new research with Upwork highlighting shifting demand for freelance work and larger budgets for AI projects. In model releases and research, the trending model speridlabs/idol relies on dinov3 and runs efficiently, while Microsoft researchers uncovered a backdoor technique called Lazarus that reprograms dormant neurons in AI agents to execute malicious commands. Additional notable work explores deleting weights in LLM post-training, evaluating dense rewards in GRPO, and utilizing multimodal agents for land-change analysis from satellite imagery. These updates collectively illustrate a rapidly maturing industry balancing commercial expansion, developer tooling, and critical safety evaluations.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -27,11 +27,11 @@
       "Hacker News"
      ],
      "summary": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock.",
-     "why": "Anthropic's initial public offering roadshow launch marks a major financial milestone for the leading AI lab.",
+     "why": "Anthropic has officially launched the roadshow for its proposed initial public offering of Class A common stock.",
      "whySource": "llm",
      "publishedAt": "2026-11-10T00:00:00.000Z",
      "category": "labs",
-     "score": 15.04
+     "score": 14.14
     },
     {
      "id": "f3fc54cd1d78c100",
@@ -47,11 +47,11 @@
       "Hacker News"
      ],
      "summary": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
-     "why": "OpenAI and Upwork research reveals changing freelance demand and larger budgets for AI projects.",
+     "why": "New research details how AI affects freelance work demand, skill combinations, and project budgets.",
      "whySource": "llm",
      "publishedAt": "2026-11-10T07:00:00.000Z",
      "category": "labs",
-     "score": 14.63,
+     "score": 13.81,
      "readMinutes": 1
     },
     {
@@ -68,32 +68,32 @@
       "Hacker News"
      ],
      "summary": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
-     "why": "Businesses in ChatGPT allows companies to manage information and convert interest directly within the platform.",
+     "why": "Businesses can now manage information, view insights, and convert interest into action directly within ChatGPT.",
      "whySource": "llm",
      "publishedAt": "2026-11-10T10:00:00.000Z",
      "category": "labs",
-     "score": 14.1,
+     "score": 13.35,
      "readMinutes": 1
     },
     {
-     "id": "db8fc49499210140",
-     "title": "AI usage generates a fragile codebase",
-     "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50438318",
+     "id": "arxiv:2611.10866",
+     "title": "The Surprising Effectiveness of Deleting Weights in LLM Post-Training",
+     "url": "https://arxiv.org/abs/2611.10866",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xswmb7/the_surprising_effectiveness_of_deleting_weights/",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "reddit"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
-     "summary": "",
-     "why": "Heavy reliance on AI code generation creates fragile codebases that require careful engineering management.",
+     "summary": "How little of a pretrained large language model (LLM) has to change for it to acquire new capabilities?",
+     "why": "This study examines how little of a pretrained large language model must change to acquire new capabilities.",
      "whySource": "llm",
-     "publishedAt": "2026-11-10T10:25:58.000Z",
-     "category": "news",
-     "score": 12.99
+     "publishedAt": "2026-11-07T00:00:00.000Z",
+     "category": "research",
+     "score": 13.16
     }
    ]
   },
@@ -102,43 +102,28 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.12426",
-     "title": "dNaViT: Discrete Codes are General-Purpose Visual Representations",
-     "url": "https://arxiv.org/abs/2611.12426",
+     "id": "arxiv:2611.12934",
+     "title": "EarthRecord: From Pixels to Land Change with Multimodal Agents over Four Decades of Satellite Imagery",
+     "url": "https://arxiv.org/abs/2611.12934",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.AI"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.AI"
      ],
-     "summary": "Discrete autoregressive modeling, notably through next-token prediction, has become a cornerstone of modern language models.",
-     "why": "dNaViT explores discrete autoregressive modeling as a general-purpose visual representation cornerstone for models.",
+     "summary": "While multimodal agents now carry out complex data analysis with tools, their ability to turn decades of satellite imagery into reliable land-change analysis, crucial for Earth observation science, remains unmeasured.",
+     "why": "Multimodal agents are evaluated on turning decades of satellite imagery into reliable land-change analysis.",
      "whySource": "llm",
-     "publishedAt": "2026-11-09T00:00:00.000Z",
+     "publishedAt": "2026-11-06T00:00:00.000Z",
      "category": "research",
-     "score": 11.63
+     "score": 13.11
     },
     {
-     "id": "arxiv:2611.12806",
-     "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
-     "url": "https://arxiv.org/abs/2611.12806",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence.",
-     "why": "Tactile sensing research advances contact-rich dexterous manipulation for the frontiers of embodied intelligence.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-09T00:00:00.000Z",
-     "category": "research",
-     "score": 11.17
-    },
-    {
-     "id": "arxiv:2611.10556",
-     "title": "onóna: Twin Embeddings with Tied Unembeddings",
-     "url": "https://arxiv.org/abs/2611.10556",
+     "id": "arxiv:2611.13560",
+     "title": "Are Dense Rewards Worth Their Tokens in GRPO?",
+     "url": "https://arxiv.org/abs/2611.13560",
      "sourceIds": [
       "hf-papers",
       "arxiv-cs.CL"
@@ -147,12 +132,31 @@
       "HF Daily Papers",
       "arXiv cs.CL"
      ],
-     "summary": "Weight tying reduces the parameter cost of language models, but the usual tied output head is limited to a single softmax. We introduce onóna, a two-table parameterization that increases output expressiveness while preserving input-output weight sharing.",
-     "why": "onóna introduces a twin embedding parameterization to increase output expressiveness while sharing weights.",
+     "summary": "RLVR trains language models to reason by rewarding correct final answers.",
+     "why": "Researchers investigate whether dense rewards are worth their tokens when training language models to reason.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "category": "research",
+     "score": 12.79
+    },
+    {
+     "id": "arxiv:2611.12955",
+     "title": "Predictive Surprise as Self-Grounding Concept Bottleneck for Interpretable Time Series",
+     "url": "https://arxiv.org/abs/2611.12955",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "Time-series classifiers deployed in risk-sensitive domains must be (1) accurate, (2) interpretable, and (3) able to abstain when evidence is weak. Existing methods do not deliver all 3 at once, and the obstacle is structural, rather than logistical.",
+     "why": "This method aims to deliver accurate, interpretable time-series classifiers that abstain when evidence is weak.",
      "whySource": "llm",
      "publishedAt": "2026-11-07T00:00:00.000Z",
      "category": "research",
-     "score": 11.07
+     "score": 12.79
     }
    ]
   },
@@ -174,45 +178,45 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "Has dependency on dinov3, is trending top model on hf since last week. Runs with 8GB vram.",
-     "why": "speridlabs/idol brings dinov3-dependent visual processing to consumer hardware with low VRAM requirements.",
+     "why": "This trending model depends on dinov3 and runs locally with limited VRAM requirements.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T15:55:17.000Z",
      "category": "releases",
-     "score": 12.72
+     "score": 12.22
     },
     {
-     "id": "f8b99a0f63453db1",
-     "title": "Comfy-Org/MiniMax-H3-Image",
-     "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image",
+     "id": "ca26bca182f697df",
+     "title": "Qwen/Qwen3.8-27B",
+     "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "text-to-image · diffusion-single-file · 179 likes · 18 downloads",
-     "why": "Comfy-Org/MiniMax-H3-Image provides a new single-file text-to-image diffusion option for developers.",
+     "summary": "image-text-to-text · transformers · 19,595 likes · 7,232,703 downloads",
+     "why": "The Qwen/Qwen3.8-27B image-text-to-text model is trending with significant downloads and likes on Hugging Face.",
      "whySource": "llm",
-     "publishedAt": "2026-11-08T20:37:23.000Z",
+     "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 7.75
+     "score": 11.13
     },
     {
-     "id": "0d64e297c739b731",
-     "title": "VideoRebirthAI/hyperflow-h3-flash",
-     "url": "https://huggingface.co/VideoRebirthAI/hyperflow-h3-flash",
+     "id": "92c1824269f45469",
+     "title": "Lightricks/LTX-2.5",
+     "url": "https://huggingface.co/Lightricks/LTX-2.5",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-video · minimax-h3 · 178 likes · 110,752 downloads",
-     "why": "VideoRebirthAI/hyperflow-h3-flash offers rapid image-text-to-video capabilities built on minimax-h3 architecture.",
+     "summary": "image-to-video · diffusion-single-file · 11,447 likes · 2,848,771 downloads",
+     "why": "The Lightricks/LTX-2.5 image-to-video diffusion model is seeing high engagement and download volume.",
      "whySource": "llm",
-     "publishedAt": "2026-11-04T13:54:24.000Z",
+     "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 7.74
+     "score": 10.74
     }
    ]
   },
@@ -221,39 +225,42 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "65b96c238445cded",
-     "title": "Gilbert + Tobin rethinks the business of law with AI",
-     "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+     "id": "a47950b9177a3bb8",
+     "title": "Lazare, veni foras: Reprogramming Dormant Neurons to Backdoor AI Agents",
+     "url": "https://www.microsoft.com/en-us/research/blog/lazare-veni-foras-reprogramming-dormant-neurons-to-backdoor-ai-agents/",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xt82mz/microsoft_research_backdoored_an_ai_agent_by/",
      "sourceIds": [
-      "openai"
+      "microsoft-research",
+      "reddit"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Microsoft Research",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
-     "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
-     "why": "Gilbert + Tobin demonstrates how law firms are fundamentally rethinking business operations using AI tools.",
+     "summary": "Microsoft researchers have discovered “Lazarus,” a backdoor technique that can reprogram dormant neurons in an AI model, causing an otherwise normal AI agent to execute malicious commands when a hidden trigger appears.",
+     "why": "Microsoft researchers discovered a technique to reprogram dormant neurons and backdoor AI agents using hidden triggers.",
      "whySource": "llm",
-     "publishedAt": "2026-11-11T04:41:34.158Z",
+     "publishedAt": "2026-11-10T20:52:56.000Z",
      "category": "labs",
-     "score": 7,
-     "readMinutes": 1
+     "score": 8.17,
+     "readMinutes": 7
     },
     {
-     "id": "0f0020abcf733229",
-     "title": "Helping caregivers use AI in everyday life",
-     "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+     "id": "ac94b61a25ade5ed",
+     "title": "ChatGPT Plus for veterans and servicemembers",
+     "url": "https://openai.com/index/chatgpt-plus-for-veterans",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
-     "why": "OpenAI Academy brings free, hands-on ChatGPT workshops to caregivers across multiple cities.",
+     "summary": "More than 20,000 veterans and transitioning service members have claimed a free year of ChatGPT Plus. See how they use it to prepare for civilian careers.",
+     "why": "Thousands of veterans and transitioning service members claimed free ChatGPT Plus access for civilian career preparation.",
      "whySource": "llm",
-     "publishedAt": "2026-11-10T12:00:00.000Z",
+     "publishedAt": "2026-11-11T08:00:00.000Z",
      "category": "labs",
-     "score": 5.08,
+     "score": 6.29,
      "readMinutes": 1
     }
    ]
@@ -261,6 +268,48 @@
   {
    "key": "analysis",
    "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "229eabb18a4037ae",
+     "title": "AI Engineer Code Summit: OpenAI on New Ways of Working With Codex",
+     "url": "https://latent.space/p/codex-work/",
+     "sourceIds": [
+      "latentspace"
+     ],
+     "sourceNames": [
+      "Latent Space"
+     ],
+     "summary": "On the first day of AIE Code Summit, OpenAI showed how developers can steer Codex by voice, hand off work to the cloud, and make use of dots.",
+     "why": "OpenAI demonstrated new developer workflows involving voice steering, cloud handoffs, and Codex integration.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T04:49:48.000Z",
+     "category": "blogs",
+     "score": 4.23,
+     "readMinutes": 7
+    },
+    {
+     "id": "33cf1d31e8bfd90e",
+     "title": "How I'm thinking about different types of automated alignment",
+     "url": "https://www.alignmentforum.org/posts/NFkj9J2BBLSjNuH5G/how-i-m-thinking-about-different-types-of-automated",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "I used to think of \"automating alignment\" as a natural category. But when I tried to think through the strategic implications, I realised that it depends a lot on the type of work.…",
+     "why": "This analysis explores the strategic implications and varying categories of automating alignment work.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T09:49:37.000Z",
+     "category": "blogs",
+     "score": 3.72,
+     "readMinutes": 12
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
    "entries": [
     {
      "id": "3d0fdc251c6fe151",
@@ -273,54 +322,12 @@
       "Alignment Forum"
      ],
      "summary": "This post reflects my own takes, and not that of my employer's. This is a simple idea: before a new model can be deployed internally, you must first test it for a minimum, fixed period.",
-     "why": "Mandating fixed safety testing periods before internal model deployment addresses crucial risk mitigation.",
+     "why": "This proposal suggests mandating a fixed period of safety testing before internal model deployments.",
      "whySource": "llm",
      "publishedAt": "2026-11-11T00:18:16.000Z",
      "category": "blogs",
-     "score": 3.68,
+     "score": 3.1,
      "readMinutes": 14
-    },
-    {
-     "id": "02149a4df227102e",
-     "title": "Q3.5 Timelines Update: Looks Like the Intelligence Explosion Will Happen in 2027 After All",
-     "url": "https://www.alignmentforum.org/posts/f9PajMLmBYzmWzyDv/q3-5-timelines-update-looks-like-the-intelligence-explosion",
-     "sourceIds": [
-      "alignmentforum"
-     ],
-     "sourceNames": [
-      "Alignment Forum"
-     ],
-     "summary": "We want to get this post out quickly given the urgency of the topic. It’s possible that there are some errors in the modeling, but we think it’s very unlikely that they undermine the high level conclusions.",
-     "why": "Updated timeline modeling suggests the intelligence explosion could occur rapidly within the coming years.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-10T16:30:09.000Z",
-     "category": "blogs",
-     "score": 3.16,
-     "readMinutes": 112
-    }
-   ]
-  },
-  {
-   "key": "deep-read",
-   "title": "One deep read",
-   "entries": [
-    {
-     "id": "1cd01b15863e291a",
-     "title": "Locating the source of a mysterious beep with Claude",
-     "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping.",
-     "why": "Practical troubleshooting showcases how conversational agents help solve everyday physical mysteries like intermittent beeps.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-09T23:57:21.000Z",
-     "category": "blogs",
-     "score": 2.3,
-     "readMinutes": 10
     }
    ]
   }
@@ -329,20 +336,20 @@
   "dc15a9692d7b5c80",
   "f3fc54cd1d78c100",
   "991ad48e8559b2fe",
-  "db8fc49499210140",
-  "arxiv:2611.12426",
-  "arxiv:2611.12806",
-  "arxiv:2611.10556",
+  "arxiv:2611.10866",
+  "arxiv:2611.12934",
+  "arxiv:2611.13560",
+  "arxiv:2611.12955",
   "50a561c320a6e2b2",
-  "f8b99a0f63453db1",
-  "0d64e297c739b731",
-  "65b96c238445cded",
-  "0f0020abcf733229",
-  "3d0fdc251c6fe151",
-  "02149a4df227102e",
-  "1cd01b15863e291a"
+  "ca26bca182f697df",
+  "92c1824269f45469",
+  "a47950b9177a3bb8",
+  "ac94b61a25ade5ed",
+  "229eabb18a4037ae",
+  "33cf1d31e8bfd90e",
+  "3d0fdc251c6fe151"
  ],
- "deepReadId": "1cd01b15863e291a",
+ "deepReadId": "3d0fdc251c6fe151",
  "llm": {
   "enabled": true,
   "ok": true
