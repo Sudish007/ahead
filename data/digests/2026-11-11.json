@@ -1,0 +1,350 @@
+{
+ "date": "2026-11-11",
+ "generatedAt": "2026-11-11T04:41:34.158Z",
+ "wordCount": 769,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's key developments highlight significant commercial and research shifts across the artificial intelligence landscape. Anthropic has launched the roadshow for its proposed initial public offering of Class A common stock. Concurrently, OpenAI introduced Businesses in ChatGPT to help manage business information and published new research with Upwork on AI effects on freelance work, showing shifting demand and larger budgets for AI projects. In research, new papers explore discrete codes as general-purpose visual representations through dNaViT and heterogeneous tactile representations for dexterous manipulation. Additionally, open-source releases continue to advance, with models like speridlabs/idol gaining traction on Hugging Face while operating efficiently on consumer hardware.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "dc15a9692d7b5c80",
+     "title": "Anthropic launches roadshow for proposed initial public offering",
+     "url": "https://www.anthropic.com/news/roadshow-launch",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50438891",
+     "sourceIds": [
+      "anthropic",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Anthropic",
+      "Hacker News"
+     ],
+     "summary": "Today Anthropic, PBC launched the roadshow for its proposed initial public offering of its Class A common stock.",
+     "why": "Anthropic's initial public offering roadshow launch marks a major financial milestone for the leading AI lab.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "category": "labs",
+     "score": 15.04
+    },
+    {
+     "id": "f3fc54cd1d78c100",
+     "title": "Work at the Frontier: AI’s effect on freelance work",
+     "url": "https://openai.com/index/ai-effect-on-freelance-work",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50443838",
+     "sourceIds": [
+      "openai",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "Hacker News"
+     ],
+     "summary": "New research from OpenAI and Upwork finds shifting demand for freelance work, new skill combinations, and larger budgets and more hours for AI-related projects.",
+     "why": "OpenAI and Upwork research reveals changing freelance demand and larger budgets for AI projects.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T07:00:00.000Z",
+     "category": "labs",
+     "score": 14.63,
+     "readMinutes": 1
+    },
+    {
+     "id": "991ad48e8559b2fe",
+     "title": "Introducing Businesses in ChatGPT",
+     "url": "https://openai.com/index/introducing-businesses-chatgpt",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50443944",
+     "sourceIds": [
+      "openai",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "Hacker News"
+     ],
+     "summary": "Manage your business information, get insights about how your business shows up, and turn interest into action in ChatGPT.",
+     "why": "Businesses in ChatGPT allows companies to manage information and convert interest directly within the platform.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T10:00:00.000Z",
+     "category": "labs",
+     "score": 14.1,
+     "readMinutes": 1
+    },
+    {
+     "id": "db8fc49499210140",
+     "title": "AI usage generates a fragile codebase",
+     "url": "https://evanxmerz.com/post/ai-usage-generates-a-fragile-codebase/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50438318",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Heavy reliance on AI code generation creates fragile codebases that require careful engineering management.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T10:25:58.000Z",
+     "category": "news",
+     "score": 12.99
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.12426",
+     "title": "dNaViT: Discrete Codes are General-Purpose Visual Representations",
+     "url": "https://arxiv.org/abs/2611.12426",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Discrete autoregressive modeling, notably through next-token prediction, has become a cornerstone of modern language models.",
+     "why": "dNaViT explores discrete autoregressive modeling as a general-purpose visual representation cornerstone for models.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-09T00:00:00.000Z",
+     "category": "research",
+     "score": 11.63
+    },
+    {
+     "id": "arxiv:2611.12806",
+     "title": "Learning Heterogeneous Tactile Representation for General Dexterous Manipulation",
+     "url": "https://arxiv.org/abs/2611.12806",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Tactile sensing is an indispensable modality for contact-rich dexterous manipulation, a capability that hints at the ultimate frontiers of embodied intelligence.",
+     "why": "Tactile sensing research advances contact-rich dexterous manipulation for the frontiers of embodied intelligence.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-09T00:00:00.000Z",
+     "category": "research",
+     "score": 11.17
+    },
+    {
+     "id": "arxiv:2611.10556",
+     "title": "onóna: Twin Embeddings with Tied Unembeddings",
+     "url": "https://arxiv.org/abs/2611.10556",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Weight tying reduces the parameter cost of language models, but the usual tied output head is limited to a single softmax. We introduce onóna, a two-table parameterization that increases output expressiveness while preserving input-output weight sharing.",
+     "why": "onóna introduces a twin embedding parameterization to increase output expressiveness while sharing weights.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-07T00:00:00.000Z",
+     "category": "research",
+     "score": 11.07
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "50a561c320a6e2b2",
+     "title": "speridlabs/idol",
+     "url": "https://huggingface.co/speridlabs/idol",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xsub9f/trending_on_huggingface2d_to_3d/",
+     "sourceIds": [
+      "hf-trending",
+      "reddit"
+     ],
+     "sourceNames": [
+      "HF trending models",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
+     ],
+     "summary": "Has dependency on dinov3, is trending top model on hf since last week. Runs with 8GB vram.",
+     "why": "speridlabs/idol brings dinov3-dependent visual processing to consumer hardware with low VRAM requirements.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T15:55:17.000Z",
+     "category": "releases",
+     "score": 12.72
+    },
+    {
+     "id": "f8b99a0f63453db1",
+     "title": "Comfy-Org/MiniMax-H3-Image",
+     "url": "https://huggingface.co/Comfy-Org/MiniMax-H3-Image",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "text-to-image · diffusion-single-file · 179 likes · 18 downloads",
+     "why": "Comfy-Org/MiniMax-H3-Image provides a new single-file text-to-image diffusion option for developers.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-08T20:37:23.000Z",
+     "category": "releases",
+     "score": 7.75
+    },
+    {
+     "id": "0d64e297c739b731",
+     "title": "VideoRebirthAI/hyperflow-h3-flash",
+     "url": "https://huggingface.co/VideoRebirthAI/hyperflow-h3-flash",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-video · minimax-h3 · 178 likes · 110,752 downloads",
+     "why": "VideoRebirthAI/hyperflow-h3-flash offers rapid image-text-to-video capabilities built on minimax-h3 architecture.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-04T13:54:24.000Z",
+     "category": "releases",
+     "score": 7.74
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "65b96c238445cded",
+     "title": "Gilbert + Tobin rethinks the business of law with AI",
+     "url": "https://openai.com/index/gilbert-tobin-sam-nickless",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "A conversation with Sam Nickless, Partner and Chief Executive Officer at Gilbert + Tobin.",
+     "why": "Gilbert + Tobin demonstrates how law firms are fundamentally rethinking business operations using AI tools.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T04:41:34.158Z",
+     "category": "labs",
+     "score": 7,
+     "readMinutes": 1
+    },
+    {
+     "id": "0f0020abcf733229",
+     "title": "Helping caregivers use AI in everyday life",
+     "url": "https://openai.com/index/helping-caregivers-use-ai-in-everyday-life",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "OpenAI Academy is bringing free, hands-on ChatGPT workshops to caregivers in five U.S. cities, helping them build practical AI skills for everyday life.",
+     "why": "OpenAI Academy brings free, hands-on ChatGPT workshops to caregivers across multiple cities.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T12:00:00.000Z",
+     "category": "labs",
+     "score": 5.08,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "3d0fdc251c6fe151",
+     "title": "Delaying Internal Deployments Until After X Days of Safety Testing",
+     "url": "https://www.alignmentforum.org/posts/XNLhpWgzhF8GYZ4Er/delaying-internal-deployments-until-after-x-days-of-safety",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "This post reflects my own takes, and not that of my employer's. This is a simple idea: before a new model can be deployed internally, you must first test it for a minimum, fixed period.",
+     "why": "Mandating fixed safety testing periods before internal model deployment addresses crucial risk mitigation.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T00:18:16.000Z",
+     "category": "blogs",
+     "score": 3.68,
+     "readMinutes": 14
+    },
+    {
+     "id": "02149a4df227102e",
+     "title": "Q3.5 Timelines Update: Looks Like the Intelligence Explosion Will Happen in 2027 After All",
+     "url": "https://www.alignmentforum.org/posts/f9PajMLmBYzmWzyDv/q3-5-timelines-update-looks-like-the-intelligence-explosion",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "We want to get this post out quickly given the urgency of the topic. It’s possible that there are some errors in the modeling, but we think it’s very unlikely that they undermine the high level conclusions.",
+     "why": "Updated timeline modeling suggests the intelligence explosion could occur rapidly within the coming years.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T16:30:09.000Z",
+     "category": "blogs",
+     "score": 3.16,
+     "readMinutes": 112
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "1cd01b15863e291a",
+     "title": "Locating the source of a mysterious beep with Claude",
+     "url": "https://simonwillison.net/2026/Nov/9/mysterious-beeps/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Our house has a box room, full of boxes that we still haven't unpacked from our last move. A couple of weeks ago something in that room started intermittently beeping.",
+     "why": "Practical troubleshooting showcases how conversational agents help solve everyday physical mysteries like intermittent beeps.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-09T23:57:21.000Z",
+     "category": "blogs",
+     "score": 2.3,
+     "readMinutes": 10
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "dc15a9692d7b5c80",
+  "f3fc54cd1d78c100",
+  "991ad48e8559b2fe",
+  "db8fc49499210140",
+  "arxiv:2611.12426",
+  "arxiv:2611.12806",
+  "arxiv:2611.10556",
+  "50a561c320a6e2b2",
+  "f8b99a0f63453db1",
+  "0d64e297c739b731",
+  "65b96c238445cded",
+  "0f0020abcf733229",
+  "3d0fdc251c6fe151",
+  "02149a4df227102e",
+  "1cd01b15863e291a"
+ ],
+ "deepReadId": "1cd01b15863e291a",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
