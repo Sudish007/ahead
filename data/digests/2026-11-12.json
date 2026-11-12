@@ -1,10 +1,10 @@
 {
  "date": "2026-11-12",
- "generatedAt": "2026-11-12T00:02:41.671Z",
- "wordCount": 725,
+ "generatedAt": "2026-11-12T14:37:16.823Z",
+ "wordCount": 740,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's key developments span open-source tooling, agent applications, model releases, and research. Huawei has released MACaQ as its internal quantizer for local inference across text, image, video, and audio models. In real-world agent deployments, developers are seeing new capabilities and pushback, as AI agents successfully discovered an unmapped Maya site while United Airlines formally banned AI agents from booking flights on behalf of travelers. Meanwhile, model releases continue to advance rapidly, highlighted by Tencent introducing a new speculative decoding method via tencent/Qwen3.8-27B-DSpine-b16, and deepseek-ai launching deepseek-ai/DeepSeek-V4.1-Flash-1017. In research, new diagnostic frameworks like PhyRubric evaluate physical commonsense in text-to-video generation, and work on Tree-Ising explores repairing language models with bit-level Ising edits.",
+  "text": "Today's key developments highlight major shifts in industry leadership, local inference tooling, and model architecture. First, NVIDIA announced a significant CEO transition as the company prepares to move past Jensen Huang. In local inference, Huawei released MACaQ as an internal quantizer supporting text, image, video, and audio models across multiple popular runtimes. Meanwhile, Tencent developed a new speculative decoding method tied to Qwen3.8-27B-DSpine-b16 that enables faster decoding for large models. In research, new techniques like SteerDistill address low-bit quantization for LLM agents, and GTAGym introduces a real AAA game tasks environment for evaluating agent perception, reasoning, and control. These updates collectively point to continued optimization in deployment costs and new evaluation paradigms for interactive agents.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -13,28 +13,6 @@
    "key": "must-know",
    "title": "Must know",
    "entries": [
-    {
-     "id": "294bf5db49617557",
-     "title": "Huawei releases MACaQ, its internal quantizer for local inference",
-     "url": "https://github.com/huawei-csl/MACaQ",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50458166",
-     "sourceIds": [
-      "hn-front",
-      "hn-top",
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News",
-      "GitHub new repos: llm"
-     ],
-     "summary": "SOTA model-agnostic quantization for GGUF, local inference and beyond. Quantize and run text, image, video and audio models with llama.cpp, vLLM, Diffusers and PyTorch. · C++",
-     "why": "Huawei's MACaQ offers model-agnostic quantization for local inference across diverse modalities like text and video.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-10T08:52:22.000Z",
-     "category": "releases",
-     "score": 18.25
-    },
     {
      "id": "e2d7854493bb4e00",
      "title": "Nvidia is preparing to oust Jensen Huang",
@@ -51,17 +29,39 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "",
-     "why": "Reports indicate Nvidia is preparing to oust Jensen Huang, marking a potential leadership shift.",
+     "why": "Nvidia is preparing to oust Jensen Huang, marking a massive leadership transition for the dominant chipmaker.",
      "whySource": "llm",
      "publishedAt": "2026-11-11T22:31:06.000Z",
      "category": "news",
-     "score": 18.06
+     "score": 18.76
     },
     {
-     "id": "c8dde4086f9ad8bc",
-     "title": "My AI agents found an unmapped Maya site",
-     "url": "https://pietromiotti.com/latest/maya-site",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50452455",
+     "id": "294bf5db49617557",
+     "title": "Huawei releases MACaQ, its internal quantizer for local inference",
+     "url": "https://github.com/huawei-csl/MACaQ",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50458166",
+     "sourceIds": [
+      "hn-front",
+      "hn-top",
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News",
+      "GitHub new repos: llm"
+     ],
+     "summary": "SOTA model-agnostic quantization for GGUF, local inference and beyond. Quantize and run text, image, video and audio models with llama.cpp, vLLM, Diffusers and PyTorch. · C++",
+     "why": "Huawei's MACaQ provides model-agnostic quantization for GGUF and local inference across text, image, video, and audio models.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T08:52:22.000Z",
+     "category": "releases",
+     "score": 18.42
+    },
+    {
+     "id": "cbd7d968d7a9a1e5",
+     "title": "NVIDIA Announces CEO Transition",
+     "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50467087",
      "sourceIds": [
       "hn-front",
       "hn-top"
@@ -71,31 +71,30 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "AI agents successfully discovered an unmapped Maya site, demonstrating real-world archaeological utility.",
+     "why": "NVIDIA announced a CEO transition, signaling a major upcoming shift in executive leadership.",
      "whySource": "llm",
-     "publishedAt": "2026-11-11T12:05:22.000Z",
+     "publishedAt": "2026-11-12T13:52:29.000Z",
      "category": "news",
-     "score": 14.02
+     "score": 14.78
     },
     {
-     "id": "7ba20429e23e2220",
-     "title": "United Airlines bans AI agents from booking flights on behalf of travelers",
-     "url": "https://www.cbsnews.com/news/united-airlines-bans-ai-agents-booking-flights/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50458900",
+     "id": "arxiv:2611.13410",
+     "title": "SteerDistill: Quantizing LLM Agents via Closed-Loop Teacher Steering",
+     "url": "https://arxiv.org/abs/2611.13410",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.AI"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.AI"
      ],
-     "summary": "",
-     "why": "United Airlines has banned AI agents from booking flights, highlighting emerging policy friction for automation.",
+     "summary": "Low-bit quantization reduces the inference cost of LLM agents but can compromise task success.",
+     "why": "SteerDistill uses closed-loop teacher steering to quantize LLM agents without compromising task success.",
      "whySource": "llm",
-     "publishedAt": "2026-11-11T21:24:35.000Z",
-     "category": "news",
-     "score": 13.8
+     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "category": "research",
+     "score": 14.62
     }
    ]
   },
@@ -104,9 +103,9 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.13576",
-     "title": "PhyRubric: Rubric-Grounded Diagnostic Evaluation of Physical Commonsense in Text-to-Video Generation",
-     "url": "https://arxiv.org/abs/2611.13576",
+     "id": "arxiv:2611.13028",
+     "title": "GTAGym: Real AAA Game Tasks Environment for Evaluation and Reinforcement Learning",
+     "url": "https://arxiv.org/abs/2611.13028",
      "sourceIds": [
       "hf-papers",
       "arxiv-cs.CV"
@@ -115,48 +114,50 @@
       "HF Daily Papers",
       "arXiv cs.CV"
      ],
-     "summary": "As text-to-video (T2V) models are increasingly positioned as world simulators, it is essential to evaluate whether their videos conform to physical commonsense.",
-     "why": "PhyRubric provides rubric-grounded diagnostic evaluation of physical commonsense in text-to-video generation models.",
+     "summary": "AAA games offer a rich testbed for evaluating agent perception, reasoning, and control.",
+     "why": "GTAGym provides a real AAA game tasks environment for evaluating agent perception, reasoning, and control.",
      "whySource": "llm",
-     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "publishedAt": "2026-11-09T00:00:00.000Z",
      "category": "research",
-     "score": 12.87
+     "score": 13.74
     },
     {
-     "id": "arxiv:2611.10486",
-     "title": "Test-Time Scaling for Diffusion Language Models with Frequency-Aware Remasking",
-     "url": "https://arxiv.org/abs/2611.10486",
+     "id": "arxiv:2611.10193",
+     "title": "Ensemble Routing for Prompt-Adaptive Cost-Aware LLM Inference",
+     "url": "https://arxiv.org/abs/2611.10193",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.CL"
+      "arxiv-cs.AI"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.CL"
+      "arXiv cs.AI"
      ],
-     "summary": "Diffusion language models (DLMs) generate text through iterative denoising, where decisions about which tokens to commit or remask strongly affect output quality.",
-     "why": "Test-time scaling for diffusion language models with frequency-aware remasking addresses iterative denoising decisions.",
+     "summary": "Large language models (LLMs) increasingly support Web-based services that must balance response quality and inference cost across heterogeneous requests.",
+     "why": "Ensemble routing balances response quality and inference cost for prompt-adaptive LLM services.",
      "whySource": "llm",
-     "publishedAt": "2026-11-07T00:00:00.000Z",
+     "publishedAt": "2026-11-06T00:00:00.000Z",
      "category": "research",
-     "score": 12.21
+     "score": 13.62
     },
     {
-     "id": "arxiv:2611.14210",
-     "title": "Tree-Ising: Repairing Language Models with Bit-Level Ising Edits",
-     "url": "https://arxiv.org/abs/2611.14210",
+     "id": "arxiv:2611.13001",
+     "title": "One Table, Many Queries: Benchmarking Generalist Tabular Models Across Generation, Imputation, and Prediction",
+     "url": "https://arxiv.org/abs/2611.13001",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.LG"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.LG"
      ],
-     "summary": "Weight-space programming, introduced in recent MIT work by Takehi et al., enables a frontier LLM agent to read a network's weights and write a repair.",
-     "why": "Tree-Ising enables frontier LLM agents to read network weights and write repairs using bit-level Ising edits.",
+     "summary": "Generation, imputation, and prediction query different aspects of the same tabular distribution, but are usually evaluated separately. This leaves unclear which capabilities they share, how their training objectives interact, and whether one model can perform all three well.",
+     "why": "This benchmark evaluates generalist tabular models across generation, imputation, and prediction tasks.",
      "whySource": "llm",
-     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "publishedAt": "2026-11-08T00:00:00.000Z",
      "category": "research",
-     "score": 11.24
+     "score": 13.44
     }
    ]
   },
@@ -178,45 +179,45 @@
       "HF trending models"
      ],
      "summary": "Apparently Tencent has developed a new speculative decoding method. 3x faster decoding for 27B models?",
-     "why": "Tencent introduces a new speculative decoding method delivering faster decoding for larger models.",
+     "why": "Tencent developed a new speculative decoding method enabling faster decoding speeds for models.",
      "whySource": "llm",
      "publishedAt": "2026-11-07T14:20:29.000Z",
      "category": "releases",
-     "score": 11.81
+     "score": 10.83
     },
     {
-     "id": "cac24968e5aa0d5b",
-     "title": "deepseek-ai/DeepSeek-V4.1-Flash-1017",
-     "url": "https://huggingface.co/deepseek-ai/DeepSeek-V4.1-Flash-1017",
+     "id": "bb6e58f548947f8d",
+     "title": "unsloth/Qwen3.8-27B-GGUF",
+     "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-text · transformers · 5,480 likes · 348,914 downloads",
-     "why": "DeepSeek-V4.1-Flash-1017 expands image-text-to-text capabilities with significant community downloads.",
+     "summary": "5,782 likes · 6,097,719 downloads",
+     "why": "unsloth/Qwen3.8-27B-GGUF provides community access to quantized weights with extensive downloads.",
      "whySource": "llm",
-     "publishedAt": "2026-10-17T02:40:38.000Z",
+     "publishedAt": "2026-08-13T08:28:40.000Z",
      "category": "releases",
-     "score": 9.48
+     "score": 10.25
     },
     {
-     "id": "5a9bda72c1d1f834",
-     "title": "black-forest-labs/flux-3-image-klein-comfy",
-     "url": "https://huggingface.co/black-forest-labs/flux-3-image-klein-comfy",
+     "id": "73e1243414bd6b3f",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-to-image · diffusion-single-file · 2,909 likes · 1,271,036 downloads",
-     "why": "Black forest labs releases flux-3-image-klein-comfy for image-to-image single file diffusion tasks.",
+     "summary": "image-text-to-text · 2,953 likes · 1,599,836 downloads",
+     "why": "DavidAU released an uncensored image-text-to-text GGUF variant of the Qwen architecture.",
      "whySource": "llm",
-     "publishedAt": "2026-10-14T12:00:13.000Z",
+     "publishedAt": "2026-09-01T07:01:09.000Z",
      "category": "releases",
-     "score": 9.03
+     "score": 9.76
     }
    ]
   },
@@ -225,39 +226,39 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "ba0fcf4e325b4115",
-     "title": "AlphaGenome 2: Deciphering how cells read DNA to better understand disease",
-     "url": "https://deepmind.google/blog/alphagenome-2-deciphering-how-cells-read-dna-to-better-understand-disease/",
+     "id": "4922ca6fb0dd9299",
+     "title": "Holiday Extras is rethinking what it can build with Codex",
+     "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
      "sourceIds": [
-      "deepmind"
+      "openai"
      ],
      "sourceNames": [
-      "Google DeepMind"
+      "OpenAI"
      ],
-     "summary": "Predicting how DNA sequences and their variations impact specific human cell types and disease.",
-     "why": "AlphaGenome 2 helps decipher how cells read DNA to better understand human disease and variations.",
+     "summary": "With Codex, Holiday Extras is turning customer expertise into better apps, higher booking conversion and new possibilities for growth.",
+     "why": "Holiday Extras is utilizing Codex to turn customer expertise into better booking apps.",
      "whySource": "llm",
-     "publishedAt": "2026-11-11T15:00:15.000Z",
+     "publishedAt": "2026-11-12T09:30:00.000Z",
      "category": "labs",
-     "score": 5.88,
+     "score": 6.34,
      "readMinutes": 1
     },
     {
-     "id": "c608eba2d1b2d865",
-     "title": "Using wearables to enable cardiovascular-kidney-metabolic (CKM) risk profiling for personalized coaching",
-     "url": "https://research.google/blog/using-wearables-to-enable-cardiovascular-kidney-metabolic-ckm-risk-profiling-for-personalized-coaching/",
+     "id": "d7c1da8cb7dc41da",
+     "title": "Supporting research on AI and children’s safety",
+     "url": "https://openai.com/index/children-first-declaration",
      "sourceIds": [
-      "google-research"
+      "openai"
      ],
      "sourceNames": [
-      "Google Research"
+      "OpenAI"
      ],
-     "summary": "Health & Bioscience",
-     "why": "Google Research leverages wearables for cardiovascular-kidney-metabolic risk profiling and personalized coaching.",
+     "summary": "OpenAI commits $2 million to research on AI and children’s safety. The work supports shared tools to measure risks and opportunities for young people.",
+     "why": "OpenAI commits funds to research on AI and children's safety and risk measurement.",
      "whySource": "llm",
-     "publishedAt": "2026-11-11T19:54:00.000Z",
+     "publishedAt": "2026-11-12T00:00:00.000Z",
      "category": "labs",
-     "score": 5.54,
+     "score": 5.28,
      "readMinutes": 1
     }
    ]
@@ -265,6 +266,48 @@
   {
    "key": "analysis",
    "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "b753aee2f1150a29",
+     "title": "AI #194: Spy Versus Guy",
+     "url": "https://thezvi.substack.com/p/ai-194-spy-versus-guy",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Tomorrow I head to Washington DC for a conference called The Takeoff.",
+     "why": "Analysis covering upcoming policy and industry discussions in Washington DC.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-12T14:31:34.000Z",
+     "category": "blogs",
+     "score": 4.99,
+     "readMinutes": 74
+    },
+    {
+     "id": "dd56d7e6848c2558",
+     "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
+     "url": "https://latent.space/p/jev-revolution/",
+     "sourceIds": [
+      "latentspace"
+     ],
+     "sourceNames": [
+      "Latent Space"
+     ],
+     "summary": "At AI Engineer Code Summit, lead Jev creator Diogo Almeida called on developers to automate everything. Also, Glean and others showed how they’re using Jev.",
+     "why": "Engineers explore building with System One models and automating workflows at the AI Engineer Code Summit.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-12T05:08:20.000Z",
+     "category": "blogs",
+     "score": 4.17,
+     "readMinutes": 6
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
    "entries": [
     {
      "id": "a4dac65da028f710",
@@ -277,76 +320,34 @@
       "Epoch AI Gradient Updates"
      ],
      "summary": "An open-weight model hacks Firefox for $1,000, AI chips mapped by country, and how biologists are using LLMs",
-     "why": "The Epoch Brief covers open-weight model exploits, geopolitical AI chip mapping, and biological LLM use.",
+     "why": "The Epoch Brief covers open-weight models hacking Firefox, national AI chip mapping, and biology use cases.",
      "whySource": "llm",
      "publishedAt": "2026-11-11T17:18:46.000Z",
      "category": "blogs",
-     "score": 4.39,
+     "score": 3.32,
      "readMinutes": 10
-    },
-    {
-     "id": "85f608a19d72a175",
-     "title": "Fable and Mythos 5.2: The System Card",
-     "url": "https://thezvi.substack.com/p/fable-and-mythos-52-the-system-card",
-     "sourceIds": [
-      "zvi"
-     ],
-     "sourceNames": [
-      "Don't Worry About the Vase"
-     ],
-     "summary": "It’s that time again: Introducing the world’s most powerful model, Claude Mythos 5.2.",
-     "why": "The system card introduces Claude Mythos as a powerful model release in the current landscape.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-11T16:25:17.000Z",
-     "category": "blogs",
-     "score": 4.32,
-     "readMinutes": 38
-    }
-   ]
-  },
-  {
-   "key": "deep-read",
-   "title": "One deep read",
-   "entries": [
-    {
-     "id": "02149a4df227102e",
-     "title": "Q3.5 Timelines Update: Looks Like the Intelligence Explosion Will Happen in 2027 After All",
-     "url": "https://www.alignmentforum.org/posts/f9PajMLmBYzmWzyDv/q3-5-timelines-update-looks-like-the-intelligence-explosion",
-     "sourceIds": [
-      "alignmentforum"
-     ],
-     "sourceNames": [
-      "Alignment Forum"
-     ],
-     "summary": "We want to get this post out quickly given the urgency of the topic. It’s possible that there are some errors in the modeling, but we think it’s very unlikely that they undermine the high level conclusions.",
-     "why": "Timelines updates argue that an intelligence explosion could happen in the near future.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-10T16:30:09.000Z",
-     "category": "blogs",
-     "score": 2.18,
-     "readMinutes": 112
     }
    ]
   }
  ],
  "itemIds": [
-  "294bf5db49617557",
   "e2d7854493bb4e00",
-  "c8dde4086f9ad8bc",
-  "7ba20429e23e2220",
-  "arxiv:2611.13576",
-  "arxiv:2611.10486",
-  "arxiv:2611.14210",
+  "294bf5db49617557",
+  "cbd7d968d7a9a1e5",
+  "arxiv:2611.13410",
+  "arxiv:2611.13028",
+  "arxiv:2611.10193",
+  "arxiv:2611.13001",
   "a64346d6b971f202",
-  "cac24968e5aa0d5b",
-  "5a9bda72c1d1f834",
-  "ba0fcf4e325b4115",
-  "c608eba2d1b2d865",
-  "a4dac65da028f710",
-  "85f608a19d72a175",
-  "02149a4df227102e"
+  "bb6e58f548947f8d",
+  "73e1243414bd6b3f",
+  "4922ca6fb0dd9299",
+  "d7c1da8cb7dc41da",
+  "b753aee2f1150a29",
+  "dd56d7e6848c2558",
+  "a4dac65da028f710"
  ],
- "deepReadId": "02149a4df227102e",
+ "deepReadId": "a4dac65da028f710",
  "llm": {
   "enabled": true,
   "ok": true
