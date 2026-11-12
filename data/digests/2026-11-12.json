@@ -1,13 +1,9 @@
 {
  "date": "2026-11-12",
- "generatedAt": "2026-11-12T14:37:16.823Z",
- "wordCount": 740,
- "readingMinutes": 4,
- "overview": {
-  "text": "Today's key developments highlight major shifts in industry leadership, local inference tooling, and model architecture. First, NVIDIA announced a significant CEO transition as the company prepares to move past Jensen Huang. In local inference, Huawei released MACaQ as an internal quantizer supporting text, image, video, and audio models across multiple popular runtimes. Meanwhile, Tencent developed a new speculative decoding method tied to Qwen3.8-27B-DSpine-b16 that enables faster decoding for large models. In research, new techniques like SteerDistill address low-bit quantization for LLM agents, and GTAGym introduces a real AAA game tasks environment for evaluating agent perception, reasoning, and control. These updates collectively point to continued optimization in deployment costs and new evaluation paradigms for interactive agents.",
-  "source": "llm",
-  "model": "gemini-3.5-flash-lite"
- },
+ "generatedAt": "2026-11-12T23:12:54.586Z",
+ "wordCount": 518,
+ "readingMinutes": 3,
+ "overview": null,
  "sections": [
   {
    "key": "must-know",
@@ -29,11 +25,11 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "",
-     "why": "Nvidia is preparing to oust Jensen Huang, marking a massive leadership transition for the dominant chipmaker.",
-     "whySource": "llm",
+     "why": "1.2k points on HN, 1.6k comments; also on Reddit r/LocalLLaMA + r/MachineLearning",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-11T22:31:06.000Z",
      "category": "news",
-     "score": 18.76
+     "score": 18.09
     },
     {
      "id": "294bf5db49617557",
@@ -51,17 +47,17 @@
       "GitHub new repos: llm"
      ],
      "summary": "SOTA model-agnostic quantization for GGUF, local inference and beyond. Quantize and run text, image, video and audio models with llama.cpp, vLLM, Diffusers and PyTorch. · C++",
-     "why": "Huawei's MACaQ provides model-agnostic quantization for GGUF and local inference across text, image, video, and audio models.",
-     "whySource": "llm",
+     "why": "124 points on HN, 30 comments; also on GitHub new repos: llm",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-10T08:52:22.000Z",
      "category": "releases",
-     "score": 18.42
+     "score": 17.83
     },
     {
-     "id": "cbd7d968d7a9a1e5",
-     "title": "NVIDIA Announces CEO Transition",
-     "url": "https://nvidianews.nvidia.com/news/nvidia-announces-ceo-transition",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50467087",
+     "id": "6f409348da4b8930",
+     "title": "Anthropic IPO",
+     "url": "https://ipo.anthropic.com/us/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50465829",
      "sourceIds": [
       "hn-front",
       "hn-top"
@@ -71,11 +67,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "NVIDIA announced a CEO transition, signaling a major upcoming shift in executive leadership.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-12T13:52:29.000Z",
+     "why": "#19 on HN front page, 775 points, 767 comments",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-12T11:46:41.000Z",
      "category": "news",
-     "score": 14.78
+     "score": 14.41
     },
     {
      "id": "arxiv:2611.13410",
@@ -90,11 +86,11 @@
       "arXiv cs.AI"
      ],
      "summary": "Low-bit quantization reduces the inference cost of LLM agents but can compromise task success.",
-     "why": "SteerDistill uses closed-loop teacher steering to quantize LLM agents without compromising task success.",
-     "whySource": "llm",
+     "why": "31 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-10T00:00:00.000Z",
      "category": "research",
-     "score": 14.62
+     "score": 14.12
     }
    ]
   },
@@ -102,25 +98,6 @@
    "key": "research",
    "title": "Research",
    "entries": [
-    {
-     "id": "arxiv:2611.13028",
-     "title": "GTAGym: Real AAA Game Tasks Environment for Evaluation and Reinforcement Learning",
-     "url": "https://arxiv.org/abs/2611.13028",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "AAA games offer a rich testbed for evaluating agent perception, reasoning, and control.",
-     "why": "GTAGym provides a real AAA game tasks environment for evaluating agent perception, reasoning, and control.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-09T00:00:00.000Z",
-     "category": "research",
-     "score": 13.74
-    },
     {
      "id": "arxiv:2611.10193",
      "title": "Ensemble Routing for Prompt-Adaptive Cost-Aware LLM Inference",
@@ -134,30 +111,49 @@
       "arXiv cs.AI"
      ],
      "summary": "Large language models (LLMs) increasingly support Web-based services that must balance response quality and inference cost across heterogeneous requests.",
-     "why": "Ensemble routing balances response quality and inference cost for prompt-adaptive LLM services.",
-     "whySource": "llm",
+     "why": "14 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-06T00:00:00.000Z",
      "category": "research",
-     "score": 13.62
+     "score": 13.02
     },
     {
-     "id": "arxiv:2611.13001",
-     "title": "One Table, Many Queries: Benchmarking Generalist Tabular Models Across Generation, Imputation, and Prediction",
-     "url": "https://arxiv.org/abs/2611.13001",
+     "id": "arxiv:2611.13028",
+     "title": "GTAGym: Real AAA Game Tasks Environment for Evaluation and Reinforcement Learning",
+     "url": "https://arxiv.org/abs/2611.13028",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.LG"
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.LG"
+      "arXiv cs.CV"
      ],
-     "summary": "Generation, imputation, and prediction query different aspects of the same tabular distribution, but are usually evaluated separately. This leaves unclear which capabilities they share, how their training objectives interact, and whether one model can perform all three well.",
-     "why": "This benchmark evaluates generalist tabular models across generation, imputation, and prediction tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-08T00:00:00.000Z",
+     "summary": "AAA games offer a rich testbed for evaluating agent perception, reasoning, and control.",
+     "why": "13 upvotes on HF Papers; also on arXiv cs.CV",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-09T00:00:00.000Z",
      "category": "research",
-     "score": 13.44
+     "score": 12.92
+    },
+    {
+     "id": "arxiv:2611.14418",
+     "title": "Precision on Demand: Escalating Weight Bits at Uncertain Decoding Steps in a Small Local Model",
+     "url": "https://arxiv.org/abs/2611.14418",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Local decoding usually fixes one weight precision for the whole generation.",
+     "why": "4 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "category": "research",
+     "score": 11.44
     }
    ]
   },
@@ -165,6 +161,26 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
+    {
+     "id": "25b629867bd0af67",
+     "title": "Zyphra/ZONOS3-Mini · Hugging Face",
+     "url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xtb9gw/zyphrazonos3mini_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "ZONOS3-Mini is Zyphra’s compact, open-source text-to-speech model, delivering natural reliable speech and high-fidelity voice cloning with just 100 million active parameters. It runs in real time on phones and laptops, including directly in the browser.",
+     "why": "also on HF trending models; 225 likes on Hugging Face",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-09T05:03:57.000Z",
+     "category": "releases",
+     "score": 11.91
+    },
     {
      "id": "a64346d6b971f202",
      "title": "tencent/Qwen3.8-27B-DSpine-b16 · Hugging Face",
@@ -179,11 +195,11 @@
       "HF trending models"
      ],
      "summary": "Apparently Tencent has developed a new speculative decoding method. 3x faster decoding for 27B models?",
-     "why": "Tencent developed a new speculative decoding method enabling faster decoding speeds for models.",
-     "whySource": "llm",
+     "why": "also on HF trending models; 208 likes on Hugging Face",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-07T14:20:29.000Z",
      "category": "releases",
-     "score": 10.83
+     "score": 10.41
     },
     {
      "id": "bb6e58f548947f8d",
@@ -196,28 +212,11 @@
       "HF trending models"
      ],
      "summary": "5,782 likes · 6,097,719 downloads",
-     "why": "unsloth/Qwen3.8-27B-GGUF provides community access to quantized weights with extensive downloads.",
-     "whySource": "llm",
+     "why": "5.8k likes on Hugging Face",
+     "whySource": "heuristic",
      "publishedAt": "2026-08-13T08:28:40.000Z",
      "category": "releases",
-     "score": 10.25
-    },
-    {
-     "id": "73e1243414bd6b3f",
-     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "image-text-to-text · 2,953 likes · 1,599,836 downloads",
-     "why": "DavidAU released an uncensored image-text-to-text GGUF variant of the Qwen architecture.",
-     "whySource": "llm",
-     "publishedAt": "2026-09-01T07:01:09.000Z",
-     "category": "releases",
-     "score": 9.76
+     "score": 9.64
     }
    ]
   },
@@ -226,46 +225,87 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "4922ca6fb0dd9299",
-     "title": "Holiday Extras is rethinking what it can build with Codex",
-     "url": "https://openai.com/business/customer-stories/holidays-extras-codex",
+     "id": "a491aa90d650ab2b",
+     "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
+     "url": "https://openai.com/index/amplitude",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "With Codex, Holiday Extras is turning customer expertise into better apps, higher booking conversion and new possibilities for growth.",
-     "why": "Holiday Extras is utilizing Codex to turn customer expertise into better booking apps.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-12T09:30:00.000Z",
+     "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
+     "why": "OpenAI announcement",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-12T20:00:00.000Z",
      "category": "labs",
-     "score": 6.34,
+     "score": 6.58,
      "readMinutes": 1
     },
     {
-     "id": "d7c1da8cb7dc41da",
-     "title": "Supporting research on AI and children’s safety",
-     "url": "https://openai.com/index/children-first-declaration",
+     "id": "5b69826eead48a96",
+     "title": "Introducing Gemini 4 Hydrogen",
+     "url": "https://deepmind.google/blog/introducing-gemini-4-hydrogen/",
      "sourceIds": [
-      "openai"
+      "deepmind"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Google DeepMind"
      ],
-     "summary": "OpenAI commits $2 million to research on AI and children’s safety. The work supports shared tools to measure risks and opportunities for young people.",
-     "why": "OpenAI commits funds to research on AI and children's safety and risk measurement.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-12T00:00:00.000Z",
+     "summary": "",
+     "why": "Google DeepMind announcement",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-12T18:00:50.000Z",
      "category": "labs",
-     "score": 5.28,
-     "readMinutes": 1
+     "score": 6.33
     }
    ]
   },
   {
    "key": "analysis",
    "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "0ac8e2e8eef42951",
+     "title": "Nvidia and the World Without Jensen",
+     "url": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+     "sourceIds": [
+      "semianalysis"
+     ],
+     "sourceNames": [
+      "SemiAnalysis"
+     ],
+     "summary": "Is NVIDIA Over? Export Controls, RASA, Open Source Implications, Supply Chain Implications, Affair, US Still Dependent On China",
+     "why": "SemiAnalysis, ~27 min read",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-12T18:06:26.000Z",
+     "category": "blogs",
+     "score": 6.34,
+     "readMinutes": 27
+    },
+    {
+     "id": "81bd1d475d0e0d43",
+     "title": "What Huawei’s Horinger data center reveals about China’s compute gap",
+     "url": "https://epochai.substack.com/p/what-huaweis-horinger-data-center",
+     "sourceIds": [
+      "epoch-gradient-updates"
+     ],
+     "sourceNames": [
+      "Epoch AI Gradient Updates"
+     ],
+     "summary": "Satellite imagery puts Huawei’s flagship AI data center compute at roughly 7% of SpaceX’s Colossus 2’s",
+     "why": "Epoch AI Gradient Updates, ~9 min read",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-12T16:03:15.000Z",
+     "category": "blogs",
+     "score": 4.36,
+     "readMinutes": 9
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
    "entries": [
     {
      "id": "b753aee2f1150a29",
@@ -278,54 +318,12 @@
       "Don't Worry About the Vase"
      ],
      "summary": "Tomorrow I head to Washington DC for a conference called The Takeoff.",
-     "why": "Analysis covering upcoming policy and industry discussions in Washington DC.",
-     "whySource": "llm",
+     "why": "Don't Worry About the Vase, ~74 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-12T14:31:34.000Z",
      "category": "blogs",
-     "score": 4.99,
+     "score": 4.23,
      "readMinutes": 74
-    },
-    {
-     "id": "dd56d7e6848c2558",
-     "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
-     "url": "https://latent.space/p/jev-revolution/",
-     "sourceIds": [
-      "latentspace"
-     ],
-     "sourceNames": [
-      "Latent Space"
-     ],
-     "summary": "At AI Engineer Code Summit, lead Jev creator Diogo Almeida called on developers to automate everything. Also, Glean and others showed how they’re using Jev.",
-     "why": "Engineers explore building with System One models and automating workflows at the AI Engineer Code Summit.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-12T05:08:20.000Z",
-     "category": "blogs",
-     "score": 4.17,
-     "readMinutes": 6
-    }
-   ]
-  },
-  {
-   "key": "deep-read",
-   "title": "One deep read",
-   "entries": [
-    {
-     "id": "a4dac65da028f710",
-     "title": "The Epoch Brief - November 11, 2026",
-     "url": "https://epochai.substack.com/p/the-epoch-brief-november-11-2026",
-     "sourceIds": [
-      "epoch-gradient-updates"
-     ],
-     "sourceNames": [
-      "Epoch AI Gradient Updates"
-     ],
-     "summary": "An open-weight model hacks Firefox for $1,000, AI chips mapped by country, and how biologists are using LLMs",
-     "why": "The Epoch Brief covers open-weight models hacking Firefox, national AI chip mapping, and biology use cases.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-11T17:18:46.000Z",
-     "category": "blogs",
-     "score": 3.32,
-     "readMinutes": 10
     }
    ]
   }
@@ -333,23 +331,23 @@
  "itemIds": [
   "e2d7854493bb4e00",
   "294bf5db49617557",
-  "cbd7d968d7a9a1e5",
+  "6f409348da4b8930",
   "arxiv:2611.13410",
-  "arxiv:2611.13028",
   "arxiv:2611.10193",
-  "arxiv:2611.13001",
+  "arxiv:2611.13028",
+  "arxiv:2611.14418",
+  "25b629867bd0af67",
   "a64346d6b971f202",
   "bb6e58f548947f8d",
-  "73e1243414bd6b3f",
-  "4922ca6fb0dd9299",
-  "d7c1da8cb7dc41da",
-  "b753aee2f1150a29",
-  "dd56d7e6848c2558",
-  "a4dac65da028f710"
+  "a491aa90d650ab2b",
+  "5b69826eead48a96",
+  "0ac8e2e8eef42951",
+  "81bd1d475d0e0d43",
+  "b753aee2f1150a29"
  ],
- "deepReadId": "a4dac65da028f710",
+ "deepReadId": "b753aee2f1150a29",
  "llm": {
   "enabled": true,
-  "ok": true
+  "ok": false
  }
 }
