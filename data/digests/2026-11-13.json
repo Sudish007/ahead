@@ -1,10 +1,10 @@
 {
  "date": "2026-11-13",
- "generatedAt": "2026-11-13T13:55:19.006Z",
- "wordCount": 799,
+ "generatedAt": "2026-11-13T23:14:46.996Z",
+ "wordCount": 777,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's developments showcase major advances in decision models, driving simulations, and efficient autoregressive generation. In evaluation and architecture, SO-Arena benchmarks System One models for fast general-purpose decision-making, while research explores adaptive computation to optimize decision depth and group-scaled token capacity to resolve spatial compression trade-offs in image generation. In the driving domain, BirdDreams introduces joint perspective and BEV video generation for reactive driving world models, and Duo presents a reciprocal world model for full-duplex audiovisual interaction. Local deployment gains traction with Edge0-145B bringing frontier capabilities to local hardware, complemented by new open releases like ricursiveAI/Ripple-65B-Preview and moonshotai/Kimi-K3.1-Pro. Finally, industry applications and analysis highlight how companies leverage coding agents and System One architectures to accelerate product shipping and software development workflows.",
+  "text": "Today's developments showcase notable advancements across model architectures, open-weight releases, and driving world models. SO-Arena introduces benchmarks evaluating the capability spectrum and reliability of System One models, while a separate study explores transferring LLMs into efficient System One models via adaptive computation. In generative models, BirdDreams presents joint perspective and BEV video generation for reactive driving world models, and Duo v1 introduces a reciprocal world model for full-duplex audiovisual interaction. Additionally, G-STAR addresses token capacity trade-offs in deeply compressed autoregressive image generation. Open-weight releases like Edge0-145B bring frontier AI capabilities to local hardware, and models such as thinkingmachines/Inkling-2-Small and ricursiveAI/Ripple-65B-Preview continue to drive community experimentation. These updates collectively highlight ongoing efforts to improve model efficiency, interactive perception, and local deployment options for researchers and developers.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -26,11 +26,32 @@
       "arXiv cs.CL"
      ],
      "summary": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks.",
-     "why": "Provides essential capability spectrum and reliability benchmarks for fast System One decision models.",
+     "why": "Provides essential evaluation standards for understanding reliability and capability spectra in fast System One models.",
      "whySource": "llm",
      "publishedAt": "2026-11-11T00:00:00.000Z",
      "category": "research",
-     "score": 16.62
+     "score": 15.84
+    },
+    {
+     "id": "bdb98f16d97d3a07",
+     "title": "The avalanche that hit math is coming for AI development",
+     "url": "https://www.dwarkesh.com/p/rsi",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50487854",
+     "sourceIds": [
+      "pod-dwarkesh",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Dwarkesh Podcast",
+      "Hacker News"
+     ],
+     "summary": "If you asked me earlier this year how far away we are from superintelligence, I’d probably have said at least the better part of a decade. But over the last three months, from debating people on and off the podcast, I’ve updated my views a ton.",
+     "why": "Offers valuable perspective shifts on timelines and developments toward advanced artificial intelligence systems.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T18:37:51.000Z",
+     "category": "media",
+     "score": 15.65,
+     "readMinutes": 1
     },
     {
      "id": "4e10e32134f86500",
@@ -48,11 +69,11 @@
       "Reddit r/LocalLLaMA + r/MachineLearning"
      ],
      "summary": "",
-     "why": "Brings frontier AI capabilities directly to local computer hardware for developers.",
+     "why": "Brings frontier-level capabilities directly to local hardware setups for independent developers and researchers.",
      "whySource": "llm",
      "publishedAt": "2026-11-12T23:06:17.000Z",
      "category": "news",
-     "score": 16.2
+     "score": 15.42
     },
     {
      "id": "arxiv:2611.14815",
@@ -67,12 +88,18 @@
       "arXiv cs.CV"
      ],
      "summary": "Driving world models aim to simulate how a scene unfolds under different ego actions. This requires plausible motion of surrounding vehicles as well as precise ego-trajectory control.",
-     "why": "Advances reactive driving world models with joint perspective and BEV video generation.",
+     "why": "Advances reactive driving world models through joint perspective and BEV video generation techniques.",
      "whySource": "llm",
      "publishedAt": "2026-11-10T00:00:00.000Z",
      "category": "research",
-     "score": 16.13
-    },
+     "score": 15.18
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
     {
      "id": "arxiv:2611.15131",
      "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction",
@@ -86,18 +113,12 @@
       "arXiv cs.CV"
      ],
      "summary": "In this report, we introduce the Reciprocal World Model (RWM) and present Duo v1, a full-duplex world model that continuously perceives audiovisual inputs while responding to users in real time.",
-     "why": "Enables full-duplex interaction through a reciprocal world model handling continuous audiovisual inputs.",
+     "why": "Enables real-time, full-duplex audiovisual interaction using a novel reciprocal world model architecture.",
      "whySource": "llm",
      "publishedAt": "2026-11-11T00:00:00.000Z",
      "category": "research",
-     "score": 15.82
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
+     "score": 14.8
+    },
     {
      "id": "arxiv:2611.13004",
      "title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
@@ -111,11 +132,11 @@
       "arXiv cs.CV"
      ],
      "summary": "Discrete autoregressive models offer a scalable framework for image generation. However, they face a fundamental trade-off: long token sequences preserve representation quality but slow generation, while aggressive spatial compression reduces representation capacity.",
-     "why": "Resolves the trade-off between token sequence length and representation capacity in image generation.",
+     "why": "Tackles the fundamental trade-off between representation quality and generation speed in autoregressive image models.",
      "whySource": "llm",
      "publishedAt": "2026-11-08T00:00:00.000Z",
      "category": "research",
-     "score": 15.44
+     "score": 14.47
     },
     {
      "id": "arxiv:2611.16321",
@@ -130,30 +151,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Transferring LLMs into System One decision models typically replaces the language modeling head with a decision head while retaining the full backbone, making every decision pay for all layers. Yet it remains unclear how much depth such decisions require.",
-     "why": "Investigates adaptive computation depth to make System One decision models more efficient.",
+     "why": "Investigates how much depth is required when transferring large language models into efficient decision-making architectures.",
      "whySource": "llm",
      "publishedAt": "2026-11-12T00:00:00.000Z",
      "category": "research",
-     "score": 12.32
-    },
-    {
-     "id": "arxiv:2611.14046",
-     "title": "Structured Confidence Perturbation via Fisher Geometry for Adversarial Training",
-     "url": "https://arxiv.org/abs/2611.14046",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Adversarial training is often plagued by \"pseudo-attacks\", perturbations that significantly increase the loss value but fail to truly alter the model's confidence structure.",
-     "why": "Addresses pseudo-attacks in adversarial training using structured confidence perturbation via Fisher geometry.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-10T00:00:00.000Z",
-     "category": "research",
-     "score": 11.7
+     "score": 11.22
     }
    ]
   },
@@ -162,21 +164,24 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "2442dea1774d0045",
-     "title": "ricursiveAI/Ripple-65B-Preview",
-     "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+     "id": "0679810bb8b1faa3",
+     "title": "thinkingmachines/Inkling-2-Small is released!",
+     "url": "https://huggingface.co/thinkingmachines/Inkling-2-Small",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xuqplg/thinkingmachinesinkling2small_is_released/",
      "sourceIds": [
+      "reddit",
       "hf-trending"
      ],
      "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
       "HF trending models"
      ],
-     "summary": "545 likes · 8,500 downloads",
-     "why": "Offers a new open-weight model release for local deployment and experimentation.",
+     "summary": "image-text-to-text · transformers · 234 likes · 1,064 downloads",
+     "why": "Expands open-source options for image-text-to-text transformer models within the community.",
      "whySource": "llm",
-     "publishedAt": "2026-11-04T02:41:21.000Z",
+     "publishedAt": "2026-11-04T19:51:05.000Z",
      "category": "releases",
-     "score": 8.55
+     "score": 11.94
     },
     {
      "id": "73e1243414bd6b3f",
@@ -189,28 +194,28 @@
       "HF trending models"
      ],
      "summary": "image-text-to-text · 2,953 likes · 1,599,836 downloads",
-     "why": "Provides a heavily downloaded image-text-to-text model on the Hugging Face hub.",
+     "why": "Provides a heavily downloaded and customized model variant for specialized local deployment workflows.",
      "whySource": "llm",
      "publishedAt": "2026-09-01T07:01:09.000Z",
      "category": "releases",
-     "score": 8.33
+     "score": 7.92
     },
     {
-     "id": "f4a904d03d800a16",
-     "title": "moonshotai/Kimi-K3.1-Pro",
-     "url": "https://huggingface.co/moonshotai/Kimi-K3.1-Pro",
+     "id": "2442dea1774d0045",
+     "title": "ricursiveAI/Ripple-65B-Preview",
+     "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-text · transformers · 1,965 likes · 37,486 downloads",
-     "why": "Delivers a new transformer-based image-text-to-text model release for developers.",
+     "summary": "545 likes · 8,500 downloads",
+     "why": "Offers a preview release for exploring larger-scale open-weight model architectures.",
      "whySource": "llm",
-     "publishedAt": "2026-11-02T04:13:51.000Z",
+     "publishedAt": "2026-11-04T02:41:21.000Z",
      "category": "releases",
-     "score": 8.03
+     "score": 7.89
     }
    ]
   },
@@ -219,40 +224,38 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "67672a694e389b29",
-     "title": "How Amplitude ships product improvements in 1–2 days with OpenAI",
-     "url": "https://openai.com/business/customer-stories/amplitude",
+     "id": "96df4bf5d2598b59",
+     "title": "Project fetch robot dog",
+     "url": "https://www.anthropic.com/research/project-fetch-robot-dog",
      "sourceIds": [
-      "openai"
+      "anthropic"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Anthropic"
      ],
-     "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
-     "why": "Demonstrates rapid product shipping using proactive AI agents and OpenAI models.",
+     "summary": "",
+     "why": "Demonstrates ongoing robotics research directions from leading AI laboratories.",
      "whySource": "llm",
-     "publishedAt": "2026-11-12T20:00:00.000Z",
+     "publishedAt": "2026-11-13T22:37:05.638Z",
      "category": "labs",
-     "score": 4.96,
-     "readMinutes": 1
+     "score": 7.9
     },
     {
-     "id": "b9840fd67063a36a",
-     "title": "Gondola doubles revenue as its team builds more with Codex",
-     "url": "https://openai.com/business/customer-stories/gondola",
+     "id": "5547d15264e00b7b",
+     "title": "81k economics",
+     "url": "https://www.anthropic.com/research/81k-economics",
      "sourceIds": [
-      "openai"
+      "anthropic"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Anthropic"
      ],
-     "summary": "Gondola helps creatives get credit and get hired, with Codex raising its lead engineer’s output by 50% and ChatGPT simplifying daily work.",
-     "why": "Shows how Codex significantly raises engineering output and team revenue.",
+     "summary": "",
+     "why": "Explores economic research topics relevant to long-term artificial intelligence development.",
      "whySource": "llm",
-     "publishedAt": "2026-11-12T12:00:00.000Z",
+     "publishedAt": "2026-11-13T22:37:05.637Z",
      "category": "labs",
-     "score": 4.25,
-     "readMinutes": 1
+     "score": 7.9
     }
    ]
   },
@@ -260,6 +263,24 @@
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
+    {
+     "id": "8eb8b09a1209b46d",
+     "title": "Jensen Huang Resigns After Having Another Affair In Addition to the Chinese Spy",
+     "url": "https://thezvi.substack.com/p/jensen-huang-resigns-after-having",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Jensen Huang has resigned as CEO of Nvidia and left its board.",
+     "why": "Documents significant leadership changes within the major hardware provider ecosystem.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T12:20:54.000Z",
+     "category": "blogs",
+     "score": 4.05,
+     "readMinutes": 47
+    },
     {
      "id": "17c4dede92bec796",
      "title": "AI Ambition: ArtCraft Cloned Photoshop and Now Wants to \"Rebuild Everything\"",
@@ -271,30 +292,12 @@
       "Latent Space"
      ],
      "summary": "ArtCraft used AI to rewrite Photoshop as open source software. For CEO Brandon Thomas, the vision is even bigger: to take back the internet!",
-     "why": "Explores ambitious open-source software rewriting efforts using AI tools.",
+     "why": "Highlights aggressive open-source application cloning and the broader ambition to rebuild established software.",
      "whySource": "llm",
      "publishedAt": "2026-11-13T04:17:25.000Z",
      "category": "blogs",
-     "score": 4.15,
+     "score": 3.47,
      "readMinutes": 8
-    },
-    {
-     "id": "dd56d7e6848c2558",
-     "title": "The Jev Revolution: What Engineers Are Already Building with System One Models",
-     "url": "https://latent.space/p/jev-revolution/",
-     "sourceIds": [
-      "latentspace"
-     ],
-     "sourceNames": [
-      "Latent Space"
-     ],
-     "summary": "At AI Engineer Code Summit, lead Jev creator Diogo Almeida called on developers to automate everything. Also, Glean and others showed how they’re using Jev.",
-     "why": "Highlights practical engineering use cases for automated workflows with System One models.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-12T05:08:20.000Z",
-     "category": "blogs",
-     "score": 2.66,
-     "readMinutes": 6
     }
    ]
   },
@@ -313,11 +316,11 @@
       "Epoch AI Gradient Updates"
      ],
      "summary": "An open-weight model hacks Firefox for $1,000, AI chips mapped by country, and how biologists are using LLMs",
-     "why": "Surveys open-weight model exploits, geopolitical chip mapping, and biological LLM applications.",
+     "why": "Summarizes key updates including autonomous security hacking and biological applications of language models.",
      "whySource": "llm",
      "publishedAt": "2026-11-11T17:18:46.000Z",
      "category": "blogs",
-     "score": 2.12,
+     "score": 1.77,
      "readMinutes": 10
     }
    ]
@@ -325,19 +328,19 @@
  ],
  "itemIds": [
   "arxiv:2611.15777",
+  "bdb98f16d97d3a07",
   "4e10e32134f86500",
   "arxiv:2611.14815",
   "arxiv:2611.15131",
   "arxiv:2611.13004",
   "arxiv:2611.16321",
-  "arxiv:2611.14046",
-  "2442dea1774d0045",
+  "0679810bb8b1faa3",
   "73e1243414bd6b3f",
-  "f4a904d03d800a16",
-  "67672a694e389b29",
-  "b9840fd67063a36a",
+  "2442dea1774d0045",
+  "96df4bf5d2598b59",
+  "5547d15264e00b7b",
+  "8eb8b09a1209b46d",
   "17c4dede92bec796",
-  "dd56d7e6848c2558",
   "a4dac65da028f710"
  ],
  "deepReadId": "a4dac65da028f710",
