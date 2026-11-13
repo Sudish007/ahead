@@ -1,14 +1,37 @@
 {
  "date": "2026-11-13",
- "generatedAt": "2026-11-13T05:00:41.033Z",
- "wordCount": 626,
- "readingMinutes": 3,
- "overview": null,
+ "generatedAt": "2026-11-13T13:55:19.006Z",
+ "wordCount": 799,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's developments showcase major advances in decision models, driving simulations, and efficient autoregressive generation. In evaluation and architecture, SO-Arena benchmarks System One models for fast general-purpose decision-making, while research explores adaptive computation to optimize decision depth and group-scaled token capacity to resolve spatial compression trade-offs in image generation. In the driving domain, BirdDreams introduces joint perspective and BEV video generation for reactive driving world models, and Duo presents a reciprocal world model for full-duplex audiovisual interaction. Local deployment gains traction with Edge0-145B bringing frontier capabilities to local hardware, complemented by new open releases like ricursiveAI/Ripple-65B-Preview and moonshotai/Kimi-K3.1-Pro. Finally, industry applications and analysis highlight how companies leverage coding agents and System One architectures to accelerate product shipping and software development workflows.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
  "sections": [
   {
    "key": "must-know",
    "title": "Must know",
    "entries": [
+    {
+     "id": "arxiv:2611.15777",
+     "title": "SO-Arena: Benchmarking the Capability Spectrum and Reliability of System One Models",
+     "url": "https://arxiv.org/abs/2611.15777",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "System One models promise fast, general-purpose decision-making without lengthy token generation. However, understanding their capability spectrum and decision reliability requires more than aggregate performance on current benchmarks.",
+     "why": "Provides essential capability spectrum and reliability benchmarks for fast System One decision models.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T00:00:00.000Z",
+     "category": "research",
+     "score": 16.62
+    },
     {
      "id": "4e10e32134f86500",
      "title": "Edge0-145B: Frontier AI Capabilities on Your Own Computer",
@@ -29,8 +52,52 @@
      "whySource": "llm",
      "publishedAt": "2026-11-12T23:06:17.000Z",
      "category": "news",
-     "score": 15.94
+     "score": 16.2
     },
+    {
+     "id": "arxiv:2611.14815",
+     "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
+     "url": "https://arxiv.org/abs/2611.14815",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Driving world models aim to simulate how a scene unfolds under different ego actions. This requires plausible motion of surrounding vehicles as well as precise ego-trajectory control.",
+     "why": "Advances reactive driving world models with joint perspective and BEV video generation.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "category": "research",
+     "score": 16.13
+    },
+    {
+     "id": "arxiv:2611.15131",
+     "title": "Duo: A Reciprocal World Model for Full-Duplex Interaction",
+     "url": "https://arxiv.org/abs/2611.15131",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "In this report, we introduce the Reciprocal World Model (RWM) and present Duo v1, a full-duplex world model that continuously perceives audiovisual inputs while responding to users in real time.",
+     "why": "Enables full-duplex interaction through a reciprocal world model handling continuous audiovisual inputs.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T00:00:00.000Z",
+     "category": "research",
+     "score": 15.82
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
     {
      "id": "arxiv:2611.13004",
      "title": "G-STAR: Group-Scaled Token Capacity for Deeply Compressed Autoregressive Generation",
@@ -44,112 +111,49 @@
       "arXiv cs.CV"
      ],
      "summary": "Discrete autoregressive models offer a scalable framework for image generation. However, they face a fundamental trade-off: long token sequences preserve representation quality but slow generation, while aggressive spatial compression reduces representation capacity.",
-     "why": "Balances representation quality and generation speed in discrete autoregressive image models.",
+     "why": "Resolves the trade-off between token sequence length and representation capacity in image generation.",
      "whySource": "llm",
      "publishedAt": "2026-11-08T00:00:00.000Z",
      "category": "research",
-     "score": 14.07
+     "score": 15.44
     },
     {
-     "id": "4c245fc1c60eedc8",
-     "title": "Nvidia employees petition to bring back Jensen Huang",
-     "url": "https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50477231",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Reflects internal workforce dynamics and leadership interest at Nvidia.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-13T02:16:24.000Z",
-     "category": "news",
-     "score": 13.58
-    },
-    {
-     "id": "d7c21c501eb23f12",
-     "title": "Gemini 4 Hydrogen",
-     "url": "https://blog.google/innovation-and-ai/models-and-research/gemini-models/introducing-gemini-4-hydrogen/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50471431",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Represents a notable recent industry release sparking significant community discussion.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-12T18:01:48.000Z",
-     "category": "news",
-     "score": 13.55
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
-    {
-     "id": "arxiv:2611.14815",
-     "title": "BirdDreams: Joint Perspective and BEV Video Generation for a Plausible, Reactive Driving World Model",
-     "url": "https://arxiv.org/abs/2611.14815",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Driving world models aim to simulate how a scene unfolds under different ego actions. This requires plausible motion of surrounding vehicles as well as precise ego-trajectory control.",
-     "why": "Advances joint perspective and BEV video generation for reactive driving world models.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-10T00:00:00.000Z",
-     "category": "research",
-     "score": 11.51
-    },
-    {
-     "id": "arxiv:2611.05984",
-     "title": "On the Design of Hyper-Connections: Simplification, Stability, and Scalability",
-     "url": "https://arxiv.org/abs/2611.05984",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Hyper-Connections (HC) architectures are increasingly adopted in frontier language models, yet their components remain insufficiently understood and introduce non-negligible training overhead.",
-     "why": "Analyzes the design, simplification, and stability of Hyper-Connections in large models.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-04T00:00:00.000Z",
-     "category": "research",
-     "score": 11.07
-    },
-    {
-     "id": "arxiv:2611.14413",
-     "title": "Bits or permutations? Spending a fixed inference budget on weight precision or on option-order averaging in small local language models",
-     "url": "https://arxiv.org/abs/2611.14413",
+     "id": "arxiv:2611.16321",
+     "title": "From Large Language Models to Efficient System One Models via Adaptive Computation",
+     "url": "https://arxiv.org/abs/2611.16321",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.AI",
       "arxiv-cs.CL"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.AI",
       "arXiv cs.CL"
      ],
-     "summary": "Local language models can save memory by storing weights in fewer bits, and they can reduce sensitivity to the order of answer options by averaging a few reorderings. We ask whether the first makes the second worse, and which is the cheaper way to spend a fixed budget.…",
-     "why": "Examines whether to spend inference budgets on weight precision or option-order averaging.",
+     "summary": "Transferring LLMs into System One decision models typically replaces the language modeling head with a decision head while retaining the full backbone, making every decision pay for all layers. Yet it remains unclear how much depth such decisions require.",
+     "why": "Investigates adaptive computation depth to make System One decision models more efficient.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-12T00:00:00.000Z",
+     "category": "research",
+     "score": 12.32
+    },
+    {
+     "id": "arxiv:2611.14046",
+     "title": "Structured Confidence Perturbation via Fisher Geometry for Adversarial Training",
+     "url": "https://arxiv.org/abs/2611.14046",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Adversarial training is often plagued by \"pseudo-attacks\", perturbations that significantly increase the loss value but fail to truly alter the model's confidence structure.",
+     "why": "Addresses pseudo-attacks in adversarial training using structured confidence perturbation via Fisher geometry.",
      "whySource": "llm",
      "publishedAt": "2026-11-10T00:00:00.000Z",
      "category": "research",
-     "score": 10.16
+     "score": 11.7
     }
    ]
   },
@@ -157,6 +161,23 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
+    {
+     "id": "2442dea1774d0045",
+     "title": "ricursiveAI/Ripple-65B-Preview",
+     "url": "https://huggingface.co/ricursiveAI/Ripple-65B-Preview",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "545 likes · 8,500 downloads",
+     "why": "Offers a new open-weight model release for local deployment and experimentation.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-04T02:41:21.000Z",
+     "category": "releases",
+     "score": 8.55
+    },
     {
      "id": "73e1243414bd6b3f",
      "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
@@ -168,11 +189,11 @@
       "HF trending models"
      ],
      "summary": "image-text-to-text · 2,953 likes · 1,599,836 downloads",
-     "why": "Provides a heavily downloaded and liked community fine-tune for local deployment.",
+     "why": "Provides a heavily downloaded image-text-to-text model on the Hugging Face hub.",
      "whySource": "llm",
      "publishedAt": "2026-09-01T07:01:09.000Z",
      "category": "releases",
-     "score": 8.8
+     "score": 8.33
     },
     {
      "id": "f4a904d03d800a16",
@@ -185,28 +206,11 @@
       "HF trending models"
      ],
      "summary": "image-text-to-text · transformers · 1,965 likes · 37,486 downloads",
-     "why": "Offers a new image-text-to-text model from moonshotai for transformer workflows.",
+     "why": "Delivers a new transformer-based image-text-to-text model release for developers.",
      "whySource": "llm",
      "publishedAt": "2026-11-02T04:13:51.000Z",
      "category": "releases",
-     "score": 8.51
-    },
-    {
-     "id": "c09e79a65e08da52",
-     "title": "ccore/Qwen3.5-4B-3D-Coder",
-     "url": "https://huggingface.co/ccore/Qwen3.5-4B-3D-Coder",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "1,033 likes · 368,236 downloads",
-     "why": "Delivers a specialized coding model variant tailored for efficient local execution.",
-     "whySource": "llm",
-     "publishedAt": "2026-10-25T05:43:34.000Z",
-     "category": "releases",
-     "score": 8.05
+     "score": 8.03
     }
    ]
   },
@@ -225,11 +229,11 @@
       "OpenAI"
      ],
      "summary": "Built primarily on OpenAI models, Amplitude’s proactive product agent, Wave, identifies what to build, helps teams ship changes with coding agents, and measures the impact.",
-     "why": "Demonstrates how product teams ship improvements rapidly using proactive OpenAI coding agents.",
+     "why": "Demonstrates rapid product shipping using proactive AI agents and OpenAI models.",
      "whySource": "llm",
      "publishedAt": "2026-11-12T20:00:00.000Z",
      "category": "labs",
-     "score": 5.88,
+     "score": 4.96,
      "readMinutes": 1
     },
     {
@@ -243,11 +247,11 @@
       "OpenAI"
      ],
      "summary": "Gondola helps creatives get credit and get hired, with Codex raising its lead engineer’s output by 50% and ChatGPT simplifying daily work.",
-     "why": "Highlights engineering output gains achieved by integrating Codex into daily startup workflows.",
+     "why": "Shows how Codex significantly raises engineering output and team revenue.",
      "whySource": "llm",
      "publishedAt": "2026-11-12T12:00:00.000Z",
      "category": "labs",
-     "score": 5.04,
+     "score": 4.25,
      "readMinutes": 1
     }
    ]
@@ -267,11 +271,11 @@
       "Latent Space"
      ],
      "summary": "ArtCraft used AI to rewrite Photoshop as open source software. For CEO Brandon Thomas, the vision is even bigger: to take back the internet!",
-     "why": "Explores open source cloning projects and ambitious efforts to rebuild standard software tools.",
+     "why": "Explores ambitious open-source software rewriting efforts using AI tools.",
      "whySource": "llm",
      "publishedAt": "2026-11-13T04:17:25.000Z",
      "category": "blogs",
-     "score": 4.93,
+     "score": 4.15,
      "readMinutes": 8
     },
     {
@@ -285,11 +289,11 @@
       "Latent Space"
      ],
      "summary": "At AI Engineer Code Summit, lead Jev creator Diogo Almeida called on developers to automate everything. Also, Glean and others showed how they’re using Jev.",
-     "why": "Showcases how engineers are automating tasks using System One models at scale.",
+     "why": "Highlights practical engineering use cases for automated workflows with System One models.",
      "whySource": "llm",
      "publishedAt": "2026-11-12T05:08:20.000Z",
      "category": "blogs",
-     "score": 3.16,
+     "score": 2.66,
      "readMinutes": 6
     }
    ]
@@ -309,27 +313,27 @@
       "Epoch AI Gradient Updates"
      ],
      "summary": "An open-weight model hacks Firefox for $1,000, AI chips mapped by country, and how biologists are using LLMs",
-     "why": "Summarizes key updates including open-weight model hacks and AI chip mapping.",
+     "why": "Surveys open-weight model exploits, geopolitical chip mapping, and biological LLM applications.",
      "whySource": "llm",
      "publishedAt": "2026-11-11T17:18:46.000Z",
      "category": "blogs",
-     "score": 2.51,
+     "score": 2.12,
      "readMinutes": 10
     }
    ]
   }
  ],
  "itemIds": [
+  "arxiv:2611.15777",
   "4e10e32134f86500",
-  "arxiv:2611.13004",
-  "4c245fc1c60eedc8",
-  "d7c21c501eb23f12",
   "arxiv:2611.14815",
-  "arxiv:2611.05984",
-  "arxiv:2611.14413",
+  "arxiv:2611.15131",
+  "arxiv:2611.13004",
+  "arxiv:2611.16321",
+  "arxiv:2611.14046",
+  "2442dea1774d0045",
   "73e1243414bd6b3f",
   "f4a904d03d800a16",
-  "c09e79a65e08da52",
   "67672a694e389b29",
   "b9840fd67063a36a",
   "17c4dede92bec796",
