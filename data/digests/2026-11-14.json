@@ -1,0 +1,345 @@
+{
+ "date": "2026-11-14",
+ "generatedAt": "2026-11-14T04:54:19.471Z",
+ "wordCount": 631,
+ "readingMinutes": 3,
+ "overview": {
+  "text": "Today's key developments span critical industry incidents, research advancements, and open-source releases. A major operational disruption caused elevated errors across claude.ai, Claude Code, and platform.claude.com, alongside notable physical security incidents including a massive hardware shipment loss and an internal employee petition at Nvidia. In research and releases, AI has successfully unlocked Gödel's notebooks containing hundreds of proved theorems, while new adversarial training methods and physics-aware video generation frameworks like PhysLoop were introduced. Additionally, open-source repositories and model releases such as facebook/sam3, berkantay/gpucanvas, and new system cards for Claude Mythos 5.2 highlight ongoing ecosystem growth and evaluation initiatives from Anthropic.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "4c245fc1c60eedc8",
+     "title": "Nvidia employees petition to bring back Jensen Huang",
+     "url": "https://www.wired.com/story/nvidia-employees-petition-for-jensen-huangs-return/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50477231",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Employees petitioned to bring back Jensen Huang, reflecting significant internal sentiment at Nvidia.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T02:16:24.000Z",
+     "category": "news",
+     "score": 13.09
+    },
+    {
+     "id": "1a09f77a4836fe9e",
+     "title": "Elevated errors on claude.ai, Claude Code, and platform.claude.com",
+     "url": "https://status.claude.com/incidents/nn11wk485zfn",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50481187",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Elevated errors impacted claude.ai, Claude Code, and platform.claude.com, disrupting primary user workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T10:18:13.000Z",
+     "category": "news",
+     "score": 12.99
+    },
+    {
+     "id": "921c9b765fe49fbf",
+     "title": "$11.4M in Nvidia hardware vanishes during shipment from CA to TX",
+     "url": "https://www.freightwaves.com/news/11-4-million-in-nvidia-hardware-vanishes-during-shipment-from-california-to-texas",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50487864",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "A major hardware shipment vanished during transit, impacting supply chain security for high-value components.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T18:40:44.000Z",
+     "category": "news",
+     "score": 12.91
+    },
+    {
+     "id": "5bfca8e96e5185cf",
+     "title": "AI unlocks Gödel's notebooks, said to contain hundreds of proved theorems",
+     "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50486748",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "AI successfully unlocked historical notebooks containing numerous previously proved mathematical theorems.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T17:30:10.000Z",
+     "category": "news",
+     "score": 12.54
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.14046",
+     "title": "Structured Confidence Perturbation via Fisher Geometry for Adversarial Training",
+     "url": "https://arxiv.org/abs/2611.14046",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Adversarial training is often plagued by \"pseudo-attacks\", perturbations that significantly increase the loss value but fail to truly alter the model's confidence structure.",
+     "why": "Structured confidence perturbation via Fisher geometry improves robustness against pseudo-attacks in adversarial training.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "category": "research",
+     "score": 10.17
+    },
+    {
+     "id": "arxiv:2611.15094",
+     "title": "A frontier machine intelligence for human neuroimaging",
+     "url": "https://arxiv.org/abs/2611.15094",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Medical imaging is essential for diagnosing disease, guiding treatment and monitoring patients over time.",
+     "why": "A frontier machine intelligence model advances capabilities for human neuroimaging and medical diagnostics.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T00:00:00.000Z",
+     "category": "research",
+     "score": 10.05
+    },
+    {
+     "id": "arxiv:2611.16748",
+     "title": "PhysLoop: Harnessing LLMs' Physics Awareness for Self-Improving Video Generation Models",
+     "url": "https://arxiv.org/abs/2611.16748",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Video generation models produce visually realistic videos but still struggle with physical dynamics and causal consistency.",
+     "why": "PhysLoop leverages physics awareness to improve physical dynamics in video generation models.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-12T00:00:00.000Z",
+     "category": "research",
+     "score": 10.01
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "f2bc736c0ee71119",
+     "title": "facebook/sam3",
+     "url": "https://huggingface.co/facebook/sam3",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "mask-generation · transformers · 6,543 likes · 2,092,498 downloads",
+     "why": "The facebook/sam3 mask-generation model release provides new transformer-based computer vision capabilities.",
+     "whySource": "llm",
+     "publishedAt": "2025-11-07T05:17:48.000Z",
+     "category": "releases",
+     "score": 10.34
+    },
+    {
+     "id": "09ef1977aa9fa33e",
+     "title": "berkantay/gpucanvas",
+     "url": "https://github.com/berkantay/gpucanvas",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "Put thousands of live DOM nodes on an infinite canvas: the GPU draws them, an editor selects, moves and resizes them, shaders and transitions run on them, and an AI agent can read them and point at them. · TypeScript",
+     "why": "berkantay/gpucanvas enables GPU-rendered DOM nodes on an infinite canvas for AI agent interaction.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-12T23:19:42.000Z",
+     "category": "releases",
+     "score": 7.88
+    },
+    {
+     "id": "7013390f50f34bda",
+     "title": "Redderz-code/manus--ai",
+     "url": "https://github.com/Redderz-code/manus--ai",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+     "why": "Redderz-code/manus--ai introduces a general-purpose agent system supporting sandbox tool execution.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T14:48:05.000Z",
+     "category": "releases",
+     "score": 7.6
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "b0c59816d69932d6",
+     "title": "A new initiative for developing third party model evaluations",
+     "url": "https://www.anthropic.com/news/a-new-initiative-for-developing-third-party-model-evaluations",
+     "sourceIds": [
+      "anthropic"
+     ],
+     "sourceNames": [
+      "Anthropic"
+     ],
+     "summary": "",
+     "why": "Anthropic launched a new initiative aimed at developing independent third-party model evaluations.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T22:37:05.626Z",
+     "category": "labs",
+     "score": 7.09
+    },
+    {
+     "id": "8b9a61488ff4bf89",
+     "title": "Alignment assessment cybersecurity incidents",
+     "url": "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents",
+     "sourceIds": [
+      "anthropic"
+     ],
+     "sourceNames": [
+      "Anthropic"
+     ],
+     "summary": "",
+     "why": "Cybersecurity incidents related to alignment assessment highlight emerging operational risks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T22:37:05.625Z",
+     "category": "labs",
+     "score": 7.09
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "2053de078f05bd0a",
+     "title": "datasette-cluster-map 0.19",
+     "url": "https://simonwillison.net/2026/Nov/13/datasette-cluster-map/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Release: datasette-cluster-map 0.19 One of the oldest Datasette plugins, and still one of my favorites. It now works with Datasette 1.0a42, and depends on the new datasette-leaflet to ensure OpenStreetMap tiles are requested with a referrer header.",
+     "why": "datasette-cluster-map 0.19 updates compatibility for Datasette and OpenStreetMap tile requests.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T23:02:45.000Z",
+     "category": "blogs",
+     "score": 3.57,
+     "readMinutes": 1
+    },
+    {
+     "id": "a840b1604a3a5e19",
+     "title": "datasette-leaflet 0.3",
+     "url": "https://simonwillison.net/2026/Nov/13/datasette-leaflet/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Release: datasette-leaflet 0.3 OpenStreetMap have a very reasonable policy that hits to their hosted tile server should send a referrer header.",
+     "why": "datasette-leaflet 0.3 implements required referrer header policies for OpenStreetMap tile servers.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T22:30:54.000Z",
+     "category": "blogs",
+     "score": 3.54,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "85f608a19d72a175",
+     "title": "Fable and Mythos 5.2: The System Card",
+     "url": "https://thezvi.substack.com/p/fable-and-mythos-52-the-system-card",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "It’s that time again: Introducing the world’s most powerful model, Claude Mythos 5.2.",
+     "why": "The system card for Claude Mythos 5.2 details capabilities for a powerful frontier model.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T16:25:17.000Z",
+     "category": "blogs",
+     "score": 1.56,
+     "readMinutes": 38
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "4c245fc1c60eedc8",
+  "1a09f77a4836fe9e",
+  "921c9b765fe49fbf",
+  "5bfca8e96e5185cf",
+  "arxiv:2611.14046",
+  "arxiv:2611.15094",
+  "arxiv:2611.16748",
+  "f2bc736c0ee71119",
+  "09ef1977aa9fa33e",
+  "7013390f50f34bda",
+  "b0c59816d69932d6",
+  "8b9a61488ff4bf89",
+  "2053de078f05bd0a",
+  "a840b1604a3a5e19",
+  "85f608a19d72a175"
+ ],
+ "deepReadId": "85f608a19d72a175",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
