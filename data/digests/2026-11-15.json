@@ -1,0 +1,290 @@
+{
+ "date": "2026-11-15",
+ "generatedAt": "2026-11-15T04:46:33.842Z",
+ "wordCount": 518,
+ "readingMinutes": 3,
+ "overview": {
+  "text": "Today's developments span hardware market dynamics, historical mathematical discoveries, agent systems, and software tooling. Nvidia faces scrutiny regarding GPU pricing strategies through circular financing deals, alongside a massive hardware theft during transit. Meanwhile, researchers applied AI to unlock Gödel's notebooks, revealing numerous proved theorems. In open source releases, the general-purpose AI agent system AI Manus launched to support tool execution within sandboxed environments. Additionally, the Hugging Face Blog introduced robot pick-and-place simulations using SimReady Assets and XYBench. Software updates include datasette-llm 0.1a11 and datasette-vega 0.7, while analytical commentary explored Nvidia's resilience and supply chain implications in a world without Jensen. These stories provide critical context on hardware supply constraints, emerging agent architectures, and foundational AI applications for technical leaders and researchers.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "9a523e1db268a3b6",
+     "title": "Nvidia deliberately kept GPU prices high through circular financing deals",
+     "url": "https://www.techspot.com/news/114558-nvidia-deliberately-kept-gpu-prices-high-through-circular.html",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50501631",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Examines allegations that Nvidia deliberately maintained high GPU prices using circular financing arrangements.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T22:26:30.000Z",
+     "category": "news",
+     "score": 13.36
+    },
+    {
+     "id": "921c9b765fe49fbf",
+     "title": "$11.4M in Nvidia hardware vanishes during shipment from CA to TX",
+     "url": "https://www.freightwaves.com/news/11-4-million-in-nvidia-hardware-vanishes-during-shipment-from-california-to-texas",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50487864",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Highlights a major physical security breach involving hardware shipments between states.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T18:40:44.000Z",
+     "category": "news",
+     "score": 11.25
+    },
+    {
+     "id": "10a453890373aeb9",
+     "title": "The Claude Delusion",
+     "url": "https://www.netmeister.org/blog/claude-delusion.html",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50496921",
+     "sourceIds": [
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Explores community discourse surrounding the capabilities and limitations of Claude.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T13:36:17.000Z",
+     "category": "news",
+     "score": 11.07
+    },
+    {
+     "id": "5bfca8e96e5185cf",
+     "title": "AI unlocks Gödel's notebooks, said to contain hundreds of proved theorems",
+     "url": "https://www.theguardian.com/science/2026/nov/13/kurt-godel-notebooks-ai-helps-unlock-hidden-discoveries-man-who-transformed-maths",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50486748",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Demonstrates how artificial intelligence successfully unlocked historical notebooks containing hundreds of proved theorems.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T17:30:10.000Z",
+     "category": "news",
+     "score": 10.89
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": []
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "5f8725cda0574b4f",
+     "title": "topapothecarycanal/ai--manus2.0",
+     "url": "https://github.com/topapothecarycanal/ai--manus2.0",
+     "sourceIds": [
+      "gh-trending-agents",
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents",
+      "GitHub new repos: llm"
+     ],
+     "summary": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+     "why": "Introduces a general-purpose AI agent system capable of operating tools in sandboxed environments.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T19:15:24.000Z",
+     "category": "releases",
+     "score": 8.2
+    },
+    {
+     "id": "a4b3adff596a3aee",
+     "title": "topconstableinlet67/ai--manus2.0",
+     "url": "https://github.com/topconstableinlet67/ai--manus2.0",
+     "sourceIds": [
+      "gh-trending-agents",
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents",
+      "GitHub new repos: llm"
+     ],
+     "summary": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+     "why": "Presents a general-purpose agent framework designed for secure sandbox tool execution.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T19:15:24.000Z",
+     "category": "releases",
+     "score": 8.2
+    },
+    {
+     "id": "af30243453c4864e",
+     "title": "toppatronweave/ai--manus2.0",
+     "url": "https://github.com/toppatronweave/ai--manus2.0",
+     "sourceIds": [
+      "gh-trending-agents",
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents",
+      "GitHub new repos: llm"
+     ],
+     "summary": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
+     "why": "Provides another repository instance of the general-purpose AI agent system for sandbox operations.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T19:15:25.000Z",
+     "category": "releases",
+     "score": 8.2
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "cdc8eef67bc55a0d",
+     "title": "Build a Robot Pick-and-Place Simulation with SimReady Assets",
+     "url": "https://huggingface.co/blog/nvidia/simready-assets-robot-pick-and-place",
+     "sourceIds": [
+      "hf-blog"
+     ],
+     "sourceNames": [
+      "Hugging Face Blog"
+     ],
+     "summary": "",
+     "why": "Offers practical guidance on building robot pick-and-place simulations with specialized assets.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T18:00:39.000Z",
+     "category": "labs",
+     "score": 2.56
+    },
+    {
+     "id": "96c7f67bef86f831",
+     "title": "XYBench: Helping with the problem behind the question",
+     "url": "https://huggingface.co/blog/allenai/xybench",
+     "sourceIds": [
+      "hf-blog"
+     ],
+     "sourceNames": [
+      "Hugging Face Blog"
+     ],
+     "summary": "",
+     "why": "Addresses underlying evaluation challenges through the introduction of XYBench.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T17:02:35.000Z",
+     "category": "labs",
+     "score": 2.51
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "9c481a0931060f36",
+     "title": "datasette-llm 0.1a11",
+     "url": "https://simonwillison.net/2026/Nov/14/datasette-llm/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Release: datasette-llm 0.1a11 datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.",
+     "why": "Delivers an intermediate plugin for configuring language models across the Datasette ecosystem.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T23:59:28.000Z",
+     "category": "blogs",
+     "score": 3.65,
+     "readMinutes": 1
+    },
+    {
+     "id": "c7271b7ac99ecdcd",
+     "title": "datasette-vega 0.7",
+     "url": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Release: datasette-vega 0.7 A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite) against data in a table or custom query. The last release was in July 2018!",
+     "why": "Updates Datasette's chart-rendering plugin with Vega-Lite support after years of inactivity.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T17:09:09.000Z",
+     "category": "blogs",
+     "score": 3.2,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "0ac8e2e8eef42951",
+     "title": "Nvidia and the World Without Jensen",
+     "url": "https://newsletter.semianalysis.com/p/nvidia-and-the-world-without-jensen",
+     "sourceIds": [
+      "semianalysis"
+     ],
+     "sourceNames": [
+      "SemiAnalysis"
+     ],
+     "summary": "Is NVIDIA Over? Export Controls, RASA, Open Source Implications, Supply Chain Implications, Affair, US Still Dependent On China",
+     "why": "Analyzes export controls, supply chain vulnerabilities, and the broader implications for Nvidia's future.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-12T18:06:26.000Z",
+     "category": "blogs",
+     "score": 2.26,
+     "readMinutes": 27
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "9a523e1db268a3b6",
+  "921c9b765fe49fbf",
+  "10a453890373aeb9",
+  "5bfca8e96e5185cf",
+  "5f8725cda0574b4f",
+  "a4b3adff596a3aee",
+  "af30243453c4864e",
+  "cdc8eef67bc55a0d",
+  "96c7f67bef86f831",
+  "9c481a0931060f36",
+  "c7271b7ac99ecdcd",
+  "0ac8e2e8eef42951"
+ ],
+ "deepReadId": "0ac8e2e8eef42951",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
