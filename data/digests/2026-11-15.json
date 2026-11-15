@@ -1,10 +1,10 @@
 {
  "date": "2026-11-15",
- "generatedAt": "2026-11-15T13:26:38.626Z",
- "wordCount": 425,
- "readingMinutes": 2,
+ "generatedAt": "2026-11-15T22:28:31.472Z",
+ "wordCount": 612,
+ "readingMinutes": 3,
  "overview": {
-  "text": "Today's key developments span hardware market strategies, open-source model releases, architectural implementations, and ecosystem tools. Nvidia faced scrutiny regarding GPU pricing strategies involving circular financing deals, while deep analyses explored market vulnerabilities and export controls. In open-source and model releases, adventists-ai/Sophon-Realtime-v1 introduced full-duplex voice capabilities, and NousResearch/Arete-27B gained traction on Hugging Face. Additionally, developers shared a lightweight implementation of DeepSeek V3 in pure Jax, highlighting ongoing interest in compact architectures. Agent systems also progressed with new repositories for AI Manus, and technical analyses examined positional embeddings in modern language models alongside updates to datasette-llm.",
+  "text": "Today's key developments span foundational architecture insights, hardware market dynamics, and advanced open releases. Sebastian Raschka explored how modern large language models handle positional embeddings, providing essential technical depth for researchers. In the hardware and market space, discussions emerged regarding Nvidia maintaining high GPU prices through circular financing deals and allegations surrounding Jensen Huang and the GPU shortage, alongside a deep analysis of Nvidia's market position, export controls, and supply chain implications. Meanwhile, open-source releases advanced conversational and agentic capabilities significantly. Developers can now utilize Haru-4B, a low-latency and multilingual full-duplex continuous spoken dialogue foundation model, and Sophon-Realtime-v1, an open full-duplex voice model family capable of parsing vocal tone. Additionally, AI Manus appeared as a general-purpose AI Agent system supporting sandboxed tool operations, and OpenAI highlighted scientific progress including the use of GPT-6 Astra in defining the Standard Model on a lattice.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -13,6 +13,69 @@
    "key": "must-know",
    "title": "Must know",
    "entries": [
+    {
+     "id": "eba8c0480eb85e20",
+     "title": "Understanding Positional Embeddings in Modern LLMs",
+     "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50506376",
+     "sourceIds": [
+      "raschka",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Ahead of AI (Raschka)",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "The Methods Behind How LLMs Represent Token Positions",
+     "why": "Explains the underlying methods of how modern language models represent token positions.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T12:10:37.000Z",
+     "category": "blogs",
+     "score": 15.24,
+     "readMinutes": 55
+    },
+    {
+     "id": "91935a49528247b5",
+     "title": "All AI-generated code should be Open Source",
+     "url": "https://jakub.jankiewicz.org/blog/ai-code-open-source/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50507303",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Sparks important community debates regarding the open-source status of all AI-generated code.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T14:46:58.000Z",
+     "category": "news",
+     "score": 14.79
+    },
+    {
+     "id": "2221164cfde1b4e2",
+     "title": "Jensen Huang allegedly manufactured the GPU shortage",
+     "url": "https://wccftech.com/jensen-huang-financed-ai-startups-absorb-excess-silicon/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50505905",
+     "sourceIds": [
+      "hn-top",
+      "reddit"
+     ],
+     "sourceNames": [
+      "Hacker News",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
+     ],
+     "summary": "",
+     "why": "Raises critical market questions regarding the alleged manufacturing of the global GPU shortage.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T03:40:06.000Z",
+     "category": "news",
+     "score": 13.88
+    },
     {
      "id": "9a523e1db268a3b6",
      "title": "Nvidia deliberately kept GPU prices high through circular financing deals",
@@ -27,11 +90,42 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Reveals critical market dynamics behind hardware pricing and circular financing structures affecting the AI industry.",
+     "why": "Examines allegations that Nvidia deliberately maintained high hardware prices through circular financing.",
      "whySource": "llm",
      "publishedAt": "2026-11-14T22:26:30.000Z",
      "category": "news",
-     "score": 12.85
+     "score": 12.14
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": []
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "5419a8b213cd4f4a",
+     "title": "higurashi-ai/Haru-4B",
+     "url": "https://huggingface.co/higurashi-ai/Haru-4B",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xww5o2/higurashiaiharu4b_hugging_face/",
+     "sourceIds": [
+      "hf-trending",
+      "reddit"
+     ],
+     "sourceNames": [
+      "HF trending models",
+      "Reddit r/LocalLLaMA + r/MachineLearning"
+     ],
+     "summary": "Haru-4B Code · Technical blog · Technical blog (Japanese) Haru-4B is a low-latency and multilingual full-duplex continuous spoken dialogue foundation model: it listens and speaks at the same time, the way people do on a phone call.",
+     "why": "Provides a low-latency multilingual full-duplex continuous spoken dialogue foundation model for developers.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-12T11:05:59.000Z",
+     "category": "releases",
+     "score": 11.52
     },
     {
      "id": "a5b5b4e52d94f84e",
@@ -47,145 +141,79 @@
       "HF trending models"
      ],
      "summary": "An open full-duplex voice model family that hears your tone and speaks with one.",
-     "why": "Provides researchers with an open full-duplex voice model family capable of processing tone.",
+     "why": "Delivers an open full-duplex voice model family that processes and responds to vocal tones.",
      "whySource": "llm",
      "publishedAt": "2026-11-07T03:06:25.000Z",
      "category": "releases",
-     "score": 12.04
+     "score": 11.4
     },
     {
-     "id": "10a453890373aeb9",
-     "title": "The Claude Delusion",
-     "url": "https://www.netmeister.org/blog/claude-delusion.html",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50496921",
+     "id": "f0e20ae2acd31bff",
+     "title": "Tonephorepair/ai--manus2.0",
+     "url": "https://github.com/Tonephorepair/ai--manus2.0",
      "sourceIds": [
-      "hn-top"
+      "gh-trending-llm",
+      "gh-trending-agents"
      ],
      "sourceNames": [
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Offers critical community perspective and discussion regarding current leading language model implementations.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-14T13:36:17.000Z",
-     "category": "news",
-     "score": 10.54
-    },
-    {
-     "id": "dd9fd82ef273735c",
-     "title": "Show HN: DeepSeek V3 in ~200 lines of pure Jax",
-     "url": "https://github.com/Vaibhaav-Tiwari/deepseek-v3-jax",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50497589",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Demonstrates a concise implementation of DeepSeek V3 using pure Jax for developers.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-14T15:04:15.000Z",
-     "category": "news",
-     "score": 10.51
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": []
-  },
-  {
-   "key": "releases",
-   "title": "Releases & tools",
-   "entries": [
-    {
-     "id": "f4e8ce6220df06e6",
-     "title": "NousResearch/Arete-27B",
-     "url": "https://huggingface.co/NousResearch/Arete-27B",
-     "sourceIds": [
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "HF trending models"
-     ],
-     "summary": "text-generation · 606 likes · 7,497 downloads",
-     "why": "Delivers a new text-generation model option gaining measurable traction on Hugging Face.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-06T19:31:28.000Z",
-     "category": "releases",
-     "score": 8.62
-    },
-    {
-     "id": "5f8725cda0574b4f",
-     "title": "topapothecarycanal/ai--manus2.0",
-     "url": "https://github.com/topapothecarycanal/ai--manus2.0",
-     "sourceIds": [
-      "gh-trending-agents",
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents",
-      "GitHub new repos: llm"
+      "GitHub new repos: llm",
+      "GitHub new repos: ai-agents"
      ],
      "summary": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
-     "why": "Introduces a general-purpose AI agent system supporting sandboxed tool execution and operations.",
+     "why": "Offers a general-purpose AI Agent system supporting sandboxed operations across various tools.",
      "whySource": "llm",
-     "publishedAt": "2026-11-14T19:15:24.000Z",
+     "publishedAt": "2026-11-14T19:25:15.000Z",
      "category": "releases",
-     "score": 7.66
-    },
-    {
-     "id": "a4b3adff596a3aee",
-     "title": "topconstableinlet67/ai--manus2.0",
-     "url": "https://github.com/topconstableinlet67/ai--manus2.0",
-     "sourceIds": [
-      "gh-trending-agents",
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents",
-      "GitHub new repos: llm"
-     ],
-     "summary": "AI Manus is a general-purpose AI Agent system that supports running various tools and operations in a sandbox environment.",
-     "why": "Presents another iteration of a general-purpose AI agent system for sandboxed environments.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-14T19:15:24.000Z",
-     "category": "releases",
-     "score": 7.66
+     "score": 8.67
     }
    ]
   },
   {
    "key": "labs",
    "title": "From the labs",
-   "entries": []
+   "entries": [
+    {
+     "id": "2e8f421d2ee2a3df",
+     "title": "A step toward defining the Standard Model on a lattice",
+     "url": "https://openai.com/index/step-toward-defining-the-standard-model",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "Explore a candidate nonperturbative lattice definition of the Standard Model and how GPT-6 Astra helped turn the idea into a detailed proof.",
+     "why": "Demonstrates how GPT-6 Astra assisted in developing a detailed proof for the Standard Model.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T22:00:01.000Z",
+     "category": "labs",
+     "score": 6.94,
+     "readMinutes": 1
+    },
+    {
+     "id": "33b95c2112c46efd",
+     "title": "Our new blog for science",
+     "url": "https://openai.com/index/our-new-blog-for-science",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "The OpenAI science blog shares new findings, practical methods, and firsthand accounts from researchers using AI to advance scientific discovery.",
+     "why": "Shares practical methods and firsthand accounts from researchers advancing scientific discovery with AI.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T22:00:00.000Z",
+     "category": "labs",
+     "score": 6.94,
+     "readMinutes": 1
+    }
+   ]
   },
   {
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
-    {
-     "id": "eba8c0480eb85e20",
-     "title": "Understanding Positional Embeddings in Modern LLMs",
-     "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
-     "sourceIds": [
-      "raschka"
-     ],
-     "sourceNames": [
-      "Ahead of AI (Raschka)"
-     ],
-     "summary": "The Methods Behind How LLMs Represent Token Positions",
-     "why": "Explains the foundational methods behind how modern language models represent token positions.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-15T12:10:37.000Z",
-     "category": "blogs",
-     "score": 5.86,
-     "readMinutes": 55
-    },
     {
      "id": "9c481a0931060f36",
      "title": "datasette-llm 0.1a11",
@@ -197,11 +225,29 @@
       "Simon Willison"
      ],
      "summary": "Release: datasette-llm 0.1a11 datasette-llm is the intermediate plugin for Datasette that supports configuring LLMs for use with other Datasette plugins.",
-     "why": "Updates the intermediate plugin configuration for integrating language models within Datasette.",
+     "why": "Provides an intermediate plugin for configuring language models across Datasette plugins.",
      "whySource": "llm",
      "publishedAt": "2026-11-14T23:59:28.000Z",
      "category": "blogs",
-     "score": 3.09,
+     "score": 2.59,
+     "readMinutes": 1
+    },
+    {
+     "id": "c7271b7ac99ecdcd",
+     "title": "datasette-vega 0.7",
+     "url": "https://simonwillison.net/2026/Nov/14/datasette-vega/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Release: datasette-vega 0.7 A new release of Datasette's longest untouched plugin, for rendering charts (using Vega-Lite) against data in a table or custom query. The last release was in July 2018!",
+     "why": "Updates Datasette's chart-rendering plugin to create visualizations using Vega-Lite against data tables.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T17:09:09.000Z",
+     "category": "blogs",
+     "score": 2.27,
      "readMinutes": 1
     }
    ]
@@ -221,26 +267,28 @@
       "SemiAnalysis"
      ],
      "summary": "Is NVIDIA Over? Export Controls, RASA, Open Source Implications, Supply Chain Implications, Affair, US Still Dependent On China",
-     "why": "Analyzes semiconductor supply chains, export controls, and market implications without leadership.",
+     "why": "Analyzes export controls, supply chain implications, and the future outlook for Nvidia without Jensen.",
      "whySource": "llm",
      "publishedAt": "2026-11-12T18:06:26.000Z",
      "category": "blogs",
-     "score": 1.91,
+     "score": 1.61,
      "readMinutes": 27
     }
    ]
   }
  ],
  "itemIds": [
-  "9a523e1db268a3b6",
-  "a5b5b4e52d94f84e",
-  "10a453890373aeb9",
-  "dd9fd82ef273735c",
-  "f4e8ce6220df06e6",
-  "5f8725cda0574b4f",
-  "a4b3adff596a3aee",
   "eba8c0480eb85e20",
+  "91935a49528247b5",
+  "2221164cfde1b4e2",
+  "9a523e1db268a3b6",
+  "5419a8b213cd4f4a",
+  "a5b5b4e52d94f84e",
+  "f0e20ae2acd31bff",
+  "2e8f421d2ee2a3df",
+  "33b95c2112c46efd",
   "9c481a0931060f36",
+  "c7271b7ac99ecdcd",
   "0ac8e2e8eef42951"
  ],
  "deepReadId": "0ac8e2e8eef42951",
