@@ -1,13 +1,9 @@
 {
  "date": "2026-11-16",
- "generatedAt": "2026-11-16T04:43:57.845Z",
- "wordCount": 665,
- "readingMinutes": 4,
- "overview": {
-  "text": "Today's landscape is defined by significant shifts across embodied AI, foundation architectures, and leadership updates at major hardware firms. In robotics, the release of GPT-6 Astra introduces an agentic robotics paradigm where frontier models match task-specific policies, complemented by Gamer, a generalist vision-language-action foundation model for long-horizon interactive environments. Research continues to refine underlying models through Loopback Transformer developments exploring parameter sharing and repeated computation, alongside emergent biological capabilities in molecular interaction models and human-aligned data collection frameworks for whole-body mobile manipulation. Meanwhile, industry attention centers on executive leadership developments regarding Jensen Huang and Nvidia, while the open-source community releases utility tools like Capri-AI and geospatial plugins, reflecting rapid iteration across both theoretical architectures and applied developer tooling.",
-  "source": "llm",
-  "model": "gemini-3.5-flash-lite"
- },
+ "generatedAt": "2026-11-16T14:46:36.003Z",
+ "wordCount": 625,
+ "readingMinutes": 3,
+ "overview": null,
  "sections": [
   {
    "key": "must-know",
@@ -19,18 +15,20 @@
      "url": "https://arxiv.org/abs/2611.18359",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.AI"
+      "arxiv-cs.AI",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.AI"
+      "arXiv cs.AI",
+      "arXiv cs.CL"
      ],
      "summary": "The release of GPT-6 Astra marks the emergence of a new paradigm in robotics: agentic robotics. Within weeks, frontier models with agentic harnesses matched or exceeded task-specific policies on many embodied benchmarks.",
-     "why": "Demonstrates how frontier models with agentic harnesses match task-specific policies in embodied robotics benchmarks.",
-     "whySource": "llm",
+     "why": "101 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-13T00:00:00.000Z",
      "category": "research",
-     "score": 15.47
+     "score": 17.3
     },
     {
      "id": "arxiv:2611.18397",
@@ -38,56 +36,60 @@
      "url": "https://arxiv.org/abs/2611.18397",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.AI"
+      "arxiv-cs.AI",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.AI"
+      "arXiv cs.AI",
+      "arXiv cs.CL"
      ],
      "summary": "We introduce Gamer, a generalist agent framework built for long-horizon tasks in complex interactive environments. Its end-to-end architecture combines perception, memory management, and multi-step reasoning.",
-     "why": "Introduces an end-to-end architecture combining perception, memory, and multi-step reasoning for complex interactive game environments.",
-     "whySource": "llm",
+     "why": "70 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-13T00:00:00.000Z",
      "category": "research",
-     "score": 15.21
+     "score": 16.78
     },
     {
-     "id": "e39f76e48e249d19",
-     "title": "What's Next for Nvidia?",
-     "url": "https://steveblank.com/2026/11/15/whats-next-for-nvidia/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50512235",
+     "id": "arxiv:2611.17831",
+     "title": "V-JEPA-LM: Video-Language Models That Read Dynamics Beyond Static, Text-Aligned Representations",
+     "url": "https://arxiv.org/abs/2611.17831",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CV"
      ],
-     "summary": "",
-     "why": "Captures crucial industry discussions and community speculation regarding the future trajectory of Nvidia.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-15T23:55:55.000Z",
-     "category": "news",
-     "score": 12.76
+     "summary": "World-model video encoders such as V-JEPA learn how scenes change (direction, speed, order, state) from video alone. To answer questions, they are joined to a language model trained on captions and question-answer pairs.",
+     "why": "20 upvotes on HF Papers; also on arXiv cs.CV",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 15.02
     },
     {
-     "id": "d24604a389f1d5cc",
-     "title": "Jensen Huang might return to Nvidia as CEO",
-     "url": "https://www.reuters.com/world/china/jensen-huang-discusses-comeback-nvidia-ceo-with-allies-ft-reports-2026-11-15/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50511982",
+     "id": "arxiv:2611.17814",
+     "title": "G-CAST: Governed Continual Self-Training for E-Commerce Agents under Evolving Demands",
+     "url": "https://arxiv.org/abs/2611.17814",
      "sourceIds": [
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.AI",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.AI",
+      "arXiv cs.CL"
      ],
-     "summary": "",
-     "why": "Highlights major leadership developments and management transitions concerning Nvidia executive leadership.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-15T23:24:53.000Z",
-     "category": "news",
-     "score": 11.77
+     "summary": "With the rapid advancement of Large Language Models (LLMs), an increasing number of users are turning to LLM-powered agents for conversational shopping in e-commerce.",
+     "why": "15 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 14.63
     }
    ]
   },
@@ -96,55 +98,61 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.07226",
-     "title": "Loopback Transformer: Towards a Unified View of Residual Looped Transformers",
-     "url": "https://arxiv.org/abs/2611.07226",
+     "id": "arxiv:2611.17820",
+     "title": "Aligning AI Teams",
+     "url": "https://arxiv.org/abs/2611.17820",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.AI"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.AI"
      ],
-     "summary": "Looped Transformers reduce parameter count by repeatedly applying shared blocks, but parameter sharing alone does not determine how the results of repeated computation are reused.",
-     "why": "Analyzes how repeated computation and parameter reuse function within residual looped transformer architectures.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-04T00:00:00.000Z",
+     "summary": "Previous work has shown that alignment training on individual LLM agents can fail to transfer to multi-agent settings. We investigate the underlying mechanisms for this failure, and explore interventions to preserve alignment transfer to multi-agent LLM teams.",
+     "why": "10 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
      "category": "research",
-     "score": 10.63
+     "score": 14.09
     },
     {
-     "id": "arxiv:2611.14504",
-     "title": "Emergent Biological Capabilities in a Foundation Model for Molecular Interactions",
-     "url": "https://arxiv.org/abs/2611.14504",
+     "id": "arxiv:2611.17811",
+     "title": "AI Reviews Are Biased Towards the Appendix",
+     "url": "https://arxiv.org/abs/2611.17811",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.CL"
      ],
-     "summary": "Foundation models trained on large unlabeled corpora develop emergent capabilities, tasks that go beyond the training objective.",
-     "why": "Examines emergent capabilities developed by foundation models trained on large unlabeled molecular interaction corpora.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-10T00:00:00.000Z",
+     "summary": "Large language models (LLMs) are increasingly used by reviewers to highlight weaknesses during the reviewing process, and their outputs often shape the reviews that humans submit.",
+     "why": "9 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
      "category": "research",
-     "score": 10.47
+     "score": 13.95
     },
     {
-     "id": "arxiv:2611.16439",
-     "title": "HALO: Human-Aligned Data Collection for WhoLe-body MObile Manipulation",
-     "url": "https://arxiv.org/abs/2611.16439",
+     "id": "arxiv:2611.17878",
+     "title": "DySENSE: Dynamic Spatiotemporal ENergy Synthesis and Emulation with Satellite Imagery",
+     "url": "https://arxiv.org/abs/2611.17878",
      "sourceIds": [
-      "hf-papers"
+      "hf-papers",
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
-      "HF Daily Papers"
+      "HF Daily Papers",
+      "arXiv cs.CV"
      ],
-     "summary": "Learning whole-body mobile manipulation requires demonstrations that coordinate bimanual actions with locomotion across extended workspaces.",
-     "why": "Addresses the collection of human-aligned demonstrations for coordinating bimanual actions with locomotion in mobile manipulation.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-12T00:00:00.000Z",
+     "summary": "Cities account for over two-thirds of the world's energy and more than 70% of global carbon dioxide emissions. City energy is essential for achieving the 2050 net-zero target and the UN's Sustainable Development Goals 7 and 11.",
+     "why": "9 upvotes on HF Papers; also on arXiv cs.CV",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
      "category": "research",
-     "score": 10.11
+     "score": 13.95
     }
    ]
   },
@@ -152,6 +160,40 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
+    {
+     "id": "4153451d18534005",
+     "title": "TypeTyrantScheme/Gemini-Config-Checker-",
+     "url": "https://github.com/TypeTyrantScheme/Gemini-Config-Checker-",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) · Makefile",
+     "why": "473 stars in 1 day",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-15T16:46:04.000Z",
+     "category": "releases",
+     "score": 8.44
+    },
+    {
+     "id": "dfdfe0510caa1708",
+     "title": "Abiray/MiniMax-H3-Image-GGUF",
+     "url": "https://huggingface.co/Abiray/MiniMax-H3-Image-GGUF",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "text-to-image · minimax-h3 · 255 likes · 155,475 downloads",
+     "why": "255 likes on Hugging Face",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-10T16:07:18.000Z",
+     "category": "releases",
+     "score": 8
+    },
     {
      "id": "37eaebd9bd9f8d41",
      "title": "WingDataVacuum/Gemini-Config-Checker-",
@@ -163,57 +205,77 @@
       "GitHub new repos: llm"
      ],
      "summary": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) · Makefile",
-     "why": "Provides a chain region scanner and proxy config tool for accessing Google AI Studio and Gemini.",
-     "whySource": "llm",
+     "why": "473 stars in 1 day",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-15T16:47:17.000Z",
      "category": "releases",
-     "score": 8.44
-    },
-    {
-     "id": "6f3265f374509766",
-     "title": "weldbladesmithwharf/Gemini-Config-Checker-",
-     "url": "https://github.com/weldbladesmithwharf/Gemini-Config-Checker-",
-     "sourceIds": [
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm"
-     ],
-     "summary": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) · Makefile",
-     "why": "Offers proxy configuration tools to help locate compatible pathways into Google AI Studio and Gemini services.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-15T16:47:11.000Z",
-     "category": "releases",
-     "score": 8.44
-    },
-    {
-     "id": "7d58507215cdd6b3",
-     "title": "Outpostkrewhirl86/Capri-AI",
-     "url": "https://github.com/Outpostkrewhirl86/Capri-AI",
-     "sourceIds": [
-      "gh-trending-agents"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents"
-     ],
-     "summary": "Capri: a local-first desktop AI agent with a cyberpunk HUD. Your personal Jarvis for Windows.",
-     "why": "Delivers a local-first desktop AI agent featuring a cyberpunk HUD designed for personal automation.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-14T21:34:40.000Z",
-     "category": "releases",
-     "score": 8.22
+     "score": 7.74
     }
    ]
   },
   {
    "key": "labs",
    "title": "From the labs",
-   "entries": []
+   "entries": [
+    {
+     "id": "ff7833693fa2a067",
+     "title": "LVMH’s Media Division announces strategic partnership with OpenAI",
+     "url": "https://openai.com/index/lvmh-media-division-partnership",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "LVMH’s Media Division and OpenAI announce a partnership to support journalism with AI and make its publications more accessible through ChatGPT.",
+     "why": "OpenAI announcement",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-16T09:00:00.000Z",
+     "category": "labs",
+     "score": 6.26,
+     "readMinutes": 1
+    },
+    {
+     "id": "a35f746f9333e719",
+     "title": "Updating our coordinated vulnerability disclosure policy timelines",
+     "url": "https://www.anthropic.com/research/coordinated-vulnerability-disclosure-timelines",
+     "sourceIds": [
+      "anthropic"
+     ],
+     "sourceNames": [
+      "Anthropic"
+     ],
+     "summary": "We’re shortening our vulnerability disclosure window from 90 days to 30 days for high- and critical-severity issues, and to 45 days for all other issues.",
+     "why": "Anthropic announcement",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-16T00:00:00.000Z",
+     "category": "labs",
+     "score": 6.02
+    }
+   ]
   },
   {
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
+    {
+     "id": "0b0c9df79f2d6f2b",
+     "title": "Import AI 481: AI sub-contractors; a wet lab for AI; and subterfuge during development",
+     "url": "https://importai.substack.com/p/import-ai-481-ai-sub-contractors",
+     "sourceIds": [
+      "importai"
+     ],
+     "sourceNames": [
+      "Import AI"
+     ],
+     "summary": "Plus: CucumberVision!",
+     "why": "Import AI, ~17 min read",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-16T14:01:15.000Z",
+     "category": "blogs",
+     "score": 5.91,
+     "readMinutes": 17
+    },
     {
      "id": "c6febd82e4661f8d",
      "title": "datasette-maplibre 0.1a0",
@@ -225,30 +287,12 @@
       "Simon Willison"
      ],
      "summary": "Release: datasette-maplibre 0.1a0 The first new Datasette geospatial plugin in quite a while!…",
-     "why": "Introduces the first new geospatial plugin for Datasette in a considerable period.",
-     "whySource": "llm",
+     "why": "Simon Willison, ~2 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-15T23:58:36.000Z",
      "category": "blogs",
-     "score": 3.65,
+     "score": 3.01,
      "readMinutes": 2
-    },
-    {
-     "id": "601a53017054bbca",
-     "title": "datasette 1.0a43",
-     "url": "https://simonwillison.net/2026/Nov/15/datasette/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "Release: datasette 1.0a43 I've been leaning hard into Claude Fable 5.2 to help knock things off the 1.0 milestone, which is now 53% complete.",
-     "why": "Provides a new Datasette release milestone update developed with assistance from Claude Fable 5.2.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-15T23:20:27.000Z",
-     "category": "blogs",
-     "score": 3.61,
-     "readMinutes": 3
     }
    ]
   },
@@ -267,11 +311,11 @@
       "Don't Worry About the Vase"
      ],
      "summary": "Jensen Huang has resigned as CEO of Nvidia and left its board.",
-     "why": "Details the resignation of Jensen Huang from his roles as CEO and board member at Nvidia.",
-     "whySource": "llm",
+     "why": "Don't Worry About the Vase, ~47 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-13T12:20:54.000Z",
      "category": "blogs",
-     "score": 1.45,
+     "score": 1.19,
      "readMinutes": 47
     }
    ]
@@ -280,21 +324,23 @@
  "itemIds": [
   "arxiv:2611.18359",
   "arxiv:2611.18397",
-  "e39f76e48e249d19",
-  "d24604a389f1d5cc",
-  "arxiv:2611.07226",
-  "arxiv:2611.14504",
-  "arxiv:2611.16439",
+  "arxiv:2611.17831",
+  "arxiv:2611.17814",
+  "arxiv:2611.17820",
+  "arxiv:2611.17811",
+  "arxiv:2611.17878",
+  "4153451d18534005",
+  "dfdfe0510caa1708",
   "37eaebd9bd9f8d41",
-  "6f3265f374509766",
-  "7d58507215cdd6b3",
+  "ff7833693fa2a067",
+  "a35f746f9333e719",
+  "0b0c9df79f2d6f2b",
   "c6febd82e4661f8d",
-  "601a53017054bbca",
   "8eb8b09a1209b46d"
  ],
  "deepReadId": "8eb8b09a1209b46d",
  "llm": {
   "enabled": true,
-  "ok": true
+  "ok": false
  }
 }
