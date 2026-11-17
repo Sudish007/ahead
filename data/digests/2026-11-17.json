@@ -1,10 +1,10 @@
 {
  "date": "2026-11-17",
- "generatedAt": "2026-11-17T01:34:35.129Z",
- "wordCount": 786,
+ "generatedAt": "2026-11-17T15:29:35.807Z",
+ "wordCount": 790,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's key developments highlight significant expansions in agent capabilities, safety evaluations, and academic access. OpenAI introduced ChatGPT Wallet to enable agent purchases with user approval, alongside new tools to fight online child sexual exploitation. Furthermore, OpenAI initiated embedded assessments with independent organizations like Apollo Research and METR to evaluate model alignment and safeguards, while expanding its ChatGPT for Academic Researchers program to provide free frontier model access to hundreds of thousands of scientists worldwide. In research and releases, new benchmarks such as WebArena-Pro address heterogeneous web agent evaluations, and production-grade workflows like vaibhav-space/my-ai-coding-workflow offer structured multi-stage pipelines for AI coding agents. These updates collectively point toward an ecosystem increasingly focused on secure agentic transactions, rigorous independent safety auditing, and robust practical tooling for researchers and engineers.",
+  "text": "Today's key developments span agentic commerce, safety evaluations, new model releases, and infrastructure shifts. OpenAI introduced ChatGPT Wallet to allow agents in ChatGPT Work, Codex, and dots to complete purchases securely. To address safety and alignment, OpenAI initiated embedded assessments with Apollo Research, METR, Transluce, and Goodfire, alongside new tools targeting online child sexual abuse and partnerships with NATO and Chile. In research, new architectures emerged, including the Sage S2.1 Flash general-purpose mixture-of-experts model and PaperCritic for training AI reviewers, while open-source releases brought models like LongCat-Video-Avatar-1.6 and Maxwell-V1-Flash. Finally, Cloudflare announced its pivot toward building System One decision-making models operating in milliseconds, highlighting the rapid convergence of cloud infrastructure and high-performance AI execution across the ecosystem.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -29,12 +29,31 @@
       "Hacker News"
      ],
      "summary": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
-     "why": "New tools and partnerships aim to prevent, detect, and respond to online child sexual exploitation.",
+     "why": "New tools and practical guidance help prevent, detect, and respond to online child sexual exploitation.",
      "whySource": "llm",
      "publishedAt": "2026-11-16T17:00:00.000Z",
      "category": "labs",
-     "score": 17.22,
+     "score": 16.1,
      "readMinutes": 1
+    },
+    {
+     "id": "arxiv:2611.17834",
+     "title": "PaperCritic: Training AI Reviewers to Assess the Soundness of Papers",
+     "url": "https://arxiv.org/abs/2611.17834",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "As AI conference submissions grow rapidly, AI reviewers are being considered as an alternative.",
+     "why": "Explores training AI reviewers as an alternative to handle growing academic conference submission volumes.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 14.46
     },
     {
      "id": "7d4d71d056da0286",
@@ -50,11 +69,11 @@
       "Hacker News"
      ],
      "summary": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
-     "why": "Enables agents in ChatGPT Work, Codex, and dots to securely complete user-approved purchases.",
+     "why": "Enables agents in ChatGPT Work, Codex, and dots to complete purchases securely with user approval.",
      "whySource": "llm",
      "publishedAt": "2026-11-13T15:00:00.000Z",
      "category": "labs",
-     "score": 15.61,
+     "score": 14.26,
      "readMinutes": 1
     },
     {
@@ -71,33 +90,12 @@
       "Hacker News"
      ],
      "summary": "OpenAI begins embedded assessments with Apollo Research, METR, and Transluce, and Goodfire to independently evaluate model alignment, safeguards, and monitoring systems.",
-     "why": "Independent evaluations by external organizations monitor model alignment and safety systems.",
+     "why": "Initiates independent evaluation of model alignment, safeguards, and monitoring systems with external research organizations.",
      "whySource": "llm",
      "publishedAt": "2026-11-16T08:00:00.000Z",
      "category": "labs",
-     "score": 14.69,
+     "score": 13.68,
      "readMinutes": 1
-    },
-    {
-     "id": "arxiv:2611.17955",
-     "title": "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents",
-     "url": "https://arxiv.org/abs/2611.17955",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI",
-      "arXiv cs.CL"
-     ],
-     "summary": "Web agents powered by large language and vision-language models are increasingly applied to realistic browser work that spans heterogeneous applications, multimodal content, and stateful workflows.",
-     "why": "Provides a heterogeneous, multimodal, and reproducible benchmark for realistic browser-based web agents.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-13T00:00:00.000Z",
-     "category": "research",
-     "score": 12.97
     }
    ]
   },
@@ -106,59 +104,57 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.18130",
-     "title": "JFinBench: A Continuously Refreshable Japanese Financial Benchmark from the Latest Certification Exams",
-     "url": "https://arxiv.org/abs/2611.18130",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "Large language models (LLMs) are increasingly applied to finance, creating a need for benchmarks that evaluate their capabilities across financial systems with different regulations and practices.",
-     "why": "Evaluates LLM capabilities across financial certification exams with varying regulatory practices.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-13T00:00:00.000Z",
-     "category": "research",
-     "score": 12.21
-    },
-    {
-     "id": "arxiv:2611.17780",
-     "title": "LuthorSQL: A One-Pass Text-to-SQL Model as System 1 for a Slower LLM Agent",
-     "url": "https://arxiv.org/abs/2611.17780",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "Frontier LLM agents that query databases with tools are among the most accurate text-to-SQL systems, but per-query calls to a hosted model are slow, costly, and expose sensitive organizational queries to external APIs.",
-     "why": "Offers a faster, cost-effective text-to-SQL system as a system 1 model for slower agents.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-13T00:00:00.000Z",
-     "category": "research",
-     "score": 11.38
-    },
-    {
-     "id": "arxiv:2611.15789",
-     "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
-     "url": "https://arxiv.org/abs/2611.15789",
+     "id": "arxiv:2611.21072",
+     "title": "Sage S2.1 Flash Technical Report",
+     "url": "https://arxiv.org/abs/2611.21072",
      "sourceIds": [
       "hf-papers"
      ],
      "sourceNames": [
       "HF Daily Papers"
      ],
-     "summary": "Controllable real-world video generation models can condition on a rendered graybox proxy video, which fixes layout, motion and camera.",
-     "why": "Evaluates agentic coding capabilities for 4D scene generation within Blender workflows.",
+     "summary": "We introduce Sage S1.5 Flash, a 320-billion-parameter general-purpose mixture-of-experts model designed to reason over scientific evidence and act in interactive environments.",
+     "why": "Introduces a general-purpose mixture-of-experts model designed to reason over scientific evidence and act in interactive environments.",
      "whySource": "llm",
-     "publishedAt": "2026-11-11T00:00:00.000Z",
+     "publishedAt": "2026-11-16T00:00:00.000Z",
      "category": "research",
-     "score": 11.3
+     "score": 12.24
+    },
+    {
+     "id": "arxiv:2611.18668",
+     "title": "UMM-JEPA: Generative Pretraining via Masked Next-Scale Representation Prediction for Unified Multimodal Models",
+     "url": "https://arxiv.org/abs/2611.18668",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Unified multimodal models can support both visual understanding and generation, yet generative training does not necessarily improve understanding.",
+     "why": "Addresses whether generative training improves understanding in unified multimodal models supporting visual tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-26T00:00:00.000Z",
+     "category": "research",
+     "score": 12.12
+    },
+    {
+     "id": "arxiv:2611.19937",
+     "title": "AllocFlow: End-to-End Portfolio Trading Action Generation from Raw Market Data",
+     "url": "https://arxiv.org/abs/2611.19937",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Real-world portfolio management requires converting noisy market observations into coordinated, simultaneous allocations across multiple assets under shared capital constraints. Advances in forecasting models and alpha discovery help identify opportunities.",
+     "why": "Converts noisy market observations into coordinated simultaneous allocations under shared capital constraints.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T00:00:00.000Z",
+     "category": "research",
+     "score": 11.96
     }
    ]
   },
@@ -167,55 +163,61 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "14727801706443ff",
-     "title": "Viggle/Viggle-Remake",
-     "url": "https://huggingface.co/Viggle/Viggle-Remake",
+     "id": "a9abc0070a7cdf21",
+     "title": "meituan-longcat/LongCat-Video-Avatar-1.6 · Hugging Face",
+     "url": "https://huggingface.co/meituan-longcat/LongCat-Video-Avatar-1.6",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xwvrri/meituanlongcatlongcatvideoavatar16_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "🚀 Model Introduction We are excited to announce the release of LongCat-Video-Avatar 1.6, the latest upgrade to our open-source framework for audio-driven human video generation.",
+     "why": "Delivers the latest upgrade to an open-source framework for audio-driven human video generation.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T02:45:33.000Z",
+     "category": "releases",
+     "score": 11.73
+    },
+    {
+     "id": "31d0562891dc2c67",
+     "title": "maxwell-model/Maxwell-V1-Flash · Hugging Face",
+     "url": "https://huggingface.co/maxwell-model/Maxwell-V1-Flash",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xyamk6/maxwellmodelmaxwellv1flash_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "Model Introduction Maxwell-V1.0-Flash is a next-generation, high-performance Mixture-of-Experts (MoE) language model developed by the Maxwell Team, with 35B total parameters and 3B active parameters per token (both excluding embeddings) and support for context lengths up to 256K…",
+     "why": "Provides a high-performance mixture-of-experts language model with support for long context lengths.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-13T07:53:39.000Z",
+     "category": "releases",
+     "score": 11.5
+    },
+    {
+     "id": "6bd2fc30196f91f4",
+     "title": "huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
+     "url": "https://huggingface.co/huihui-ai/Huihui-Qwen3.8-27B-abliterated-GGUF",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "video-to-video · minimax-h3 · 460 likes · 218,765 downloads",
-     "why": "Provides video-to-video capabilities using minimax-h3 for generative media pipelines.",
+     "summary": "image-text-to-text · transformers · 2,265 likes · 4,292,911 downloads",
+     "why": "Offers an abliterated image-text-to-text model variant with significant downloads and community likes.",
      "whySource": "llm",
-     "publishedAt": "2026-10-22T19:06:17.000Z",
+     "publishedAt": "2026-08-16T13:18:55.000Z",
      "category": "releases",
-     "score": 8.42
-    },
-    {
-     "id": "3f4fd06553527897",
-     "title": "vaibhav-space/my-ai-coding-workflow",
-     "url": "https://github.com/vaibhav-space/my-ai-coding-workflow",
-     "sourceIds": [
-      "gh-trending-agents"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents"
-     ],
-     "summary": "Production-grade AI coding instructions, curated skills, and a 3-stage review pipeline (Planning → Critical Review → Diff Audit) built after 4,500+ hours with AI agents. Agent-agnostic.",
-     "why": "Delivers production-grade AI coding instructions and a structured review pipeline for agents.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-14T13:34:16.000Z",
-     "category": "releases",
-     "score": 7.9
-    },
-    {
-     "id": "6f3265f374509766",
-     "title": "weldbladesmithwharf/Gemini-Config-Checker-",
-     "url": "https://github.com/weldbladesmithwharf/Gemini-Config-Checker-",
-     "sourceIds": [
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm"
-     ],
-     "summary": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) · Makefile",
-     "why": "Scans proxy configurations to help users access Google AI Studio and Gemini tools.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-15T16:47:11.000Z",
-     "category": "releases",
-     "score": 7.12
+     "score": 9.57
     }
    ]
   },
@@ -224,39 +226,39 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "2d7a5d6b20fff3cd",
-     "title": "Broadening access to AI for scientists",
-     "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+     "id": "3b3be741a87f5e21",
+     "title": "Introducing OpenAI for Chile",
+     "url": "https://openai.com/index/introducing-openai-for-chile",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
-     "why": "Expands academic access by offering free frontier model usage to researchers worldwide.",
+     "summary": "OpenAI and the Government of Chile are partnering to support responsible AI adoption, build public-sector skills and help local startups develop AI applications.",
+     "why": "Partnerships support responsible AI adoption, public-sector skill-building, and local startup development.",
      "whySource": "llm",
-     "publishedAt": "2026-11-16T17:00:00.000Z",
+     "publishedAt": "2026-11-17T00:00:00.000Z",
      "category": "labs",
-     "score": 5.93,
+     "score": 5.19,
      "readMinutes": 1
     },
     {
-     "id": "d91fd06de7b8771e",
-     "title": "Science at the Frontier: How scientists use ChatGPT",
-     "url": "https://openai.com/index/science-at-the-frontier",
+     "id": "0e7f690aa4ff229b",
+     "title": "Strengthening NATO and allied cyber defenses with AI",
+     "url": "https://openai.com/index/strengthening-nato-allied-cyber-defences-ai",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
-     "why": "Explores how scientists utilize ChatGPT in their daily research workflows and productivity.",
+     "summary": "How OpenAI is working with NATO and allied cyber agencies to help trusted defenders find vulnerabilities, test fixes and protect essential systems.",
+     "why": "Collaborates with trusted defenders to help find vulnerabilities, test fixes, and protect essential systems.",
      "whySource": "llm",
-     "publishedAt": "2026-11-16T12:00:00.000Z",
+     "publishedAt": "2026-11-17T00:00:00.000Z",
      "category": "labs",
-     "score": 5.39,
+     "score": 5.19,
      "readMinutes": 1
     }
    ]
@@ -264,6 +266,48 @@
   {
    "key": "analysis",
    "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "687507124eb08aac",
+     "title": "Cloudflare Joins the Jevolution and Labels Itself a Neolab",
+     "url": "https://latent.space/p/cloudflare/",
+     "sourceIds": [
+      "latentspace"
+     ],
+     "sourceNames": [
+      "Latent Space"
+     ],
+     "summary": "Cloudflare made its name speeding up the web. Now it's building System One models to make decisions and pull data in milliseconds.",
+     "why": "Shifts focus toward building System One models to make decisions and pull data rapidly.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T15:00:00.000Z",
+     "category": "blogs",
+     "score": 4.95,
+     "readMinutes": 7
+    },
+    {
+     "id": "accfdc99034c3112",
+     "title": "Jensen Huang Really Liked Selling China Advanced AI Chips",
+     "url": "https://thezvi.substack.com/p/jensen-huang-really-liked-selling",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "This scandal is a really big deal.",
+     "why": "Highlights major industry controversies surrounding the distribution of advanced AI chips.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T14:41:58.000Z",
+     "category": "blogs",
+     "score": 4.92,
+     "readMinutes": 41
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
    "entries": [
     {
      "id": "2006046506ac2de8",
@@ -276,76 +320,34 @@
       "Don't Worry About the Vase"
      ],
      "summary": "You do not always want a bazooka.",
-     "why": "Discusses strategic considerations regarding tool selection and capability scaling in AI systems.",
+     "why": "Examines strategic tool selection and capability deployment in modern applied contexts.",
      "whySource": "llm",
      "publishedAt": "2026-11-16T20:27:14.000Z",
      "category": "blogs",
-     "score": 4.53,
+     "score": 3.47,
      "readMinutes": 30
-    },
-    {
-     "id": "a6c1e35f973d93f1",
-     "title": "Our new book on AI agents is out, and it hit #1",
-     "url": "https://newsletter.languagemodels.co/p/our-new-book-on-ai-agents-is-out",
-     "sourceIds": [
-      "jalammar"
-     ],
-     "sourceNames": [
-      "Jay Alammar (Language Models newsletter)"
-     ],
-     "summary": "From the LLM to the agent, in 300+ hand-crafted figures. Our new O’Reilly book with Maarten Grootendorst, plus a giveaway of five ebook copies.",
-     "why": "Offers a comprehensive visual guide on transitioning from basic LLMs to complex agents.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-16T14:51:01.000Z",
-     "category": "blogs",
-     "score": 4.07,
-     "readMinutes": 4
-    }
-   ]
-  },
-  {
-   "key": "deep-read",
-   "title": "One deep read",
-   "entries": [
-    {
-     "id": "f8a6809e9612107c",
-     "title": "ChinAI #382: Around the Horn (28th episode)",
-     "url": "https://chinai.substack.com/p/chinai-382-around-the-horn-28th-episode",
-     "sourceIds": [
-      "chinai"
-     ],
-     "sourceNames": [
-      "ChinAI"
-     ],
-     "summary": "Greetings from a world where…",
-     "why": "Delivers ongoing insights and updates regarding artificial intelligence developments in China.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-16T17:57:12.000Z",
-     "category": "blogs",
-     "score": 3.45,
-     "readMinutes": 8
     }
    ]
   }
  ],
  "itemIds": [
   "dd659f011024f04f",
+  "arxiv:2611.17834",
   "7d4d71d056da0286",
   "9fe6d2ae73e55f52",
-  "arxiv:2611.17955",
-  "arxiv:2611.18130",
-  "arxiv:2611.17780",
-  "arxiv:2611.15789",
-  "14727801706443ff",
-  "3f4fd06553527897",
-  "6f3265f374509766",
-  "2d7a5d6b20fff3cd",
-  "d91fd06de7b8771e",
-  "2006046506ac2de8",
-  "a6c1e35f973d93f1",
-  "f8a6809e9612107c"
+  "arxiv:2611.21072",
+  "arxiv:2611.18668",
+  "arxiv:2611.19937",
+  "a9abc0070a7cdf21",
+  "31d0562891dc2c67",
+  "6bd2fc30196f91f4",
+  "3b3be741a87f5e21",
+  "0e7f690aa4ff229b",
+  "687507124eb08aac",
+  "accfdc99034c3112",
+  "2006046506ac2de8"
  ],
- "deepReadId": "f8a6809e9612107c",
+ "deepReadId": "2006046506ac2de8",
  "llm": {
   "enabled": true,
   "ok": true
