@@ -1,0 +1,353 @@
+{
+ "date": "2026-11-17",
+ "generatedAt": "2026-11-17T01:34:35.129Z",
+ "wordCount": 786,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's key developments highlight significant expansions in agent capabilities, safety evaluations, and academic access. OpenAI introduced ChatGPT Wallet to enable agent purchases with user approval, alongside new tools to fight online child sexual exploitation. Furthermore, OpenAI initiated embedded assessments with independent organizations like Apollo Research and METR to evaluate model alignment and safeguards, while expanding its ChatGPT for Academic Researchers program to provide free frontier model access to hundreds of thousands of scientists worldwide. In research and releases, new benchmarks such as WebArena-Pro address heterogeneous web agent evaluations, and production-grade workflows like vaibhav-space/my-ai-coding-workflow offer structured multi-stage pipelines for AI coding agents. These updates collectively point toward an ecosystem increasingly focused on secure agentic transactions, rigorous independent safety auditing, and robust practical tooling for researchers and engineers.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "dd659f011024f04f",
+     "title": "Strengthening the fight against online child sexual abuse with new tools and support",
+     "url": "https://openai.com/index/strengthening-online-child-safety",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50520804",
+     "sourceIds": [
+      "openai",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "New tools, practical guidance, and partnerships will help prevent, detect and respond to online child sexual exploitation and abuse.",
+     "why": "New tools and partnerships aim to prevent, detect, and respond to online child sexual exploitation.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T17:00:00.000Z",
+     "category": "labs",
+     "score": 17.22,
+     "readMinutes": 1
+    },
+    {
+     "id": "7d4d71d056da0286",
+     "title": "Introducing ChatGPT Wallet",
+     "url": "https://openai.com/index/introducing-chatgpt-wallet",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50518501",
+     "sourceIds": [
+      "openai",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "Hacker News"
+     ],
+     "summary": "Introducing ChatGPT Wallet, a secure way for agents in ChatGPT Work, Codex, and dots to complete purchases with user approval and existing card protections.",
+     "why": "Enables agents in ChatGPT Work, Codex, and dots to securely complete user-approved purchases.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T15:00:00.000Z",
+     "category": "labs",
+     "score": 15.61,
+     "readMinutes": 1
+    },
+    {
+     "id": "9fe6d2ae73e55f52",
+     "title": "Our first phase of embedded assessments",
+     "url": "https://openai.com/index/our-first-phase-of-embedded-assessments",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50519153",
+     "sourceIds": [
+      "openai",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "Hacker News"
+     ],
+     "summary": "OpenAI begins embedded assessments with Apollo Research, METR, and Transluce, and Goodfire to independently evaluate model alignment, safeguards, and monitoring systems.",
+     "why": "Independent evaluations by external organizations monitor model alignment and safety systems.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T08:00:00.000Z",
+     "category": "labs",
+     "score": 14.69,
+     "readMinutes": 1
+    },
+    {
+     "id": "arxiv:2611.17955",
+     "title": "WebArena-Pro: A Heterogeneous, Multimodal, Reproducible Benchmark for Web Agents",
+     "url": "https://arxiv.org/abs/2611.17955",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI",
+      "arXiv cs.CL"
+     ],
+     "summary": "Web agents powered by large language and vision-language models are increasingly applied to realistic browser work that spans heterogeneous applications, multimodal content, and stateful workflows.",
+     "why": "Provides a heterogeneous, multimodal, and reproducible benchmark for realistic browser-based web agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 12.97
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.18130",
+     "title": "JFinBench: A Continuously Refreshable Japanese Financial Benchmark from the Latest Certification Exams",
+     "url": "https://arxiv.org/abs/2611.18130",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Large language models (LLMs) are increasingly applied to finance, creating a need for benchmarks that evaluate their capabilities across financial systems with different regulations and practices.",
+     "why": "Evaluates LLM capabilities across financial certification exams with varying regulatory practices.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 12.21
+    },
+    {
+     "id": "arxiv:2611.17780",
+     "title": "LuthorSQL: A One-Pass Text-to-SQL Model as System 1 for a Slower LLM Agent",
+     "url": "https://arxiv.org/abs/2611.17780",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Frontier LLM agents that query databases with tools are among the most accurate text-to-SQL systems, but per-query calls to a hosted model are slow, costly, and expose sensitive organizational queries to external APIs.",
+     "why": "Offers a faster, cost-effective text-to-SQL system as a system 1 model for slower agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 11.38
+    },
+    {
+     "id": "arxiv:2611.15789",
+     "title": "VibePrevisBench: Evaluating Agentic Coding for 4D Scene Generation in Blender",
+     "url": "https://arxiv.org/abs/2611.15789",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Controllable real-world video generation models can condition on a rendered graybox proxy video, which fixes layout, motion and camera.",
+     "why": "Evaluates agentic coding capabilities for 4D scene generation within Blender workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-11T00:00:00.000Z",
+     "category": "research",
+     "score": 11.3
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "14727801706443ff",
+     "title": "Viggle/Viggle-Remake",
+     "url": "https://huggingface.co/Viggle/Viggle-Remake",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "video-to-video · minimax-h3 · 460 likes · 218,765 downloads",
+     "why": "Provides video-to-video capabilities using minimax-h3 for generative media pipelines.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-22T19:06:17.000Z",
+     "category": "releases",
+     "score": 8.42
+    },
+    {
+     "id": "3f4fd06553527897",
+     "title": "vaibhav-space/my-ai-coding-workflow",
+     "url": "https://github.com/vaibhav-space/my-ai-coding-workflow",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "Production-grade AI coding instructions, curated skills, and a 3-stage review pipeline (Planning → Critical Review → Diff Audit) built after 4,500+ hours with AI agents. Agent-agnostic.",
+     "why": "Delivers production-grade AI coding instructions and a structured review pipeline for agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T13:34:16.000Z",
+     "category": "releases",
+     "score": 7.9
+    },
+    {
+     "id": "6f3265f374509766",
+     "title": "weldbladesmithwharf/Gemini-Config-Checker-",
+     "url": "https://github.com/weldbladesmithwharf/Gemini-Config-Checker-",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) · Makefile",
+     "why": "Scans proxy configurations to help users access Google AI Studio and Gemini tools.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T16:47:11.000Z",
+     "category": "releases",
+     "score": 7.12
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "2d7a5d6b20fff3cd",
+     "title": "Broadening access to AI for scientists",
+     "url": "https://openai.com/index/expanding-chatgpt-for-academic-researchers",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "We’re expanding our ChatGPT for Academic Researchers program to offer 200,000 researchers worldwide free access to our frontier models.",
+     "why": "Expands academic access by offering free frontier model usage to researchers worldwide.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T17:00:00.000Z",
+     "category": "labs",
+     "score": 5.93,
+     "readMinutes": 1
+    },
+    {
+     "id": "d91fd06de7b8771e",
+     "title": "Science at the Frontier: How scientists use ChatGPT",
+     "url": "https://openai.com/index/science-at-the-frontier",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "Explore how more than 1,800 scientists use ChatGPT in research. See findings on daily workflows, reported productivity, and expectations for discovery.",
+     "why": "Explores how scientists utilize ChatGPT in their daily research workflows and productivity.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T12:00:00.000Z",
+     "category": "labs",
+     "score": 5.39,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "2006046506ac2de8",
+     "title": "Fable 5.2 is the New Bazooka",
+     "url": "https://thezvi.substack.com/p/fable-52-is-the-new-bazooka",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "You do not always want a bazooka.",
+     "why": "Discusses strategic considerations regarding tool selection and capability scaling in AI systems.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T20:27:14.000Z",
+     "category": "blogs",
+     "score": 4.53,
+     "readMinutes": 30
+    },
+    {
+     "id": "a6c1e35f973d93f1",
+     "title": "Our new book on AI agents is out, and it hit #1",
+     "url": "https://newsletter.languagemodels.co/p/our-new-book-on-ai-agents-is-out",
+     "sourceIds": [
+      "jalammar"
+     ],
+     "sourceNames": [
+      "Jay Alammar (Language Models newsletter)"
+     ],
+     "summary": "From the LLM to the agent, in 300+ hand-crafted figures. Our new O’Reilly book with Maarten Grootendorst, plus a giveaway of five ebook copies.",
+     "why": "Offers a comprehensive visual guide on transitioning from basic LLMs to complex agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T14:51:01.000Z",
+     "category": "blogs",
+     "score": 4.07,
+     "readMinutes": 4
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "f8a6809e9612107c",
+     "title": "ChinAI #382: Around the Horn (28th episode)",
+     "url": "https://chinai.substack.com/p/chinai-382-around-the-horn-28th-episode",
+     "sourceIds": [
+      "chinai"
+     ],
+     "sourceNames": [
+      "ChinAI"
+     ],
+     "summary": "Greetings from a world where…",
+     "why": "Delivers ongoing insights and updates regarding artificial intelligence developments in China.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T17:57:12.000Z",
+     "category": "blogs",
+     "score": 3.45,
+     "readMinutes": 8
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "dd659f011024f04f",
+  "7d4d71d056da0286",
+  "9fe6d2ae73e55f52",
+  "arxiv:2611.17955",
+  "arxiv:2611.18130",
+  "arxiv:2611.17780",
+  "arxiv:2611.15789",
+  "14727801706443ff",
+  "3f4fd06553527897",
+  "6f3265f374509766",
+  "2d7a5d6b20fff3cd",
+  "d91fd06de7b8771e",
+  "2006046506ac2de8",
+  "a6c1e35f973d93f1",
+  "f8a6809e9612107c"
+ ],
+ "deepReadId": "f8a6809e9612107c",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
