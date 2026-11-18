@@ -1,10 +1,10 @@
 {
  "date": "2026-11-18",
- "generatedAt": "2026-11-18T00:31:35.548Z",
- "wordCount": 805,
+ "generatedAt": "2026-11-18T15:05:18.666Z",
+ "wordCount": 830,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's artificial intelligence landscape features major product rollouts, evolving agent research, and financial realities. OpenAI introduced GPT-6.2 Astra and Sol, delivering improved professional outputs, coding capabilities, computer use, and cost efficiency across ChatGPT Work, Codex, and the API. Meanwhile, enterprise and market developments show shifts in strategy and perspective: Nvidia stopped disclosing Singapore sales as revenues reached a massive milestone, while tech executives at Baidu and Xiaomi warned about a growing gap between AI hype and actual returns. In research, new work advanced computer-use agents for healthcare teams and explored continuation-guided LLM evolution to optimize code-based policies without runtime model calls. Open-source and developer releases also advanced rapidly, highlighted by the debut of SenseNova Loop 9B and new optimization tools designed to accelerate local LLM serving speeds across diverse hardware setups.",
+  "text": "Today's key developments span frontier model releases, domestic hardware optimization, and specialized multimodal architectures. OpenAI introduced GPT-6.2 Astra and Sol, delivering improved professional outputs, coding, computer use, and efficiency across ChatGPT Work, Codex, and the API. In research and infrastructure, advances focus on frontier agentic models on domestic chips through Xing 4 and AscendGYM, alongside non-transformer approaches to weight-space programming. New releases feature Shanghai Artificial Intelligence Laboratory's scientific multimodal model Sage-S2.1 Flash, the looped SenseNova Loop 9B, and the image-to-3d model speridlabs/idol. Additionally, labs are expanding healthcare-focused computer-use agents and forming new journalism partnerships, while analysis covers running server-side Datasette Python apps in the browser via WebAssembly and Pyodide, alongside technical examinations of positional embeddings in modern large language models.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -29,13 +29,202 @@
       "Hacker News"
      ],
      "summary": "Introducing GPT‑6.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
-     "why": "Delivers superior professional performance and efficiency across developer tools and the API.",
+     "why": "GPT-6.2 Astra and Sol improve professional outputs, coding, and efficiency across workflows.",
      "whySource": "llm",
      "publishedAt": "2026-11-17T17:45:00.000Z",
      "category": "labs",
-     "score": 19.92,
+     "score": 18.74,
      "readMinutes": 1
     },
+    {
+     "id": "arxiv:2611.22115",
+     "title": "TeleChat to Xing4: Advancing Frontier Agentic Models on Domestic Chips and Frameworks",
+     "url": "https://arxiv.org/abs/2611.22115",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "We present Xing 4, a series of large language models that extends the TeleChat lineage through coordinated advances in model architecture and training infrastructure on Ascend.",
+     "why": "Xing 4 extends the TeleChat lineage with coordinated model and infrastructure advances on Ascend.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T00:00:00.000Z",
+     "category": "research",
+     "score": 17.79
+    },
+    {
+     "id": "arxiv:2611.17621",
+     "title": "AscendGYM: A Cost-Aware Kernel Optimization Benchmark for Real-World Workloads on Ascend NPUs",
+     "url": "https://arxiv.org/abs/2611.17621",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Kernel optimization is essential for efficient large language model (LLM) training and inference on Ascend NPUs.",
+     "why": "AscendGYM provides a cost-aware kernel optimization benchmark for real-world workloads on Ascend NPUs.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 16.49
+    },
+    {
+     "id": "arxiv:2611.22055",
+     "title": "Weight-Space Programming Doesn't Need Transformers",
+     "url": "https://arxiv.org/abs/2611.22055",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "Standard neural architectures such as the Transformer were chosen because they train well with gradient descent and run fast on GPUs.",
+     "why": "This study explores alternative neural architectures that bypass standard transformers for weight-space programming.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T00:00:00.000Z",
+     "category": "research",
+     "score": 15.95
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.18856",
+     "title": "Self-Improvement Memory Enables Continual Recursive Self-Improvement",
+     "url": "https://arxiv.org/abs/2611.18856",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "Harness optimization is often studied with a fixed policy model and benchmark. When either changes, the optimizer must decide which parts of an evolved harness to reuse or revise, but the harness alone may not explain why earlier edits were made or how they performed.",
+     "why": "Self-improvement memory enables continual recursive self-optimization by tracking historical editing choices.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 14.68
+    },
+    {
+     "id": "arxiv:2611.19244",
+     "title": "Agentic On-Policy Distillation Implicitly Reshapes LLMs' ReAct Patterns",
+     "url": "https://arxiv.org/abs/2611.19244",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "On-policy distillation (OPD) transfers specialized capabilities to language-model agents, but its cross-domain effects on interaction remain unclear.",
+     "why": "Agentic on-policy distillation examines how specialized capabilities reshape interaction patterns in language-model agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T00:00:00.000Z",
+     "category": "research",
+     "score": 12.79
+    },
+    {
+     "id": "arxiv:2611.21791",
+     "title": "Regularized Score Centering",
+     "url": "https://arxiv.org/abs/2611.21791",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "Asynchronous reinforcement learning increases training throughput, but data from stale policies and numerical mismatch between training and inference can destabilize learning.",
+     "why": "Regularized score centering addresses training instability caused by asynchronous reinforcement learning and stale policies.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T00:00:00.000Z",
+     "category": "research",
+     "score": 12.59
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "c9012ae9fa8e6df9",
+     "title": "internlm/Sage-S2.1-Flash · Hugging Face",
+     "url": "https://huggingface.co/internlm/Sage-S2.1-Flash",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xxn631/internlmsages21flash_hugging_face/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "Introduction Sage S2.1 Flash is a scientific multimodal model from Shanghai Artificial Intelligence Laboratory designed for research tasks that require multiple rounds of analysis and verification.",
+     "why": "Sage-S2.1 Flash offers a multimodal architecture designed for complex scientific analysis and verification tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T02:34:59.000Z",
+     "category": "releases",
+     "score": 11.51
+    },
+    {
+     "id": "25449032934427ca",
+     "title": "SenseNova Loop 9B",
+     "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xylcw4/sensenova_loop_9b/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "If the benchmarks are true, this is a 9B looped model on level with Qwen3.8 27B. They say they'll release gguf tomorrow.",
+     "why": "SenseNova Loop 9B brings looped model capabilities competitive with much larger parameter alternatives.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T10:16:41.000Z",
+     "category": "releases",
+     "score": 11.16
+    },
+    {
+     "id": "50a561c320a6e2b2",
+     "title": "speridlabs/idol",
+     "url": "https://huggingface.co/speridlabs/idol",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-to-3d · idol · 2,475 likes · 37,179 downloads",
+     "why": "speridlabs/idol provides a notable new image-to-3d generation capability for developers.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-28T15:55:17.000Z",
+     "category": "releases",
+     "score": 9.64
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
     {
      "id": "21b4758ab52123ac",
      "title": "Advancing computer-use agents for healthcare teams",
@@ -52,216 +241,29 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Expands practical automation capabilities into specialized workflows for healthcare teams.",
+     "why": "Advanced computer-use agents are expanding into specialized operational fields like healthcare teams.",
      "whySource": "llm",
      "publishedAt": "2026-11-16T06:00:00.000Z",
      "category": "labs",
-     "score": 15.25
+     "score": 14.14
     },
     {
-     "id": "4124c7982b17c003",
-     "title": "Nvidia stopped disclosing Singapore sales as revenues hit $104B",
-     "url": "https://www.ft.com/content/dbde7a30-548c-4f9d-a4be-7898a0c24dcf",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50534631",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Reflects shifting geographic disclosure patterns alongside massive hardware revenue figures.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-17T17:12:06.000Z",
-     "category": "news",
-     "score": 13.32
-    },
-    {
-     "id": "51ba83f180496126",
-     "title": "Baidu, Xiaomi CEOs warn of growing gap between AI hype and returns",
-     "url": "https://www.scmp.com/tech/big-tech/article/3374774/baidu-xiaomi-ceos-warn-growing-gap-between-ai-hype-and-returns",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50531751",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Highlights industry concerns regarding the widening gap between commercial investment and real-world returns.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-17T14:19:59.000Z",
-     "category": "news",
-     "score": 12.61
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
-    {
-     "id": "arxiv:2611.19537",
-     "title": "Continuation-Guided LLM Evolution of Program Policies and Goal Compilers in Craftax",
-     "url": "https://arxiv.org/abs/2611.19537",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "Coding agents can synthesize and optimize code-based policies from simulator feedback, allowing the resulting program to act with zero inference model calls.",
-     "why": "Enables optimized program execution without requiring any runtime inference model calls.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-14T00:00:00.000Z",
-     "category": "research",
-     "score": 12.08
-    },
-    {
-     "id": "arxiv:2611.17933",
-     "title": "OutfitterBench: Evaluating LLM Agents on Long-Horizon Resource Allocation and Commitment Coordination",
-     "url": "https://arxiv.org/abs/2611.17933",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "In many long-horizon settings, an agent's own choices create future constraints: committing finite capacity establishes future obligations and forecloses later opportunities.",
-     "why": "Evaluates how early agent commitments constrain future opportunities in long-horizon settings.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-13T00:00:00.000Z",
-     "category": "research",
-     "score": 11.57
-    },
-    {
-     "id": "arxiv:2611.18330",
-     "title": "Marimba: A System One Model for Speech",
-     "url": "https://arxiv.org/abs/2611.18330",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "Speech applications require decisions about term presence, turn completion, and language within an audio window. We present Marimba, an interface for typed speech decisions built on frozen Qwen3-ASR 0.6B features.",
-     "why": "Provides a streamlined interface for typed speech decisions using frozen feature representations.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-13T00:00:00.000Z",
-     "category": "research",
-     "score": 11.31
-    }
-   ]
-  },
-  {
-   "key": "releases",
-   "title": "Releases & tools",
-   "entries": [
-    {
-     "id": "25449032934427ca",
-     "title": "SenseNova Loop 9B",
-     "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
-     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xylcw4/sensenova_loop_9b/",
-     "sourceIds": [
-      "reddit",
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "Reddit r/LocalLLaMA + r/MachineLearning",
-      "HF trending models"
-     ],
-     "summary": "If the benchmarks are true, this is a 9B looped model on level with Qwen3.8 27B. They say they'll release gguf tomorrow.",
-     "why": "Offers a competitive looped model architecture matching larger baselines at a compact scale.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-17T10:16:41.000Z",
-     "category": "releases",
-     "score": 11.76
-    },
-    {
-     "id": "34d18f2606ec3302",
-     "title": "sybil-solutions/inference-optimisation-skill",
-     "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
-     "sourceIds": [
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm"
-     ],
-     "summary": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization · Python",
-     "why": "Provides practical utilities for hill-climbing local LLM inference speed across varied hardware.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-16T18:40:04.000Z",
-     "category": "releases",
-     "score": 8.29
-    },
-    {
-     "id": "3de9cb2c7a116d96",
-     "title": "boringmarketer/boring-marketing-skills",
-     "url": "https://github.com/boringmarketer/boring-marketing-skills",
-     "sourceIds": [
-      "gh-trending-agents"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents"
-     ],
-     "summary": "31 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT. · Python",
-     "why": "Equips AI agents with modular marketing skills for research, copywriting, and local business tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-16T15:09:46.000Z",
-     "category": "releases",
-     "score": 7.88
-    }
-   ]
-  },
-  {
-   "key": "labs",
-   "title": "From the labs",
-   "entries": [
-    {
-     "id": "3047d7657748ea76",
-     "title": "Introducing ChatGPT for Sales",
-     "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+     "id": "a1de396d3910fa2e",
+     "title": "Le Groupe Figaro and OpenAI partner to bring Le Figaro journalism to ChatGPT",
+     "url": "https://openai.com/index/le-groupe-figaro-and-openai-announce-partnership",
      "sourceIds": [
       "openai"
      ],
      "sourceNames": [
       "OpenAI"
      ],
-     "summary": "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward.",
-     "why": "Integrates dedicated plugins to assist sales professionals with research, pitching, and CRM updates.",
+     "summary": "Le Groupe Figaro and OpenAI partner to bring Le Figaro’s journalism to ChatGPT through summaries and excerpts, with links to original stories.",
+     "why": "Media partnerships integrate verified journalistic content directly into conversational AI interfaces.",
      "whySource": "llm",
-     "publishedAt": "2026-11-17T08:00:00.000Z",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
      "category": "labs",
-     "score": 5.09,
+     "score": 5.24,
      "readMinutes": 1
-    },
-    {
-     "id": "3212e751c4906b22",
-     "title": "Muse Is Now Available in Australia: The World’s First Personal AI Agent Built for Everyone",
-     "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/",
-     "sourceIds": [
-      "meta-newsroom-ai"
-     ],
-     "sourceNames": [
-      "Meta Newsroom (AI)"
-     ],
-     "summary": "Muse is available in Australia from today, with local connector experiences across creativity, shopping, property, fitness and entertainment rolling out progressively.",
-     "why": "Launches a personal assistant agent with local connectors for everyday consumer tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-17T18:00:31.000Z",
-     "category": "labs",
-     "score": 4.41,
-     "readMinutes": 4
     }
    ]
   },
@@ -280,30 +282,30 @@
       "Simon Willison"
      ],
      "summary": "Datasette Lite is my port of the Datasette Python application to run directly in the browser using WebAssembly and Pyodide. I've released a complete rewrite of Datasette Lite using service workers, and it's now almost indistinguishable from the real server-side application.…",
-     "why": "Brings full server-side Python applications directly into the browser using WebAssembly.",
+     "why": "Running server-side Python apps in the browser via service workers and Pyodide enhances client-side capabilities.",
      "whySource": "llm",
      "publishedAt": "2026-11-17T16:48:33.000Z",
      "category": "blogs",
-     "score": 3.45,
+     "score": 2.6,
      "readMinutes": 10
     },
     {
-     "id": "a6c1e35f973d93f1",
-     "title": "Our new book on AI agents is out, and it hit #1",
-     "url": "https://newsletter.languagemodels.co/p/our-new-book-on-ai-agents-is-out",
+     "id": "52461be624b7e32f",
+     "title": "The PSF end-of-year fundraiser",
+     "url": "https://simonwillison.net/2026/Nov/18/psf-end-of-year-fundraiser/",
      "sourceIds": [
-      "jalammar"
+      "simonw"
      ],
      "sourceNames": [
-      "Jay Alammar (Language Models newsletter)"
+      "Simon Willison"
      ],
-     "summary": "From the LLM to the agent, in 300+ hand-crafted figures. Our new O’Reilly book with Maarten Grootendorst, plus a giveaway of five ebook copies.",
-     "why": "Offers a comprehensive visual guide to transitioning from standard language models to autonomous agents.",
+     "summary": "The PSF end-of-year fundraiser With my Python Software Foundation board director hat on: we've launched our end-of-year fundraiser for the non-profit that supports Python development and the Python community.",
+     "why": "The Python Software Foundation fundraiser supports ongoing core development and community infrastructure.",
      "whySource": "llm",
-     "publishedAt": "2026-11-16T14:51:01.000Z",
+     "publishedAt": "2026-11-18T14:44:48.000Z",
      "category": "blogs",
-     "score": 2.61,
-     "readMinutes": 4
+     "score": 3.97,
+     "readMinutes": 1
     }
    ]
   },
@@ -327,11 +329,11 @@
       "Hacker News"
      ],
      "summary": "The Methods Behind How LLMs Represent Token Positions",
-     "why": "Clarifies the underlying mathematical methods modern language models use to represent token positions.",
+     "why": "This analysis provides deep technical clarity on how modern large language models represent token positions.",
      "whySource": "llm",
      "publishedAt": "2026-11-15T12:10:37.000Z",
      "category": "blogs",
-     "score": 12.47,
+     "score": 12.01,
      "readMinutes": 55
     }
    ]
@@ -339,19 +341,19 @@
  ],
  "itemIds": [
   "8f6af8c44a4a1bfb",
-  "21b4758ab52123ac",
-  "4124c7982b17c003",
-  "51ba83f180496126",
-  "arxiv:2611.19537",
-  "arxiv:2611.17933",
-  "arxiv:2611.18330",
+  "arxiv:2611.22115",
+  "arxiv:2611.17621",
+  "arxiv:2611.22055",
+  "arxiv:2611.18856",
+  "arxiv:2611.19244",
+  "arxiv:2611.21791",
+  "c9012ae9fa8e6df9",
   "25449032934427ca",
-  "34d18f2606ec3302",
-  "3de9cb2c7a116d96",
-  "3047d7657748ea76",
-  "3212e751c4906b22",
+  "50a561c320a6e2b2",
+  "21b4758ab52123ac",
+  "a1de396d3910fa2e",
   "6f0fb0223e38d4b7",
-  "a6c1e35f973d93f1",
+  "52461be624b7e32f",
   "eba8c0480eb85e20"
  ],
  "deepReadId": "eba8c0480eb85e20",
