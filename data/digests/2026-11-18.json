@@ -1,0 +1,362 @@
+{
+ "date": "2026-11-18",
+ "generatedAt": "2026-11-18T00:31:35.548Z",
+ "wordCount": 805,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's artificial intelligence landscape features major product rollouts, evolving agent research, and financial realities. OpenAI introduced GPT-6.2 Astra and Sol, delivering improved professional outputs, coding capabilities, computer use, and cost efficiency across ChatGPT Work, Codex, and the API. Meanwhile, enterprise and market developments show shifts in strategy and perspective: Nvidia stopped disclosing Singapore sales as revenues reached a massive milestone, while tech executives at Baidu and Xiaomi warned about a growing gap between AI hype and actual returns. In research, new work advanced computer-use agents for healthcare teams and explored continuation-guided LLM evolution to optimize code-based policies without runtime model calls. Open-source and developer releases also advanced rapidly, highlighted by the debut of SenseNova Loop 9B and new optimization tools designed to accelerate local LLM serving speeds across diverse hardware setups.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "8f6af8c44a4a1bfb",
+     "title": "Introducing GPT-6.2 Astra and Sol",
+     "url": "https://openai.com/index/introducing-gpt-6-2-astra-sol",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50535230",
+     "sourceIds": [
+      "openai",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "Introducing GPT‑6.2 Astra and Sol, with better professional outputs, coding, computer use, and efficiency at lower cost across ChatGPT Work, Codex, and the API.",
+     "why": "Delivers superior professional performance and efficiency across developer tools and the API.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T17:45:00.000Z",
+     "category": "labs",
+     "score": 19.92,
+     "readMinutes": 1
+    },
+    {
+     "id": "21b4758ab52123ac",
+     "title": "Advancing computer-use agents for healthcare teams",
+     "url": "https://openai.com/index/advancing-computer-use-for-healthcare-teams",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50535898",
+     "sourceIds": [
+      "openai",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Expands practical automation capabilities into specialized workflows for healthcare teams.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T06:00:00.000Z",
+     "category": "labs",
+     "score": 15.25
+    },
+    {
+     "id": "4124c7982b17c003",
+     "title": "Nvidia stopped disclosing Singapore sales as revenues hit $104B",
+     "url": "https://www.ft.com/content/dbde7a30-548c-4f9d-a4be-7898a0c24dcf",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50534631",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Reflects shifting geographic disclosure patterns alongside massive hardware revenue figures.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T17:12:06.000Z",
+     "category": "news",
+     "score": 13.32
+    },
+    {
+     "id": "51ba83f180496126",
+     "title": "Baidu, Xiaomi CEOs warn of growing gap between AI hype and returns",
+     "url": "https://www.scmp.com/tech/big-tech/article/3374774/baidu-xiaomi-ceos-warn-growing-gap-between-ai-hype-and-returns",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50531751",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Highlights industry concerns regarding the widening gap between commercial investment and real-world returns.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T14:19:59.000Z",
+     "category": "news",
+     "score": 12.61
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.19537",
+     "title": "Continuation-Guided LLM Evolution of Program Policies and Goal Compilers in Craftax",
+     "url": "https://arxiv.org/abs/2611.19537",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Coding agents can synthesize and optimize code-based policies from simulator feedback, allowing the resulting program to act with zero inference model calls.",
+     "why": "Enables optimized program execution without requiring any runtime inference model calls.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T00:00:00.000Z",
+     "category": "research",
+     "score": 12.08
+    },
+    {
+     "id": "arxiv:2611.17933",
+     "title": "OutfitterBench: Evaluating LLM Agents on Long-Horizon Resource Allocation and Commitment Coordination",
+     "url": "https://arxiv.org/abs/2611.17933",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "In many long-horizon settings, an agent's own choices create future constraints: committing finite capacity establishes future obligations and forecloses later opportunities.",
+     "why": "Evaluates how early agent commitments constrain future opportunities in long-horizon settings.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 11.57
+    },
+    {
+     "id": "arxiv:2611.18330",
+     "title": "Marimba: A System One Model for Speech",
+     "url": "https://arxiv.org/abs/2611.18330",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Speech applications require decisions about term presence, turn completion, and language within an audio window. We present Marimba, an interface for typed speech decisions built on frozen Qwen3-ASR 0.6B features.",
+     "why": "Provides a streamlined interface for typed speech decisions using frozen feature representations.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-13T00:00:00.000Z",
+     "category": "research",
+     "score": 11.31
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "25449032934427ca",
+     "title": "SenseNova Loop 9B",
+     "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
+     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xylcw4/sensenova_loop_9b/",
+     "sourceIds": [
+      "reddit",
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "Reddit r/LocalLLaMA + r/MachineLearning",
+      "HF trending models"
+     ],
+     "summary": "If the benchmarks are true, this is a 9B looped model on level with Qwen3.8 27B. They say they'll release gguf tomorrow.",
+     "why": "Offers a competitive looped model architecture matching larger baselines at a compact scale.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T10:16:41.000Z",
+     "category": "releases",
+     "score": 11.76
+    },
+    {
+     "id": "34d18f2606ec3302",
+     "title": "sybil-solutions/inference-optimisation-skill",
+     "url": "https://github.com/sybil-solutions/inference-optimisation-skill",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "Agent skill for hill-climbing local LLM serving speed (decode, speculative decoding, prefill, KV, startup, TTFT) on any hardware and quantization · Python",
+     "why": "Provides practical utilities for hill-climbing local LLM inference speed across varied hardware.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T18:40:04.000Z",
+     "category": "releases",
+     "score": 8.29
+    },
+    {
+     "id": "3de9cb2c7a116d96",
+     "title": "boringmarketer/boring-marketing-skills",
+     "url": "https://github.com/boringmarketer/boring-marketing-skills",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "31 free marketing skills for your AI agent: research, positioning, copy, pages, SEO, AI search, ads, email and content, plus a deep local-business pack. MIT. · Python",
+     "why": "Equips AI agents with modular marketing skills for research, copywriting, and local business tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T15:09:46.000Z",
+     "category": "releases",
+     "score": 7.88
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "3047d7657748ea76",
+     "title": "Introducing ChatGPT for Sales",
+     "url": "https://openai.com/index/introducing-chatgpt-for-sales",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "Explore the new Sales plugin and 30+ new and expanded partner plugins in ChatGPT to research prospects, prepare pitches, update your CRM, and move deals forward.",
+     "why": "Integrates dedicated plugins to assist sales professionals with research, pitching, and CRM updates.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T08:00:00.000Z",
+     "category": "labs",
+     "score": 5.09,
+     "readMinutes": 1
+    },
+    {
+     "id": "3212e751c4906b22",
+     "title": "Muse Is Now Available in Australia: The World’s First Personal AI Agent Built for Everyone",
+     "url": "https://about.fb.com/news/2026/11/muse-is-now-available-in-australia/",
+     "sourceIds": [
+      "meta-newsroom-ai"
+     ],
+     "sourceNames": [
+      "Meta Newsroom (AI)"
+     ],
+     "summary": "Muse is available in Australia from today, with local connector experiences across creativity, shopping, property, fitness and entertainment rolling out progressively.",
+     "why": "Launches a personal assistant agent with local connectors for everyday consumer tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T18:00:31.000Z",
+     "category": "labs",
+     "score": 4.41,
+     "readMinutes": 4
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "6f0fb0223e38d4b7",
+     "title": "Running the full server-side Datasette Python app in the browser with service workers and Pyodide",
+     "url": "https://simonwillison.net/2026/Nov/17/datasette-lite/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Datasette Lite is my port of the Datasette Python application to run directly in the browser using WebAssembly and Pyodide. I've released a complete rewrite of Datasette Lite using service workers, and it's now almost indistinguishable from the real server-side application.…",
+     "why": "Brings full server-side Python applications directly into the browser using WebAssembly.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T16:48:33.000Z",
+     "category": "blogs",
+     "score": 3.45,
+     "readMinutes": 10
+    },
+    {
+     "id": "a6c1e35f973d93f1",
+     "title": "Our new book on AI agents is out, and it hit #1",
+     "url": "https://newsletter.languagemodels.co/p/our-new-book-on-ai-agents-is-out",
+     "sourceIds": [
+      "jalammar"
+     ],
+     "sourceNames": [
+      "Jay Alammar (Language Models newsletter)"
+     ],
+     "summary": "From the LLM to the agent, in 300+ hand-crafted figures. Our new O’Reilly book with Maarten Grootendorst, plus a giveaway of five ebook copies.",
+     "why": "Offers a comprehensive visual guide to transitioning from standard language models to autonomous agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-16T14:51:01.000Z",
+     "category": "blogs",
+     "score": 2.61,
+     "readMinutes": 4
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "eba8c0480eb85e20",
+     "title": "Understanding Positional Embeddings in Modern LLMs",
+     "url": "https://magazine.sebastianraschka.com/p/understanding-positional-embeddings",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50506376",
+     "sourceIds": [
+      "raschka",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Ahead of AI (Raschka)",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "The Methods Behind How LLMs Represent Token Positions",
+     "why": "Clarifies the underlying mathematical methods modern language models use to represent token positions.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T12:10:37.000Z",
+     "category": "blogs",
+     "score": 12.47,
+     "readMinutes": 55
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "8f6af8c44a4a1bfb",
+  "21b4758ab52123ac",
+  "4124c7982b17c003",
+  "51ba83f180496126",
+  "arxiv:2611.19537",
+  "arxiv:2611.17933",
+  "arxiv:2611.18330",
+  "25449032934427ca",
+  "34d18f2606ec3302",
+  "3de9cb2c7a116d96",
+  "3047d7657748ea76",
+  "3212e751c4906b22",
+  "6f0fb0223e38d4b7",
+  "a6c1e35f973d93f1",
+  "eba8c0480eb85e20"
+ ],
+ "deepReadId": "eba8c0480eb85e20",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
