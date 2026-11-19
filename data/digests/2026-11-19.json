@@ -1,10 +1,10 @@
 {
  "date": "2026-11-19",
- "generatedAt": "2026-11-19T05:52:52.083Z",
- "wordCount": 685,
+ "generatedAt": "2026-11-19T15:15:07.597Z",
+ "wordCount": 693,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's landscape features major industry movements and technical advances across models and inference. Anthropic has priced its initial public offering of Class A common stock. In model releases, Google DeepMind introduced Gemini 4 Neon alongside the availability of Genie 4, while SenseNova Loop 9B emerged as a compact looped model. Researchers introduced several architectural and optimization techniques, including closed-loop LLM quantization design with agents, direct pixel prediction from diffusion transformers to reduce inference complexity, and looped language models that deepen reasoning at compact parameter counts. Additionally, analysis from Epoch AI revealed that agentic inference capacity grew significantly over a year compared to compute capacity. These developments collectively shape the trajectory of efficient model deployment, reasoning architectures, and commercial AI infrastructure.",
+  "text": "Today's landscape features major industry milestones and technical advances across models, architectures, and market structures. Anthropic has priced its initial public offering of Class A common stock, marking a significant market event. In model releases and announcements, Google DeepMind introduced Gemini 4 Neon alongside the availability of Genie 4. Research contributions address critical efficiency and capability challenges. CurvDelta introduces low-curvature delta modeling for surgical learning and unlearning to preserve general capabilities during adaptation. QDA targets closed-loop LLM quantization design with agents to optimize deployment costs, while Decoding Without a Decoder eliminates traditional decoder complexity by predicting pixels directly from diffusion transformers using a linear head. Additionally, Piccolo presents a family of multimodal decision models spanning sizes from 0.8B to 27B parameter counts that co-evolve capabilities and data through recursive self-improvement.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -20,10 +20,12 @@
      "discussionUrl": "https://news.ycombinator.com/item?id=50553843",
      "sourceIds": [
       "anthropic",
+      "hn-front",
       "hn-top"
      ],
      "sourceNames": [
       "Anthropic",
+      "HN front page",
       "Hacker News"
      ],
      "summary": "Today Anthropic, PBC priced its initial public offering of its Class A common stock.",
@@ -31,7 +33,26 @@
      "whySource": "llm",
      "publishedAt": "2026-11-18T00:00:00.000Z",
      "category": "labs",
-     "score": 18.12
+     "score": 18.66
+    },
+    {
+     "id": "arxiv:2611.24654",
+     "title": "CurvDelta: Low-Curvature Delta Modeling For Surgical Learning and Unlearning",
+     "url": "https://arxiv.org/abs/2611.24654",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "A central challenge in adapting large language models (LLMs) is capability preservation: an adaptation can achieve its target while degrading general capabilities.",
+     "why": "Preserves general model capabilities during adaptation by addressing surgical learning and unlearning via low-curvature delta modeling.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 15.03
     },
     {
      "id": "arxiv:2611.23388",
@@ -48,11 +69,11 @@
       "arXiv cs.LG"
      ],
      "summary": "Post-training quantization is the standard way to serve large language models at low cost. However, the best quantization recipe differs across models and precisions.",
-     "why": "Automates post-training quantization recipes to serve large language models at low cost.",
+     "why": "Optimizes serving costs through closed-loop agentic design for post-training quantization recipes across models and precisions.",
      "whySource": "llm",
      "publishedAt": "2026-11-17T00:00:00.000Z",
      "category": "research",
-     "score": 15.04
+     "score": 14.03
     },
     {
      "id": "be0aed2f51056a6d",
@@ -68,11 +89,36 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Delivers the new Gemini 4 Neon release from Google DeepMind for advanced capabilities.",
+     "why": "Represents a notable new model release capturing significant community attention and discussion on Hacker News.",
      "whySource": "llm",
      "publishedAt": "2026-11-18T21:34:07.000Z",
      "category": "news",
-     "score": 14.37
+     "score": 13.98
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.23808",
+     "title": "PReMind: When Personal Memory Meets Visual Hazards",
+     "url": "https://arxiv.org/abs/2611.23808",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Personalized vision-language assistants use visual observations and personal memories to provide advice tailored to the user.",
+     "why": "Integrates personal memories and visual observations to provide tailored advice in personalized vision-language assistants.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 13.57
     },
     {
      "id": "arxiv:2611.22287",
@@ -87,22 +133,16 @@
       "arXiv cs.CV"
      ],
      "summary": "Latent diffusion models rely on a decoder to map denoised latents to pixels, adding complexity and inference cost. We introduce Decoding Without a Decoder (DWD), which lets a finetuned diffusion transformer produce final pixels directly through a linear head.",
-     "why": "Eliminates the traditional decoder in latent diffusion models for direct pixel prediction.",
+     "why": "Reduces inference cost and complexity by enabling diffusion transformers to predict final pixels directly through a linear head.",
      "whySource": "llm",
      "publishedAt": "2026-11-17T00:00:00.000Z",
      "category": "research",
-     "score": 14.31
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
+     "score": 13.42
+    },
     {
-     "id": "arxiv:2611.24576",
-     "title": "Late Entry in Looped Language Models",
-     "url": "https://arxiv.org/abs/2611.24576",
+     "id": "arxiv:2611.24651",
+     "title": "Piccolo: Co-Evolving Decision Models and Data through Recursive Self-Improvement",
+     "url": "https://arxiv.org/abs/2611.24651",
      "sourceIds": [
       "hf-papers",
       "arxiv-cs.CL"
@@ -111,50 +151,12 @@
       "HF Daily Papers",
       "arXiv cs.CL"
      ],
-     "summary": "Looped language models deepen reasoning at a compact parameter count by iterating a shared layer stack T times per token, turning recurrence depth directly into sequential decoding latency.",
-     "why": "Deepens reasoning in compact parameter counts by iterating a shared layer stack.",
+     "summary": "We present Piccolo, a family of multimodal decision models (0.8B to 27B) that coevolves model capabilities and training data via Agentic Data Engineering and recursive self-improvement (RSI).",
+     "why": "Co-evolves multimodal decision models and training data through recursive self-improvement and agentic data engineering.",
      "whySource": "llm",
      "publishedAt": "2026-11-18T00:00:00.000Z",
      "category": "research",
-     "score": 13.87
-    },
-    {
-     "id": "arxiv:2611.23808",
-     "title": "PReMind: When Personal Memory Meets Visual Hazards",
-     "url": "https://arxiv.org/abs/2611.23808",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Personalized vision-language assistants use visual observations and personal memories to provide advice tailored to the user.",
-     "why": "Combines personal memory with visual observations for tailored assistant advice.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
-     "category": "research",
-     "score": 13.87
-    },
-    {
-     "id": "arxiv:2611.17767",
-     "title": "Learning Anisotropic Prediction Targets for Flow Models",
-     "url": "https://arxiv.org/abs/2611.17767",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Flow-based generative models are trained on a hand-chosen prediction target, such as the velocity, the noise, or the clean data. This choice strongly affects training and sample quality.",
-     "why": "Explores how hand-chosen prediction targets affect training and sample quality in flow models.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-13T00:00:00.000Z",
-     "category": "research",
-     "score": 13.73
+     "score": 13.37
     }
    ]
   },
@@ -162,26 +164,6 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
-    {
-     "id": "25449032934427ca",
-     "title": "SenseNova Loop 9B",
-     "url": "https://huggingface.co/sensenova/SenseNova-Loop-9B",
-     "discussionUrl": "https://www.reddit.com/r/LocalLLaMA/comments/1xylcw4/sensenova_loop_9b/",
-     "sourceIds": [
-      "reddit",
-      "hf-trending"
-     ],
-     "sourceNames": [
-      "Reddit r/LocalLLaMA + r/MachineLearning",
-      "HF trending models"
-     ],
-     "summary": "If the benchmarks are true, this is a 9B looped model on level with Qwen3.8 27B. They say they'll release gguf tomorrow.",
-     "why": "Offers a compact looped model competitive with larger parameter alternatives.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-17T10:16:41.000Z",
-     "category": "releases",
-     "score": 10.48
-    },
     {
      "id": "5a9bda72c1d1f834",
      "title": "black-forest-labs/flux-3-image-klein-comfy",
@@ -193,11 +175,11 @@
       "HF trending models"
      ],
      "summary": "image-to-image · diffusion-single-file · 3,475 likes · 1,037,285 downloads",
-     "why": "Provides new image-to-image single file diffusion capabilities on Hugging Face.",
+     "why": "Provides a new trending image-to-image single file diffusion model with substantial community download activity.",
      "whySource": "llm",
      "publishedAt": "2026-10-14T12:00:13.000Z",
      "category": "releases",
-     "score": 9.45
+     "score": 8.86
     },
     {
      "id": "50a561c320a6e2b2",
@@ -210,11 +192,28 @@
       "HF trending models"
      ],
      "summary": "image-to-3d · idol · 2,475 likes · 37,179 downloads",
-     "why": "Introduces image-to-3d generation capabilities for practical asset creation pipelines.",
+     "why": "Introduces a popular trending image-to-3d model variant for specialized generation tasks.",
      "whySource": "llm",
      "publishedAt": "2026-10-28T15:55:17.000Z",
      "category": "releases",
-     "score": 8.65
+     "score": 8.15
+    },
+    {
+     "id": "f841d7a6d6b4d1e3",
+     "title": "MiniMaxAI/MiniMax-H3-Image",
+     "url": "https://huggingface.co/MiniMaxAI/MiniMax-H3-Image",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "text-to-image · minimax-h3 · 1,570 likes · 759,661 downloads",
+     "why": "Delivers a trending text-to-image model option garnering high download volume on Hugging Face.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T06:34:36.000Z",
+     "category": "releases",
+     "score": 7.84
     }
    ]
   },
@@ -233,11 +232,11 @@
       "Google DeepMind"
      ],
      "summary": "",
-     "why": "Brings the newly introduced Gemini 4 Neon model from Google DeepMind.",
+     "why": "Brings the latest Gemini 4 Neon release directly from Google DeepMind research and development.",
      "whySource": "llm",
      "publishedAt": "2026-11-18T21:35:43.000Z",
      "category": "labs",
-     "score": 5.97
+     "score": 4.98
     },
     {
      "id": "ca9ca0837de1673f",
@@ -250,11 +249,11 @@
       "Google DeepMind"
      ],
      "summary": "",
-     "why": "Makes Genie 4 officially available for users and developers.",
+     "why": "Makes Genie 4 officially available for users and developers through Google DeepMind.",
      "whySource": "llm",
      "publishedAt": "2026-11-18T18:13:42.000Z",
      "category": "labs",
-     "score": 5.59
+     "score": 4.67
     }
    ]
   },
@@ -262,6 +261,24 @@
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
+    {
+     "id": "4f1bc804d7f90920",
+     "title": "AI #195: Opening Bell",
+     "url": "https://thezvi.substack.com/p/ai-195-opening-bell",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Happy Zvi finally takes a real vacation day.",
+     "why": "Offers periodic community commentary and curation on current artificial intelligence developments.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T11:56:26.000Z",
+     "category": "blogs",
+     "score": 4.69,
+     "readMinutes": 86
+    },
     {
      "id": "47219f4638122684",
      "title": "Solomonoff induction with reflective oracles",
@@ -273,30 +290,12 @@
       "Alignment Forum"
      ],
      "summary": "Linkpost for https://arxiv.org/html/2611.14454v1 Our PIBBSS fellow Damini Kusum wrote an excellent paper on prediction with reflective oracle Solomonoff Induction (rOSI).…",
-     "why": "Advances theoretical alignment and prediction via reflective oracle Solomonoff Induction.",
+     "why": "Explores theoretical alignment foundations through prediction with reflective oracle Solomonoff induction.",
      "whySource": "llm",
      "publishedAt": "2026-11-19T04:36:27.000Z",
      "category": "blogs",
-     "score": 3.9,
+     "score": 3.26,
      "readMinutes": 2
-    },
-    {
-     "id": "cd233196d5a3e8c3",
-     "title": "Agentic inference capacity grew 4.6× in a year, versus 2.6× for compute capacity",
-     "url": "https://epoch.ai/data-insights/agentic-inference-capacity-growth",
-     "sourceIds": [
-      "epoch"
-     ],
-     "sourceNames": [
-      "Epoch AI"
-     ],
-     "summary": "Our Inference Performance Index and chip sales data show agentic inference capacity grew nearly twice as much as 8-bit compute.",
-     "why": "Quantifies the rapid growth of agentic inference capacity relative to compute capacity.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
-     "category": "blogs",
-     "score": 3.38,
-     "readMinutes": 1
     }
    ]
   },
@@ -315,11 +314,11 @@
       "Import AI"
      ],
      "summary": "Plus: CucumberVision!",
-     "why": "Surveys emerging trends in AI sub-contractors and wet labs for AI development.",
+     "why": "Surveys emerging trends in AI sub-contractors, wet labs, and development subterfuge.",
      "whySource": "llm",
      "publishedAt": "2026-11-16T14:01:15.000Z",
      "category": "blogs",
-     "score": 1.75,
+     "score": 1.46,
      "readMinutes": 17
     }
    ]
@@ -327,19 +326,19 @@
  ],
  "itemIds": [
   "76db4fd405ce28bb",
+  "arxiv:2611.24654",
   "arxiv:2611.23388",
   "be0aed2f51056a6d",
-  "arxiv:2611.22287",
-  "arxiv:2611.24576",
   "arxiv:2611.23808",
-  "arxiv:2611.17767",
-  "25449032934427ca",
+  "arxiv:2611.22287",
+  "arxiv:2611.24651",
   "5a9bda72c1d1f834",
   "50a561c320a6e2b2",
+  "f841d7a6d6b4d1e3",
   "fd9bebbff7e69286",
   "ca9ca0837de1673f",
+  "4f1bc804d7f90920",
   "47219f4638122684",
-  "cd233196d5a3e8c3",
   "0b0c9df79f2d6f2b"
  ],
  "deepReadId": "0b0c9df79f2d6f2b",
