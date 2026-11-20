@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-19T15:15:07.597Z",
- "durationMs": 16699,
- "itemCount": 1581,
- "newItemCount": 24,
+ "generatedAt": "2026-11-20T00:17:55.347Z",
+ "durationMs": 9268,
+ "itemCount": 1545,
+ "newItemCount": 44,
  "trimmedForSize": 0,
  "sources": {
   "arxiv-cs.LG": {
@@ -12,7 +12,7 @@
    "fetched": 370,
    "kept": 60,
    "skipped": 310,
-   "ms": 308,
+   "ms": 272,
    "httpStatus": 200
   },
   "arxiv-cs.CL": {
@@ -22,7 +22,7 @@
    "fetched": 134,
    "kept": 60,
    "skipped": 74,
-   "ms": 1057,
+   "ms": 1051,
    "httpStatus": 200
   },
   "arxiv-cs.AI": {
@@ -32,7 +32,7 @@
    "fetched": 362,
    "kept": 60,
    "skipped": 302,
-   "ms": 2102,
+   "ms": 2081,
    "httpStatus": 200
   },
   "arxiv-cs.CV": {
@@ -42,7 +42,7 @@
    "fetched": 340,
    "kept": 60,
    "skipped": 280,
-   "ms": 3095,
+   "ms": 3091,
    "httpStatus": 200
   },
   "hf-papers": {
@@ -52,7 +52,7 @@
    "fetched": 100,
    "kept": 60,
    "skipped": 40,
-   "ms": 335,
+   "ms": 288,
    "httpStatus": 200,
    "homepage": "https://huggingface.co/papers"
   },
@@ -60,10 +60,10 @@
    "name": "Hacker News",
    "category": "news",
    "status": "ok",
-   "fetched": 63,
-   "kept": 17,
-   "skipped": 46,
-   "ms": 440,
+   "fetched": 54,
+   "kept": 21,
+   "skipped": 33,
+   "ms": 327,
    "httpStatus": 200
   },
   "hn-front": {
@@ -71,9 +71,9 @@
    "category": "news",
    "status": "ok",
    "fetched": 30,
-   "kept": 3,
-   "skipped": 27,
-   "ms": 2079,
+   "kept": 5,
+   "skipped": 25,
+   "ms": 434,
    "httpStatus": 200
   },
   "reddit": {
@@ -83,19 +83,19 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 125,
+   "ms": 96,
    "httpStatus": 404,
    "error": "HTTP 404",
-   "detail": "server=snooserv; content-type=application/atom+xml; charset=UTF-8; body=\"2026-11-19T15:15:08Z https://rss.reddit.com/ Not Found\""
+   "detail": "server=snooserv; content-type=application/atom+xml; charset=UTF-8; body=\"2026-11-20T00:17:55Z https://rss.reddit.com/ Not Found\""
   },
   "openai": {
    "name": "OpenAI",
    "category": "labs",
    "status": "ok",
-   "fetched": 1413,
-   "kept": 27,
-   "skipped": 1386,
-   "ms": 189,
+   "fetched": 1418,
+   "kept": 30,
+   "skipped": 1388,
+   "ms": 158,
    "httpStatus": 200
   },
   "anthropic": {
@@ -103,9 +103,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 595,
-   "kept": 4,
-   "skipped": 591,
-   "ms": 348,
+   "kept": 3,
+   "skipped": 592,
+   "ms": 151,
    "httpStatus": 200,
    "homepage": "https://www.anthropic.com/news"
   },
@@ -114,9 +114,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 100,
-   "kept": 3,
-   "skipped": 97,
-   "ms": 575,
+   "kept": 2,
+   "skipped": 98,
+   "ms": 194,
    "httpStatus": 200
   },
   "google-research": {
@@ -124,9 +124,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 100,
-   "kept": 1,
-   "skipped": 99,
-   "ms": 505,
+   "kept": 2,
+   "skipped": 98,
+   "ms": 332,
    "httpStatus": 200
   },
   "meta-newsroom-ai": {
@@ -136,7 +136,7 @@
    "fetched": 10,
    "kept": 2,
    "skipped": 8,
-   "ms": 241,
+   "ms": 76,
    "httpStatus": 200
   },
   "meta-engineering-ai": {
@@ -146,7 +146,7 @@
    "fetched": 9,
    "kept": 0,
    "skipped": 9,
-   "ms": 222,
+   "ms": 105,
    "httpStatus": 200
   },
   "microsoft-research": {
@@ -154,9 +154,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 10,
-   "kept": 3,
-   "skipped": 7,
-   "ms": 928,
+   "kept": 2,
+   "skipped": 8,
+   "ms": 800,
    "httpStatus": 200
   },
   "nvidia-dev": {
@@ -164,9 +164,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 100,
-   "kept": 13,
-   "skipped": 87,
-   "ms": 245,
+   "kept": 16,
+   "skipped": 84,
+   "ms": 294,
    "httpStatus": 200
   },
   "hf-blog": {
@@ -174,9 +174,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 913,
-   "kept": 10,
-   "skipped": 903,
-   "ms": 159,
+   "kept": 9,
+   "skipped": 904,
+   "ms": 55,
    "httpStatus": 200
   },
   "allenai": {
@@ -184,9 +184,9 @@
    "category": "labs",
    "status": "ok",
    "fetched": 25,
-   "kept": 2,
-   "skipped": 23,
-   "ms": 180,
+   "kept": 3,
+   "skipped": 22,
+   "ms": 418,
    "httpStatus": 200
   },
   "mistral": {
@@ -196,7 +196,7 @@
    "fetched": 94,
    "kept": 0,
    "skipped": 94,
-   "ms": 150,
+   "ms": 73,
    "httpStatus": 200
   },
   "transformer-circuits": {
@@ -206,7 +206,7 @@
    "fetched": 57,
    "kept": 0,
    "skipped": 57,
-   "ms": 205,
+   "ms": 70,
    "httpStatus": 200
   },
   "lilog": {
@@ -216,7 +216,7 @@
    "fetched": 53,
    "kept": 0,
    "skipped": 53,
-   "ms": 58,
+   "ms": 65,
    "httpStatus": 200
   },
   "interconnects": {
@@ -226,7 +226,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 122,
+   "ms": 224,
    "httpStatus": 200
   },
   "raschka": {
@@ -236,7 +236,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 237,
+   "ms": 146,
    "httpStatus": 200
   },
   "simonw": {
@@ -246,7 +246,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 328,
+   "ms": 119,
    "httpStatus": 200
   },
   "chiphuyen": {
@@ -256,7 +256,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 1833,
+   "ms": 195,
    "httpStatus": 200
   },
   "eugeneyan": {
@@ -266,7 +266,7 @@
    "fetched": 214,
    "kept": 0,
    "skipped": 214,
-   "ms": 333,
+   "ms": 145,
    "httpStatus": 200
   },
   "hamel": {
@@ -276,17 +276,17 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 299,
+   "ms": 143,
    "httpStatus": 200
   },
   "semianalysis": {
    "name": "SemiAnalysis",
    "category": "blogs",
-   "status": "ok",
+   "status": "empty",
    "fetched": 20,
-   "kept": 1,
-   "skipped": 19,
-   "ms": 210,
+   "kept": 0,
+   "skipped": 20,
+   "ms": 188,
    "httpStatus": 200
   },
   "importai": {
@@ -296,7 +296,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 519,
+   "ms": 322,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -305,9 +305,9 @@
    "category": "blogs",
    "status": "ok",
    "fetched": 20,
-   "kept": 8,
-   "skipped": 12,
-   "ms": 538,
+   "kept": 9,
+   "skipped": 11,
+   "ms": 583,
    "httpStatus": 200,
    "note": "redirected to https://latent.space/feed"
   },
@@ -318,7 +318,7 @@
    "fetched": 20,
    "kept": 5,
    "skipped": 15,
-   "ms": 871,
+   "ms": 616,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -329,7 +329,7 @@
    "fetched": 3445,
    "kept": 6,
    "skipped": 3439,
-   "ms": 647,
+   "ms": 284,
    "httpStatus": 200,
    "note": "via relay",
    "homepage": "https://www.deeplearning.ai/the-batch/"
@@ -341,7 +341,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 209,
+   "ms": 279,
    "httpStatus": 200
   },
   "gradient": {
@@ -351,7 +351,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 941,
+   "ms": 538,
    "httpStatus": 200
   },
   "epoch": {
@@ -359,19 +359,19 @@
    "category": "blogs",
    "status": "ok",
    "fetched": 50,
-   "kept": 4,
-   "skipped": 46,
-   "ms": 293,
+   "kept": 3,
+   "skipped": 47,
+   "ms": 142,
    "httpStatus": 200
   },
   "epoch-gradient-updates": {
    "name": "Epoch AI Gradient Updates",
    "category": "blogs",
-   "status": "ok",
+   "status": "empty",
    "fetched": 20,
-   "kept": 1,
-   "skipped": 19,
-   "ms": 331,
+   "kept": 0,
+   "skipped": 20,
+   "ms": 226,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -382,7 +382,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 231,
+   "ms": 394,
    "httpStatus": 200
   },
   "chinai": {
@@ -392,7 +392,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 314,
+   "ms": 269,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -403,7 +403,7 @@
    "fetched": 12,
    "kept": 1,
    "skipped": 11,
-   "ms": 194,
+   "ms": 102,
    "httpStatus": 200
   },
   "karpathy-blog": {
@@ -413,7 +413,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 165,
+   "ms": 124,
    "httpStatus": 200
   },
   "karpathy-bearblog": {
@@ -423,7 +423,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 275,
+   "ms": 151,
    "httpStatus": 200
   },
   "horace": {
@@ -433,7 +433,7 @@
    "fetched": 6,
    "kept": 0,
    "skipped": 6,
-   "ms": 132,
+   "ms": 168,
    "httpStatus": 200,
    "homepage": "https://horace.io"
   },
@@ -444,7 +444,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 1645,
+   "ms": 1425,
    "httpStatus": 200
   },
   "gh-rel-vllm": {
@@ -454,7 +454,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 1204,
+   "ms": 1034,
    "httpStatus": 200
   },
   "gh-rel-transformers": {
@@ -464,7 +464,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 1332,
+   "ms": 1228,
    "httpStatus": 200
   },
   "gh-rel-llamacpp": {
@@ -474,7 +474,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 757,
+   "ms": 837,
    "httpStatus": 200
   },
   "gh-rel-sglang": {
@@ -484,7 +484,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 2729,
+   "ms": 3471,
    "httpStatus": 200
   },
   "gh-rel-unsloth": {
@@ -494,7 +494,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 2602,
+   "ms": 2336,
    "httpStatus": 200
   },
   "gh-rel-trl": {
@@ -502,9 +502,9 @@
    "category": "releases",
    "status": "ok",
    "fetched": 10,
-   "kept": 2,
-   "skipped": 8,
-   "ms": 992,
+   "kept": 3,
+   "skipped": 7,
+   "ms": 1089,
    "httpStatus": 200
   },
   "gh-rel-torchtitan": {
@@ -514,7 +514,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 321,
+   "ms": 219,
    "httpStatus": 200
   },
   "gh-trending-llm": {
@@ -524,7 +524,7 @@
    "fetched": 30,
    "kept": 15,
    "skipped": 15,
-   "ms": 1010,
+   "ms": 899,
    "httpStatus": 200
   },
   "gh-trending-ml": {
@@ -532,9 +532,9 @@
    "category": "releases",
    "status": "ok",
    "fetched": 30,
-   "kept": 1,
-   "skipped": 29,
-   "ms": 1846,
+   "kept": 3,
+   "skipped": 27,
+   "ms": 1963,
    "httpStatus": 200
   },
   "gh-trending-agents": {
@@ -544,7 +544,7 @@
    "fetched": 30,
    "kept": 15,
    "skipped": 15,
-   "ms": 2907,
+   "ms": 2696,
    "httpStatus": 200
   },
   "hf-trending": {
@@ -554,7 +554,7 @@
    "fetched": 20,
    "kept": 20,
    "skipped": 0,
-   "ms": 92,
+   "ms": 23,
    "httpStatus": 200
   },
   "pod-dwarkesh": {
@@ -564,7 +564,7 @@
    "fetched": 147,
    "kept": 2,
    "skipped": 145,
-   "ms": 261,
+   "ms": 229,
    "httpStatus": 200,
    "note": "via relay",
    "homepage": "https://www.dwarkesh.com"
@@ -572,11 +572,11 @@
   "pod-mlst": {
    "name": "Machine Learning Street Talk",
    "category": "media",
-   "status": "empty",
-   "fetched": 273,
-   "kept": 0,
+   "status": "ok",
+   "fetched": 274,
+   "kept": 1,
    "skipped": 273,
-   "ms": 213,
+   "ms": 160,
    "httpStatus": 200
   },
   "pod-cogrev": {
@@ -586,7 +586,7 @@
    "fetched": 396,
    "kept": 1,
    "skipped": 395,
-   "ms": 377,
+   "ms": 573,
    "httpStatus": 200
   },
   "pod-nopriors": {
@@ -596,7 +596,7 @@
    "fetched": 189,
    "kept": 0,
    "skipped": 189,
-   "ms": 194,
+   "ms": 518,
    "httpStatus": 200
   },
   "yt-karpathy": {
@@ -606,7 +606,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 443,
+   "ms": 303,
    "httpStatus": 200,
    "note": "api"
   },
@@ -617,18 +617,18 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 165,
+   "ms": 265,
    "httpStatus": 200,
    "note": "api"
   },
   "yt-aiexplained": {
    "name": "AI Explained",
    "category": "media",
-   "status": "empty",
+   "status": "ok",
    "fetched": 15,
-   "kept": 0,
-   "skipped": 15,
-   "ms": 227,
+   "kept": 1,
+   "skipped": 14,
+   "ms": 178,
    "httpStatus": 200,
    "note": "api"
   },
@@ -637,9 +637,9 @@
    "category": "media",
    "status": "ok",
    "fetched": 15,
-   "kept": 2,
-   "skipped": 13,
-   "ms": 145,
+   "kept": 3,
+   "skipped": 12,
+   "ms": 484,
    "httpStatus": 200,
    "note": "api"
   },
@@ -650,7 +650,7 @@
    "fetched": 15,
    "kept": 5,
    "skipped": 10,
-   "ms": 129,
+   "ms": 162,
    "httpStatus": 200,
    "note": "api"
   },
@@ -661,7 +661,7 @@
    "fetched": 15,
    "kept": 2,
    "skipped": 13,
-   "ms": 67,
+   "ms": 141,
    "httpStatus": 200,
    "note": "api"
   }
@@ -682,6 +682,7 @@
    "https://anthropic.com/research/coding-agents-social-sciences": "2026-11-18T17:12:33.279Z",
    "https://anthropic.com/news/anthropic-institute-agenda": "2026-11-18T17:12:33.278Z",
    "https://anthropic.com/news/advancing-claude-for-financial-services": "2026-11-17T17:10:23.887Z",
+   "https://anthropic.com/research/building-strong-safety-evaluations": "2026-11-17T13:46:19.009Z",
    "https://anthropic.com/news/canadian-ai-research": "2026-11-16T20:50:34.490Z",
    "https://anthropic.com/news/singapore-office-opening": "2026-11-16T20:50:09.800Z",
    "https://anthropic.com/news/wellbeing-research-grants": "2026-11-16T20:46:19.203Z",
@@ -699,8 +700,7 @@
    "https://anthropic.com/research/making-claude-a-chemist": "2026-11-13T22:37:05.639Z",
    "https://anthropic.com/research/petri-open-source-auditing": "2026-11-13T22:37:05.639Z",
    "https://anthropic.com/research/persona-selection-model": "2026-11-13T22:37:05.638Z",
-   "https://anthropic.com/research/project-fetch-robot-dog": "2026-11-13T22:37:05.638Z",
-   "https://anthropic.com/research/evaluating-feature-steering": "2026-11-13T22:37:05.636Z"
+   "https://anthropic.com/research/project-fetch-robot-dog": "2026-11-13T22:37:05.638Z"
   },
   "thebatch": {}
  },
@@ -717,12 +717,6 @@
     "title": "Claude Fable 5.2 solves two open problems in the physics of black holes",
     "summary": "Claude Fable 5.2 has solved two open problems in theoretical physics. Both concern black holes and the search for a theory of quantum gravity.",
     "publishedAt": "2026-11-17T00:00:00.000Z"
-   },
-   "https://anthropic.com/research/building-strong-safety-evaluations": {
-    "lastmod": "2026-11-17T13:46:19.009Z",
-    "title": "Building strong safety evaluations",
-    "summary": "Recommendations for designing, running, and reporting safety evaluations, based on our own experiences.",
-    "publishedAt": "2026-11-13T00:00:00.000Z"
    },
    "https://anthropic.com/research/coordinated-vulnerability-disclosure-timelines": {
     "lastmod": "2026-11-16T14:32:08.228Z",
@@ -780,15 +774,15 @@
    "rejected": 0
   },
   "usage": {
-   "prompt": 1439,
-   "completion": 741,
-   "total": 2180
+   "prompt": 1525,
+   "completion": 784,
+   "total": 2309
   },
-  "ms": 8452
+  "ms": 2579
  },
  "brief": {
-  "date": "2026-11-19",
-  "wordCount": 693,
+  "date": "2026-11-20",
+  "wordCount": 796,
   "readingMinutes": 4
  },
  "static": {

@@ -1,0 +1,354 @@
+{
+ "date": "2026-11-20",
+ "generatedAt": "2026-11-20T00:17:55.347Z",
+ "wordCount": 796,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's artificial intelligence landscape features major corporate milestones, foundational research breakthroughs, and critical infrastructure updates. Anthropic made its official Nasdaq debut, while Claude Fable 5.2 solved two open problems in theoretical physics concerning black holes and quantum gravity. In research, new techniques explore looped language models that deepen reasoning at compact parameter counts by iterating a shared layer stack, alongside benchmarks like TabBioMed for structured biomedical tabular learning and shared n-gram embeddings in Chorus. Systems engineering also advanced significantly, highlighted by OpenAI's Performance Factory keeping ChatGPT fast using Codex-powered workflows, alongside the release of PostgreSQL 19 following an AI-reported vulnerability period. Finally, open-source model releases and developer toolkits continue to expand rapidly, ranging from unsloth/Qwen3.8-27B-GGUF and HuggingFaceTB/SmolVLM2-256M-Video-Instruct to Blender integrations, Google's Gemini 4 Neon pricing updates, and discussions surrounding hardware and local AI futures.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "3277cf52dcd23547",
+     "title": "Claude Fable 5.2 solves two open problems in the physics of black holes",
+     "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50563148",
+     "sourceIds": [
+      "anthropic",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Anthropic",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "Claude Fable 5.2 has solved two open problems in theoretical physics. Both concern black holes and the search for a theory of quantum gravity.",
+     "why": "Claude Fable 5.2 solved two open problems in black hole physics and quantum gravity.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T00:00:00.000Z",
+     "category": "labs",
+     "score": 19.01
+    },
+    {
+     "id": "7b4d99ca3afbdd8c",
+     "title": "Anthropic’s Nasdaq debut",
+     "url": "https://www.reuters.com/business/finance/anthropics-historic-debut-put-ais-promise-peril-wall-st-test-2026-11-19/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50562754",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Anthropic made its official Nasdaq debut, marking a major milestone for the company.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T17:02:40.000Z",
+     "category": "news",
+     "score": 15.31
+    },
+    {
+     "id": "arxiv:2611.24576",
+     "title": "Late Entry in Looped Language Models",
+     "url": "https://arxiv.org/abs/2611.24576",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Looped language models deepen reasoning at a compact parameter count by iterating a shared layer stack T times per token, turning recurrence depth directly into sequential decoding latency.",
+     "why": "Looped language models deepen reasoning at compact parameter counts by iterating a shared layer stack.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 12.84
+    },
+    {
+     "id": "e39600edda0e5acc",
+     "title": "Pete warden on local AI, open models, voice interfaces, the future of hardware",
+     "url": "https://thedataexchange.media/pete-warden-moonshine/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50561508",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Pete warden discusses local AI, open models, voice interfaces, and future hardware.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T15:38:12.000Z",
+     "category": "news",
+     "score": 12.73
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.23779",
+     "title": "TabBioMed: A Large-Scale Benchmark for Biomedical Tabular Learning",
+     "url": "https://arxiv.org/abs/2611.23779",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "Recent advances in machine learning have accelerated biomedical prediction, but evaluation on structured biomedical data remains fragmented, especially for datasets with high dimensionality, large sample size, missingness, and class imbalance.",
+     "why": "TabBioMed provides a large-scale benchmark for structured biomedical tabular learning and missingness.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 12.52
+    },
+    {
+     "id": "arxiv:2611.23751",
+     "title": "Thinking Fast, Anywhere: One System-1 for the Decision Points of Any Agent Workflow",
+     "url": "https://arxiv.org/abs/2611.23751",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI",
+      "arXiv cs.CL"
+     ],
+     "summary": "Autonomous LLM agents incur substantial cost and latency by invoking a large model (System-2) at every step, even when many intermediate actions choose among a small set of known candidates.",
+     "why": "This approach introduces a System-1 agent workflow to reduce the cost and latency of LLM calls.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 12.1
+    },
+    {
+     "id": "arxiv:2611.23386",
+     "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
+     "url": "https://arxiv.org/abs/2611.23386",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Language models can gain capacity at little computational cost from n-gram embedding tables: large tables of learned vectors for short sequences of consecutive tokens, which are looked up and added to the model's input or to its intermediate layers.",
+     "why": "Chorus adds capacity to language models at low computational cost using shared n-gram embedding tables.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T00:00:00.000Z",
+     "category": "research",
+     "score": 11.84
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "bb6e58f548947f8d",
+     "title": "unsloth/Qwen3.8-27B-GGUF",
+     "url": "https://huggingface.co/unsloth/Qwen3.8-27B-GGUF",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "6,233 likes · 7,138,192 downloads",
+     "why": "unsloth/Qwen3.8-27B-GGUF gained significant attention with thousands of downloads and likes on Hugging Face.",
+     "whySource": "llm",
+     "publishedAt": "2026-08-13T08:28:40.000Z",
+     "category": "releases",
+     "score": 10.3
+    },
+    {
+     "id": "079a57dfe32b33e8",
+     "title": "bookwjitchieni1986/blender-ai-mcp-addon",
+     "url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
+     "sourceIds": [
+      "gh-trending-agents",
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents",
+      "GitHub new repos: llm"
+     ],
+     "summary": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode.",
+     "why": "This tool brings visual chat, scene tools, and multi-agent workflows directly into Blender.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T14:43:10.000Z",
+     "category": "releases",
+     "score": 8.48
+    },
+    {
+     "id": "6df78cbff478a3d2",
+     "title": "HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
+     "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-text · transformers · 272 likes · 44,604 downloads",
+     "why": "HuggingFaceTB/SmolVLM2-256M-Video-Instruct offers a new image-text-to-text transformer model release.",
+     "whySource": "llm",
+     "publishedAt": "2025-02-11T07:06:01.000Z",
+     "category": "releases",
+     "score": 8.05
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "42a47f4c360b7d6e",
+     "title": "A game you cannot win unless you have a quantum computer",
+     "url": "https://research.google/blog/a-game-you-cannot-win-unless-you-have-a-quantum-computer/",
+     "sourceIds": [
+      "google-research"
+     ],
+     "sourceNames": [
+      "Google Research"
+     ],
+     "summary": "Quantum",
+     "why": "Google Research highlights a game requiring a quantum computer to win.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T20:03:00.000Z",
+     "category": "labs",
+     "score": 5.53,
+     "readMinutes": 1
+    },
+    {
+     "id": "9342dbf934e428aa",
+     "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
+     "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.",
+     "why": "OpenAI details the Performance Factory and its Codex-powered workflows for maintaining ChatGPT speed.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T08:00:00.000Z",
+     "category": "labs",
+     "score": 5.11,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "1df80ba4eb1bc779",
+     "title": "PostgreSQL 19 Released",
+     "url": "https://simonwillison.net/2026/Nov/19/postgresql-19/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "PostgreSQL 19 Released Most years PostgreSQL ships a new release in September, but this year's release came two months later thanks mainly to the flurry of issues that the PostgreSQL team needed to address as part of the ongoing AI-reported vulnerability apocalypse.",
+     "why": "PostgreSQL 19 shipped with delays caused by addressing issues during the AI-reported vulnerability period.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T20:43:57.000Z",
+     "category": "blogs",
+     "score": 3.73,
+     "readMinutes": 3
+    },
+    {
+     "id": "8c4432adfe17d06c",
+     "title": "llm-gemini 0.38",
+     "url": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Release: llm-gemini 0.38 Today Google introduced Gemini 4 Neon. I wrote recently about how confusing the pricing for the Gemini 4 series was - Neon has somehow made this even worse.",
+     "why": "Google introduced Gemini 4 Neon alongside continued confusion regarding Gemini series pricing.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T23:59:20.000Z",
+     "category": "blogs",
+     "score": 2.5,
+     "readMinutes": 2
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "accfdc99034c3112",
+     "title": "Jensen Huang Really Liked Selling China Advanced AI Chips",
+     "url": "https://thezvi.substack.com/p/jensen-huang-really-liked-selling",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "This scandal is a really big deal.",
+     "why": "An analysis explores Jensen Huang selling advanced AI chips to China as a major scandal.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T14:41:58.000Z",
+     "category": "blogs",
+     "score": 1.65,
+     "readMinutes": 41
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "3277cf52dcd23547",
+  "7b4d99ca3afbdd8c",
+  "arxiv:2611.24576",
+  "e39600edda0e5acc",
+  "arxiv:2611.23779",
+  "arxiv:2611.23751",
+  "arxiv:2611.23386",
+  "bb6e58f548947f8d",
+  "079a57dfe32b33e8",
+  "6df78cbff478a3d2",
+  "42a47f4c360b7d6e",
+  "9342dbf934e428aa",
+  "1df80ba4eb1bc779",
+  "8c4432adfe17d06c",
+  "accfdc99034c3112"
+ ],
+ "deepReadId": "accfdc99034c3112",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
