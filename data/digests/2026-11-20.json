@@ -1,13 +1,9 @@
 {
  "date": "2026-11-20",
- "generatedAt": "2026-11-20T00:17:55.347Z",
- "wordCount": 796,
- "readingMinutes": 4,
- "overview": {
-  "text": "Today's artificial intelligence landscape features major corporate milestones, foundational research breakthroughs, and critical infrastructure updates. Anthropic made its official Nasdaq debut, while Claude Fable 5.2 solved two open problems in theoretical physics concerning black holes and quantum gravity. In research, new techniques explore looped language models that deepen reasoning at compact parameter counts by iterating a shared layer stack, alongside benchmarks like TabBioMed for structured biomedical tabular learning and shared n-gram embeddings in Chorus. Systems engineering also advanced significantly, highlighted by OpenAI's Performance Factory keeping ChatGPT fast using Codex-powered workflows, alongside the release of PostgreSQL 19 following an AI-reported vulnerability period. Finally, open-source model releases and developer toolkits continue to expand rapidly, ranging from unsloth/Qwen3.8-27B-GGUF and HuggingFaceTB/SmolVLM2-256M-Video-Instruct to Blender integrations, Google's Gemini 4 Neon pricing updates, and discussions surrounding hardware and local AI futures.",
-  "source": "llm",
-  "model": "gemini-3.5-flash-lite"
- },
+ "generatedAt": "2026-11-20T14:54:04.146Z",
+ "wordCount": 617,
+ "readingMinutes": 3,
+ "overview": null,
  "sections": [
   {
    "key": "must-know",
@@ -29,11 +25,49 @@
       "Hacker News"
      ],
      "summary": "Claude Fable 5.2 has solved two open problems in theoretical physics. Both concern black holes and the search for a theory of quantum gravity.",
-     "why": "Claude Fable 5.2 solved two open problems in black hole physics and quantum gravity.",
-     "whySource": "llm",
+     "why": "519 points on HN, 247 comments",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-17T00:00:00.000Z",
      "category": "labs",
-     "score": 19.01
+     "score": 17.89
+    },
+    {
+     "id": "arxiv:2611.25387",
+     "title": "TuringSpace: Grounding Spatial Intelligence in Action with Interactive CAPTCHAs",
+     "url": "https://arxiv.org/abs/2611.25387",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "Humans act in the visual world by inferring the 3D layout behind a 2D view, predicting how an action changes it, and correcting themselves after seeing the result. Can multimodal large language models (MLLMs) do the same?",
+     "why": "21 upvotes on HF Papers; also on arXiv cs.LG",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-19T00:00:00.000Z",
+     "category": "research",
+     "score": 15.07
+    },
+    {
+     "id": "arxiv:2611.26073",
+     "title": "AltRA-Test: An Alternative Annotator Test for LLM Judges Without Shared Annotators",
+     "url": "https://arxiv.org/abs/2611.26073",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Large language models (LLMs) are increasingly used as judges and graders to replace human annotators, raising the question of when such replacement is statistically justified.",
+     "why": "14 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-19T00:00:00.000Z",
+     "category": "research",
+     "score": 14.52
     },
     {
      "id": "7b4d99ca3afbdd8c",
@@ -49,50 +83,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Anthropic made its official Nasdaq debut, marking a major milestone for the company.",
-     "whySource": "llm",
+     "why": "1.1k points on HN, 2.2k comments",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-19T17:02:40.000Z",
      "category": "news",
-     "score": 15.31
-    },
-    {
-     "id": "arxiv:2611.24576",
-     "title": "Late Entry in Looped Language Models",
-     "url": "https://arxiv.org/abs/2611.24576",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "Looped language models deepen reasoning at a compact parameter count by iterating a shared layer stack T times per token, turning recurrence depth directly into sequential decoding latency.",
-     "why": "Looped language models deepen reasoning at compact parameter counts by iterating a shared layer stack.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
-     "category": "research",
-     "score": 12.84
-    },
-    {
-     "id": "e39600edda0e5acc",
-     "title": "Pete warden on local AI, open models, voice interfaces, the future of hardware",
-     "url": "https://thedataexchange.media/pete-warden-moonshine/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50561508",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Pete warden discusses local AI, open models, voice interfaces, and future hardware.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-19T15:38:12.000Z",
-     "category": "news",
-     "score": 12.73
+     "score": 14.45
     }
    ]
   },
@@ -101,49 +96,9 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.23779",
-     "title": "TabBioMed: A Large-Scale Benchmark for Biomedical Tabular Learning",
-     "url": "https://arxiv.org/abs/2611.23779",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.LG"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.LG"
-     ],
-     "summary": "Recent advances in machine learning have accelerated biomedical prediction, but evaluation on structured biomedical data remains fragmented, especially for datasets with high dimensionality, large sample size, missingness, and class imbalance.",
-     "why": "TabBioMed provides a large-scale benchmark for structured biomedical tabular learning and missingness.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
-     "category": "research",
-     "score": 12.52
-    },
-    {
-     "id": "arxiv:2611.23751",
-     "title": "Thinking Fast, Anywhere: One System-1 for the Decision Points of Any Agent Workflow",
-     "url": "https://arxiv.org/abs/2611.23751",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI",
-      "arXiv cs.CL"
-     ],
-     "summary": "Autonomous LLM agents incur substantial cost and latency by invoking a large model (System-2) at every step, even when many intermediate actions choose among a small set of known candidates.",
-     "why": "This approach introduces a System-1 agent workflow to reduce the cost and latency of LLM calls.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
-     "category": "research",
-     "score": 12.1
-    },
-    {
-     "id": "arxiv:2611.23386",
-     "title": "Chorus: Shared N-gram Embeddings with Layer-wise Adaptation",
-     "url": "https://arxiv.org/abs/2611.23386",
+     "id": "arxiv:2611.26286",
+     "title": "Twice-Told Critiques: Claim-Level Homogenization of Peer Review in the LLM Era",
+     "url": "https://arxiv.org/abs/2611.26286",
      "sourceIds": [
       "hf-papers",
       "arxiv-cs.CL"
@@ -152,12 +107,50 @@
       "HF Daily Papers",
       "arXiv cs.CL"
      ],
-     "summary": "Language models can gain capacity at little computational cost from n-gram embedding tables: large tables of learned vectors for short sequences of consecutive tokens, which are looked up and added to the model's input or to its intermediate layers.",
-     "why": "Chorus adds capacity to language models at low computational cost using shared n-gram embedding tables.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-17T00:00:00.000Z",
+     "summary": "Peer review relies on several readers finding different problems. We measure critique overlap in conference and journal reviews.",
+     "why": "7 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-19T00:00:00.000Z",
      "category": "research",
-     "score": 11.84
+     "score": 13.61
+    },
+    {
+     "id": "arxiv:2611.25279",
+     "title": "Accord: Universal Online Metric Localization and Dense Mapping from one Camera and an IMU",
+     "url": "https://arxiv.org/abs/2611.25279",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Dense metric mapping from a single camera and IMU remains challenging: visual-inertial odometry (VIO) provides metric motion but sparse geometry, whereas feed-forward depth models predict dense structure without ensuring metric scale.",
+     "why": "6 upvotes on HF Papers; also on arXiv cs.CV",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 13.42
+    },
+    {
+     "id": "arxiv:2611.24809",
+     "title": "On-Policy Morphing into Hybrid Attention Models",
+     "url": "https://arxiv.org/abs/2611.24809",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Hybrid attention models combine full and linear attention to achieve a better quality--efficiency trade-off. Converting pretrained Transformers into such models requires identifying which layers should retain full attention under a prescribed budget.",
+     "why": "8 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 13.17
     }
    ]
   },
@@ -165,6 +158,23 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
+    {
+     "id": "73e1243414bd6b3f",
+     "title": "DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "url": "https://huggingface.co/DavidAU/Qwen3.8-27B-TURBO-Fable-Cold-Fusion-735-882-Heretic-Uncensored-NEO-CODER-MAX-MTP-GGUF",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-text · 3,430 likes · 1,807,159 downloads",
+     "why": "3.4k likes on Hugging Face",
+     "whySource": "heuristic",
+     "publishedAt": "2026-09-01T07:01:09.000Z",
+     "category": "releases",
+     "score": 9.87
+    },
     {
      "id": "bb6e58f548947f8d",
      "title": "unsloth/Qwen3.8-27B-GGUF",
@@ -176,47 +186,28 @@
       "HF trending models"
      ],
      "summary": "6,233 likes · 7,138,192 downloads",
-     "why": "unsloth/Qwen3.8-27B-GGUF gained significant attention with thousands of downloads and likes on Hugging Face.",
-     "whySource": "llm",
+     "why": "6.3k likes on Hugging Face",
+     "whySource": "heuristic",
      "publishedAt": "2026-08-13T08:28:40.000Z",
      "category": "releases",
-     "score": 10.3
+     "score": 9.33
     },
     {
-     "id": "079a57dfe32b33e8",
-     "title": "bookwjitchieni1986/blender-ai-mcp-addon",
-     "url": "https://github.com/bookwjitchieni1986/blender-ai-mcp-addon",
-     "sourceIds": [
-      "gh-trending-agents",
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: ai-agents",
-      "GitHub new repos: llm"
-     ],
-     "summary": "AI assistant and MCP server for Blender: visual chat, scene tools, multi-agent workflows. Works with ChatGPT/GPT, Claude, Gemini, Ollama, OpenCode.",
-     "why": "This tool brings visual chat, scene tools, and multi-agent workflows directly into Blender.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-19T14:43:10.000Z",
-     "category": "releases",
-     "score": 8.48
-    },
-    {
-     "id": "6df78cbff478a3d2",
-     "title": "HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
-     "url": "https://huggingface.co/HuggingFaceTB/SmolVLM2-256M-Video-Instruct",
+     "id": "25b629867bd0af67",
+     "title": "Zyphra/ZONOS3-Mini",
+     "url": "https://huggingface.co/Zyphra/ZONOS3-Mini",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-text · transformers · 272 likes · 44,604 downloads",
-     "why": "HuggingFaceTB/SmolVLM2-256M-Video-Instruct offers a new image-text-to-text transformer model release.",
-     "whySource": "llm",
-     "publishedAt": "2025-02-11T07:06:01.000Z",
+     "summary": "text-to-speech · zonos3 · 596 likes · 142,778 downloads",
+     "why": "596 likes on Hugging Face",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-09T05:03:57.000Z",
      "category": "releases",
-     "score": 8.05
+     "score": 8.61
     }
    ]
   },
@@ -224,6 +215,23 @@
    "key": "labs",
    "title": "From the labs",
    "entries": [
+    {
+     "id": "e621a2a9dfa1d8d9",
+     "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and…",
+     "url": "https://www.anthropic.com/news/ipo-close",
+     "sourceIds": [
+      "anthropic"
+     ],
+     "sourceNames": [
+      "Anthropic"
+     ],
+     "summary": "Today Anthropic, PBC announced the closing of its initial public offering of an aggregate of 1,127,000,000 shares of its Class A common stock at a public offering price of $83.00 per share, including the full exercise by the underwriters of their option to purchase an additional…",
+     "why": "Anthropic announcement",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-20T00:00:00.000Z",
+     "category": "labs",
+     "score": 6
+    },
     {
      "id": "42a47f4c360b7d6e",
      "title": "A game you cannot win unless you have a quantum computer",
@@ -235,29 +243,11 @@
       "Google Research"
      ],
      "summary": "Quantum",
-     "why": "Google Research highlights a game requiring a quantum computer to win.",
-     "whySource": "llm",
+     "why": "Google Research announcement",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-19T20:03:00.000Z",
      "category": "labs",
-     "score": 5.53,
-     "readMinutes": 1
-    },
-    {
-     "id": "9342dbf934e428aa",
-     "title": "How OpenAI’s Performance Factory keeps ChatGPT fast",
-     "url": "https://openai.com/index/how-openai-performance-factory-keeps-chatgpt-fast",
-     "sourceIds": [
-      "openai"
-     ],
-     "sourceNames": [
-      "OpenAI"
-     ],
-     "summary": "Learn how OpenAI built the Performance Factory, a system of Codex-powered workflows that finds and fixes performance issues to help keep ChatGPT fast.",
-     "why": "OpenAI details the Performance Factory and its Codex-powered workflows for maintaining ChatGPT speed.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-19T08:00:00.000Z",
-     "category": "labs",
-     "score": 5.11,
+     "score": 4.17,
      "readMinutes": 1
     }
    ]
@@ -266,6 +256,24 @@
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
+    {
+     "id": "3f7f7cffebe4ba59",
+     "title": "Token fraud is here and it’s BAD (YouTube)",
+     "url": "https://simonwillison.net/2026/Nov/20/token-fraud-is-here-and-its-bad/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Token fraud is here and it’s BAD (YouTube) Claire Vo runs ChatPRD, an AI platform that helps product managers \"turn an idea into a spec\". The product has been live since the GPT-4 era, and Claire has been building it in public for much of that time.",
+     "why": "Simon Willison, ~2 min read",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-20T02:49:57.000Z",
+     "category": "blogs",
+     "score": 3.17,
+     "readMinutes": 2
+    },
     {
      "id": "1df80ba4eb1bc779",
      "title": "PostgreSQL 19 Released",
@@ -277,30 +285,12 @@
       "Simon Willison"
      ],
      "summary": "PostgreSQL 19 Released Most years PostgreSQL ships a new release in September, but this year's release came two months later thanks mainly to the flurry of issues that the PostgreSQL team needed to address as part of the ongoing AI-reported vulnerability apocalypse.",
-     "why": "PostgreSQL 19 shipped with delays caused by addressing issues during the AI-reported vulnerability period.",
-     "whySource": "llm",
+     "why": "Simon Willison, ~3 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-19T20:43:57.000Z",
      "category": "blogs",
-     "score": 3.73,
+     "score": 2.82,
      "readMinutes": 3
-    },
-    {
-     "id": "8c4432adfe17d06c",
-     "title": "llm-gemini 0.38",
-     "url": "https://simonwillison.net/2026/Nov/18/llm-gemini/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "Release: llm-gemini 0.38 Today Google introduced Gemini 4 Neon. I wrote recently about how confusing the pricing for the Gemini 4 series was - Neon has somehow made this even worse.",
-     "why": "Google introduced Gemini 4 Neon alongside continued confusion regarding Gemini series pricing.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T23:59:20.000Z",
-     "category": "blogs",
-     "score": 2.5,
-     "readMinutes": 2
     }
    ]
   },
@@ -319,11 +309,11 @@
       "Don't Worry About the Vase"
      ],
      "summary": "This scandal is a really big deal.",
-     "why": "An analysis explores Jensen Huang selling advanced AI chips to China as a major scandal.",
-     "whySource": "llm",
+     "why": "Don't Worry About the Vase, ~41 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-17T14:41:58.000Z",
      "category": "blogs",
-     "score": 1.65,
+     "score": 1.25,
      "readMinutes": 41
     }
    ]
@@ -331,24 +321,24 @@
  ],
  "itemIds": [
   "3277cf52dcd23547",
+  "arxiv:2611.25387",
+  "arxiv:2611.26073",
   "7b4d99ca3afbdd8c",
-  "arxiv:2611.24576",
-  "e39600edda0e5acc",
-  "arxiv:2611.23779",
-  "arxiv:2611.23751",
-  "arxiv:2611.23386",
+  "arxiv:2611.26286",
+  "arxiv:2611.25279",
+  "arxiv:2611.24809",
+  "73e1243414bd6b3f",
   "bb6e58f548947f8d",
-  "079a57dfe32b33e8",
-  "6df78cbff478a3d2",
+  "25b629867bd0af67",
+  "e621a2a9dfa1d8d9",
   "42a47f4c360b7d6e",
-  "9342dbf934e428aa",
+  "3f7f7cffebe4ba59",
   "1df80ba4eb1bc779",
-  "8c4432adfe17d06c",
   "accfdc99034c3112"
  ],
  "deepReadId": "accfdc99034c3112",
  "llm": {
   "enabled": true,
-  "ok": true
+  "ok": false
  }
 }
