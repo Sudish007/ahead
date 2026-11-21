@@ -1,8 +1,8 @@
 {
- "generatedAt": "2026-11-21T05:36:43.343Z",
- "durationMs": 35810,
- "itemCount": 1269,
- "newItemCount": 22,
+ "generatedAt": "2026-11-21T14:12:35.108Z",
+ "durationMs": 13790,
+ "itemCount": 1333,
+ "newItemCount": 112,
  "trimmedForSize": 0,
  "sources": {
   "arxiv-cs.LG": {
@@ -12,41 +12,41 @@
    "fetched": 359,
    "kept": 60,
    "skipped": 299,
-   "ms": 265,
+   "ms": 336,
    "httpStatus": 200
   },
   "arxiv-cs.CL": {
    "name": "arXiv cs.CL",
    "category": "research",
-   "status": "empty",
-   "fetched": 0,
-   "kept": 0,
-   "skipped": 0,
-   "ms": 33037,
+   "status": "ok",
+   "fetched": 100,
+   "kept": 60,
+   "skipped": 40,
+   "ms": 1314,
    "httpStatus": 200,
-   "note": "api fallback failed (timeout)"
+   "note": "api fallback"
   },
   "arxiv-cs.AI": {
    "name": "arXiv cs.AI",
    "category": "research",
-   "status": "empty",
-   "fetched": 0,
-   "kept": 0,
-   "skipped": 0,
-   "ms": 25037,
+   "status": "ok",
+   "fetched": 100,
+   "kept": 60,
+   "skipped": 40,
+   "ms": 4101,
    "httpStatus": 200,
-   "note": "api fallback failed (timeout)"
+   "note": "api fallback"
   },
   "arxiv-cs.CV": {
    "name": "arXiv cs.CV",
    "category": "research",
-   "status": "empty",
-   "fetched": 0,
-   "kept": 0,
-   "skipped": 0,
-   "ms": 28034,
+   "status": "ok",
+   "fetched": 100,
+   "kept": 60,
+   "skipped": 40,
+   "ms": 7126,
    "httpStatus": 200,
-   "note": "api fallback failed (timeout)"
+   "note": "api fallback"
   },
   "hf-papers": {
    "name": "HF Daily Papers",
@@ -55,7 +55,7 @@
    "fetched": 100,
    "kept": 60,
    "skipped": 40,
-   "ms": 329,
+   "ms": 343,
    "httpStatus": 200,
    "homepage": "https://huggingface.co/papers"
   },
@@ -63,10 +63,10 @@
    "name": "Hacker News",
    "category": "news",
    "status": "ok",
-   "fetched": 54,
-   "kept": 13,
-   "skipped": 41,
-   "ms": 1169,
+   "fetched": 51,
+   "kept": 11,
+   "skipped": 40,
+   "ms": 387,
    "httpStatus": 200
   },
   "hn-front": {
@@ -76,7 +76,7 @@
    "fetched": 30,
    "kept": 5,
    "skipped": 25,
-   "ms": 539,
+   "ms": 573,
    "httpStatus": 200
   },
   "reddit": {
@@ -86,10 +86,10 @@
    "fetched": 0,
    "kept": 0,
    "skipped": 0,
-   "ms": 136,
+   "ms": 113,
    "httpStatus": 404,
    "error": "HTTP 404",
-   "detail": "server=snooserv; content-type=application/atom+xml; charset=UTF-8; body=\"2026-11-21T05:36:43Z https://rss.reddit.com/ Not Found\""
+   "detail": "server=snooserv; content-type=application/atom+xml; charset=UTF-8; body=\"2026-11-21T14:12:35Z https://rss.reddit.com/ Not Found\""
   },
   "openai": {
    "name": "OpenAI",
@@ -98,7 +98,7 @@
    "fetched": 1421,
    "kept": 30,
    "skipped": 1391,
-   "ms": 191,
+   "ms": 219,
    "httpStatus": 200
   },
   "anthropic": {
@@ -108,7 +108,7 @@
    "fetched": 596,
    "kept": 4,
    "skipped": 592,
-   "ms": 144,
+   "ms": 215,
    "httpStatus": 200,
    "homepage": "https://www.anthropic.com/news"
   },
@@ -119,7 +119,7 @@
    "fetched": 100,
    "kept": 2,
    "skipped": 98,
-   "ms": 147,
+   "ms": 316,
    "httpStatus": 200
   },
   "google-research": {
@@ -129,7 +129,7 @@
    "fetched": 100,
    "kept": 2,
    "skipped": 98,
-   "ms": 269,
+   "ms": 659,
    "httpStatus": 200
   },
   "meta-newsroom-ai": {
@@ -139,7 +139,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 389,
+   "ms": 103,
    "httpStatus": 200
   },
   "meta-engineering-ai": {
@@ -149,7 +149,7 @@
    "fetched": 9,
    "kept": 0,
    "skipped": 9,
-   "ms": 495,
+   "ms": 94,
    "httpStatus": 200
   },
   "microsoft-research": {
@@ -159,7 +159,7 @@
    "fetched": 10,
    "kept": 2,
    "skipped": 8,
-   "ms": 691,
+   "ms": 959,
    "httpStatus": 200
   },
   "nvidia-dev": {
@@ -169,7 +169,7 @@
    "fetched": 100,
    "kept": 11,
    "skipped": 89,
-   "ms": 254,
+   "ms": 310,
    "httpStatus": 200
   },
   "hf-blog": {
@@ -179,7 +179,7 @@
    "fetched": 915,
    "kept": 8,
    "skipped": 907,
-   "ms": 160,
+   "ms": 100,
    "httpStatus": 200
   },
   "allenai": {
@@ -189,7 +189,7 @@
    "fetched": 25,
    "kept": 2,
    "skipped": 23,
-   "ms": 155,
+   "ms": 351,
    "httpStatus": 200
   },
   "mistral": {
@@ -199,7 +199,7 @@
    "fetched": 94,
    "kept": 0,
    "skipped": 94,
-   "ms": 149,
+   "ms": 134,
    "httpStatus": 200
   },
   "transformer-circuits": {
@@ -209,7 +209,7 @@
    "fetched": 57,
    "kept": 0,
    "skipped": 57,
-   "ms": 143,
+   "ms": 290,
    "httpStatus": 200
   },
   "lilog": {
@@ -219,17 +219,17 @@
    "fetched": 53,
    "kept": 0,
    "skipped": 53,
-   "ms": 67,
+   "ms": 72,
    "httpStatus": 200
   },
   "interconnects": {
    "name": "Interconnects",
    "category": "blogs",
-   "status": "ok",
+   "status": "empty",
    "fetched": 20,
-   "kept": 1,
-   "skipped": 19,
-   "ms": 86,
+   "kept": 0,
+   "skipped": 20,
+   "ms": 169,
    "httpStatus": 200
   },
   "raschka": {
@@ -239,7 +239,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 188,
+   "ms": 178,
    "httpStatus": 200
   },
   "simonw": {
@@ -249,7 +249,7 @@
    "fetched": 30,
    "kept": 10,
    "skipped": 20,
-   "ms": 145,
+   "ms": 88,
    "httpStatus": 200
   },
   "chiphuyen": {
@@ -259,7 +259,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 636,
+   "ms": 350,
    "httpStatus": 200
   },
   "eugeneyan": {
@@ -269,7 +269,7 @@
    "fetched": 215,
    "kept": 1,
    "skipped": 214,
-   "ms": 103,
+   "ms": 164,
    "httpStatus": 200
   },
   "hamel": {
@@ -279,7 +279,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 138,
+   "ms": 174,
    "httpStatus": 200
   },
   "semianalysis": {
@@ -289,7 +289,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 170,
+   "ms": 240,
    "httpStatus": 200
   },
   "importai": {
@@ -299,7 +299,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 394,
+   "ms": 402,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -308,9 +308,9 @@
    "category": "blogs",
    "status": "ok",
    "fetched": 20,
-   "kept": 10,
-   "skipped": 10,
-   "ms": 343,
+   "kept": 9,
+   "skipped": 11,
+   "ms": 422,
    "httpStatus": 200,
    "note": "redirected to https://latent.space/feed"
   },
@@ -321,7 +321,7 @@
    "fetched": 20,
    "kept": 5,
    "skipped": 15,
-   "ms": 592,
+   "ms": 629,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -332,7 +332,7 @@
    "fetched": 3452,
    "kept": 7,
    "skipped": 3445,
-   "ms": 437,
+   "ms": 451,
    "httpStatus": 200,
    "note": "via relay",
    "homepage": "https://www.deeplearning.ai/the-batch/"
@@ -344,7 +344,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 269,
+   "ms": 179,
    "httpStatus": 200
   },
   "gradient": {
@@ -354,7 +354,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 642,
+   "ms": 877,
    "httpStatus": 200
   },
   "epoch": {
@@ -364,7 +364,7 @@
    "fetched": 50,
    "kept": 3,
    "skipped": 47,
-   "ms": 86,
+   "ms": 181,
    "httpStatus": 200
   },
   "epoch-gradient-updates": {
@@ -374,7 +374,7 @@
    "fetched": 20,
    "kept": 0,
    "skipped": 20,
-   "ms": 271,
+   "ms": 342,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -385,7 +385,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 202,
+   "ms": 196,
    "httpStatus": 200
   },
   "chinai": {
@@ -395,7 +395,7 @@
    "fetched": 20,
    "kept": 1,
    "skipped": 19,
-   "ms": 289,
+   "ms": 212,
    "httpStatus": 200,
    "note": "via relay"
   },
@@ -406,7 +406,7 @@
    "fetched": 12,
    "kept": 1,
    "skipped": 11,
-   "ms": 116,
+   "ms": 222,
    "httpStatus": 200
   },
   "karpathy-blog": {
@@ -416,7 +416,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 142,
+   "ms": 170,
    "httpStatus": 200
   },
   "karpathy-bearblog": {
@@ -426,7 +426,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 153,
+   "ms": 201,
    "httpStatus": 200
   },
   "horace": {
@@ -436,7 +436,7 @@
    "fetched": 6,
    "kept": 0,
    "skipped": 6,
-   "ms": 93,
+   "ms": 242,
    "httpStatus": 200,
    "homepage": "https://horace.io"
   },
@@ -447,7 +447,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 1406,
+   "ms": 1459,
    "httpStatus": 200
   },
   "gh-rel-vllm": {
@@ -455,19 +455,19 @@
    "category": "releases",
    "status": "ok",
    "fetched": 10,
-   "kept": 2,
-   "skipped": 8,
-   "ms": 1282,
+   "kept": 1,
+   "skipped": 9,
+   "ms": 1196,
    "httpStatus": 200
   },
   "gh-rel-transformers": {
    "name": "Transformers releases",
    "category": "releases",
-   "status": "empty",
+   "status": "ok",
    "fetched": 10,
-   "kept": 0,
-   "skipped": 10,
-   "ms": 1328,
+   "kept": 1,
+   "skipped": 9,
+   "ms": 1513,
    "httpStatus": 200
   },
   "gh-rel-llamacpp": {
@@ -477,7 +477,7 @@
    "fetched": 10,
    "kept": 3,
    "skipped": 7,
-   "ms": 736,
+   "ms": 886,
    "httpStatus": 200
   },
   "gh-rel-sglang": {
@@ -487,7 +487,7 @@
    "fetched": 10,
    "kept": 1,
    "skipped": 9,
-   "ms": 3042,
+   "ms": 3846,
    "httpStatus": 200
   },
   "gh-rel-unsloth": {
@@ -497,7 +497,7 @@
    "fetched": 10,
    "kept": 5,
    "skipped": 5,
-   "ms": 1883,
+   "ms": 1422,
    "httpStatus": 200
   },
   "gh-rel-trl": {
@@ -507,7 +507,7 @@
    "fetched": 10,
    "kept": 2,
    "skipped": 8,
-   "ms": 1125,
+   "ms": 823,
    "httpStatus": 200
   },
   "gh-rel-torchtitan": {
@@ -517,7 +517,7 @@
    "fetched": 10,
    "kept": 0,
    "skipped": 10,
-   "ms": 321,
+   "ms": 316,
    "httpStatus": 200
   },
   "gh-trending-llm": {
@@ -527,7 +527,7 @@
    "fetched": 30,
    "kept": 15,
    "skipped": 15,
-   "ms": 670,
+   "ms": 840,
    "httpStatus": 200
   },
   "gh-trending-ml": {
@@ -537,7 +537,7 @@
    "fetched": 30,
    "kept": 2,
    "skipped": 28,
-   "ms": 1563,
+   "ms": 1722,
    "httpStatus": 200
   },
   "gh-trending-agents": {
@@ -547,7 +547,7 @@
    "fetched": 30,
    "kept": 15,
    "skipped": 15,
-   "ms": 1993,
+   "ms": 2418,
    "httpStatus": 200
   },
   "hf-trending": {
@@ -557,7 +557,7 @@
    "fetched": 20,
    "kept": 20,
    "skipped": 0,
-   "ms": 116,
+   "ms": 63,
    "httpStatus": 200
   },
   "pod-dwarkesh": {
@@ -567,7 +567,7 @@
    "fetched": 147,
    "kept": 1,
    "skipped": 146,
-   "ms": 364,
+   "ms": 370,
    "httpStatus": 200,
    "note": "via relay",
    "homepage": "https://www.dwarkesh.com"
@@ -579,17 +579,17 @@
    "fetched": 274,
    "kept": 1,
    "skipped": 273,
-   "ms": 473,
+   "ms": 235,
    "httpStatus": 200
   },
   "pod-cogrev": {
    "name": "The Cognitive Revolution",
    "category": "media",
    "status": "ok",
-   "fetched": 396,
+   "fetched": 397,
    "kept": 1,
-   "skipped": 395,
-   "ms": 469,
+   "skipped": 396,
+   "ms": 381,
    "httpStatus": 200
   },
   "pod-nopriors": {
@@ -599,7 +599,7 @@
    "fetched": 189,
    "kept": 0,
    "skipped": 189,
-   "ms": 271,
+   "ms": 119,
    "httpStatus": 200
   },
   "yt-karpathy": {
@@ -609,7 +609,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 182,
+   "ms": 357,
    "httpStatus": 200,
    "note": "api"
   },
@@ -620,7 +620,7 @@
    "fetched": 15,
    "kept": 0,
    "skipped": 15,
-   "ms": 117,
+   "ms": 201,
    "httpStatus": 200,
    "note": "api"
   },
@@ -631,7 +631,7 @@
    "fetched": 15,
    "kept": 1,
    "skipped": 14,
-   "ms": 115,
+   "ms": 135,
    "httpStatus": 200,
    "note": "api"
   },
@@ -642,7 +642,7 @@
    "fetched": 15,
    "kept": 3,
    "skipped": 12,
-   "ms": 184,
+   "ms": 200,
    "httpStatus": 200,
    "note": "api"
   },
@@ -653,7 +653,7 @@
    "fetched": 15,
    "kept": 5,
    "skipped": 10,
-   "ms": 492,
+   "ms": 178,
    "httpStatus": 200,
    "note": "api"
   },
@@ -664,13 +664,13 @@
    "fetched": 15,
    "kept": 2,
    "skipped": 13,
-   "ms": 106,
+   "ms": 121,
    "httpStatus": 200,
    "note": "api"
   }
  },
- "okCount": 41,
- "emptyCount": 22,
+ "okCount": 44,
+ "emptyCount": 19,
  "failedCount": 1,
  "sitemapSkipped": {
   "anthropic": {
@@ -774,19 +774,19 @@
   "model": "gemini-3.5-flash-lite",
   "overview": "accepted",
   "why": {
-   "accepted": 15,
+   "accepted": 14,
    "rejected": 0
   },
   "usage": {
-   "prompt": 1564,
-   "completion": 742,
-   "total": 2306
+   "prompt": 1396,
+   "completion": 665,
+   "total": 2061
   },
-  "ms": 2697
+  "ms": 5740
  },
  "brief": {
   "date": "2026-11-21",
-  "wordCount": 853,
+  "wordCount": 710,
   "readingMinutes": 4
  },
  "static": {

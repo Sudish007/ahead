@@ -1,10 +1,10 @@
 {
  "date": "2026-11-21",
- "generatedAt": "2026-11-21T05:36:43.343Z",
- "wordCount": 853,
+ "generatedAt": "2026-11-21T14:12:35.108Z",
+ "wordCount": 710,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's developments showcase significant shifts across hardware, market dynamics, and fundamental research in artificial intelligence. A notable hardware milestone is the discovery and verification of Frostbite, a new CPU architecture designed entirely by AI. In the marketplace, Anthropic announced the closing of its initial public offering of Class A common stock, while a broader market reaction saw the Nasdaq erase gains amid an ongoing AI sell-off. Regulatory scrutiny also intensified as the US SEC's Nvidia probe began examining potential accounting issues. In research, new methodologies are emerging to optimize model efficiency and performance, including CompoundingKernel, a self-improving agent system writing GPU kernels that rank top on public benchmarks, and on-policy morphing techniques designed to convert pretrained Transformers into hybrid attention models. Additionally, discussions surrounding mathematical proofs developed with AI assistants highlight the evolving role of language models in complex theoretical domains, while open-source initiatives continue to drive collaborative scientific discovery across academic and industrial sectors.",
+  "text": "Today's key developments span market shifts, hardware design breakthroughs, regulatory scrutiny, and foundational research challenges. The Nasdaq erased gains amid an AI sell-off impacting Anthropic's second day, while regulatory pressures intensified as the US SEC launched a probe into Nvidia examining potential accounting issues. In hardware innovation, researchers discovered, designed, and verified a new CPU architecture completely by AI named Frostbite. Labor activism also emerged as Google workers urged their employer not to punish schools rejecting AI tools. Within research and releases, new studies audited success checkers in simulated manipulation benchmarks and examined diverse sampling limitations in language models, alongside trending multimodal model releases such as thinkingmachines/Inkling-2-Mini, RadixArk/DaisyRose-27B, and Cloudflare/clairic. Additionally, human-led mathematical analyses contrasted with AI-assisted claims regarding proofs for the Riemann Hypothesis, offering diverse perspectives for technical practitioners navigating the current ecosystem.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -13,6 +13,26 @@
    "key": "must-know",
    "title": "Must know",
    "entries": [
+    {
+     "id": "ffe5471d0a69b0c0",
+     "title": "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day",
+     "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50574383",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Reflects market volatility and sentiment shifts impacting major AI companies like Anthropic.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T13:29:59.000Z",
+     "category": "news",
+     "score": 12.65
+    },
     {
      "id": "3381c1b46b2b81fa",
      "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
@@ -27,11 +47,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Demonstrates the practical viability of AI-designed CPU architectures verified for real-world hardware deployment.",
+     "why": "Demonstrates an entirely AI-designed and verified CPU architecture with significant hardware implications.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T10:01:41.000Z",
      "category": "news",
-     "score": 13.06
+     "score": 12.43
     },
     {
      "id": "dbe5c8ca8a6b6801",
@@ -47,11 +67,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Highlights increasing regulatory oversight and financial scrutiny facing major semiconductor manufacturers in the AI sector.",
+     "why": "Highlights increasing regulatory scrutiny on key industry players regarding accounting practices.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T20:22:41.000Z",
      "category": "news",
-     "score": 12.73
+     "score": 12.1
     },
     {
      "id": "3edabf9cadff5ee9",
@@ -67,31 +87,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Reflects internal workforce advocacy regarding institutional policies on AI adoption in educational environments.",
+     "why": "Showcases internal labor advocacy regarding corporate policies on AI deployment in schools.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T16:59:27.000Z",
      "category": "news",
-     "score": 12.62
-    },
-    {
-     "id": "ffe5471d0a69b0c0",
-     "title": "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day",
-     "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50574383",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Captures investor sentiment shifts and market corrections impacting prominent foundational AI lab stocks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T13:29:59.000Z",
-     "category": "news",
-     "score": 12.57
+     "score": 11.97
     }
    ]
   },
@@ -99,44 +99,6 @@
    "key": "research",
    "title": "Research",
    "entries": [
-    {
-     "id": "arxiv:2611.24809",
-     "title": "On-Policy Morphing into Hybrid Attention Models",
-     "url": "https://arxiv.org/abs/2611.24809",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "Hybrid attention models combine full and linear attention to achieve a better quality--efficiency trade-off. Converting pretrained Transformers into such models requires identifying which layers should retain full attention under a prescribed budget.",
-     "why": "Provides a systematic approach to convert pretrained Transformers into efficient hybrid attention models under strict budgets.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
-     "category": "research",
-     "score": 12.33
-    },
-    {
-     "id": "arxiv:2611.19230",
-     "title": "CompoundingKernel: Self-Improving from Zero to First",
-     "url": "https://arxiv.org/abs/2611.19230",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
-     ],
-     "summary": "We present CompoundingKernel, a self-improving agent system that writes GPU kernels by search. As of 2026-11-11, its generated kernels rank #1 on the public L1, L2 and Quantization boards of SOL-ExecBench (NVIDIA B200).",
-     "why": "Introduces a self-improving agent system achieving top performance rankings on hardware execution benchmarks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-14T00:00:00.000Z",
-     "category": "research",
-     "score": 12.11
-    },
     {
      "id": "arxiv:2611.25179",
      "title": "Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation Benchmarks",
@@ -150,11 +112,45 @@
       "arXiv cs.CV"
      ],
      "summary": "Simulated manipulation benchmarks measure policy performance using hand-written success checkers that label each episode as a success or failure. Passing an expert demonstration shows that a checker accepts one way of completing the task.",
-     "why": "Audits limitations in hand-written success checkers used across simulated robotics manipulation benchmarks.",
+     "why": "Audits the reliability of success checkers in simulated manipulation benchmarks for researchers.",
      "whySource": "llm",
      "publishedAt": "2026-11-18T00:00:00.000Z",
      "category": "research",
-     "score": 11.3
+     "score": 10.54
+    },
+    {
+     "id": "arxiv:2611.25003",
+     "title": "A Model of Diverse Sampling from Language Models",
+     "url": "https://arxiv.org/abs/2611.25003",
+     "sourceIds": [
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "arXiv cs.LG"
+     ],
+     "summary": "Language models often produce high-quality individual samples but poor sets, with repeated samples clustering around the same semantic modes.",
+     "why": "Analyzes how language models struggle with diverse set sampling despite high individual quality.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T05:00:00.000Z",
+     "category": "research",
+     "score": 1.58
+    },
+    {
+     "id": "arxiv:2611.25236",
+     "title": "A Neurosymbolic Multimodal Framework for 30-Day Diabetic Readmission Prediction: Integrating Structured EHR Data, Dense Clinical…",
+     "url": "https://arxiv.org/abs/2611.25236",
+     "sourceIds": [
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "arXiv cs.AI"
+     ],
+     "summary": "Unplanned 30-day readmissions among patients with diabetes mellitus impose a substantial clinical and economic burden, yet most predictive models use only structured electronic health record (EHR) data and ignore free-text clinical notes, which often contain code-mixed…",
+     "why": "Integrates structured EHR data and clinical notes for improved diabetic readmission prediction.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T05:00:00.000Z",
+     "category": "research",
+     "score": 1.58
     }
    ]
   },
@@ -162,23 +158,6 @@
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
-    {
-     "id": "294b8dabfa19c4e1",
-     "title": "WerewolfEmuHub/Gemini-Config-Checker-",
-     "url": "https://github.com/WerewolfEmuHub/Gemini-Config-Checker-",
-     "sourceIds": [
-      "gh-trending-llm"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm"
-     ],
-     "summary": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) · Go",
-     "why": "Offers practical proxy configuration tooling to access Google AI Studio and Gemini across multiple operating systems.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-15T16:47:11.000Z",
-     "category": "releases",
-     "score": 8.44
-    },
     {
      "id": "1e52228e1c5c3f80",
      "title": "thinkingmachines/Inkling-2-Mini",
@@ -189,29 +168,46 @@
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-text · transformers · 387 likes · 136 downloads",
-     "why": "Presents a new open-source image-text-to-text model gaining community traction on Hugging Face.",
+     "summary": "image-text-to-text · transformers · 1,297 likes · 7,944 downloads",
+     "why": "Provides a trending image-text-to-text transformer model for developer and researcher adoption.",
      "whySource": "llm",
      "publishedAt": "2026-11-17T00:26:57.000Z",
      "category": "releases",
-     "score": 8.44
+     "score": 8.19
     },
     {
-     "id": "74baf14775c2ec67",
-     "title": "Sentinel7/h3",
-     "url": "https://huggingface.co/Sentinel7/h3",
+     "id": "ba6df33853b09a0c",
+     "title": "RadixArk/DaisyRose-27B",
+     "url": "https://huggingface.co/RadixArk/DaisyRose-27B",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "242 likes · 0 downloads",
-     "why": "Represents an emerging open-source repository gaining early community interest and engagement.",
+     "summary": "image-text-to-text · transformers · 293 likes · 1,375 downloads",
+     "why": "Offers a new trending transformer model release for multimodal image-text tasks.",
      "whySource": "llm",
-     "publishedAt": "2026-08-06T04:13:52.000Z",
+     "publishedAt": "2026-11-18T05:31:35.000Z",
      "category": "releases",
-     "score": 7.91
+     "score": 8.1
+    },
+    {
+     "id": "0ec7aca0ae677dfd",
+     "title": "Cloudflare/clairic",
+     "url": "https://huggingface.co/Cloudflare/clairic",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-text · transformers · 209 likes · 547 downloads",
+     "why": "Presents an emerging open source image-text-to-text model from Cloudflare.",
+     "whySource": "llm",
+     "publishedAt": "2026-10-16T15:07:01.000Z",
+     "category": "releases",
+     "score": 7.86
     }
    ]
   },
@@ -219,23 +215,6 @@
    "key": "labs",
    "title": "From the labs",
    "entries": [
-    {
-     "id": "e621a2a9dfa1d8d9",
-     "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and…",
-     "url": "https://www.anthropic.com/news/ipo-close",
-     "sourceIds": [
-      "anthropic"
-     ],
-     "sourceNames": [
-      "Anthropic"
-     ],
-     "summary": "Today Anthropic, PBC announced the closing of its initial public offering of an aggregate of 1,127,000,000 shares of its Class A common stock at a public offering price of $83.00 per share, including the full exercise by the underwriters of their option to purchase an additional…",
-     "why": "Marks a major financial milestone with the completion of a massive initial public offering for a leading AI lab.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T00:00:00.000Z",
-     "category": "labs",
-     "score": 4.52
-    },
     {
      "id": "585b84b1937546da",
      "title": "Advancing Science Together: Highlights From the Open Source AI For Science Summit",
@@ -247,11 +226,11 @@
       "Meta Newsroom (AI)"
      ],
      "summary": "We brought researchers from universities, hospitals, and industry together for the Open Source AI for Science Summit, an event built around using open source AI to accelerate scientific discovery.",
-     "why": "Emphasizes collaborative efforts to accelerate scientific discovery through open-source AI infrastructure.",
+     "why": "Explores community efforts to accelerate scientific discovery using open source AI frameworks.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T18:30:45.000Z",
      "category": "labs",
-     "score": 4.04,
+     "score": 3.42,
      "readMinutes": 5
     }
    ]
@@ -271,11 +250,11 @@
       "Simon Willison"
      ],
      "summary": "Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI.",
-     "why": "Illustrates traditional human-driven mathematical research and verification processes without AI assistance.",
+     "why": "Highlights a human mathematical proof process without AI assistance.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T19:21:49.000Z",
      "category": "blogs",
-     "score": 3.28,
+     "score": 2.78,
      "readMinutes": 1
     },
     {
@@ -289,11 +268,11 @@
       "Simon Willison"
      ],
      "summary": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too.",
-     "why": "Showcases novel mathematical proofs developed in collaboration with AI assistants, sparking community debate.",
+     "why": "Discusses a claimed mathematical proof for the Riemann Hypothesis developed with Claude.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T16:30:48.000Z",
      "category": "blogs",
-     "score": 3.11,
+     "score": 2.63,
      "readMinutes": 1
     }
    ]
@@ -313,28 +292,27 @@
       "Eugene Yan"
      ],
      "summary": "How to read eval scores and what to question, from a teardown of 12 benchmarks.",
-     "why": "Analyzes the structural failures and interpretation challenges inherent in public AI evaluation benchmarks.",
+     "why": "Provides a critical teardown of public evaluation benchmarks and scoring reliability.",
      "whySource": "llm",
      "publishedAt": "2026-11-19T00:00:00.000Z",
      "category": "blogs",
-     "score": 1.78,
+     "score": 1.51,
      "readMinutes": 1
     }
    ]
   }
  ],
  "itemIds": [
+  "ffe5471d0a69b0c0",
   "3381c1b46b2b81fa",
   "dbe5c8ca8a6b6801",
   "3edabf9cadff5ee9",
-  "ffe5471d0a69b0c0",
-  "arxiv:2611.24809",
-  "arxiv:2611.19230",
   "arxiv:2611.25179",
-  "294b8dabfa19c4e1",
+  "arxiv:2611.25003",
+  "arxiv:2611.25236",
   "1e52228e1c5c3f80",
-  "74baf14775c2ec67",
-  "e621a2a9dfa1d8d9",
+  "ba6df33853b09a0c",
+  "0ec7aca0ae677dfd",
   "585b84b1937546da",
   "0d8e213cc0d8372d",
   "7220e54bdf8a93f9",
