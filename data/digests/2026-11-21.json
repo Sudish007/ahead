@@ -1,0 +1,348 @@
+{
+ "date": "2026-11-21",
+ "generatedAt": "2026-11-21T05:36:43.343Z",
+ "wordCount": 853,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's developments showcase significant shifts across hardware, market dynamics, and fundamental research in artificial intelligence. A notable hardware milestone is the discovery and verification of Frostbite, a new CPU architecture designed entirely by AI. In the marketplace, Anthropic announced the closing of its initial public offering of Class A common stock, while a broader market reaction saw the Nasdaq erase gains amid an ongoing AI sell-off. Regulatory scrutiny also intensified as the US SEC's Nvidia probe began examining potential accounting issues. In research, new methodologies are emerging to optimize model efficiency and performance, including CompoundingKernel, a self-improving agent system writing GPU kernels that rank top on public benchmarks, and on-policy morphing techniques designed to convert pretrained Transformers into hybrid attention models. Additionally, discussions surrounding mathematical proofs developed with AI assistants highlight the evolving role of language models in complex theoretical domains, while open-source initiatives continue to drive collaborative scientific discovery across academic and industrial sectors.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "3381c1b46b2b81fa",
+     "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
+     "url": "https://architectlabs.com/blog/frostbite",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50572503",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Demonstrates the practical viability of AI-designed CPU architectures verified for real-world hardware deployment.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T10:01:41.000Z",
+     "category": "news",
+     "score": 13.06
+    },
+    {
+     "id": "dbe5c8ca8a6b6801",
+     "title": "US SEC's Nvidia probe is examining potential accounting issues – sources",
+     "url": "https://www.marketscreener.com/news/us-sec-s-nvidia-probe-is-examining-potential-accounting-issues-sources-say-ce785ed3dd8ff627",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50581438",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Highlights increasing regulatory oversight and financial scrutiny facing major semiconductor manufacturers in the AI sector.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T20:22:41.000Z",
+     "category": "news",
+     "score": 12.73
+    },
+    {
+     "id": "3edabf9cadff5ee9",
+     "title": "Google Workers Tell Their Employer Not to Punish Schools That Don't Want AI",
+     "url": "https://www.motherjones.com/politics/2026/11/google-alphabet-union-school-ai-protest-gemini-workers-petition/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50577901",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Reflects internal workforce advocacy regarding institutional policies on AI adoption in educational environments.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T16:59:27.000Z",
+     "category": "news",
+     "score": 12.62
+    },
+    {
+     "id": "ffe5471d0a69b0c0",
+     "title": "Nasdaq erases all 2026 gains as AI sell-off dampens Anthropic’s second day",
+     "url": "https://www.theguardian.com/business/2026/nov/20/global-stock-markets-slump-anthropic-ipo-ai-sell-off",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50574383",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Captures investor sentiment shifts and market corrections impacting prominent foundational AI lab stocks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T13:29:59.000Z",
+     "category": "news",
+     "score": 12.57
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.24809",
+     "title": "On-Policy Morphing into Hybrid Attention Models",
+     "url": "https://arxiv.org/abs/2611.24809",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Hybrid attention models combine full and linear attention to achieve a better quality--efficiency trade-off. Converting pretrained Transformers into such models requires identifying which layers should retain full attention under a prescribed budget.",
+     "why": "Provides a systematic approach to convert pretrained Transformers into efficient hybrid attention models under strict budgets.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 12.33
+    },
+    {
+     "id": "arxiv:2611.19230",
+     "title": "CompoundingKernel: Self-Improving from Zero to First",
+     "url": "https://arxiv.org/abs/2611.19230",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "We present CompoundingKernel, a self-improving agent system that writes GPU kernels by search. As of 2026-11-11, its generated kernels rank #1 on the public L1, L2 and Quantization boards of SOL-ExecBench (NVIDIA B200).",
+     "why": "Introduces a self-improving agent system achieving top performance rankings on hardware execution benchmarks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T00:00:00.000Z",
+     "category": "research",
+     "score": 12.11
+    },
+    {
+     "id": "arxiv:2611.25179",
+     "title": "Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation Benchmarks",
+     "url": "https://arxiv.org/abs/2611.25179",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Simulated manipulation benchmarks measure policy performance using hand-written success checkers that label each episode as a success or failure. Passing an expert demonstration shows that a checker accepts one way of completing the task.",
+     "why": "Audits limitations in hand-written success checkers used across simulated robotics manipulation benchmarks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 11.3
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "294b8dabfa19c4e1",
+     "title": "WerewolfEmuHub/Gemini-Config-Checker-",
+     "url": "https://github.com/WerewolfEmuHub/Gemini-Config-Checker-",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "Chain region scanner: find proxy configs that get you into Google AI Studio and Gemini (signed-in browser check, anti-DPI, Windows/macOS/Linux/Android) · Go",
+     "why": "Offers practical proxy configuration tooling to access Google AI Studio and Gemini across multiple operating systems.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-15T16:47:11.000Z",
+     "category": "releases",
+     "score": 8.44
+    },
+    {
+     "id": "1e52228e1c5c3f80",
+     "title": "thinkingmachines/Inkling-2-Mini",
+     "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-text · transformers · 387 likes · 136 downloads",
+     "why": "Presents a new open-source image-text-to-text model gaining community traction on Hugging Face.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T00:26:57.000Z",
+     "category": "releases",
+     "score": 8.44
+    },
+    {
+     "id": "74baf14775c2ec67",
+     "title": "Sentinel7/h3",
+     "url": "https://huggingface.co/Sentinel7/h3",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "242 likes · 0 downloads",
+     "why": "Represents an emerging open-source repository gaining early community interest and engagement.",
+     "whySource": "llm",
+     "publishedAt": "2026-08-06T04:13:52.000Z",
+     "category": "releases",
+     "score": 7.91
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "e621a2a9dfa1d8d9",
+     "title": "Anthropic announces closing of initial public offering, including full exercise of underwriters’ option to purchase additional shares, and…",
+     "url": "https://www.anthropic.com/news/ipo-close",
+     "sourceIds": [
+      "anthropic"
+     ],
+     "sourceNames": [
+      "Anthropic"
+     ],
+     "summary": "Today Anthropic, PBC announced the closing of its initial public offering of an aggregate of 1,127,000,000 shares of its Class A common stock at a public offering price of $83.00 per share, including the full exercise by the underwriters of their option to purchase an additional…",
+     "why": "Marks a major financial milestone with the completion of a massive initial public offering for a leading AI lab.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T00:00:00.000Z",
+     "category": "labs",
+     "score": 4.52
+    },
+    {
+     "id": "585b84b1937546da",
+     "title": "Advancing Science Together: Highlights From the Open Source AI For Science Summit",
+     "url": "https://about.fb.com/news/2026/11/advancing-science-together-highlights-from-the-open-source-ai-for-science-summit/",
+     "sourceIds": [
+      "meta-newsroom-ai"
+     ],
+     "sourceNames": [
+      "Meta Newsroom (AI)"
+     ],
+     "summary": "We brought researchers from universities, hospitals, and industry together for the Open Source AI for Science Summit, an event built around using open source AI to accelerate scientific discovery.",
+     "why": "Emphasizes collaborative efforts to accelerate scientific discovery through open-source AI infrastructure.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T18:30:45.000Z",
+     "category": "labs",
+     "score": 4.04,
+     "readMinutes": 5
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "0d8e213cc0d8372d",
+     "title": "Quoting Ravi Vakil",
+     "url": "https://simonwillison.net/2026/Nov/20/ravi-vakil/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI.",
+     "why": "Illustrates traditional human-driven mathematical research and verification processes without AI assistance.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T19:21:49.000Z",
+     "category": "blogs",
+     "score": 3.28,
+     "readMinutes": 1
+    },
+    {
+     "id": "7220e54bdf8a93f9",
+     "title": "Quoting Levent Alpöge",
+     "url": "https://simonwillison.net/2026/Nov/20/levent-alpoge/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too.",
+     "why": "Showcases novel mathematical proofs developed in collaboration with AI assistants, sparking community debate.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T16:30:48.000Z",
+     "category": "blogs",
+     "score": 3.11,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "0ada1934a0788fbd",
+     "title": "How Public Evals Work and Fail, and What Should Change",
+     "url": "https://eugeneyan.com/writing/public-evals",
+     "sourceIds": [
+      "eugeneyan"
+     ],
+     "sourceNames": [
+      "Eugene Yan"
+     ],
+     "summary": "How to read eval scores and what to question, from a teardown of 12 benchmarks.",
+     "why": "Analyzes the structural failures and interpretation challenges inherent in public AI evaluation benchmarks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T00:00:00.000Z",
+     "category": "blogs",
+     "score": 1.78,
+     "readMinutes": 1
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "3381c1b46b2b81fa",
+  "dbe5c8ca8a6b6801",
+  "3edabf9cadff5ee9",
+  "ffe5471d0a69b0c0",
+  "arxiv:2611.24809",
+  "arxiv:2611.19230",
+  "arxiv:2611.25179",
+  "294b8dabfa19c4e1",
+  "1e52228e1c5c3f80",
+  "74baf14775c2ec67",
+  "e621a2a9dfa1d8d9",
+  "585b84b1937546da",
+  "0d8e213cc0d8372d",
+  "7220e54bdf8a93f9",
+  "0ada1934a0788fbd"
+ ],
+ "deepReadId": "0ada1934a0788fbd",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
