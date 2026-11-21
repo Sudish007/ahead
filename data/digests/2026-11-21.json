@@ -1,10 +1,10 @@
 {
  "date": "2026-11-21",
- "generatedAt": "2026-11-21T14:12:35.108Z",
- "wordCount": 710,
- "readingMinutes": 4,
+ "generatedAt": "2026-11-21T22:45:51.322Z",
+ "wordCount": 555,
+ "readingMinutes": 3,
  "overview": {
-  "text": "Today's key developments span market shifts, hardware design breakthroughs, regulatory scrutiny, and foundational research challenges. The Nasdaq erased gains amid an AI sell-off impacting Anthropic's second day, while regulatory pressures intensified as the US SEC launched a probe into Nvidia examining potential accounting issues. In hardware innovation, researchers discovered, designed, and verified a new CPU architecture completely by AI named Frostbite. Labor activism also emerged as Google workers urged their employer not to punish schools rejecting AI tools. Within research and releases, new studies audited success checkers in simulated manipulation benchmarks and examined diverse sampling limitations in language models, alongside trending multimodal model releases such as thinkingmachines/Inkling-2-Mini, RadixArk/DaisyRose-27B, and Cloudflare/clairic. Additionally, human-led mathematical analyses contrasted with AI-assisted claims regarding proofs for the Riemann Hypothesis, offering diverse perspectives for technical practitioners navigating the current ecosystem.",
+  "text": "Today's landscape is shaped by significant market shifts, regulatory scrutiny, open-source model releases, and new agent architectures. Market volatility continues as the Nasdaq erases gains amid an AI sell-off during Anthropic's second day, while regulatory pressures grow with the US SEC examining Nvidia over potential accounting issues. In the enterprise and policy space, Google workers are urging their employer not to punish schools that reject AI integration. Meanwhile, the open-source and developer ecosystems are advancing rapidly. New tools and models like thinkingmachines/Inkling-2-Mini and w01fb0ss/PiBot expand local-first agent capabilities across multiple operating systems. Additionally, Meta hosted the Open Source AI For Science Summit to accelerate scientific discovery, and new analyses explore benchmark reliability alongside human-driven mathematical proofs.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -27,31 +27,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Reflects market volatility and sentiment shifts impacting major AI companies like Anthropic.",
+     "why": "Market downturns and sell-offs directly impact funding conditions and investor sentiment for AI startups and research.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T13:29:59.000Z",
      "category": "news",
-     "score": 12.65
-    },
-    {
-     "id": "3381c1b46b2b81fa",
-     "title": "Frostbite: A new CPU architecture discovered, designed and verified by AI",
-     "url": "https://architectlabs.com/blog/frostbite",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50572503",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Demonstrates an entirely AI-designed and verified CPU architecture with significant hardware implications.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T10:01:41.000Z",
-     "category": "news",
-     "score": 12.43
+     "score": 12.09
     },
     {
      "id": "dbe5c8ca8a6b6801",
@@ -67,11 +47,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Highlights increasing regulatory scrutiny on key industry players regarding accounting practices.",
+     "why": "Regulatory investigations into key hardware providers create supply chain and market uncertainty for the entire ecosystem.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T20:22:41.000Z",
      "category": "news",
-     "score": 12.1
+     "score": 11.46
     },
     {
      "id": "3edabf9cadff5ee9",
@@ -87,72 +67,38 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Showcases internal labor advocacy regarding corporate policies on AI deployment in schools.",
+     "why": "Internal labor advocacy highlights growing ethical tensions regarding AI deployment mandates in educational institutions.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T16:59:27.000Z",
      "category": "news",
-     "score": 11.97
+     "score": 11.36
+    },
+    {
+     "id": "4fd24093a1461ec1",
+     "title": "ClawDOS – An AI coding agent for DOS",
+     "url": "http://ricapar.net/ClawDOS/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50586292",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Novel coding agents targeting legacy operating systems demonstrate the expanding scope of automated software development.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-21T05:38:01.000Z",
+     "category": "news",
+     "score": 10.94
     }
    ]
   },
   {
    "key": "research",
    "title": "Research",
-   "entries": [
-    {
-     "id": "arxiv:2611.25179",
-     "title": "Phantom Success, Silent Failure: Auditing the Success Checkers of Simulated Manipulation Benchmarks",
-     "url": "https://arxiv.org/abs/2611.25179",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Simulated manipulation benchmarks measure policy performance using hand-written success checkers that label each episode as a success or failure. Passing an expert demonstration shows that a checker accepts one way of completing the task.",
-     "why": "Audits the reliability of success checkers in simulated manipulation benchmarks for researchers.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
-     "category": "research",
-     "score": 10.54
-    },
-    {
-     "id": "arxiv:2611.25003",
-     "title": "A Model of Diverse Sampling from Language Models",
-     "url": "https://arxiv.org/abs/2611.25003",
-     "sourceIds": [
-      "arxiv-cs.LG"
-     ],
-     "sourceNames": [
-      "arXiv cs.LG"
-     ],
-     "summary": "Language models often produce high-quality individual samples but poor sets, with repeated samples clustering around the same semantic modes.",
-     "why": "Analyzes how language models struggle with diverse set sampling despite high individual quality.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T05:00:00.000Z",
-     "category": "research",
-     "score": 1.58
-    },
-    {
-     "id": "arxiv:2611.25236",
-     "title": "A Neurosymbolic Multimodal Framework for 30-Day Diabetic Readmission Prediction: Integrating Structured EHR Data, Dense Clinical…",
-     "url": "https://arxiv.org/abs/2611.25236",
-     "sourceIds": [
-      "arxiv-cs.AI"
-     ],
-     "sourceNames": [
-      "arXiv cs.AI"
-     ],
-     "summary": "Unplanned 30-day readmissions among patients with diabetes mellitus impose a substantial clinical and economic burden, yet most predictive models use only structured electronic health record (EHR) data and ignore free-text clinical notes, which often contain code-mixed…",
-     "why": "Integrates structured EHR data and clinical notes for improved diabetic readmission prediction.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T05:00:00.000Z",
-     "category": "research",
-     "score": 1.58
-    }
-   ]
+   "entries": []
   },
   {
    "key": "releases",
@@ -169,45 +115,45 @@
       "HF trending models"
      ],
      "summary": "image-text-to-text · transformers · 1,297 likes · 7,944 downloads",
-     "why": "Provides a trending image-text-to-text transformer model for developer and researcher adoption.",
+     "why": "New multimodal model releases provide researchers with additional open-weight options for image and text tasks.",
      "whySource": "llm",
      "publishedAt": "2026-11-17T00:26:57.000Z",
      "category": "releases",
-     "score": 8.19
+     "score": 8.21
     },
     {
-     "id": "ba6df33853b09a0c",
-     "title": "RadixArk/DaisyRose-27B",
-     "url": "https://huggingface.co/RadixArk/DaisyRose-27B",
+     "id": "d4687905ee9aa345",
+     "title": "AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
+     "url": "https://huggingface.co/AtomicChat/Inkling-2-Mini-Uncensored-GGUF",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-text · transformers · 293 likes · 1,375 downloads",
-     "why": "Offers a new trending transformer model release for multimodal image-text tasks.",
+     "summary": "image-text-to-text · 220 likes · 9,540 downloads",
+     "why": "Uncensored derivative releases highlight ongoing community efforts to modify and distribute accessible multimodal weights.",
      "whySource": "llm",
-     "publishedAt": "2026-11-18T05:31:35.000Z",
+     "publishedAt": "2026-11-20T20:42:23.000Z",
      "category": "releases",
-     "score": 8.1
+     "score": 7.89
     },
     {
-     "id": "0ec7aca0ae677dfd",
-     "title": "Cloudflare/clairic",
-     "url": "https://huggingface.co/Cloudflare/clairic",
+     "id": "90a54083b7aa9fa9",
+     "title": "w01fb0ss/PiBot",
+     "url": "https://github.com/w01fb0ss/PiBot",
      "sourceIds": [
-      "hf-trending"
+      "gh-trending-agents"
      ],
      "sourceNames": [
-      "HF trending models"
+      "GitHub new repos: ai-agents"
      ],
-     "summary": "image-text-to-text · transformers · 209 likes · 547 downloads",
-     "why": "Presents an emerging open source image-text-to-text model from Cloudflare.",
+     "summary": "Open-source, local-first AI agent team for your desktop: multi-agent group chats, computer use, browser, MCP, routines and approvals. macOS, Windows, Linux + Android. Built on pi. · TypeScript",
+     "why": "Local-first multi-agent desktop systems offer developers new frameworks for autonomous task execution and browser automation.",
      "whySource": "llm",
-     "publishedAt": "2026-10-16T15:07:01.000Z",
+     "publishedAt": "2026-11-21T06:54:24.000Z",
      "category": "releases",
-     "score": 7.86
+     "score": 7.66
     }
    ]
   },
@@ -226,11 +172,11 @@
       "Meta Newsroom (AI)"
      ],
      "summary": "We brought researchers from universities, hospitals, and industry together for the Open Source AI for Science Summit, an event built around using open source AI to accelerate scientific discovery.",
-     "why": "Explores community efforts to accelerate scientific discovery using open source AI frameworks.",
+     "why": "Institutional initiatives focused on open-source scientific AI foster collaborative discovery across academic and medical sectors.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T18:30:45.000Z",
      "category": "labs",
-     "score": 3.42,
+     "score": 2.9,
      "readMinutes": 5
     }
    ]
@@ -239,6 +185,24 @@
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
+    {
+     "id": "1d3bf837d81906cc",
+     "title": "GPT-6.2 Astra and Sol: The System Card",
+     "url": "https://thezvi.substack.com/p/gpt-62-astra-and-sol-the-system-card",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "We have to stop meeting like this.",
+     "why": "System card analyses provide critical insights into the safety and capabilities of advanced proprietary models.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-21T15:11:35.000Z",
+     "category": "blogs",
+     "score": 4.32,
+     "readMinutes": 31
+    },
     {
      "id": "0d8e213cc0d8372d",
      "title": "Quoting Ravi Vakil",
@@ -250,29 +214,11 @@
       "Simon Willison"
      ],
      "summary": "Alessandro Masullo has a proposed proof of [Generalized Riemann Hypothesis], and Brian Conrad has been looking closely at it for months and gave extensive feedback which is being incorporated, and it is so far looking good. It is all human, with no AI.",
-     "why": "Highlights a human mathematical proof process without AI assistance.",
+     "why": "High-level mathematical proofs developed entirely without AI emphasize the ongoing boundaries of automated reasoning.",
      "whySource": "llm",
      "publishedAt": "2026-11-20T19:21:49.000Z",
      "category": "blogs",
-     "score": 2.78,
-     "readMinutes": 1
-    },
-    {
-     "id": "7220e54bdf8a93f9",
-     "title": "Quoting Levent Alpöge",
-     "url": "https://simonwillison.net/2026/Nov/20/levent-alpoge/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "I believe I have, working with Claude, discovered a proof of the Riemann Hypothesis. In fact, the method easily extends much further, resolving the so-called Generalized Riemann Hypothesis, and I expect, with more time, the Extended Riemann Hypothesis too.",
-     "why": "Discusses a claimed mathematical proof for the Riemann Hypothesis developed with Claude.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T16:30:48.000Z",
-     "category": "blogs",
-     "score": 2.63,
+     "score": 2.36,
      "readMinutes": 1
     }
    ]
@@ -292,11 +238,11 @@
       "Eugene Yan"
      ],
      "summary": "How to read eval scores and what to question, from a teardown of 12 benchmarks.",
-     "why": "Provides a critical teardown of public evaluation benchmarks and scoring reliability.",
+     "why": "Critical teardowns of benchmark evaluations help practitioners better assess the true capabilities of machine learning models.",
      "whySource": "llm",
      "publishedAt": "2026-11-19T00:00:00.000Z",
      "category": "blogs",
-     "score": 1.51,
+     "score": 1.28,
      "readMinutes": 1
     }
    ]
@@ -304,18 +250,15 @@
  ],
  "itemIds": [
   "ffe5471d0a69b0c0",
-  "3381c1b46b2b81fa",
   "dbe5c8ca8a6b6801",
   "3edabf9cadff5ee9",
-  "arxiv:2611.25179",
-  "arxiv:2611.25003",
-  "arxiv:2611.25236",
+  "4fd24093a1461ec1",
   "1e52228e1c5c3f80",
-  "ba6df33853b09a0c",
-  "0ec7aca0ae677dfd",
+  "d4687905ee9aa345",
+  "90a54083b7aa9fa9",
   "585b84b1937546da",
+  "1d3bf837d81906cc",
   "0d8e213cc0d8372d",
-  "7220e54bdf8a93f9",
   "0ada1934a0788fbd"
  ],
  "deepReadId": "0ada1934a0788fbd",
