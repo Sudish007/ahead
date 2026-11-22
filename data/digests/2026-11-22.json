@@ -1,18 +1,34 @@
 {
  "date": "2026-11-22",
- "generatedAt": "2026-11-22T05:00:54.866Z",
- "wordCount": 406,
+ "generatedAt": "2026-11-22T14:02:18.136Z",
+ "wordCount": 255,
  "readingMinutes": 2,
- "overview": {
-  "text": "Today's developments span significant milestones in mathematics, corporate developments, and open-source tooling. Most notably, a hypothetical question regarding AI solving the Riemann Hypothesis is no longer theoretical, marked by announcements from Levent Alpöge and Alessandro Masullo. In the infrastructure and industry landscape, inference providers face data processing incidents, while Nvidia's accounting practices are currently under SEC investigation. Furthermore, market corrections hit the sector as Anthropic shares tank following its IPO alongside broader Nasdaq declines erasing gains. In the open-source and release ecosystem, chatrlabs released Qwen-Image-2.1-Uncensored-Omni-Quantized and SulphurAI introduced Sulphur-3, alongside new community workflows such as praseesh369/youtube-ai-video-editing-system. These updates collectively highlight the intersection of advanced computational mathematics, regulatory and market pressures on major AI players, and continuous model iterations.",
-  "source": "llm",
-  "model": "gemini-3.5-flash-lite"
- },
+ "overview": null,
  "sections": [
   {
    "key": "must-know",
    "title": "Must know",
    "entries": [
+    {
+     "id": "d7e78f94bca2cb94",
+     "title": "87% of the Anthropic power will come from gas and 11% from coal in 2028",
+     "url": "https://betterdatacenterproject.com/2026/11/16/how-ai-is-powered-a-breakdown-of-byop-and-grid-power/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50597612",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "#24 on HN front page, 279 points, 385 comments",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-22T08:57:34.000Z",
+     "category": "news",
+     "score": 13.76
+    },
     {
      "id": "86e58259f8edb874",
      "title": "Since last year, we asked: \"What if AI solved the Riemann Hypothesis?\"",
@@ -20,18 +36,41 @@
      "discussionUrl": "https://news.ycombinator.com/item?id=50595812",
      "sourceIds": [
       "hn-front",
+      "hn-top",
       "yt-3b1b"
      ],
      "sourceNames": [
       "HN front page",
+      "Hacker News",
       "3Blue1Brown"
      ],
      "summary": "Hypothetical no more Announcement by Levent Alpöge: https://alpo.ge/remark.pdf Announcement by Alessandro Masullo on his (human) proof: https://math216.wordpress.com/2026/11/20/hurried-announcement-alessandro-masullo-grh/ ------------------ These animations are largely made…",
-     "why": "This breakthrough announcement regarding the Riemann Hypothesis marks a historic milestone for mathematical reasoning.",
-     "whySource": "llm",
+     "why": "40 points on HN, 13 comments; also on 3Blue1Brown",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-22T02:02:12.000Z",
      "category": "media",
-     "score": 12.78,
+     "score": 13.6,
+     "readMinutes": 2
+    },
+    {
+     "id": "aaa55aaf59895092",
+     "title": "Muru – AI-assisted Rust server for Python apps by mod_WSGI's creator",
+     "url": "https://simonwillison.net/2026/Nov/21/muru/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50597959",
+     "sourceIds": [
+      "hn-front",
+      "simonw"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Simon Willison"
+     ],
+     "summary": "Muru Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since.",
+     "why": "#19 on HN front page, 15 points, 0 comments; also on Simon Willison",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-21T23:56:28.000Z",
+     "category": "blogs",
+     "score": 11.95,
      "readMinutes": 2
     },
     {
@@ -48,49 +87,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Data processing incidents on inference providers expose critical operational vulnerabilities for production deployments.",
-     "whySource": "llm",
+     "why": "#8 on HN front page, 205 points, 72 comments",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-22T02:14:14.000Z",
      "category": "news",
-     "score": 11.12
-    },
-    {
-     "id": "658afeb85fc89c82",
-     "title": "Nvidia accounting under SEC investigation, sources say",
-     "url": "https://finance.yahoo.com/markets/article/nvidia-stock-extends-25-trillion-rout-as-sec-probe-reportedly-investigates-its-accounting-194945274.html",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50581438",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "SEC investigation into Nvidia accounting creates major regulatory uncertainty for semiconductor market leaders.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T20:22:41.000Z",
-     "category": "news",
-     "score": 10.28
-    },
-    {
-     "id": "7421040b4b2a595a",
-     "title": "Anthropic shares tank after IPO as the Nasdaq erases 2026 gains",
-     "url": "https://www.nbcnews.com/business/markets/anthropic-shares-markets-selloff-nasdaq-rcna610394",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50578794",
-     "sourceIds": [
-      "hn-top"
-     ],
-     "sourceNames": [
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Anthropic share performance post-IPO reflects changing market valuations and broader tech sector corrections.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T17:44:01.000Z",
-     "category": "news",
-     "score": 9.98
+     "score": 11.87
     }
    ]
   },
@@ -114,11 +115,11 @@
       "HF trending models"
      ],
      "summary": "text-to-image · diffusers · 744 likes · 339,903 downloads",
-     "why": "This quantized model release offers new open-weights capabilities for text-to-image generation tasks.",
-     "whySource": "llm",
+     "why": "769 likes on Hugging Face",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-03T16:13:25.000Z",
      "category": "releases",
-     "score": 8.77
+     "score": 8.16
     },
     {
      "id": "8215948b632d1ee9",
@@ -130,29 +131,29 @@
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "minimax-h3 · 700 likes · 1,186 downloads",
-     "why": "Sulphur-3 provides researchers with a newly trending alternative baseline model architecture.",
-     "whySource": "llm",
+     "summary": "minimax-h3 · 741 likes · 78,931 downloads",
+     "why": "741 likes on Hugging Face",
+     "whySource": "heuristic",
      "publishedAt": "2026-10-31T20:31:01.000Z",
      "category": "releases",
-     "score": 8.73
+     "score": 8.13
     },
     {
-     "id": "ede4c18e07562104",
-     "title": "praseesh369/youtube-ai-video-editing-system",
-     "url": "https://github.com/praseesh369/youtube-ai-video-editing-system",
+     "id": "5e10b4e6db41aaa3",
+     "title": "Cloudcode04/runway-ml-pro-win",
+     "url": "https://github.com/Cloudcode04/runway-ml-pro-win",
      "sourceIds": [
-      "gh-trending-agents"
+      "gh-trending-llm"
      ],
      "sourceNames": [
-      "GitHub new repos: ai-agents"
+      "GitHub new repos: llm"
      ],
-     "summary": "Storyboard, capture, and animate: an AI editing workflow for YouTube · HTML",
-     "why": "Automated video editing workflows streamline content creation pipelines using agentic systems.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-21T17:21:17.000Z",
+     "summary": "Runway - AI video generation platform for text-to-video synthesis, image animation and motion brush editing on Windows 10/11",
+     "why": "274 stars in 1 day",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-21T15:17:17.000Z",
      "category": "releases",
-     "score": 7.93
+     "score": 8.05
     }
    ]
   },
@@ -164,26 +165,7 @@
   {
    "key": "analysis",
    "title": "Analysis worth reading",
-   "entries": [
-    {
-     "id": "aaa55aaf59895092",
-     "title": "Muru",
-     "url": "https://simonwillison.net/2026/Nov/21/muru/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "Muru Graham Dumpleton started mod_wsgi 20 years ago, and has been thinking about the ideal way to serve Python web applications in production ever since.",
-     "why": "Decades of production web serving experience inform modern considerations for Python applications.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-21T23:56:28.000Z",
-     "category": "blogs",
-     "score": 3.63,
-     "readMinutes": 2
-    }
-   ]
+   "entries": []
   },
   {
    "key": "deep-read",
@@ -200,30 +182,29 @@
       "Don't Worry About the Vase"
      ],
      "summary": "Happy Zvi finally takes a real vacation day.",
-     "why": "Industry commentary offers ongoing perspective on current developments across the artificial intelligence landscape.",
-     "whySource": "llm",
+     "why": "Don't Worry About the Vase, ~86 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-19T11:56:26.000Z",
      "category": "blogs",
-     "score": 1.43,
+     "score": 1.2,
      "readMinutes": 86
     }
    ]
   }
  ],
  "itemIds": [
+  "d7e78f94bca2cb94",
   "86e58259f8edb874",
+  "aaa55aaf59895092",
   "26c5ca669b141704",
-  "658afeb85fc89c82",
-  "7421040b4b2a595a",
   "73107a4be91e4a58",
   "8215948b632d1ee9",
-  "ede4c18e07562104",
-  "aaa55aaf59895092",
+  "5e10b4e6db41aaa3",
   "4f1bc804d7f90920"
  ],
  "deepReadId": "4f1bc804d7f90920",
  "llm": {
   "enabled": true,
-  "ok": true
+  "ok": false
  }
 }
