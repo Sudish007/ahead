@@ -1,13 +1,9 @@
 {
  "date": "2026-11-23",
- "generatedAt": "2026-11-23T05:43:41.122Z",
- "wordCount": 695,
- "readingMinutes": 4,
- "overview": {
-  "text": "Today's key developments span architectural improvements, conversational systems, new models, and validation tools. First, cmHC introduces a geometric contraction approach to balance stream mixing in hyper-connections by constraining matrices to the Birkhoff polytope. Second, Duopra extends full-duplex conversational models toward full-duplex agency, incorporating timely tool invocation and argument revision. Third, MemOnce addresses scalable memory architectures for maintaining reusable memory states in long-horizon interactions. Fourth, Clover-35B-A3B-Preview arrives as a mixture-of-experts diffusion language model supporting thinking-mode generation. Finally, new releases and analysis include facebook/sam-3d-body-dinov3, lukendeasy/open-diagram, erkamyaman/safe-anything, NoPeBench for interactive video world models, and formal verification techniques using AI and Lean to combat software slop.",
-  "source": "llm",
-  "model": "gemini-3.5-flash-lite"
- },
+ "generatedAt": "2026-11-23T17:22:38.116Z",
+ "wordCount": 537,
+ "readingMinutes": 3,
+ "overview": null,
  "sections": [
   {
    "key": "must-know",
@@ -26,30 +22,31 @@
       "arXiv cs.LG"
      ],
      "summary": "Manifold-constrained Hyper-Connections (mHC) extends residual connections to multiple streams and stabilizes residual propagation by constraining stream-mixing residual matrices to the Birkhoff polytope, the set of doubly stochastic matrices.",
-     "why": "Stabilizes residual propagation in multi-stream networks using geometric contraction on the Birkhoff polytope.",
-     "whySource": "llm",
+     "why": "83 upvotes on HF Papers; also on arXiv cs.LG",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-20T00:00:00.000Z",
      "category": "research",
-     "score": 16.75
+     "score": 16.7
     },
     {
-     "id": "arxiv:2611.25773",
-     "title": "Duopra: From Full-Duplex Conversation to Full-Duplex Agency",
-     "url": "https://arxiv.org/abs/2611.25773",
+     "id": "3543e6f8a4c1c959",
+     "title": "Nvidia Reinstates Jensen Huang as CEO",
+     "url": "https://www.cnbc.com/2026/11/23/nvidia-jensen-huang-ceo.html",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50611576",
      "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.AI"
+      "hn-front",
+      "hn-top"
      ],
      "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.AI"
+      "HN front page",
+      "Hacker News"
      ],
-     "summary": "Full-duplex interaction models exhibit strong conversational agency, enabling natural, low-latency turn-taking, backchannels, and interruptions. However, completing tasks further requires task agency: timely tool invocation and argument revision following user corrections.",
-     "why": "Advances conversational models toward task agency with timely tool invocation and argument revision.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-19T00:00:00.000Z",
-     "category": "research",
-     "score": 14.75
+     "summary": "",
+     "why": "#1 on HN front page, 611 points, 1.8k comments",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-23T14:00:18.000Z",
+     "category": "news",
+     "score": 15.5
     },
     {
      "id": "arxiv:2611.27973",
@@ -64,11 +61,56 @@
       "arXiv cs.CL"
      ],
      "summary": "Deploying large language models (LLMs) in long-horizon and continual interactions requires maintaining reusable memory states for future inference, posing challenges for existing architectures.",
-     "why": "Provides a scalable memory architecture for maintaining reusable states in long-horizon language model interactions.",
-     "whySource": "llm",
+     "why": "17 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-20T00:00:00.000Z",
      "category": "research",
-     "score": 14.21
+     "score": 14.47
+    },
+    {
+     "id": "f1db7ce98881d890",
+     "title": "GLM-5.4: Toward Generalized Coding with Our First Loop Transformer",
+     "url": "https://z.ai/blog/glm-5.4",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50609685",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "#3 on HN front page, 755 points, 267 comments",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-23T10:06:43.000Z",
+     "category": "news",
+     "score": 14.18
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.25773",
+     "title": "Duopra: From Full-Duplex Conversation to Full-Duplex Agency",
+     "url": "https://arxiv.org/abs/2611.25773",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Full-duplex interaction models exhibit strong conversational agency, enabling natural, low-latency turn-taking, backchannels, and interruptions. However, completing tasks further requires task agency: timely tool invocation and argument revision following user corrections.",
+     "why": "20 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-19T00:00:00.000Z",
+     "category": "research",
+     "score": 14.12
     },
     {
      "id": "arxiv:2611.27229",
@@ -83,18 +125,12 @@
       "arXiv cs.CV"
      ],
      "summary": "Prompt enhancement (PE) refines concise user prompts into detailed descriptions to improve the compositional aesthetics of generated images while preserving user intent.",
-     "why": "Refines user prompts to improve compositional aesthetics while preserving user intent in image generation.",
-     "whySource": "llm",
+     "why": "3 upvotes on HF Papers; also on arXiv cs.CV",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-20T00:00:00.000Z",
      "category": "research",
-     "score": 13.47
-    }
-   ]
-  },
-  {
-   "key": "research",
-   "title": "Research",
-   "entries": [
+     "score": 12.3
+    },
     {
      "id": "arxiv:2611.27211",
      "title": "Explicit Style Extraction for Personalized Long-Form Text Generation",
@@ -108,45 +144,11 @@
       "arXiv cs.CL"
      ],
      "summary": "Personalized long-form generation asks a language model to write new text the way a specific user would. The standard recipe, retrieval-augmented generation, places a few of the user's past texts in the prompt but leaves the model to decide what to take from them.…",
-     "why": "Extracts explicit styles to improve personalized long-form text generation over standard retrieval methods.",
-     "whySource": "llm",
+     "why": "2 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-20T00:00:00.000Z",
      "category": "research",
-     "score": 12.89
-    },
-    {
-     "id": "arxiv:2611.24636",
-     "title": "Clover-35B-A3B-Preview Technical Report",
-     "url": "https://arxiv.org/abs/2611.24636",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "We introduce Clover-35B-A3B-Preview (Clover), a mixture-of-experts diffusion language model with 35 billion total parameters and 3 billion activated parameters, supporting thinking-mode generation.",
-     "why": "Introduces a mixture-of-experts diffusion language model supporting thinking-mode generation.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
-     "category": "research",
-     "score": 11.49
-    },
-    {
-     "id": "arxiv:2611.27963",
-     "title": "Non-penetrating World Models",
-     "url": "https://arxiv.org/abs/2611.27963",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "We study a new problem of preventing object penetration in interactive video world models. To understand how existing models handle this, we introduce NoPeBench, a benchmark that evaluates how world models respond to physical obstacles.",
-     "why": "Evaluates and addresses object penetration issues in interactive video world models.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T00:00:00.000Z",
-     "category": "research",
-     "score": 11.49
+     "score": 11.89
     }
    ]
   },
@@ -165,28 +167,28 @@
       "HF trending models"
      ],
      "summary": "sam-3d-body · 1,734 likes · 18,709 downloads",
-     "why": "Provides new open weights for specialized 3D body vision tasks.",
-     "whySource": "llm",
+     "why": "1.7k likes on Hugging Face",
+     "whySource": "heuristic",
      "publishedAt": "2025-11-17T18:44:24.000Z",
      "category": "releases",
-     "score": 9.38
+     "score": 8.58
     },
     {
-     "id": "a05239fcb341d83c",
-     "title": "lukendeasy/open-diagram",
-     "url": "https://github.com/lukendeasy/open-diagram",
+     "id": "aee4cecd872a2426",
+     "title": "LIUFelix2004/dsh-workbuddy",
+     "url": "https://github.com/LIUFelix2004/dsh-workbuddy",
      "sourceIds": [
-      "gh-trending-agents"
+      "gh-trending-llm"
      ],
      "sourceNames": [
-      "GitHub new repos: ai-agents"
+      "GitHub new repos: llm"
      ],
-     "summary": "Python building blocks for dense architecture diagrams that check their own layout · Python",
-     "why": "Offers Python building blocks for dense architecture diagrams with self-checking layouts.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T17:34:59.000Z",
+     "summary": "Import WorkBuddy accounts into DeepSeek Harness as model providers: one route per account, full model list, per-account credit balance, and an automatic workaround for the gateway 11128 channel check. · JavaScript",
+     "why": "149 stars in 4 days",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-20T11:22:44.000Z",
      "category": "releases",
-     "score": 7.41
+     "score": 7.61
     },
     {
      "id": "a43d0e259060c66d",
@@ -199,40 +201,94 @@
       "GitHub new repos: ai-agents"
      ],
      "summary": "Find the holes before someone else does. A fast, 100% Rust vulnerability scanner: XSS, SQL injection, leaked secrets, dependency CVEs and AI agent setups. · Rust",
-     "why": "Delivers a fast Rust vulnerability scanner covering code, dependencies, and AI agent setups.",
-     "whySource": "llm",
+     "why": "393 stars in 2 days",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-22T16:44:10.000Z",
      "category": "releases",
-     "score": 7.34
+     "score": 7.51
     }
    ]
   },
   {
    "key": "labs",
    "title": "From the labs",
-   "entries": []
+   "entries": [
+    {
+     "id": "895b540db6a8889e",
+     "title": "Finding faster quantum algorithms with agents and formal verification",
+     "url": "https://deepmind.google/blog/finding-faster-quantum-algorithms-with-agents-and-formal-verification/",
+     "sourceIds": [
+      "deepmind"
+     ],
+     "sourceNames": [
+      "Google DeepMind"
+     ],
+     "summary": "Using agent teams and formal verification to improve quantum algorithms for fusion and chemistry.",
+     "why": "Google DeepMind announcement",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-23T16:59:40.000Z",
+     "category": "labs",
+     "score": 6.95,
+     "readMinutes": 1
+    },
+    {
+     "id": "eb2701ff66febea2",
+     "title": "RoboTrack: Point tracking for real-world robotic manipulation",
+     "url": "https://huggingface.co/blog/allenai/robotrack",
+     "sourceIds": [
+      "hf-blog"
+     ],
+     "sourceNames": [
+      "Hugging Face Blog"
+     ],
+     "summary": "",
+     "why": "Hugging Face Blog announcement",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-23T17:20:37.000Z",
+     "category": "labs",
+     "score": 5
+    }
+   ]
   },
   {
    "key": "analysis",
    "title": "Analysis worth reading",
    "entries": [
     {
-     "id": "71ff2ee8bf23be9b",
-     "title": "Select Styling Specimens",
-     "url": "https://simonwillison.net/2026/Nov/22/select-styling/",
+     "id": "e45eb71a77fef623",
+     "title": "Import AI 482: Huawei kernel benchmarks; airborne drone detection; and a national lab's AI science benchmark",
+     "url": "https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks",
      "sourceIds": [
-      "simonw"
+      "importai"
      ],
      "sourceNames": [
-      "Simon Willison"
+      "Import AI"
      ],
-     "summary": "Tool: Select Styling Specimens I got frustrated at how HTML boxes default to looking different in different browsers, and are (I think) quite ugly in Chrome: So I had Claude Fable 5.2 build me this page showing all of the ways they can be styled: Build an HTML page that shows…",
-     "why": "Demonstrates practical web styling specimens built using Claude Fable 5.2.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-22T19:45:06.000Z",
+     "summary": "Could the scientific method be emergent?",
+     "why": "Import AI, ~16 min read",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-23T14:11:17.000Z",
      "category": "blogs",
-     "score": 3.3,
-     "readMinutes": 1
+     "score": 5.64,
+     "readMinutes": 16
+    },
+    {
+     "id": "a5885747f9c74295",
+     "title": "ChinAI #383: China’s struggling robotics companies",
+     "url": "https://chinai.substack.com/p/chinai-383-chinas-struggling-robotics",
+     "sourceIds": [
+      "chinai"
+     ],
+     "sourceNames": [
+      "ChinAI"
+     ],
+     "summary": "Greetings from a world where…",
+     "why": "ChinAI, ~7 min read",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-23T12:42:56.000Z",
+     "category": "blogs",
+     "score": 3.66,
+     "readMinutes": 7
     }
    ]
   },
@@ -251,11 +307,11 @@
       "Latent Space"
      ],
      "summary": "Proving software correct with math has traditionally required specialist work. Now AI and Lean are helping automate the process.",
-     "why": "Explores how AI and Lean automate formal verification to fight software slop.",
-     "whySource": "llm",
+     "why": "Latent Space, ~8 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-20T21:18:41.000Z",
      "category": "blogs",
-     "score": 1.69,
+     "score": 1.35,
      "readMinutes": 8
     }
    ]
@@ -263,21 +319,24 @@
  ],
  "itemIds": [
   "arxiv:2611.27193",
-  "arxiv:2611.25773",
+  "3543e6f8a4c1c959",
   "arxiv:2611.27973",
+  "f1db7ce98881d890",
+  "arxiv:2611.25773",
   "arxiv:2611.27229",
   "arxiv:2611.27211",
-  "arxiv:2611.24636",
-  "arxiv:2611.27963",
   "3c59ab5785012918",
-  "a05239fcb341d83c",
+  "aee4cecd872a2426",
   "a43d0e259060c66d",
-  "71ff2ee8bf23be9b",
+  "895b540db6a8889e",
+  "eb2701ff66febea2",
+  "e45eb71a77fef623",
+  "a5885747f9c74295",
   "3592d59cf6f86897"
  ],
  "deepReadId": "3592d59cf6f86897",
  "llm": {
   "enabled": true,
-  "ok": true
+  "ok": false
  }
 }
