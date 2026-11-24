@@ -1,0 +1,346 @@
+{
+ "date": "2026-11-24",
+ "generatedAt": "2026-11-24T03:48:54.070Z",
+ "wordCount": 802,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's key developments span practical infrastructure, video reasoning, and model pretraining architectures. OpenAI and Cisco introduced Shirudo, an open-source runtime designed to protect running Linux systems during patch rollouts. In vision-language research, new work addresses video foresight reasoning through on-policy self-distillation from unlabeled videos, alongside Plan4D, which tackles generative plannable four-dimensional worlds with improved physical grounding. Meanwhile, search-native pretraining explores shifting search capabilities directly into the foundational pretraining phase rather than relying solely on post-training adaptation. In tooling and releases, developers gained access to new resources like local AI guides featuring Inkling, Qwen, and Unsloth, alongside specialized infrastructure such as SAP data MCP servers and agent simulators.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "b0689cf87ab570a4",
+     "title": "OpenAI and Cisco introduce Shirudo",
+     "url": "https://openai.com/index/introducing-shirudo",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50619630",
+     "sourceIds": [
+      "openai",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "OpenAI and Cisco introduce Shirudo, an open-source runtime for Linux. It helps teams protect running systems while they roll out patches.",
+     "why": "Offers an open-source Linux runtime to protect running production systems during critical patch rollouts.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T21:20:00.000Z",
+     "category": "labs",
+     "score": 14.92,
+     "readMinutes": 1
+    },
+    {
+     "id": "arxiv:2611.26954",
+     "title": "Learning Video Foresight Reasoning from Unlabeled Videos via On-Policy Self-Distillation",
+     "url": "https://arxiv.org/abs/2611.26954",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Video foresight reasoning requires vision-language models to anticipate future events or next actions from currently observed videos. Existing methods fit future captions, rationales, or full visual states, but face two limitations.",
+     "why": "Improves vision-language model video foresight reasoning using on-policy self-distillation from unlabeled video data.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T00:00:00.000Z",
+     "category": "research",
+     "score": 14.4
+    },
+    {
+     "id": "c75d02646488f494",
+     "title": "A Beginner's Guide to Local AI with Inkling, Qwen, and Unsloth",
+     "url": "https://www.gpupartner.com/blog/beginners-guide-local-ai-inkling-qwen-unsloth",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50603845",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Provides practical guidance for running local AI stacks with Inkling, Qwen, and Unsloth tools.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-22T21:01:16.000Z",
+     "category": "news",
+     "score": 12.2
+    },
+    {
+     "id": "arxiv:2611.26516",
+     "title": "Plan4D: Generative Plannable 4D Worlds",
+     "url": "https://arxiv.org/abs/2611.26516",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Most world models for future prediction prioritize aestetic quality of generated videos, but offer only weak physical grounding and limited geometric consistency over time, due to the lack of explicit 4D modeling.",
+     "why": "Introduces explicit four-dimensional modeling to enhance physical grounding and geometric consistency in world models.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T00:00:00.000Z",
+     "category": "research",
+     "score": 12.02
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.26809",
+     "title": "Search From the Start: Search-Native Pretraining for Language Models",
+     "url": "https://arxiv.org/abs/2611.26809",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Modern language models (LMs) are increasingly deployed with access to search tools at inference. Yet pretraining remains predominantly focused on predicting static text, with search capabilities typically introduced during post-training.",
+     "why": "Shifts search capabilities directly into language model pretraining instead of relying only on post-training updates.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T00:00:00.000Z",
+     "category": "research",
+     "score": 11.16
+    },
+    {
+     "id": "arxiv:2611.29338",
+     "title": "A Glimpse of Training VLMs as Foundation Models for Robotic Manipulation",
+     "url": "https://arxiv.org/abs/2611.29338",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Recently, GPT-6 Astra demonstrates strong generalization in robot control, yet limited disclosure of its training leaves open how such capabilities can be reproduced.",
+     "why": "Examines foundational visual language model training methodologies for robotic manipulation control tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-22T00:00:00.000Z",
+     "category": "research",
+     "score": 10.89
+    },
+    {
+     "id": "arxiv:2611.28202",
+     "title": "AutoPILOT: A Visual Agent Harness for Real-Time Gameplay",
+     "url": "https://arxiv.org/abs/2611.28202",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Multimodal foundation models can play video games well when the game waits for them, but often fail when it keeps running. We find that much of this gap lies in the harness, which decides what the model sees, what it remembers, and how its outputs become actions over time.",
+     "why": "Analyzes visual agent harness design to improve real-time video game performance during continuous execution.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T00:00:00.000Z",
+     "category": "research",
+     "score": 10.89
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "875b785c2079b75b",
+     "title": "Developing-Gamer/agent-sim",
+     "url": "https://github.com/Developing-Gamer/agent-sim",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "iOS simulators for AI agents, on Linux · Rust",
+     "why": "Provides iOS simulators tailored for AI agents running on Linux environments using Rust.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-21T20:26:12.000Z",
+     "category": "releases",
+     "score": 7.66
+    },
+    {
+     "id": "d2f98570ba045778",
+     "title": "inclusionAI/Ling-3.2-air",
+     "url": "https://huggingface.co/inclusionAI/Ling-3.2-air",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "114 likes · 0 downloads",
+     "why": "Represents a newly trending model release in the open-source ecosystem.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T03:55:12.000Z",
+     "category": "releases",
+     "score": 7.42
+    },
+    {
+     "id": "25907382c442869e",
+     "title": "w1ccc/sap-data-mcp",
+     "url": "https://github.com/w1ccc/sap-data-mcp",
+     "sourceIds": [
+      "gh-trending-agents",
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents",
+      "GitHub new repos: llm"
+     ],
+     "summary": "Read-only MCP servers that let AI assistants query SAP S/4HANA through RFC/BAPI, private-cloud OData and public-cloud released APIs. Every call audited; credentials stay local. · Python",
+     "why": "Enables audited, local-credential read-only access for AI assistants to query enterprise SAP systems securely.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T15:15:23.000Z",
+     "category": "releases",
+     "score": 7.28
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "8a952e6dea4cd375",
+     "title": "Supercharging transformer residual connections",
+     "url": "https://research.google/blog/supercharging-transformer-residual-connections/",
+     "sourceIds": [
+      "google-research"
+     ],
+     "sourceNames": [
+      "Google Research"
+     ],
+     "summary": "Algorithms & Theory",
+     "why": "Explores algorithmic improvements for supercharging transformer residual connections.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T17:21:12.000Z",
+     "category": "labs",
+     "score": 4.91,
+     "readMinutes": 1
+    },
+    {
+     "id": "10878202550bbbf9",
+     "title": "Connected intelligence for in-house legal",
+     "url": "https://openai.com/business/learn/connected-intelligence-for-in-house-legal",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "Watch OpenAI’s Stacey Wang and Craig Bruney, Mary O’Carroll of LECG, and Cooley’s Richard Segal explore how AI can help in-house legal teams connect business context, build reusable workflows and get more from outside counsel.",
+     "why": "Explores connected intelligence workflows and business context integration specifically for in-house legal teams.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T08:00:00.000Z",
+     "category": "labs",
+     "score": 4.78,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "ba1fa9cd52262766",
+     "title": "Comparing AI R&D compute caps and deployment lags",
+     "url": "https://www.alignmentforum.org/posts/e758PJCpwAwyodvEj/comparing-ai-r-and-d-compute-caps-and-deployment-lags",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "I’m publishing this a bit rougher than usual because it’s very pertinent to Evan Hubinger’s recent shortform, which advocates for blocking internal deployment as a pacing mechanism over compute reallocation (he mostly discusses it in the context of a risk-assessment-based…",
+     "why": "Compares internal deployment blocks and compute reallocation as strategic AI R&D pacing mechanisms.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T02:23:44.000Z",
+     "category": "blogs",
+     "score": 3.89,
+     "readMinutes": 12
+    },
+    {
+     "id": "981d6178a1cb2235",
+     "title": "Ladybird's first alpha release",
+     "url": "https://simonwillison.net/2026/Nov/23/ladybird/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Ladybird is an astonishingly ambitious project: a new browser, in 2026, with its own implementation of most of the key components - HTML parsing, CSS engine, layout, JavaScript, even WebAssembly.",
+     "why": "Showcases an ambitious greenfield browser implementation featuring independent rendering engines and JavaScript support.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T21:46:35.000Z",
+     "category": "blogs",
+     "score": 3.56,
+     "readMinutes": 6
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "1d3bf837d81906cc",
+     "title": "GPT-6.2 Astra and Sol: The System Card",
+     "url": "https://thezvi.substack.com/p/gpt-62-astra-and-sol-the-system-card",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "We have to stop meeting like this.",
+     "why": "Analyzes system card details for advanced model architectures in ongoing technical evaluations.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-21T15:11:35.000Z",
+     "category": "blogs",
+     "score": 1.56,
+     "readMinutes": 31
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "b0689cf87ab570a4",
+  "arxiv:2611.26954",
+  "c75d02646488f494",
+  "arxiv:2611.26516",
+  "arxiv:2611.26809",
+  "arxiv:2611.29338",
+  "arxiv:2611.28202",
+  "875b785c2079b75b",
+  "d2f98570ba045778",
+  "25907382c442869e",
+  "8a952e6dea4cd375",
+  "10878202550bbbf9",
+  "ba1fa9cd52262766",
+  "981d6178a1cb2235",
+  "1d3bf837d81906cc"
+ ],
+ "deepReadId": "1d3bf837d81906cc",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
