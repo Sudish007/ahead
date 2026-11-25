@@ -1,0 +1,352 @@
+{
+ "date": "2026-11-25",
+ "generatedAt": "2026-11-25T01:54:40.628Z",
+ "wordCount": 841,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's key developments span workforce impacts, frontier model capabilities, market shifts, and new research directions. Interviews with companies using Claude reveal that while layoffs remain low, hiring is reduced and successful integration requires reorganizing workplaces. Meanwhile, OpenAI's GPT-6 models demonstrate intrinsic protein-design capabilities with binding evidence across five targets, and also power sales workflows at Clay alongside Codex. In the market, Anthropic broke below its IPO price, and Tidal banned AI-generated music. Research highlights include Motion Mamba 2.0 for long-horizon humanoid control, feedback shortcut techniques for Latent Feedback Transformers, and vision-language models tracking invisible radio fields. Additionally, practical releases like godot-skills and llm-key-pool offer new utilities for developers, while governance and analysis touch on Jensen Huang's reinstatement as Nvidia CEO and discussions on existential risk.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "7862748937ffc599",
+     "title": "Working with AI",
+     "url": "https://www.anthropic.com/research/working-with-ai",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50634734",
+     "sourceIds": [
+      "anthropic",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "Anthropic",
+      "Hacker News"
+     ],
+     "summary": "We interviewed people at 58 companies that use Claude about how AI is changing their work. They described few layoffs but reduced hiring, and said the most valuable uses of AI often involved reorganizing roles and workplaces around it.",
+     "why": "Shows how companies using Claude experience reduced hiring and must reorganize roles around AI deployment.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T00:00:00.000Z",
+     "category": "labs",
+     "score": 17.3
+    },
+    {
+     "id": "ac2f786b30f6d457",
+     "title": "GPT-6 models demonstrate intrinsic protein-design capabilities",
+     "url": "https://openai.com/index/gpt-6-models-demonstrate-intrinsic-protein-design-capabilities",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50634658",
+     "sourceIds": [
+      "openai",
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "OpenAI",
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
+     "why": "Demonstrates that GPT-6 models achieve intrinsic protein design with successful binding across five lab targets.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T13:00:00.000Z",
+     "category": "labs",
+     "score": 16.94,
+     "readMinutes": 1
+    },
+    {
+     "id": "1e8fe8d51502fd15",
+     "title": "Anthropic breaks below $83 IPO price",
+     "url": "https://www.bloomberg.com/news/articles/2026-11-24/anthropic-breaks-below-83-ipo-price-in-premarket-trading",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50627836",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Marks Anthropic trading below its IPO price, signaling notable market movements for a major AI lab.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T13:23:47.000Z",
+     "category": "news",
+     "score": 13.56
+    },
+    {
+     "id": "8914c06692750e0f",
+     "title": "Tidal Bans AI-Generated Music",
+     "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50630309",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Reflects growing industry pushback as Tidal officially bans AI-generated music on its platform.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T16:12:38.000Z",
+     "category": "news",
+     "score": 13.27
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.29897",
+     "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
+     "url": "https://arxiv.org/abs/2611.29897",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving.",
+     "why": "Provides autoregressive diffusion Mamba architecture tailored for long-horizon and real-time humanoid robot motion control.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T00:00:00.000Z",
+     "category": "research",
+     "score": 12.28
+    },
+    {
+     "id": "arxiv:2611.28227",
+     "title": "Feedback Shortcut: Speculative Decoding for Latent Feedback Transformers",
+     "url": "https://arxiv.org/abs/2611.28227",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.LG"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.LG"
+     ],
+     "summary": "Feeding each position's top-layer hidden state back into the next position's input improves Transformer performance.",
+     "why": "Improves Transformer performance by feeding top-layer hidden states back into the next position's input.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T00:00:00.000Z",
+     "category": "research",
+     "score": 11.67
+    },
+    {
+     "id": "arxiv:2611.28123",
+     "title": "Seeing the Invisible: How Vision-Language Models Read, Predict and Trace Radio Fields",
+     "url": "https://arxiv.org/abs/2611.28123",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Operating in the physical world requires reasoning beyond what cameras directly capture. In a city, radio signals are invisible to the lens, yet their strength is governed by the buildings and streets an image does show.",
+     "why": "Enables vision-language models to read, predict, and trace invisible radio fields using urban environment imagery.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "category": "research",
+     "score": 11.67
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "c4766e997cf55369",
+     "title": "llamaindex/OCRia-nano-1",
+     "url": "https://huggingface.co/llamaindex/OCRia-nano-1",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-to-text · liteparse · 159 likes · 0 downloads",
+     "why": "Offers a new liteparse image-to-text model for OCR tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T21:44:40.000Z",
+     "category": "releases",
+     "score": 7.03
+    },
+    {
+     "id": "382dee8be5a53bc2",
+     "title": "EL4CTEO/godot-skills",
+     "url": "https://github.com/EL4CTEO/godot-skills",
+     "sourceIds": [
+      "gh-trending-agents",
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents",
+      "GitHub new repos: llm"
+     ],
+     "summary": "Godot 4.7 Agent Skills for AI coding agents, based on Godot 4.7.2: GDScript and C#/.NET, exact API lookup, safe scene editing, compile checks. · Python",
+     "why": "Provides Godot agent skills with exact API lookup and safe scene editing for AI coding agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T11:20:38.000Z",
+     "category": "releases",
+     "score": 6.85
+    },
+    {
+     "id": "3d43831b12dd31fa",
+     "title": "francoisokada/llm-key-pool",
+     "url": "https://github.com/francoisokada/llm-key-pool",
+     "sourceIds": [
+      "gh-trending-llm"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm"
+     ],
+     "summary": "Rotate free-tier LLM API keys automatically. One pool, many providers, zero 429s. | llm api rotation free-tier openai anthropic | Portable x64 prebuilt for Windows · C++",
+     "why": "Automates the rotation of free-tier LLM API keys across providers to avoid rate limits.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T05:14:01.000Z",
+     "category": "releases",
+     "score": 6.85
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "7758c04a629331bf",
+     "title": "Searching for distant planets with Astra",
+     "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space telescopes.",
+     "why": "Illustrates how amateur astronomers utilize Codex and Astra to discover potential exoplanets in NASA data.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T11:00:00.000Z",
+     "category": "labs",
+     "score": 5.25,
+     "readMinutes": 1
+    },
+    {
+     "id": "a3c9028eefd69cfd",
+     "title": "Clay helps sales teams win with Codex and ChatGPT",
+     "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+     "sourceIds": [
+      "openai"
+     ],
+     "sourceNames": [
+      "OpenAI"
+     ],
+     "summary": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling the reasoning.",
+     "why": "Highlights how Clay leverages ChatGPT, Codex, and GPT-6 models to drive sales research and workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T00:00:00.000Z",
+     "category": "labs",
+     "score": 4.25,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "f243c5e6ef9594ca",
+     "title": "Jensen Huang Reinstated As Nvidia CEO at Behest of President Trump",
+     "url": "https://thezvi.substack.com/p/jensen-huang-reinstated-as-nvidia",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "In the evening of November 22, Donald Trump said he ‘hoped’ the Nvidia board would rehire Jensen Huang, as the ‘best thing for the Company.’",
+     "why": "Documents the political and corporate development regarding Jensen Huang being reinstated as Nvidia CEO.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T22:42:01.000Z",
+     "category": "blogs",
+     "score": 4.7,
+     "readMinutes": 49
+    },
+    {
+     "id": "5e8eba5b15ac6044",
+     "title": "Three LLM inflection points in twelve months",
+     "url": "https://simonwillison.net/2026/Nov/24/llm-inflection-points/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "I gave a keynote at the AI Engineer Code Summit a couple of weeks ago, constructed around the idea that there have been three significant inflection points in the abilities of LLMs and coding agents in the past twelve months. Here's the video of the talk.",
+     "why": "Analyzes the three significant inflection points in LLM and coding agent capabilities over twelve months.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T23:02:07.000Z",
+     "category": "blogs",
+     "score": 3.78,
+     "readMinutes": 8
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "8a53a4a98c97cdc8",
+     "title": "On Dwarkesh Patel’s November 2026 Podcast With Paul Christiano",
+     "url": "https://thezvi.substack.com/p/on-dwarkesh-patels-november-2026",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "Paul Christiano has a message for us: There is meaningful risk of AI taking over within even the next 6-12 months.",
+     "why": "Explores Paul Christiano's warning regarding meaningful AI takeover risk within a short timeframe.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T15:24:40.000Z",
+     "category": "blogs",
+     "score": 0.64,
+     "readMinutes": 27
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "7862748937ffc599",
+  "ac2f786b30f6d457",
+  "1e8fe8d51502fd15",
+  "8914c06692750e0f",
+  "arxiv:2611.29897",
+  "arxiv:2611.28227",
+  "arxiv:2611.28123",
+  "c4766e997cf55369",
+  "382dee8be5a53bc2",
+  "3d43831b12dd31fa",
+  "7758c04a629331bf",
+  "a3c9028eefd69cfd",
+  "f243c5e6ef9594ca",
+  "5e8eba5b15ac6044",
+  "8a53a4a98c97cdc8"
+ ],
+ "deepReadId": "8a53a4a98c97cdc8",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
