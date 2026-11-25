@@ -1,37 +1,54 @@
 {
  "date": "2026-11-25",
- "generatedAt": "2026-11-25T01:54:40.628Z",
- "wordCount": 841,
- "readingMinutes": 4,
- "overview": {
-  "text": "Today's key developments span workforce impacts, frontier model capabilities, market shifts, and new research directions. Interviews with companies using Claude reveal that while layoffs remain low, hiring is reduced and successful integration requires reorganizing workplaces. Meanwhile, OpenAI's GPT-6 models demonstrate intrinsic protein-design capabilities with binding evidence across five targets, and also power sales workflows at Clay alongside Codex. In the market, Anthropic broke below its IPO price, and Tidal banned AI-generated music. Research highlights include Motion Mamba 2.0 for long-horizon humanoid control, feedback shortcut techniques for Latent Feedback Transformers, and vision-language models tracking invisible radio fields. Additionally, practical releases like godot-skills and llm-key-pool offer new utilities for developers, while governance and analysis touch on Jensen Huang's reinstatement as Nvidia CEO and discussions on existential risk.",
-  "source": "llm",
-  "model": "gemini-3.5-flash-lite"
- },
+ "generatedAt": "2026-11-25T16:47:30.451Z",
+ "wordCount": 645,
+ "readingMinutes": 3,
+ "overview": null,
  "sections": [
   {
    "key": "must-know",
    "title": "Must know",
    "entries": [
     {
-     "id": "7862748937ffc599",
-     "title": "Working with AI",
-     "url": "https://www.anthropic.com/research/working-with-ai",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50634734",
+     "id": "9f183e9f9f75c876",
+     "title": "NariQ: BF16-level Qwen3.8-27B in a 10 GB file",
+     "url": "https://huggingface.co/nari-labs/Qwen3.8-27B-NariQ-GGUF",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50611402",
      "sourceIds": [
-      "anthropic",
-      "hn-top"
+      "hn-front",
+      "hn-top",
+      "hf-trending"
      ],
      "sourceNames": [
-      "Anthropic",
-      "Hacker News"
+      "HN front page",
+      "Hacker News",
+      "HF trending models"
      ],
-     "summary": "We interviewed people at 58 companies that use Claude about how AI is changing their work. They described few layoffs but reduced hiring, and said the most valuable uses of AI often involved reorganizing roles and workplaces around it.",
-     "why": "Shows how companies using Claude experience reduced hiring and must reorganize roles around AI deployment.",
-     "whySource": "llm",
+     "summary": "image-text-to-text · gguf · 134 likes · 14,337 downloads",
+     "why": "137 points on HN, 29 comments; also on HF trending models",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-20T01:27:15.000Z",
+     "category": "releases",
+     "score": 19.77
+    },
+    {
+     "id": "arxiv:2611.31358",
+     "title": "Nemotron-Labs-VisualCreation: Pixel as Code for Agentic Visual Creation",
+     "url": "https://arxiv.org/abs/2611.31358",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Visual creation demands expressive imagery together with precise control over text, layout, and structure. We introduce Nemotron-Labs-VisualCreation, an agentic framework that connects these capabilities through Pixel as Code.",
+     "why": "77 upvotes on HF Papers; also on arXiv cs.CV",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-23T00:00:00.000Z",
-     "category": "labs",
-     "score": 17.3
+     "category": "research",
+     "score": 16.66
     },
     {
      "id": "ac2f786b30f6d457",
@@ -49,52 +66,31 @@
       "Hacker News"
      ],
      "summary": "GPT-6 models design protein structures and sequences using reasoning and code. Lab tests found evidence of binding across five targets.",
-     "why": "Demonstrates that GPT-6 models achieve intrinsic protein design with successful binding across five lab targets.",
-     "whySource": "llm",
+     "why": "#28 on HN front page, 328 points, 92 comments",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-24T13:00:00.000Z",
      "category": "labs",
-     "score": 16.94,
+     "score": 16.42,
      "readMinutes": 1
     },
     {
-     "id": "1e8fe8d51502fd15",
-     "title": "Anthropic breaks below $83 IPO price",
-     "url": "https://www.bloomberg.com/news/articles/2026-11-24/anthropic-breaks-below-83-ipo-price-in-premarket-trading",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50627836",
+     "id": "arxiv:2611.28947",
+     "title": "Don't Sleep, Keep Watch: Proactive Perception for Computer-Use Agents",
+     "url": "https://arxiv.org/abs/2611.28947",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CL"
      ],
-     "summary": "",
-     "why": "Marks Anthropic trading below its IPO price, signaling notable market movements for a major AI lab.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-24T13:23:47.000Z",
-     "category": "news",
-     "score": 13.56
-    },
-    {
-     "id": "8914c06692750e0f",
-     "title": "Tidal Bans AI-Generated Music",
-     "url": "https://variety.com/2026/music/news/tidal-bans-ai-generated-music-1236956924/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50630309",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Reflects growing industry pushback as Tidal officially bans AI-generated music on its platform.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-24T16:12:38.000Z",
-     "category": "news",
-     "score": 13.27
+     "summary": "Computer-use agents (CUAs) built on vision-language models are increasingly entrusted with long-horizon tasks in live desktop, web, and mobile environments, where the screen keeps changing on its own.",
+     "why": "83 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-21T00:00:00.000Z",
+     "category": "research",
+     "score": 16.18
     }
    ]
   },
@@ -103,45 +99,47 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.29897",
-     "title": "Motion Mamba 2.0: Autoregressive Diffusion Mamba for Long-Horizon Humanoid Control",
-     "url": "https://arxiv.org/abs/2611.29897",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Long-horizon, real-time controllable motion generation is essential for interactive animation and humanoid robotics, where an agent must respond to changing instructions and spatial goals while moving.",
-     "why": "Provides autoregressive diffusion Mamba architecture tailored for long-horizon and real-time humanoid robot motion control.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-23T00:00:00.000Z",
-     "category": "research",
-     "score": 12.28
-    },
-    {
-     "id": "arxiv:2611.28227",
-     "title": "Feedback Shortcut: Speculative Decoding for Latent Feedback Transformers",
-     "url": "https://arxiv.org/abs/2611.28227",
+     "id": "arxiv:2611.28719",
+     "title": "KMed-31B Technical Report",
+     "url": "https://arxiv.org/abs/2611.28719",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.LG"
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.LG"
+      "arXiv cs.CL"
      ],
-     "summary": "Feeding each position's top-layer hidden state back into the next position's input improves Transformer performance.",
-     "why": "Improves Transformer performance by feeding top-layer hidden states back into the next position's input.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-20T00:00:00.000Z",
+     "summary": "We present KMed-31B, a medical large language model post-trained from an open-weight model for on-premises deployment with limited hardware. Post-training a model for diverse medical tasks remains difficult, because improving one kind of task can lower performance on another.",
+     "why": "19 upvotes on HF Papers; also on arXiv cs.CL",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-21T00:00:00.000Z",
      "category": "research",
-     "score": 11.67
+     "score": 14.11
     },
     {
-     "id": "arxiv:2611.28123",
-     "title": "Seeing the Invisible: How Vision-Language Models Read, Predict and Trace Radio Fields",
-     "url": "https://arxiv.org/abs/2611.28123",
+     "id": "arxiv:2611.31974",
+     "title": "Coding4Games: Can Modern Coding Agents Play Modern Video Games?",
+     "url": "https://arxiv.org/abs/2611.31974",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Games, especially modern AAA games, challenge language models to perceive complex scenes, control actions, and make decisions over long horizons.",
+     "why": "10 upvotes on HF Papers; also on arXiv cs.AI",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-24T00:00:00.000Z",
+     "category": "research",
+     "score": 13.83
+    },
+    {
+     "id": "arxiv:2611.31466",
+     "title": "AdProducer: Towards Agentic Advertising Video Generation",
+     "url": "https://arxiv.org/abs/2611.31466",
      "sourceIds": [
       "hf-papers",
       "arxiv-cs.CV"
@@ -150,12 +148,12 @@
       "HF Daily Papers",
       "arXiv cs.CV"
      ],
-     "summary": "Operating in the physical world requires reasoning beyond what cameras directly capture. In a city, radio signals are invisible to the lens, yet their strength is governed by the buildings and streets an image does show.",
-     "why": "Enables vision-language models to read, predict, and trace invisible radio fields using urban environment imagery.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-18T00:00:00.000Z",
+     "summary": "Recent advances in video generation have made automated advertising production increasingly feasible.",
+     "why": "4 upvotes on HF Papers; also on arXiv cs.CV",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-23T00:00:00.000Z",
      "category": "research",
-     "score": 11.67
+     "score": 12.7
     }
    ]
   },
@@ -164,57 +162,55 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "c4766e997cf55369",
-     "title": "llamaindex/OCRia-nano-1",
-     "url": "https://huggingface.co/llamaindex/OCRia-nano-1",
+     "id": "dbede62d4d711d8c",
+     "title": "harness-hub/Qwen3.8-27B-pi-adapted",
+     "url": "https://huggingface.co/harness-hub/Qwen3.8-27B-pi-adapted",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-to-text · liteparse · 159 likes · 0 downloads",
-     "why": "Offers a new liteparse image-to-text model for OCR tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-03T21:44:40.000Z",
+     "summary": "image-text-to-text · peft · 1,088 likes · 3,844 downloads",
+     "why": "1.1k likes on Hugging Face",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-16T06:52:31.000Z",
      "category": "releases",
-     "score": 7.03
+     "score": 9.04
     },
     {
-     "id": "382dee8be5a53bc2",
-     "title": "EL4CTEO/godot-skills",
-     "url": "https://github.com/EL4CTEO/godot-skills",
+     "id": "fb828fc93bb9d0c8",
+     "title": "prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
+     "url": "https://huggingface.co/prism-ml/Ternary-Bonsai-2.5-27B-GGUF",
      "sourceIds": [
-      "gh-trending-agents",
-      "gh-trending-llm"
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: ai-agents",
-      "GitHub new repos: llm"
+      "HF trending models"
      ],
-     "summary": "Godot 4.7 Agent Skills for AI coding agents, based on Godot 4.7.2: GDScript and C#/.NET, exact API lookup, safe scene editing, compile checks. · Python",
-     "why": "Provides Godot agent skills with exact API lookup and safe scene editing for AI coding agents.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-19T11:20:38.000Z",
+     "summary": "text-generation · llama.cpp · 262 likes · 59,366 downloads",
+     "why": "262 likes on Hugging Face",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-24T16:32:20.000Z",
      "category": "releases",
-     "score": 6.85
+     "score": 8.02
     },
     {
-     "id": "3d43831b12dd31fa",
-     "title": "francoisokada/llm-key-pool",
-     "url": "https://github.com/francoisokada/llm-key-pool",
+     "id": "912e2d6b252765e3",
+     "title": "matheusmongarde/garimpo",
+     "url": "https://github.com/matheusmongarde/garimpo",
      "sourceIds": [
-      "gh-trending-llm"
+      "gh-trending-agents"
      ],
      "sourceNames": [
-      "GitHub new repos: llm"
+      "GitHub new repos: ai-agents"
      ],
-     "summary": "Rotate free-tier LLM API keys automatically. One pool, many providers, zero 429s. | llm api rotation free-tier openai anthropic | Portable x64 prebuilt for Windows · C++",
-     "why": "Automates the rotation of free-tier LLM API keys across providers to avoid rate limits.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-24T05:14:01.000Z",
+     "summary": "Prospecção open source do Google Maps ao Pix: acha negócios no Maps, gera um site-prévia com o nome de cada um, conversa no WhatsApp e cobra por Pix, Mercado Pago ou Stripe. Pagou, fecha sozinho.",
+     "why": "150 stars in 1 day",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-24T23:58:18.000Z",
      "category": "releases",
-     "score": 6.85
+     "score": 7.62
     }
    ]
   },
@@ -223,40 +219,41 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "7758c04a629331bf",
-     "title": "Searching for distant planets with Astra",
-     "url": "https://openai.com/index/searching-for-distant-planets-with-astra",
+     "id": "7862748937ffc599",
+     "title": "Working with AI",
+     "url": "https://www.anthropic.com/research/working-with-ai",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50634734",
      "sourceIds": [
-      "openai"
+      "anthropic",
+      "hn-top"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Anthropic",
+      "Hacker News"
      ],
-     "summary": "See how two amateur astronomers used Codex and Astra to find potential exoplanets in public data from NASA’s Kepler and TESS space telescopes.",
-     "why": "Illustrates how amateur astronomers utilize Codex and Astra to discover potential exoplanets in NASA data.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-24T11:00:00.000Z",
+     "summary": "We interviewed people at 58 companies that use Claude about how AI is changing their work. They described few layoffs but reduced hiring, and said the most valuable uses of AI often involved reorganizing roles and workplaces around it.",
+     "why": "79 points on HN, 72 comments",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-23T00:00:00.000Z",
      "category": "labs",
-     "score": 5.25,
-     "readMinutes": 1
+     "score": 15.75
     },
     {
-     "id": "a3c9028eefd69cfd",
-     "title": "Clay helps sales teams win with Codex and ChatGPT",
-     "url": "https://openai.com/business/customer-stories/clay-plugins-openai",
+     "id": "de4847a7cbcabb96",
+     "title": "Migrating our Messages API to Rust",
+     "url": "https://www.anthropic.com/research/migrating-api-to-rust",
      "sourceIds": [
-      "openai"
+      "anthropic"
      ],
      "sourceNames": [
-      "OpenAI"
+      "Anthropic"
      ],
-     "summary": "ChatGPT and Codex integrations help Clay’s users research deals and turn data into go-to-market plays, with GPT-6 models handling the reasoning.",
-     "why": "Highlights how Clay leverages ChatGPT, Codex, and GPT-6 models to drive sales research and workflows.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-24T00:00:00.000Z",
+     "summary": "How we used the existing Messages API to verify the new one, with teams of Claude agents tracking down and fixing differences between the Python and Rust versions.",
+     "why": "Anthropic announcement",
+     "whySource": "heuristic",
+     "publishedAt": "2026-11-25T00:00:00.000Z",
      "category": "labs",
-     "score": 4.25,
-     "readMinutes": 1
+     "score": 5.79
     }
    ]
   },
@@ -275,11 +272,11 @@
       "Don't Worry About the Vase"
      ],
      "summary": "In the evening of November 22, Donald Trump said he ‘hoped’ the Nvidia board would rehire Jensen Huang, as the ‘best thing for the Company.’",
-     "why": "Documents the political and corporate development regarding Jensen Huang being reinstated as Nvidia CEO.",
-     "whySource": "llm",
+     "why": "Don't Worry About the Vase, ~49 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-24T22:42:01.000Z",
      "category": "blogs",
-     "score": 4.7,
+     "score": 3.53,
      "readMinutes": 49
     },
     {
@@ -293,11 +290,11 @@
       "Simon Willison"
      ],
      "summary": "I gave a keynote at the AI Engineer Code Summit a couple of weeks ago, constructed around the idea that there have been three significant inflection points in the abilities of LLMs and coding agents in the past twelve months. Here's the video of the talk.",
-     "why": "Analyzes the three significant inflection points in LLM and coding agent capabilities over twelve months.",
-     "whySource": "llm",
+     "why": "Simon Willison, ~8 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-24T23:02:07.000Z",
      "category": "blogs",
-     "score": 3.78,
+     "score": 2.84,
      "readMinutes": 8
     }
    ]
@@ -317,29 +314,29 @@
       "Don't Worry About the Vase"
      ],
      "summary": "Paul Christiano has a message for us: There is meaningful risk of AI taking over within even the next 6-12 months.",
-     "why": "Explores Paul Christiano's warning regarding meaningful AI takeover risk within a short timeframe.",
-     "whySource": "llm",
+     "why": "Don't Worry About the Vase, ~27 min read",
+     "whySource": "heuristic",
      "publishedAt": "2026-11-20T15:24:40.000Z",
      "category": "blogs",
-     "score": 0.64,
+     "score": 0.48,
      "readMinutes": 27
     }
    ]
   }
  ],
  "itemIds": [
-  "7862748937ffc599",
+  "9f183e9f9f75c876",
+  "arxiv:2611.31358",
   "ac2f786b30f6d457",
-  "1e8fe8d51502fd15",
-  "8914c06692750e0f",
-  "arxiv:2611.29897",
-  "arxiv:2611.28227",
-  "arxiv:2611.28123",
-  "c4766e997cf55369",
-  "382dee8be5a53bc2",
-  "3d43831b12dd31fa",
-  "7758c04a629331bf",
-  "a3c9028eefd69cfd",
+  "arxiv:2611.28947",
+  "arxiv:2611.28719",
+  "arxiv:2611.31974",
+  "arxiv:2611.31466",
+  "dbede62d4d711d8c",
+  "fb828fc93bb9d0c8",
+  "912e2d6b252765e3",
+  "7862748937ffc599",
+  "de4847a7cbcabb96",
   "f243c5e6ef9594ca",
   "5e8eba5b15ac6044",
   "8a53a4a98c97cdc8"
@@ -347,6 +344,6 @@
  "deepReadId": "8a53a4a98c97cdc8",
  "llm": {
   "enabled": true,
-  "ok": true
+  "ok": false
  }
 }
