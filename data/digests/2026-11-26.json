@@ -1,10 +1,10 @@
 {
  "date": "2026-11-26",
- "generatedAt": "2026-11-26T01:33:08.539Z",
- "wordCount": 715,
+ "generatedAt": "2026-11-26T16:22:50.424Z",
+ "wordCount": 751,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's key developments highlight critical shifts across security, formal verification, payment systems, and model architecture. Anthropic released a much shorter version of the GRH Lean verification, aligning with Claude and Levent Alpöge proving the Riemann Hypothesis. In security, researchers revealed that models can communicate via inference servers despite being sandboxed, and The New York Times warned photographers against updating Photoshop due to AI features. Meanwhile, the Antom 3-in-1 Transformer emerged as a payment foundation model integrating sequence, tabular, and graph representations for risk detection, and architectural advances continued with Loom Attention proposing rewirable circuits in Transformers.",
+  "text": "Today's developments highlight critical updates across agentic systems, infrastructure limits, and media generation frameworks. In agentic development, new approaches leverage playfulness as feedback for coding agents generating games, while frameworks like nexu-io/opengame turn coding agents into full-stack studios. Meanwhile, infrastructural constraints are tightening as OpenAI cuts GPT-6.2 usage due to accelerated limit hits on Astra and Sol, aligning with broader industry scrutiny over model capabilities on benchmarks like GDPx. In media and restoration, researchers have introduced efficient attention designs for image restoration alongside the release of Lightricks/LTX-2.5 for image-to-video tasks. Concurrently, legal and workflow friction emerges as The New York Times warns photographers against updating Photoshop over AI features. Research efforts are also tackling autonomous context management, reinforcement for knowledge-intensive video generation agents, and real-to-simulation transfer platforms. Finally, practical deployments continue to expand with new open models like Qwen/Qwen3.8-27B, hardware benchmarking dashboards from Hugging Face for AMD hardware, and fine-tuning guides for Nemotron 3.5 Parse.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,24 +14,42 @@
    "title": "Must know",
    "entries": [
     {
-     "id": "d0f4230142583401",
-     "title": "Much shorter version of GRH Lean verification from Anthropic",
-     "url": "https://github.com/lsernau/grh-lean",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50648050",
+     "id": "arxiv:2611.33457",
+     "title": "Playfulness as Feedback for Agentic Game Development",
+     "url": "https://arxiv.org/abs/2611.33457",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CV"
      ],
-     "summary": "",
-     "why": "Essential reading for researchers tracking formal mathematical verification and automated theorem proving progress.",
+     "summary": "Coding agents can generate runnable games from natural-language descriptions. However, a runnable game does not guarantee an excellent gameplay experience for players.",
+     "why": "Explores how playfulness feedback improves coding agents beyond merely generating runnable games.",
      "whySource": "llm",
-     "publishedAt": "2026-11-25T21:48:10.000Z",
-     "category": "news",
-     "score": 13.16
+     "publishedAt": "2026-11-24T00:00:00.000Z",
+     "category": "research",
+     "score": 14.67
+    },
+    {
+     "id": "arxiv:2611.33636",
+     "title": "What Is Redundant at High Resolution? Efficient Attention and Feed-Forward Design for All-in-One Image Restoration",
+     "url": "https://arxiv.org/abs/2611.33636",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Multi-scale architectures are widely adopted in all-in-one image restoration (AIO-IR) to capture larger-scale context at low-resolution stages and refine details at high-resolution (HR) stages.",
+     "why": "Presents efficient attention and feed-forward designs for high-resolution all-in-one image restoration architectures.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T00:00:00.000Z",
+     "category": "research",
+     "score": 14.33
     },
     {
      "id": "e0db27b644559ae6",
@@ -47,17 +65,17 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Highlights growing industry caution regarding automated feature updates and intellectual property concerns in creative tooling.",
+     "why": "The New York Times warns photographers against updating Photoshop due to new AI features.",
      "whySource": "llm",
      "publishedAt": "2026-11-25T21:18:02.000Z",
      "category": "news",
-     "score": 12.94
+     "score": 13.1
     },
     {
-     "id": "c682fcb11d8ea910",
-     "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
-     "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50637686",
+     "id": "1572d1e1c176a4f3",
+     "title": "OpenAI cuts GPT-6.2 usage: Astra hits limits 40% faster, Sol 25% faster",
+     "url": "https://twitter.com/thsottiaux/status/2125784147889393806",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50651117",
      "sourceIds": [
       "hn-front",
       "hn-top"
@@ -67,28 +85,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Crucial security finding demonstrating that sandboxed AI models can bypass isolation boundaries through inference servers.",
+     "why": "OpenAI cuts GPT-6.2 usage as Astra and Sol hit capacity limits significantly faster.",
      "whySource": "llm",
-     "publishedAt": "2026-11-25T02:34:21.000Z",
+     "publishedAt": "2026-11-26T03:36:58.000Z",
      "category": "news",
-     "score": 12.2
-    },
-    {
-     "id": "arxiv:2611.25403",
-     "title": "Antom 3-in-1 Transformer: A Payment Foundation Model",
-     "url": "https://arxiv.org/abs/2611.25403",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "We report the development of Antom 3-in-1 Transformer, a payment foundation model that integrates sequence, tabular, and graph representations for payment risk detection. The model contains approximately 7B parameters, with approximately 1.7B activated per task route.",
-     "why": "Demonstrates a specialized payment foundation model combining multiple data representations for financial risk detection.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-19T00:00:00.000Z",
-     "category": "research",
-     "score": 11.58
+     "score": 13.03
     }
    ]
   },
@@ -97,57 +98,59 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.32884",
-     "title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
-     "url": "https://arxiv.org/abs/2611.32884",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "AI agents working on long tasks often commit to an answer before they have enough evidence, a behavior called laziness. In our evaluations, they frequently commit even while their stated belief still names several possible answers.",
-     "why": "Addresses premature task commitment in long-horizon AI agents using verifiable belief reinforcement learning.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-24T00:00:00.000Z",
-     "category": "research",
-     "score": 11.45
-    },
-    {
-     "id": "arxiv:2611.30634",
-     "title": "Rewirable Circuits in Transformers with Loom Attention",
-     "url": "https://arxiv.org/abs/2611.30634",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "We propose loom attention, which allows a Transformer to dynamically rewire its circuits at every token by interweaving a head's vertical attention over the outputs of earlier heads (to obtain its query, key and value) with its horizontal attention over tokens.",
-     "why": "Introduces a dynamic circuit-rewiring mechanism that alters how attention is allocated across transformer tokens.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-23T00:00:00.000Z",
-     "category": "research",
-     "score": 11.35
-    },
-    {
-     "id": "arxiv:2611.31595",
-     "title": "LUCID: Statistically Grounded Self-Correction for LLM Reasoning Evaluation",
-     "url": "https://arxiv.org/abs/2611.31595",
+     "id": "arxiv:2611.34147",
+     "title": "Letting Models Manage Their Own Context: Where We Stand",
+     "url": "https://arxiv.org/abs/2611.34147",
      "sourceIds": [
       "hf-papers",
-      "arxiv-cs.CL"
+      "arxiv-cs.AI"
      ],
      "sourceNames": [
       "HF Daily Papers",
-      "arXiv cs.CL"
+      "arXiv cs.AI"
      ],
-     "summary": "Cheap language-model raters grade chain-of-thought reasoning at scale, yet systematic step-rating errors can skew reasoning audits and solution rankings.",
-     "why": "Tackles systematic grading errors in cheap language-model raters used for reasoning evaluation.",
+     "summary": "Agent harnesses today manage context on the model's behalf: when the window fills, the harness triggers a compaction that summarizes the history.",
+     "why": "Investigates letting models manage their own context instead of relying entirely on harness-driven compaction.",
      "whySource": "llm",
-     "publishedAt": "2026-11-23T00:00:00.000Z",
+     "publishedAt": "2026-11-25T00:00:00.000Z",
      "category": "research",
-     "score": 10.97
+     "score": 13.01
+    },
+    {
+     "id": "arxiv:2611.31895",
+     "title": "Loupe: Reinforcing Knowledge-Intensive Video Generation Agents",
+     "url": "https://arxiv.org/abs/2611.31895",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Knowledge-intensive video generation remains challenging because prompts often omit the facts, appearances, and temporal relationships required for accurate generation.",
+     "why": "Addresses knowledge-intensive video generation by reinforcing agents against missing prompt facts and temporal relationships.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T00:00:00.000Z",
+     "category": "research",
+     "score": 13.01
+    },
+    {
+     "id": "arxiv:2611.34849",
+     "title": "Real2SimLab: A Unified Platform for Real-to-Simulation Transfer",
+     "url": "https://arxiv.org/abs/2611.34849",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "Real-to-simulation transfer, which builds simulations from real-world observations, has long been studied in research and industry.",
+     "why": "Introduces Real2SimLab as a unified platform for building simulations from real-world observations.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T00:00:00.000Z",
+     "category": "research",
+     "score": 12.49
     }
    ]
   },
@@ -156,57 +159,55 @@
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "364859f834c86602",
-     "title": "tencent/Hy4-flash",
-     "url": "https://huggingface.co/tencent/Hy4-flash",
+     "id": "ca26bca182f697df",
+     "title": "Qwen/Qwen3.8-27B",
+     "url": "https://huggingface.co/Qwen/Qwen3.8-27B",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-text · transformers · 712 likes · 10,479 downloads",
-     "why": "Provides a new open image-text-to-text model for developer experimentation and deployment.",
+     "summary": "image-text-to-text · transformers · 21,830 likes · 6,047,011 downloads",
+     "why": "Qwen/Qwen3.8-27B emerges as a prominent image-text-to-text model on Hugging Face transformers.",
      "whySource": "llm",
-     "publishedAt": "2026-11-17T03:44:46.000Z",
+     "publishedAt": "2026-08-05T08:22:59.000Z",
      "category": "releases",
-     "score": 8.74
+     "score": 11.21
     },
     {
-     "id": "13d84a0fbee44558",
-     "title": "alesha-pro/llm.asm",
-     "url": "https://github.com/alesha-pro/llm.asm",
-     "sourceIds": [
-      "gh-trending-llm",
-      "gh-trending-ml"
-     ],
-     "sourceNames": [
-      "GitHub new repos: llm",
-      "GitHub new repos: machine-learning"
-     ],
-     "summary": "Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, zero dependencies. · Assembly",
-     "why": "Showcases extreme minimization by implementing model inference and bootable environments entirely in pure assembly.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-25T07:28:51.000Z",
-     "category": "releases",
-     "score": 8.09
-    },
-    {
-     "id": "5df172f386475ca1",
-     "title": "nvidia/Nemotron-Labs-Image-30B-A3B",
-     "url": "https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B",
+     "id": "92c1824269f45469",
+     "title": "Lightricks/LTX-2.5",
+     "url": "https://huggingface.co/Lightricks/LTX-2.5",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "text-to-image · transformers · 162 likes · 218 downloads",
-     "why": "Expands open text-to-image transformer options available for community research and application workflows.",
+     "summary": "image-to-video · diffusion-single-file · 13,518 likes · 3,041,405 downloads",
+     "why": "Lightricks/LTX-2.5 releases single-file diffusion capabilities for image-to-video generation tasks.",
      "whySource": "llm",
-     "publishedAt": "2026-09-24T21:13:25.000Z",
+     "publishedAt": "2026-07-23T07:55:24.000Z",
      "category": "releases",
-     "score": 7.67
+     "score": 10.86
+    },
+    {
+     "id": "5f7194fcaceeca80",
+     "title": "nexu-io/opengame",
+     "url": "https://github.com/nexu-io/opengame",
+     "sourceIds": [
+      "gh-trending-agents"
+     ],
+     "sourceNames": [
+      "GitHub new repos: ai-agents"
+     ],
+     "summary": "The Super Game Agent — the Unity & Unreal for AI agents, with 100+ viral games to remix. Turn 20+ coding agents (Claude Code, Codex, DeepSeek, etc.) into a full-stack AI game studio.",
+     "why": "nexu-io/opengame provides a super game agent turning multiple coding agents into an AI game studio.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T10:35:45.000Z",
+     "category": "releases",
+     "score": 8.49
     }
    ]
   },
@@ -215,27 +216,9 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "5b91da256f36ad75",
-     "title": "Verifiable Social Reasoning for LLM Assistants",
-     "url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
-     "sourceIds": [
-      "google-research"
-     ],
-     "sourceNames": [
-      "Google Research"
-     ],
-     "summary": "Generative AI",
-     "why": "Explores how generative AI assistants handle verifiable social reasoning tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-25T17:10:27.000Z",
-     "category": "labs",
-     "score": 5.11,
-     "readMinutes": 1
-    },
-    {
-     "id": "88bd06d7e0e9b82f",
-     "title": "Where scientists draw the line on AI agents",
-     "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+     "id": "a734da9d3a1d8760",
+     "title": "Introducing the llama.cpp benchmark dashboard for AMD Ryzen and Radeon",
+     "url": "https://huggingface.co/blog/ggml-org/llamacpp-amd-bench",
      "sourceIds": [
       "hf-blog"
      ],
@@ -243,11 +226,28 @@
       "Hugging Face Blog"
      ],
      "summary": "",
-     "why": "Examines community consensus on safety and deployment boundaries for autonomous AI agents.",
+     "why": "Hugging Face introduces a llama.cpp benchmark dashboard specifically for AMD Ryzen and Radeon hardware.",
      "whySource": "llm",
-     "publishedAt": "2026-11-25T18:52:55.000Z",
+     "publishedAt": "2026-11-26T11:37:17.000Z",
      "category": "labs",
-     "score": 4.4
+     "score": 4.56
+    },
+    {
+     "id": "3d2697b636d74b83",
+     "title": "Building on Nemotron 3.5 Parse: Open Data, Fine-Tuning, and Faster Inference",
+     "url": "https://huggingface.co/blog/nvidia/building-on-nemotron-35-parse-open-data-fine-tunin",
+     "sourceIds": [
+      "hf-blog"
+     ],
+     "sourceNames": [
+      "Hugging Face Blog"
+     ],
+     "summary": "",
+     "why": "Focuses on open data, fine-tuning, and faster inference when building on Nemotron 3.5 Parse.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-26T05:05:36.000Z",
+     "category": "labs",
+     "score": 4.02
     }
    ]
   },
@@ -266,11 +266,11 @@
       "SemiAnalysis"
      ],
      "summary": "GPT-6.2 Astra takes the crown but bad at software engineering, Gemini 4 Neon is an impressive improvement from Google but still overrated, Fable 5.2 is smart but expensive, and new Chinese models as well",
-     "why": "Delivers independent evaluations of recent flagship model releases across software engineering and other benchmarks.",
+     "why": "SemiAnalysis evaluates recent model releases on GDPx, detailing GPT-6.2 Astra, Gemini 4 Neon, and Fable 5.2.",
      "whySource": "llm",
      "publishedAt": "2026-11-26T00:05:35.000Z",
      "category": "blogs",
-     "score": 6.81,
+     "score": 5.12,
      "readMinutes": 14
     },
     {
@@ -284,11 +284,11 @@
       "Don't Worry About the Vase"
      ],
      "summary": "This was the most famous problem in mathematics.",
-     "why": "Marks a historic milestone in mathematical problem solving using automated and assistant tools.",
+     "why": "Claude and Levent Alpöge tackle and prove the Riemann Hypothesis, a famous mathematical problem.",
      "whySource": "llm",
      "publishedAt": "2026-11-25T17:24:10.000Z",
      "category": "blogs",
-     "score": 4.27,
+     "score": 3.21,
      "readMinutes": 43
     }
    ]
@@ -308,29 +308,29 @@
       "Import AI"
      ],
      "summary": "Could the scientific method be emergent?",
-     "why": "Surveys emerging trends in kernel benchmarks, drone detection, and national laboratory science benchmarks.",
+     "why": "Import AI covers Huawei kernel benchmarks, airborne drone detection, and national lab AI science benchmarks.",
      "whySource": "llm",
      "publishedAt": "2026-11-23T14:11:17.000Z",
      "category": "blogs",
-     "score": 1.91,
+     "score": 1.44,
      "readMinutes": 16
     }
    ]
   }
  ],
  "itemIds": [
-  "d0f4230142583401",
+  "arxiv:2611.33457",
+  "arxiv:2611.33636",
   "e0db27b644559ae6",
-  "c682fcb11d8ea910",
-  "arxiv:2611.25403",
-  "arxiv:2611.32884",
-  "arxiv:2611.30634",
-  "arxiv:2611.31595",
-  "364859f834c86602",
-  "13d84a0fbee44558",
-  "5df172f386475ca1",
-  "5b91da256f36ad75",
-  "88bd06d7e0e9b82f",
+  "1572d1e1c176a4f3",
+  "arxiv:2611.34147",
+  "arxiv:2611.31895",
+  "arxiv:2611.34849",
+  "ca26bca182f697df",
+  "92c1824269f45469",
+  "5f7194fcaceeca80",
+  "a734da9d3a1d8760",
+  "3d2697b636d74b83",
   "fa1137363cb5a194",
   "f5ef53f433a75c15",
   "e45eb71a77fef623"
