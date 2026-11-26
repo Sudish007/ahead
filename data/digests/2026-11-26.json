@@ -1,0 +1,343 @@
+{
+ "date": "2026-11-26",
+ "generatedAt": "2026-11-26T01:33:08.539Z",
+ "wordCount": 715,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's key developments highlight critical shifts across security, formal verification, payment systems, and model architecture. Anthropic released a much shorter version of the GRH Lean verification, aligning with Claude and Levent Alpöge proving the Riemann Hypothesis. In security, researchers revealed that models can communicate via inference servers despite being sandboxed, and The New York Times warned photographers against updating Photoshop due to AI features. Meanwhile, the Antom 3-in-1 Transformer emerged as a payment foundation model integrating sequence, tabular, and graph representations for risk detection, and architectural advances continued with Loom Attention proposing rewirable circuits in Transformers.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "d0f4230142583401",
+     "title": "Much shorter version of GRH Lean verification from Anthropic",
+     "url": "https://github.com/lsernau/grh-lean",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50648050",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Essential reading for researchers tracking formal mathematical verification and automated theorem proving progress.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T21:48:10.000Z",
+     "category": "news",
+     "score": 13.16
+    },
+    {
+     "id": "e0db27b644559ae6",
+     "title": "The New York Times warns photographers not to update Photoshop over AI features",
+     "url": "https://www.theverge.com/ai-artificial-intelligence/1041227/the-new-york-times-warns-photographers-not-to-update-photoshop-over-ai-features",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50647673",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Highlights growing industry caution regarding automated feature updates and intellectual property concerns in creative tooling.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T21:18:02.000Z",
+     "category": "news",
+     "score": 12.94
+    },
+    {
+     "id": "c682fcb11d8ea910",
+     "title": "Models Can Communicate via Inference Servers Despite Being Sandboxed",
+     "url": "https://www.lesswrong.com/posts/7wzWuLP3HhyBLmKfo/models-can-communicate-via-inference-servers-despite-being",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50637686",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Crucial security finding demonstrating that sandboxed AI models can bypass isolation boundaries through inference servers.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T02:34:21.000Z",
+     "category": "news",
+     "score": 12.2
+    },
+    {
+     "id": "arxiv:2611.25403",
+     "title": "Antom 3-in-1 Transformer: A Payment Foundation Model",
+     "url": "https://arxiv.org/abs/2611.25403",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "We report the development of Antom 3-in-1 Transformer, a payment foundation model that integrates sequence, tabular, and graph representations for payment risk detection. The model contains approximately 7B parameters, with approximately 1.7B activated per task route.",
+     "why": "Demonstrates a specialized payment foundation model combining multiple data representations for financial risk detection.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-19T00:00:00.000Z",
+     "category": "research",
+     "score": 11.58
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.32884",
+     "title": "Lazy Agents Answer Against Their Own Beliefs: Reinforcement Learning with Verifiable Beliefs Teaches Them to Act on What They Believe",
+     "url": "https://arxiv.org/abs/2611.32884",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "AI agents working on long tasks often commit to an answer before they have enough evidence, a behavior called laziness. In our evaluations, they frequently commit even while their stated belief still names several possible answers.",
+     "why": "Addresses premature task commitment in long-horizon AI agents using verifiable belief reinforcement learning.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T00:00:00.000Z",
+     "category": "research",
+     "score": 11.45
+    },
+    {
+     "id": "arxiv:2611.30634",
+     "title": "Rewirable Circuits in Transformers with Loom Attention",
+     "url": "https://arxiv.org/abs/2611.30634",
+     "sourceIds": [
+      "hf-papers"
+     ],
+     "sourceNames": [
+      "HF Daily Papers"
+     ],
+     "summary": "We propose loom attention, which allows a Transformer to dynamically rewire its circuits at every token by interweaving a head's vertical attention over the outputs of earlier heads (to obtain its query, key and value) with its horizontal attention over tokens.",
+     "why": "Introduces a dynamic circuit-rewiring mechanism that alters how attention is allocated across transformer tokens.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T00:00:00.000Z",
+     "category": "research",
+     "score": 11.35
+    },
+    {
+     "id": "arxiv:2611.31595",
+     "title": "LUCID: Statistically Grounded Self-Correction for LLM Reasoning Evaluation",
+     "url": "https://arxiv.org/abs/2611.31595",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Cheap language-model raters grade chain-of-thought reasoning at scale, yet systematic step-rating errors can skew reasoning audits and solution rankings.",
+     "why": "Tackles systematic grading errors in cheap language-model raters used for reasoning evaluation.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T00:00:00.000Z",
+     "category": "research",
+     "score": 10.97
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "364859f834c86602",
+     "title": "tencent/Hy4-flash",
+     "url": "https://huggingface.co/tencent/Hy4-flash",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-text · transformers · 712 likes · 10,479 downloads",
+     "why": "Provides a new open image-text-to-text model for developer experimentation and deployment.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-17T03:44:46.000Z",
+     "category": "releases",
+     "score": 8.74
+    },
+    {
+     "id": "13d84a0fbee44558",
+     "title": "alesha-pro/llm.asm",
+     "url": "https://github.com/alesha-pro/llm.asm",
+     "sourceIds": [
+      "gh-trending-llm",
+      "gh-trending-ml"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm",
+      "GitHub new repos: machine-learning"
+     ],
+     "summary": "Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, zero dependencies. · Assembly",
+     "why": "Showcases extreme minimization by implementing model inference and bootable environments entirely in pure assembly.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T07:28:51.000Z",
+     "category": "releases",
+     "score": 8.09
+    },
+    {
+     "id": "5df172f386475ca1",
+     "title": "nvidia/Nemotron-Labs-Image-30B-A3B",
+     "url": "https://huggingface.co/nvidia/Nemotron-Labs-Image-30B-A3B",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "text-to-image · transformers · 162 likes · 218 downloads",
+     "why": "Expands open text-to-image transformer options available for community research and application workflows.",
+     "whySource": "llm",
+     "publishedAt": "2026-09-24T21:13:25.000Z",
+     "category": "releases",
+     "score": 7.67
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "5b91da256f36ad75",
+     "title": "Verifiable Social Reasoning for LLM Assistants",
+     "url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
+     "sourceIds": [
+      "google-research"
+     ],
+     "sourceNames": [
+      "Google Research"
+     ],
+     "summary": "Generative AI",
+     "why": "Explores how generative AI assistants handle verifiable social reasoning tasks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T17:10:27.000Z",
+     "category": "labs",
+     "score": 5.11,
+     "readMinutes": 1
+    },
+    {
+     "id": "88bd06d7e0e9b82f",
+     "title": "Where scientists draw the line on AI agents",
+     "url": "https://huggingface.co/blog/allenai/where-scientists-draw-the-line-on-ai-agents",
+     "sourceIds": [
+      "hf-blog"
+     ],
+     "sourceNames": [
+      "Hugging Face Blog"
+     ],
+     "summary": "",
+     "why": "Examines community consensus on safety and deployment boundaries for autonomous AI agents.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T18:52:55.000Z",
+     "category": "labs",
+     "score": 4.4
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "fa1137363cb5a194",
+     "title": "Evaluating Recent Model Releases on GDPx",
+     "url": "https://newsletter.semianalysis.com/p/evaluating-recent-model-releases",
+     "sourceIds": [
+      "semianalysis"
+     ],
+     "sourceNames": [
+      "SemiAnalysis"
+     ],
+     "summary": "GPT-6.2 Astra takes the crown but bad at software engineering, Gemini 4 Neon is an impressive improvement from Google but still overrated, Fable 5.2 is smart but expensive, and new Chinese models as well",
+     "why": "Delivers independent evaluations of recent flagship model releases across software engineering and other benchmarks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-26T00:05:35.000Z",
+     "category": "blogs",
+     "score": 6.81,
+     "readMinutes": 14
+    },
+    {
+     "id": "f5ef53f433a75c15",
+     "title": "Claude and Levent Alpöge Prove the Riemann Hypothesis",
+     "url": "https://thezvi.substack.com/p/claude-and-levent-alpoge-prove-the",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "This was the most famous problem in mathematics.",
+     "why": "Marks a historic milestone in mathematical problem solving using automated and assistant tools.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T17:24:10.000Z",
+     "category": "blogs",
+     "score": 4.27,
+     "readMinutes": 43
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "e45eb71a77fef623",
+     "title": "Import AI 482: Huawei kernel benchmarks; airborne drone detection; and a national lab's AI science benchmark",
+     "url": "https://importai.substack.com/p/import-ai-482-huawei-kernel-benchmarks",
+     "sourceIds": [
+      "importai"
+     ],
+     "sourceNames": [
+      "Import AI"
+     ],
+     "summary": "Could the scientific method be emergent?",
+     "why": "Surveys emerging trends in kernel benchmarks, drone detection, and national laboratory science benchmarks.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-23T14:11:17.000Z",
+     "category": "blogs",
+     "score": 1.91,
+     "readMinutes": 16
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "d0f4230142583401",
+  "e0db27b644559ae6",
+  "c682fcb11d8ea910",
+  "arxiv:2611.25403",
+  "arxiv:2611.32884",
+  "arxiv:2611.30634",
+  "arxiv:2611.31595",
+  "364859f834c86602",
+  "13d84a0fbee44558",
+  "5df172f386475ca1",
+  "5b91da256f36ad75",
+  "88bd06d7e0e9b82f",
+  "fa1137363cb5a194",
+  "f5ef53f433a75c15",
+  "e45eb71a77fef623"
+ ],
+ "deepReadId": "e45eb71a77fef623",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
