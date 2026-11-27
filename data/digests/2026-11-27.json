@@ -1,10 +1,10 @@
 {
  "date": "2026-11-27",
- "generatedAt": "2026-11-27T01:29:22.409Z",
- "wordCount": 661,
+ "generatedAt": "2026-11-27T16:07:50.744Z",
+ "wordCount": 742,
  "readingMinutes": 4,
  "overview": {
-  "text": "Today's developments span infrastructure shifts, verification advances, and new evaluation frameworks that matter for technical practitioners. On the infrastructure side, discussions highlight AMD-specific forks of llama.cpp alongside a resurgence in self-hosting interest and signs that OpenAI may be entering cost control mode. In formal methods and verification, Anthropic released a much shorter version of GRH Lean verification. Meanwhile, researchers introduced Puzzling-Bench to evaluate language models on thousands of human-written puzzles with community-verified answers from the Puzzling Stack Exchange archive. Additional releases include new multi-agent training guides and specialized tools like inworld/voice-isolator and sand-ai/MAGI-2-preview, offering founders and researchers fresh benchmarks and technical resources to navigate current compute and deployment constraints.",
+  "text": "Today's developments span long-sequence modeling, video reasoning, world models, and new hardware architectures. Stable Gated DeltaNet-2 addresses recurrent state instability to improve efficient linear attention for long sequences. In vision and video, coding agents are emerging as stronger visual reasoners than video models, while ShowNow introduces fine-grained speculative streaming to resolve input latency in interactive world models. Additionally, time-series foundation models face new evaluation frameworks through zero-shot forecasting leaderboards. In hardware and infrastructure, Trainium3 inference and microarchitecture is analyzed for performance and TCO, alongside applications like generating videos with LTX-2.5. Generalist computer-using agents are also being benchmarked on long-horizon workflows across platforms, and multimodal safety research explores learning to intervene rather than relying on blanket refusals when visual context alters safety boundaries.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -14,84 +14,82 @@
    "title": "Must know",
    "entries": [
     {
-     "id": "aebfbe56731bd98a",
-     "title": "AI made self-hosting fun again",
-     "url": "https://janlukas.blog/posts/ai-self-hosting",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50660180",
+     "id": "arxiv:2611.34051",
+     "title": "Stable Gated DeltaNet-2: Understanding and Mitigating Recurrent State Instability",
+     "url": "https://arxiv.org/abs/2611.34051",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CL"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CL"
      ],
-     "summary": "",
-     "why": "Self-hosting trends show shifting developer preferences for managing local AI infrastructure.",
+     "summary": "Linear attention offers an efficient solution for long-sequence modeling via linear complexity and fixed-size recurrent states.",
+     "why": "This work directly targets recurrent state instability to improve efficient linear attention for long-sequence modeling tasks.",
      "whySource": "llm",
-     "publishedAt": "2026-11-26T21:47:45.000Z",
-     "category": "news",
-     "score": 13.4
+     "publishedAt": "2026-11-25T00:00:00.000Z",
+     "category": "research",
+     "score": 16.83
     },
     {
-     "id": "40cb249974695259",
-     "title": "AMD-specific fork of llama.cpp",
-     "url": "https://devnull.land/amd-specific-llama-cpp",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50657265",
+     "id": "arxiv:2611.31619",
+     "title": "What a Forecasting Leaderboard Can Establish: Resolution Reporting for Zero-Shot Time-Series Models",
+     "url": "https://arxiv.org/abs/2611.31619",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.LG"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.LG"
      ],
-     "summary": "",
-     "why": "An AMD-specific fork expands hardware deployment options for running local models efficiently.",
+     "summary": "A foundation model for time series is pretrained once and then asked to forecast series it has never seen, so the evidence for it is its score on held-out datasets.",
+     "why": "This establishes resolution reporting to properly evaluate zero-shot time-series foundation models on held-out datasets.",
      "whySource": "llm",
-     "publishedAt": "2026-11-26T17:11:29.000Z",
-     "category": "news",
-     "score": 12.45
+     "publishedAt": "2026-11-23T00:00:00.000Z",
+     "category": "research",
+     "score": 15.59
     },
     {
-     "id": "030a9d5b67bf9666",
-     "title": "OpenAI may be in cost control mode",
-     "url": "https://micjm.com/blog/openai-is-in-cost-control-mode/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50652527",
+     "id": "arxiv:2611.34813",
+     "title": "Solve Vision with Code: Coding Agents Are Stronger Visual Reasoners Than Video Models",
+     "url": "https://arxiv.org/abs/2611.34813",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CV",
+      "arxiv-cs.LG"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CV",
+      "arXiv cs.LG"
      ],
-     "summary": "",
-     "why": "Cost control shifts at major labs impact infrastructure economics for builders and researchers.",
+     "summary": "Video generation models are increasingly evaluated as visual reasoners: given a first frame and a natural-language prompt, can the model produce the video in which the specified task is carried out?",
+     "why": "Coding agents are demonstrated to be stronger visual reasoners than native video generation models.",
      "whySource": "llm",
-     "publishedAt": "2026-11-26T07:33:12.000Z",
-     "category": "news",
-     "score": 12.32
+     "publishedAt": "2026-11-25T00:00:00.000Z",
+     "category": "research",
+     "score": 14.82
     },
     {
-     "id": "d0f4230142583401",
-     "title": "Much shorter version of GRH Lean verification from Anthropic",
-     "url": "https://github.com/lsernau/grh-lean",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50648050",
+     "id": "arxiv:2611.34693",
+     "title": "ShowNow: Fine-Grained Speculative Streaming for Responsive World Models",
+     "url": "https://arxiv.org/abs/2611.34693",
      "sourceIds": [
-      "hn-front",
-      "hn-top"
+      "hf-papers",
+      "arxiv-cs.CV"
      ],
      "sourceNames": [
-      "HN front page",
-      "Hacker News"
+      "HF Daily Papers",
+      "arXiv cs.CV"
      ],
-     "summary": "",
-     "why": "Shorter Lean verification methods improve formal reasoning workflows for AI systems.",
+     "summary": "Interactive world models must generate video continuously while responding promptly to user actions. Real-time throughput alone leaves input latency unresolved: coarse generation blocks delay action updates, and generation after input adds work to the response path.",
+     "why": "This approach addresses input latency in interactive world models using fine-grained speculative streaming for responsive generation.",
      "whySource": "llm",
-     "publishedAt": "2026-11-25T21:48:10.000Z",
-     "category": "news",
-     "score": 12.24
+     "publishedAt": "2026-11-25T00:00:00.000Z",
+     "category": "research",
+     "score": 14.19
     }
    ]
   },
@@ -100,28 +98,45 @@
    "title": "Research",
    "entries": [
     {
-     "id": "arxiv:2611.34331",
-     "title": "Puzzling-Bench: Evaluating Language Models on 23,777 Human-Written Puzzles with Community-Verified Answers",
-     "url": "https://arxiv.org/abs/2611.34331",
+     "id": "arxiv:2611.34232",
+     "title": "OS-Omni: Benchmarking Generalist Computer-Using Agents on Long-Horizon Workflows Across Platforms",
+     "url": "https://arxiv.org/abs/2611.34232",
      "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
+      "hf-papers"
      ],
      "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
+      "HF Daily Papers"
      ],
-     "summary": "We introduce Puzzling-Bench, a benchmark of 23,777 puzzles with community-verified answers drawn from the Puzzling Stack Exchange archive (2014-2026): riddles, ciphers, logic grids, lateral-thinking problems, wordplay and recreational mathematics, a third of them with images.…",
-     "why": "Puzzling-Bench tests language models on complex human puzzles with community-verified answers.",
+     "summary": "Computer-using agents are increasingly expected to complete realistic user goals rather than isolated GUI actions.",
+     "why": "This benchmarks generalist computer-using agents on realistic long-horizon workflows across multiple platforms.",
      "whySource": "llm",
      "publishedAt": "2026-11-25T00:00:00.000Z",
      "category": "research",
-     "score": 11.71
+     "score": 12.49
     },
     {
-     "id": "arxiv:2611.28244",
-     "title": "Demystifying the Autoresearch Harness: How Context and Skills Shape Self-Evolving Agents",
-     "url": "https://arxiv.org/abs/2611.28244",
+     "id": "arxiv:2611.34782",
+     "title": "Generation as Reverse Encoding",
+     "url": "https://arxiv.org/abs/2611.34782",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CV"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CV"
+     ],
+     "summary": "Pretrained visual representations accelerate generative learning by abstracting away appearance and spatial detail. Yet the same abstraction makes the return to pixels far harder, shifting much of the burden onto a larger decoder.",
+     "why": "This examines how pretrained visual representations shift the generative learning burden onto larger decoders.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T00:00:00.000Z",
+     "category": "research",
+     "score": 11.45
+    },
+    {
+     "id": "arxiv:2611.28849",
+     "title": "Guarding with Judgment: Learning to Intervene for Multimodal Safety",
+     "url": "https://arxiv.org/abs/2611.28849",
      "sourceIds": [
       "hf-papers",
       "arxiv-cs.AI"
@@ -130,31 +145,12 @@
       "HF Daily Papers",
       "arXiv cs.AI"
      ],
-     "summary": "Autoresearch agents, which autonomously design, run, and refine experiments, are accelerating scientific progress, particularly in AI research.",
-     "why": "Autoresearch harnesses demonstrate autonomous experiment design accelerating AI research progress.",
+     "summary": "When visual context makes an ordinary request unsafe to answer as asked, a blanket refusal may leave the user's need unresolved.",
+     "why": "This investigates selective interventions for multimodal safety instead of standard blanket refusals.",
      "whySource": "llm",
-     "publishedAt": "2026-11-20T00:00:00.000Z",
+     "publishedAt": "2026-11-21T00:00:00.000Z",
      "category": "research",
-     "score": 11.48
-    },
-    {
-     "id": "arxiv:2611.33307",
-     "title": "Lost in Translation, Not in Confidence: Benchmarking and Calibrating Multilingual Decision Models",
-     "url": "https://arxiv.org/abs/2611.33307",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CL"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CL"
-     ],
-     "summary": "Decision models are language models fine-tuned to return a probability for each option of a typed query, which routers and guardrails threshold directly. They are built on multilingual bases but ranked almost entirely in English.",
-     "why": "Multilingual decision models address calibration gaps in routed router and guardrail systems.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-24T00:00:00.000Z",
-     "category": "research",
-     "score": 11.39
+     "score": 11.45
     }
    ]
   },
@@ -173,47 +169,45 @@
       "HF trending models"
      ],
      "summary": "audio-to-audio · inworld-voice-isolation · 963 likes · 15,244 downloads",
-     "why": "New audio-to-audio voice isolation models expand open-source speech processing capabilities.",
+     "why": "This trending audio-to-audio model release provides new voice isolation capabilities.",
      "whySource": "llm",
      "publishedAt": "2026-11-14T02:14:35.000Z",
      "category": "releases",
-     "score": 8.96
+     "score": 7.99
     },
     {
-     "id": "326020b4a21093e8",
-     "title": "sand-ai/MAGI-2-preview",
-     "url": "https://huggingface.co/sand-ai/MAGI-2-preview",
+     "id": "b3f18e4fdfd29c33",
+     "title": "ISTA-DASLab/Inkling-2-Mini-GSQ-RCO-GGUF",
+     "url": "https://huggingface.co/ISTA-DASLab/Inkling-2-Mini-GSQ-RCO-GGUF",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "image-text-to-video · 296 likes · 0 downloads",
-     "why": "New image-text-to-video previews provide additional modalities for media generation pipelines.",
+     "summary": "text-generation · gguf · 210 likes · 24,931 downloads",
+     "why": "This text-generation model release offers a new GGUF option for efficient deployment.",
      "whySource": "llm",
-     "publishedAt": "2026-08-03T12:34:20.000Z",
+     "publishedAt": "2026-11-26T13:01:01.000Z",
      "category": "releases",
-     "score": 8.11
+     "score": 7.86
     },
     {
-     "id": "13d84a0fbee44558",
-     "title": "alesha-pro/llm.asm",
-     "url": "https://github.com/alesha-pro/llm.asm",
+     "id": "681a2d77f0b8e136",
+     "title": "kandinskylab/Kandinsky-ImageSR-2.0",
+     "url": "https://huggingface.co/kandinskylab/Kandinsky-ImageSR-2.0",
      "sourceIds": [
-      "gh-trending-llm",
-      "gh-trending-ml"
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: llm",
-      "GitHub new repos: machine-learning"
+      "HF trending models"
      ],
-     "summary": "Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, zero dependencies. · Assembly",
-     "why": "Pure assembly implementations offer extreme optimization insights for bare-metal machine learning.",
+     "summary": "image-to-image · diffusers · 163 likes · 582 downloads",
+     "why": "This image-to-image diffusers release provides new image super-resolution capabilities.",
      "whySource": "llm",
-     "publishedAt": "2026-11-25T07:28:51.000Z",
+     "publishedAt": "2026-11-24T08:51:19.000Z",
      "category": "releases",
-     "score": 7.82
+     "score": 7.68
     }
    ]
   },
@@ -222,27 +216,9 @@
    "title": "From the labs",
    "entries": [
     {
-     "id": "5b91da256f36ad75",
-     "title": "Verifiable Social Reasoning for LLM Assistants",
-     "url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
-     "sourceIds": [
-      "google-research"
-     ],
-     "sourceNames": [
-      "Google Research"
-     ],
-     "summary": "Generative AI",
-     "why": "Verifiable social reasoning approaches enhance safety and logic in assistant models.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-25T17:10:27.000Z",
-     "category": "labs",
-     "score": 3.22,
-     "readMinutes": 1
-    },
-    {
-     "id": "819f2bb8e324e5e7",
-     "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
-     "url": "https://huggingface.co/blog/training-swarms",
+     "id": "c2bd7953104652e4",
+     "title": "Taking Trainium3 to the Track: Generating Videos with LTX-2.5",
+     "url": "https://huggingface.co/blog/video-trainium3",
      "sourceIds": [
       "hf-blog"
      ],
@@ -250,11 +226,11 @@
       "Hugging Face Blog"
      ],
      "summary": "",
-     "why": "Multi-agent training guides help developers structure and evaluate collaborative agent swarms.",
+     "why": "This blog post explores generating videos with LTX-2.5 on Trainium3 hardware.",
      "whySource": "llm",
-     "publishedAt": "2026-11-26T00:00:00.000Z",
+     "publishedAt": "2026-11-27T00:00:00.000Z",
      "category": "labs",
-     "score": 3.06
+     "score": 3.67
     }
    ]
   },
@@ -263,40 +239,40 @@
    "title": "Analysis worth reading",
    "entries": [
     {
-     "id": "d22228560266b123",
-     "title": "AI #196: The Return",
-     "url": "https://thezvi.substack.com/p/ai-196-the-return",
+     "id": "4d43692557b330ab",
+     "title": "AWS Challenger: Trainium3 Inference and Microarchitecture Deep Dive",
+     "url": "https://newsletter.semianalysis.com/p/trainium3-inferencex",
+     "sourceIds": [
+      "semianalysis"
+     ],
+     "sourceNames": [
+      "SemiAnalysis"
+     ],
+     "summary": "Better Perf TCO vs NVIDIA GB300, First Principles Physics-Based Architecture, High MFU and MBU, UBenchX, Low Latency, Alisa Liu vs Eileen Gu",
+     "why": "This analysis details Trainium3 inference performance, microarchitecture, and TCO compared to NVIDIA infrastructure.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-27T15:54:59.000Z",
+     "category": "blogs",
+     "score": 6.97,
+     "readMinutes": 38
+    },
+    {
+     "id": "8f4b54e706122a65",
+     "title": "Astra 6.2’s Brain Gets Smart But Its Head Gets Dumb",
+     "url": "https://thezvi.substack.com/p/astra-62s-brain-gets-smart-but-its",
      "sourceIds": [
       "zvi"
      ],
      "sourceNames": [
       "Don't Worry About the Vase"
      ],
-     "summary": "It is traditional on Thanksgiving for my weekly update to give thanks.",
-     "why": "Weekly analysis provides perspective on recent industry milestones and community updates.",
+     "summary": "Astra 6.2 has very high intelligence.",
+     "why": "This analysis discusses the trade-offs in intelligence and behavior found in Astra 6.2.",
      "whySource": "llm",
-     "publishedAt": "2026-11-26T15:01:21.000Z",
+     "publishedAt": "2026-11-27T13:36:29.000Z",
      "category": "blogs",
-     "score": 4.09,
-     "readMinutes": 95
-    },
-    {
-     "id": "dbe542754cd16121",
-     "title": "Quoting Jack Despain Zhou",
-     "url": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
-     "sourceIds": [
-      "simonw"
-     ],
-     "sourceNames": [
-      "Simon Willison"
-     ],
-     "summary": "Among the many already existing effects of AI has been a great de-individualization. I open a YouTube video, and I hear Claude.",
-     "why": "Observer commentary highlights emerging patterns of de-individualization in AI-generated media content.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-26T15:09:31.000Z",
-     "category": "blogs",
-     "score": 3.28,
-     "readMinutes": 1
+     "score": 4.76,
+     "readMinutes": 22
     }
    ]
   },
@@ -305,44 +281,43 @@
    "title": "One deep read",
    "entries": [
     {
-     "id": "ba1fa9cd52262766",
-     "title": "Comparing AI R&D compute caps and deployment lags",
-     "url": "https://www.alignmentforum.org/posts/e758PJCpwAwyodvEj/comparing-ai-r-and-d-compute-caps-and-deployment-lags",
+     "id": "a036c7b0b82e6387",
+     "title": "I don’t expect superposition in transformer MLP neurons",
+     "url": "https://www.alignmentforum.org/posts/o9dPGxEbpQrnasgDB/i-don-t-expect-superposition-in-transformer-mlp-neurons",
      "sourceIds": [
       "alignmentforum"
      ],
      "sourceNames": [
       "Alignment Forum"
      ],
-     "summary": "I’m publishing this a bit rougher than usual because it’s very pertinent to Evan Hubinger’s recent shortform, which advocates for blocking internal deployment as a pacing mechanism over compute reallocation (he mostly discusses it in the context of a risk-assessment-based…",
-     "why": "R&D compute caps and deployment lags inform pacing mechanisms for risk management.",
+     "summary": "I currently believe that in a typical (well trained and under-parametrized) transformer model, there is something like superposition-type compression in the residual stream, but not in the MLP neurons.",
+     "why": "This alignment discussion examines the presence of superposition in transformer residual streams versus MLP neurons.",
      "whySource": "llm",
-     "publishedAt": "2026-11-24T02:23:44.000Z",
+     "publishedAt": "2026-11-27T12:44:01.000Z",
      "category": "blogs",
-     "score": 1.02,
-     "readMinutes": 12
+     "score": 3.75,
+     "readMinutes": 13
     }
    ]
   }
  ],
  "itemIds": [
-  "aebfbe56731bd98a",
-  "40cb249974695259",
-  "030a9d5b67bf9666",
-  "d0f4230142583401",
-  "arxiv:2611.34331",
-  "arxiv:2611.28244",
-  "arxiv:2611.33307",
+  "arxiv:2611.34051",
+  "arxiv:2611.31619",
+  "arxiv:2611.34813",
+  "arxiv:2611.34693",
+  "arxiv:2611.34232",
+  "arxiv:2611.34782",
+  "arxiv:2611.28849",
   "552aaf9e335058e0",
-  "326020b4a21093e8",
-  "13d84a0fbee44558",
-  "5b91da256f36ad75",
-  "819f2bb8e324e5e7",
-  "d22228560266b123",
-  "dbe542754cd16121",
-  "ba1fa9cd52262766"
+  "b3f18e4fdfd29c33",
+  "681a2d77f0b8e136",
+  "c2bd7953104652e4",
+  "4d43692557b330ab",
+  "8f4b54e706122a65",
+  "a036c7b0b82e6387"
  ],
- "deepReadId": "ba1fa9cd52262766",
+ "deepReadId": "a036c7b0b82e6387",
  "llm": {
   "enabled": true,
   "ok": true
