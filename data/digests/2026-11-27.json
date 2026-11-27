@@ -1,0 +1,350 @@
+{
+ "date": "2026-11-27",
+ "generatedAt": "2026-11-27T01:29:22.409Z",
+ "wordCount": 661,
+ "readingMinutes": 4,
+ "overview": {
+  "text": "Today's developments span infrastructure shifts, verification advances, and new evaluation frameworks that matter for technical practitioners. On the infrastructure side, discussions highlight AMD-specific forks of llama.cpp alongside a resurgence in self-hosting interest and signs that OpenAI may be entering cost control mode. In formal methods and verification, Anthropic released a much shorter version of GRH Lean verification. Meanwhile, researchers introduced Puzzling-Bench to evaluate language models on thousands of human-written puzzles with community-verified answers from the Puzzling Stack Exchange archive. Additional releases include new multi-agent training guides and specialized tools like inworld/voice-isolator and sand-ai/MAGI-2-preview, offering founders and researchers fresh benchmarks and technical resources to navigate current compute and deployment constraints.",
+  "source": "llm",
+  "model": "gemini-3.5-flash-lite"
+ },
+ "sections": [
+  {
+   "key": "must-know",
+   "title": "Must know",
+   "entries": [
+    {
+     "id": "aebfbe56731bd98a",
+     "title": "AI made self-hosting fun again",
+     "url": "https://janlukas.blog/posts/ai-self-hosting",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50660180",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Self-hosting trends show shifting developer preferences for managing local AI infrastructure.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-26T21:47:45.000Z",
+     "category": "news",
+     "score": 13.4
+    },
+    {
+     "id": "40cb249974695259",
+     "title": "AMD-specific fork of llama.cpp",
+     "url": "https://devnull.land/amd-specific-llama-cpp",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50657265",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "An AMD-specific fork expands hardware deployment options for running local models efficiently.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-26T17:11:29.000Z",
+     "category": "news",
+     "score": 12.45
+    },
+    {
+     "id": "030a9d5b67bf9666",
+     "title": "OpenAI may be in cost control mode",
+     "url": "https://micjm.com/blog/openai-is-in-cost-control-mode/",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50652527",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Cost control shifts at major labs impact infrastructure economics for builders and researchers.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-26T07:33:12.000Z",
+     "category": "news",
+     "score": 12.32
+    },
+    {
+     "id": "d0f4230142583401",
+     "title": "Much shorter version of GRH Lean verification from Anthropic",
+     "url": "https://github.com/lsernau/grh-lean",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50648050",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Shorter Lean verification methods improve formal reasoning workflows for AI systems.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T21:48:10.000Z",
+     "category": "news",
+     "score": 12.24
+    }
+   ]
+  },
+  {
+   "key": "research",
+   "title": "Research",
+   "entries": [
+    {
+     "id": "arxiv:2611.34331",
+     "title": "Puzzling-Bench: Evaluating Language Models on 23,777 Human-Written Puzzles with Community-Verified Answers",
+     "url": "https://arxiv.org/abs/2611.34331",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "We introduce Puzzling-Bench, a benchmark of 23,777 puzzles with community-verified answers drawn from the Puzzling Stack Exchange archive (2014-2026): riddles, ciphers, logic grids, lateral-thinking problems, wordplay and recreational mathematics, a third of them with images.…",
+     "why": "Puzzling-Bench tests language models on complex human puzzles with community-verified answers.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T00:00:00.000Z",
+     "category": "research",
+     "score": 11.71
+    },
+    {
+     "id": "arxiv:2611.28244",
+     "title": "Demystifying the Autoresearch Harness: How Context and Skills Shape Self-Evolving Agents",
+     "url": "https://arxiv.org/abs/2611.28244",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.AI"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.AI"
+     ],
+     "summary": "Autoresearch agents, which autonomously design, run, and refine experiments, are accelerating scientific progress, particularly in AI research.",
+     "why": "Autoresearch harnesses demonstrate autonomous experiment design accelerating AI research progress.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-20T00:00:00.000Z",
+     "category": "research",
+     "score": 11.48
+    },
+    {
+     "id": "arxiv:2611.33307",
+     "title": "Lost in Translation, Not in Confidence: Benchmarking and Calibrating Multilingual Decision Models",
+     "url": "https://arxiv.org/abs/2611.33307",
+     "sourceIds": [
+      "hf-papers",
+      "arxiv-cs.CL"
+     ],
+     "sourceNames": [
+      "HF Daily Papers",
+      "arXiv cs.CL"
+     ],
+     "summary": "Decision models are language models fine-tuned to return a probability for each option of a typed query, which routers and guardrails threshold directly. They are built on multilingual bases but ranked almost entirely in English.",
+     "why": "Multilingual decision models address calibration gaps in routed router and guardrail systems.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T00:00:00.000Z",
+     "category": "research",
+     "score": 11.39
+    }
+   ]
+  },
+  {
+   "key": "releases",
+   "title": "Releases & tools",
+   "entries": [
+    {
+     "id": "552aaf9e335058e0",
+     "title": "inworld/voice-isolator",
+     "url": "https://huggingface.co/inworld/voice-isolator",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "audio-to-audio · inworld-voice-isolation · 963 likes · 15,244 downloads",
+     "why": "New audio-to-audio voice isolation models expand open-source speech processing capabilities.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-14T02:14:35.000Z",
+     "category": "releases",
+     "score": 8.96
+    },
+    {
+     "id": "326020b4a21093e8",
+     "title": "sand-ai/MAGI-2-preview",
+     "url": "https://huggingface.co/sand-ai/MAGI-2-preview",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "image-text-to-video · 296 likes · 0 downloads",
+     "why": "New image-text-to-video previews provide additional modalities for media generation pipelines.",
+     "whySource": "llm",
+     "publishedAt": "2026-08-03T12:34:20.000Z",
+     "category": "releases",
+     "score": 8.11
+    },
+    {
+     "id": "13d84a0fbee44558",
+     "title": "alesha-pro/llm.asm",
+     "url": "https://github.com/alesha-pro/llm.asm",
+     "sourceIds": [
+      "gh-trending-llm",
+      "gh-trending-ml"
+     ],
+     "sourceNames": [
+      "GitHub new repos: llm",
+      "GitHub new repos: machine-learning"
+     ],
+     "summary": "Qwen3-0.6B inference (12 KB), bare-metal bootable OS (22 KB), and from-scratch Mini-GPT trainer with live Braille TUI (32 KB) in 100% pure x86-64 NASM assembly. Zero C, zero libc, zero dependencies. · Assembly",
+     "why": "Pure assembly implementations offer extreme optimization insights for bare-metal machine learning.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T07:28:51.000Z",
+     "category": "releases",
+     "score": 7.82
+    }
+   ]
+  },
+  {
+   "key": "labs",
+   "title": "From the labs",
+   "entries": [
+    {
+     "id": "5b91da256f36ad75",
+     "title": "Verifiable Social Reasoning for LLM Assistants",
+     "url": "https://research.google/blog/verifiable-social-reasoning-for-llm-assistants/",
+     "sourceIds": [
+      "google-research"
+     ],
+     "sourceNames": [
+      "Google Research"
+     ],
+     "summary": "Generative AI",
+     "why": "Verifiable social reasoning approaches enhance safety and logic in assistant models.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T17:10:27.000Z",
+     "category": "labs",
+     "score": 3.22,
+     "readMinutes": 1
+    },
+    {
+     "id": "819f2bb8e324e5e7",
+     "title": "Swarms, Flocks, Gangs: How to build, train, and evaluate multi-agent systems",
+     "url": "https://huggingface.co/blog/training-swarms",
+     "sourceIds": [
+      "hf-blog"
+     ],
+     "sourceNames": [
+      "Hugging Face Blog"
+     ],
+     "summary": "",
+     "why": "Multi-agent training guides help developers structure and evaluate collaborative agent swarms.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-26T00:00:00.000Z",
+     "category": "labs",
+     "score": 3.06
+    }
+   ]
+  },
+  {
+   "key": "analysis",
+   "title": "Analysis worth reading",
+   "entries": [
+    {
+     "id": "d22228560266b123",
+     "title": "AI #196: The Return",
+     "url": "https://thezvi.substack.com/p/ai-196-the-return",
+     "sourceIds": [
+      "zvi"
+     ],
+     "sourceNames": [
+      "Don't Worry About the Vase"
+     ],
+     "summary": "It is traditional on Thanksgiving for my weekly update to give thanks.",
+     "why": "Weekly analysis provides perspective on recent industry milestones and community updates.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-26T15:01:21.000Z",
+     "category": "blogs",
+     "score": 4.09,
+     "readMinutes": 95
+    },
+    {
+     "id": "dbe542754cd16121",
+     "title": "Quoting Jack Despain Zhou",
+     "url": "https://simonwillison.net/2026/Nov/26/jack-despain-zhou/",
+     "sourceIds": [
+      "simonw"
+     ],
+     "sourceNames": [
+      "Simon Willison"
+     ],
+     "summary": "Among the many already existing effects of AI has been a great de-individualization. I open a YouTube video, and I hear Claude.",
+     "why": "Observer commentary highlights emerging patterns of de-individualization in AI-generated media content.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-26T15:09:31.000Z",
+     "category": "blogs",
+     "score": 3.28,
+     "readMinutes": 1
+    }
+   ]
+  },
+  {
+   "key": "deep-read",
+   "title": "One deep read",
+   "entries": [
+    {
+     "id": "ba1fa9cd52262766",
+     "title": "Comparing AI R&D compute caps and deployment lags",
+     "url": "https://www.alignmentforum.org/posts/e758PJCpwAwyodvEj/comparing-ai-r-and-d-compute-caps-and-deployment-lags",
+     "sourceIds": [
+      "alignmentforum"
+     ],
+     "sourceNames": [
+      "Alignment Forum"
+     ],
+     "summary": "I’m publishing this a bit rougher than usual because it’s very pertinent to Evan Hubinger’s recent shortform, which advocates for blocking internal deployment as a pacing mechanism over compute reallocation (he mostly discusses it in the context of a risk-assessment-based…",
+     "why": "R&D compute caps and deployment lags inform pacing mechanisms for risk management.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-24T02:23:44.000Z",
+     "category": "blogs",
+     "score": 1.02,
+     "readMinutes": 12
+    }
+   ]
+  }
+ ],
+ "itemIds": [
+  "aebfbe56731bd98a",
+  "40cb249974695259",
+  "030a9d5b67bf9666",
+  "d0f4230142583401",
+  "arxiv:2611.34331",
+  "arxiv:2611.28244",
+  "arxiv:2611.33307",
+  "552aaf9e335058e0",
+  "326020b4a21093e8",
+  "13d84a0fbee44558",
+  "5b91da256f36ad75",
+  "819f2bb8e324e5e7",
+  "d22228560266b123",
+  "dbe542754cd16121",
+  "ba1fa9cd52262766"
+ ],
+ "deepReadId": "ba1fa9cd52262766",
+ "llm": {
+  "enabled": true,
+  "ok": true
+ }
+}
