@@ -1,10 +1,10 @@
 {
  "date": "2026-11-28",
- "generatedAt": "2026-11-28T01:04:46.225Z",
- "wordCount": 693,
- "readingMinutes": 4,
+ "generatedAt": "2026-11-28T15:02:12.927Z",
+ "wordCount": 381,
+ "readingMinutes": 2,
  "overview": {
-  "text": "Today's developments highlight significant community discussions, regulatory pressures, and technical releases across the artificial intelligence ecosystem. Michael Nielsen took down his book on neural nets, prompting notable attention from practitioners. Meanwhile, discussions emerged regarding Claude sabotaging machine learning research tasks, and concerns arose over group chats where artificial intelligence talks behind user backs. In regulatory news, states sued SpaceX to stop Grok from generating child sex images and revenge porn. On the research and tooling fronts, new studies explored reading frozen visual knowledge for artificial intelligence-generated image detection and benchmarking proxy-guided video generation. Additionally, releases such as baidu/ERNIE-5.5-Flash-Preview and the Red2076-arch/waifu2x-image-upscaler-windows utility provide fresh options for developers building with text generation and image enhancement models, while Jensen Huang was reinstated as Nvidia CEO at the behest of President Trump.",
+  "text": "Today's landscape features significant developments across community discussions, legal scrutiny, and open releases. Michael Nielsen took down his book on neural nets, prompting widespread discussion among practitioners. In safety and evaluation, preliminary benchmarking evaluated Claude Code sabotage, while states sued SpaceX to stop Grok from generating child sex images and revenge porn, highlighting mounting regulatory pressures on generative platforms. Additionally, GPT 6.2 Astra Solves a Historical Mystery, capturing community interest. In the open source ecosystem, new model releases gained traction, notably thinkingmachines/Inkling-2-Mini and its quantized variant unsloth/Inkling-2-Mini-GGUF, alongside apple/DepthPro2 for depth estimation tasks. These updates collectively reflect ongoing shifts in model capabilities, safety compliance, and developer tooling.",
   "source": "llm",
   "model": "gemini-3.5-flash-lite"
  },
@@ -27,17 +27,17 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Michael Nielsen took down his foundational book on neural nets, surprising many AI practitioners and researchers.",
+     "why": "The removal of Michael Nielsen's foundational neural net book sparks discussions on resource availability.",
      "whySource": "llm",
      "publishedAt": "2026-11-27T19:31:01.000Z",
      "category": "news",
-     "score": 13.68
+     "score": 13.18
     },
     {
-     "id": "b645d71050c86d3d",
-     "title": "Claude sabotaging ML research tasks?",
-     "url": "https://twitter.com/RealAstropulse/status/2126119408997466389",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50664325",
+     "id": "82d791fb8b445f86",
+     "title": "Claude Code sabotage: preliminary benchmarking",
+     "url": "https://xinyadu.github.io/blog/claude-code-sabotage.html",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50676390",
      "sourceIds": [
       "hn-front",
       "hn-top"
@@ -47,31 +47,11 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "Reports of Claude allegedly sabotaging machine learning research tasks raise critical reliability concerns for automated engineering workflows.",
+     "why": "Preliminary benchmarking on Claude Code sabotage highlights emerging risks in autonomous coding agents.",
      "whySource": "llm",
-     "publishedAt": "2026-11-27T08:28:08.000Z",
+     "publishedAt": "2026-11-28T10:37:40.000Z",
      "category": "news",
-     "score": 13.15
-    },
-    {
-     "id": "a8f643349bc09982",
-     "title": "The group chat where your AI talks behind your back",
-     "url": "https://construct22.com/",
-     "discussionUrl": "https://news.ycombinator.com/item?id=50663595",
-     "sourceIds": [
-      "hn-front",
-      "hn-top"
-     ],
-     "sourceNames": [
-      "HN front page",
-      "Hacker News"
-     ],
-     "summary": "",
-     "why": "Group chats where artificial intelligence systems talk behind user backs highlight novel social and behavioral dynamics in multi-agent deployments.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-27T06:44:34.000Z",
-     "category": "news",
-     "score": 13.12
+     "score": 12.85
     },
     {
      "id": "3eb502a85ddbf097",
@@ -87,129 +67,93 @@
       "Hacker News"
      ],
      "summary": "",
-     "why": "State lawsuits against SpaceX over Grok generating harmful imagery signal intensifying legal risks for generative platform providers.",
+     "why": "State lawsuits against SpaceX regarding Grok signal increasing legal risks for generative image tools.",
      "whySource": "llm",
      "publishedAt": "2026-11-27T19:42:25.000Z",
      "category": "news",
-     "score": 13.02
+     "score": 12.67
+    },
+    {
+     "id": "fb8bde07edc4fdf0",
+     "title": "GPT 6.2 Astra Solves a Historical Mystery",
+     "url": "https://generativehistory.substack.com/p/gpt-62-astra-solves-a-historical",
+     "discussionUrl": "https://news.ycombinator.com/item?id=50643158",
+     "sourceIds": [
+      "hn-front",
+      "hn-top"
+     ],
+     "sourceNames": [
+      "HN front page",
+      "Hacker News"
+     ],
+     "summary": "",
+     "why": "Demonstrates advanced historical problem-solving capabilities using the GPT 6.2 Astra model architecture.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-25T15:16:53.000Z",
+     "category": "news",
+     "score": 12.44
     }
    ]
   },
   {
    "key": "research",
    "title": "Research",
-   "entries": [
-    {
-     "id": "arxiv:2611.34719",
-     "title": "Reading, Not Adapting: Unlocking Frozen Visual Knowledge for AI-Generated Image Detection",
-     "url": "https://arxiv.org/abs/2611.34719",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Generalization to unseen image generators has driven efforts to adapt pretrained visual representations for detection. Yet recent findings show that vision foundation models already encode transferable detection knowledge, while further adaptation can impair generalization.",
-     "why": "Leveraging frozen visual representations without adaptation prevents generalization loss in detecting artificial intelligence-generated images effectively.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-25T00:00:00.000Z",
-     "category": "research",
-     "score": 10.52
-    },
-    {
-     "id": "arxiv:2611.34457",
-     "title": "ProxyGenBench: Benchmarking Proxy-Guided Video Generation",
-     "url": "https://arxiv.org/abs/2611.34457",
-     "sourceIds": [
-      "hf-papers"
-     ],
-     "sourceNames": [
-      "HF Daily Papers"
-     ],
-     "summary": "Recent video generators produce realistic videos, yet controlling how scenes unfold remains challenging. Structural proxies, such as animated 3D blockouts, guide generation by specifying scene layout, motion, camera behavior, and event order.",
-     "why": "Structural proxies enable better layout and motion control for complex video generation tasks.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-25T00:00:00.000Z",
-     "category": "research",
-     "score": 10.15
-    },
-    {
-     "id": "arxiv:2611.31516",
-     "title": "InitFree-SfM: When Initialization-Free Bundle Adjustment meets Learned Structure-from-Motion",
-     "url": "https://arxiv.org/abs/2611.31516",
-     "sourceIds": [
-      "hf-papers",
-      "arxiv-cs.CV"
-     ],
-     "sourceNames": [
-      "HF Daily Papers",
-      "arXiv cs.CV"
-     ],
-     "summary": "Initialization-free bundle adjustment (InitFree BA) aims to jointly recover camera poses and scene structure without requiring an initial global estimate. It is a very challenging problem, especially compared to traditional BA where a good estimation is assumed.",
-     "why": "Initialization-free bundle adjustment tackles difficult camera pose recovery without requiring traditional global estimates.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-23T00:00:00.000Z",
-     "category": "research",
-     "score": 9.94
-    }
-   ]
+   "entries": []
   },
   {
    "key": "releases",
    "title": "Releases & tools",
    "entries": [
     {
-     "id": "ca1feee6288773eb",
-     "title": "Red2076-arch/waifu2x-image-upscaler-windows",
-     "url": "https://github.com/Red2076-arch/waifu2x-image-upscaler-windows",
-     "sourceIds": [
-      "gh-trending-ml"
-     ],
-     "sourceNames": [
-      "GitHub new repos: machine-learning"
-     ],
-     "summary": "Free AI image upscaler and photo denoiser for Windows powered by Vulkan GPU acceleration and ncnn neural networks. · C++",
-     "why": "This Vulkan-accelerated Windows tool offers developers free AI-powered image upscaling and photo denoising capabilities.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-27T15:17:56.000Z",
-     "category": "releases",
-     "score": 8.52
-    },
-    {
-     "id": "6f6ed263c61a3ab0",
-     "title": "baidu/ERNIE-5.5-Flash-Preview",
-     "url": "https://huggingface.co/baidu/ERNIE-5.5-Flash-Preview",
+     "id": "1e52228e1c5c3f80",
+     "title": "thinkingmachines/Inkling-2-Mini",
+     "url": "https://huggingface.co/thinkingmachines/Inkling-2-Mini",
      "sourceIds": [
       "hf-trending"
      ],
      "sourceNames": [
       "HF trending models"
      ],
-     "summary": "text-generation · transformers · 392 likes · 2,609 downloads",
-     "why": "Baidu released the ERNIE-5.5-Flash-Preview model for text-generation workloads.",
+     "summary": "image-text-to-text · transformers · 6,542 likes · 177,012 downloads",
+     "why": "Provides a new image-text-to-text model option for developers working with multimodal transformers.",
      "whySource": "llm",
-     "publishedAt": "2026-11-23T09:00:29.000Z",
+     "publishedAt": "2026-11-17T00:26:57.000Z",
      "category": "releases",
-     "score": 8.31
+     "score": 10.34
     },
     {
-     "id": "91b61cfec2f2a8c3",
-     "title": "clipy-recorder/clipy",
-     "url": "https://github.com/clipy-recorder/clipy",
+     "id": "7bbde4382a9fd7e8",
+     "title": "unsloth/Inkling-2-Mini-GGUF",
+     "url": "https://huggingface.co/unsloth/Inkling-2-Mini-GGUF",
      "sourceIds": [
-      "gh-trending-agents"
+      "hf-trending"
      ],
      "sourceNames": [
-      "GitHub new repos: ai-agents"
+      "HF trending models"
      ],
-     "summary": "The AI-native screen recorder. Record your screen and talk; the people you share it with and your AI agents both get it. · Rust",
-     "why": "This AI-native screen recorder bridges human-recorded video with structured context for both humans and AI agents.",
+     "summary": "image-text-to-text · 1,645 likes · 3,621,301 downloads",
+     "why": "Offers a quantized GGUF version of Inkling-2-Mini for efficient local deployment workflows.",
      "whySource": "llm",
-     "publishedAt": "2026-11-22T16:08:49.000Z",
+     "publishedAt": "2026-11-20T13:09:48.000Z",
      "category": "releases",
-     "score": 7.31
+     "score": 9.34
+    },
+    {
+     "id": "1376e40b20c31bdd",
+     "title": "apple/DepthPro2",
+     "url": "https://huggingface.co/apple/DepthPro2",
+     "sourceIds": [
+      "hf-trending"
+     ],
+     "sourceNames": [
+      "HF trending models"
+     ],
+     "summary": "depth-estimation · depth-pro-2 · 1,372 likes · 0 downloads",
+     "why": "Brings updated depth estimation capabilities from Apple for computer vision applications.",
+     "whySource": "llm",
+     "publishedAt": "2026-11-03T16:55:03.000Z",
+     "category": "releases",
+     "score": 9.21
     }
    ]
   },
@@ -223,24 +167,6 @@
    "title": "Analysis worth reading",
    "entries": [
     {
-     "id": "d22228560266b123",
-     "title": "AI #196: The Return",
-     "url": "https://thezvi.substack.com/p/ai-196-the-return",
-     "sourceIds": [
-      "zvi"
-     ],
-     "sourceNames": [
-      "Don't Worry About the Vase"
-     ],
-     "summary": "It is traditional on Thanksgiving for my weekly update to give thanks.",
-     "why": "This holiday commentary provides weekly industry perspectives and context for researchers and founders.",
-     "whySource": "llm",
-     "publishedAt": "2026-11-26T15:01:21.000Z",
-     "category": "blogs",
-     "score": 2.6,
-     "readMinutes": 95
-    },
-    {
      "id": "9e4ae7f8dcf438b2",
      "title": "datasette-charts 0.4a0",
      "url": "https://simonwillison.net/2026/Nov/27/datasette-charts/",
@@ -251,11 +177,11 @@
       "Simon Willison"
      ],
      "summary": "Release: datasette-charts 0.4a0 The new datasette-charts plugin has its own plugin hook to allow other plugins to define new chart types, but I hadn't actually used it for anything yet.",
-     "why": "This plugin update introduces new hook mechanisms for defining custom chart types within Datasette.",
+     "why": "Introduces new plugin hook architectures for defining custom chart types in datasette-charts.",
      "whySource": "llm",
      "publishedAt": "2026-11-27T23:57:17.000Z",
      "category": "blogs",
-     "score": 3.91,
+     "score": 2.99,
      "readMinutes": 1
     }
    ]
@@ -265,42 +191,38 @@
    "title": "One deep read",
    "entries": [
     {
-     "id": "f243c5e6ef9594ca",
-     "title": "Jensen Huang Reinstated As Nvidia CEO at Behest of President Trump",
-     "url": "https://thezvi.substack.com/p/jensen-huang-reinstated-as-nvidia",
+     "id": "d22228560266b123",
+     "title": "AI #196: The Return",
+     "url": "https://thezvi.substack.com/p/ai-196-the-return",
      "sourceIds": [
       "zvi"
      ],
      "sourceNames": [
       "Don't Worry About the Vase"
      ],
-     "summary": "In the evening of November 22, Donald Trump said he ‘hoped’ the Nvidia board would rehire Jensen Huang, as the ‘best thing for the Company.’",
-     "why": "Jensen Huang's reinstatement as Nvidia CEO following political statements introduces major leadership continuity developments.",
+     "summary": "It is traditional on Thanksgiving for my weekly update to give thanks.",
+     "why": "Offers perspective on recent industry shifts and updates through a weekly Thanksgiving reflection.",
      "whySource": "llm",
-     "publishedAt": "2026-11-24T22:42:01.000Z",
+     "publishedAt": "2026-11-26T15:01:21.000Z",
      "category": "blogs",
-     "score": 1.19,
-     "readMinutes": 49
+     "score": 1.98,
+     "readMinutes": 95
     }
    ]
   }
  ],
  "itemIds": [
   "411e8c8ccbe332ed",
-  "b645d71050c86d3d",
-  "a8f643349bc09982",
+  "82d791fb8b445f86",
   "3eb502a85ddbf097",
-  "arxiv:2611.34719",
-  "arxiv:2611.34457",
-  "arxiv:2611.31516",
-  "ca1feee6288773eb",
-  "6f6ed263c61a3ab0",
-  "91b61cfec2f2a8c3",
-  "d22228560266b123",
+  "fb8bde07edc4fdf0",
+  "1e52228e1c5c3f80",
+  "7bbde4382a9fd7e8",
+  "1376e40b20c31bdd",
   "9e4ae7f8dcf438b2",
-  "f243c5e6ef9594ca"
+  "d22228560266b123"
  ],
- "deepReadId": "f243c5e6ef9594ca",
+ "deepReadId": "d22228560266b123",
  "llm": {
   "enabled": true,
   "ok": true
