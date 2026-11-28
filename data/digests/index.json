@@ -1,6 +1,13 @@
 {
  "days": [
   {
+   "date": "2026-11-28",
+   "generatedAt": "2026-11-28T01:04:46.225Z",
+   "wordCount": 693,
+   "readingMinutes": 4,
+   "entryCount": 13
+  },
+  {
    "date": "2026-11-27",
    "generatedAt": "2026-11-27T16:07:50.744Z",
    "wordCount": 742,
